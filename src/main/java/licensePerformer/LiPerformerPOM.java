@@ -25,7 +25,7 @@ public class LiPerformerPOM
 	
 	public static WebElement clickAction(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_lnkEditLicense_0']"));
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit'])[1]"));
 		return license;
 	}
 	
@@ -55,7 +55,7 @@ public class LiPerformerPOM
 	
 	public static WebElement clickClose(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@onclick='closeModal();']"));
+		license = driver.findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button"));
 		return license;
 	}
 	
@@ -91,7 +91,7 @@ public class LiPerformerPOM
 	
 	public static WebElement clickExpired(WebDriver driver)					//Searching 'Expired' image link to click
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divExpiredCount']"));
+		license = driver.findElement(By.id("ContentPlaceHolder1_divExpiredCount"));
 		return license;
 	}
 	
@@ -207,7 +207,7 @@ public class LiPerformerPOM
 	
 	public static WebElement checkTable(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList']"));
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit'])[1]"));
 		return license;
 	}
 	
@@ -246,4 +246,11 @@ public class LiPerformerPOM
 		license = driver.findElement(By.xpath(""));
 		return license;
 	}
+	public static WebElement ShowFream(WebDriver driver)
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_showReminderDetail']"));
+		return license;
+	}
+	
+	
 }

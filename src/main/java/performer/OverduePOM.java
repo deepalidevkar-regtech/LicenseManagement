@@ -607,7 +607,7 @@ public class OverduePOM
 	
 	public static WebElement readReminder(WebDriver driver)				//Searching total reminders count
 	{
-		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lblTotalRecord']"));
+		performer = driver.findElement(By.xpath("//*[@id='grid']/div[3]/span[2]"));
 		return performer;
 	}
 	

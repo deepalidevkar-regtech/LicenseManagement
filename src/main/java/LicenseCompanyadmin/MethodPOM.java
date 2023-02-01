@@ -1,4 +1,4 @@
-package LicenseCompanyadmin;
+package licenseCompanyadmin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -363,9 +363,24 @@ public static WebElement ClickMaximizeLicenseExpiredOn(WebDriver driver)
 	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_UpdatePanel3']/div/div/div[1]/div[3]/a/i"));
 	return license;
 }
-public static WebElement ClickShowMoreExpiredOn(WebDriver driver)	
+public static WebElement ClickMaximizeLicenseExpiringOn(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_UpdatePanel4']/div/div/div[1]/div[3]/a/i"));
+	return license;
+}
+public static WebElement ClickShowMoreExpiredOnInternal(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkLicExpiredshowMore']"));
+	return license;
+}
+public static WebElement ClickShowMoreExpiredOnStatutory(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton1']"));
+	return license;
+}
+public static WebElement ClickShowMoreExpiringOnStatutory(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton2']"));
 	return license;
 }
 public static WebElement ClickExportExpiredOn(WebDriver driver)	
@@ -431,6 +446,7 @@ public static WebElement clickBystatusTerminateOverview(WebDriver driver)
 public static WebElement clickBystatusActive(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-3 ']"));
+	
 	return license;
 }
 public static WebElement clickBystatusActiveReadCount(WebDriver driver)	
@@ -441,6 +457,7 @@ public static WebElement clickBystatusActiveReadCount(WebDriver driver)
 public static WebElement clickBystatusActiveOverview(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]/a"));
+	
 	return license;
 }
 public static WebElement clickBystatusExpiredappliedbutnotrenewed(WebDriver driver)	
@@ -488,9 +505,19 @@ public static WebElement clickByLicnesetypeApplied(WebDriver driver)
 	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[41]"));
 	return license;
 }
+public static WebElement clickByLicnesetypeAppliedInternal(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
+	return license;
+}
 public static WebElement clickByLicnesetypeActive(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[65]"));
+	return license;
+}
+public static WebElement clickByLicnesetypeActiveInternal(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[19]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeTerminate(WebDriver driver)	
@@ -498,22 +525,16 @@ public static WebElement clickByLicnesetypeTerminate(WebDriver driver)
 	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[85]"));
 	return license;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public static WebElement clickByLicnesetypeTerminateInternal(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[24]"));
+	return license;
+}
+public static WebElement checkTable1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr[1]"));
+	return license;
+}
 
 
 }

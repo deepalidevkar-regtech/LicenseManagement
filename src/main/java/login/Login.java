@@ -1,11 +1,18 @@
 package login;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import performer.OverduePOM;
 
 public class Login 
@@ -15,9 +22,14 @@ public class Login
 	
 	public static void BrowserSetup(String URL)
 	{
-		System.setProperty("webdriver.chrome.driver","C://Already Automate//chromedriver_win32 (1)//chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
+		//System.setProperty("webdriver.gecko.driver","C:\\Users\\dipali\\Downloads\\geckodriver-v0.20.1-win64\\geckodriver.exe");
+		//WebDriver driver= new FirefoxDriver();
+	
+		//System.setProperty("webdriver.chrome.driver","C://Already Automate//chromedriver_win32 (1)//chromedriver.exe");
 		//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver"); //Set the Chrome driver variable
 		driver = new ChromeDriver();					//Created new Chrome driver instance. 
+		//WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();			//Set window size to maximum.
 		driver.get(URL);								//Set the URL of WebApplication.
 	}

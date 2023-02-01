@@ -1,7 +1,9 @@
-package LicenseCompanyadmin;
+package licenseCompanyadmin;
 
 import java.awt.Desktop.Action;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -24,7 +26,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import cfo.CFOcountPOM;
 import licensePerformer.LiPerformerPOM;
+import licenseReviewer.LiReviewerPOM;
 import performer.OverduePOM;
 
 public class StatutoryMethod {
@@ -906,14 +910,18 @@ public class StatutoryMethod {
 	   
 	   
    }
-   public static void LicenseExpiredOn(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+   public static void LicenseExpiredOnInternal(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
 	   MethodPOM.ClickMaximizeLicenseExpiredOn(driver).click();
 	  
 	   Thread.sleep(3000);
-	   MethodPOM.ClickShowMoreExpiredOn(driver).click();
-	   
+	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
+		js1.executeScript("window.scroll(0,500)");
+		
+	   MethodPOM.ClickShowMoreExpiredOnInternal(driver).click();
+	   WebDriverWait wait = new WebDriverWait(driver, 40);
+	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 	   Thread.sleep(3000);
 	   MethodPOM.ClickExportExpiredOn(driver).click();
 		test.log(LogStatus.PASS, "Expired On License List Downloaded Sucessfully");
@@ -924,6 +932,191 @@ public class StatutoryMethod {
 	   
 	   
 	   
+   }
+   public static void LicenseExpiredOnStatutory(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+   {
+	   Thread.sleep(3000);
+	   MethodPOM.ClickMaximizeLicenseExpiredOn(driver).click();
+	  
+	   Thread.sleep(3000);
+	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
+		js1.executeScript("window.scroll(0,500)");
+		
+	   MethodPOM.ClickShowMoreExpiredOnStatutory(driver).click();
+	   WebDriverWait wait = new WebDriverWait(driver, 40);
+	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
+	   Thread.sleep(3000);
+	   MethodPOM.ClickExportExpiredOn(driver).click();
+		test.log(LogStatus.PASS, "Expired On License List Downloaded Sucessfully");
+	   
+		Thread.sleep(3000);
+		MethodPOM.ClickOverviewExpiredOn(driver).click();
+		test.log(LogStatus.PASS, "Expied OverView License Displayed");
+		 Thread.sleep(3000);
+             MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(2000);
+			  // Js.executeScript("window.scrollBy(500,0)");
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+	   
+   }
+   public static void LicenseExpiringOnStatutory(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+   {
+	   Thread.sleep(3000);
+	   MethodPOM.ClickMaximizeLicenseExpiringOn(driver).click();
+	  
+	   Thread.sleep(3000);
+	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
+		js1.executeScript("window.scroll(0,500)");
+		
+	   MethodPOM.ClickShowMoreExpiringOnStatutory(driver).click();
+	   WebDriverWait wait = new WebDriverWait(driver, 40);
+	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
+	   Thread.sleep(3000);
+	  // MethodPOM.ClickExportExpiredOn(driver).click();
+		
+	   int flag = 0;
+		try
+		{
+			wait.until(ExpectedConditions.visibilityOf(MethodPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+			flag = 1;
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		if(flag == 1)
+		{
+			js1.executeScript("window.scrollBy(0,1000)");				//Scrolling down window by 2000 px.
+			
+			Thread.sleep(700);
+			String item = MethodPOM.clickReadActive(driver).getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String LicenseCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count = 0;
+			if(LicenseCount.equalsIgnoreCase("to"))
+			{
+				Thread.sleep(2500);
+				item = MethodPOM.clickReadActive(driver).getText();
+				bits = item.split(" ");										//Splitting the String
+				LicenseCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
+			}
+			count = Integer.parseInt(LicenseCount);
+			
+			File dir = new File("C://Already Automate//");
+			File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+			
+			js1.executeScript("window.scrollBy(0,-2000)");				//Scrolling down window by 2000 px.
+			Thread.sleep(500);
+			MethodPOM.ClickExportExpiredOn(driver).click();						//Clicking on Excel Image.
+			
+			Thread.sleep(3000);
+			File dir1 = new File("C://Already Automate//");
+			File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			if(dirContents.length < allFilesNew.length)
+			{
+				test.log(LogStatus.PASS, type+" :- File downloaded successfully.");
+				
+				fis = new FileInputStream(lastModifiedFile);
+				workbook = new XSSFWorkbook(fis);
+				sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+				int no = sheet.getLastRowNum();
+				int SheetRecords = no - 0;						//Sheet have extra 5 lines of information at top (But row count started from 0, so -4)
+				fis.close();
+				
+				if(count == SheetRecords)
+				{
+					test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
+					test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
+					test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+				}
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, type+" :- File doesn't downloaded successfully.");
+			}
+		}
+		else
+		{
+			test.log(LogStatus.SKIP, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
+		}
+		driver.switchTo().parentFrame();
+		 MethodPOM.clickCloseGraphPopup(driver).click();
+		 Thread.sleep(3000);
+
+	   
+   }
+   public static void BystatusExpringInternalgraph(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+   {
+	 
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpringbutnotApplied(driver)));	  
+		String BystatusExpiring=MethodPOM.clickExpringbutnotApplied(driver).getText();
+		
+	     int BystatusExpiringgraph = Integer.parseInt(BystatusExpiring);	//Reading Expiring graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickExpringbutnotApplied(driver).click();					//Clicking on 'Expiring' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickByStatsExpiringReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickByStatsExpiringReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String LicenseBystatusExpiringCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(LicenseBystatusExpiringCount);
+			if(BystatusExpiringgraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By status Graph Expiring License Count.");
+					test.log(LogStatus.INFO, "No of Expiring  License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Status Graph  Expiring License   Count.");
+					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickGraphoverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+
    }
    public static void BystatusExpringgraph(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
@@ -1093,7 +1286,177 @@ public class StatutoryMethod {
 			 Thread.sleep(3000);
 			 
    }
+   public static void BystatusActiveInternalgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickBystatusActive(driver)));	  
+		String BystatusActive=MethodPOM.clickBystatusActive(driver).getText();
+		
+	     int BystatusActiveggraph = Integer.parseInt(BystatusActive);	//Reading Active graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickBystatusActive(driver).click();					//Clicking on 'Active' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickBystatusActiveReadCount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickBystatusActiveReadCount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String LicenseBystatusActiveCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(LicenseBystatusActiveCount);
+			if(BystatusActiveggraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
+					test.log(LogStatus.INFO, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
+					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickBystatusActiveOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+   public static void BystatusTerminateInternalgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickBystatusTerminate(driver)));	  
+		String BystatusTerminate=MethodPOM.clickBystatusTerminate(driver).getText();
+		
+	     int BystatusTerminateggraph = Integer.parseInt(BystatusTerminate);	//Reading Terminate graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickBystatusTerminate(driver).click();					//Clicking on 'Terminate' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickBystatusTerminateReadCount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickBystatusTerminateReadCount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String LicenseBystatusTerminateCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(LicenseBystatusTerminateCount);
+			if(BystatusTerminateggraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
+					test.log(LogStatus.INFO, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusTerminateggraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
+					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusTerminateggraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickBystatusActiveOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+
+
    public static void BystatusExpiredappliedbutnotrenewedgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickBystatusExpiredappliedbutnotrenewed(driver)));	  
+		String BystatusExpiredappliedbutnotrenewed=MethodPOM.clickBystatusExpiredappliedbutnotrenewed(driver).getText();
+		
+	     int BystatusExpiredappliedbutnotrenewedgraph = Integer.parseInt(BystatusExpiredappliedbutnotrenewed);	//Reading Applied But not Renewed graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickBystatusExpiredappliedbutnotrenewed(driver).click();					//Clicking on 'Applied but not Renewed' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickBystatusExpiredappliedbutnotrenewedReadCount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickBystatusExpiredappliedbutnotrenewedReadCount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String LicenseBystatusAppliedbutnotRenewedCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(LicenseBystatusAppliedbutnotRenewedCount);
+			if(BystatusExpiredappliedbutnotrenewedgraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Applied But not Renewed License  grid matches to Dashboard By status Graph Applied But not Renewed License Count.");
+					test.log(LogStatus.INFO, "No of Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Applied But not Renewed License does not matches to Dashboard By Status Graph  Applied But not Renewed License   Count.");
+					test.log(LogStatus.INFO, "No of Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickBystatusExpiredappliedbutnotrenewedOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+   public static void BystatusExpiredappliedbutnotrenewedInternalgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
 
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -1205,7 +1568,119 @@ public class StatutoryMethod {
 			 Thread.sleep(3000);
 			 
    }
+   public static void BystatusExpiredInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickBystatusExpired(driver)));	  
+		String BystatusExpired=MethodPOM.clickBystatusExpired(driver).getText();
+		
+	     int BystatusExpiredgraph = Integer.parseInt(BystatusExpired);	//Reading Expired graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickBystatusExpired(driver).click();					//Clicking on 'Expired' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickAllReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickAllReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String LicenseBystatusExpiredCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(LicenseBystatusExpiredCount);
+			if(BystatusExpiredgraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By status Graph Expired License Count.");
+					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard By Status Graph Expired License   Count.");
+					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickAllOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
    public static void ByLicensetypeExpired(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpired(driver)));	  
+		String ByLicenseTypeExpired=MethodPOM.clickByLicnesetypeExpired(driver).getText();
+		
+	     int ByLicensetypeExpiredgraph = Integer.parseInt(ByLicenseTypeExpired);	//Reading Expired graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickByLicnesetypeExpired(driver).click();					//Clicking on 'Expired' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickAllReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickAllReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String ByLicensetypeCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(ByLicensetypeCount);
+			if(ByLicensetypeExpiredgraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By Licnesetype Graph Expired License Count.");
+					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnesetype Graph Applied License   Count.");
+					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickAllOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+   public static void ByLicensetypeExpiredInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
 
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -1317,6 +1792,62 @@ public class StatutoryMethod {
 			 Thread.sleep(3000);
 			 
    }
+   public static void ByLicensetypeExpiringInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpiring(driver)));	  
+		String ByLicenseTypeExpiring=MethodPOM.clickByLicnesetypeExpiring(driver).getText();
+		
+	     int ByLicensetypeExpiringgraph = Integer.parseInt(ByLicenseTypeExpiring);	//Reading Expiring graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickByLicnesetypeExpiring(driver).click();					//Clicking on 'Expiring' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickAllReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickAllReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String ByLicensetypeCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(ByLicensetypeCount);
+			if(ByLicensetypeExpiringgraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By Licnesetype Graph Expiring License Count.");
+					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Licnese type Graph Expiring License   Count.");
+					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickAllOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
    public static void ByLicensetypeApplied(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
 
@@ -1373,6 +1904,63 @@ public class StatutoryMethod {
 			 Thread.sleep(3000);
 			 
    }
+   public static void ByLicensetypeAppliedInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	    WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeAppliedInternal(driver)));	  
+		String ByLicenseTypeApplied=MethodPOM.clickByLicnesetypeAppliedInternal(driver).getText();
+		
+	     int ByLicensetypeAppliedggraph = Integer.parseInt(ByLicenseTypeApplied);	//Reading Applied graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickByLicnesetypeAppliedInternal(driver).click();					//Clicking on 'Applied' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickAllReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickAllReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String ByLicensetypeCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(ByLicensetypeCount);
+			if(ByLicensetypeAppliedggraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard By Licnesetype Graph Applied License Count.");
+					test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnese type Graph Applied License   Count.");
+					test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickAllOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+
    public static void ByLicensetypeActive(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
 
@@ -1387,6 +1975,63 @@ public class StatutoryMethod {
 	     int ByLicensetypeActiveggraph = Integer.parseInt(ByLicenseTypeActive);	//Reading Active graph count.
 	     Thread.sleep(4000);
 	      MethodPOM.clickByLicnesetypeActive(driver).click();					//Clicking on 'Active' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickAllReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickAllReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String ByLicensetypeCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(ByLicensetypeCount);
+			if(ByLicensetypeActiveggraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By Licnesetype Graph Active License Count.");
+					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Licnese type Graph Active License   Count.");
+					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickAllOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+   public static void ByLicensetypeActiveInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	   Thread.sleep(3000);
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeActiveInternal(driver)));	  
+		String ByLicenseTypeActive=MethodPOM.clickByLicnesetypeActiveInternal(driver).getText();
+		
+	     int ByLicensetypeActiveggraph = Integer.parseInt(ByLicenseTypeActive);	//Reading Active graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickByLicnesetypeActiveInternal(driver).click();					//Clicking on 'Active' image
 	      Thread.sleep(5000);
 	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
 	      JavascriptExecutor Js = (JavascriptExecutor) driver;
@@ -1487,6 +2132,64 @@ public class StatutoryMethod {
 			 Thread.sleep(3000);
 			 
    }
+   public static void ByLicensetypeTerminateInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
+   {
+
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	   Thread.sleep(3000);
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeTerminateInternal(driver)));	  
+		String ByLicenseTypeTerminate=MethodPOM.clickByLicnesetypeTerminateInternal(driver).getText();
+		
+	     int ByLicensetypeTerminateggraph = Integer.parseInt(ByLicenseTypeTerminate);	//Reading Terminate graph count.
+	     Thread.sleep(4000);
+	      MethodPOM.clickByLicnesetypeTerminateInternal(driver).click();					//Clicking on 'Terminate' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+	      JavascriptExecutor Js = (JavascriptExecutor) driver;
+		   Js.executeScript("window.scrollBy(0,2000)");
+		   Thread.sleep(3000);
+			//wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByStatsExpiringReadcount(driver)));	 
+			MethodPOM.clickAllReadcount(driver).click();//Clicking on total items count
+			Thread.sleep(5000);
+			String item = MethodPOM.clickAllReadcount(driver).getText();	//Reading total items String value
+			String[] bits = item.split(" ");								//Splitting the String
+			String ByLicensetypeCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			
+			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+			int total = Integer.parseInt(ByLicensetypeCount);
+			if(ByLicensetypeTerminateggraph == total)
+				{
+					test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By Licnesetype Graph Terminate License Count.");
+					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Licnese type Graph Terminate License   Count.");
+					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
+				}
+				Thread.sleep(3000);
+				
+			 MethodPOM.clickExportGraph(driver).click();
+			 Thread.sleep(3000);
+			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.clickAllOverview(driver).click();
+			 Thread.sleep(3000);
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
+			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+			 Thread.sleep(3000);
+			MethodPOM.clickBystatuscloseoverview(driver).click();
+			 Thread.sleep(4000);
+			   Js1.executeScript("window.scrollBy(500,0)");
+			   Thread.sleep(3000);
+			driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			 
+   }
+
 
 }
 

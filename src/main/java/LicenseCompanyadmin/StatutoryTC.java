@@ -1,4 +1,4 @@
-package LicenseCompanyadmin;
+package licenseCompanyadmin;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -201,7 +201,29 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-   @Test(priority = 9)
+	@Test(priority = 3)
+		void LicenseExpiredOnStatutory() throws InterruptedException
+		{
+			test = extent.startTest("License Expired On Working Verification");
+			test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.LicenseExpiredOnStatutory(driver, test, "Statutory");
+			
+			extent.endTest(test);
+			extent.flush();
+		}*/
+	@Test(priority = 4)
+	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+	{
+		test = extent.startTest("License Expired On Working Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		StatutoryMethod.LicenseExpiringOnStatutory(driver, test, "Statutory");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+   /*@Test(priority = 9)
 	void AllFilter() throws InterruptedException
 	{
 		test = extent.startTest("All Filter Working Verification");
@@ -212,17 +234,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-   @Test(priority = 10)
-	void LicenseExpiredOn() throws InterruptedException
-	{
-		test = extent.startTest("License Expired On Working Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		StatutoryMethod.LicenseExpiredOn(driver, test, "Statutory");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
+
 	 @Test(priority = 11)
 		void BystausExpiringlicense() throws InterruptedException
 		{
@@ -304,7 +316,7 @@ public class StatutoryTC {
 	  @Test(priority = 14)
 		void BylicnesetypeApplied() throws InterruptedException
 		{
-			test = extent.startTest("License Expring On Working Verification");
+			test = extent.startTest("License Applied On Working Verification");
 			test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeApplied(driver, test, "Statutory");
@@ -315,15 +327,15 @@ public class StatutoryTC {
 	  @Test(priority = 14)
 			void BylicnesetypeActive() throws InterruptedException
 			{
-				test = extent.startTest("License Expring On Working Verification");
+				test = extent.startTest("License Active On Working Verification");
 				test.log(LogStatus.INFO, "Test Initiated");
 				
 				StatutoryMethod.ByLicensetypeActive(driver, test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
-			}*/
-	  @Test(priority = 14)
+			}
+	  @Test(priority = 15)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
 			test = extent.startTest("License Expring On Working Verification");
@@ -333,7 +345,7 @@ public class StatutoryTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 	}
 
 

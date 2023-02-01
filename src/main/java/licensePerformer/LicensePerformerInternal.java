@@ -84,7 +84,7 @@ public class LicensePerformerInternal
 		extent.flush();
 	}
 	
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -146,7 +146,7 @@ public class LicensePerformerInternal
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 	
 	@Test(priority = 4)
 	void Expired() throws InterruptedException
@@ -180,7 +180,7 @@ public class LicensePerformerInternal
 		extent.flush();
 	}
 	
-	@Test(priority = 5)
+	/*@Test(priority = 5)
 	void Applied() throws InterruptedException
 	{
 		test = extent.startTest("Applied Count Verification");
@@ -234,5 +234,5 @@ public class LicensePerformerInternal
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 }
