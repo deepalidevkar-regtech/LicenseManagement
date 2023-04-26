@@ -71,6 +71,10 @@ public class Login
 			{
 				ans1 = getAnswerCFO(que1);						//Storing the answer in ans variable.
 			}
+			else if(method.equalsIgnoreCase("License") )
+			{
+				ans1 = getAnsweImp(que1);						//Storing the answer in ans variable.
+			}
 			else if(method.equalsIgnoreCase("cfo-diy"))
 			{
 				ans1 = "123";						//Storing the answer in ans variable.
@@ -94,22 +98,28 @@ public class Login
 			{
 				ans2 = getAnswerCFO(que2);						//Storing the answer in ans variable.
 			}
+			else if(method.equalsIgnoreCase("License") )
+			{
+				ans2 = getAnsweImp(que2);						//Storing the answer in ans variable.
+			}
 			else if(method.equalsIgnoreCase("cfo-diy"))
 			{
 				ans2 = "123";						//Storing the answer in ans variable.
 			}
+			
 			else
 			{
 				ans2 = "123";							//Storing the answer in ans variable.
 			}
 			
 			if(ans2.equalsIgnoreCase("birthplace"))
-				LoginPOM.Answer2(driver).sendKeys("place");		//Sending answer to the input box.
+				LoginPOM.Answer2(driver).sendKeys("123");		//Sending answer to the input box.
 			else
-				LoginPOM.Answer2(driver).sendKeys(ans2);		//Sending answer to the input box.
+				LoginPOM.Answer2(driver).sendKeys("123");		//Sending answer to the input box.
 			Thread.sleep(100);
 			
-			LoginPOM.SubmitAnswer(driver).click();				//Clicking on Submit button.
+			
+		LoginPOM.SubmitAnswer(driver).click();				//Clicking on Submit button.
 		}		
 		if(!method.equalsIgnoreCase("Implementation"))
 		{
@@ -167,4 +177,18 @@ public class Login
 			ans = "red";
 		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
 	}
+	public static String getAnsweImp(String que)			//Method created to extract last word from question
+	{														//as it is the answer of the question.
+		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+		int len = last.length();							
+		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+		if(ans.equalsIgnoreCase("pet"))
+			ans = "pet";
+		if(ans.equalsIgnoreCase("car"))
+			ans = "car";
+		if(ans.equalsIgnoreCase("power"))
+			ans = "power";
+		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
 }

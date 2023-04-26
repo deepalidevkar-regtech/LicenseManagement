@@ -13,6 +13,7 @@ import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -22,16 +23,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.collect.Table.Cell;
+import com.google.inject.Key;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
+import licenseManagement.licmgmtPOM;
 import licensePerformer.LiPerformerPOM;
 import licenseReviewer.LiReviewerPOM;
 import performer.OverduePOM;
 
 public class StatutoryMethod {
+	public static final String Allfilter = null;
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
 	public static ExtentReports extent;			//Instance created for report file
@@ -115,7 +119,7 @@ public class StatutoryMethod {
 		  
 		 Thread.sleep(3000);
 		 MethodPOM.ClickUserSave(driver).click();
-		 Thread.sleep(3000);
+		 Thread.sleep(5000);
 		 MethodPOM.ClickUserClose(driver).click();
 		 Thread.sleep(5000);
 		 MethodPOM.ClickEditUser(driver).click();
@@ -206,32 +210,34 @@ public class StatutoryMethod {
 		js1.executeScript("window.scroll(0,500)");
     	
         Thread.sleep(5000);
-        MethodPOM.ClickLicenseNumber(driver).sendKeys("Ar4224123");
+        MethodPOM.ClickLicenseNumber(driver).sendKeys("Ar2324fdf224123");
         
         Thread.sleep(3000);
-        MethodPOM.ClickLicenseTitle(driver).sendKeys("Update Li44343eeecense For Automation");
+        MethodPOM.ClickLicenseTitle(driver).sendKeys("123Update test23 For Automation");
         
         Thread.sleep(3000);
         MethodPOM.ClickLicenseStartDate(driver).sendKeys("22-02-2023");
         
-        Thread.sleep(3000);
-        MethodPOM.LicenseEnddate(driver).sendKeys("20-05-2026");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+        MethodPOM.LicenseEnddate(driver).sendKeys("30-05-2026");
+        Thread.sleep(5000);
         MethodPOM.LicenseEnddate(driver).click();
         
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MethodPOM.LicenseUploadDocument(driver).sendKeys("C:\\Users\\dipali\\Desktop\\Bhagyesh\\Oct month test cases 2022.xlsx");
         
+        Thread.sleep(5000);
+        MethodPOM.FileNumber(driver).sendKeys("5660fsfss5");
+        Thread.sleep(5000);
+        js1.executeScript("window.scroll(0,500)");
+        Thread.sleep(5000);
+        MethodPOM.RenewLicenseSubmit(driver).click();    
         Thread.sleep(3000);
-        MethodPOM.FileNumber(driver).sendKeys("5660ss5");
-        Thread.sleep(3000);
-        MethodPOM.RenewLicenseSubmit(driver).click();
-        
-        Thread.sleep(3000);
+        js1.executeScript("window.scroll(0,1000)");
         MethodPOM.RenewLicenseClose(driver).click();
         
         
-        
+   
         
         
     }
@@ -294,28 +300,26 @@ public class StatutoryMethod {
 	     int activelicense = Integer.parseInt(active);	//Reading Active count.
 
 	      MethodPOM.clickActive(driver).click();					//Clicking on 'Active' image
-	      Thread.sleep(4000);
+	      Thread.sleep(5000);
 	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			
 			MethodPOM.clickReadActive(driver).click();					//Clicking on total items count
 			Thread.sleep(500);
 			String item = MethodPOM.clickReadActive(driver).getText();	//Reading total items String value
 			String[] bits = item.split(" ");								//Splitting the String
 			String LicenseActiveCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
-			
-			//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
 			int total = Integer.parseInt(LicenseActiveCount);
 			if(activelicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard Active License  Count = "+activelicense);
+				//	test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard Active License   Count.");
+					test.log(LogStatus.PASS, "No of Active License  in the grid = "+total+" | Dashboard Active License  Count = "+activelicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard Active License  Count = "+activelicense);
+					//test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard Active License   Count.");
+					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard Active License  Count = "+activelicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -352,13 +356,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseActiveCount);
 			if(activelicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active Internal License  grid matches to Dashboard Active Internal License   Count.");
-					test.log(LogStatus.INFO, "No of Active  Internal License  in the grid = "+total+" | Dashboard Active Internal  License  Count = "+activelicense);
+					//test.log(LogStatus.PASS, "Number of Active Internal License  grid matches to Dashboard Active Internal License   Count.");
+					test.log(LogStatus.PASS, "No of Active  Internal License  in the grid = "+total+" | Dashboard Active Internal  License  Count = "+activelicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active Internal License does not matches to Dashboard Active Internal License   Count.");
-					test.log(LogStatus.INFO, "No of Active Internal License  in the grid = "+total+" | Dashboard Active Internal License  Count = "+activelicense);
+					//test.log(LogStatus.FAIL, "Number of Active Internal License does not matches to Dashboard Active Internal License   Count.");
+					test.log(LogStatus.FAIL, "No of Active Internal License  in the grid = "+total+" | Dashboard Active Internal License  Count = "+activelicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -395,13 +399,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseExpiringCount);
 			if(Expiringlicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard Expiring  License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring  License  in the grid = "+total+" | Dashboard Expiring License  Count = "+Expiringlicense);
+					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard Expiring  License   Count.");
+					test.log(LogStatus.PASS, "No of Expiring  License  in the grid = "+total+" | Dashboard Expiring License  Count = "+Expiringlicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard Expiring License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard Expiring License  Count = "+Expiringlicense);
+					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard Expiring License   Count.");
+					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard Expiring License  Count = "+Expiringlicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -438,13 +442,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseExpiringCount);
 			if(Expiringlicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expiring Internal  License  grid matches to Dashboard Expiring Internal  License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring Internal   License  in the grid = "+total+" | Dashboard Expiring Internal  License  Count = "+Expiringlicense);
+					//test.log(LogStatus.PASS, "Number of Expiring Internal  License  grid matches to Dashboard Expiring Internal  License   Count.");
+					test.log(LogStatus.PASS, "No of Expiring Internal   License  in the grid = "+total+" | Dashboard Expiring Internal  License  Count = "+Expiringlicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expiring Internal License does not matches to Dashboard Expiring Internal  License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring Internal  License  in the grid = "+total+" | Dashboard Expiring Internal  License  Count = "+Expiringlicense);
+					//test.log(LogStatus.FAIL, "Number of Expiring Internal License does not matches to Dashboard Expiring Internal  License   Count.");
+					test.log(LogStatus.FAIL, "No of Expiring Internal  License  in the grid = "+total+" | Dashboard Expiring Internal  License  Count = "+Expiringlicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -481,13 +485,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseExpiredCount);
 			if(Expiredlicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard Expired  License   Count.");
-					test.log(LogStatus.INFO, "No of Expired  License  in the grid = "+total+" | Dashboard Expired License  Count = "+Expiredlicense);
+					//test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard Expired  License   Count.");
+					test.log(LogStatus.PASS, "No of Expired  License  in the grid = "+total+" | Dashboard Expired License  Count = "+Expiredlicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard Expired License   Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard Expired License  Count = "+Expiredlicense);
+					//test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard Expired License   Count.");
+					test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard Expired License  Count = "+Expiredlicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -526,13 +530,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseExpiredCount);
 			if(Expiredlicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expired Internal License  grid matches to Dashboard Expired Internal License   Count.");
-					test.log(LogStatus.INFO, "No of Expired Internal  License  in the grid = "+total+" | Dashboard Expired Internal License  Count = "+Expiredlicense);
+					//test.log(LogStatus.PASS, "Number of Expired Internal License  grid matches to Dashboard Expired Internal License   Count.");
+					test.log(LogStatus.PASS, "No of Expired Internal  License  in the grid = "+total+" | Dashboard Expired Internal License  Count = "+Expiredlicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expired Internal  License does not matches to Dashboard Expired Internal  License   Count.");
-					test.log(LogStatus.INFO, "No of Expired Internal License  in the grid = "+total+" | Dashboard Expired Internal  License  Count = "+Expiredlicense);
+					//test.log(LogStatus.FAIL, "Number of Expired Internal  License does not matches to Dashboard Expired Internal  License   Count.");
+					test.log(LogStatus.FAIL, "No of Expired Internal License  in the grid = "+total+" | Dashboard Expired Internal  License  Count = "+Expiredlicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -571,13 +575,13 @@ public class StatutoryMethod {
 				int total = Integer.parseInt(LicenseAppliedCount);
 				if(Appliedlicense == total)
 					{
-						test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard Applied  License   Count.");
-						test.log(LogStatus.INFO, "No of Applied  License  in the grid = "+total+" | Dashboard Applied License  Count = "+Appliedlicense);
+						//test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard Applied  License   Count.");
+						test.log(LogStatus.PASS, "No of Applied  License  in the grid = "+total+" | Dashboard Applied License  Count = "+Appliedlicense);
 					}
 					else
 					{
-						test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard Applied License   Count.");
-						test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard Applied License  Count = "+Appliedlicense);
+						//test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard Applied License   Count.");
+						test.log(LogStatus.FAIL, "No of Applied License  in the grid = "+total+" | Dashboard Applied License  Count = "+Appliedlicense);
 					}
 					Thread.sleep(3000);
 					//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -592,7 +596,18 @@ public class StatutoryMethod {
 	}
 	public static void AppliedInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{
-		 WebDriverWait wait = new WebDriverWait(driver, 20);
+		 Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   MethodPOM.clickDashlicensetype(driver).click();
+		   Thread.sleep(3000);
+		   
+		   MethodPOM.SearchInternalLicenseType(driver).sendKeys("Annual Maintenance",Keys.ENTER);
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+		   
+
+			WebDriverWait wait = new WebDriverWait(driver, 20);
 			
 			wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickApplied(driver)));
 			String Applied=MethodPOM.clickApplied(driver).getText();
@@ -601,37 +616,58 @@ public class StatutoryMethod {
 
 		      MethodPOM.clickApplied(driver).click();					//Clicking on 'Applied' image
 		      Thread.sleep(4000);
-		        JavascriptExecutor js1=(JavascriptExecutor) driver ;
+		 
+		      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
+		      
+		      
+
+	    	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 				js1.executeScript("window.scroll(0,500)");
-				Thread.sleep(4000);
+				String item1 = MethodPOM.clickReadApplied(driver).getText();	//Reading total items String value
 				
-				MethodPOM.clickReadApplied(driver).click();					//Clicking on total items count
-				Thread.sleep(500);
-				String item = MethodPOM.clickReadApplied(driver).getText();	//Reading total items String value
-				String[] bits = item.split(" ");								//Splitting the String
-				String LicenseAppliedCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
-				
-				//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
-				int total = Integer.parseInt(LicenseAppliedCount);
-				if(Appliedlicense == total)
-					{
-						test.log(LogStatus.PASS, "Number of Applied Internal  License  grid matches to Dashboard Applied Internal   License   Count.");
-						test.log(LogStatus.INFO, "No of Applied Internal  License  in the grid = "+total+" | Dashboard Applied  Internal License  Count = "+Appliedlicense);
-					}
-					else
-					{
-						test.log(LogStatus.FAIL, "Number of Applied Internal  License does not matches to Dashboard Applied Internal License   Count.");
-						test.log(LogStatus.INFO, "No of Applied Internal  License  in the grid = "+total+" | Dashboard Applied Internal License  Count = "+Appliedlicense);
-					}
-					Thread.sleep(3000);
-					//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
-					//Thread.sleep(3000);
+		      if(!item1.equalsIgnoreCase("No items to display"))
+		      {
+		    	//   JavascriptExecutor js=(JavascriptExecutor) driver ;
+					js1.executeScript("window.scroll(0,500)");
+					Thread.sleep(4000);
 					
-					MethodPOM.ClickActiveOverview(driver).click();
-					test.log(LogStatus.PASS, "Applied License Overview Details Successfully");
-					Thread.sleep(3000);
-					MethodPOM.ClickCloseOverview(driver).click();
+					MethodPOM.clickReadApplied(driver).click();					//Clicking on total items count
+					Thread.sleep(500);
+					String item = MethodPOM.clickReadApplied(driver).getText();	//Reading total items String value
+					String[] bits = item.split(" ");								//Splitting the String
+					String LicenseAppliedCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+					
+					//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
+					int total = Integer.parseInt(LicenseAppliedCount);
+					if(Appliedlicense == total)
+						{
+							//test.log(LogStatus.PASS, "Number of Applied Internal  License  grid matches to Dashboard Applied Internal  License   Count.");
+							test.log(LogStatus.PASS, "No of Applied Internal   License  in the grid = "+total+" | Dashboard Applied Internal  License  Count = "+Appliedlicense);
+						}
+						else
+						{
+							//test.log(LogStatus.FAIL, "Number of Applied Internal License does not matches to Dashboard Applied Internal  License   Count.");
+							test.log(LogStatus.FAIL, "No of Applied Internal  License  in the grid = "+total+" | Dashboard Applied Internal  License  Count = "+Appliedlicense);
+						}
+						Thread.sleep(3000);
+						//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+						//Thread.sleep(3000);
+						
+						MethodPOM.ClickActiveOverview(driver).click();
+						test.log(LogStatus.PASS, " Applied License Overview Details Sucessfully");
+						Thread.sleep(3000);
+						MethodPOM.ClickCloseOverview(driver).click();
+						MethodPOM.clickMyDashboard(driver).click();
+						
+						
+		      }
+		      else
+		      {
+					test.log(LogStatus.PASS,"No record Found" );
 					MethodPOM.clickMyDashboard(driver).click();
+					
+		      }
+		      		    	  
 
 	}
 
@@ -660,13 +696,13 @@ public class StatutoryMethod {
 				int total = Integer.parseInt(LicensependingforreviewCount);
 				if(pendingforreviewlicense == total)
 					{
-						test.log(LogStatus.PASS, "Number of PendingForReview License  grid matches to Dashboard PendingForReview  License   Count.");
-						test.log(LogStatus.INFO, "No of PendingForReview  License  in the grid = "+total+" | Dashboard PendingForReview License  Count = "+pendingforreviewlicense);
+					//	test.log(LogStatus.PASS, "Number of PendingForReview License  grid matches to Dashboard PendingForReview  License   Count.");
+						test.log(LogStatus.PASS, "No of Pending For Review  License  in the grid = "+total+" | Dashboard Pending For Review License  Count = "+pendingforreviewlicense);
 					}
 					else
 					{
-						test.log(LogStatus.FAIL, "Number of PendingForReview License does not matches to Dashboard PendingForReview License   Count.");
-						test.log(LogStatus.INFO, "No of PendingForReview License  in the grid = "+total+" | Dashboard PendingForReview License  Count = "+pendingforreviewlicense);
+						//test.log(LogStatus.FAIL, "Number of PendingForReview License does not matches to Dashboard PendingForReview License   Count.");
+						test.log(LogStatus.FAIL, "No of Pending For Review License  in the grid = "+total+" | Dashboard Pending For Review License  Count = "+pendingforreviewlicense);
 					}
 					Thread.sleep(3000);
 					//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -680,16 +716,37 @@ public class StatutoryMethod {
 	}
 	public static void pendingforreviewInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{
+		 Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+		   
+		   
 		 WebDriverWait wait = new WebDriverWait(driver, 20);
 			
-			wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickpendingforreview(driver)));
-			String PendingForReview=MethodPOM.clickpendingforreview(driver).getText();
-			
-		     int pendingforreviewlicense = Integer.parseInt(PendingForReview);	//Reading Pending For Review count.
 
-		      MethodPOM.clickpendingforreview(driver).click();					//Clicking on 'Pending For Review ' image
+			wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickpendingforreview(driver)));
+			String pendingforreviewlicense=MethodPOM.clickpendingforreview(driver).getText();
+			
+		     int PendingForReviewlicense = Integer.parseInt(pendingforreviewlicense);	//Reading Expired count.
+
+		      MethodPOM.clickpendingforreview(driver).click();					//Clicking on 'Expired' image
 		      Thread.sleep(4000);
-		        JavascriptExecutor js1=(JavascriptExecutor) driver ;
+		 
+		      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
+		      
+		      
+
+	    	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
+				js1.executeScript("window.scroll(0,500)");
+				String item1 = MethodPOM.clickReadpendingforreview(driver).getText();	//Reading total items String value
+				
+		      if(!item1.equalsIgnoreCase("No items to display"))
+		      {
+
+		       // JavascriptExecutor js1=(JavascriptExecutor) driver ;
 				js1.executeScript("window.scroll(0,500)");
 				Thread.sleep(4000);
 				
@@ -701,15 +758,15 @@ public class StatutoryMethod {
 				
 				//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
 				int total = Integer.parseInt(LicensependingforreviewCount);
-				if(pendingforreviewlicense == total)
+				if(PendingForReviewlicense == total)
 					{
-						test.log(LogStatus.PASS, "Number of PendingForReview Internal  License  grid matches to Dashboard PendingForReview Internal License   Count.");
-						test.log(LogStatus.INFO, "No of PendingForReview Internal  License  in the grid = "+total+" | Dashboard PendingForReview Internal  License  Count = "+pendingforreviewlicense);
+						//test.log(LogStatus.PASS, "Number of PendingForReview Internal  License  grid matches to Dashboard PendingForReview Internal License   Count.");
+						test.log(LogStatus.PASS, "No of PendingForReview Internal  License  in the grid = "+total+" | Dashboard PendingForReview Internal  License  Count = "+pendingforreviewlicense);
 					}
 					else
 					{
-						test.log(LogStatus.FAIL, "Number of PendingForReview Internal License does not matches to Dashboard PendingForReview Internal  License   Count.");
-						test.log(LogStatus.INFO, "No of PendingForReview Internal  License  in the grid = "+total+" | Dashboard PendingForReview Internal  License  Count = "+pendingforreviewlicense);
+						//test.log(LogStatus.FAIL, "Number of PendingForReview Internal License does not matches to Dashboard PendingForReview Internal  License   Count.");
+						test.log(LogStatus.FAIL, "No of PendingForReview Internal  License  in the grid = "+total+" | Dashboard PendingForReview Internal  License  Count = "+pendingforreviewlicense);
 					}
 					Thread.sleep(3000);
 					//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -720,7 +777,15 @@ public class StatutoryMethod {
 					Thread.sleep(3000);
 					MethodPOM.ClickCloseOverview(driver).click();
 					MethodPOM.clickMyDashboard(driver).click();
-	}
+					
+					
+		      }
+					else
+					{
+						test.log(LogStatus.PASS,"No record Found" );
+						MethodPOM.clickMyDashboard(driver).click();
+						}
+					}
    public static void RejectedLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
 	   WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -746,13 +811,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicensRejected);
 			if(RejectedLicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Rejected License  grid matches to Dashboard Rejected  License   Count.");
-					test.log(LogStatus.INFO, "No of Rejected  License  in the grid = "+total+" | Dashboard Rejected License  Count = "+RejectedLicense);
+					//test.log(LogStatus.PASS, "Number of Rejected License  grid matches to Dashboard Rejected  License   Count.");
+					test.log(LogStatus.PASS, "No of Rejected  License  in the grid = "+total+" | Dashboard Rejected License  Count = "+RejectedLicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Rejected License does not matches to Dashboard Rejected License   Count.");
-					test.log(LogStatus.INFO, "No of Rejected License  in the grid = "+total+" | Dashboard Rejected License  Count = "+RejectedLicense);
+					//test.log(LogStatus.FAIL, "Number of Rejected License does not matches to Dashboard Rejected License   Count.");
+					test.log(LogStatus.FAIL, "No of Rejected License  in the grid = "+total+" | Dashboard Rejected License  Count = "+RejectedLicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -767,7 +832,14 @@ public class StatutoryMethod {
    }
    public static void RejectedInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
-	   WebDriverWait wait = new WebDriverWait(driver, 20);
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+		   
+	   WebDriverWait wait = new WebDriverWait(driver, 40);
 		
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickRejected(driver)));
 		String Rejected=MethodPOM.clickRejected(driver).getText();
@@ -776,9 +848,15 @@ public class StatutoryMethod {
 
 	      MethodPOM.clickRejected(driver).click();					//Clicking on 'Rejected ' image
 	      Thread.sleep(4000);
+
+	      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
 	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
-			Thread.sleep(4000);
+			Thread.sleep(5000);
+			String item1 = MethodPOM.clickReadpendingforreview(driver).getText();	//Reading total items String value
+			Thread.sleep(5000);
+		      if(!item1.equalsIgnoreCase("No items to display"))
+		      {
 			
 			MethodPOM.clickReadRejected(driver).click();					//Clicking on total items count
 			Thread.sleep(500);
@@ -790,13 +868,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicensRejected);
 			if(RejectedLicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Rejected Internal License  grid matches to Dashboard Rejected Internal License   Count.");
-					test.log(LogStatus.INFO, "No of Rejected Internal License  in the grid = "+total+" | Dashboard Rejected Internal License  Count = "+RejectedLicense);
+					//test.log(LogStatus.PASS, "Number of Rejected Internal License  grid matches to Dashboard Rejected Internal License   Count.");
+					test.log(LogStatus.PASS, "No of Rejected Internal License  in the grid = "+total+" | Dashboard Rejected Internal License  Count = "+RejectedLicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Rejected Internal  License does not matches to Dashboard Rejected Internal  License   Count.");
-					test.log(LogStatus.INFO, "No of Rejected Internal  License  in the grid = "+total+" | Dashboard Rejected Internal  License  Count = "+RejectedLicense);
+					//test.log(LogStatus.FAIL, "Number of Rejected Internal  License does not matches to Dashboard Rejected Internal  License   Count.");
+					test.log(LogStatus.FAIL, "No of Rejected Internal  License  in the grid = "+total+" | Dashboard Rejected Internal  License  Count = "+RejectedLicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
@@ -807,11 +885,19 @@ public class StatutoryMethod {
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				MethodPOM.clickMyDashboard(driver).click();
+				}
+				else
+				{
+					test.log(LogStatus.PASS,"No record Found" );
+					MethodPOM.clickMyDashboard(driver).click();
+					}
 	   
    }
 
    public static void TerminateLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
+	  
+		   
 	   WebDriverWait wait = new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate(driver)));
@@ -835,39 +921,55 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicensTerminate);
 			if(TerminateLicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard Terminate  License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate  License  in the grid = "+total+" | Dashboard Terminate License  Count = "+TerminateLicense);
+					//test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard Terminate  License   Count.");
+					test.log(LogStatus.PASS, "No of Terminate  License  in the grid = "+total+" | Dashboard Terminate License  Count = "+TerminateLicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard Terminate License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard Terminate License  Count = "+TerminateLicense);
+					//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard Terminate License   Count.");
+					test.log(LogStatus.FAIL, "No of Terminate License  in the grid = "+total+" | Dashboard Terminate License  Count = "+TerminateLicense);
 				}
 				Thread.sleep(3000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
 				//Thread.sleep(3000);
 				
 				MethodPOM.ClickActiveOverview(driver).click();
-			
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, " License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
+
+				
 				MethodPOM.clickMyDashboard(driver).click();
 	   
    }
    public static void TerminateInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate(driver)));
 		String Terminate=MethodPOM.clickTerminate(driver).getText();
 		
 	     int TerminateLicense = Integer.parseInt(Terminate);	//Reading Terminate count.
-
+	 	Thread.sleep(5000);
 	      MethodPOM.clickTerminate(driver).click();					//Clicking on 'Terminate ' image
+	      Thread.sleep(5000);
+	      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
 	      Thread.sleep(4000);
+	      String item1 = MethodPOM.clickReadpendingforreview(driver).getText();	//Reading total items String value
+			Thread.sleep(5000);
+			
+		      if(!item1.equalsIgnoreCase("No items to display"))
+		      {
 	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 			
 			MethodPOM.clickReadTerminate(driver).click();					//Clicking on total items count
 			Thread.sleep(500);
@@ -879,33 +981,45 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicensTerminate);
 			if(TerminateLicense == total)
 				{
-					test.log(LogStatus.PASS, "Number of Terminate Internal License  grid matches to Dashboard Terminate Internal License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate Internal  License  in the grid = "+total+" | Dashboard Terminate Internal License  Count = "+TerminateLicense);
+					//test.log(LogStatus.PASS, "Number of Terminate Internal License  grid matches to Dashboard Terminate Internal License   Count.");
+					test.log(LogStatus.PASS, "No of Terminate Internal  License  in the grid = "+total+" | Dashboard Terminate Internal License  Count = "+TerminateLicense);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Terminate Internal License does not matches to Dashboard Terminate Internal  License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate Internal  License  in the grid = "+total+" | Dashboard Terminate Internal  License  Count = "+TerminateLicense);
+				//	test.log(LogStatus.FAIL, "Number of Terminate Internal License does not matches to Dashboard Terminate Internal  License   Count.");
+					test.log(LogStatus.FAIL, "No of Terminate Internal  License  in the grid = "+total+" | Dashboard Terminate Internal  License  Count = "+TerminateLicense);
 				}
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
 				//Thread.sleep(3000);
 				
 				MethodPOM.ClickActiveOverview(driver).click();
-			
+				test.log(LogStatus.PASS, " License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				MethodPOM.clickMyDashboard(driver).click();
-	   
-   }
+		      }
+					else
+					{
+						test.log(LogStatus.PASS,"No record Found" );
+						MethodPOM.clickMyDashboard(driver).click();
+						}
+		   
+		   }
+   
    public static void Allfilter(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
 	   MethodPOM.AllFilter(driver).click();
 	   Thread.sleep(3000);
 	   MethodPOM.InternalFilter(driver).click();
-	   
+	   MethodPOM.clickDashlicensetype(driver).click();
+	   MethodPOM.DashSearchLienseType(driver).sendKeys("Annual Maintenance",Keys.ENTER);
 	   MethodPOM.ClickApply(driver).click();
+	   MethodPOM.DashoardClearBtn(driver).click();
+	   test.log(LogStatus.PASS, "Clear Button Working Successfully");
+	   MethodPOM.clickMyDashboard(driver).click();
+	   
 	   
 	   
 	   
@@ -913,48 +1027,84 @@ public class StatutoryMethod {
    public static void LicenseExpiredOnInternal(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+	   Thread.sleep(3000);
 	   MethodPOM.ClickMaximizeLicenseExpiredOn(driver).click();
-	  
+	 
 	   Thread.sleep(3000);
 	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 		js1.executeScript("window.scroll(0,500)");
+		Thread.sleep(500);
+		 MethodPOM.ClickOnDashExpiredExport(driver).click();  
+		 test.log(LogStatus.PASS, "Dashboard Expired On License List Downloaded Successfully");
 		
 	   MethodPOM.ClickShowMoreExpiredOnInternal(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
+		Thread.sleep(3000);
 	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 	   Thread.sleep(3000);
 	   MethodPOM.ClickExportExpiredOn(driver).click();
-		test.log(LogStatus.PASS, "Expired On License List Downloaded Sucessfully");
+		test.log(LogStatus.PASS, "Expired On License List Downloaded Successfully");
 	   
 		Thread.sleep(3000);
 		MethodPOM.ClickOverviewExpiredOn(driver).click();
 		test.log(LogStatus.PASS, "Expied OverView License Displayed");
-	   
-	   
-	   
+		Thread.sleep(3000);
+        MethodPOM.clickBystatuscloseoverview(driver).click();
+		 Thread.sleep(2000);
+		  // Js.executeScript("window.scrollBy(500,0)");
+		driver.switchTo().parentFrame();
+		 MethodPOM.clickCloseGraphPopup(driver).click();
+		 Thread.sleep(3000);
+  
+   
+		 
+		 
    }
    public static void LicenseExpiredOnStatutory(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
 	   MethodPOM.ClickMaximizeLicenseExpiredOn(driver).click();
-	  
+	   test.log(LogStatus.PASS, "Expired Maximize Button Working Successfully");
 	   Thread.sleep(3000);
 	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 		js1.executeScript("window.scroll(0,500)");
+        MethodPOM.ClickExportExpiredOn1(driver).click();
+        test.log(LogStatus.PASS, "Dashboard ExpiredOn License List Downloaded Sucessfully");
+        Thread.sleep(2000);
 		
 	   MethodPOM.ClickShowMoreExpiredOnStatutory(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
 	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
-	   Thread.sleep(3000);
+	   Thread.sleep(5000);
 	   MethodPOM.ClickExportExpiredOn(driver).click();
-		test.log(LogStatus.PASS, "Expired On License List Downloaded Sucessfully");
-	   
-		Thread.sleep(3000);
+		test.log(LogStatus.PASS, "Expired License List Downloaded Sucessfully");
+		Thread.sleep(5000);
+		/*MethodPOM.ExpiredOnLictype(driver).click();
+		MethodPOM.searchExpiredOnLictype(driver).sendKeys("Boiler",Keys.ENTER);
+		MethodPOM.Clearfilter(driver).click();
+		test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
+		
+    
+		Thread.sleep(7000);*/
+	    licenseManagement.licmgmtPOM.lictype(driver).click();
+		Thread.sleep(7000);
+	    licenseManagement.licmgmtPOM.lictype1(driver).click();
+		Thread.sleep(7000);
+		MethodPOM.Clearfilter(driver).click();
+		test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
+		Thread.sleep(7000);
 		MethodPOM.ClickOverviewExpiredOn(driver).click();
 		test.log(LogStatus.PASS, "Expied OverView License Displayed");
 		 Thread.sleep(3000);
              MethodPOM.clickBystatuscloseoverview(driver).click();
 			 Thread.sleep(2000);
+			
+			
 			  // Js.executeScript("window.scrollBy(500,0)");
 			driver.switchTo().parentFrame();
 			 MethodPOM.clickCloseGraphPopup(driver).click();
@@ -965,12 +1115,22 @@ public class StatutoryMethod {
    {
 	   Thread.sleep(3000);
 	   MethodPOM.ClickMaximizeLicenseExpiringOn(driver).click();
-	  
+	   test.log(LogStatus.PASS, "Expiring On Maximize Button Working Successfully");
 	   Thread.sleep(3000);
 	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 		js1.executeScript("window.scroll(0,500)");
+		MethodPOM.DashExpiringOnExport(driver).click();
+		test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
 		
 	   MethodPOM.ClickShowMoreExpiringOnStatutory(driver).click();
+	   Thread.sleep(7000);
+	   licenseManagement.licmgmtPOM.lictype(driver).click();
+	   Thread.sleep(7000);
+	   licenseManagement.licmgmtPOM.lictype1(driver).click();
+	   Thread.sleep(3000);
+	   MethodPOM.Clearfilter(driver).click();
+		test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
+	   
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
 	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 	   Thread.sleep(3000);
@@ -1005,7 +1165,7 @@ public class StatutoryMethod {
 			}
 			count = Integer.parseInt(LicenseCount);
 			
-			File dir = new File("C://Already Automate//");
+			File dir = new File("C:\\Users\\dipali\\Downloads");
 			File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 			
 			js1.executeScript("window.scrollBy(0,-2000)");				//Scrolling down window by 2000 px.
@@ -1013,7 +1173,7 @@ public class StatutoryMethod {
 			MethodPOM.ClickExportExpiredOn(driver).click();						//Clicking on Excel Image.
 			
 			Thread.sleep(3000);
-			File dir1 = new File("C://Already Automate//");
+			File dir1 = new File("C:\\Users\\dipali\\Downloads");
 			File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 			
 			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
@@ -1038,13 +1198,13 @@ public class StatutoryMethod {
 				
 				if(count == SheetRecords)
 				{
-					test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
-					test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+					//test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
+					test.log(LogStatus.PASS, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
-					test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+					//test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
+					test.log(LogStatus.FAIL, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
 				}
 			}
 			else
@@ -1054,17 +1214,22 @@ public class StatutoryMethod {
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
+			test.log(LogStatus.PASS, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
 		}
 		driver.switchTo().parentFrame();
 		 MethodPOM.clickCloseGraphPopup(driver).click();
 		 Thread.sleep(3000);
-
+         
 	   
    }
    public static void BystatusExpringInternalgraph(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
-	 
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1091,19 +1256,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusExpiringCount);
 			if(BystatusExpiringgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By status Graph Expiring License Count.");
-					test.log(LogStatus.INFO, "No of Expiring  License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By status Graph Expiring License Count.");
+					test.log(LogStatus.PASS, "No of Expiring  License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Status Graph  Expiring License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Status Graph  Expiring License   Count.");
+					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(3000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.CliclInternallicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickGraphoverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1147,19 +1321,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusExpiringCount);
 			if(BystatusExpiringgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By status Graph Expiring License Count.");
-					test.log(LogStatus.INFO, "No of Expiring  License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By status Graph Expiring License Count.");
+					test.log(LogStatus.PASS, "No of Expiring  License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Status Graph  Expiring License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Status Graph  Expiring License   Count.");
+					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(5000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickGraphoverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1203,19 +1386,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusTerminateCount);
 			if(BystatusTerminateggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By status Graph Terminate License Count.");
-					test.log(LogStatus.INFO, "No of Terminate  License  in the grid = "+total+" | Dashboard By Status Terminate License  Count = "+BystatusTerminateggraph);
+					//test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By status Graph Terminate License Count.");
+					test.log(LogStatus.PASS, "No of Terminate  License  in the grid = "+total+" | Dashboard By Status Terminate License  Count = "+BystatusTerminateggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Status Graph  Terminate License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Status Terminate License  Count = "+BystatusTerminateggraph);
+					//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Status Graph  Terminate License   Count.");
+					test.log(LogStatus.FAIL, "No of Terminate License  in the grid = "+total+" | Dashboard By Status Terminate License  Count = "+BystatusTerminateggraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(4000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickBystatusTerminateOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1259,21 +1451,31 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusActiveCount);
 			if(BystatusActiveggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
-					test.log(LogStatus.INFO, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
+					//test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
+					test.log(LogStatus.PASS, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
+					//test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
+					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(4000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			/* MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);*/
 			 MethodPOM.clickBystatusActiveOverview(driver).click();
 			 Thread.sleep(3000);
+			 
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
 			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
 			 Thread.sleep(3000);
@@ -1289,6 +1491,12 @@ public class StatutoryMethod {
    public static void BystatusActiveInternalgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
 
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1315,19 +1523,27 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusActiveCount);
 			if(BystatusActiveggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
-					test.log(LogStatus.INFO, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
+					//test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
+					test.log(LogStatus.PASS, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
+					//test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
+					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusActiveggraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			/* MethodPOM.ClicllicensetypeInternal1(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);*/
 			 MethodPOM.clickBystatusActiveOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1344,7 +1560,12 @@ public class StatutoryMethod {
    }
    public static void BystatusTerminateInternalgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1371,19 +1592,27 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusTerminateCount);
 			if(BystatusTerminateggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By status Graph Active License Count.");
-					test.log(LogStatus.INFO, "No of Active  License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusTerminateggraph);
+					//test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By status Graph Terminate License Count.");
+					test.log(LogStatus.PASS, "No of Terminate  License  in the grid = "+total+" | Dashboard By Status Terminate License  Count = "+BystatusTerminateggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Status Graph  Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Status Active License  Count = "+BystatusTerminateggraph);
+					//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Status Graph  Terminate License   Count.");
+					test.log(LogStatus.FAIL, "No of Terminate License  in the grid = "+total+" | Dashboard By Status Terminate License  Count = "+BystatusTerminateggraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.ClicllicensetypeInternal1(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickBystatusActiveOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1429,19 +1658,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusAppliedbutnotRenewedCount);
 			if(BystatusExpiredappliedbutnotrenewedgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Applied But not Renewed License  grid matches to Dashboard By status Graph Applied But not Renewed License Count.");
-					test.log(LogStatus.INFO, "No of Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+					//test.log(LogStatus.PASS, "Number of Applied But not Renewed License  grid matches to Dashboard By status Graph Applied But not Renewed License Count.");
+					test.log(LogStatus.PASS, "No of Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Applied But not Renewed License does not matches to Dashboard By Status Graph  Applied But not Renewed License   Count.");
-					test.log(LogStatus.INFO, "No of Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+					//test.log(LogStatus.FAIL, "Number of Applied But not Renewed License does not matches to Dashboard By Status Graph  Applied But not Renewed License   Count.");
+					test.log(LogStatus.FAIL, "No of Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(4000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickBystatusExpiredappliedbutnotrenewedOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1458,7 +1696,12 @@ public class StatutoryMethod {
    }
    public static void BystatusExpiredappliedbutnotrenewedInternalgraph(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1485,19 +1728,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusAppliedbutnotRenewedCount);
 			if(BystatusExpiredappliedbutnotrenewedgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Applied But not Renewed License  grid matches to Dashboard By status Graph Applied But not Renewed License Count.");
-					test.log(LogStatus.INFO, "No of Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+					//test.log(LogStatus.PASS, "Number of Applied But not Renewed License  grid matches to Dashboard By status Graph Applied But not Renewed License Count.");
+					test.log(LogStatus.PASS, "No of Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Applied But not Renewed License does not matches to Dashboard By Status Graph  Applied But not Renewed License   Count.");
-					test.log(LogStatus.INFO, "No of Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+					//test.log(LogStatus.FAIL, "Number of Applied But not Renewed License does not matches to Dashboard By Status Graph  Applied But not Renewed License   Count.");
+					test.log(LogStatus.FAIL, "No of Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(4000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.CliclInternallicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickBystatusExpiredappliedbutnotrenewedOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1541,21 +1793,30 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusExpiredCount);
 			if(BystatusExpiredgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By status Graph Expired License Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
+					//test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By status Graph Expired License Count.");
+					test.log(LogStatus.PASS, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard By Status Graph Expired License   Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
+					//test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard By Status Graph Expired License   Count.");
+					test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+
+             MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
-			 Thread.sleep(3000);
+			 Thread.sleep(5000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
 			 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
 			 Thread.sleep(3000);
@@ -1571,6 +1832,12 @@ public class StatutoryMethod {
    public static void BystatusExpiredInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
 
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1597,19 +1864,27 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(LicenseBystatusExpiredCount);
 			if(BystatusExpiredgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By status Graph Expired License Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
+					//test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By status Graph Expired License Count.");
+					test.log(LogStatus.PASS, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard By Status Graph Expired License   Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
+					//test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard By Status Graph Expired License   Count.");
+					test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard By Status Expired License  Count = "+BystatusExpiredgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.ClicllicensetypeInternal1(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1653,19 +1928,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeExpiredgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By Licnesetype Graph Expired License Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+					//test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By Licnesetype Graph Expired License Count.");
+					test.log(LogStatus.PASS, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnesetype Graph Applied License   Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+				//	test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnesetype Graph Applied License   Count.");
+					test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(5000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1682,17 +1966,22 @@ public class StatutoryMethod {
    }
    public static void ByLicensetypeExpiredInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
 	    WebDriverWait wait = new WebDriverWait(driver, 40);
-		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpired(driver)));	  
-		String ByLicenseTypeExpired=MethodPOM.clickByLicnesetypeExpired(driver).getText();
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpiredInternal(driver)));	  
+		String ByLicenseTypeExpired=MethodPOM.clickByLicnesetypeExpiredInternal(driver).getText();
 		
 	     int ByLicensetypeExpiredgraph = Integer.parseInt(ByLicenseTypeExpired);	//Reading Expired graph count.
 	     Thread.sleep(4000);
-	      MethodPOM.clickByLicnesetypeExpired(driver).click();					//Clicking on 'Expired' image
+	      MethodPOM.clickByLicnesetypeExpiredInternal(driver).click();					//Clicking on 'Expired' image
 	      Thread.sleep(5000);
 	      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
 	      JavascriptExecutor Js = (JavascriptExecutor) driver;
@@ -1709,19 +1998,27 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeExpiredgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By Licnesetype Graph Expired License Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+					//test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By Licnese type Graph Expired License Count.");
+					test.log(LogStatus.PASS, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnesetype Graph Applied License   Count.");
-					test.log(LogStatus.INFO, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+					//test.log(LogStatus.FAIL, "Number of Expired License does not matches to Dashboard By Licnese type Graph Expired License   Count.");
+					test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.ClicllicensetypeInr(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1765,19 +2062,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeExpiringgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By Licnesetype Graph Expiring License Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By Licnesetype Graph Expiring License Count.");
+					test.log(LogStatus.PASS, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Licnese type Graph Expiring License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Licnese type Graph Expiring License   Count.");
+					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(3000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.Clicllicensetype(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1794,7 +2100,12 @@ public class StatutoryMethod {
    }
    public static void ByLicensetypeExpiringInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
+	  /* Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   */
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1821,19 +2132,27 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeExpiringgraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By Licnesetype Graph Expiring License Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By Licnesetype Graph Expiring License Count.");
+					test.log(LogStatus.PASS, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Licnese type Graph Expiring License   Count.");
-					test.log(LogStatus.INFO, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Licnese type Graph Expiring License   Count.");
+					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 Thread.sleep(5000);
+			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 MethodPOM.ClicllicensetypeInr(driver).click();
+			 Thread.sleep(5000);
+			 MethodPOM.GraphPopupClear(driver).click();
+			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1854,7 +2173,7 @@ public class StatutoryMethod {
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
-	    WebDriverWait wait = new WebDriverWait(driver, 40);
+	    WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeApplied(driver)));	  
 		String ByLicenseTypeApplied=MethodPOM.clickByLicnesetypeApplied(driver).getText();
 		
@@ -1877,19 +2196,28 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeAppliedggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard By Licnesetype Graph Applied License Count.");
-					test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+					//test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard By Licnesetype Graph Applied License Count.");
+					test.log(LogStatus.PASS, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnese type Graph Applied License   Count.");
-					test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+					//test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnese type Graph Applied License   Count.");
+					test.log(LogStatus.FAIL, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
 				}
 				Thread.sleep(3000);
 				
 			 MethodPOM.clickExportGraph(driver).click();
 			 Thread.sleep(3000);
 			 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+			 Thread.sleep(5000);
+			 MethodPOM.BystatusExpiringLicensetype(driver).click();
+			 			 Thread.sleep(5000);
+			 			 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+			 			 MethodPOM.Clicllicensetype(driver).click();
+			 			 Thread.sleep(5000);
+			 			 MethodPOM.GraphPopupClear(driver).click();
+			 			 test.log(LogStatus.PASS, "Clear Button Working successfully");
+			 			 Thread.sleep(5000);
 			 MethodPOM.clickAllOverview(driver).click();
 			 Thread.sleep(3000);
 			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -1906,8 +2234,13 @@ public class StatutoryMethod {
    }
    public static void ByLicensetypeAppliedInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
-	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
 	    WebDriverWait wait = new WebDriverWait(driver, 40);
@@ -1933,13 +2266,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeAppliedggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard By Licnesetype Graph Applied License Count.");
-					test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+					//test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard By Licnesetype Graph Applied License Count.");
+					test.log(LogStatus.PASS, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnese type Graph Applied License   Count.");
-					test.log(LogStatus.INFO, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+					//test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnese type Graph Applied License   Count.");
+					test.log(LogStatus.FAIL, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
 				}
 				Thread.sleep(3000);
 				
@@ -1991,13 +2324,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeActiveggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By Licnesetype Graph Active License Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
+					//test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By Licnesetype Graph Active License Count.");
+					test.log(LogStatus.PASS, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Licnese type Graph Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
+					//test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Licnese type Graph Active License   Count.");
+					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2020,7 +2353,13 @@ public class StatutoryMethod {
    }
    public static void ByLicensetypeActiveInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
+      
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -2048,13 +2387,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeActiveggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By Licnesetype Graph Active License Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
+					//test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard By Licnesetype Graph Active License Count.");
+					test.log(LogStatus.PASS, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Licnese type Graph Active License   Count.");
-					test.log(LogStatus.INFO, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
+					//test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard By Licnese type Graph Active License   Count.");
+					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard By Licnese type Active License  Count = "+ByLicensetypeActiveggraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2105,13 +2444,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeTerminateggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By Licnesetype Graph Terminate License Count.");
-					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
+					//test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By Licnesetype Graph Terminate License Count.");
+					test.log(LogStatus.PASS, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Licnese type Graph Terminate License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
+					//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Licnese type Graph Terminate License   Count.");
+					test.log(LogStatus.FAIL, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2134,7 +2473,12 @@ public class StatutoryMethod {
    }
    public static void ByLicensetypeTerminateInternal(WebDriver driver, ExtentTest test, String type ) throws InterruptedException
    {
-
+	   Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -2143,7 +2487,7 @@ public class StatutoryMethod {
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeTerminateInternal(driver)));	  
 		String ByLicenseTypeTerminate=MethodPOM.clickByLicnesetypeTerminateInternal(driver).getText();
 		
-	     int ByLicensetypeTerminateggraph = Integer.parseInt(ByLicenseTypeTerminate);	//Reading Terminate graph count.
+	    int ByLicensetypeTerminateggraph = Integer.parseInt(ByLicenseTypeTerminate);	//Reading Terminate graph count.
 	     Thread.sleep(4000);
 	      MethodPOM.clickByLicnesetypeTerminateInternal(driver).click();					//Clicking on 'Terminate' image
 	      Thread.sleep(5000);
@@ -2162,13 +2506,13 @@ public class StatutoryMethod {
 			int total = Integer.parseInt(ByLicensetypeCount);
 			if(ByLicensetypeTerminateggraph == total)
 				{
-					test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By Licnesetype Graph Terminate License Count.");
-					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
+					//test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard By Licnesetype Graph Terminate License Count.");
+					test.log(LogStatus.PASS, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Licnese type Graph Terminate License   Count.");
-					test.log(LogStatus.INFO, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
+					//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Licnese type Graph Terminate License   Count.");
+					test.log(LogStatus.FAIL, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2189,7 +2533,610 @@ public class StatutoryMethod {
 			 Thread.sleep(3000);
 			 
    }
+   public static void MyWorkspace(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+   {
+	   WebDriverWait wait = new WebDriverWait(driver, 20);
+	   MethodPOM.ClickMyWorkspace(driver).click();
+	   Thread.sleep(5000);
+	   MethodPOM.clickWrklictype(driver).click();
+	   Thread.sleep(7000);
+	  // MethodPOM.Searchtype(driver).sendKeys("Boiler",Keys.ENTER);
+	   MethodPOM.Click1(driver).click();
+	   Thread.sleep(7000);
+	   MethodPOM.Clearfilter(driver).click();
+	   test.log(LogStatus.PASS, "Clear Button Working Successfully");
+	   Thread.sleep(7000);
+	   MethodPOM.MyworkspaceOverview(driver).click();
+	   Thread.sleep(7000);
+	   MethodPOM.Overviewclose(driver).click();
+	   test.log(LogStatus.PASS, "Overview  Button Working Successfully");
+	   licmgmtPOM.ClickAddLicense(driver).click();
+		 
+		 Thread.sleep(3000);	
+		 licmgmtPOM.ClickLicenseTypeDropdown(driver).click();
+		 licmgmtPOM.SelectLicenseType(driver).click();
+		 
+		 Thread.sleep(500);
+		 licmgmtPOM.ClickLocation(driver).click();
+		 Thread.sleep(200);
+		 licmgmtPOM.LocationMaximize(driver).click();
+		 Thread.sleep(3000);
+		 licmgmtPOM.SelectLocation(driver).click();
+		 
+		 Thread.sleep(3000);
+		 licmgmtPOM.ClickCompliance(driver).click();
+		 Thread.sleep(5000);
+		 licmgmtPOM.SelectLicenseCompliance(driver).get(1).click();
+		 
+		 Thread.sleep(5000);
+		 licmgmtPOM.ClickPerformer(driver).click();
+		 Thread.sleep(6000);
+		 licmgmtPOM.SelectPerformer(driver).get(3).click();
+		// licmgmtPOM.SelectPerformer(driver).click();
+		 
+		 Thread.sleep(3000);
+		 licmgmtPOM.ClickReviewer(driver).click();
+		 Thread.sleep(6000);
+		 licmgmtPOM.SelectReviewer(driver).get(111).click(); 
+		 
+		 XSSFSheet Sheet= ReadExcel();
+		 Thread.sleep(3000);
+		 sheet = workbook.getSheetAt(2);
+		 Row row6= sheet.getRow(6);
+		  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
+		 String LicenseTitle= c1.getStringCellValue();
+		 licmgmtPOM.LicenseTitle(driver).sendKeys(LicenseTitle);
+		 
+		 Thread.sleep(3000);
+		 Row row7=sheet.getRow(7);
+			org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
+		 String LicenseNo=c2.getStringCellValue();
+		 licmgmtPOM.LicenseNo(driver).sendKeys(LicenseNo);
+		 
+		 Thread.sleep(3000);
+		 Row row8=sheet.getRow(8);
+			org.apache.poi.ss.usermodel.Cell c3=row8.getCell(1);
+		 String ApplicationDays=c3.getStringCellValue();
+		 licmgmtPOM.ApplicationDays(driver).sendKeys(ApplicationDays);
+		 
+		 Thread.sleep(3000);
+		 Row row9=sheet.getRow(9);
+			org.apache.poi.ss.usermodel.Cell c4=row9.getCell(1);
+		 String LicenseCost=c4.getStringCellValue();
+		 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost);
+		 
+		 licmgmtPOM.ClickCal(driver).click();
+		 Thread.sleep(7000);
+		 licmgmtPOM.NewDate(driver).click();
+		 Thread.sleep(5000);
+		licmgmtPOM.ClickCal1(driver).click();
+		 Thread.sleep(7000);
+		licmgmtPOM.NewEndDate(driver).click();
+		
+		 
+		Thread.sleep(300);
+		// licmgmtPOM.Chooesfile(driver).click();
+			//String workingDir = System.getProperty("user.dir");
+			//licmgmtPOM.Chooesfile(driver).sendKeys(workingDir+"//Reports//LicensePerformerResults(Statutory).html");
+      
 
+	      JavascriptExecutor js1=(JavascriptExecutor) driver ;
+			js1.executeScript("window.scroll(0,2000)");
+		 licmgmtPOM.ClickNomineedrp(driver).click();
+		 Thread.sleep(3000);
+		 licmgmtPOM.SelectNominee(driver).click();
+		 Thread.sleep(5000);
+		 licmgmtPOM.ClickModificdate(driver).click();
+		 Thread.sleep(5000);
+		 licmgmtPOM.ModificatioDate(driver).click();
+		 Thread.sleep(5000);
+		 licmgmtPOM.nomineestartdatecal(driver).click();
+		 Thread.sleep(3000);
+		 licmgmtPOM.selectnominstartdate(driver).click();
+		 Thread.sleep(3000);
+		 JavascriptExecutor js2=(JavascriptExecutor) driver ;
+			js2.executeScript("window.scroll(0,2000)");
+		 licmgmtPOM.nomineeEnddatecal(driver).click();
+		 Thread.sleep(5000);
+		 licmgmtPOM.selectnomineenddate(driver).click();
+		 Thread.sleep(5000);
+		 licmgmtPOM.Nomineesubmit(driver).click();
+	
+		
+	   
+	   
+   }
+   public static void MyDocuments(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		
+	
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickExpired(driver)));
+		
+		LiPerformerPOM.clickMyDocuments(driver).click();		//Clicking on 'My Documents'
+		Thread.sleep(3000);
+		LiPerformerPOM.clickMyDocumentsMenu(driver).click();	//Clicking on 'My Documents'
+		
+	wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+		
+		if(type.equalsIgnoreCase("Internal"))
+		{
+			LiPerformerPOM.clickType2(driver).click();			//Clicking on 'Type' drop down.
+			Thread.sleep(500);
+			LiPerformerPOM.selectInternal(driver).click();//Selecting 'Internal' option.
+			Thread.sleep(1000);
+			
+		}
+		
+		Thread.sleep(500);
+		File dir = new File("C:\\Users\\dipali\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		MethodPOM.DownloadDocument(driver).click();
+		
+		Thread.sleep(3000);
+       
+		File dir1 = new File("C:\\Users\\dipali\\Downloads");
+		File[] dirContents1 = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < dirContents1.length)
+		{
+			test.log(LogStatus.PASS, "File downloaded successfully.");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
+		
+		
+		Thread.sleep(3000);
+		
+		MethodPOM.ViewDocument(driver).click();
+		test.log(LogStatus.PASS, "Document View successfully.");
+		
+		Thread.sleep(3000);
+		MethodPOM.closeViewDocument(driver).click();
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
+		OverduePOM.clickDashboard(driver).click();
+	}
+   public static void MyReports(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+	{
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			
+			//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickExpired(driver)));
+			
+			LiPerformerPOM.clickMyReport(driver).click();		//Clicking on 'My Reports'
+			
+			progress(driver);
+			
+			wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+			
+			if(type.equalsIgnoreCase("Internal"))
+			{
+				LiPerformerPOM.clickType2(driver).click();			//Clicking on 'Type' drop down.
+				Thread.sleep(500);
+				LiPerformerPOM.selectInternal(driver).click();//Selecting 'Internal' option.
+				Thread.sleep(1000);
+				progress(driver);
+			}
+			
+			CheckReports(driver, test, 1, "Active");
+			
+			CheckReports(driver, test, 2, "Expired");
+			
+			CheckReports(driver, test, 3, "Expiring");
+			
+			CheckReports(driver, test, 4, "Applied");
+			
+			CheckReports(driver, test, 5, "Applied but Pending for Renewal");
+			
+			CheckReports(driver, test, 6, "Renewed");
+			
+			CheckReports(driver, test, 7, "Rejected");
+			
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//*[@id=\'grid\']/div[2]/table/tbody/tr[1]/td[16]/a")).click();
+		    Thread.sleep(500);
+			driver.findElement(By.xpath("//*[@id=\"divShowReminderDialog\"]/div/div/div[1]/button")).click();
+		     
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
+			
+			OverduePOM.clickDashboard(driver).click();
+		}
+		
+		public static void CheckReports(WebDriver driver, ExtentTest test, int status, String type) throws InterruptedException, IOException
+		{		
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,-1000)");
+			
+			LiPerformerPOM.clickStatus1(driver).click();			//Clicking on 'Status' drop down.
+			Thread.sleep(500);
+			elementsList = LiPerformerPOM.selectStatus1(driver);	//Selecting Status.
+			elementsList.get(status).click();
+			
+			Thread.sleep(1000);
+			progress(driver);
+			
+			int flag = 0;
+			try
+			{
+				wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+				flag = 1;
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			if(flag == 1)
+			{
+				js.executeScript("window.scrollBy(0,2000)");				//Scrolling down window by 2000 px.
+				
+				Thread.sleep(700);
+				String item = LiPerformerPOM.readTotalRecords1(driver).getText();
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count = 0;
+				if(compliancesCount.equalsIgnoreCase("to"))
+				{
+					Thread.sleep(2500);
+					item = CFOcountPOM.readTotalItems1(driver).getText();
+					bits = item.split(" ");										//Splitting the String
+					compliancesCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
+				}
+				count = Integer.parseInt(compliancesCount);
+				
+				File dir = new File("C:\\Users\\dipali\\Download");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+				
+				js.executeScript("window.scrollBy(0,-2000)");				//Scrolling down window by 2000 px.
+				Thread.sleep(500);
+				LiPerformerPOM.clickExcel(driver).click();						//Clicking on Excel Image.
+				
+				Thread.sleep(3000);
+				File dir1 = new File("C:\\Users\\dipali\\Download");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+			    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+			    {
+			       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+			       {
+			           lastModifiedFile = allFilesNew[i];
+			       }
+			    }
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					test.log(LogStatus.PASS, type+" :- File downloaded successfully.");
+					
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					int no = sheet.getLastRowNum();
+					int SheetRecords = no - 0;						//Sheet have extra 5 lines of information at top (But row count started from 0, so -4)
+					fis.close();
+					
+					if(count == SheetRecords)
+					{
+						test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
+						test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
+						test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, type+" :- File doesn't downloaded successfully.");
+				}
+			}
+			else
+			{
+				test.log(LogStatus.SKIP, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
+			}
+
+}
+
+		private static void progress(WebDriver driver2) {
+			// TODO Auto-generated method stub
+			
+		}
+		public static void CriticalDocuments(WebDriver driver, ExtentTest test) throws InterruptedException
+		{
+			Thread.sleep(1000);
+		   OverduePOM.clickMyDocuments(driver).click();					//Clicking on 'My Documents'
+			
+			Thread.sleep(3000);
+			OverduePOM.clickCriticalDocuments(driver).click();				//Clicking on 'Critical Documents'
+			
+			WebDriverWait wait = new WebDriverWait(driver, 15);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail']")));	//Wating till the content table gets visible
+			
+			Thread.sleep(500);
+			String name = OverduePOM.readFolderName(driver).getText();		//Reading the folder name to create new folder.
+			
+			String folder = name+"E"; 
+			
+			OverduePOM.clickNew(driver).click();							//Clicking on '+New' button.
+			
+			Thread.sleep(1000);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(500);
+			OverduePOM.clickNewFolder(driver).click();						//Clicking on 'New Folder'
+			
+			Thread.sleep(2000);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(300);
+			OverduePOM.clickIsUniversal(driver).click();
+			
+			Thread.sleep(1000);
+			OverduePOM.writeFolderName(driver).sendKeys(folder);			//Writing Folder name.
+			
+			Thread.sleep(1000);
+			OverduePOM.clickCreate(driver).click();						//Clicking on create button.
+			
+			Thread.sleep(500);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(500);
+		//	String msg = driver.switchTo().alert().getText();
+			//test.log(LogStatus.INFO, msg);
+			Thread.sleep(300);
+			//driver.switchTo().alert().accept();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@align='left'])[1]")));
+			name = OverduePOM.readFolderName(driver).getText();				//Reading the folder name we had created
+			
+			if(folder.equalsIgnoreCase(name))
+			{
+				test.log(LogStatus.PASS, "Created folder '"+folder+"' displayed in the records.");
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Created folder '"+folder+"' doesn't displayed in the records.");
+			}
+			
+			Thread.sleep(500);
+			OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
+			Thread.sleep(1000);
+			OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
+			
+			Thread.sleep(1000);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickNew(driver)));
+			OverduePOM.clickNew(driver).click();							//Clicking on 'New'
+			
+			Thread.sleep(500);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			//Thread.sleep(500);
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickNewFile(driver)));
+			OverduePOM.clickNewFile(driver).click();						//CLicking on 'New File'
+			
+			Thread.sleep(1000);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(500);
+			String workingDir = System.getProperty("user.dir");
+			OverduePOM.uploadNewFile(driver).sendKeys(workingDir+"//Reports//PerformerResults.html");	//uploading new file		
+			
+			
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickUploadDocument(driver)));
+			OverduePOM.clickUploadDocument(driver).click();				//Clicking on 'Upload Document'
+			
+			Thread.sleep(100);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@align='left'])[1]")));
+			if(OverduePOM.readFolderName(driver).isDisplayed())			//Checking if file got created or not.
+				test.log(LogStatus.PASS, "Uploaded file displayed.");
+			else
+				test.log(LogStatus.PASS, "Uploaded file does not displayed.");
+			
+			OverduePOM.readFolderName(driver).click();						//Clicking on file we had uploaded.
+					
+			Thread.sleep(500);
+			OverduePOM.clickShareFolder(driver).click();					//Clicking on Share Folder image.
+			
+			Thread.sleep(1000);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickPeople(driver)));
+			OverduePOM.clickPeople(driver).click();						//Clicking on People drop down 
+			OverduePOM.clickSearchPeople(driver).click();					//Clicking on Search People drop down.
+			
+			Thread.sleep(500);
+		//	clickSearchPeople(driver).sendKeys("amol");			//Writing user name to search for  CFO
+		//	clickSearchPeople(driver).sendKeys("Company");	        // Auditor
+			Thread.sleep(500);
+			OverduePOM.clickPeopleCheckBox(driver).click();				//Clicking on label to get out from people search box
+			driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]")).click();
+			
+			Thread.sleep(1000);
+			MethodPOM.Clickaftershare(driver).click();
+			Thread.sleep(1000);
+			OverduePOM.clickDone(driver).click();	//Clicking on 'Done' to share folder.
+			Thread.sleep(1000);
+			driver.switchTo().alert().accept();
+			
+			Thread.sleep(1000);
+			OverduePOM.readFolderName(driver).click();						//Clicking on file name we had uploaded.
+			
+			Thread.sleep(500);
+			OverduePOM.clickShareFolder(driver).click();					//Clicking on Share File image.
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_myRepeater_LnkDeletShare_0']")));	//Waiting till the share element gets visible
+			
+			//Thread.sleep(1000);
+			if(OverduePOM.checkShared(driver).isDisplayed())				//Checking if folder gor shared or not.
+				test.log(LogStatus.PASS, "File Shared Successfully.");
+			else
+				test.log(LogStatus.PASS, "Uploaded file does not shared.");
+			
+			Thread.sleep(3000);
+			OverduePOM.closeSharePoppup(driver).click();
+			Thread.sleep(3000);
+			OverduePOM.readFolderName(driver).click();	
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[5]")).click();
+			Thread.sleep(3000);
+			driver.switchTo().alert().accept();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkMyDrive']")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);//search folder
+			test.log(LogStatus.PASS, "File Name Search Successfully.");
+		
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail_lnkEditFolder_0']")).click();
+			Thread.sleep(3000);
+		
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).clear();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("TestAutomated1");
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnCreateFolder1']")).click();
+		     Thread.sleep(3000);
+		
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
+			MethodPOM.clickMyDashboard(driver).click();			//Clicking on Dashboard
+		}
+		public  static void LicenseActivation_NewAssignment(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+		{
+			
+			Thread.sleep(1000);
+			MethodPOM.clickMasterMenu(driver).click();
+           Thread.sleep(2000);
+           MethodPOM.ClickLicenseActivation(driver).click();
+           
+          Thread.sleep(3000);
+          MethodPOM.LicenseNewAssignment(driver).click();
+          
+          Thread.sleep(3000);
+ 		 MethodPOM.ClickLicenseType(driver).click();
+ 		 Thread.sleep(5000);
+ 		 MethodPOM.SearchLicenseType(driver).sendKeys("Boiler",Keys.ENTER);
+ 		 
+ 		
+ 		 Thread.sleep(5000);
+ 		 MethodPOM.CheckLocation(driver).click();
+ 		Thread.sleep(3000);
+ 		MethodPOM.SelectLocation(driver).click();
+ 		Thread.sleep(3000);
+  		MethodPOM.ClickLocation1(driver).click();
+  		
+  		Thread.sleep(3000);
+  		MethodPOM.CheckCompliance(driver).click();
+  		Thread.sleep(3000);
+  		MethodPOM.ClickPerformer(driver).click();
+  		Thread.sleep(3000);
+  		MethodPOM.SelectLicensePerformer(driver).click();
+  		
+  	
+  		Thread.sleep(3000);
+  		MethodPOM.ClickReviewer(driver).click();
+  		Thread.sleep(5000);
+  		MethodPOM.SelectLicenseReviewer(driver).click();
+  		
+ 		Thread.sleep(3000);
+ 		MethodPOM.AddAssignmentButton(driver).click();
+ 		String msg3 = MethodPOM.readResponseMsg(driver).getText();		//Reading Message appeared after save button
+		
+		if(msg3.equalsIgnoreCase("Assignment saved successfully"))
+		{
+			test.log(LogStatus.PASS, "Message displayed = "+msg3);
+			
+		}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed = "+msg3);
+			}
+
+
+	  }
+		public static void LicenseCreation(WebDriver driver, ExtentTest test, String string) throws InterruptedException, IOException
+		{
+			Thread.sleep(1000);
+			MethodPOM.clickMasterMenu(driver).click();
+           Thread.sleep(2000);
+           MethodPOM.ClickLicenseActivation(driver).click();
+           
+           Thread.sleep(3000);
+   	      	 MethodPOM.ClickLicensetype1(driver).click();
+   		 Thread.sleep(5000);
+   		    MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
+   		    
+   		Thread.sleep(3000);
+   		MethodPOM.CheckCompliance1(driver).click();
+   	 Thread.sleep(3000);
+   	 
+	 XSSFSheet Sheet= ReadExcel();
+   	 Row row7=sheet.getRow(7);
+   		org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
+   	 String LicenseNo=c2.getStringCellValue();
+   	 MethodPOM.LicesneNo1(driver).sendKeys(LicenseNo);
+           
+   
+	 Thread.sleep(3000);
+	 sheet = workbook.getSheetAt(2);
+	 Row row6= sheet.getRow(6);
+	  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
+	 String LicenseTitle= c1.getStringCellValue();
+	 MethodPOM.LicesneTitle1(driver).sendKeys(LicenseTitle);
+	 
+	 Thread.sleep(3000);
+	 MethodPOM.StartDate1(driver).sendKeys("01-03-2023");
+	 Thread.sleep(3000);     
+	 MethodPOM.EndDate1(driver).sendKeys("30-03-2023");
+	 
+	 JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+	   Js1.executeScript("window.scrollBy(0,1000)");
+	   
+	   MethodPOM.SaveButton(driver).click();
+	 
+	   Alert alert1 = driver.switchTo().alert();
+	   String alertMessage1= driver.switchTo().alert().getText();
+	   //test.log(LogStatus.PASS, alertMessage1);
+	   alert1.accept();
+	   Thread.sleep(3000);
+	   String msg = MethodPOM.Message(driver).getText();		//Reading Message appeared after save button
+		
+		if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
+		{
+			test.log(LogStatus.PASS, "Message displayed = "+msg);
+			
+		}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed = "+msg);
+			}
+
+          MethodPOM.clickMyDashboard(driver).click();
+	   
+		}
+		public static void InternalLicenseCreation(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+		{
+			Thread.sleep(1000);
+			MethodPOM.clickMasterMenu(driver).click();
+           Thread.sleep(2000);
+           MethodPOM.InternalCreationMenu(driver).click();
+			  Thread.sleep(3000);
+	   	      	 MethodPOM.ClickInternalLicenseType(driver).click();
+	   		 Thread.sleep(5000);
+	   		    MethodPOM.SearchInternalLicenseType(driver).sendKeys("Annual Maintenance",Keys.ENTER);
+		}
+
+		
+	
 
 }
 

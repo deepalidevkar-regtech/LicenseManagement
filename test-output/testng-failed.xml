@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licenseCompanyadmin.InternalTC">
+      <class name="licenseManagement.licmgmtInternalTC">
         <methods>
+          <include name="MyDocumentsInternal"/>
           <include name="setBrowser"/>
-          <include name="BylicnesetypeActiveInternal"/>
-          <include name="BylicnesetypeTerminateInternal"/>
         </methods>
-      </class> <!-- licenseCompanyadmin.InternalTC -->
+      </class> <!-- licenseManagement.licmgmtInternalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

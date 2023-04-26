@@ -25,7 +25,7 @@ public class LiPerformerPOM
 	
 	public static WebElement clickAction(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit'])[1]"));
+		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[13]/a[3]"));
 		return license;
 	}
 	
@@ -195,13 +195,14 @@ public class LiPerformerPOM
 	
 	public static WebElement clickType2(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@aria-owns='dropdownlistComplianceType_listbox']"));
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlComplianceType']"));
+		
 		return license;
 	}
 	
 	public static WebElement selectInternal(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlComplianceType']/option[2]"));
 		return license;
 	}
 	
@@ -251,6 +252,32 @@ public class LiPerformerPOM
 		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_showReminderDetail']"));
 		return license;
 	}
+	public static WebElement editlicenseicon(WebDriver driver)
+	{
+		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[13]/a[1]"));
+		return license;
+	}
+	public static WebElement licenseOK(WebDriver driver)
+	{
+		license = driver.findElement(By.className("//*[@class=\"k-button k-primary\"]"));
+		return license;
+	}
+	public static WebElement perexpiredon(WebDriver driver)
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkLicExpiredshowMore']"));
+		return license;
+	}
 	
+
+	public static WebElement Expiringmaxmize(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("(//*[@class='fa fa-chevron-up'])[3]"));
+		return license;
+	}
+	public static WebElement Expiringshowmore(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']"));
+		return license;
+	}
 	
 }

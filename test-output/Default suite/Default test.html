@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>19/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 01 19:35:37 IST 2023</td>
+<td>Started on:</td><td>Tue Apr 25 23:38:17 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>674 seconds (674375 ms)</td>
+<tr><td>Total time:</td><td>1184 seconds (1184292 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,28 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.BylicnesetypeTerminateInternal()'><b>BylicnesetypeTerminateInternal</b><br>Test class: licenseCompanyadmin.InternalTC</td>
-<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
+<td title='licenseManagement.licmgmtInternalTC.MyDocumentsInternal()'><b>MyDocumentsInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (343b88a8d4a4d3ab40ec393731427069)] -&gt; id: ContentPlaceHolder1_divExpiredCount] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: &apos;3.141.0&apos;, revision: &apos;2ecb7d9a&apos;, time: &apos;2018-10-31T20:09:30&apos;
-System info: host: &apos;ARPL-059&apos;, ip: &apos;192.168.187.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+System info: host: &apos;ARPL-059&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54448}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fef65c002570995bf62a5bc288a326ef
-	at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-	at licenseCompanyadmin.StatutoryMethod.ByLicensetypeTerminateInternal(StatutoryMethod.java:2140)
-	at licenseCompanyadmin.InternalTC.BylicnesetypeTerminateInternal(InternalTC.java:284)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:65434}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 343b88a8d4a4d3ab40ec393731427069
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at licenseManagement.licmgmtMethodPOM.MyDocuments(licmgmtMethodPOM.java:707)
+	at licenseManagement.licmgmtInternalTC.MyDocumentsInternal(licmgmtInternalTC.java:297)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -125,28 +114,17 @@ Session ID: fef65c002570995bf62a5bc288a326ef
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace700286427", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace700286427'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
+</pre></div><a href='#' onClick='toggleBox("stack-trace834031849", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace834031849'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (343b88a8d4a4d3ab40ec393731427069)] -&gt; id: ContentPlaceHolder1_divExpiredCount] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: &apos;3.141.0&apos;, revision: &apos;2ecb7d9a&apos;, time: &apos;2018-10-31T20:09:30&apos;
-System info: host: &apos;ARPL-059&apos;, ip: &apos;192.168.187.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+System info: host: &apos;ARPL-059&apos;, ip: &apos;192.168.1.34&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54448}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fef65c002570995bf62a5bc288a326ef
-	at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-	at licenseCompanyadmin.StatutoryMethod.ByLicensetypeTerminateInternal(StatutoryMethod.java:2140)
-	at licenseCompanyadmin.InternalTC.BylicnesetypeTerminateInternal(InternalTC.java:284)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:65434}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 343b88a8d4a4d3ab40ec393731427069
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at licenseManagement.licmgmtMethodPOM.MyDocuments(licmgmtMethodPOM.java:707)
+	at licenseManagement.licmgmtInternalTC.MyDocumentsInternal(licmgmtInternalTC.java:297)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -176,136 +154,8 @@ Session ID: fef65c002570995bf62a5bc288a326ef
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
-<tr>
-<td title='licenseCompanyadmin.InternalTC.BylicnesetypeActiveInternal()'><b>BylicnesetypeActiveInternal</b><br>Test class: licenseCompanyadmin.InternalTC</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: showChartDetails (tried for 60 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at licenseCompanyadmin.StatutoryMethod.ByLicensetypeActiveInternal(StatutoryMethod.java:2036)
-	at licenseCompanyadmin.InternalTC.BylicnesetypeActiveInternal(InternalTC.java:273)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;3.141.0&apos;, revision: &apos;2ecb7d9a&apos;, time: &apos;2018-10-31T20:09:30&apos;
-System info: host: &apos;ARPL-059&apos;, ip: &apos;192.168.187.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54448}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fef65c002570995bf62a5bc288a326ef
-*** Element info: {Using=css selector, value=frame[name=&apos;showChartDetails&apos;],iframe[name=&apos;showChartDetails&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByCssSelector(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByCssSelector.findElements(By.java:441)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:878)
-	at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:476)
-	at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:472)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 30 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace1810873106", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1810873106'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for frame to be available: showChartDetails (tried for 60 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at licenseCompanyadmin.StatutoryMethod.ByLicensetypeActiveInternal(StatutoryMethod.java:2036)
-	at licenseCompanyadmin.InternalTC.BylicnesetypeActiveInternal(InternalTC.java:273)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;3.141.0&apos;, revision: &apos;2ecb7d9a&apos;, time: &apos;2018-10-31T20:09:30&apos;
-System info: host: &apos;ARPL-059&apos;, ip: &apos;192.168.187.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:54448}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: fef65c002570995bf62a5bc288a326ef
-*** Element info: {Using=css selector, value=frame[name=&apos;showChartDetails&apos;],iframe[name=&apos;showChartDetails&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByCssSelector(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByCssSelector.findElements(By.java:441)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:878)
-	at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:476)
-	at org.openqa.selenium.support.ui.ExpectedConditions$16.apply(ExpectedConditions.java:472)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 30 more
-</pre></div></td>
-<td>72</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>20</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -315,55 +165,100 @@ Session ID: fef65c002570995bf62a5bc288a326ef
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.Login()'><b>Login</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.Login()'><b>Login</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>14</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>9</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.BystatusActiveInternalgraph()'><b>BystatusActiveInternalgraph</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.RejectedInternalLicense()'><b>RejectedInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>71</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>31</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.BystatusTerminateInternalgraph()'><b>BystatusTerminateInternalgraph</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.ExpiredInternalLicense()'><b>ExpiredInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>26</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.ByLicensetypeExpiredInternal()'><b>ByLicensetypeExpiredInternal</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.BystatusExpringInternalgraph()'><b>BystatusExpringInternalgraph</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>97</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.ByLicensetypeAppliedInternal()'><b>ByLicensetypeAppliedInternal</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.ByLicensetypeAppliedInternal()'><b>ByLicensetypeAppliedInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>78</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.AllFilter()'><b>AllFilter</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.BylicnesetypeTerminateInternal()'><b>BylicnesetypeTerminateInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>11</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>81</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.BystatusExpiredInternal()'><b>BystatusExpiredInternal</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.LicenseExpiredOnInternal()'><b>LicenseExpiredOnInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>34</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.BystatusExpiredappliedbutnotrenewedInternalgraph()'><b>BystatusExpiredappliedbutnotrenewedInternalgraph</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.ActiveInternalLicense()'><b>ActiveInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>30</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.BystatusExpringInternalgraph()'><b>BystatusExpringInternalgraph</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.AppliedInternalLicense()'><b>AppliedInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>29</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 <tr>
-<td title='licenseCompanyadmin.InternalTC.ByLicensetypeExpiringInternal()'><b>ByLicensetypeExpiringInternal</b><br>Test class: licenseCompanyadmin.InternalTC</td>
+<td title='licenseManagement.licmgmtInternalTC.BystatusExpiredappliedbutnotrenewedInternalgraph()'><b>BystatusExpiredappliedbutnotrenewedInternalgraph</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
 <td></td>
-<td>70</td>
-<td>licenseCompanyadmin.InternalTC@22ef9844</td></tr>
+<td>98</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.BystatusExpiredInternal()'><b>BystatusExpiredInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>94</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.ByLicensetypeExpiringInternal()'><b>ByLicensetypeExpiringInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>101</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.TerminateInternalLicense()'><b>TerminateInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>43</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.BystatusActiveInternalgraph()'><b>BystatusActiveInternalgraph</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>84</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.ExpiringInternalLicense()'><b>ExpiringInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>33</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.BystatusTerminateInternalgraph()'><b>BystatusTerminateInternalgraph</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>94</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.ByLicensetypeExpiredInternal()'><b>ByLicensetypeExpiredInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>78</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.BylicnesetypeActiveInternal()'><b>BylicnesetypeActiveInternal</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>80</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
+<tr>
+<td title='licenseManagement.licmgmtInternalTC.PendingForReviewInternalLicense()'><b>PendingForReviewInternalLicense</b><br>Test class: licenseManagement.licmgmtInternalTC</td>
+<td></td>
+<td>26</td>
+<td>licenseManagement.licmgmtInternalTC@3b6ddd1d</td></tr>
 </table><p>
 </body>
 </html>

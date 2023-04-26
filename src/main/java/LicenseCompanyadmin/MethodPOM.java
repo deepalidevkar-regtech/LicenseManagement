@@ -1,19 +1,25 @@
 package licenseCompanyadmin;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class MethodPOM 
 {
 	private static WebElement license = null;	
+	public static List<WebElement> elementsList = null;
+	private static List<WebElement> elementlist;
 public static WebElement clickMasterMenu(WebDriver driver)
 	
 	{
-		WebDriverWait wait= new WebDriverWait(driver,20);
-		license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='leftmastermenu']")));
+		WebDriverWait wait= new WebDriverWait(driver,50);
+		license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='leftmastermenu']/a/span[1]")));
 		return license;
 		
 	}
@@ -21,7 +27,7 @@ public static WebElement clickUserMaster(WebDriver driver)
 	
 	{
 		WebDriverWait wait= new WebDriverWait(driver,20);
-		license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"Mastersubmenu\"]/li[1]/a")));
+		license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='Mastersubmenu']/li[1]/a")));
 		return license;
 		
 	}
@@ -29,7 +35,7 @@ public static WebElement clickAddUser(WebDriver driver)
 
 {
 	WebDriverWait wait= new WebDriverWait(driver,20);
-	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ContentPlaceHolder1_btnAddUser\"]/span")));
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ContentPlaceHolder1_btnAddUser']/span")));
 	return license;
 	
 }
@@ -239,7 +245,7 @@ public static WebElement RenewLicenseClose(WebDriver driver)
 {
 	WebDriverWait wait= new WebDriverWait(driver,30);
 
-	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")));
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='btnClose']")));
 	return license;
 }
 public static WebElement selectLicense(WebDriver driver) 
@@ -269,7 +275,8 @@ public static WebElement clickReadActive(WebDriver driver)
 }
 public static WebElement ClickActiveOverview(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[12]/a[1]"));
+	license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[13]/a[2]"));
+	
 	return license;
 }
 public static WebElement ClickCloseOverview(WebDriver driver)	
@@ -376,6 +383,8 @@ public static WebElement ClickShowMoreExpiredOnInternal(WebDriver driver)
 public static WebElement ClickShowMoreExpiredOnStatutory(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton1']"));
+	
+	
 	return license;
 }
 public static WebElement ClickShowMoreExpiringOnStatutory(WebDriver driver)	
@@ -388,6 +397,12 @@ public static WebElement ClickExportExpiredOn(WebDriver driver)
 	license = driver.findElement(By.xpath("//*[@id='exportReport']"));
 	return license;
 }
+public static WebElement ClickExportExpiredOn1(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnExportExcelExpired']/img"));
+	return license;
+}
+//*[@id="ContentPlaceHolder1_btnExportExcelExpired"]/img
 public static WebElement ClickExpiringOn(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@id='exportReport']"));
@@ -488,11 +503,17 @@ public static WebElement clickAllReadcount(WebDriver driver)
 public static WebElement clickAllOverview(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]/a"));
+	//*[@id="grid"]/div[2]/table/tbody/tr[1]/td[8]/a
 	return license;
 }
 public static WebElement clickByLicnesetypeExpired(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[21]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[25]"));
+	return license;
+}
+public static WebElement clickByLicnesetypeExpiredInternal(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeExpiring(WebDriver driver)	
@@ -502,7 +523,7 @@ public static WebElement clickByLicnesetypeExpiring(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeApplied(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[41]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[49]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeAppliedInternal(WebDriver driver)	
@@ -527,13 +548,326 @@ public static WebElement clickByLicnesetypeTerminate(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeTerminateInternal(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[24]"));
+	license = driver.findElement(By.xpath("//*[@id='highcharts-2']/svg/g[5]/g[9]/rect[1]"));
 	return license;
 }
 public static WebElement checkTable1(WebDriver driver)
 {
 	license = driver.findElement(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr[1]"));
 	return license;
+}
+public static WebElement DownloadDocument(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_lblDownLoadfile_0']"));
+	return license;
+}
+
+public static WebElement ViewDocument(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_lblViewfile_0']"));
+	return license;
+}
+public static WebElement closeViewDocument(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='divViewDocument']/div/div/div[1]/button"));
+	return license;
+}
+public static WebElement Progress(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='imgUpdateProgress']"));
+	return license;
+}
+public static WebElement ClickShareOption(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]"));
+	return license;
+}
+public static WebElement ClickOnDashExpiredExport(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnExportExcelExpired']/img"));
+	return license;
+}
+public static WebElement ClickDashOverviewClose(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='divGraphDetails']/div/div/div[1]/button"));
+	return license;
+}
+public static WebElement ClickLicenseActivation(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='Mastersubmenu']/li[2]/a"));
+	return license;
+}
+public static WebElement LicenseNewAssignment(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_liNotAssigned']"));
+	return license;
+}
+
+public static WebElement ClickLicenseType(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType1_chosen']/a/span"));
+
+	return license;
+}
+public static WebElement SearchLicenseType(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType1_chosen']/div/div/input"));
+	
+
+	return license;
+}
+public static WebElement Licensetype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/a"));
+	return license;
+}
+public static WebElement ClickLocation1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilterLocation1']"));
+	return license;
+}
+
+public static WebElement CheckLocation(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tvFilterLocation1n2CheckBox']"));
+	return license;
+}
+public static WebElement SelectLocation(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnlocation1']"));
+	return license;
+}
+public static WebElement CheckCompliance(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_chkbox_0']"));
+	return license;
+}
+public static WebElement ClickPerformer(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_ddlPerformer_0']"));
+	return license;
+}
+
+public static WebElement SelectLicensePerformer(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_ddlPerformer_0']/option[106]"));
+	return license;
+}
+public static WebElement ClickReviewer(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_ddlReviewer_0']"));
+	return license;
+}
+public static WebElement SelectLicenseReviewer(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_ddlReviewer_0']/option[112]"));
+	return license;
+}
+public static WebElement AddAssignmentButton(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnSaveLicense1']"));
+	return license;
+}
+public static WebElement readResponseMsg(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_vsLicenseListPage1']/ul/li"));
+	return license;
+}
+public static WebElement CheckCompliance1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_chkbox_0']"));
+	return license;
+}
+public static WebElement ClickLicensetype1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/a/span"));
+	return license;
+}
+public static WebElement SearchLicenseType1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/div/div/input"));
+	return license;
+}
+public static WebElement LicesneNo1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_txtLicenseNo_0']"));
+	return license;
+}
+public static WebElement LicesneTitle1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_txtTitle_0']"));
+	return license;
+}
+public static WebElement StartDate1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_txtStartDate_0']"));
+	return license;
+}
+public static WebElement EndDate1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_txtEndDate_0']"));
+	return license;
+}
+public static WebElement SaveButton(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnSaveLicense']"));
+	return license;
+}
+public static WebElement Message(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_vsLicenseListPage']/ul/li"));
+	return license;
+}
+public static WebElement InternalCreationMenu(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='Mastersubmenu']/li[3]/a"));
+	return license;
+}
+public static WebElement ClickInternalLicenseType(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/a/span"));
+	return license;
+}
+public static WebElement SearchInternalLicenseType(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/div/div/input"));
+	return license;
+}
+public static WebElement Clickaftershare(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/label"));
+	return license;
+}
+public static WebElement clickDashlicensetype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/a/span"));
+	return license;
+}
+public static WebElement DashSearchLienseType(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']/div/div/input"));
+	return license;
+}
+public static WebElement DashoardClearBtn(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnClearFilter']"));
+	return license;
+}
+public static WebElement ExpiredOnLictype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id=\"Details\"]/div[1]/span[2]/span/span[1]"));
+	return license;
+}
+public static WebElement searchExpiredOnLictype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType-list']/span/input"));
+	return license;
+}
+public static WebElement Clearfilter(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));
+	return license;
+}
+public static WebElement DashExpiringOnExport(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnExportExcelExpiring']/img"));
+	return license;
+}
+public static WebElement BystatusExpiringLicensetype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
+	
+	return license;
+}
+public static WebElement BystatusExpiringsearchLicensetype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType-list']/span/input"));
+	return license;
+}
+public static WebElement GraphPopupClear(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));
+	
+	return license;
+}
+public static WebElement Clicllicensetype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[53]"));
+	return license;
+}
+public static WebElement ClicllicensetypeInr(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
+	return license;
+}
+public static WebElement ClicllicensetypeInternalapplied(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[53]"));
+	return license;
+}
+public static WebElement CliclInternallicensetype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
+	return license;
+}
+public static WebElement ClicllicensetypeInternal(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[10]"));
+	return license;
+}
+public static WebElement ClicllicensetypeInternal1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
+	return license;
+}
+public static WebElement ClickMyWorkspace(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='leftworkspacemenu']/a/span[1]"));
+	return license;
+}
+public static WebElement clickWrklictype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='MainContentCW']/div[1]/span[4]/span/span[1]"));
+	return license;
+}
+public static WebElement Searchtype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@id='dropdownlistLicenseType-list']/span/input)[2]"));
+	return license;
+}
+public static WebElement clicklic(WebDriver driver)
+{
+	license = driver.findElement(By.linkText("Boiler"));
+	return license;
+}
+public static WebElement Click1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[53])[2]"));
+	return license;
+}
+public static WebElement MyworkspaceOverview(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[4]/td[13]/a[2]"));
+	return license;
+}
+public static WebElement Overviewclose(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='divApiOverView']/div/div/div[1]/button"));
+	return license;
+}
+public static WebElement AddNewLic(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_AddNewLicense']"));
+	return license;
+}
+public static WebElement justclick(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='divUploadDocument']/table"));
+	return license;
+}
+public static WebElement Expiringshowmore(WebDriver driver) {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 

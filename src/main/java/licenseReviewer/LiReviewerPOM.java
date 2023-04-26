@@ -19,7 +19,9 @@ public class LiReviewerPOM
 	
 	public static WebElement checkTable1(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr[1]"));
+	//	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList']"));
+		license = driver.findElement(By.xpath("//*[@id='childrow']/div"));
+		
 		return license;
 	}
 	

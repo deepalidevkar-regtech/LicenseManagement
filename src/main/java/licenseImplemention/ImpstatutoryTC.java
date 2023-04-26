@@ -1,4 +1,4 @@
-package licenseReviewer;
+package licenseImplemention;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,10 +8,10 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -20,11 +20,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import cfo.CFOcountPOM;
-import licensePerformer.LiPerformerPOM;
+public class ImpstatutoryTC {
 
-public class LicenseReviewer 
-{
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
 	public static ExtentReports extent;			//Instance created for report file
@@ -33,13 +30,25 @@ public class LicenseReviewer
 	public static XSSFWorkbook workbook = null;	//Excel sheet workbook variable
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
+	public static List<WebElement> elementsList1 = null;
+	public static List<WebElement> elementsList2 = null;
+	public static List<WebElement> elementsList3 = null;
+	public static List<WebElement> elementsList4 = null;
+	public static List<WebElement> menus = null;
+	public int count = 0;
+	public int interest = 0;					//Variable created for reading Interest
+	public int penalty = 0;						//Variable created for reading Penalty
+	
+	//Write "CFO-diy" for DIYProduction link.
+	//Write "CFO" for login.avantis for CFO Finance
+	public static String link = "Implementation";		//Check link in excel sheet first.
 	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		String workingDir = System.getProperty("user.dir");
 		fis = new FileInputStream(workingDir+"//TestData//ComplianceSheet.xlsx");
 		workbook = new XSSFWorkbook(fis);
-		sheet = workbook.getSheetAt(4);					//Retrieving second sheet of Workbook
+		sheet = workbook.getSheetAt(3);					//Retrieving third sheet of Workbook
 		return sheet;
 	}
 	
@@ -47,7 +56,7 @@ public class LicenseReviewer
 	void setBrowser() throws InterruptedException, IOException
 	{
 		String workingDir = System.getProperty("user.dir");
-		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//LicenseReviewerResults.html",true);
+		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//CFOResultsStatotory.html",true);
 		test = extent.startTest("Verify OpenBrowser");
 		test.log(LogStatus.INFO, "Browser test is initiated");
 		
@@ -56,7 +65,7 @@ public class LicenseReviewer
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
 		
-		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		login.Login1.BrowserSetup(URL);					//Method of Login class to set browser.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -66,7 +75,7 @@ public class LicenseReviewer
 	@Test(priority = 1)
 	void Login() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Logging In - Reviewer");
+		test = extent.startTest("Loging In - CFO Finance (Statutory)");
 		test.log(LogStatus.INFO, "Logging into system");
 		
 		XSSFSheet sheet = ReadExcel();
@@ -78,55 +87,57 @@ public class LicenseReviewer
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
-		driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
+		//Write "CFO-diy" for DIYProduction link.
+		//Write "CFO" for login.avantis
+		driver = login.Login1.UserLogin(uname,password,link);		//Method of Login class to login user.
+		
+		//CFOcountPOM.clickRefresh(driver).click();
+		//Thread.sleep(3000);
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-/*	@Test(priority = 2)
-	void PendingReviewStatutory() throws InterruptedException
+	public static void progress1(WebDriver driver)
 	{
-		test = extent.startTest("Pending For Review (Statutory) Count Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		LiReMethodsPOM.PendingReviewCount(driver, test, workbook);
-		
+		WebDriverWait wait = new WebDriverWait(driver, 180);
+		try
+		{
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[@id='imgcaldate']"))));
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+	
+	/*@Test(priority = 2)
+	void CompliancemappingExport()throws InterruptedException
+	{
+		test = extent.startTest("statutory License Compliance Mapping Export Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		 ImpMethodPOM.compliancemappingExport(driver, test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
-	
 	@Test(priority = 3)
-	void PendingReviewInternal() throws InterruptedException
+	void StatutoryLicenseCreation()throws InterruptedException, IOException
 	{
-		test = extent.startTest("Pending For Review (Internal) Count Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
-		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
-		drp.selectByIndex(1);									//Selecting 'Internal' type.
-		
-		Thread.sleep(1500);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
-		
-		LiReMethodsPOM.PendingReviewCountInternal(driver, test, workbook);
-		
+		test = extent.startTest("statutory License Creation Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		 ImpMethodPOM.statutorylicnesecreation(driver, test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}*/
-	 @Test(priority = 18)
-		void CriticalDocuments() throws InterruptedException, IOException
-			{
-				test = extent.startTest("Critical Document Verification");
-				test.log(LogStatus.INFO, "Test Initiated");
-				
-				licenseCompanyadmin.StatutoryMethod.CriticalDocuments(driver, test);
-				
-				extent.endTest(test);
-				extent.flush();
-			}
+	@Test(priority = 4)
+	void StatutoryAddNewAssignment()throws InterruptedException, IOException
+	{
+		test = extent.startTest("statutory Add Assignment Verification");
+		 ImpMethodPOM.AddAssignment(driver, test, "Statutory");
+		extent.endTest(test);
+		extent.flush();
+	}
+
 }

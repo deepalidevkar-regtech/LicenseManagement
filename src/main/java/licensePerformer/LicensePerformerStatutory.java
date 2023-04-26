@@ -17,6 +17,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import licenseCompanyadmin.StatutoryMethod;
+
 public class LicensePerformerStatutory 
 {
 	public static WebDriver driver = null;		//WebDriver instance created
@@ -33,7 +35,7 @@ public class LicensePerformerStatutory
 		String workingDir = System.getProperty("user.dir");
 		fis = new FileInputStream(workingDir+"//TestData//ComplianceSheet.xlsx");
 		workbook = new XSSFWorkbook(fis);
-		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
+		sheet = workbook.getSheetAt(1);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
 	
@@ -79,11 +81,11 @@ public class LicensePerformerStatutory
 		extent.flush();
 	}
 	
-/*	@Test(priority = 2)
+	@Test(priority = 2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
+		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LiPeMethodsPOM.ActiveLicense(driver, test, "Statutory");
 		
@@ -91,7 +93,7 @@ public class LicensePerformerStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 3)
+	/*@Test(priority = 3)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -101,9 +103,9 @@ public class LicensePerformerStatutory
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	
-	@Test(priority = 4)
+/*@Test(priority = 4)
 	void Expired() throws InterruptedException
 	{
 		test = extent.startTest("Expired License Count Verification");
@@ -115,7 +117,7 @@ public class LicensePerformerStatutory
 		extent.flush();
 	}
 	
-	/*@Test(priority = 5)
+/*	@Test(priority = 5)
 	void Applied() throws InterruptedException
 	{
 		test = extent.startTest("Applied Count Verification");
@@ -126,8 +128,42 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 6)
+	void PendingForReview() throws InterruptedException
+	{
+		test = extent.startTest("Pending For Review License Count Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		licenseCompanyadmin.StatutoryMethod.pendingforreviewLicense(driver, test, "Statutory");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	   @Test(priority = 13)
+			void LicenseExpiredOnStatutory() throws InterruptedException
+			{
+				test = extent.startTest("License ExpiredOn Working Verification");
+				//test.log(LogStatus.INFO, "Test Initiated");
+				
+		   LiPeMethodsPOM.LicenseExpiredOnStatutory(driver, test, "Statutory");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+	   @Test(priority = 14)
+		void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+		{
+			test = extent.startTest("License ExpiringOn Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			LiPeMethodsPOM.LicenseExpiringOnStatutoryper(driver, test, "Statutory");
 	
-	/*@Test(priority = 6)
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+/*	@Test(priority = 6)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Download Verification");
@@ -141,8 +177,19 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	
 	@Test(priority = 7)
+		void CriticalDocuments() throws InterruptedException, IOException
+			{
+				test = extent.startTest("Critical Document Verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+				
+				licenseCompanyadmin.StatutoryMethod.CriticalDocuments(driver, test);
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+	
+	/*@Test(priority = 8)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Download Verification");

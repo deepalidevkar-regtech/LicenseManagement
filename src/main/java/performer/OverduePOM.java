@@ -667,7 +667,7 @@ public class OverduePOM
 	
 	public static WebElement clickCriticalDocuments(WebDriver driver)	//Searching 'Critical Document' under My Documents
 	{
-		performer = driver.findElement(By.xpath("//*[@id='DocumentShareListNew']"));
+		performer = driver.findElement(By.xpath("(//*[@id='DocumentShareListNew']/a)[2]"));
 		return performer;
 	}
 	
@@ -739,7 +739,7 @@ public class OverduePOM
 	
 	public static WebElement clickPeopleCheckBox(WebDriver driver)		//Clicking on Checkbox in front of name
 	{
-		performer = driver.findElement(By.xpath("//*[@value='2613']"));
+		performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[143]/a/label/input"));
 		return performer;
 	}
 	
@@ -751,7 +751,7 @@ public class OverduePOM
 	
 	public static WebElement clickDone(WebDriver driver)				//Searching 'Done' button
 	{
-		performer = driver.findElement(By.xpath("//*[@value='Done']"));
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnPermission']"));
 		return performer;
 	}
 	
@@ -1484,7 +1484,7 @@ public class OverduePOM
 		Thread.sleep(500);
 		clickCriticalDocuments(driver).click();				//Clicking on 'Critical Documents'
 		
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail']")));	//Wating till the content table gets visible
 		
 		Thread.sleep(500);
