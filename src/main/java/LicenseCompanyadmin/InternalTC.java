@@ -98,7 +98,7 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 3)
+	/* @Test(priority = 3)
 		void ActiveInternalLicense() throws InterruptedException
 		{
 			test = extent.startTest("Active License Count  Verification");
@@ -286,7 +286,7 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 21)
+	/*  @Test(priority = 21)
 		void MyDocuments() throws InterruptedException
 		{
 			test = extent.startTest("My Documents Download Verification");

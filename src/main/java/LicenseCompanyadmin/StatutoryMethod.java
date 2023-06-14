@@ -322,18 +322,63 @@ public class StatutoryMethod {
 					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard Active License  Count = "+activelicense);
 				}
 				Thread.sleep(3000);
-				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
-				//Thread.sleep(3000);
 				
+				js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+				Thread.sleep(3000);
+				
+				licmgmtPOM.ClickCal(driver).click();
+				 Thread.sleep(7000);
+				 licmgmtPOM.NewDate(driver).click();
+				 Thread.sleep(5000);
+				licmgmtPOM.ClickCal1(driver).click();
+				 Thread.sleep(7000);
+				licmgmtPOM.NewEndDate(driver).click();
+				Thread.sleep(7000);
+				 licmgmtPOM.Nomineesubmit(driver).click();
+				 Thread.sleep(5000);
+				    // Switching to Alert       
+				        Alert alert = driver.switchTo().alert();
+				       
+				        // Capturing alert message.   
+				        String alertMessage= driver.switchTo().alert().getText();
+				       
+				        Thread.sleep(3000);
+				    //    test.log(LogStatus.PASS, alertMessage);
+				       
+				        // Displaying alert message
+				        System.out.println(alertMessage);
+				       
+				       
+				        // Accepting alert
+				        alert.accept();
+				        test.log(LogStatus.PASS,"License Details Updated Successfully" );
+				        
+				          Thread.sleep(5000);
+				          
+				          licmgmtPOM.editlicenseclose(driver).click();
+				          Thread.sleep(300);
+				          licmgmtPOM.ClickMyWorkspace(driver).click();
+				        
 				MethodPOM.ClickActiveOverview(driver).click();
 				test.log(LogStatus.PASS, "Activer License Overview Details Sucessfully");
 				Thread.sleep(3000);
+				
 				MethodPOM.ClickCloseOverview(driver).click();
 				MethodPOM.clickMyDashboard(driver).click();
 	}
 	public static void ActiveInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
-	{		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+	{	
+		Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			
+		
+	//	WebDriverWait wait = new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickActive(driver)));
 		String active=MethodPOM.clickActive(driver).getText();
@@ -418,8 +463,17 @@ public class StatutoryMethod {
 				MethodPOM.clickMyDashboard(driver).click();
 	}
 	public static void ExpiringInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
-	{		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+	{	
+		Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			
+		//WebDriverWait wait = new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpiring(driver)));
 		String Expiring=MethodPOM.clickExpiring(driver).getText();
@@ -507,7 +561,16 @@ public class StatutoryMethod {
 	}
 	public static void ExpiredInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{
-      WebDriverWait wait = new WebDriverWait(driver, 20);
+		Thread.sleep(3000);
+		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
+		   Thread.sleep(3000);
+		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
+		   
+		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
+
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			
+   //   WebDriverWait wait = new WebDriverWait(driver, 20);
 		
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpired(driver)));
 		String Expired=MethodPOM.clickExpired(driver).getText();
@@ -596,6 +659,7 @@ public class StatutoryMethod {
 	}
 	public static void AppliedInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{
+		
 		 Thread.sleep(3000);
 		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
 		   Thread.sleep(3000);
@@ -900,12 +964,12 @@ public class StatutoryMethod {
 		   
 	   WebDriverWait wait = new WebDriverWait(driver, 20);
 		
-		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate(driver)));
-		String Terminate=MethodPOM.clickTerminate(driver).getText();
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateper(driver)));
+		String Terminate=MethodPOM.clickTerminateper(driver).getText();
 		
 	     int TerminateLicense = Integer.parseInt(Terminate);	//Reading Terminate count.
 
-	      MethodPOM.clickTerminate(driver).click();					//Clicking on 'Terminate ' image
+	      MethodPOM.clickTerminateper(driver).click();					//Clicking on 'Terminate ' image
 	      Thread.sleep(4000);
 	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
@@ -953,12 +1017,12 @@ public class StatutoryMethod {
 		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 20);
 		
-		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate(driver)));
-		String Terminate=MethodPOM.clickTerminate(driver).getText();
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateper(driver)));
+		String Terminate=MethodPOM.clickTerminateper(driver).getText();
 		
 	     int TerminateLicense = Integer.parseInt(Terminate);	//Reading Terminate count.
 	 	Thread.sleep(5000);
-	      MethodPOM.clickTerminate(driver).click();					//Clicking on 'Terminate ' image
+	      MethodPOM.clickTerminateper(driver).click();					//Clicking on 'Terminate ' image
 	      Thread.sleep(5000);
 	      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
 	      Thread.sleep(4000);
@@ -1044,7 +1108,7 @@ public class StatutoryMethod {
 		
 	   MethodPOM.ClickShowMoreExpiredOnInternal(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 	   Thread.sleep(3000);
 	   MethodPOM.ClickExportExpiredOn(driver).click();
@@ -1068,6 +1132,7 @@ public class StatutoryMethod {
    public static void LicenseExpiredOnStatutory(WebDriver driver, ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
+	   
 	   MethodPOM.ClickMaximizeLicenseExpiredOn(driver).click();
 	   test.log(LogStatus.PASS, "Expired Maximize Button Working Successfully");
 	   Thread.sleep(3000);
@@ -1075,11 +1140,11 @@ public class StatutoryMethod {
 		js1.executeScript("window.scroll(0,500)");
         MethodPOM.ClickExportExpiredOn1(driver).click();
         test.log(LogStatus.PASS, "Dashboard ExpiredOn License List Downloaded Sucessfully");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 		
-	   MethodPOM.ClickShowMoreExpiredOnStatutory(driver).click();
+	   LiPerformerPOM.click11(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
-	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
+	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
 	   Thread.sleep(5000);
 	   MethodPOM.ClickExportExpiredOn(driver).click();
 		test.log(LogStatus.PASS, "Expired License List Downloaded Sucessfully");
@@ -2844,7 +2909,7 @@ public class StatutoryMethod {
 			// TODO Auto-generated method stub
 			
 		}
-		public static void CriticalDocuments(WebDriver driver, ExtentTest test) throws InterruptedException
+		public static void CriticalDocuments(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 		{
 			Thread.sleep(1000);
 		   OverduePOM.clickMyDocuments(driver).click();					//Clicking on 'My Documents'
@@ -2858,8 +2923,9 @@ public class StatutoryMethod {
 			Thread.sleep(500);
 			String name = OverduePOM.readFolderName(driver).getText();		//Reading the folder name to create new folder.
 			
-			String folder = name+"E"; 
-			
+			String folder = name+"fortest"; 
+			Thread.sleep(500);
+		
 			OverduePOM.clickNew(driver).click();							//Clicking on '+New' button.
 			
 			Thread.sleep(1000);
@@ -2901,10 +2967,39 @@ public class StatutoryMethod {
 				test.log(LogStatus.FAIL, "Created folder '"+folder+"' doesn't displayed in the records.");
 			}
 			
-			Thread.sleep(500);
-			OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
+			Thread.sleep(5000);
+			OverduePOM.readFolderName(driver).click();	
+		   Thread.sleep(5000);
+		   MethodPOM.clickShareFolder(driver).click();
+		  // Thread.sleep(500);
+		   Thread.sleep(1000);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+			Thread.sleep(5000);
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickPeople1(driver)));
+			OverduePOM.clickPeople1(driver).click();						//Clicking on People drop down
+			   Thread.sleep(5000);
+			OverduePOM.clickSearchPeople1(driver).click();					//Clicking on Search People drop down.
+			
+			Thread.sleep(5000);
+		//	clickSearchPeople(driver).sendKeys("amol");			//Writing user name to search for  CFO
+		//	clickSearchPeople(driver).sendKeys("Company");	        // Auditor
+			Thread.sleep(5000);
+			OverduePOM.clickPeopleCheckBox(driver).click();				//Clicking on label to get out from people search box
+			driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]")).click();
+			
+			Thread.sleep(3000);
+			MethodPOM.Clickaftershare(driver).click();
+			Thread.sleep(3000);
+			OverduePOM.clickDone(driver).click();	//Clicking on 'Done' to share folder.
 			Thread.sleep(1000);
+			driver.switchTo().alert().accept();
+			Thread.sleep(5000);
 			OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
+			Thread.sleep(5000);
+			//MethodPOM.clickShareFolder(driver).click();
+	     	Thread.sleep(5000);
+		    OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
 			
 			Thread.sleep(1000);
 			litigationPerformer.MethodsPOM.progress(driver);
@@ -2967,7 +3062,7 @@ public class StatutoryMethod {
 			Thread.sleep(1000);
 			OverduePOM.clickDone(driver).click();	//Clicking on 'Done' to share folder.
 			Thread.sleep(1000);
-			driver.switchTo().alert().accept();
+			//driver.switchTo().alert().accept();
 			
 			Thread.sleep(1000);
 			OverduePOM.readFolderName(driver).click();						//Clicking on file name we had uploaded.
@@ -2985,8 +3080,81 @@ public class StatutoryMethod {
 			
 			Thread.sleep(3000);
 			OverduePOM.closeSharePoppup(driver).click();
+			
+			//Thread.sleep(3000);
+			//OverduePOM.readFolderName(driver).click();	
+		//	Thread.sleep(1000);
+			File dir = new File("C:\\Users\\dipali\\Downloads");
+			File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+			Thread.sleep(7000);
+			OverduePOM.readFolderName(driver).click();
+			Thread.sleep(7000);
+			//OverduePOM.readFolderName(driver).click();
+			//Thread.sleep(7000);
+			MethodPOM.CDocumentDownload(driver).click();	
+			File dir1 = new File("C:\\Users\\dipali\\Downloads");
+			File[] dirContents1 = dir1.listFiles();							//Counting number of files in directory after download
+			
+			if(dirContents.length < dirContents1.length)
+			{
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+			}
+			
+			Thread.sleep(7000);
+			MethodPOM.editFolderD(driver).click();
+			Thread.sleep(1000);
+			MethodPOM.DocumentHeader(driver).sendKeys("Test Head");
+			Thread.sleep(500);
+			MethodPOM.DocumentDescription(driver).sendKeys("test Description");
+			Thread.sleep(500);
+			MethodPOM.DocumentOther(driver).sendKeys("test Other Document");
+			Thread.sleep(500);
+			MethodPOM.DocumentProcess(driver).sendKeys("Document process");
+			Thread.sleep(500);
+			MethodPOM.Documentsubprocess(driver).sendKeys("Document Sub prcess");
+			Thread.sleep(500);
+			MethodPOM.Vertical(driver).sendKeys("Test Vertical");
+			Thread.sleep(500);
+			MethodPOM.DocumentLocation(driver).sendKeys("Pune");
+			Thread.sleep(500);
+			MethodPOM.Updateinfobtn(driver).click();
+			
+			Thread.sleep(500);
+			test.log(LogStatus.PASS, "Document Details Updated successfully");
+			MethodPOM.closedocpopup(driver).click();
+			test.log(LogStatus.PASS, "Edit Document Details Popup Closed");
+			Thread.sleep(500);
+			 OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
+				Thread.sleep(1000);
+				MethodPOM.LinkFolder(driver).click();
+				Thread.sleep(2000);
+				MethodPOM.Linkdocument1(driver).click();
+				Thread.sleep(2000);
+				MethodPOM.Linkdocument2(driver).click();
+				Thread.sleep(1000);
+				MethodPOM.LinkSave(driver).click();
+				Thread.sleep(1000);
+				 // Switching to Alert       
+		        Alert alert = driver.switchTo().alert();
+		        Thread.sleep(3000);
+		        // Capturing alert message.   
+		        String alertMessage= driver.switchTo().alert().getText();
+		        
+		    	test.log(LogStatus.PASS, alertMessage);
+		        
+		        System.out.println(alertMessage);
+		        
+		        Thread.sleep(3000);	       
+		        // Accepting alert
+		        alert.accept();
+		        MethodPOM.Linkclose(driver).click();
+		        Thread.sleep(3000);	
+			
 			Thread.sleep(3000);
-			OverduePOM.readFolderName(driver).click();	
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[5]")).click();
 			Thread.sleep(3000);
 			driver.switchTo().alert().accept();
@@ -3001,14 +3169,44 @@ public class StatutoryMethod {
 		
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).clear();
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("TestAutomated1");
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("Dub789le Folder");
 			Thread.sleep(3000);
 			
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnCreateFolder1']")).click();
-		     Thread.sleep(3000);
-		
+			
+			test.log(LogStatus.PASS, "Rename Folder Successfully");
+				//Reading Message appeared after save button
+		/*	try 
+			{
+				Thread.sleep(3000);
+				String msg=MethodPOM.FirstFolder(driver).getText();
+				if(msg.equalsIgnoreCase("Action Folder"))
+				{
+					test.log(LogStatus.PASS, "Rename Folder Successfully = "+msg);
+					
+				}
+				
+			}
+			
+	        catch(Exception e)
+	        {
+	        	Thread.sleep(3000);
+				String msg4=MethodPOM.renamemsg(driver).getText();
+				test.log(LogStatus.PASS, "Message displayed = "+msg4);
+				
+	        }
+			
+			Thread.sleep(3000);	 
+		     OverduePOM.readFolderName(driver).click();						//Clicking on folder name we had created.
+			Thread.sleep(1000);
+			 MethodPOM.clickShareFolder(driver).click();
+			MethodPOM.DeleteFolder(driver).click();
+			Thread.sleep(1000);
+			driver.switchTo().alert().accept();
+			test.log(LogStatus.PASS, " Document Folder Deleted Successfully");
 			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
 			MethodPOM.clickMyDashboard(driver).click();			//Clicking on Dashboard
+			*/
 		}
 		public  static void LicenseActivation_NewAssignment(WebDriver driver, ExtentTest test, String string) throws InterruptedException
 		{
@@ -3133,6 +3331,11 @@ public class StatutoryMethod {
 	   	      	 MethodPOM.ClickInternalLicenseType(driver).click();
 	   		 Thread.sleep(5000);
 	   		    MethodPOM.SearchInternalLicenseType(driver).sendKeys("Annual Maintenance",Keys.ENTER);
+		}
+
+		public static void CriticalDocuments(WebDriver driver2, Object statutory, String string) {
+			// TODO Auto-generated method stub
+			
 		}
 
 		

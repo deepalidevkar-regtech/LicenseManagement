@@ -126,7 +126,7 @@ public static WebElement LocationMaximize(WebDriver driver)
 {
 	WebDriverWait wait= new WebDriverWait(driver,40);
 	//license=driver.findElement(By.xpath("//*[@id='e26eeec5-7192-40b8-ba66-d3a307b5897c_tv_active']/div/span[1]"));
-license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='k-icon k-i-expand'])[28]")));
+license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='k-icon k-i-expand'])[32]")));
 	return license;
 }
 public static WebElement ClickPerformer(WebDriver driver)
@@ -216,7 +216,7 @@ public static WebElement SelectStartDate(WebDriver driver)
 }
 public static WebElement NewDate(WebDriver driver)
 {
-	license = driver.findElement(By.xpath("//a[@data-value='2023/3/11']"));
+	license = driver.findElement(By.linkText("5"));
 	return license;
 }
 public static WebElement NewEndDate(WebDriver driver)
@@ -252,7 +252,7 @@ public static WebElement ClickModificdate(WebDriver driver)
 
 public static WebElement ModificatioDate(WebDriver driver)
 {
-	license = driver.findElement(By.xpath(""));
+	license = driver.findElement(By.linkText("5"));
 	return license;
 }
 public static WebElement nomineestartdatecal(WebDriver driver)
@@ -263,12 +263,12 @@ public static WebElement nomineestartdatecal(WebDriver driver)
 
 public static WebElement selectnominstartdate(WebDriver driver)
 {
-	license = driver.findElement(By.xpath("(//a[@data-value='2023/3/4'])[2]"));
+	license = driver.findElement(By.linkText("5"));
 	return license;
 }
 public static WebElement nomineeEnddatecal(WebDriver driver)
 {
-	license = driver.findElement(By.xpath("//*[@id='dvHideNomineeDetailsOnEdit']/div[2]/span[2]/span/span[2]/span"));
+	license = driver.findElement(By.linkText("10"));
 	return license;
 }
 public static WebElement selectnomineenddate(WebDriver driver)
@@ -296,6 +296,16 @@ public static WebElement lictype1(WebDriver driver)
 public static WebElement LicesneNo1(WebDriver driver2) {
 	// TODO Auto-generated method stub
 	return null;
+}
+public static WebElement mgmtmaximize(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@class='btn-minimize collapsed']"));
+	return license;
+}
+public static WebElement editlicenseclose(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@class='k-button k-bare k-button-icon k-window-action']"));
+	return license;
 }
 
 

@@ -16,6 +16,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
+import licenseCompanyadmin.MethodPOM;
 import licensePerformer.LiPerformerPOM;
 import performer.OverduePOM;
 import reviewer.ReviewerPOM;
@@ -241,6 +242,7 @@ public class LiReMethodsPOM
 		}
 	}
 	
+	
 	public static void PendingReviewCount(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{		
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -270,24 +272,28 @@ public class LiReMethodsPOM
 		{
 			
 		}
-		
+		LiPerformerPOM.clickPendingForReview(driver).click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = MethodPOM.clickReadExpiring(driver).getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String LicenseExpiringCount = bits[bits.length - 2];		//Getting the second last word (tot
 		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable(driver)));
 		LiReviewerPOM.clickReviewer(driver).click();
 		
 		Thread.sleep(1000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");					//Scrolling down window by 500 px.
-		int total = Integer.parseInt(OverduePOM.readReminder(driver).getText());	//Reading total records count
+		//int total = Integer.parseInt(OverduePOM.readReminder(driver).getText());	//Reading total records count
 		
-		if(pending == total)
+		if(pending == applied)
 		{
 			test.log(LogStatus.PASS, "Dashboard 'Pending Review' count matches to total records displayed.");
-			test.log(LogStatus.INFO, "Dashboard 'Pending Review' count = "+pending+" | Total records in grid = "+total);
+			test.log(LogStatus.INFO, "Dashboard 'Pending Review' count = "+pending+" | Total records in grid = "+applied);
 		}
 		else
 		{
 			test.log(LogStatus.FAIL, "Dashboard 'Pending Review' count doesn't matches to total records displayed.");
-			test.log(LogStatus.INFO, "Dashboard 'Pending Review' count = "+pending+" | Total records in grid = "+total);
+			test.log(LogStatus.INFO, "Dashboard 'Pending Review' count = "+pending+" | Total records in grid = "+applied);
 		}
 		
 		Thread.sleep(500);
@@ -365,15 +371,15 @@ public class LiReMethodsPOM
 				
 				Thread.sleep(500);
 				int total1 = Integer.parseInt(OverduePOM.readReminder(driver).getText());	//Reading total records count
-				if(total1 < total)
+				if(total1 < applied)
 				{
 					test.log(LogStatus.PASS, "Total records count from grid decreased.");
-					test.log(LogStatus.INFO, "Old Count = "+total+" | New Count = "+total1);
+					test.log(LogStatus.INFO, "Old Count = "+applied+" | New Count = "+total1);
 				}
 				else
 				{
 					test.log(LogStatus.FAIL, "Total records count from grid doesn't decreased.");
-					test.log(LogStatus.INFO, "Old Count = "+total+" | New Count = "+total1);
+					test.log(LogStatus.INFO, "Old Count = "+applied+" | New Count = "+total1);
 				}
 				
 				Thread.sleep(100);
@@ -437,7 +443,7 @@ public class LiReMethodsPOM
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		try
 		{
-			Thread.sleep(400);
+			Thread.sleep(3000);
 			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
 		}
 		catch(Exception e)
@@ -445,13 +451,13 @@ public class LiReMethodsPOM
 			
 		}
 		
-		Thread.sleep(500);
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickPendingForReview(driver)));		
 		int pending = Integer.parseInt(LiPerformerPOM.clickPendingForReview(driver).getText());	//Reading 'Pending For Review' count
 		int applied = Integer.parseInt(LiPerformerPOM.clickApplied(driver).getText());	//Reading 'Applied' count
 		LiPerformerPOM.clickPendingForReview(driver).click();		//Clicking on 'Pending For Review' image link
 		
-		Thread.sleep(500);
+		Thread.sleep(3000);
 		try
 		{
 			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));

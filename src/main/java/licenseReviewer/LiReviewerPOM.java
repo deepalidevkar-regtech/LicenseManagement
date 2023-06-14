@@ -13,7 +13,8 @@ public class LiReviewerPOM
 	
 	public static WebElement checkTable(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit'])[1]"));
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		
 		return license;
 	}
 	
@@ -93,7 +94,7 @@ public class LiReviewerPOM
 	
 	public static WebElement clickReviewer(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//a[@id='ContentPlaceHolder1_liReviewer']"));
+		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[13]/a[3]"));
 		return license;
 	}
 	

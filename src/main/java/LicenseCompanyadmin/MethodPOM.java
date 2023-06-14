@@ -345,6 +345,12 @@ public static WebElement clickTerminate(WebDriver driver)
 	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divTerminate']"));
 	return license;
 }
+public static WebElement clickTerminateper(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divterminated']"));
+	return license;
+}
+
 public static WebElement clickReadTerminate(WebDriver driver)	
 {
 	license = driver.findElement(By.xpath("//*[@id='grid']/div[3]/span[2]"));
@@ -865,11 +871,101 @@ public static WebElement justclick(WebDriver driver)
 	license = driver.findElement(By.xpath("//*[@id='divUploadDocument']/table"));
 	return license;
 }
+
+
+
 public static WebElement Expiringshowmore(WebDriver driver) {
 	// TODO Auto-generated method stub
 	return null;
 }
+public static WebElement DeleteFolder(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/div/section/div[2]/div[2]/img[3]"));
+	return license;
+}
+public static WebElement CDocumentDownload(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[2]"));
+	return license;
+}
 
+public static WebElement editFolderD(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[4]"));
+	return license;
+}
+
+public static WebElement DocumentHeader(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtDocHeader']"));
+	return license;
+}
+public static WebElement DocumentDescription(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtDescription']"));
+	return license;
+}
+public static WebElement DocumentOther(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtOthers']"));
+	return license;
+}
+public static WebElement DocumentProcess(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtProcess']"));
+	return license;
+}
+public static WebElement Documentsubprocess(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtSubProcess']"));
+	return license;
+}
+public static WebElement Vertical(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtVertical']"));
+	return license;
+}
+public static WebElement DocumentLocation(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_TxtLocation']"));
+	return license;
+}
+public static WebElement Updateinfobtn(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnUpdateInfo']"));
+	return license;
+}
+public static WebElement closedocpopup(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='divOpenNewInformationPopup']/div/div/div[1]/button"));
+	return license;
+}
+public static WebElement renamemsg(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_FolderValidation']/ul/li"));
+	return license;
+}
+public static WebElement FirstFolder(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail_LinkButton1_0']"));
+	return license;
+}
+public static WebElement LinkFolder(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[6]"));
+	return license;
+}
+public static WebElement Linkdocument1(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdChecklist_CheckBox1_0']"));
+	return license;
+}
+
+public static WebElement Linkdocument2(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdChecklist_CheckBox1_1']"));
+	return license;
+}
+
+public static WebElement LinkSave(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnSaveChecklistMapping']"));
+	return license;
+}
+public static WebElement Linkclose(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='divAuditChecklistPopup']/div/div/div[1]/button"));
+	return license;
+}
+public static WebElement clickShareFolder(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/div/section/div[2]/div[2]/img[1]"));
+	return license;
+}
+public static WebElement ClickFolder(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail_LinkButton1_0'][1]"));
+	return license;
+}
 
 }
 

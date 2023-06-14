@@ -1,113 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="20" passed="19" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-25T23:38:17 IST" name="Default suite" finished-at="2023-04-25T23:58:01 IST" duration-ms="1184292">
+  <suite started-at="2023-06-14T19:05:39 IST" name="Default suite" finished-at="2023-06-14T19:07:38 IST" duration-ms="119654">
     <groups>
     </groups>
-    <test started-at="2023-04-25T23:38:17 IST" name="Default test" finished-at="2023-04-25T23:58:01 IST" duration-ms="1184292">
-      <class name="licenseManagement.licmgmtInternalTC">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:38:17 IST" name="setBrowser" finished-at="2023-04-25T23:38:24 IST" duration-ms="6965" status="PASS">
+    <test started-at="2023-06-14T19:05:39 IST" name="Default test" finished-at="2023-06-14T19:07:38 IST" duration-ms="119654">
+      <class name="licensePerformer.LicensePerformerStatutory">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:licensePerformer.LicensePerformerStatutory@3f6b0be5]" started-at="2023-06-14T19:05:39 IST" name="setBrowser" finished-at="2023-06-14T19:05:44 IST" duration-ms="4960" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="Login()[pri:1, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:38:24 IST" name="Login" finished-at="2023-04-25T23:38:33 IST" duration-ms="9899" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licensePerformer.LicensePerformerStatutory@3f6b0be5]" started-at="2023-06-14T19:05:44 IST" name="Login" finished-at="2023-06-14T19:06:38 IST" duration-ms="53967" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="ActiveInternalLicense()[pri:3, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:38:33 IST" name="ActiveInternalLicense" finished-at="2023-04-25T23:39:04 IST" duration-ms="30722" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ActiveInternalLicense -->
-        <test-method signature="ExpiringInternalLicense()[pri:4, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:39:04 IST" name="ExpiringInternalLicense" finished-at="2023-04-25T23:39:38 IST" duration-ms="33881" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExpiringInternalLicense -->
-        <test-method signature="ExpiredInternalLicense()[pri:5, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:39:38 IST" name="ExpiredInternalLicense" finished-at="2023-04-25T23:40:04 IST" duration-ms="26403" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ExpiredInternalLicense -->
-        <test-method signature="AppliedInternalLicense()[pri:6, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:40:05 IST" name="AppliedInternalLicense" finished-at="2023-04-25T23:40:34 IST" duration-ms="29058" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AppliedInternalLicense -->
-        <test-method signature="PendingForReviewInternalLicense()[pri:7, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:40:34 IST" name="PendingForReviewInternalLicense" finished-at="2023-04-25T23:41:00 IST" duration-ms="26052" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PendingForReviewInternalLicense -->
-        <test-method signature="RejectedInternalLicense()[pri:8, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:41:00 IST" name="RejectedInternalLicense" finished-at="2023-04-25T23:41:32 IST" duration-ms="31910" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RejectedInternalLicense -->
-        <test-method signature="TerminateInternalLicense()[pri:9, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:41:32 IST" name="TerminateInternalLicense" finished-at="2023-04-25T23:42:15 IST" duration-ms="43864" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TerminateInternalLicense -->
-        <test-method signature="LicenseExpiredOnInternal()[pri:10, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:42:15 IST" name="LicenseExpiredOnInternal" finished-at="2023-04-25T23:42:50 IST" duration-ms="34194" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LicenseExpiredOnInternal -->
-        <test-method signature="BystatusActiveInternalgraph()[pri:11, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:42:50 IST" name="BystatusActiveInternalgraph" finished-at="2023-04-25T23:44:14 IST" duration-ms="84175" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BystatusActiveInternalgraph -->
-        <test-method signature="BystatusTerminateInternalgraph()[pri:12, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:44:14 IST" name="BystatusTerminateInternalgraph" finished-at="2023-04-25T23:45:48 IST" duration-ms="94374" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BystatusTerminateInternalgraph -->
-        <test-method signature="BystatusExpiredappliedbutnotrenewedInternalgraph()[pri:13, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:45:48 IST" name="BystatusExpiredappliedbutnotrenewedInternalgraph" finished-at="2023-04-25T23:47:27 IST" duration-ms="98430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BystatusExpiredappliedbutnotrenewedInternalgraph -->
-        <test-method signature="BystatusExpiredInternal()[pri:14, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:47:27 IST" name="BystatusExpiredInternal" finished-at="2023-04-25T23:49:01 IST" duration-ms="94637" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BystatusExpiredInternal -->
-        <test-method signature="BystatusExpringInternalgraph()[pri:15, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:49:01 IST" name="BystatusExpringInternalgraph" finished-at="2023-04-25T23:50:39 IST" duration-ms="97478" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BystatusExpringInternalgraph -->
-        <test-method signature="ByLicensetypeExpiredInternal()[pri:16, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:50:39 IST" name="ByLicensetypeExpiredInternal" finished-at="2023-04-25T23:51:58 IST" duration-ms="78804" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ByLicensetypeExpiredInternal -->
-        <test-method signature="ByLicensetypeExpiringInternal()[pri:17, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:51:58 IST" name="ByLicensetypeExpiringInternal" finished-at="2023-04-25T23:53:39 IST" duration-ms="101702" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ByLicensetypeExpiringInternal -->
-        <test-method signature="ByLicensetypeAppliedInternal()[pri:18, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:53:39 IST" name="ByLicensetypeAppliedInternal" finished-at="2023-04-25T23:54:58 IST" duration-ms="78733" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ByLicensetypeAppliedInternal -->
-        <test-method signature="BylicnesetypeActiveInternal()[pri:19, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:54:58 IST" name="BylicnesetypeActiveInternal" finished-at="2023-04-25T23:56:19 IST" duration-ms="80785" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BylicnesetypeActiveInternal -->
-        <test-method signature="BylicnesetypeTerminateInternal()[pri:20, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:56:19 IST" name="BylicnesetypeTerminateInternal" finished-at="2023-04-25T23:57:40 IST" duration-ms="81695" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BylicnesetypeTerminateInternal -->
-        <test-method signature="MyDocumentsInternal()[pri:22, instance:licenseManagement.licmgmtInternalTC@3b6ddd1d]" started-at="2023-04-25T23:57:40 IST" name="MyDocumentsInternal" finished-at="2023-04-25T23:58:01 IST" duration-ms="20400" status="FAIL">
+        <test-method signature="CriticalDocuments()[pri:12, instance:licensePerformer.LicensePerformerStatutory@3f6b0be5]" started-at="2023-06-14T19:06:38 IST" name="CriticalDocuments" finished-at="2023-06-14T19:07:37 IST" duration-ms="59512" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (343b88a8d4a4d3ab40ec393731427069)] -> id: ContentPlaceHolder1_divExpiredCount] (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (24742dfb5702b29ac3b1f3316ab47f98)] -> xpath: (//*[@class='multiselect dropdown-toggle btn btn-default'])[2]] (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
-System info: host: 'ARPL-059', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:65434}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 343b88a8d4a4d3ab40ec393731427069]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55844}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24742dfb5702b29ac3b1f3316ab47f98]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (343b88a8d4a4d3ab40ec393731427069)] -> id: ContentPlaceHolder1_divExpiredCount] (tried for 20 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (24742dfb5702b29ac3b1f3316ab47f98)] -> xpath: (//*[@class='multiselect dropdown-toggle btn btn-default'])[2]] (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
-System info: host: 'ARPL-059', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:65434}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 343b88a8d4a4d3ab40ec393731427069
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\dipali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55844}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24742dfb5702b29ac3b1f3316ab47f98
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at licenseManagement.licmgmtMethodPOM.MyDocuments(licmgmtMethodPOM.java:707)
-at licenseManagement.licmgmtInternalTC.MyDocumentsInternal(licmgmtInternalTC.java:297)
+at licenseCompanyadmin.StatutoryMethod.CriticalDocuments(StatutoryMethod.java:2979)
+at licensePerformer.LicensePerformerStatutory.CriticalDocuments(LicensePerformerStatutory.java:211)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,8 +69,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MyDocumentsInternal -->
-      </class> <!-- licenseManagement.licmgmtInternalTC -->
+        </test-method> <!-- CriticalDocuments -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licensePerformer.LicensePerformerStatutory@3f6b0be5]" started-at="2023-06-14T19:07:37 IST" name="driverclose" finished-at="2023-06-14T19:07:38 IST" duration-ms="834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverclose -->
+      </class> <!-- licensePerformer.LicensePerformerStatutory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

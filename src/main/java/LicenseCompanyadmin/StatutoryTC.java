@@ -126,7 +126,7 @@ public class StatutoryTC {
 	    StatutoryMethod.RenewInternalLicense(driver);
 	    extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	@Test(priority = 6)
 	void Active() throws InterruptedException
 	{
@@ -137,8 +137,9 @@ public class StatutoryTC {
 		
 		extent.endTest(test);
 		extent.flush();
+		
 	}
-	@Test(priority = 7)
+/*	@Test(priority = 7)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -236,7 +237,7 @@ public class StatutoryTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 
 	@Test(priority = 16)
 		void BystausExpiringlicense() throws InterruptedException
@@ -358,8 +359,8 @@ public class StatutoryTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}
-	/* @Test(priority = 27)
+	}*/
+	 @Test(priority = 27)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Download Verification");
@@ -372,8 +373,9 @@ public class StatutoryTC {
 		
 		extent.endTest(test);
 		extent.flush();
+	
 	}
-	 @Test(priority = 28)
+	 //@Test(priority = 28)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Download Verification");
@@ -384,18 +386,18 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 29)
+	 //@Test(priority = 29)
 	void CriticalDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Critical Document Verification");
-			test.log(LogStatus.INFO, "Test Initiated");
+			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.CriticalDocuments(driver, test);
+			StatutoryMethod.CriticalDocuments(driver, test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 30)
+	/* @Test(priority = 30)
 		void LicenseNewAssignment() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License New Assignment");

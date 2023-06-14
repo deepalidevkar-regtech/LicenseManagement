@@ -214,4 +214,20 @@ public class ImpMethodPOM {
 			
 			
 	}
+	public static void compliancemappingInternalExport(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+	{
+       WebDriverWait wait = new WebDriverWait(driver, 20);
+		
+		ImpPOM.clickmanageschedule(driver).click();
+		Thread.sleep(3000);
+		ImpPOM.ClickLicenseInternal(driver).click();
+		Thread.sleep(3000);
+		ImpPOM.ClickIntenalMapping(driver).click();
+		Thread.sleep(3000);
+		ImpPOM.ClickLicenseInternallink(driver).click();
+		Thread.sleep(3000);
+		ImpPOM.ClickCustomerin(driver).click();
+		
+	}
+	
 }

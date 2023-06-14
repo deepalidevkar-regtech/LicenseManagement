@@ -193,7 +193,7 @@ public class OverduePOM
 	
 	public static WebElement selectInternalDropdown(WebDriver driver)		//Method to search Dropdown.
 	{
-		dropdown = driver.findElement(By.xpath("//select[@id='ddlStatus2']"));
+		dropdown = driver.findElement(By.xpath("//*[@id='ddlStatus2']"));
 		return dropdown;
 	}
 	
@@ -730,13 +730,23 @@ public class OverduePOM
 		performer = driver.findElement(By.xpath("//*[@class='multiselect dropdown-toggle btn btn-default']"));
 		return performer;
 	}
+	public static WebElement clickPeople1(WebDriver driver)				//Searching People input box 
+	{
+		performer = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[2]"));
+		return performer;
+	}
 	
 	public static WebElement clickSearchPeople(WebDriver driver)		//Searching 'Search People' input box
 	{
 		performer = driver.findElement(By.xpath("//*[@class='form-control multiselect-search']"));
 		return performer;
 	}
-	
+	public static WebElement clickSearchPeople1(WebDriver driver)		//Searching 'Search People' input box
+	{
+		performer = driver.findElement(By.xpath("(//*[@class='form-control multiselect-search'])[2]"));
+		return performer;
+	}
+
 	public static WebElement clickPeopleCheckBox(WebDriver driver)		//Clicking on Checkbox in front of name
 	{
 		performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[143]/a/label/input"));

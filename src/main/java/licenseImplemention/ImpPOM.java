@@ -144,6 +144,30 @@ public class ImpPOM {
 		return license;
 	
 	}
-
-
+	public static WebElement ClickIntenalMapping(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:125']/li[2]"));
+		return license;
+	
+	}
+	public static WebElement ClickLicenseInternal(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:121']/li[4]"));
+		return license;
+	
+	}
+	public static WebElement ClickLicenseInternallink(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:132']/li[1]/a"));
+		return license;
+	
+	}
+	public static WebElement ClickCustomerin(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//Span[@class='ui-button-text'][1]"));
+		return license;
+	
+	}
+	
+	
 }
