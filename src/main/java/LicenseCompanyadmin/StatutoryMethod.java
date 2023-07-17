@@ -56,7 +56,7 @@ public class StatutoryMethod {
 		return sheet;
 	}
 	
-	public static void user(WebDriver driver,ExtentTest test) throws InterruptedException, IOException
+	public static void user(WebDriver driver,ExtentTest test, String Type) throws InterruptedException, IOException
 	{
 		
 		XSSFSheet sheet = ReadExcel();
@@ -120,6 +120,8 @@ public class StatutoryMethod {
 		 Thread.sleep(3000);
 		 MethodPOM.ClickUserSave(driver).click();
 		 Thread.sleep(5000);
+		 test.log(LogStatus.PASS, "User Created Successfully");
+		 
 		 MethodPOM.ClickUserClose(driver).click();
 		 Thread.sleep(5000);
 		 MethodPOM.ClickEditUser(driver).click();
@@ -130,16 +132,17 @@ public class StatutoryMethod {
 		 Thread.sleep(3000);	
 		 MethodPOM.ClickUserSave(driver).click();
 		 Thread.sleep(3000);
+	     test.log(LogStatus.PASS, "User Details Updated  Successfully");
 		 MethodPOM.ClickUserClose(driver).click();
 		 Thread.sleep(5000);
 		 MethodPOM.ClickUserSearch(driver).sendKeys("AShish",Keys.ENTER);
-		
+		 test.log(LogStatus.PASS, "User Search Successfully");
 	    Thread.sleep(3000);
 		 MethodPOM.ClickResetPassword(driver).click();
-		 
+		 test.log(LogStatus.PASS, "Password Reset Successfully");
 		String AlertMesg= driver.switchTo().alert().getText(); 
 		driver.switchTo().alert().accept();
-		test.log(LogStatus.INFO, AlertMesg);
+		//test.log(LogStatus.INFO, AlertMesg);
 		
 		 
 		 
@@ -322,8 +325,12 @@ public class StatutoryMethod {
 					test.log(LogStatus.FAIL, "No of Active License  in the grid = "+total+" | Dashboard Active License  Count = "+activelicense);
 				}
 				Thread.sleep(3000);
-				
-				js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+				MethodPOM.ClickActiveOverview(driver).click();
+				test.log(LogStatus.PASS, "Expiring License Overview Details Sucessfully");
+				Thread.sleep(3000);
+				MethodPOM.ClickCloseOverview(driver).click();
+				MethodPOM.clickMyDashboard(driver).click();
+				/*js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
 				Thread.sleep(3000);
 				
 				licmgmtPOM.ClickCal(driver).click();
@@ -364,7 +371,7 @@ public class StatutoryMethod {
 				Thread.sleep(3000);
 				
 				MethodPOM.ClickCloseOverview(driver).click();
-				MethodPOM.clickMyDashboard(driver).click();
+				MethodPOM.clickMyDashboard(driver).click();*/
 	}
 	public static void ActiveInternalLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{	
@@ -1080,6 +1087,7 @@ public class StatutoryMethod {
 	   MethodPOM.clickDashlicensetype(driver).click();
 	   MethodPOM.DashSearchLienseType(driver).sendKeys("Annual Maintenance",Keys.ENTER);
 	   MethodPOM.ClickApply(driver).click();
+	   test.log(LogStatus.PASS, "All Filter Working Successfully");
 	   MethodPOM.DashoardClearBtn(driver).click();
 	   test.log(LogStatus.PASS, "Clear Button Working Successfully");
 	   MethodPOM.clickMyDashboard(driver).click();
@@ -1144,18 +1152,23 @@ public class StatutoryMethod {
 		
 	   LiPerformerPOM.click11(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
-	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
+	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 	   Thread.sleep(5000);
+	   js1.executeScript("window.scroll(0,500)");
+	   String NoRecord = MethodPOM.Norecord(driver).getText();
+	   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+	   {
+	   
 	   MethodPOM.ClickExportExpiredOn(driver).click();
 		test.log(LogStatus.PASS, "Expired License List Downloaded Sucessfully");
 		Thread.sleep(5000);
-		/*MethodPOM.ExpiredOnLictype(driver).click();
+		MethodPOM.ExpiredOnLictype(driver).click();
 		MethodPOM.searchExpiredOnLictype(driver).sendKeys("Boiler",Keys.ENTER);
 		MethodPOM.Clearfilter(driver).click();
 		test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
 		
     
-		Thread.sleep(7000);*/
+		Thread.sleep(7000);
 	    licenseManagement.licmgmtPOM.lictype(driver).click();
 		Thread.sleep(7000);
 	    licenseManagement.licmgmtPOM.lictype1(driver).click();
@@ -1174,31 +1187,42 @@ public class StatutoryMethod {
 			driver.switchTo().parentFrame();
 			 MethodPOM.clickCloseGraphPopup(driver).click();
 			 Thread.sleep(3000);
-	   
+			
+	   }
+	   else
+	   {
+		   driver.switchTo().parentFrame();
+			 MethodPOM.clickCloseGraphPopup(driver).click();
+			 Thread.sleep(3000);
+			  test.log(LogStatus.PASS, "Expired On Popup No Record Found ");
+	   }
    }
    public static void LicenseExpiringOnStatutory(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
    {
-	   Thread.sleep(3000);
+	   Thread.sleep(5000);
 	   MethodPOM.ClickMaximizeLicenseExpiringOn(driver).click();
-	   test.log(LogStatus.PASS, "Expiring On Maximize Button Working Successfully");
 	   Thread.sleep(3000);
+	   test.log(LogStatus.PASS, "Expiring On Maximize Button Working Successfully");
+	 
 	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 		js1.executeScript("window.scroll(0,500)");
+		  Thread.sleep(3000);
 		MethodPOM.DashExpiringOnExport(driver).click();
 		test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
 		
 	   MethodPOM.ClickShowMoreExpiringOnStatutory(driver).click();
 	   Thread.sleep(7000);
-	   licenseManagement.licmgmtPOM.lictype(driver).click();
+	  /* licenseManagement.licmgmtPOM.lictype(driver).click();
 	   Thread.sleep(7000);
 	   licenseManagement.licmgmtPOM.lictype1(driver).click();
 	   Thread.sleep(3000);
 	   MethodPOM.Clearfilter(driver).click();
 		test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
-	   
+	   */
 	   WebDriverWait wait = new WebDriverWait(driver, 40);
 	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 	   Thread.sleep(3000);
+	   
 	  // MethodPOM.ClickExportExpiredOn(driver).click();
 		
 	   int flag = 0;
@@ -2721,13 +2745,14 @@ public class StatutoryMethod {
 		LiPerformerPOM.clickMyDocuments(driver).click();		//Clicking on 'My Documents'
 		Thread.sleep(3000);
 		LiPerformerPOM.clickMyDocumentsMenu(driver).click();	//Clicking on 'My Documents'
-		
-	wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
 		
 		if(type.equalsIgnoreCase("Internal"))
 		{
+			//wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
 			LiPerformerPOM.clickType2(driver).click();			//Clicking on 'Type' drop down.
-			Thread.sleep(500);
+			Thread.sleep(5000);
 			LiPerformerPOM.selectInternal(driver).click();//Selecting 'Internal' option.
 			Thread.sleep(1000);
 			
@@ -2970,6 +2995,8 @@ public class StatutoryMethod {
 			Thread.sleep(5000);
 			OverduePOM.readFolderName(driver).click();	
 		   Thread.sleep(5000);
+			//OverduePOM.readFolderName(driver).click();
+		//	Thread.sleep(5000);
 		   MethodPOM.clickShareFolder(driver).click();
 		  // Thread.sleep(500);
 		   Thread.sleep(1000);
@@ -3083,7 +3110,7 @@ public class StatutoryMethod {
 			
 			//Thread.sleep(3000);
 			//OverduePOM.readFolderName(driver).click();	
-		//	Thread.sleep(1000);
+			Thread.sleep(1000);
 			File dir = new File("C:\\Users\\dipali\\Downloads");
 			File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 			Thread.sleep(7000);
@@ -3153,12 +3180,33 @@ public class StatutoryMethod {
 		        alert.accept();
 		        MethodPOM.Linkclose(driver).click();
 		        Thread.sleep(3000);	
-			
+		       // MethodPOM.ClickFolder(driver).click();
+		       OverduePOM.readFolderName(driver).click();						//Clicking on file name we had uploaded.
+			//Thread.sleep(3000);
+		/*MethodPOM.DeleteFile(driver).click();
 			Thread.sleep(3000);
+			
+			 // Switching to Alert       
+	        Alert alert1 = driver.switchTo().alert();
+	        Thread.sleep(3000);
+	        // Capturing alert message.   
+	        String alertMessage1= driver.switchTo().alert().getText();
+	        
+	    	test.log(LogStatus.PASS, alertMessage1);
+	        
+	        System.out.println(alertMessage1);
+	        
+	        Thread.sleep(3000);	       
+	        // Accepting alert
+	        alert.accept();
+			
+			
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[5]")).click();
 			Thread.sleep(3000);
-			driver.switchTo().alert().accept();
-			Thread.sleep(3000);
+		    driver.switchTo().alert().accept();
+
+		    Thread.sleep(3000);
+		  //  MethodPOM.Folback(driver).click();*/
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkMyDrive']")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);//search folder
@@ -3169,7 +3217,7 @@ public class StatutoryMethod {
 		
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).clear();
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("Dub789le Folder");
+			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("arw");
 			Thread.sleep(3000);
 			
 			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnCreateFolder1']")).click();

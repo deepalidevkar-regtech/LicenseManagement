@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -49,6 +51,23 @@ public class StatutoryTC {
 		test = extent.startTest("Verify OpenBrowser");
 		//test.log(LogStatus.INFO, "Browser test is initiated");
 		
+		/*XSSFSheet sheet = ReadExcel();
+		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
+		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
+		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
+		
+		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		*/
+		test.log(LogStatus.PASS, "Test Passed.");
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@BeforeMethod
+	void Login() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Logging In - Companyadmin (Statutory)");
+	  //	test.log(LogStatus.PASS, "Logging into system");
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
@@ -56,21 +75,10 @@ public class StatutoryTC {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		
-		test.log(LogStatus.PASS, "Test Passed.");
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 1)
-	void Login() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Logging In - Companyadmin(Statutory)");
-		test.log(LogStatus.PASS, "Logging into system");
-		
-		XSSFSheet sheet = ReadExcel();
+		//XSSFSheet sheet = ReadExcel();
 		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
-		Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
-		String uname = c1.getStringCellValue();			//Got the URL stored at position 1,1
+		Cell c12 = row1.getCell(1);						//Selected cell (1 row,1 column)
+		String uname = c12.getStringCellValue();			//Got the URL stored at position 1,1
 		
 		Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
@@ -78,21 +86,18 @@ public class StatutoryTC {
 		
 		driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
 		
-		//test.log(LogStatus.PASS, "Test Passed.");
+		/*test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
-		extent.flush();
+		extent.flush();*/
 	}
-  /*  @Test(priority = 2)
+   @Test(priority = 2)
 	void Masters() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Masters - User Creation verification");
-		test.log(LogStatus.INFO, "User Created Successfully");
-		MethodPOM.clickUserMaster(driver);	
-		test.log(LogStatus.INFO, "User Details Updated  Successfully");
+		test.log(LogStatus.PASS, "User Created Successfully");
+	   StatutoryMethod.user(driver, test, "Statutory");
+		test.log(LogStatus.PASS, "User Details Updated  Successfully");
 		
-    
-
-		 
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -100,8 +105,8 @@ public class StatutoryTC {
 	@Test(priority = 3)
 	void PageAuthor() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Masters - User Creation verification");
-		test.log(LogStatus.INFO, "Page Authorization Saved");
+		test = extent.startTest("Masters -Page Autherization verification");
+		test.log(LogStatus.PASS, "Page Authorization Saved");
 		StatutoryMethod.PageAuthorization(driver);		
 		extent.endTest(test);
 		extent.flush();
@@ -111,7 +116,7 @@ public class StatutoryTC {
 	{
 	{
 		test = extent.startTest("Statutory Renew License");
-		test.log(LogStatus.INFO, "Compliance Created and Assigned Sucessfully");
+		test.log(LogStatus.PASS, "Compliance Created and Assigned Sucessfully");
 		StatutoryMethod.RenewStatutoryLicense(driver);
 
 		extent.endTest(test);
@@ -122,7 +127,7 @@ public class StatutoryTC {
 	void RenewInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal Renew License");
-		test.log(LogStatus.INFO, "Compliance Created and Assigned Successfully");
+		test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
 	    StatutoryMethod.RenewInternalLicense(driver);
 	    extent.endTest(test);
 		extent.flush();
@@ -139,7 +144,7 @@ public class StatutoryTC {
 		extent.flush();
 		
 	}
-/*	@Test(priority = 7)
+    @Test(priority = 7)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -216,7 +221,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*@Test(priority = 14)
+	@Test(priority = 14)
 	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License ExpiringOn Working Verification");
@@ -227,7 +232,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-/* @Test(priority = 15)
+    @Test(priority = 15)
 	void AllFilter() throws InterruptedException
 	{
 		//test = extent.startTest("All Filter Working Verification");
@@ -350,7 +355,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
- /*    @Test(priority = 26)
+  @Test(priority = 26)
 		void MyWorkspace() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Workspace  Verification");
@@ -359,15 +364,15 @@ public class StatutoryTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	 @Test(priority = 27)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Download Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
+	//	test.log(LogStatus.INFO, "Test Initiated");
 		
 		test = extent.startTest("My Document View Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
+		//test.log(LogStatus.INFO, "Test Initiated");
 		
          StatutoryMethod.MyDocuments(driver, test, "Statutory");
 		
@@ -375,18 +380,18 @@ public class StatutoryTC {
 		extent.flush();
 	
 	}
-	 //@Test(priority = 28)
+	 @Test(priority = 28)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Download Verification");
-			test.log(LogStatus.INFO, "Test Initiated");
+			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.MyReports(driver, test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 //@Test(priority = 29)
+	 @Test(priority = 29)
 	void CriticalDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Critical Document Verification");
@@ -397,11 +402,11 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/* @Test(priority = 30)
+	@Test(priority = 30)
 		void LicenseNewAssignment() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License New Assignment");
-			test.log(LogStatus.INFO, "Test Initiated");
+			//test.log(LogStatus.INFO, "Test Initiated");
 			StatutoryMethod.LicenseActivation_NewAssignment(driver, test, "Statutory");
 			extent.endTest(test);
 			extent.flush();
@@ -414,7 +419,12 @@ public class StatutoryTC {
 			StatutoryMethod.LicenseCreation(driver, test, "Statutory");
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
+	  @AfterMethod
+	  void driverclose()
+	  {
+		  driver.close();
+	  }
 	}
 
 

@@ -91,7 +91,7 @@ public class OverduePOM
 	
 	public static WebElement selectStatutoryDropdown(WebDriver driver)		//Method to search dropdown box
 	{
-		dropdown = driver.findElement(By.xpath("//select[@id='ddlStatus']"));
+		dropdown = driver.findElement(By.xpath("//*[@id='ddlStatus']"));
 		return dropdown;
 	}
 	
@@ -146,12 +146,18 @@ public class OverduePOM
 	public static WebElement clickComplianceSubmit(WebDriver driver)		//Method for searching button for Submit Form
 	{
 		submit = driver.findElement(By.xpath("//input[@value ='Submit']"));
+		//*[@id="btnSubmit"]
 		return submit;
 	}
-	
+	public static WebElement AppliedSubmit(WebDriver driver)		//Method for searching button for Submit Form
+	{
+		submit = driver.findElement(By.xpath("//input[@value ='Submit']"));
+		//*[@id="btnSubmit"]
+		return submit;
+	}
 	public static WebElement clickDashboard(WebDriver driver)				//Method to search Dashboard Link
 	{
-		dashboard = driver.findElement(By.xpath("//*[@id='leftdashboardmenu']"));
+		dashboard = driver.findElement(By.xpath("//*[@id='btnSubmit']"));
 		return dashboard;
 	}
 	
@@ -196,7 +202,22 @@ public class OverduePOM
 		dropdown = driver.findElement(By.xpath("//*[@id='ddlStatus2']"));
 		return dropdown;
 	}
-	
+	public static WebElement ActiveAction(WebDriver driver)		//Method to search Dropdown.
+	{
+		msgElement = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		return msgElement;
+	}
+	public static WebElement ExpiringAction(WebDriver driver)		//Method to search Dropdown.
+	{
+		dropdown = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		return dropdown;
+	}
+	public static WebElement RejectedAction(WebDriver driver)		//Method to search Dropdown.
+	{
+		dropdown = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		return dropdown;
+	}
+
 	public static WebElement complianceDocLinkInternal(WebDriver driver)
 	{
 		dropdown = driver.findElement(By.xpath("//input[@name='TxtCompliancedocumentlnk']"));

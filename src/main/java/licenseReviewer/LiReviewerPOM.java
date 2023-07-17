@@ -121,4 +121,16 @@ public class LiReviewerPOM
 		license = driver.findElement(By.xpath(""));
 		return license;
 	}
+	public static WebElement revexpiringOn(WebDriver driver)
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']"));
+		return license;
+	}
+	public static WebElement reNorecord(WebDriver driver)
+	{
+		license = driver.findElement(By.xpath("//*[@class='k-pager-info k-label']"));
+		return license;
+	}
+	
+
 }

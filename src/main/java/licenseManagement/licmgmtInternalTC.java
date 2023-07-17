@@ -10,6 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -41,8 +43,25 @@ public class licmgmtInternalTC {
 		String workingDir = System.getProperty("user.dir");
 		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//LicensemgmtResults(Internal).html",true);
 		test = extent.startTest("Verify OpenBrowser");
-	//	test.log(LogStatus.INFO, "Browser test is initiated");
+		//test.log(LogStatus.INFO, "Browser test is initiated");
 		
+		/*XSSFSheet sheet = ReadExcel();
+		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
+		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
+		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
+		
+		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		*/
+		test.log(LogStatus.PASS, "Test Passed.");
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@BeforeMethod
+	void Login() throws InterruptedException, IOException
+	{
+		//test = extent.startTest("Logging In - Performer (Statutory)");
+	  //	test.log(LogStatus.PASS, "Logging into system");
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
@@ -50,21 +69,10 @@ public class licmgmtInternalTC {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		
-		test.log(LogStatus.PASS, "Test Passed.");
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 1)
-	void Login() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Logging In - Management (Internal)");
-		//test.log(LogStatus.INFO, "Logging into system");
-		
-		XSSFSheet sheet = ReadExcel();
+		//XSSFSheet sheet = ReadExcel();
 		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
-		Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
-		String uname = c1.getStringCellValue();			//Got the URL stored at position 1,1
+		Cell c12 = row1.getCell(1);						//Selected cell (1 row,1 column)
+		String uname = c12.getStringCellValue();			//Got the URL stored at position 1,1
 		
 		Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
@@ -72,11 +80,11 @@ public class licmgmtInternalTC {
 		
 		driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
 		
-		test.log(LogStatus.PASS, "Test Passed.");
+		/*test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
-		extent.flush();
+		extent.flush();*/
 	}
-/*	@Test(priority = 2)
+	@Test(priority = 2)
 	void AllFilter() throws InterruptedException
 	{
 		test = extent.startTest("All Filter Working Verification");
@@ -86,7 +94,7 @@ public class licmgmtInternalTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 @Test(priority = 3)
 		void ActiveInternalLicense() throws InterruptedException
 		{
@@ -285,7 +293,7 @@ public class licmgmtInternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 22)
+	@Test(priority = 21)
 	void MyDocumentsInternal() throws InterruptedException
 		{
 			test = extent.startTest("My Documents Download Verification");
@@ -299,7 +307,11 @@ public class licmgmtInternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-
-	  
+	
+	@AfterMethod
+	 void driverclose()
+	 {
+		  driver.close();
+	 }
 
 }
