@@ -47,7 +47,7 @@ public class LicensePerformerStatutory
 	{
 		String workingDir = System.getProperty("user.dir");
 		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//LicensePerformerResults(Statutory).html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Logging In - Performer (Statutory)");
 		//test.log(LogStatus.INFO, "Browser test is initiated");
 		
 		/*XSSFSheet sheet = ReadExcel();
@@ -90,7 +90,7 @@ public class LicensePerformerStatutory
 		extent.flush();*/
 	}
 	
-/*@Test(priority = 2)
+@Test(priority = 2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -138,7 +138,7 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-/*	@Test(priority = 6)
+	@Test(priority = 6)
 	void PendingForReview() throws InterruptedException
 	{
 		test = extent.startTest("Pending For Review License Count Verification");
@@ -171,7 +171,7 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-/*	@Test(priority = 9)
+@Test(priority = 9)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -188,7 +188,7 @@ public class LicensePerformerStatutory
 				test = extent.startTest("License ExpiredOn Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.LicenseExpiredOnStatutory(driver, test, "Statutory");
+				LiPeMethodsPOM.LicenseExpiredOnStatutory(driver, test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -218,7 +218,7 @@ public class LicensePerformerStatutory
  @Test(priority = 12)
 		void CriticalDocuments() throws InterruptedException, IOException
 			{
-				test = extent.startTest("Critical Document Verification");
+				test = extent.startTest("Critical Documents Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				licenseCompanyadmin.StatutoryMethod.CriticalDocuments(driver, test, "Statutory");
@@ -241,13 +241,13 @@ public class LicensePerformerStatutory
  @Test(priority = 21)
 		void AddLicense() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Add License  On Working Verification");
+			test = extent.startTest("Add License Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-          licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Statutory");
+            licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 	  @AfterMethod
 	  void driverclose()
 	  {

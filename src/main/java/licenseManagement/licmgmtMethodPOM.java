@@ -139,10 +139,10 @@ public class licmgmtMethodPOM {
 		   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 		   Js1.executeScript("window.scrollBy(0,1000)");
 		    WebDriverWait wait = new WebDriverWait(driver, 50);
-			wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickByLicnesetypeExpired(driver)));	  
+		    wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpired(driver)));
 			String ByLicenseTypeExpired=licmgmtPOM.clickByLicnesetypeExpired(driver).getText();
 			
-		     int ByLicensetypeExpiredgraph = Integer.parseInt(ByLicenseTypeExpired);	//Reading Expired graph count.
+		     int ByLicensetypeExpiredgraph1 = Integer.parseInt(ByLicenseTypeExpired);	//Reading Expired graph count.
 		     Thread.sleep(4000);
 		     licmgmtPOM.clickByLicnesetypeExpired(driver).click();					//Clicking on 'Expired' image
 		      Thread.sleep(5000);
@@ -159,15 +159,15 @@ public class licmgmtMethodPOM {
 				
 				//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
 				int total = Integer.parseInt(ByLicensetypeCount);
-				if(ByLicensetypeExpiredgraph == total)
+				if(ByLicensetypeExpiredgraph1 == total)
 					{
 						//test.log(LogStatus.PASS, "Number of Expired License  grid matches to Dashboard By Licnesetype Graph Expired License Count.");
-						test.log(LogStatus.PASS, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+						test.log(LogStatus.PASS, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph1);
 					}
 					else
 					{
 						//test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnesetype Graph Applied License   Count.");
-						test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph);
+						test.log(LogStatus.FAIL, "No of Expired License  in the grid = "+total+" | Dashboard By Licnesetype Expired License  Count = "+ByLicensetypeExpiredgraph1);
 					}
 					Thread.sleep(3000);
 					
@@ -596,7 +596,7 @@ public class licmgmtMethodPOM {
 		 licmgmtPOM.ClickLicenseTypeDropdown(driver).click();
 		 
 			Thread.sleep(3000);	
-		 licmgmtPOM.SelectLicenseTypeper(driver).click();
+		 licmgmtPOM.SelectLicenseTypeperin(driver).click();
 		 
 		 Thread.sleep(3000);
 		licmgmtPOM.ClickLocation(driver).click();
@@ -998,11 +998,20 @@ public class licmgmtMethodPOM {
 					
 				 MethodPOM.clickExportGraph(driver).click();
 				 Thread.sleep(3000);
-				 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+				 test.log(LogStatus.PASS, "License Details Downloaded Successfully.");
+				 MethodPOM.BystatusExpiringLicensetype(driver).click();
+				 Thread.sleep(5000);
+				 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+				 MethodPOM.Clicllicensetype(driver).click();
+				 Thread.sleep(5000);
+				 MethodPOM.GraphPopupClear(driver).click();
+				 Thread.sleep(5000);
+				 test.log(LogStatus.PASS, "Clear Button Working Successfully.");
+				 Thread.sleep(7000);
 				 MethodPOM.clickAllOverview(driver).click();
 				 Thread.sleep(3000);
 				//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
-				 test.log(LogStatus.PASS, "License OverView Details Open  Sucessfully");
+				 test.log(LogStatus.PASS, "License Overview Details Open  Successfully.");
 				 Thread.sleep(3000);
 				MethodPOM.clickBystatuscloseoverview(driver).click();
 				 Thread.sleep(4000);
@@ -1382,4 +1391,172 @@ public class licmgmtMethodPOM {
 		          
 		    
 	 }
+		public static void mgmtReports(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+		{
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickExpired(driver)));
+			
+			LiPerformerPOM.clickMyReport(driver).click();		//Clicking on 'My Reports'
+			Thread.sleep(5000);
+			//progress(driver);
+			
+			wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+			
+			if(type.equalsIgnoreCase("Internal"))
+			{
+				licmgmtPOM.typedrp(driver).click();			//Clicking on 'Type' drop down.
+				Thread.sleep(500);
+				licmgmtPOM.selectinternaltype(driver).click();//Selecting 'Internal' option.
+				Thread.sleep(3000);
+				LiPerformerPOM.Reportapply(driver).click();
+				//progress(driver);
+			}
+			
+			/*CheckReports(driver, test, 1, "Active");
+			
+			CheckReports(driver, test, 2, "Expired");
+			
+			CheckReports(driver, test, 3, "Expiring");
+			
+			CheckReports(driver, test, 4, "Applied");
+			
+			CheckReports(driver, test, 5, "Applied but Pending for Renewal");
+			
+			CheckReports(driver, test, 6, "Renewed");
+			
+			CheckReports(driver, test, 7, "Rejected");
+			*/
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//*[@id='exportReport']")).click();
+			test.log(LogStatus.PASS," License Report  downloaded successfully.");
+			
+		
+			Thread.sleep(500);
+			driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
+			test.log(LogStatus.PASS," License Overview  Button Working Sucessfully");
+		      Thread.sleep(3000);
+		     driver.findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button")).click();
+		     
+		   //wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard(driver)));
+			
+			//OverduePOM.clickDashboard(driver).click();
+		}
+		  public static void LicenseExpiringOnStatutory(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+		   {
+			   Thread.sleep(5000);
+			   MethodPOM.ClickMaximizeLicenseExpiringOn(driver).click();
+			   Thread.sleep(3000);
+			   test.log(LogStatus.PASS, "Expiring On Maximize Button Working Successfully");
+			 
+			   JavascriptExecutor js1=(JavascriptExecutor) driver ;
+				js1.executeScript("window.scroll(0,500)");
+				  Thread.sleep(3000);
+				MethodPOM.DashExpiringOnExport(driver).click();
+				test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
+				
+			   licmgmtPOM.showmoremgmt(driver).click();
+			   Thread.sleep(7000);
+			   WebDriverWait wait = new WebDriverWait(driver, 40);
+			   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
+			  licenseManagement.licmgmtPOM.lictype(driver).click();
+			   Thread.sleep(7000);
+			   licenseManagement.licmgmtPOM.lictype1(driver).click();
+			   Thread.sleep(3000);
+			   MethodPOM.Clearfilter(driver).click();
+				test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
+			   
+			  // WebDriverWait wait2 = new WebDriverWait(driver, 40);
+			  // wait2.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
+			   Thread.sleep(3000);
+			   
+			  // MethodPOM.ClickExportExpiredOn(driver).click();
+				
+			   int flag = 0;
+				try
+				{
+					wait.until(ExpectedConditions.visibilityOf(MethodPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+					flag = 1;
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+				if(flag == 1)
+				{
+					js1.executeScript("window.scrollBy(0,1000)");				//Scrolling down window by 2000 px.
+					
+					Thread.sleep(700);
+					String item = MethodPOM.clickReadActive(driver).getText();
+					String[] bits = item.split(" ");								//Splitting the String
+					String LicenseCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+					int count = 0;
+					if(LicenseCount.equalsIgnoreCase("to"))
+					{
+						Thread.sleep(2500);
+						item = MethodPOM.clickReadActive(driver).getText();
+						bits = item.split(" ");										//Splitting the String
+						LicenseCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
+					}
+					count = Integer.parseInt(LicenseCount);
+					
+					File dir = new File("C:\\Users\\dipali\\Downloads");
+					File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+					
+					js1.executeScript("window.scrollBy(0,-2000)");				//Scrolling down window by 2000 px.
+					Thread.sleep(500);
+					MethodPOM.ClickExportExpiredOn(driver).click();						//Clicking on Excel Image.
+					
+					Thread.sleep(3000);
+					File dir1 = new File("C:\\Users\\dipali\\Downloads");
+					File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					if(dirContents.length < allFilesNew.length)
+					{
+						test.log(LogStatus.PASS, type+" :- File downloaded successfully.");
+						
+						fis = new FileInputStream(lastModifiedFile);
+						workbook = new XSSFWorkbook(fis);
+						sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+						int no = sheet.getLastRowNum();
+						int SheetRecords = no - 0;						//Sheet have extra 5 lines of information at top (But row count started from 0, so -4)
+						fis.close();
+						
+						if(count == SheetRecords)
+						{
+							//test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
+							test.log(LogStatus.PASS, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+						}
+						else
+						{
+							//test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
+							test.log(LogStatus.FAIL, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+						}
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, type+" :- File doesn't downloaded successfully.");
+					}
+				}
+				else
+				{
+					test.log(LogStatus.PASS, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
+				}
+				driver.switchTo().parentFrame();
+				 MethodPOM.clickCloseGraphPopup(driver).click();
+				 Thread.sleep(3000);
+		         
+			   
+		   }
+		
 }

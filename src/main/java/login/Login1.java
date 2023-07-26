@@ -43,7 +43,7 @@ public class Login1 {
 			LoginPOM.setPassword(driver).sendKeys(password);	//Sent password to input box
 			LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
 			
-			if(!username.equalsIgnoreCase("performer@avantis.info"))
+		if(!username.equalsIgnoreCase("performer@avantis.info"))
 			{
 				try
 				{
@@ -55,12 +55,12 @@ public class Login1 {
 					//----------------------------------------------------------
 					
 					wait1.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink(driver)));
-				}
+			/*	}
 				catch(Exception e)
 				{
 					
 				}
-				
+				*/
 				Thread.sleep(500);
 				wait1.until(ExpectedConditions.visibilityOf(LoginPOM.Question1(driver)));
 				wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.Question1(driver)));
@@ -103,7 +103,7 @@ public class Login1 {
 				}
 				else if(method.equalsIgnoreCase("Implementation") )
 				{
-					ans1 = getAnswerDept(que1);						//Storing the answer in ans variable.
+					ans1 = "123";				//Storing the answer in ans variable.
 				}
 				else if(method.equalsIgnoreCase("richa") )
 				{
@@ -173,7 +173,7 @@ public class Login1 {
 				}
 				else if(method.equalsIgnoreCase("Implementation") )
 				{
-					ans2 = getAnswerDept(que2);						//Storing the answer in ans variable.
+					ans2 = "123";					//Storing the answer in ans variable.
 				}
 				else if(method.equalsIgnoreCase("richa") )
 				{
@@ -206,8 +206,14 @@ public class Login1 {
 				else
 					LoginPOM.Answer2(driver).sendKeys(ans2);		//Sending answer to the input box.
 				Thread.sleep(100);
-				
+			
 				LoginPOM.SubmitAnswer(driver).click();			//Clicking on Submit button.
+				//return driver;
+				}
+				catch(Exception e)
+				{
+					
+				}
 			}
 			
 				if(!method.equalsIgnoreCase("Implementation"))
@@ -394,7 +400,7 @@ public class Login1 {
 		public static WebDriver UserLogin1(String username, String password, String method) throws InterruptedException
 		{		
 			WebDriverWait wait = new WebDriverWait(driver, 40);
-			WebDriverWait wait1 = new WebDriverWait(driver, 40);
+			//WebDriverWait wait1 = new WebDriverWait(driver, 40);
 			
 			LoginPOM.setUname(driver).sendKeys(username);		//Sent username to input box 
 			Thread.sleep(500);
@@ -406,6 +412,7 @@ public class Login1 {
 				Thread.sleep(2000);
 			return driver;
 		}
+		
 		
 	}
 

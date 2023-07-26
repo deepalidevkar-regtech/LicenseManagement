@@ -96,6 +96,7 @@ public static WebElement ClickAddLicense(WebDriver driver)
 {
 	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_AddNewLicense']"));
 	return license;
+
 }
 public static WebElement ClickLicenseTypeDropdown(WebDriver driver)
 {
@@ -109,10 +110,16 @@ public static WebElement SelectLicenseType(WebDriver driver)
 	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlLicenseType_listbox']/li[2]")));
 	return license;
 }
+public static WebElement SelectLicenseTypeperin(WebDriver driver)
+{
+	WebDriverWait wait= new WebDriverWait(driver,20);
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlLicenseType_listbox']/li[2]")));
+	return license;
+}
 public static WebElement SelectLicenseTypeper(WebDriver driver)
 {
 	WebDriverWait wait= new WebDriverWait(driver,20);
-	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlLicenseType_listbox']/li[1]")));
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlLicenseType_listbox']/li[53]")));
 	return license;
 }
 public static WebElement ClickLocation(WebDriver driver)
@@ -190,7 +197,7 @@ public static WebElement LicenseCost(WebDriver driver)
 public static List<WebElement> SelectLicenseCompliance(WebDriver driver)
 {
 
-	  elementsList=driver.findElements(By.xpath("//*[@id='ddlCompliance_listbox']/li[3]"));
+	  elementsList=driver.findElements(By.xpath("//*[@id='ddlCompliance_listbox']/li[2]"));
      return elementsList; 
 	
 }
@@ -227,7 +234,7 @@ public static WebElement NewDate(WebDriver driver)
 }
 public static WebElement NewEndDate(WebDriver driver)
 {
-	license = driver.findElement(By.linkText("30"));
+	license = driver.findElement(By.linkText("25"));
 	return license;
 }
 public static WebElement Chooesfile(WebDriver driver)
@@ -375,7 +382,36 @@ public static WebElement Perstatus(WebDriver driver)
 	return license;
 }
 
-
+public static WebElement typedrp(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='k-select'])[1]"));
+	return license;
 }
+public static WebElement selectinternaltype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
+	return license;
+}
+public static WebElement showmoremgmt(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']"));
+	return license;
+}
+public static WebElement clicktypeinternal(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='Details']/div[1]/span[2]"));	
+	return license;
+}
+public static WebElement selecttypein(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[16]"));
+	return license;
+}
+
+
+
+
+
+}		
 
 	

@@ -22,6 +22,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import licenseCompanyadmin.MethodPOM;
+import licensePerformer.LiPerformerPOM;
 
 public class ImpMethodPOM {
 	public static WebDriver driver = null;	
@@ -198,18 +199,36 @@ public class ImpMethodPOM {
 			    Thread.sleep(3000);
 			    ImpPOM.SelectButton1(driver).click();
 		  		
-		  		Thread.sleep(3000);
-		  		MethodPOM.CheckCompliance(driver).click();
-		  		Thread.sleep(3000);
-		  		MethodPOM.ClickPerformer(driver).click();
-		  		Thread.sleep(3000);
-		  		MethodPOM.SelectLicensePerformer(driver).click();
-		  		
-		  
-		  		/*Thread.sleep(3000);
-		  		MethodPOM.ClickReviewer(driver).click();
-		  		Thread.sleep(5000);
-		  		MethodPOM.SelectLicenseReviewer(driver).click();*/
+			    ImpPOM.CheckCompliance(driver).click();
+			    Thread.sleep(3000);
+			    ImpPOM.clicklocation(driver).click();
+			    Thread.sleep(3000);
+			    ImpPOM.ClickPerformer(driver).click();
+			    Thread.sleep(3000);
+			    ImpPOM.selectperformer(driver).click();
+			    Thread.sleep(1000);
+			    ImpPOM.ClickReviewer(driver).click();
+			    Thread.sleep(1000);
+			    ImpPOM.Selectreviewer(driver).click();
+			    Thread.sleep(1000);
+			    
+			    JavascriptExecutor js1=(JavascriptExecutor) driver ;
+				js1.executeScript("window.scroll(0,500)");
+				
+				ImpPOM.impaddassignment(driver).click();
+				
+				String successmsg = ImpPOM.successmsg(driver).getText();
+				if(successmsg.equalsIgnoreCase("Assignment saved successfully"))
+				{
+					test.log(LogStatus.PASS, "Message Displayed = "+successmsg);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Message Displayed = "+successmsg);
+				}
+				
+			   
+			    
 		  	
 			
 			
@@ -227,7 +246,41 @@ public class ImpMethodPOM {
 		ImpPOM.ClickLicenseInternallink(driver).click();
 		Thread.sleep(3000);
 		ImpPOM.ClickCustomerin(driver).click();
+		Thread.sleep(1000);
+	   
+		
+
 		
 	}
-	
-}
+	public static void licenselist(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+	{
+		 WebDriverWait wait = new WebDriverWait(driver, 20);
+			
+			ImpPOM.clickmanageschedule(driver).click();
+			Thread.sleep(3000);
+			ImpPOM.ClickLicesne(driver).click();
+			Thread.sleep(3000);
+			ImpPOM.ClickLicesneStatutory(driver).click();
+			Thread.sleep(1000);
+	        ImpPOM.licenselist(driver).click();
+	        Thread.sleep(1000);
+	        ImpPOM.custdrop(driver).click();
+	      
+	        Thread.sleep(1000);
+	        ImpPOM.selectcustomerlist(driver).click();
+	        Thread.sleep(8000);       
+	        ImpPOM.editlicense(driver).click();
+	        Thread.sleep(1000);       
+	        ImpPOM.updatelicenseNo(driver).clear();
+	        Thread.sleep(1000);         
+	        ImpPOM.updatelicenseNo(driver).sendKeys("imn-23");
+	        Thread.sleep(1000);        
+	        ImpPOM.updatelicensetitle(driver).clear();
+	        Thread.sleep(1000);   
+	        ImpPOM.updatelicensetitle(driver).sendKeys("updateimn-23");
+	        Thread.sleep(1000);   
+	        ImpPOM.licenselistsave(driver).click();
+	        test.log(LogStatus.PASS,"License Details Updated Successfully" );
+	        }
+	}
+

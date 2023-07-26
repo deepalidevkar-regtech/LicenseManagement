@@ -22,6 +22,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import licenseManagement.licmgmtMethodPOM;
 import licensePerformer.LiPeMethodsPOM;
 import performer.OverduePOM;
 
@@ -47,8 +48,8 @@ public class StatutoryTC {
 	void setBrowser() throws InterruptedException, IOException
 	{
 		String workingDir = System.getProperty("user.dir");
-		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//LicenseCompanyadmin.html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html",true);
+		test = extent.startTest("Logging In - Companyadmin (Statutory");
 		//test.log(LogStatus.INFO, "Browser test is initiated");
 		
 		/*XSSFSheet sheet = ReadExcel();
@@ -66,8 +67,8 @@ public class StatutoryTC {
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Logging In - Companyadmin (Statutory)");
-	  //	test.log(LogStatus.PASS, "Logging into system");
+		//test = extent.startTest("Logging In - Companyadmin (Statutory)");
+	     //test.log(LogStatus.PASS, "Logging In - Companyadmin (Statutory");
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
@@ -90,7 +91,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();*/
 	}
-   @Test(priority = 2)
+ /*  @Test(priority = 2)
 	void Masters() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Masters - User Creation verification");
@@ -116,7 +117,7 @@ public class StatutoryTC {
 	{
 	{
 		test = extent.startTest("Statutory Renew License");
-		test.log(LogStatus.PASS, "Compliance Created and Assigned Sucessfully");
+		test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
 		StatutoryMethod.RenewStatutoryLicense(driver);
 
 		extent.endTest(test);
@@ -221,7 +222,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 14)
+	/*@Test(priority = 14)
 	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License ExpiringOn Working Verification");
@@ -277,7 +278,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 19)
+	/* @Test(priority = 19)
 		void BystausAppliedButnotRenewedlicense() throws InterruptedException
 		{
 			test = extent.startTest("By status Applied Graph Working Verification");
@@ -344,7 +345,7 @@ public class StatutoryTC {
 				extent.endTest(test);
 				extent.flush();
 			}
-	  @Test(priority = 25)
+	  /*@Test(priority = 25)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
 			test = extent.startTest("By License Type Terminate Graph Working Verification");
@@ -365,7 +366,17 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 27)
+	 @Test(priority = 21)
+			void AddLicense() throws InterruptedException, IOException
+			{
+				test = extent.startTest("My Workspace Working Verification");
+				//test.log(LogStatus.INFO, "Test Initiated");
+	             licenseManagement.licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Statutory");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+	/* @Test(priority = 27)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Download Verification");
@@ -401,7 +412,7 @@ public class StatutoryTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 	@Test(priority = 30)
 		void LicenseNewAssignment() throws InterruptedException, IOException
 		{
@@ -411,7 +422,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority =31)
+	/* @Test(priority =31)
 		void LicenseCreation() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License Creation Verification");
@@ -420,6 +431,15 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
+	/* @Test(priority =32)
+		void  IsPermanent() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" IsPermanent License working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			StatutoryMethod.IsPermanent(driver, test, "Statutory");
+			extent.endTest(test);
+			extent.flush();
+		}*/
 	  @AfterMethod
 	  void driverclose()
 	  {

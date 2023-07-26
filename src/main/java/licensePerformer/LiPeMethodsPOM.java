@@ -72,7 +72,7 @@ public class LiPeMethodsPOM
 		}
 		Thread.sleep(5000);	
 		MethodPOM.ClickActiveOverview(driver).click();
-		test.log(LogStatus.PASS, " License Overview Details Successfully");
+		test.log(LogStatus.PASS, " License Overview Details Successfully.");
 		Thread.sleep(5000);
 		MethodPOM.ClickCloseOverview(driver).click();			
 		Thread.sleep(7000);
@@ -142,7 +142,7 @@ public class LiPeMethodsPOM
      */
         // Accepting alert
         alert.accept();
-        test.log(LogStatus.PASS,"License Details Updated Successfully" );
+        test.log(LogStatus.PASS,"License Details Updated Successfully." );
         
           Thread.sleep(5000);
           
@@ -233,15 +233,6 @@ public class LiPeMethodsPOM
 		Thread.sleep(300);
 		if(type.equalsIgnoreCase("Statutory"))
 		{
-			String msg = LiPerformerPOM.readMessage(driver).getText();
-			if(msg.equalsIgnoreCase("Save Sucessfully."))
-			{
-				test.log(LogStatus.PASS, "Message Displayed = "+msg);
-			}
-			else
-			{
-				test.log(LogStatus.PASS, "Message Displayed = "+msg);
-			}
 			
 			Thread.sleep(500);
 			js1.executeScript("window.scrollBy(2000,0)");	//Scrolling up window by 2000 px.
@@ -561,7 +552,7 @@ public class LiPeMethodsPOM
 		
 		Thread.sleep(300);
 		MethodPOM.ClickActiveOverview(driver).click();
-		test.log(LogStatus.PASS, "Expiring License Overview Details Sucessfully");
+		test.log(LogStatus.PASS, "Expiring License Overview Details Successfully.");
 		Thread.sleep(3000);
 		MethodPOM.ClickCloseOverview(driver).click();
 		LiPerformerPOM.editlicenseicon(driver).click();
@@ -587,7 +578,7 @@ public class LiPeMethodsPOM
 
         // Accepting alert
         alert.accept();
-        test.log(LogStatus.PASS,"License Details Updated Successfully" );
+        test.log(LogStatus.PASS,"License Details Updated Successfully." );
         
           Thread.sleep(5000);
           
@@ -794,7 +785,7 @@ public class LiPeMethodsPOM
 				//Thread.sleep(3000);
 				
 				MethodPOM.ClickActiveOverview(driver).click();
-				test.log(LogStatus.PASS, "Expiring License Overview Details Sucessfully");
+				test.log(LogStatus.PASS, "Expiring License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				LiPerformerPOM.editlicenseicon(driver).click();
@@ -914,7 +905,7 @@ public class LiPeMethodsPOM
 					}
 					else
 					{
-						test.log(LogStatus.PASS, "Message Displayed = "+msg);
+						test.log(LogStatus.FAIL, "Message Displayed = "+msg);
 					}
 					
 					Thread.sleep(500);
@@ -1146,7 +1137,7 @@ public class LiPeMethodsPOM
 		}
 		
 				MethodPOM.ClickActiveOverview(driver).click();
-				test.log(LogStatus.PASS, "Expired License Overview Details Succ essfully");
+				test.log(LogStatus.PASS, "Expired License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				Thread.sleep(3000);
@@ -1369,7 +1360,7 @@ public class LiPeMethodsPOM
 		   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
 	        MethodPOM.ClickExportExpiredOn1(driver).click();
-	        test.log(LogStatus.PASS, "Dashboard ExpiredOn License List Downloaded Sucessfully");
+	        test.log(LogStatus.PASS, "Dashboard ExpiredOn License List Downloaded Successfully");
 	        Thread.sleep(2000);
 			
 		   LiPerformerPOM.perexpiredon(driver).click();
@@ -1377,7 +1368,7 @@ public class LiPeMethodsPOM
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 		   Thread.sleep(5000);
 		   MethodPOM.ClickExportExpiredOn(driver).click();
-			test.log(LogStatus.PASS, "Expired License List Downloaded Sucessfully");
+			test.log(LogStatus.PASS, "Expired License List Downloaded Successfully");
 			Thread.sleep(5000);
 			/*MethodPOM.ExpiredOnLictype(driver).click();
 			MethodPOM.searchExpiredOnLictype(driver).sendKeys("Boiler",Keys.ENTER);
@@ -1394,7 +1385,7 @@ public class LiPeMethodsPOM
 			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
 			Thread.sleep(7000);
 			MethodPOM.ClickOverviewExpiredOn(driver).click();
-			test.log(LogStatus.PASS, "Expied OverView License Displayed");
+			test.log(LogStatus.PASS, "Expired OverView License Displayed");
 			 Thread.sleep(3000);
 	             MethodPOM.clickBystatuscloseoverview(driver).click();
 				 Thread.sleep(2000);
@@ -1504,7 +1495,7 @@ public class LiPeMethodsPOM
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, type+" :- File doesn't downloaded successfully.");
+					test.log(LogStatus.FAIL, type+" :- File doesn't downloaded Successfully.");
 				}
 			}
 			else
@@ -1538,6 +1529,7 @@ public class LiPeMethodsPOM
 			  Thread.sleep(3000);
 			test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
 			By locator = By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']");
+			
 
 			wait1.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
@@ -1549,7 +1541,7 @@ public class LiPeMethodsPOM
 			Thread.sleep(4000);
 		//   LiPerformerPOM.Expiringshowmore(driver).click();
 		   Thread.sleep(7000);
-		   test.log(LogStatus.PASS, "Expired On show More Link Working Successfully");
+		   test.log(LogStatus.PASS, "Expired On showMore Link Working Successfully");
 		   WebDriverWait wait = new WebDriverWait(driver, 40);
 			Thread.sleep(5000);
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
@@ -1727,7 +1719,7 @@ public class LiPeMethodsPOM
      	LiPerformerPOM.ShareContactNo(driver).sendKeys("86262040232");
      	Thread.sleep(3000);
      	LiPerformerPOM.Sharesave(driver).click();
-     	test.log(LogStatus.PASS, "Document shared successfully.");
+     	test.log(LogStatus.PASS, "Document shared Successfully.");
      	Thread.sleep(3000);
      	LiPerformerPOM.clickUnshare(driver).click();
      	 // Switching to Alert       
@@ -1744,7 +1736,7 @@ public class LiPeMethodsPOM
        
         // Accepting alert
         alert.accept();
-        test.log(LogStatus.PASS,"Document unshared successfully." );
+        test.log(LogStatus.PASS,"Document unshared Successfully." );
         Thread.sleep(1000);
         LiPerformerPOM.ShareClose(driver).click();
         test.log(LogStatus.PASS,"Share Popup Close Button Working Successfully" );
@@ -1762,7 +1754,7 @@ public class LiPeMethodsPOM
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickExpired(driver)));
 		
 		LiPerformerPOM.clickMyReport(driver).click();		//Clicking on 'My Reports'
-		
+		Thread.sleep(5000);
 		progress(driver);
 		
 		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
@@ -1793,12 +1785,12 @@ public class LiPeMethodsPOM
 		*/
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//*[@id='exportReport']")).click();
-		test.log(LogStatus.PASS," License Report  downloaded successfully.");
+		test.log(LogStatus.PASS," License Report  Downloaded Successfully.");
 		
 	
 		Thread.sleep(500);
 		driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
-		test.log(LogStatus.PASS," License Overview  Button Working Sucessfully");
+		test.log(LogStatus.PASS," License Overview  Button Working Successfully");
 	      Thread.sleep(3000);
 	     driver.findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button")).click();
 	     
@@ -1872,7 +1864,7 @@ public class LiPeMethodsPOM
 			
 			if(dirContents.length < allFilesNew.length)
 			{
-				test.log(LogStatus.PASS, type+" :- File downloaded successfully.");
+				test.log(LogStatus.PASS, type+" :- File Downloaded Successfully.");
 				
 			/*	fis = new FileInputStream(lastModifiedFile);
 				workbook = new XSSFWorkbook(fis);
@@ -1894,7 +1886,7 @@ public class LiPeMethodsPOM
 			}
 			else
 			{
-				test.log(LogStatus.FAIL, type+" :- File doesn't downloaded successfully.");
+				test.log(LogStatus.FAIL, type+" :- File doesn't Downloaded Successfully.");
 			}
 		}
 		/*else
@@ -1991,7 +1983,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 				//Thread.sleep(3000);
 				
 				MethodPOM.ClickActiveOverview(driver).click();
-				test.log(LogStatus.PASS, "Expiring License Overview Details Sucessfully");
+				test.log(LogStatus.PASS, "Expiring License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				
@@ -2497,7 +2489,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 		 test.log(LogStatus.PASS, "Dashboard Expired On License List Downloaded Successfully");
 		
 		 MethodPOM.ClickShowMoreExpiredOnInternal(driver).click();
-		 test.log(LogStatus.PASS, "Expired On show More Link Working Successfully");
+		 test.log(LogStatus.PASS, "Expired On showMore Link Working Successfully");
 		  WebDriverWait wait = new WebDriverWait(driver, 40);
 			Thread.sleep(5000);
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));

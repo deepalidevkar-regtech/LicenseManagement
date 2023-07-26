@@ -56,11 +56,11 @@ public class Login
 				//----------------------------------------------------------
 				
 				wait1.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink(driver)));
-			}
+			/*}
 			catch(Exception e)
 			{
 				
-			}
+			}*/
 			
 			Thread.sleep(500);
 			wait1.until(ExpectedConditions.visibilityOf(LoginPOM.Question1(driver)));
@@ -120,6 +120,11 @@ public class Login
 			
 			
 		LoginPOM.SubmitAnswer(driver).click();				//Clicking on Submit button.
+		}
+		catch(Exception e)
+		{
+			
+		}
 		}		
 		if(!method.equalsIgnoreCase("Implementation"))
 		{

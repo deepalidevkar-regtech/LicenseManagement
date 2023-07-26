@@ -113,7 +113,7 @@ public class ImpstatutoryTC {
 		}
 	}
 	
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	void CompliancemappingExport()throws InterruptedException
 	{
 		test = extent.startTest("statutory License Compliance Mapping Export Verification");
@@ -122,7 +122,7 @@ public class ImpstatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-	/*@Test(priority = 3)
+	@Test(priority = 3)
 	void StatutoryLicenseCreation()throws InterruptedException, IOException
 	{
 		test = extent.startTest("statutory License Creation Verification");
@@ -139,5 +139,13 @@ public class ImpstatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}*/
+	@Test(priority = 5)
+	void Licenselist()throws InterruptedException, IOException
+	{
+		test = extent.startTest("On License List Page Update License Working Verification");
+		 ImpMethodPOM.licenselist(driver, test, "Statutory");
+		extent.endTest(test);
+		extent.flush();
+	}
 
 }
