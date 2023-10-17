@@ -90,7 +90,7 @@ public class LicensePerformerStatutory
 		extent.flush();*/
 	}
 	
-@Test(priority = 2)
+@Test(priority = 2) 
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -102,8 +102,20 @@ public class LicensePerformerStatutory
 		extent.flush();
 		
 	}
-	
 @Test(priority = 3)
+void ActivePerform() throws InterruptedException
+{
+	test = extent.startTest("Active License Count Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
+	
+	LiPeMethodsPOM.activelicenseperform(driver, test, "Statutory");
+	
+	extent.endTest(test);
+	extent.flush();
+	
+}
+	
+@Test(priority = 4)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -114,8 +126,20 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
+@Test(priority = 5)
+void Expiringperform() throws InterruptedException
+{
+	test = extent.startTest("Expiring License Count Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
 	
- @Test(priority = 4)
+	LiPeMethodsPOM.Expiringlicenseperform(driver, test, "Statutory");
+	
+	extent.endTest(test);
+	extent.flush();
+	
+}
+
+@Test(priority = 6)
 	void Expired() throws InterruptedException
 	{
 		test = extent.startTest("Expired License Count Verification");
@@ -126,8 +150,20 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 7)
+   void Expiredgperform() throws InterruptedException
+{
+	test = extent.startTest("Expired License Count Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
 	
-	@Test(priority = 5)
+	LiPeMethodsPOM.Expiredlicenseperform(driver, test, "Statutory");
+	
+	extent.endTest(test);
+	extent.flush();
+	
+}
+	
+	@Test(priority = 8)
 	void Applied() throws InterruptedException
 	{
 		test = extent.startTest("Applied Count Verification");
@@ -138,7 +174,7 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 6)
+	@Test(priority = 9)
 	void PendingForReview() throws InterruptedException
 	{
 		test = extent.startTest("Pending For Review License Count Verification");
@@ -149,7 +185,7 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 7)
+	@Test(priority = 10)
 	void RejectedCount() throws InterruptedException
 	{
 		test = extent.startTest("Rejected License Count Verification");
@@ -160,7 +196,7 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 8) 
+	@Test(priority = 11) 
 	void TerminateCount() throws InterruptedException
 	{
 		test = extent.startTest("Terminate License Count Verification");
@@ -171,7 +207,7 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 9)
+@Test(priority = 12)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -182,7 +218,7 @@ public class LicensePerformerStatutory
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 10)
+	 @Test(priority = 13)
 			void LicenseExpiredOnStatutory() throws InterruptedException
 			{
 				test = extent.startTest("License ExpiredOn Working Verification");
@@ -193,7 +229,7 @@ public class LicensePerformerStatutory
 				extent.endTest(test);
 				extent.flush();
 			}
-  @Test(priority = 10)
+  @Test(priority = 14)
 		void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License ExpiringOn Working Verification");
@@ -206,7 +242,7 @@ public class LicensePerformerStatutory
 			extent.flush();
 		}
 	
-	@Test(priority = 11)
+	@Test(priority = 15)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -215,7 +251,7 @@ public class LicensePerformerStatutory
 		extent.flush();
 	}
 	
- @Test(priority = 12)
+ @Test(priority = 16)
 		void CriticalDocuments() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Critical Documents Verification");
@@ -227,7 +263,7 @@ public class LicensePerformerStatutory
 				extent.flush();
 			}
 	
-@Test(priority = 13)
+@Test(priority = 17)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Download Verification");
@@ -238,10 +274,10 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 21)
-		void AddLicense() throws InterruptedException, IOException
+ @Test(priority = 18)
+		void MyWorkspace() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Add License Working Verification");
+			test = extent.startTest("My Workspace Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
             licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Statutory");
 			

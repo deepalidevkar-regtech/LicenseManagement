@@ -20,13 +20,13 @@ public class ImpPOM {
 	
 	public static WebElement ClickLicesne(WebDriver driver)	
 	{
-		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:123']/li[4]"));
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:124']/li[4]"));
 		return license;
 	
 	}
 	public static WebElement ClickLicesneStatutory(WebDriver driver)	
 	{
-		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:127']/li[1]"));
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:128']/li[1]"));
 		return license;	
 	
 	}
@@ -48,9 +48,17 @@ public class ImpPOM {
 		return license;
 	
 	}
+	public static WebElement LicenseCreation1(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:129']/li[2]"));
+		return license;
+	
+	}
+	
 	public static WebElement ClickCustomer(WebDriver driver)	
 	{
 		license = driver.findElement(By.xpath("(//a[@class='chosen-single chosen-default'])[1]"));
+	
 		return license;	
 	}
 	public static WebElement selectcustomer(WebDriver driver)	
@@ -202,6 +210,14 @@ public class ImpPOM {
 	public static WebElement CheckCompliance(WebDriver driver)	
 	{
 		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_chkbox_0']"));
+	
+		return license;
+	
+	}
+	public static WebElement CheckCompliancein(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList1_chkbox1_0']"));
+		
 		return license;
 	
 	}
@@ -259,5 +275,212 @@ public class ImpPOM {
 		return license;
 	
 	}
+	public static WebElement manageusertab(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar']/ul/li[1]"));
+		return license;
 	
+	}
+	public static WebElement usermastertab(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:2']/li[3]"));
+		return license;
+	
+	}
+	public static WebElement clickcustdropdown(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("(//*[@class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s'])[1]"));
+		return license;
+	
+	}
+	public static WebElement selectcustomer2(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("(//*[@class='ui-corner-all'])[4]"));
+		return license;
+	
+	}
+	public static WebElement modifyentity(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='BodyContent_grdUser_lbtnEntityAssignment_3'"));
+		return license;
+	
+	}
+	public static WebElement stutrediolicbtn(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='BodyContent_RadioButtonEntityList_2']"));
+		return license;
+	
+	}
+	public static WebElement assignrediobtn(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='BodyContent_RadioButtonList1_0']"));
+		return license;
+	
+	}
+	public static WebElement clicklocationimp(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='BodyContent_tbxBranch']"));
+		return license;
+	
+	}
+	public static WebElement pluseimg(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='BodyContent_tvBranchesn0']/img"));
+		return license;
+	
+	}
+	public static WebElement typeselection(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("(//*[@class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s'])[2]"));
+		return license;
+	
+	}
+	public static WebElement selecttypein(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:127']/li[2]"));
+		return license;
+	
+	}
+	public static WebElement Licenselistin(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:134']/li[3]"));
+		return license;
+	
+	}
+	public static WebElement LicenseCreatinin(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:134']/li[2]"));
+		return license;
+	
+	}
+	public static WebElement selectCustomerin(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlFilterCustomer_chosen']"));
+		return license;
+	
+	}
+	public static WebElement Chhoescust(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlFilterCustomer']/option[5]"));
+		return license;
+	
+	}
+	public static WebElement Appliedliccreation(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='CMPMenuBar:submenu:129']/li[3]"));
+		return license;
+	
+	}
+	public static WebElement appliedCheckcompliance(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_chkbox_0']"));
+		return license;
+	
+	}
+	public static WebElement appliedstartdate(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_txtStartDate_0']"));
+		return license;
+	
+	}
+	public static WebElement appliedsavelic(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnSaveLicense']"));
+		return license;
+	
+	}
+	public static WebElement ChkIsPerment(WebDriver driver)	
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_ChkIsPerment_0']"));
+		return license;
+	
+	}
+	
+	public static WebElement SelectCustomerUser(WebDriver driver)		//Method for closing Message Popup
+	{
+		license = driver.findElement(By.xpath("//*[@id='BodyContent_divCustomerfilter']/div/span/input"));
+		return license;                        
+	}
+	
+	public static WebElement customer123Users(WebDriver driver)		//Method for closing Message Popup
+	{
+		license = driver.findElement(By.linkText("ABCD Pvt Ltd"));
+		return license;                        
+	}
+public static WebElement ModifyEntity(WebDriver driver)		//Method for closing Message Popup
+	{
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_grdUser_lbtnEntityAssignment_3']"));
+		return license;                    
+	}
+
+
+
+public static WebElement ExpandLocation(WebDriver driver) //Method for closing Message Popup
+
+{
+
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_tvBranchesn0']/img"));
+   return license;
+
+}
+
+
+
+public static WebElement EAAWSGFJBitaLimited(WebDriver driver) //Method for closing Message Popup
+
+{
+
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_tvBranchesn2CheckBox']"));
+
+return license;
+
+}
+
+public static WebElement LocationEA(WebDriver driver) {
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_tbxBranch']"));
+
+	   return license;
+	
+}
+public static WebElement lictype(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='ui-menu-item'])[4]"));
+	   return license;	
+}
+public static WebElement clickcategorylic(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s'])[3]"));
+	   return license;	
+}
+public static WebElement clicksaves(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_BtnentitySave']"));
+	   return license;	
+}
+public static WebElement validtabel(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_ctl07']"));
+	   return license;	
+}
+public static WebElement Modifyclose(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_Button5']"));
+	   return license;	
+}
+public static WebElement Checkallloc(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_chkallLocation']"));
+	   return license;	
+}
+public static WebElement selectlic1(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='ui-menu-item'])[4]"));
+	   return license;	
+}
+public static WebElement deleteentity(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("//*[@id='BodyContent_RadioButtonList1_1']"));
+	   return license;	
+}
+
 }

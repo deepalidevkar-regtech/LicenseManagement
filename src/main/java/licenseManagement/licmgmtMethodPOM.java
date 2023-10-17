@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.hc.core5.ssl.PrivateKeyDetails;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -138,13 +139,15 @@ public class licmgmtMethodPOM {
 		   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 		   Js1.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(5000);
 		    WebDriverWait wait = new WebDriverWait(driver, 50);
 		    wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpired(driver)));
-			String ByLicenseTypeExpired=licmgmtPOM.clickByLicnesetypeExpired(driver).getText();
-			
+		    Thread.sleep(5000);
+			String ByLicenseTypeExpired=MethodPOM.clickByLicnesetypeExpired(driver).getText();
+			 Thread.sleep(5000);
 		     int ByLicensetypeExpiredgraph1 = Integer.parseInt(ByLicenseTypeExpired);	//Reading Expired graph count.
 		     Thread.sleep(4000);
-		     licmgmtPOM.clickByLicnesetypeExpired(driver).click();					//Clicking on 'Expired' image
+		     MethodPOM.clickByLicnesetypeExpired(driver).click();					//Clicking on 'Expired' image
 		      Thread.sleep(5000);
 		      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
 		      JavascriptExecutor Js = (JavascriptExecutor) driver;
@@ -230,6 +233,15 @@ public class licmgmtMethodPOM {
 				 MethodPOM.clickExportGraph(driver).click();
 				 Thread.sleep(3000);
 				 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+				 Thread.sleep(3000);
+				 MethodPOM.BystatusExpiringLicensetype(driver).click();
+				 Thread.sleep(5000);
+				 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+				 MethodPOM.Clicllicensetype(driver).click();
+				 Thread.sleep(5000);
+				 MethodPOM.GraphPopupClear(driver).click();
+				 Thread.sleep(5000);
+				 test.log(LogStatus.PASS, "Clear Button Working Successfully.");
 				 MethodPOM.clickAllOverview(driver).click();
 				 Thread.sleep(3000);
 				//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -287,6 +299,15 @@ public class licmgmtMethodPOM {
 				 MethodPOM.clickExportGraph(driver).click();
 				 Thread.sleep(3000);
 				 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+				 Thread.sleep(3000);
+				 MethodPOM.BystatusExpiringLicensetype(driver).click();
+				 Thread.sleep(5000);
+				 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+				 MethodPOM.Clicllicensetype(driver).click();
+				 Thread.sleep(5000);
+				 MethodPOM.GraphPopupClear(driver).click();
+				 Thread.sleep(5000);
+				 test.log(LogStatus.PASS, "Clear Button Working Successfully.");
 				 MethodPOM.clickAllOverview(driver).click();
 				 Thread.sleep(3000);
 				//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -344,6 +365,15 @@ public class licmgmtMethodPOM {
 				 MethodPOM.clickExportGraph(driver).click();
 				 Thread.sleep(3000);
 				 test.log(LogStatus.PASS, "License Details Dwonloaded Sucessfully");
+				 Thread.sleep(3000);
+				 MethodPOM.BystatusExpiringLicensetype(driver).click();
+				 Thread.sleep(5000);
+				 //MethodPOM.BystatusExpiringsearchLicensetype(driver).click();
+				 MethodPOM.Clicllicensetype(driver).click();
+				 Thread.sleep(5000);
+				 MethodPOM.GraphPopupClear(driver).click();
+				 Thread.sleep(5000);
+				 test.log(LogStatus.PASS, "Clear Button Working Successfully.");
 				 MethodPOM.clickAllOverview(driver).click();
 				 Thread.sleep(3000);
 				//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -506,7 +536,7 @@ public class licmgmtMethodPOM {
 		     int Expiredlicense = Integer.parseInt(Expired);	//Reading Expired count.
 
 		      MethodPOM.clickExpired(driver).click();					//Clicking on 'Expired' image
-		      Thread.sleep(4000);
+		      Thread.sleep(7000);
 		 
 		      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
 		      
@@ -514,8 +544,9 @@ public class licmgmtMethodPOM {
 
 	    	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 				js1.executeScript("window.scroll(0,500)");
+				 Thread.sleep(7000);
 				String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
-				
+				 Thread.sleep(7000);
 		      if(!item1.equalsIgnoreCase("No items to display"))
 		      {
 		    	//   JavascriptExecutor js=(JavascriptExecutor) driver ;
@@ -567,6 +598,20 @@ public class licmgmtMethodPOM {
 		 licmgmtPOM.ClickMyWorkspace(driver).click();
 		 WebDriverWait wait = new WebDriverWait(driver, 50);
 		 Thread.sleep(3000);
+		 WebElement Documentstatus = driver.findElement(By.xpath("//*[@id='MainContentCW']/div[2]/span/span/span[1]"));
+		  boolean Documentststusdrp = Documentstatus.isDisplayed();
+		   
+		if (Documentststusdrp == true) 
+		{
+			test.log(LogStatus.PASS, "My Workspace Document Status Dropdown displayed ");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "My Workspace Document Status Dropdown not displayed ");
+		}
+
+
+		 
 		 if(type.equalsIgnoreCase("Internal"))
 		 {
 			  WebDriverWait wait1= new WebDriverWait(driver, 5);
@@ -590,7 +635,8 @@ public class licmgmtMethodPOM {
 		 licmgmtPOM.WorkspaceExport(driver).click();
 		 test.log(LogStatus.PASS,"License Details Export" );
 		 Thread.sleep(3000);	
-		 licmgmtPOM.ClickAddLicense(driver).click();
+		 
+	/*	licmgmtPOM.ClickAddLicense(driver).click();
 		 
 		Thread.sleep(3000);	
 		 licmgmtPOM.ClickLicenseTypeDropdown(driver).click();
@@ -616,7 +662,7 @@ public class licmgmtMethodPOM {
 		 Thread.sleep(6000);
 		 licmgmtPOM.SelectPerformer(driver).get(3).click();
 		// licmgmtPOM.SelectPerformer(driver).click();
-		 
+		
 		 Thread.sleep(3000);
 		 licmgmtPOM.ClickReviewer(driver).click();
 		 Thread.sleep(6000);
@@ -636,7 +682,7 @@ public class licmgmtMethodPOM {
 		 String LicenseNo=c2.getStringCellValue();
 		 licmgmtPOM.LicenseNo(driver).sendKeys(LicenseNo);
 		 
-		/* Thread.sleep(3000);
+		Thread.sleep(3000);
 		 Row row8=sheet.getRow(8);
 			org.apache.poi.ss.usermodel.Cell c3=row8.getCell(1);
 		 String ApplicationDays=c3.getStringCellValue();
@@ -647,7 +693,7 @@ public class licmgmtMethodPOM {
 			org.apache.poi.ss.usermodel.Cell c4=row9.getCell(1);
 		 String LicenseCost=c4.getStringCellValue();
 		 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost);
-		 */
+		 
 		licmgmtPOM.ClickCal(driver).click();
 		 Thread.sleep(7000);
 		 licmgmtPOM.NewDate(driver).click();
@@ -712,6 +758,7 @@ public class licmgmtMethodPOM {
 		          
 		         licmgmtPOM.editlicenseclose(driver).click();
 		         Thread.sleep(5000);
+		         */
 		         licmgmtPOM.ClickMyWorkspace(driver).click();
 		         Thread.sleep(5000);
 		         licmgmtPOM.Overviewworkspace(driver).click();
@@ -753,7 +800,7 @@ public class licmgmtMethodPOM {
 			 licmgmtPOM.WorkspaceExport(driver).click();
 			 test.log(LogStatus.PASS,"License Details Export" );
 			 Thread.sleep(3000);	
-			 licmgmtPOM.ClickAddLicense(driver).click();
+			/* licmgmtPOM.ClickAddLicense(driver).click();
 			 
 			Thread.sleep(3000);	
 			 licmgmtPOM.ClickLicenseTypeDropdown(driver).click();
@@ -810,7 +857,7 @@ public class licmgmtMethodPOM {
 				org.apache.poi.ss.usermodel.Cell c4=row9.getCell(1);
 			 String LicenseCost=c4.getStringCellValue();
 			 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost);
-			 */
+			 
 			licmgmtPOM.ClickCal(driver).click();
 			 Thread.sleep(7000);
 			 licmgmtPOM.NewDate(driver).click();
@@ -875,6 +922,7 @@ public class licmgmtMethodPOM {
 			          
 			         licmgmtPOM.editlicenseclose(driver).click();
 			         Thread.sleep(3000);
+			         */
 			         licmgmtPOM.ClickMyWorkspace(driver).click();
 			         Thread.sleep(5000);
 			         licmgmtPOM.Overviewworkspace(driver).click();
@@ -890,16 +938,16 @@ public class licmgmtMethodPOM {
 			         {
 			        	 test.log(LogStatus.FAIL,"License Nominee Details Not Displayed." );
 			         }
-			         Thread.sleep(7000);
+		 }
+			   //      Thread.sleep(7000);
+			         
 			        // licmgmtPOM.CloseOverview(driver).click();
 			       //  Thread.sleep(7000);
 			         // licmgmtPOM.ClickMyWorkspace(driver).click();
 
-			 
-		 }
-	 
-}
-	         	    
+	 }
+
+	     	    
 	 public static void MyDocuments(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 		{
 		 WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -910,7 +958,7 @@ public class licmgmtMethodPOM {
 			LiPerformerPOM.clickMyDocuments(driver).click();		//Clicking on 'My Documents'
 			Thread.sleep(3000);
 			LiPerformerPOM.clickMyDocumentsMenu(driver).click();	//Clicking on 'My Documents'
-			
+			Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
 			
 			if(type.equalsIgnoreCase("Internal"))
@@ -1455,7 +1503,7 @@ public class licmgmtMethodPOM {
 				MethodPOM.DashExpiringOnExport(driver).click();
 				test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
 				
-			   licmgmtPOM.showmoremgmt(driver).click();
+			  /*licmgmtPOM.showmoremgmt(driver).click();
 			   Thread.sleep(7000);
 			   WebDriverWait wait = new WebDriverWait(driver, 40);
 			   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
@@ -1557,6 +1605,80 @@ public class licmgmtMethodPOM {
 				 Thread.sleep(3000);
 		         
 			   
+		   }*/
 		   }
+		  public static void NomineeDetails(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+		  {
+			  
+			  licmgmtPOM.ClickMyWorkspace(driver).click();
+			   WebDriverWait wait = new WebDriverWait(driver, 50);
+			  Thread.sleep(5000);
+			  licmgmtPOM.editlicbtn(driver).click();
+			  Thread.sleep(7000);
+				 JavascriptExecutor js2=(JavascriptExecutor) driver ;
+					js2.executeScript("window.scroll(0,2000)");
+				licmgmtPOM.addnombtn(driver).click();	
+				  Thread.sleep(3000);
+				 licmgmtPOM.ClickNomineedrp(driver).click();
+				 Thread.sleep(3000);
+				 licmgmtPOM.SelectNominee(driver).click();
+				 Thread.sleep(5000);
+				 js2.executeScript("window.scroll(0,2000)");
+				 Thread.sleep(5000);
+				 licmgmtPOM.ClickModificdate(driver).click();
+				 Thread.sleep(6000);	
+				 js2.executeScript("window.scroll(0,2000)");
+				 Thread.sleep(6000);		 
+				 licmgmtPOM.ModificatioDate(driver).click();		 
+				 Thread.sleep(6000);
+				 js2.executeScript("window.scroll(0,2000)");
+				 licmgmtPOM.nomineestartdatecal(driver).click();
+				 Thread.sleep(3000);
+				 licmgmtPOM.selectnominstartdate(driver).click();
+				 Thread.sleep(3000);
+				// JavascriptExecutor js2=(JavascriptExecutor) driver ;
+					js2.executeScript("window.scroll(0,2000)");
+				 licmgmtPOM.nomineeEnddatecal(driver).click();
+				 Thread.sleep(5000);
+				 licmgmtPOM.selectnomineenddate(driver).click();
+				 Thread.sleep(5000);
+				 licmgmtPOM.savenominee(driver).click();
+				 Thread.sleep(5000);
+				    // Switching to Alert       
+				        Alert alert = driver.switchTo().alert();
+				       
+				        // Capturing alert message.   
+				        String alertMessage= driver.switchTo().alert().getText();
+				       
+				        Thread.sleep(3000);
+				    //    test.log(LogStatus.PASS, alertMessage);
+				       
+				        // Displaying alert message
+				        System.out.println(alertMessage);
+				       
+				       
+				        // Accepting alert
+				        alert.accept();
+				    
+				          test.log(LogStatus.PASS,"Nominee Details Added Successfully" );
+				          
+				          licmgmtPOM.editlicenseclose(driver).click();
+					         Thread.sleep(3000);
+					         licmgmtPOM.ClickMyWorkspace(driver).click();
+					         Thread.sleep(5000);
+					         licmgmtPOM.editlicbtn(driver).click();
+							  Thread.sleep(3000);
+									js2.executeScript("window.scroll(0,2000)");
+					         if(licmgmtPOM.prinomineedetails(driver).isDisplayed())
+					         {
+					        	 test.log(LogStatus.PASS,"Privious Nominee Details Displayed" );
+					         }
+					         else
+					         {
+					        	 test.log(LogStatus.FAIL,"No Record Found" );
+					         }
+					         Thread.sleep(7000);
+			
+		  }
 		
 }

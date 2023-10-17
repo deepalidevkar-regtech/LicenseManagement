@@ -93,7 +93,7 @@ public class LicensePerformerInternal
     		extent.endTest(test);
     		extent.flush();*/
     	}
-	@Test(priority = 2)
+@Test(priority = 2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -124,7 +124,38 @@ public class LicensePerformerInternal
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 2)
+@Test(priority = 2)
+void ActivePerform() throws InterruptedException
+{
+	test = extent.startTest("Active License PerformVerification");
+	//test.log(LogStatus.INFO, "Test Initiated");
+	
+	WebDriverWait wait = new WebDriverWait(driver, 5);
+	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+	LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+	
+	Select drp = new Select(LiPerformerPOM.clickType(driver));
+	drp.selectByIndex(1);
+	
+	try
+	{
+		Thread.sleep(400);
+		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+	}
+	catch(Exception e)
+	{
+		
+	}
+	
+	Thread.sleep(500);
+	CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+	
+	LiPeMethodsPOM.Internalactivelicenseperform(driver, test, "Internal");
+	
+	extent.endTest(test);
+	extent.flush();
+}
+	@Test(priority = 3)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -155,8 +186,40 @@ public class LicensePerformerInternal
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 4)
+void ExpiringPerform() throws InterruptedException
+{
+	test = extent.startTest("Expiring License Perform Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
 	
-	@Test(priority = 3)
+	
+	WebDriverWait wait = new WebDriverWait(driver, 5);
+	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+	LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+	
+	Select drp = new Select(LiPerformerPOM.clickType(driver));
+	drp.selectByIndex(1);
+	
+	try
+	{
+		Thread.sleep(400);
+		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+	}
+	catch(Exception e)
+	{
+		
+	}
+	
+	Thread.sleep(500);
+	CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+	
+	LiPeMethodsPOM.internalExpiringlicenseperform(driver, test, "Internal");
+	
+	extent.endTest(test);
+	extent.flush();
+}
+	
+	@Test(priority = 5)
 	void Expired() throws InterruptedException
 	{
 		test = extent.startTest("Expired License Count Verification");
@@ -168,7 +231,7 @@ public class LicensePerformerInternal
 		
 		Select drp = new Select(LiPerformerPOM.clickType(driver));
 		drp.selectByIndex(1);
-		
+	
 		try
 		{
 			Thread.sleep(400);
@@ -187,8 +250,40 @@ public class LicensePerformerInternal
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 6)
+ void ExpiredPerform() throws InterruptedException
+{
+	test = extent.startTest("Expired License Perform Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
 	
-@Test(priority = 4)
+	
+	WebDriverWait wait = new WebDriverWait(driver, 5);
+	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+	LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+	
+	Select drp = new Select(LiPerformerPOM.clickType(driver));
+	drp.selectByIndex(1);
+	
+	try
+	{
+		Thread.sleep(400);
+		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+	}
+	catch(Exception e)
+	{
+		
+	}
+	
+	Thread.sleep(500);
+	CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+	
+	LiPeMethodsPOM.InternalExpiredlicenseperform(driver, test, "Internal");
+	
+	extent.endTest(test);
+	extent.flush();
+}
+	
+@Test(priority = 7)
 	void Applied() throws InterruptedException
 	{
 		test = extent.startTest("Applied Count Verification");
@@ -219,18 +314,18 @@ public class LicensePerformerInternal
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 5)
+	 @Test(priority = 8)
 		void PendingForReviewInternalInternalLicense() throws InterruptedException
 		{
-			//test = extent.startTest("Pending For Review Count Verification");
-			test.log(LogStatus.PASS, "Pending For Review Count Verification");
+			test = extent.startTest("Pending For Review Count Verification");
+			//test.log(LogStatus.PASS, "Pending For Review Count Verification");
 			
 			licenseCompanyadmin.StatutoryMethod.pendingforreviewInternalLicense(driver, test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 6)
+	@Test(priority = 9)
 	void RejectedInternalLicense() throws InterruptedException
 			{
 		WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -239,7 +334,7 @@ public class LicensePerformerInternal
 		
 		Select drp = new Select(LiPerformerPOM.clickType(driver));
 		drp.selectByIndex(1);
-			//	test = extent.startTest("Rejected License Count  Verification");
+			test = extent.startTest("Rejected License Count  Verification");
 				//test.log(LogStatus.PASS, "Rejected License Count  Verification");
 				
 				LiPeMethodsPOM.RejectedCount(driver, test, "Internal");
@@ -247,7 +342,7 @@ public class LicensePerformerInternal
 				extent.endTest(test);
 				extent.flush();
 			}
-	 @Test(priority = 7)
+	 @Test(priority = 10)
    void TerminateInternalInternalLicense() throws InterruptedException
 				{
 		    WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -264,10 +359,10 @@ public class LicensePerformerInternal
 					extent.endTest(test);
 					extent.flush();
 				}
-	@Test(priority =8)
+	@Test(priority =11)
 			void LicenseExpiredOnInternal() throws InterruptedException
 			{
-				test = extent.startTest("License Expired On Working Verification");
+				test = extent.startTest("License ExpiredOn Working Verification");
 			    // test.log(LogStatus.PASS, "License ExpiredOn Working Verification");
 				
 			  LiPeMethodsPOM.LicenseExpiredOnperInternal(driver, test, "Internal");
@@ -276,7 +371,7 @@ public class LicensePerformerInternal
 				extent.flush();
 			}
 	
-	 @Test(priority = 9)
+	 @Test(priority = 12)
 				void LicenseExpiringOnInternal() throws InterruptedException, IOException
 				{
 					test = extent.startTest("License ExpiringOn Working Verification");
@@ -289,7 +384,7 @@ public class LicensePerformerInternal
 					extent.flush();
 				}
 	
-	@Test(priority = 10)
+	@Test(priority = 13)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -301,10 +396,10 @@ public class LicensePerformerInternal
 		extent.flush();
 	}
 	
-	@Test(priority = 11)
+	@Test(priority = 14)
 	void MyReports() throws InterruptedException, IOException
 	{
-		test = extent.startTest("My Reports Download verification");
+		test = extent.startTest("My Reports verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LiPeMethodsPOM.Reports(driver, test, "Internal");
@@ -312,8 +407,8 @@ public class LicensePerformerInternal
 		extent.endTest(test);
 		extent.flush();
 	}
- 	@Test(priority = 12)
-	void AddLicense() throws InterruptedException, IOException
+	@Test(priority = 15)
+	void Myworkspace() throws InterruptedException, IOException
 	{
    	 // WebDriverWait wait = new WebDriverWait(driver, 5);
 		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
@@ -321,9 +416,9 @@ public class LicensePerformerInternal
 		
 		// Select drp = new Select(LiPerformerPOM.clickType(driver));
 	   //	drp.selectByIndex(1);
-		test = extent.startTest("Add License  On Working Verification");
+		test = extent.startTest("My Workspace Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
-      licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Internal");
+        licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();

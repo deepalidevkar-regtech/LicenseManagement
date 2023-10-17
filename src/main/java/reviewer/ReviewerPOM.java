@@ -81,7 +81,8 @@ public class ReviewerPOM
 	
 	public static WebElement clickDownload2(WebDriver driver)				//Method searching Download link
 	{
-		download = driver.findElement(By.xpath("//*[@id = 'rptComplianceVersion_btnComplinceVersionDoc_0']"));
+		download = driver.findElement(By.xpath("//*[@id='rptComplianceVersion3_btnComplinceVersionDoc1_0']"));
+		
 		return download;
 	}
 	

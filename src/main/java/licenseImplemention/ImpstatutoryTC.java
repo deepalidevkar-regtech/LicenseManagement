@@ -113,7 +113,7 @@ public class ImpstatutoryTC {
 		}
 	}
 	
-	/*@Test(priority = 2)
+	@Test(priority = 2)
 	void CompliancemappingExport()throws InterruptedException
 	{
 		test = extent.startTest("statutory License Compliance Mapping Export Verification");
@@ -138,7 +138,7 @@ public class ImpstatutoryTC {
 		 ImpMethodPOM.AddAssignment(driver, test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	@Test(priority = 5)
 	void Licenselist()throws InterruptedException, IOException
 	{
@@ -147,5 +147,29 @@ public class ImpstatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-
+	@Test(priority = 6)
+	void Entitesassignment()throws InterruptedException, IOException
+	{
+		test = extent.startTest("License Entites Assignment Verification");
+		 ImpMethodPOM.Entitesassignment(driver, test, "Statutory");
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 6)
+	void Appliedlicensecreation()throws InterruptedException, IOException
+	{
+		test = extent.startTest("Applied License Creation Vertification");
+		 ImpMethodPOM.appliedlicensecreation(driver, test, "Statutory");
+		extent.endTest(test);
+		extent.flush();
+	}
+	 @Test(priority =32)
+		void  IsPermanentLicense() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" IsPermanent License working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+             ImpMethodPOM.IsPermenenetLic(driver, test, "Statutory");
+			extent.endTest(test);
+			extent.flush();
+		}
 }

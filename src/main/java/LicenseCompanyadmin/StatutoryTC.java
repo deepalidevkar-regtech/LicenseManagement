@@ -91,49 +91,9 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();*/
 	}
- /*  @Test(priority = 2)
-	void Masters() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Masters - User Creation verification");
-		test.log(LogStatus.PASS, "User Created Successfully");
-	   StatutoryMethod.user(driver, test, "Statutory");
-		test.log(LogStatus.PASS, "User Details Updated  Successfully");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 3)
-	void PageAuthor() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Masters -Page Autherization verification");
-		test.log(LogStatus.PASS, "Page Authorization Saved");
-		StatutoryMethod.PageAuthorization(driver);		
-		extent.endTest(test);
-		extent.flush();
-	}
-	@Test(priority = 4)
-	void RenewStautoryLicense() throws InterruptedException, IOException
-	{
-	{
-		test = extent.startTest("Statutory Renew License");
-		test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
-		StatutoryMethod.RenewStatutoryLicense(driver);
+ 
 
-		extent.endTest(test);
-		extent.flush();
-	}
-	}
-	@Test(priority = 5)
-	void RenewInternalLicense() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Internal Renew License");
-		test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
-	    StatutoryMethod.RenewInternalLicense(driver);
-	    extent.endTest(test);
-		extent.flush();
-	}
-	@Test(priority = 6)
+/*	@Test(priority = 2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -145,7 +105,7 @@ public class StatutoryTC {
 		extent.flush();
 		
 	}
-    @Test(priority = 7)
+   @Test(priority =3)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -156,7 +116,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 8)
+	@Test(priority = 4)
 	void Expired() throws InterruptedException
 	{
 		test = extent.startTest("Expired License Count Verification");
@@ -167,7 +127,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 9)
+	@Test(priority = 5)
 	void Applied() throws InterruptedException
 	{
 		test = extent.startTest("Applied License Count Verification");
@@ -178,7 +138,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 10)
+	@Test(priority = 6)
 	void PendingForReview() throws InterruptedException
 	{
 	    test = extent.startTest("Pending For Review License Count Verification");
@@ -189,7 +149,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 11)
+	@Test(priority = 7)
 	void Rejected() throws InterruptedException
 	{
 		test = extent.startTest("Rejected License Count Verification");
@@ -200,7 +160,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-   @Test(priority = 12)
+   @Test(priority = 8)
 	void Terminate() throws InterruptedException
 	{
 		test = extent.startTest("Terminate License Count Verification");
@@ -211,7 +171,7 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-   @Test(priority = 13)
+   @Test(priority = 9)
 		void LicenseExpiredOnStatutory() throws InterruptedException
 		{
 			test = extent.startTest("License ExpiredOn Working Verification");
@@ -222,7 +182,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*@Test(priority = 14)
+	@Test(priority = 10)
 	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License ExpiringOn Working Verification");
@@ -233,11 +193,11 @@ public class StatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-    @Test(priority = 15)
+    @Test(priority = 11)
 	void AllFilter() throws InterruptedException
 	{
-		//test = extent.startTest("All Filter Working Verification");
-		test.log(LogStatus.INFO, "All Filter Working Verification");
+		test = extent.startTest("All Filter Working Verification");
+		//test.log(LogStatus.INFO, "All Filter Working Verification");
 		
 		StatutoryMethod.Allfilter(driver, test, "Statutory");
 		
@@ -245,10 +205,10 @@ public class StatutoryTC {
 		extent.flush();
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 12)
 		void BystausExpiringlicense() throws InterruptedException
 		{
-			test = extent.startTest("By status Expiring Graph Working Verification");
+			test = extent.startTest("By status -Application Overdue(Expiring But not applied) Graph Count  Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.BystatusExpringgraph(driver, test, "Statutory");
@@ -256,10 +216,10 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 17)
+	 @Test(priority = 13)
 		void BystausTerminatelicense() throws InterruptedException
 		{
-			test = extent.startTest("By status Terminate Graph Working Verification");
+			test = extent.startTest("By status-Terminate Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.BystatusTerminategraph(driver, test, "Statutory");
@@ -267,10 +227,10 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 18)
+	 @Test(priority = 14)
 		void BystausActivelicense() throws InterruptedException
 		{
-			test = extent.startTest("By status Active Graph Working Verification");
+			test = extent.startTest("By status-Active Graph Count  Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.BystatusActivegraph(driver, test, "Statutory");
@@ -278,10 +238,10 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/* @Test(priority = 19)
+	 @Test(priority = 15)
 		void BystausAppliedButnotRenewedlicense() throws InterruptedException
 		{
-			test = extent.startTest("By status Applied Graph Working Verification");
+			test = extent.startTest("By status-Expired applied but not renewed Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.BystatusExpiredappliedbutnotrenewedgraph(driver, test, "Statutory");
@@ -290,10 +250,10 @@ public class StatutoryTC {
 			extent.flush();
 		}
 
-      @Test(priority = 20)
+      @Test(priority = 16)
  		void BystausExpiredlicense() throws InterruptedException
 		{
-			test = extent.startTest("By status Expired Graph Working Verification");
+			test = extent.startTest("By status- Expired Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.BystatusExpired(driver, test, "Statutory");
@@ -301,10 +261,10 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 21)
+	 @Test(priority = 17)
 		void BylicnesetypeExpired() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Expired Graph Working Verification");
+			test = extent.startTest("By License Type- Expired Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeExpired(driver, test, "Statutory");
@@ -312,10 +272,10 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 22)
+	@Test(priority = 18)
 			void BylicnesetypeExpiring() throws InterruptedException
 			{
-				test = extent.startTest("By License Type Expiring Graph Working Verification");
+				test = extent.startTest("By License Type- Application Overdue(Expiring but not applied) Graph Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				StatutoryMethod.ByLicensetypeExpiring(driver, test, "Statutory");
@@ -323,10 +283,10 @@ public class StatutoryTC {
 				extent.endTest(test);
 				extent.flush();
 			}
-	@Test(priority = 23)
+	@Test(priority = 19)
 		void BylicnesetypeApplied() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Applied Graph Working Verification");
+			test = extent.startTest("By License Type -Expired applied but not renewed Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeApplied(driver, test, "Statutory");
@@ -334,21 +294,21 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 24)
+	 @Test(priority = 20)
 			void BylicnesetypeActive() throws InterruptedException
 			{
-				test = extent.startTest("By License Type Active Graph Working Verification");
+				test = extent.startTest("By License Type- Active Graph count vWorking Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				StatutoryMethod.ByLicensetypeActive(driver, test, "Statutory");
 				
 				extent.endTest(test);
-				extent.flush();
+			extent.flush();
 			}
-	  /*@Test(priority = 25)
+	 @Test(priority = 21)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Terminate Graph Working Verification");
+			test = extent.startTest("By License Type -Terminate Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeTerminate(driver, test, "Statutory");
@@ -356,18 +316,10 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-  @Test(priority = 26)
-		void MyWorkspace() throws InterruptedException, IOException
-	{
-		test = extent.startTest("My Workspace  Verification");
-		
-         StatutoryMethod.MyWorkspace(driver, test, "Statutory");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	 @Test(priority = 21)
-			void AddLicense() throws InterruptedException, IOException
+	
+	@Test(priority =22)
+	
+			void MyWorkspace() throws InterruptedException, IOException
 			{
 				test = extent.startTest("My Workspace Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -375,44 +327,73 @@ public class StatutoryTC {
 				
 				extent.endTest(test);
 				extent.flush();
-			}
-	/* @Test(priority = 27)
+			}*/
+	 
+@Test(priority = 23)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Download Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
 		
-		test = extent.startTest("My Document View Verification");
+		//test = extent.startTest("My Document View Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-         StatutoryMethod.MyDocuments(driver, test, "Statutory");
+        StatutoryMethod.MyDocuments(driver, test, "Statutory");
+		
 		
 		extent.endTest(test);
 		extent.flush();
 	
 	}
-	 @Test(priority = 28)
+	/*@Test(priority = 24)
 		void MyReports() throws InterruptedException, IOException
 		{
-			test = extent.startTest("My Reports Download Verification");
+			test = extent.startTest("My Reports Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.MyReports(driver, test, "Statutory");
+			licensePerformer.LiPeMethodsPOM.Reports(driver, test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 29)
+	@Test(priority = 25)
 	void CriticalDocuments() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Critical Document Verification");
+			test = extent.startTest("Critical Document working  Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.CriticalDocuments(driver, test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
+	/*  @Test(priority = 26)
+		void Masters() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Masters - User Master Working  verification");	
+		   StatutoryMethod.user(driver, test, "Statutory");		
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 27)
+		void PageAuthor() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Masters -Page Autherization working verification");
+			StatutoryMethod.PageAuthorization(driver, test, "Statutory");		
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 28)
+		void RenewStautoryLicense() throws InterruptedException, IOException
+
+		{
+			test = extent.startTest("Statutory Renew License working verification");
+			  test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
+			StatutoryMethod.RenewStatutoryLicense(driver);
+
+			extent.endTest(test);
+			extent.flush();
+		}
 	@Test(priority = 30)
 		void LicenseNewAssignment() throws InterruptedException, IOException
 		{
@@ -422,7 +403,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/* @Test(priority =31)
+	@Test(priority =31)
 		void LicenseCreation() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License Creation Verification");
@@ -431,7 +412,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/* @Test(priority =32)
+	/*@Test(priority =32)
 		void  IsPermanent() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" IsPermanent License working Verification");

@@ -68,7 +68,7 @@ public class LicenseReviewerInternalTC
 		extent.flush();
 	}
 	
-   	@BeforeMethod
+  	@BeforeMethod
     	void Login() throws InterruptedException, IOException
     	{
     		//test = extent.startTest("Logging In - Reviewer (Internal)");
@@ -107,7 +107,7 @@ public class LicenseReviewerInternalTC
 		
 		Select drp = new Select(LiPerformerPOM.clickType(driver));
 		drp.selectByIndex(1);
-		
+	
 		try
 		{
 			Thread.sleep(400);
@@ -223,12 +223,13 @@ public class LicenseReviewerInternalTC
 		extent.flush();
 	}
     @Test(priority = 6)
-		void PendingForReviewInternalInternalLicense() throws InterruptedException
+		void PendingForReviewInternalLicense() throws InterruptedException
 		{
 	WebDriverWait wait = new WebDriverWait(driver, 5);
 	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-	LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+	LiPerformerPOM.clickType(driver).click();	//Clicking on 'Type' drop down.
 	
+	Thread.sleep(500);
 	Select drp = new Select(LiPerformerPOM.clickType(driver));
 	drp.selectByIndex(1);
 	
@@ -252,6 +253,7 @@ public class LicenseReviewerInternalTC
 			extent.endTest(test);
 			extent.flush();
 		}
+    
 @Test(priority = 7)
 	void RejectedInternalLicense() throws InterruptedException
 	{
@@ -385,7 +387,7 @@ public class LicenseReviewerInternalTC
 		extent.flush();
 	}
 	@Test(priority = 13)
-	void AddLicense() throws InterruptedException, IOException
+	void MyWorkspace() throws InterruptedException, IOException
 	{
    	  WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));

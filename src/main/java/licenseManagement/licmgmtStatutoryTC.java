@@ -88,13 +88,14 @@ public class licmgmtStatutoryTC {
 		extent.endTest(test);
 		extent.flush();*/
 	}
-   @Test(priority = 2)
+/*@Test(priority = 2)
+ 
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.ActiveLicense(driver, test, "Statutory");
+		licmgmtMethodPOM.ActiveLicense(driver, test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -176,6 +177,7 @@ public class licmgmtStatutoryTC {
 		extent.flush();
 	}
 @Test(priority = 10)
+
 	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License Expiring On Working Verification");
@@ -277,7 +279,7 @@ public class licmgmtStatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 19)
+ @Test(priority = 19)
 		void BylicnesetypeActive() throws InterruptedException
 		{
 			test = extent.startTest("By License type  Applied License Graph Working Verification");
@@ -287,7 +289,7 @@ public class licmgmtStatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 20)
+	@Test(priority = 20)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
 			test = extent.startTest("By License type  Applied License Graph Working Verification");
@@ -298,15 +300,16 @@ public class licmgmtStatutoryTC {
 			extent.flush();
 		}
        @Test(priority = 21)
-			void AddLicense() throws InterruptedException, IOException
+			void MyWorkspace() throws InterruptedException, IOException
 			{
-				test = extent.startTest("Add License  On Working Verification");
+				test = extent.startTest("My Workspace  Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 	             licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
-			}
+			}*/
+       
     @Test(priority = 22)
 	void MyDocuments() throws InterruptedException
 	{
@@ -316,12 +319,12 @@ public class licmgmtStatutoryTC {
 	//	test = extent.startTest("My Document View Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licmgmtMethodPOM.MyDocuments(driver, test, "Statutory");
+		StatutoryMethod.MyDocuments(driver, test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 23)
+/*	@Test(priority = 23)
 	void CriticalDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Critical Document Verification");
@@ -373,7 +376,7 @@ public class licmgmtStatutoryTC {
 	}
 @Test(priority = 28)
 	void RenewStautoryLicense() throws InterruptedException, IOException
-	{
+	
 	{
 		test = extent.startTest("Statutory Renew License");
 		test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
@@ -382,8 +385,17 @@ public class licmgmtStatutoryTC {
 		extent.endTest(test);
 		extent.flush();
 	}
+ @Test(priority = 28)
+	void NomineeDetails() throws InterruptedException, IOException
 	
-	}
+	{
+		test = extent.startTest("Nominee Details");
+		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
+		licmgmtMethodPOM.NomineeDetails(driver,test,"");
+
+		extent.endTest(test);
+		extent.flush();
+	}*/
  @AfterMethod
  void driverclose()
  {

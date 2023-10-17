@@ -91,7 +91,7 @@ public class licmgmtInternalTC {
 		extent.endTest(test);
 		extent.flush();*/
 	}
-	/*@Test(priority = 2)
+	@Test(priority = 2)
 	void AllFilter() throws InterruptedException
 	{
 		test = extent.startTest("All Filter Working Verification");
@@ -113,7 +113,7 @@ public class licmgmtInternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 4)
+	 @Test(priority = 4)
 			void ExpiringInternalLicense() throws InterruptedException
 			{
 				test = extent.startTest("Expiring License Count Verification");
@@ -232,7 +232,7 @@ public class licmgmtInternalTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}*
+		}
 	  @Test(priority = 15)
 	  void BystatusExpringInternalgraph() throws InterruptedException
 		{
@@ -254,7 +254,7 @@ public class licmgmtInternalTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 	@Test(priority = 17)
 		void ByLicensetypeExpiringInternal() throws InterruptedException
 		{
@@ -266,7 +266,7 @@ public class licmgmtInternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 /* @Test(priority = 18)
+	  @Test(priority = 18)
 			void ByLicensetypeAppliedInternal() throws InterruptedException
 			{
 				test = extent.startTest("By License Type Graph Applied License On Working Verification");
@@ -305,7 +305,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("My Documents Download Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			test = extent.startTest("My Document Verification");
+			//test = extent.startTest("My Document Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licmgmtMethodPOM.MyDocuments(driver, test, "Internal");
@@ -319,28 +319,28 @@ public class licmgmtInternalTC {
 		test = extent.startTest("My Reports Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
 		
-         licmgmtMethodPOM.mgmtReports(driver, test, "Internal");
+		licensePerformer.LiPeMethodsPOM.Reports(driver, test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 12)
-	void AddLicense() throws InterruptedException, IOException
+@Test(priority = 12)
+	void MyWorkspace() throws InterruptedException, IOException
 	{
-   	 // WebDriverWait wait = new WebDriverWait(driver, 5);
+   	  WebDriverWait wait = new WebDriverWait(driver, 5);
 		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
 		//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
 		
 		// Select drp = new Select(LiPerformerPOM.clickType(driver));
 	   //	drp.selectByIndex(1);
-		test = extent.startTest("Add License  On Working Verification");
+		test = extent.startTest("My Workspace  Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
       licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-/*	@Test(priority = 28)
+@Test(priority = 28)
 	void RenewInternalLicense() throws InterruptedException, IOException
 	{
 	{
@@ -352,7 +352,7 @@ public class licmgmtInternalTC {
 		extent.flush();
 	}
 	}
-	/*@Test(priority = 14)
+	@Test(priority = 14)
 	void LicenseExpiringOnInternal() throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -370,7 +370,26 @@ public class licmgmtInternalTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
+	 @Test(priority = 25)
+		void LicenseNewAssignment() throws InterruptedException, IOException
+		{
+			test = extent.startTest("License New Assignment");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			StatutoryMethod.LicenseActivation_InternalNewAssignment(driver, test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 22)
+		void InternalLicenseCreation() throws InterruptedException, IOException
+		{
+			test = extent.startTest("License Creation Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			StatutoryMethod.InternalLicenseCreation(driver, test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+	
 	@AfterMethod
 	 void driverclose()
 	 {

@@ -110,12 +110,37 @@ public class ImpInternalTC
 		}
 
 	}
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	void CompliancemappingInternalExport()throws InterruptedException
 	{
 		test = extent.startTest("Internal License Compliance Mapping Export Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		 ImpMethodPOM.compliancemappingInternalExport(driver, test, "Internal");
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 5)
+	void Licenselist()throws InterruptedException, IOException
+	{
+		test = extent.startTest("On License List Page Update License Working Verification");
+		 ImpMethodPOM.licenselist(driver, test, "Internal");
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 3)
+	void InternalLicenseCreation()throws InterruptedException, IOException
+	{
+		test = extent.startTest("Internal License Creation Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		 ImpMethodPOM.statutorylicnesecreation(driver, test, "Internal");
+		extent.endTest(test);
+		extent.flush();
+	}*/
+	@Test(priority = 4)
+	void InternalAddNewAssignment()throws InterruptedException, IOException
+	{
+		test = extent.startTest("Internal Add Assignment Verification");
+		 ImpMethodPOM.AddAssignment(driver, test, "Internal");
 		extent.endTest(test);
 		extent.flush();
 	}

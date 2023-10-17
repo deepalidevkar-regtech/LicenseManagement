@@ -22,7 +22,7 @@ public class LiReviewerPOM
 	{
 	//	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList']"));
 		license = driver.findElement(By.xpath("//*[@id='childrow']/div"));
-		
+	
 		return license;
 	}
 	
@@ -131,6 +131,51 @@ public class LiReviewerPOM
 		license = driver.findElement(By.xpath("//*[@class='k-pager-info k-label']"));
 		return license;
 	}
-	
 
+	public static WebElement Overviewreview1(WebDriver driver) {
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-eye k-grid-eye'])[1]"));
+		return license;
+	}
+	public static WebElement Reviewaction(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		return license;
+	}
+	public static WebElement addnominee(WebDriver driver) {
+		license = driver.findElement(By.xpath("//*[@id='btnAddNomineeDetails']"));
+		return license;
+	}
+	public static WebElement iscurrentnominee(WebDriver driver) {
+		license = driver.findElement(By.xpath("	//*[@id='chkboxIsCurrentNominee']"));
+		return license;
+	}
+	public static WebElement workclose(WebDriver driver) {
+		license = driver.findElement(By.xpath("//*[@class='k-icon k-i-close']"));
+		return license;
+	}
+	public static WebElement clickok(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("(//*[@class='k-button-group k-dialog-buttongroup k-dialog-button-layout-stretched'])[5]"));
+		return license;
+	}
+	public static WebElement clickdownload(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']"));
+		return license;
+	}
+	public static WebElement rejectbtn(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='btnReject1']"));
+		return license;
+	}
+	public static WebElement inrejectbtn(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='btnReject3']"));
+		return license;
+	}
+	public static WebElement intremark(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='tbxRemarks3']"));
+		return license;
+	}
 }
