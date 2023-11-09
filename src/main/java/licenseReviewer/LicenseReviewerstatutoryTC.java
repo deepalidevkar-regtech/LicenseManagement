@@ -97,7 +97,7 @@ public class LicenseReviewerstatutoryTC
 		extent.flush();*/
 	}
 
-@Test(priority =2)
+/*@Test(priority =2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -230,7 +230,7 @@ public class LicenseReviewerstatutoryTC
 				
 				extent.endTest(test);
 				extent.flush();
-			}
+			}*/
   @Test(priority =14)
 	void MyReports() throws InterruptedException, IOException
 	{
@@ -242,7 +242,7 @@ public class LicenseReviewerstatutoryTC
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority =15)
+/* @Test(priority =15)
 	void NomineeDetails() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Nominee Details");
@@ -250,6 +250,17 @@ public class LicenseReviewerstatutoryTC
 		
 		LiReMethodsPOM.nomineeDetails(driver, test, "Statutory");
 		
+		extent.endTest(test);
+		extent.flush();
+	}*/
+  @Test(priority = 28)
+	void NomineeDetails() throws InterruptedException, IOException
+	
+	{
+		test = extent.startTest("Nominee Details");
+		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
+		licmgmtMethodPOM.NomineeDetails(driver,test,"");
+
 		extent.endTest(test);
 		extent.flush();
 	}

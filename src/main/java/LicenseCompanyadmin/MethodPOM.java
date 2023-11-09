@@ -351,6 +351,12 @@ public static WebElement clickTerminateper(WebDriver driver)
 	
 	return license;
 }
+public static WebElement clickTerminateperin(WebDriver driver)	
+{
+	license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divterminated']"));
+	
+	return license;
+}
 
 public static WebElement clickReadTerminate(WebDriver driver)	
 {

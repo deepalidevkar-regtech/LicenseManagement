@@ -178,4 +178,25 @@ public class LiReviewerPOM
 		license = driver.findElement(By.xpath("//*[@id='tbxRemarks3']"));
 		return license;
 	}
+	public static WebElement Addcolumn(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("(//*[@class='k-icon k-i-more-vertical'])[1]"));
+		return license;
+	}
+	public static WebElement clickColumn(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@class='k-icon k-i-columns']"));
+		return license;
+	}
+	public static WebElement addnomineecol(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("(//*[@data-field='NomineeName'])[2]"));
+		return license;
+	}
+	public static WebElement Nomineecolumn(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("(//*[@class='k-link'])[17]"));
+		return license;
+	}
+	
 }

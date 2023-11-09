@@ -95,7 +95,7 @@ public class LicenseReviewerInternalTC
     		extent.endTest(test);
     		extent.flush();*/
     	}
-@Test(priority = 2)
+/*@Test(priority = 2)
 	void ActiveInternalLicense() throws InterruptedException
 	{
 		//test = extent.startTest("Active License Count Verification");
@@ -373,7 +373,7 @@ public class LicenseReviewerInternalTC
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 	
 	@Test(priority = 12)
 	void MyReports() throws InterruptedException, IOException
@@ -386,7 +386,7 @@ public class LicenseReviewerInternalTC
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 13)
+/*	@Test(priority = 13)
 	void MyWorkspace() throws InterruptedException, IOException
 	{
    	  WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -401,7 +401,20 @@ public class LicenseReviewerInternalTC
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
+	@Test(priority = 28)
+	 void NomineeDetails() throws InterruptedException, IOException
+
+	  {
+		
+		test = extent.startTest("Nominee Details");
+		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
+		licmgmtMethodPOM.NomineeDetails(driver,test,"Internal");
+
+		extent.endTest(test);
+		extent.flush();
+	  }
+	 
 	 @AfterMethod
 	  void driverclose()
 	  {

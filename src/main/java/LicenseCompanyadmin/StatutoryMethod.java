@@ -925,7 +925,7 @@ public class StatutoryMethod {
 				Thread.sleep(4000);
 				
 				MethodPOM.clickReadpendingforreview(driver).click();					//Clicking on total items count
-				Thread.sleep(500);
+				Thread.sleep(5000);
 				String item = MethodPOM.clickReadpendingforreview(driver).getText();	//Reading total items String value
 				String[] bits = item.split(" ");								//Splitting the String
 				String LicensependingforreviewCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
@@ -950,8 +950,8 @@ public class StatutoryMethod {
 					test.log(LogStatus.PASS, "PendingForReview License Overview Details Successfully");
 					Thread.sleep(3000);
 					MethodPOM.ClickCloseOverview(driver).click();
-					Thread.sleep(3000);
-					LiPerformerPOM.editlicenseicon(driver).click();
+					Thread.sleep(5000);
+					/*LiPerformerPOM.editlicenseicon(driver).click();
 					Thread.sleep(5000);
 					licenseManagement.licmgmtPOM.LicenseTitle(driver).clear();
 					Thread.sleep(5000);
@@ -971,7 +971,7 @@ public class StatutoryMethod {
 					 Thread.sleep(7000);
 					licmgmtPOM.NewEndDate(driver).click();
 					Thread.sleep(7000);
-					*/
+					
 					licenseManagement.licmgmtPOM.Nomineesubmit(driver).click();
 					
 					 Thread.sleep(7000);
@@ -991,6 +991,7 @@ public class StatutoryMethod {
 					        // Accepting alert
 					        alert.accept();
 					        test.log(LogStatus.PASS,"License Details Updated Successfully" );
+					       */
 					MethodPOM.clickMyDashboard(driver).click();
 	
 	}
@@ -1272,13 +1273,13 @@ public class StatutoryMethod {
 		   
 		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
 	   WebDriverWait wait = new WebDriverWait(driver, 20);
-		
-		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateper(driver)));
-		String Terminate=MethodPOM.clickTerminateper(driver).getText();
+	   Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateperin(driver)));
+		String Terminate=MethodPOM.clickTerminateperin(driver).getText();
 		
 	     int TerminateLicense = Integer.parseInt(Terminate);	//Reading Terminate count.
 	 	Thread.sleep(5000);
-	      MethodPOM.clickTerminateper(driver).click();					//Clicking on 'Terminate ' image
+	      MethodPOM.clickTerminateperin(driver).click();					//Clicking on 'Terminate ' image
 	      Thread.sleep(7000);
 	      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid(driver)));
 	      Thread.sleep(7000);
@@ -1350,6 +1351,7 @@ public class StatutoryMethod {
 	   Thread.sleep(3000);
 		  licenseCompanyadmin.MethodPOM.AllFilter(driver).click();
 		   Thread.sleep(3000);
+		   
 		   licenseCompanyadmin.MethodPOM.InternalFilter(driver).click();
 		   
 		   licenseCompanyadmin.MethodPOM.ClickApply(driver).click();
@@ -3511,7 +3513,7 @@ public class StatutoryMethod {
 			
 			Thread.sleep(7000);
 			MethodPOM.editFolderD(driver).click();
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			MethodPOM.DocumentHeader(driver).sendKeys("Test Head");
 			Thread.sleep(500);
 			MethodPOM.DocumentDescription(driver).sendKeys("test Description");

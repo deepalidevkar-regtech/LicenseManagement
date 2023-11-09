@@ -138,7 +138,7 @@ public static WebElement ClickLocation(WebDriver driver)
 public static WebElement SelectLocation(WebDriver driver)
 {
 	WebDriverWait wait= new WebDriverWait(driver,20);
-	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='k-in'])[328]")));
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='k-in'])[135]")));
 	
 	return license;
 }
@@ -147,6 +147,13 @@ public static WebElement LocationMaximize(WebDriver driver)
 	WebDriverWait wait= new WebDriverWait(driver,40);
 	//license=driver.findElement(By.xpath("//*[@id='e26eeec5-7192-40b8-ba66-d3a307b5897c_tv_active']/div/span[1]"));
     license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='k-icon k-i-expand'])[35]")));
+	return license;
+}
+public static WebElement LocationMaximizeper(WebDriver driver)
+{
+	WebDriverWait wait= new WebDriverWait(driver,40);
+	//license=driver.findElement(By.xpath("//*[@id='e26eeec5-7192-40b8-ba66-d3a307b5897c_tv_active']/div/span[1]"));
+    license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='k-icon k-i-expand'])[17]")));
 	return license;
 }
 public static WebElement ClickPerformer(WebDriver driver)

@@ -1,93 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="14" passed="12" failed="2" skipped="0">
+<testng-results ignored="0" total="13" passed="6" failed="1" skipped="6">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-16T20:09:41 IST" name="Default suite" finished-at="2023-10-16T20:31:24 IST" duration-ms="1302704">
+  <suite started-at="2023-11-09T16:19:40 IST" name="Default suite" finished-at="2023-11-09T16:34:11 IST" duration-ms="870627">
     <groups>
     </groups>
-    <test started-at="2023-10-16T20:09:41 IST" name="Default test" finished-at="2023-10-16T20:31:24 IST" duration-ms="1302704">
-      <class name="licenseReviewer.LicenseReviewerstatutoryTC">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:09:41 IST" name="setBrowser" finished-at="2023-10-16T20:09:42 IST" duration-ms="909" status="PASS">
+    <test started-at="2023-11-09T16:19:40 IST" name="Default test" finished-at="2023-11-09T16:34:11 IST" duration-ms="870627">
+      <class name="PerformerLicenseCritical.InternalCriticalTC">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:19:40 IST" name="setBrowser" finished-at="2023-11-09T16:19:42 IST" duration-ms="2223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:09:42 IST" name="Login" finished-at="2023-10-16T20:09:58 IST" duration-ms="16257" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:19:42 IST" name="Login" finished-at="2023-11-09T16:20:30 IST" duration-ms="47932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Active()[pri:2, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:09:58 IST" name="Active" finished-at="2023-10-16T20:11:04 IST" duration-ms="65820" status="PASS">
+        <test-method signature="Active()[pri:2, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:20:30 IST" name="Active" finished-at="2023-11-09T16:21:52 IST" duration-ms="81623" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Active -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:11:04 IST" name="driverclose" finished-at="2023-10-16T20:11:04 IST" duration-ms="314" status="PASS">
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:21:52 IST" name="driverclose" finished-at="2023-11-09T16:21:53 IST" duration-ms="1378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:11:04 IST" name="Login" finished-at="2023-10-16T20:11:24 IST" duration-ms="19913" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:21:53 IST" name="Login" finished-at="2023-11-09T16:22:18 IST" duration-ms="25023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Expiring()[pri:3, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:11:24 IST" name="Expiring" finished-at="2023-10-16T20:12:21 IST" duration-ms="56767" status="PASS">
+        <test-method signature="ActivePerform()[pri:3, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:22:18 IST" name="ActivePerform" finished-at="2023-11-09T16:23:47 IST" duration-ms="88176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ActivePerform -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:23:47 IST" name="driverclose" finished-at="2023-11-09T16:23:48 IST" duration-ms="1062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverclose -->
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:23:48 IST" name="Login" finished-at="2023-11-09T16:24:16 IST" duration-ms="28036" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Expiring()[pri:4, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:24:16 IST" name="Expiring" finished-at="2023-11-09T16:26:15 IST" duration-ms="119522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Expiring -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:12:21 IST" name="driverclose" finished-at="2023-10-16T20:12:21 IST" duration-ms="316" status="PASS">
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:26:15 IST" name="driverclose" finished-at="2023-11-09T16:26:16 IST" duration-ms="1088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:12:21 IST" name="Login" finished-at="2023-10-16T20:12:35 IST" duration-ms="13448" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:26:16 IST" name="Login" finished-at="2023-11-09T16:26:45 IST" duration-ms="28263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Expired()[pri:4, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:12:35 IST" name="Expired" finished-at="2023-10-16T20:13:43 IST" duration-ms="68036" status="PASS">
+        <test-method signature="ExpiringPerform()[pri:5, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:26:45 IST" name="ExpiringPerform" finished-at="2023-11-09T16:27:56 IST" duration-ms="71212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExpiringPerform -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:27:56 IST" name="driverclose" finished-at="2023-11-09T16:27:57 IST" duration-ms="885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverclose -->
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:27:57 IST" name="Login" finished-at="2023-11-09T16:28:26 IST" duration-ms="29464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Expired()[pri:6, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:28:26 IST" name="Expired" finished-at="2023-11-09T16:29:36 IST" duration-ms="69797" status="FAIL">
+          <exception class="org.openqa.selenium.NoAlertPresentException">
+            <message>
+              <![CDATA[no such alert
+  (Session info: chrome=119.0.6045.107)
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55606}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8371c5d84d14f6dd62622069fd6b05c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=119.0.6045.107)
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55606}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8371c5d84d14f6dd62622069fd6b05c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:932)
+at licensePerformer.LiPeMethodsPOM.ExpiredCount(LiPeMethodsPOM.java:1187)
+at PerformerLicenseCritical.InternalCriticalTC.Expired(InternalCriticalTC.java:249)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoAlertPresentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Expired -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:13:43 IST" name="driverclose" finished-at="2023-10-16T20:13:43 IST" duration-ms="322" status="PASS">
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:29:36 IST" name="driverclose" finished-at="2023-11-09T16:29:41 IST" duration-ms="5516" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:13:43 IST" name="Login" finished-at="2023-10-16T20:13:54 IST" duration-ms="10692" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:29:41 IST" name="Login" finished-at="2023-11-09T16:30:17 IST" duration-ms="36049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Applied()[pri:5, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:13:54 IST" name="Applied" finished-at="2023-10-16T20:14:50 IST" duration-ms="56576" status="PASS">
+        <test-method signature="ExpiredPerform()[pri:7, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:30:17 IST" name="ExpiredPerform" finished-at="2023-11-09T16:31:36 IST" duration-ms="78365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExpiredPerform -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:31:36 IST" name="driverclose" finished-at="2023-11-09T16:31:37 IST" duration-ms="866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverclose -->
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:31:37 IST" name="Login" finished-at="2023-11-09T16:32:00 IST" duration-ms="23615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Applied()[pri:8, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:32:00 IST" name="Applied" finished-at="2023-11-09T16:33:46 IST" duration-ms="105612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Applied -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:14:50 IST" name="driverclose" finished-at="2023-10-16T20:14:51 IST" duration-ms="280" status="PASS">
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:33:46 IST" name="driverclose" finished-at="2023-11-09T16:33:48 IST" duration-ms="2118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:14:51 IST" name="Login" finished-at="2023-10-16T20:15:02 IST" duration-ms="11773" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="PendingForReview()[pri:6, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:15:02 IST" name="PendingForReview" finished-at="2023-10-16T20:15:50 IST" duration-ms="47662" status="FAIL">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:33:48 IST" name="Login" finished-at="2023-11-09T16:34:10 IST" duration-ms="22237" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']"}
-  (Session info: chrome=117.0.5938.152)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
 System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.152, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 112db20f73e54b692995f6f0f2693b59
-*** Element info: {Using=xpath, value=//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']"}
-  (Session info: chrome=117.0.5938.152)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
 System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.152, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 112db20f73e54b692995f6f0f2693b59
-*** Element info: {Using=xpath, value=//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -101,15 +196,19 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at licenseReviewer.LiReviewerPOM.clickdownload(LiReviewerPOM.java:163)
-at licenseReviewer.LiReMethodsPOM.PendingReviewCount(LiReMethodsPOM.java:958)
-at licenseReviewer.LicenseReviewerstatutoryTC.PendingForReview(LicenseReviewerstatutoryTC.java:151)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -137,136 +236,375 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PendingForReview -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:15:50 IST" name="driverclose" finished-at="2023-10-16T20:15:50 IST" duration-ms="262" status="PASS">
+        </test-method> <!-- Login -->
+        <test-method signature="PendingForReviewInternalLicense()[pri:9, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="PendingForReviewInternalLicense" finished-at="2023-11-09T16:34:10 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PendingForReviewInternalLicense -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850830" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:15:50 IST" name="Login" finished-at="2023-10-16T20:16:04 IST" duration-ms="13666" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850835" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Rejected()[pri:7, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:16:04 IST" name="Rejected" finished-at="2023-10-16T20:17:01 IST" duration-ms="57292" status="PASS">
+        <test-method signature="RejectedInternalLicense()[pri:10, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="RejectedInternalLicense" finished-at="2023-11-09T16:34:10 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Rejected -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:17:01 IST" name="driverclose" finished-at="2023-10-16T20:17:02 IST" duration-ms="243" status="PASS">
+        </test-method> <!-- RejectedInternalLicense -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850853" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:17:02 IST" name="Login" finished-at="2023-10-16T20:17:13 IST" duration-ms="11119" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850859" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Terminate()[pri:8, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:17:13 IST" name="Terminate" finished-at="2023-10-16T20:18:10 IST" duration-ms="57763" status="PASS">
+        <test-method signature="TerminateInternalInternalLicense()[pri:11, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="TerminateInternalInternalLicense" finished-at="2023-11-09T16:34:10 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Terminate -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:18:10 IST" name="driverclose" finished-at="2023-10-16T20:18:11 IST" duration-ms="225" status="PASS">
+        </test-method> <!-- TerminateInternalInternalLicense -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850909" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:18:11 IST" name="Login" finished-at="2023-10-16T20:18:23 IST" duration-ms="12081" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850968" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="LicenseExpiredOnStatutory()[pri:9, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:18:23 IST" name="LicenseExpiredOnStatutory" finished-at="2023-10-16T20:18:37 IST" duration-ms="14123" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LicenseExpiredOnStatutory -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:18:37 IST" name="driverclose" finished-at="2023-10-16T20:18:37 IST" duration-ms="331" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:18:37 IST" name="Login" finished-at="2023-10-16T20:18:49 IST" duration-ms="11582" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="LicenseExpiringOnStatutory()[pri:10, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:18:49 IST" name="LicenseExpiringOnStatutory" finished-at="2023-10-16T20:19:00 IST" duration-ms="11328" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LicenseExpiringOnStatutory -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:19:00 IST" name="driverclose" finished-at="2023-10-16T20:19:01 IST" duration-ms="435" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:19:01 IST" name="Login" finished-at="2023-10-16T20:19:22 IST" duration-ms="21340" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="Myworkspace()[pri:11, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:19:22 IST" name="Myworkspace" finished-at="2023-10-16T20:20:03 IST" duration-ms="40941" status="PASS">
+        <test-method signature="Myworkspace()[pri:12, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="Myworkspace" finished-at="2023-11-09T16:34:10 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Myworkspace -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:20:03 IST" name="driverclose" finished-at="2023-10-16T20:20:03 IST" duration-ms="364" status="PASS">
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:10 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527850992" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:20:03 IST" name="Login" finished-at="2023-10-16T20:20:16 IST" duration-ms="13328" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527851000" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="MyDocuments()[pri:12, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:20:16 IST" name="MyDocuments" finished-at="2023-10-16T20:21:21 IST" duration-ms="64863" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MyDocuments -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:21:21 IST" name="driverclose" finished-at="2023-10-16T20:21:22 IST" duration-ms="337" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:21:22 IST" name="Login" finished-at="2023-10-16T20:21:34 IST" duration-ms="12724" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="CriticalDocuments()[pri:13, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:21:34 IST" name="CriticalDocuments" finished-at="2023-10-16T20:24:22 IST" duration-ms="167514" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CriticalDocuments -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:24:22 IST" name="driverclose" finished-at="2023-10-16T20:24:22 IST" duration-ms="332" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:24:22 IST" name="Login" finished-at="2023-10-16T20:24:35 IST" duration-ms="12801" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="MyReports()[pri:14, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:24:35 IST" name="MyReports" finished-at="2023-10-16T20:30:12 IST" duration-ms="336714" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MyReports -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:30:12 IST" name="driverclose" finished-at="2023-10-16T20:30:12 IST" duration-ms="232" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:30:12 IST" name="Login" finished-at="2023-10-16T20:30:28 IST" duration-ms="16316" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="NomineeDetails()[pri:15, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:30:28 IST" name="NomineeDetails" finished-at="2023-10-16T20:31:23 IST" duration-ms="54957" status="FAIL">
+        <test-method signature="MyDocuments()[pri:13, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:11 IST" name="MyDocuments" finished-at="2023-11-09T16:34:11 IST" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//*[@class='k-button-group k-dialog-buttongroup k-dialog-button-layout-stretched'])[5]"}
-  (Session info: chrome=117.0.5938.152)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
 System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.152, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50053}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5680700a1015e3413d29998040a0094f
-*** Element info: {Using=xpath, value=(//*[@class='k-button-group k-dialog-buttongroup k-dialog-button-layout-stretched'])[5]}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//*[@class='k-button-group k-dialog-buttongroup k-dialog-button-layout-stretched'])[5]"}
-  (Session info: chrome=117.0.5938.152)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
 System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.152, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50053}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5680700a1015e3413d29998040a0094f
-*** Element info: {Using=xpath, value=(//*[@class='k-button-group k-dialog-buttongroup k-dialog-button-layout-stretched'])[5]}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -280,15 +618,19 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at licenseReviewer.LiReviewerPOM.clickok(LiReviewerPOM.java:158)
-at licenseReviewer.LiReMethodsPOM.nomineeDetails(LiReMethodsPOM.java:2636)
-at licenseReviewer.LicenseReviewerstatutoryTC.NomineeDetails(LicenseReviewerstatutoryTC.java:251)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -316,12 +658,98 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NomineeDetails -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseReviewer.LicenseReviewerstatutoryTC@e15b7e8]" started-at="2023-10-16T20:31:23 IST" name="driverclose" finished-at="2023-10-16T20:31:24 IST" duration-ms="298" status="PASS">
+        </test-method> <!-- MyDocuments -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527851109" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-      </class> <!-- licenseReviewer.LicenseReviewerstatutoryTC -->
+        <test-method is-config="true" signature="Login()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527851115" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="MyReports()[pri:14, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:11 IST" name="MyReports" finished-at="2023-11-09T16:34:11 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='dvbtnCompliance']/div[1]/img"}
+  (Session info: chrome=119.0.6045.107)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.0', revision: '2ecb7d9a', time: '2018-10-31T20:09:30'
+System info: host: 'ARPL-059', ip: '192.168.1.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.107, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\dipali\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0c6d429eee859d2e01c805dd78da8a5
+*** Element info: {Using=xpath, value=//div[@id='dvbtnCompliance']/div[1]/img}
+at jdk.internal.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at login.LoginPOM.clickComplicane(LoginPOM.java:75)
+at login.Login.UserLogin(Login.java:131)
+at PerformerLicenseCritical.InternalCriticalTC.Login(InternalCriticalTC.java:91)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MyReports -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:PerformerLicenseCritical.InternalCriticalTC@614ca7df]" started-at="2023-11-09T16:34:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699527851154" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverclose -->
+      </class> <!-- PerformerLicenseCritical.InternalCriticalTC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

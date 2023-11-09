@@ -28,7 +28,7 @@ public class LiPerformerPOM
 	
 	public static WebElement clickAction(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[13]/a[2]"));
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
 	public static WebElement ExpiredAction(WebDriver driver)
@@ -578,6 +578,16 @@ public class LiPerformerPOM
 	public static WebElement checkloc(WebDriver driver) 
 	{
 		license = driver.findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[3]"));
+		return license;
+	}
+	public static WebElement Entityname(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		return license;
+	}
+	public static WebElement NoRecord(WebDriver driver) 
+	{
+		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseExpiring']/tbody/tr[2]"));
 		return license;
 	}
 	

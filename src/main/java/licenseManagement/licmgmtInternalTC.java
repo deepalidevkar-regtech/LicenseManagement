@@ -91,7 +91,7 @@ public class licmgmtInternalTC {
 		extent.endTest(test);
 		extent.flush();*/
 	}
-	@Test(priority = 2)
+@Test(priority = 2)
 	void AllFilter() throws InterruptedException
 	{
 		test = extent.startTest("All Filter Working Verification");
@@ -389,7 +389,19 @@ public class licmgmtInternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
+ @Test(priority = 28)
+ void NomineeDetails() throws InterruptedException, IOException
+
+  {
 	
+	test = extent.startTest("Nominee Details");
+	//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
+	licmgmtMethodPOM.NomineeDetails(driver,test,"Internal");
+
+	extent.endTest(test);
+	extent.flush();
+  }
+ 
 	@AfterMethod
 	 void driverclose()
 	 {

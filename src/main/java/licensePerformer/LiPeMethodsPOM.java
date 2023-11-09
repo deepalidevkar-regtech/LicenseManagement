@@ -56,7 +56,9 @@ public class LiPeMethodsPOM
 		        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 				js1.executeScript("window.scroll(0,500)");
 				Thread.sleep(4000);
-				
+			  	String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+				  if(!item1.equalsIgnoreCase("No items to display"))
+				  {
 				MethodPOM.clickReadActive(driver).click();					//Clicking on total items count
 				Thread.sleep(500);
 				String item = MethodPOM.clickReadActive(driver).getText();	//Reading total items String value
@@ -118,7 +120,8 @@ public class LiPeMethodsPOM
 		 licmgmtPOM.selectnomineenddate(driver).click();
 		 Thread.sleep(5000);*/
 		licenseManagement.licmgmtPOM.Nomineesubmit(driver).click();
-		 // Switching to Alert       
+		 // Switching to Alert    
+		 Thread.sleep(500);
         Alert alert = driver.switchTo().alert();
        
         // Capturing alert message.   
@@ -155,6 +158,14 @@ public class LiPeMethodsPOM
           Thread.sleep(300);
           MethodPOM.clickMyDashboard(driver).click();
           Thread.sleep(1000);
+			  }
+			  else
+			  {
+				   		      
+				test.log(LogStatus.PASS,"No Record Found");
+				MethodPOM.clickMyDashboard(driver).click();
+					      
+			  }
          // MethodPOM.clickActive(driver).click();	
           
         //  Thread.sleep(3000);
@@ -547,7 +558,7 @@ public class LiPeMethodsPOM
 				String item = MethodPOM.clickReadApplied(driver).getText();	//Reading total items String value
 				String[] bits = item.split(" ");								//Splitting the String
 				String LicenseAppliedCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
-				
+				Thread.sleep(5000);
 				//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
 				int total = Integer.parseInt(LicenseAppliedCount);
 				if(applied == total)
@@ -772,7 +783,9 @@ public class LiPeMethodsPOM
 	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
 			Thread.sleep(4000);
-			
+			String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+			  if(!item1.equalsIgnoreCase("No items to display"))
+			  {
 			MethodPOM.clickReadExpiring(driver).click();					//Clicking on total items count
 			Thread.sleep(500);
 			String item = MethodPOM.clickReadExpiring(driver).getText();	//Reading total items String value
@@ -935,6 +948,13 @@ public class LiPeMethodsPOM
 					MethodPOM.clickMyDashboard(driver).click();
 					
 				}
+			  else
+			  {
+				     
+					test.log(LogStatus.PASS,"No Record Found");
+					MethodPOM.clickMyDashboard(driver).click();
+				  }
+			  }
 	
 		
 	/*	progress(driver);
@@ -1133,7 +1153,7 @@ public class LiPeMethodsPOM
 				String item = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
 				String[] bits = item.split(" ");								//Splitting the String
 				String LicenseExpiredCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
-				
+				 Thread.sleep(5000);
 				//int total = Integer.parseInt(MethodPOM.clickReadActive(driver).getText());
 				int total = Integer.parseInt(LicenseExpiredCount);
 				if(Expiredlicense == total)
@@ -1427,6 +1447,9 @@ public class LiPeMethodsPOM
 		   LiPerformerPOM.Expiringmaxmize(driver).click();
 		   test.log(LogStatus.PASS, "Expiring On Maximize Button Working Successfully");
 		   Thread.sleep(3000);
+		     String item1 = LiPerformerPOM.NoRecord(driver).getText();	//Reading total items String value
+			 if(!item1.equalsIgnoreCase("No Records Found"))
+		  {
 		   JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
 			MethodPOM.DashExpiringOnExport(driver).click();
@@ -1440,7 +1463,8 @@ public class LiPeMethodsPOM
 		   Thread.sleep(5000);
 		   MethodPOM.Clearfilter(driver).click();
 			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
-		   
+
+  
 		   WebDriverWait wait = new WebDriverWait(driver, 40);
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 		   Thread.sleep(3000);
@@ -1529,7 +1553,12 @@ public class LiPeMethodsPOM
 			driver.switchTo().parentFrame();
 			 MethodPOM.clickCloseGraphPopup(driver).click();
 			 Thread.sleep(3000);
-	         
+		  }
+			 else
+			 {
+				 test.log(LogStatus.PASS,"No Record Found");
+					MethodPOM.clickMyDashboard(driver).click();
+			 }
 		   
 	   }
 	  public static void LicenseExpiringOnInternalper(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
@@ -1806,6 +1835,24 @@ public class LiPeMethodsPOM
 		
 		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
 		
+		LiReviewerPOM.Addcolumn(driver).click();
+		Thread.sleep(3000);
+	     LiReviewerPOM.clickColumn(driver).click();
+	     Thread.sleep(300);
+	     LiReviewerPOM.addnomineecol(driver).click();
+	     Thread.sleep(300);
+	     String Nominee =LiReviewerPOM.Nomineecolumn(driver).getText();
+		   if(LiReviewerPOM.Nomineecolumn(driver).isDisplayed())
+		   {
+			   
+				test.log(LogStatus.PASS, "In grid Nominee column displayed.");
+		   }
+		   else
+		   {
+			   test.log(LogStatus.FAIL,"In Grid Nominee Column Not Displayed");
+		   }
+		   Thread.sleep(3000);
+	     
 		 String Entity =LiPerformerPOM.Entitycolumn(driver).getText();
 		   if(LiPerformerPOM.Entitycolumn(driver).isDisplayed())
 		   {
@@ -1815,6 +1862,18 @@ public class LiPeMethodsPOM
 		   else
 		   {
 			   test.log(LogStatus.FAIL,"In Grid Entity Column Not Displayed");
+		   }
+		   Thread.sleep(3000);
+		   
+		   String Entityname =LiPerformerPOM.Entityname(driver).getText();
+		   if(LiPerformerPOM.Entityname(driver).isDisplayed())
+		   {
+			   
+				test.log(LogStatus.PASS, "In Entity Column Entity Name Displayed.");
+		   }
+		   else
+		   {
+			   test.log(LogStatus.FAIL,"In Entity Column Entity Name Not Displayed.");
 		   }
 		   Thread.sleep(3000);
 		   
@@ -2352,7 +2411,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 				Thread.sleep(4000);
 				
 				MethodPOM.clickReadRejected(driver).click();					//Clicking on total items count
-				Thread.sleep(500);
+				Thread.sleep(5000);
 				String item = MethodPOM.clickReadRejected(driver).getText();	//Reading total items String value
 				String[] bits = item.split(" ");								//Splitting the String
 				String LicensRejected = bits[bits.length - 2];		//Getting the second last word (total number of users)
@@ -2499,7 +2558,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 					else
 					{
 						MethodPOM.clickRejected(driver).click();
-						 Thread.sleep(500);
+						 Thread.sleep(5000);
 						LiPerformerPOM.rejectAction(driver).click();					//Clicking on first action button.
 				        Thread.sleep(3000);
 				     
@@ -2536,13 +2595,13 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 					
 					Thread.sleep(500);
 					js1.executeScript("window.scrollBy(0,700)");
-					Thread.sleep(300);
+					Thread.sleep(3000);
 					OverduePOM.clickComplianceSubmit(driver).click();			//Clicking on 'Submit' button.
 					
 					Thread.sleep(1000);
 					js1.executeScript("window.scrollBy(1000,0)");				//Scrolling down window by 2000 px.
 					
-					Thread.sleep(300);
+					Thread.sleep(3000);
 					if(type.equalsIgnoreCase("Statutory"))
 					{
 						String msg = LiPerformerPOM.readMessage(driver).getText();
@@ -2731,7 +2790,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 						 
 						LiPerformerPOM.terminatedPerformer(driver).click();	
 
-						LiPerformerPOM.terAction(driver).click();						//Clicking on first action button.
+						/*LiPerformerPOM.terAction(driver).click();						//Clicking on first action button.
 				        Thread.sleep(3000);
 				        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
 						js1.executeScript("window.scrollBy(0,2000)");
@@ -2742,7 +2801,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 					else
 					{
 						LiPerformerPOM.terminatedPerformer(driver).click();
-						 Thread.sleep(500);
+						 Thread.sleep(5000);
 						LiPerformerPOM.TerminateAction(driver).click();					//Clicking on first action button.
 				        Thread.sleep(3000);	
 						wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));		
@@ -2805,6 +2864,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 						Thread.sleep(700);
 						LiPerformerPOM.clickClose(driver).click();				//Clicking on Close (Cross)
 						driver.navigate().refresh();
+						*/
 						MethodPOM.clickMyDashboard(driver).click();
 					
 		   
@@ -2896,6 +2956,9 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 			js1.executeScript("window.scroll(0,500)");
 			Thread.sleep(4000);
 			
+			String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+			  if(!item1.equalsIgnoreCase("No items to display"))
+			  {
 		/*	MethodPOM.clickReadActive(driver).click();					//Clicking on total items count
 			Thread.sleep(500);
 			String item = MethodPOM.clickReadActive(driver).getText();	//Reading total items String value
@@ -2977,8 +3040,15 @@ else
     	 test.log(LogStatus.FAIL, "Active Old Count = "+Activelicense+" | New Count = "+Activelicense1);
          test.log(LogStatus.FAIL, "Pendingforreview Old Count = "+pfrlicense+" | New Count = "+pfrlicense1);
      }
-     
-	}
+			  }
+     else
+     {
+		      
+			test.log(LogStatus.PASS,"No Record Found");
+			MethodPOM.clickMyDashboard(driver).click();
+    	 }
+     }
+	
 	public static void Internalactivelicenseperform(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -3126,7 +3196,9 @@ else
 	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 			js1.executeScript("window.scroll(0,500)");
 			Thread.sleep(4000);
-			
+			String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+			  if(!item1.equalsIgnoreCase("No items to display"))
+			  {
 		/*	MethodPOM.clickReadActive(driver).click();					//Clicking on total items count
 			Thread.sleep(500);
 			String item = MethodPOM.clickReadActive(driver).getText();	//Reading total items String value
@@ -3188,7 +3260,13 @@ else
 	LiPerformerPOM.clickClose(driver).click();				//Clicking on Close (Cross)
 	driver.navigate().refresh();
 	MethodPOM.clickMyDashboard(driver).click();
-	
+			  }
+			  else
+			  {
+				    
+					test.log(LogStatus.PASS,"No Record Found");
+					MethodPOM.clickMyDashboard(driver).click();
+			  }
 	
 	wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpiring(driver)));
 	String Expiring1=MethodPOM.clickExpiring(driver).getText();

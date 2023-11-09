@@ -1613,6 +1613,130 @@ public class licmgmtMethodPOM {
 			  licmgmtPOM.ClickMyWorkspace(driver).click();
 			   WebDriverWait wait = new WebDriverWait(driver, 50);
 			  Thread.sleep(5000);
+			  if(type.equalsIgnoreCase("Internal"))
+				 {
+					  WebDriverWait wait1= new WebDriverWait(driver, 5);
+						wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2(driver)));
+						licmgmtPOM.Type2(driver).click();				//Clicking on 'Type' drop down.
+						
+						licmgmtPOM.internalType2(driver).click();
+						// Select drp = new Select(licmgmtPOM.Type2(driver));
+					   //	drp.selectByIndex(1);
+						
+						licmgmtPOM.Perstatus(driver).click();
+						 Thread.sleep(5000);	
+						 licmgmtPOM.wrkselectstatus(driver).click();	 
+					  LiReviewerPOM.Addcolumn(driver).click();
+						Thread.sleep(3000);
+					     LiReviewerPOM.clickColumn(driver).click();
+					     Thread.sleep(300);
+					     LiReviewerPOM.addnomineecol(driver).click();
+					     Thread.sleep(300);
+					     String Nominee =LiReviewerPOM.Nomineecolumn(driver).getText();
+						   if(LiReviewerPOM.Nomineecolumn(driver).isDisplayed())
+						   {
+							   
+								test.log(LogStatus.PASS, "My Workspace In grid Nominee column displayed.");
+						   }
+						   else
+						   {
+							   test.log(LogStatus.FAIL,"My Workspace In Grid Nominee Column Not Displayed");
+						   }
+						   Thread.sleep(3000);
+					  licmgmtPOM.editlicbtn(driver).click();
+					  Thread.sleep(7000);
+						 JavascriptExecutor js2=(JavascriptExecutor) driver ;
+							js2.executeScript("window.scroll(0,2000)");
+						licmgmtPOM.addnombtn(driver).click();	
+						  Thread.sleep(3000);
+						 licmgmtPOM.ClickNomineedrp(driver).click();
+						 Thread.sleep(3000);
+						 licmgmtPOM.SelectNominee(driver).click();
+						 Thread.sleep(5000);
+						 js2.executeScript("window.scroll(0,2000)");
+						 Thread.sleep(5000);
+						 licmgmtPOM.ClickModificdate(driver).click();
+						 Thread.sleep(6000);	
+						 js2.executeScript("window.scroll(0,2000)");
+						 Thread.sleep(6000);		 
+						 licmgmtPOM.ModificatioDate(driver).click();		 
+						 Thread.sleep(6000);
+						 js2.executeScript("window.scroll(0,2000)");
+						 licmgmtPOM.nomineestartdatecal(driver).click();
+						 Thread.sleep(3000);
+						 licmgmtPOM.selectnominstartdate(driver).click();
+						 Thread.sleep(3000);
+						// JavascriptExecutor js2=(JavascriptExecutor) driver ;
+							js2.executeScript("window.scroll(0,2000)");
+						 licmgmtPOM.nomineeEnddatecal(driver).click();
+						 Thread.sleep(5000);
+						 licmgmtPOM.selectnomineenddate(driver).click();
+						 Thread.sleep(5000);
+						 licmgmtPOM.savenominee(driver).click();
+						 Thread.sleep(5000);
+						    // Switching to Alert       
+						        Alert alert = driver.switchTo().alert();
+						       
+						        // Capturing alert message.   
+						        String alertMessage= driver.switchTo().alert().getText();
+						       
+						        Thread.sleep(3000);
+						    //    test.log(LogStatus.PASS, alertMessage);
+						       
+						        // Displaying alert message
+						        System.out.println(alertMessage);
+						       
+						       
+						        // Accepting alert
+						        alert.accept();
+						    
+						          test.log(LogStatus.PASS,"My Workspace Nominee Details Added Successfully" );
+						          
+						          licmgmtPOM.editlicenseclose(driver).click();
+							         Thread.sleep(3000);
+							         licmgmtPOM.ClickMyWorkspace(driver).click();
+							         Thread.sleep(5000);
+							         WebDriverWait wait2= new WebDriverWait(driver, 5);
+										wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2(driver)));
+										licmgmtPOM.Type2(driver).click();				//Clicking on 'Type' drop down.
+										
+										licmgmtPOM.internalType2(driver).click();
+										Thread.sleep(5000);
+							           licmgmtPOM.editlicbtn(driver).click();
+									  Thread.sleep(3000);
+											js2.executeScript("window.scroll(0,2000)");
+							         if(licmgmtPOM.prinomineedetails(driver).isDisplayed())
+							         {
+							        	 test.log(LogStatus.PASS,"My Workspace Privious Nominee Details Displayed" );
+							         }
+							         else
+							         {
+							        	 test.log(LogStatus.FAIL,"No Record Found" );
+							         }
+							         Thread.sleep(7000);
+				 }
+			  else
+			  {
+				licmgmtPOM.Perstatus(driver).click();
+				 Thread.sleep(5000);	
+				 licmgmtPOM.wrkselectstatus(driver).click();	 
+			  LiReviewerPOM.Addcolumn(driver).click();
+				Thread.sleep(3000);
+			     LiReviewerPOM.clickColumn(driver).click();
+			     Thread.sleep(300);
+			     LiReviewerPOM.addnomineecol(driver).click();
+			     Thread.sleep(300);
+			     String Nominee =LiReviewerPOM.Nomineecolumn(driver).getText();
+				   if(LiReviewerPOM.Nomineecolumn(driver).isDisplayed())
+				   {
+					   
+						test.log(LogStatus.PASS, "My Workspace In grid Nominee column displayed.");
+				   }
+				   else
+				   {
+					   test.log(LogStatus.FAIL,"My Workspace In Grid Nominee Column Not Displayed");
+				   }
+				   Thread.sleep(3000);
 			  licmgmtPOM.editlicbtn(driver).click();
 			  Thread.sleep(7000);
 				 JavascriptExecutor js2=(JavascriptExecutor) driver ;
@@ -1660,7 +1784,7 @@ public class licmgmtMethodPOM {
 				        // Accepting alert
 				        alert.accept();
 				    
-				          test.log(LogStatus.PASS,"Nominee Details Added Successfully" );
+				          test.log(LogStatus.PASS,"My Workspace Nominee Details Added Successfully" );
 				          
 				          licmgmtPOM.editlicenseclose(driver).click();
 					         Thread.sleep(3000);
@@ -1671,14 +1795,13 @@ public class licmgmtMethodPOM {
 									js2.executeScript("window.scroll(0,2000)");
 					         if(licmgmtPOM.prinomineedetails(driver).isDisplayed())
 					         {
-					        	 test.log(LogStatus.PASS,"Privious Nominee Details Displayed" );
+					        	 test.log(LogStatus.PASS,"My Workspace Privious Nominee Details Displayed" );
 					         }
 					         else
 					         {
 					        	 test.log(LogStatus.FAIL,"No Record Found" );
 					         }
 					         Thread.sleep(7000);
-			
-		  }
-		
+			  }
+		  }	
 }

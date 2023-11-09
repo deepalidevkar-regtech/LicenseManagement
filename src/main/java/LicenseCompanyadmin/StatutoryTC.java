@@ -93,7 +93,7 @@ public class StatutoryTC {
 	}
  
 
-/*	@Test(priority = 2)
+@Test(priority = 2)
 	void Active() throws InterruptedException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -327,7 +327,7 @@ public class StatutoryTC {
 				
 				extent.endTest(test);
 				extent.flush();
-			}*/
+			}
 	 
 @Test(priority = 23)
 	void MyDocuments() throws InterruptedException
@@ -345,7 +345,7 @@ public class StatutoryTC {
 		extent.flush();
 	
 	}
-	/*@Test(priority = 24)
+	@Test(priority = 24)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Working Verification");
@@ -367,7 +367,7 @@ public class StatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*  @Test(priority = 26)
+	 @Test(priority = 26)
 		void Masters() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Masters - User Master Working  verification");	
