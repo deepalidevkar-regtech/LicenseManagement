@@ -916,19 +916,20 @@ public class LiReMethodsPOM
 				
 				perform(driver, test);
 				*/
-				Thread.sleep(500);
+                act.sendKeys(Keys.PAGE_DOWN).build().perform();
+				Thread.sleep(5000);
 				if(ReviewerPOM.clickApprove(driver).isEnabled())
 				{
 					ReviewerPOM.clickApprove(driver).click();					//Clicking on Approve
 				}
 				
-				Thread.sleep(500);
+				Thread.sleep(5000);
 				js.executeScript("window.scrollBy(0,-3000)");					//Scrolling down window by 500 px.
 				
 				Thread.sleep(500);
 				String msg = LiPerformerPOM.readMessage(driver).getText();		//Reading message after Appove.
 				
-				if(msg.equalsIgnoreCase("Approved Sucessfully."))
+				if(msg.equalsIgnoreCase("Approved Successfully."))
 				{
 					test.log(LogStatus.PASS, "Message displayed = "+msg);
 				}
@@ -953,23 +954,23 @@ public class LiReMethodsPOM
 					Thread.sleep(500);
 		              Actions act1 =new Actions(driver);
 		                act1.sendKeys(Keys.PAGE_DOWN).build().perform();
-		                Thread.sleep(3000);
+		                Thread.sleep(5000);
 		                
 		                LiReviewerPOM.clickdownload(driver).click();
-		                
-		                Thread.sleep(500);
+		                act1.sendKeys(Keys.PAGE_DOWN).build().perform();
+		                Thread.sleep(5000);
 						if(LiReviewerPOM.rejectbtn(driver).isEnabled())
 						{
 							LiReviewerPOM.rejectbtn(driver).click();					//Clicking on Approve
 						}
 						
-						Thread.sleep(500);
+						Thread.sleep(5000);
 						js.executeScript("window.scrollBy(0,-3000)");					//Scrolling down window by 500 px.
 						
 						Thread.sleep(500);
 						String msg1 = LiPerformerPOM.readMessage(driver).getText();		//Reading message after Appove.
 						
-						if(msg1.equalsIgnoreCase("Rejected Sucessfully."))
+						if(msg1.equalsIgnoreCase("Rejected Successfully."))
 						{
 							test.log(LogStatus.PASS, "Message displayed = "+msg1);
 						}
@@ -1153,7 +1154,7 @@ public class LiReMethodsPOM
 		Thread.sleep(500);
 		String msg = LiPerformerPOM.readMessage(driver).getText();		//Reading message after Appove.
 		
-		if(msg.equalsIgnoreCase("Approved Sucessfully."))
+		if(msg.equalsIgnoreCase("Approved Successfully."))
 		{
 			test.log(LogStatus.PASS, "Message displayed = "+msg);
 		}
@@ -1196,7 +1197,7 @@ public class LiReMethodsPOM
 				Thread.sleep(500);
 				String msg1 = LiPerformerPOM.readMessage(driver).getText();		//Reading message after Appove.
 				
-				if(msg1.equalsIgnoreCase("Rejected Sucessfully."))
+				if(msg1.equalsIgnoreCase("Rejected Successfully."))
 				{
 					test.log(LogStatus.PASS, "Message displayed = "+msg1);
 				}

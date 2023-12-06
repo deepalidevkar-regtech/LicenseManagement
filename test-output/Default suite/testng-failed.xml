@@ -3,20 +3,33 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="PerformerLicenseCritical.InternalCriticalTC">
+      <class name="LicenseCriticalTestCase.CompanyadminstatutoryCriticalTC">
         <methods>
+          <include name="BylicnesetypeExpiring"/>
+          <include name="BylicnesetypeTerminate"/>
+          <include name="MyReports"/>
+          <include name="BylicnesetypeActive"/>
+          <include name="BystausExpiringlicense"/>
+          <include name="driverclose"/>
+          <include name="BystausAppliedButnotRenewedlicense"/>
+          <include name="LicenseCreation"/>
+          <include name="setBrowser"/>
+          <include name="BylicnesetypeExpired"/>
+          <include name="Expiring"/>
+          <include name="Masters"/>
+          <include name="MyDocuments"/>
+          <include name="BystausExpiredlicense"/>
+          <include name="MyWorkspace"/>
+          <include name="BylicnesetypeApplied"/>
+          <include name="Applied"/>
+          <include name="BystausActivelicense"/>
+          <include name="BystausTerminatelicense"/>
+          <include name="Terminate"/>
+          <include name="Rejected"/>
           <include name="Expired"/>
           <include name="Login"/>
-          <include name="driverclose"/>
-          <include name="setBrowser"/>
-          <include name="MyReports"/>
-          <include name="TerminateInternalInternalLicense"/>
-          <include name="MyDocuments"/>
-          <include name="Myworkspace"/>
-          <include name="PendingForReviewInternalLicense"/>
-          <include name="RejectedInternalLicense"/>
         </methods>
-      </class> <!-- PerformerLicenseCritical.InternalCriticalTC -->
+      </class> <!-- LicenseCriticalTestCase.CompanyadminstatutoryCriticalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

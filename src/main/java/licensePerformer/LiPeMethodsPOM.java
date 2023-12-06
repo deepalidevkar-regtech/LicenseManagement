@@ -176,7 +176,7 @@ public class LiPeMethodsPOM
 		//Thread.sleep(500);
 	
 		
-	/*	if(type.equalsIgnoreCase("Internal"))
+		if(type.equalsIgnoreCase("Internal"))
 		{
 			WebDriverWait wait1= new WebDriverWait(driver, 5);
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
@@ -264,7 +264,7 @@ public class LiPeMethodsPOM
 			driver.navigate().refresh();
 			MethodPOM.clickMyDashboard(driver).click();
 			
-		
+		/*
 		
 		//progress(driver);
 		Thread.sleep(2000);

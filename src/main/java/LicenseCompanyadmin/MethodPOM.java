@@ -1082,6 +1082,11 @@ public static WebElement ReviewerColumn(WebDriver driver)
 	license = driver.findElement(By.xpath("(//*[@class='k-link'])[6]"));
 	return license;
 }
+public static WebElement ExpiredHide(WebDriver driver) 
+{
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-point'])[126]-"));
+	return license;
+}
 
 
 }
