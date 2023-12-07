@@ -182,7 +182,7 @@ public class mgmtstatutoryCriticalTC {
 	@Test(priority = 10)
 		void BystausExpiringlicense() throws InterruptedException
 		{
-			test = extent.startTest("By Status-Expiring License Graph Working Verification");
+			test = extent.startTest("By Status-Application Overdue (Expiring but not applied) License Graph Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
 			licenseCompanyadmin.StatutoryMethod.BystatusExpringgraph(driver, test, "Statutory");
@@ -193,7 +193,7 @@ public class mgmtstatutoryCriticalTC {
 		@Test(priority = 11)
 		void BystausExpiredlicense() throws InterruptedException
 		{
-			test = extent.startTest("By Status-License Expired  On Working Verification");
+			test = extent.startTest("By Status- Expired License On Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licenseCompanyadmin.StatutoryMethod.BystatusExpired(driver, test, "Statutory");
@@ -217,7 +217,7 @@ public class mgmtstatutoryCriticalTC {
 	 @Test(priority = 13)
 		void BystausAppliedButnotRenewedlicense() throws InterruptedException
 		{
-			test = extent.startTest("By Status Applied License Graph Working Verification");
+			test = extent.startTest("By Status- Expired Applied but not renewed License Graph Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
 			licenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedgraph(driver, test, "Statutory");
@@ -237,10 +237,10 @@ public class mgmtstatutoryCriticalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 15)
+	@Test(priority = 15)
 		void BylicnesetypeExpiring() throws InterruptedException
 		{
-			test = extent.startTest("By License type  Expiring License Graph Working Verification");
+			test = extent.startTest("By License type Application Overdue (Expiring but not applied )License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiring(driver, test, "Statutory");
@@ -248,10 +248,10 @@ public class mgmtstatutoryCriticalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 16)
+	@Test(priority = 16)
 		void BylicnesetypeApplied() throws InterruptedException
 		{
-			test = extent.startTest("By License type  Applied License Graph Working Verification");
+			test = extent.startTest("By License type Expired Applied  But not renewed License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 		    licmgmtMethodPOM.ByLicensetypeApplied(driver, test, "Statutory");
@@ -262,7 +262,7 @@ public class mgmtstatutoryCriticalTC {
  @Test(priority = 17)
 		void BylicnesetypeActive() throws InterruptedException
 		{
-			test = extent.startTest("By License type  Applied License Graph Working Verification");
+			test = extent.startTest("By License type  Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
             licmgmtMethodPOM.ByLicensetypeActive(driver, test, "Statutory");
 			
@@ -272,7 +272,7 @@ public class mgmtstatutoryCriticalTC {
 	@Test(priority = 18)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
-			test = extent.startTest("By License type  Applied License Graph Working Verification");
+			test = extent.startTest("By License type  Terminate License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
              licmgmtMethodPOM.ByLicensetypeTerminate(driver, test, "Statutory");
 			

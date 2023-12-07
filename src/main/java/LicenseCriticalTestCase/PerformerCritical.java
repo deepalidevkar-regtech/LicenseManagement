@@ -47,6 +47,16 @@ public class PerformerCritical
 	public static WebElement upload = null;	
 	private static WebElement license = null;	
 	
+	
+	public static XSSFSheet ReadExcel1() throws IOException
+	{
+		
+		String workingDir = System.getProperty("user.dir");
+		fis = new FileInputStream(workingDir+"//TestData//ComplianceSheet.xlsx");
+		workbook = new XSSFWorkbook(fis);
+		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
+		return sheet;
+	}
 	public static void ActiveLicense(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{	
 		  WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -1314,7 +1324,7 @@ else
 		 Thread.sleep(6000);
 		 licmgmtPOM.SelectReviewer(driver).get(111).click(); 
 		 
-		 XSSFSheet Sheet= ReadExcel();
+		 XSSFSheet Sheet= ReadExcel1();
 		 Thread.sleep(3000);
 		 sheet = workbook.getSheetAt(2);
 		 Row row6= sheet.getRow(6);
@@ -1328,17 +1338,8 @@ else
 		 String LicenseNo=c2.getStringCellValue();
 		 licmgmtPOM.LicenseNo(driver).sendKeys(LicenseNo);
 		 
-		Thread.sleep(3000);
-		Row row8=sheet.getRow(8);
-			org.apache.poi.ss.usermodel.Cell c3=row8.getCell(1);
-		 String ApplicationDays=c3.getStringCellValue();
-		 licmgmtPOM.ApplicationDays(driver).sendKeys(ApplicationDays);
-		 
-		 Thread.sleep(3000);
-		 Row row9=sheet.getRow(9);
-			org.apache.poi.ss.usermodel.Cell c4=row9.getCell(1);
-		 String LicenseCost=c4.getStringCellValue();
-		 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost);
+	
+
 		 
 		licmgmtPOM.ClickCal(driver).click();
 		 Thread.sleep(7000);
@@ -1391,135 +1392,7 @@ else
 		         Thread.sleep(5000);
 		       
 			
-			licmgmtPOM.ClickAddLicense(driver).click();
-			 
-			Thread.sleep(3000);	
-			 licmgmtPOM.ClickLicenseTypeDropdown(driver).click();
-			 
-				Thread.sleep(3000);	
-			 licmgmtPOM.SelectLicenseTypeper(driver).click();
-			 
-			 Thread.sleep(3000);
-			licmgmtPOM.ClickLocation(driver).click();
-			Thread.sleep(3000);
-		     licmgmtPOM.LocationMaximize(driver).click();
-			
-			 Thread.sleep(5000);
-			 licmgmtPOM.SelectLocation(driver).click();
-			 
-			 Thread.sleep(3000);
-			 licmgmtPOM.ClickCompliance(driver).click();
-			 Thread.sleep(5000);
-			 licmgmtPOM.SelectLicenseCompliance(driver).get(1).click();
-			 
-			 Thread.sleep(5000);
-			 licmgmtPOM.ClickPerformer(driver).click();
-			 Thread.sleep(6000);
-			 licmgmtPOM.SelectPerformer(driver).get(3).click();
-			// licmgmtPOM.SelectPerformer(driver).click();
-			 
-			 Thread.sleep(3000);
-			 licmgmtPOM.ClickReviewer(driver).click();
-			 Thread.sleep(6000);
-			 licmgmtPOM.SelectReviewer(driver).get(111).click(); 
-			 
-			 XSSFSheet Sheet1= ReadExcel();
-			 Thread.sleep(3000);
-			 sheet = workbook.getSheetAt(2);
-			 Row row61= sheet.getRow(6);
-			  org.apache.poi.ss.usermodel.Cell c11 = row61.getCell(1);	
-			 String LicenseTitle1= c11.getStringCellValue();
-			 licmgmtPOM.LicenseTitle(driver).sendKeys(LicenseTitle1);
-			 
-			 Thread.sleep(3000);
-			 Row row71=sheet.getRow(7);
-				org.apache.poi.ss.usermodel.Cell c21=row71.getCell(1);
-			 String LicenseNo1=c21.getStringCellValue();
-			 licmgmtPOM.LicenseNo(driver).sendKeys(LicenseNo1);
-			 
-			 Thread.sleep(3000);
-			 Row row81=sheet.getRow(8);
-				org.apache.poi.ss.usermodel.Cell c31=row81.getCell(1);
-			 String ApplicationDays1=c31.getStringCellValue();
-			 licmgmtPOM.ApplicationDays(driver).sendKeys(ApplicationDays1);
-			 
-			 Thread.sleep(3000);
-			 Row row91=sheet.getRow(9);
-				org.apache.poi.ss.usermodel.Cell c41=row91.getCell(1);
-			 String LicenseCost1=c41.getStringCellValue();
-			 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost1);
-			 
-			licmgmtPOM.ClickCal(driver).click();
-			 Thread.sleep(7000);
-			 licmgmtPOM.NewDate(driver).click();
-			 Thread.sleep(5000);
-			licmgmtPOM.ClickCal1(driver).click();
-			 Thread.sleep(7000);
-			licmgmtPOM.NewEndDate(driver).click();
-			
-			 
-			Thread.sleep(300);
-			// licmgmtPOM.Chooesfile(driver).click();
-				//String workingDir = System.getProperty("user.dir");
-				//licmgmtPOM.Chooesfile(driver).sendKeys(workingDir+"//Reports//LicensePerformerResults(Statutory).html");
-	        
-
-	  	      JavascriptExecutor js11=(JavascriptExecutor) driver ;
-				js11.executeScript("window.scroll(0,2000)");
-		 licmgmtPOM.ClickNomineedrp(driver).click();
-			 Thread.sleep(3000);
-			 licmgmtPOM.SelectNominee(driver).click();
-			 Thread.sleep(5000);
-			 js11.executeScript("window.scroll(0,2000)");
-			 Thread.sleep(5000);
-			 licmgmtPOM.ClickModificdate(driver).click();
-			 Thread.sleep(6000);	
-			 js11.executeScript("window.scroll(0,2000)");
-			 Thread.sleep(6000);		 
-			 licmgmtPOM.ModificatioDate(driver).click();		 
-			 Thread.sleep(6000);
-			 js11.executeScript("window.scroll(0,2000)");
-			 licmgmtPOM.nomineestartdatecal(driver).click();
-			 Thread.sleep(3000);
-			 licmgmtPOM.selectnominstartdate(driver).click();
-			 Thread.sleep(3000);
-			 JavascriptExecutor js21=(JavascriptExecutor) driver ;
-				js21.executeScript("window.scroll(0,2000)");
-			 licmgmtPOM.nomineeEnddatecal(driver).click();
-			 Thread.sleep(5000);
-			 licmgmtPOM.selectnomineenddate(driver).click();
-			 Thread.sleep(5000);
-			 licmgmtPOM.Nomineesubmit(driver).click();
-			 Thread.sleep(5000);
-			    // Switching to Alert       
-			        Alert alert1 = driver.switchTo().alert();
-			       
-			        // Capturing alert message.   
-			        String alertMessage1= driver.switchTo().alert().getText();
-			       
-			        Thread.sleep(3000);
-			    //    test.log(LogStatus.PASS, alertMessage);
-			       
-			        // Displaying alert message
-			        System.out.println(alertMessage1);
-			       
-			       
-			        // Accepting alert
-			        alert1.accept();
-			       
-			        test.log(LogStatus.PASS,"License Details Added Successfully" );
-			          Thread.sleep(5000);
-			        //  test.log(LogStatus.PASS,"Nominee Details Added Successfully" );
-			          
-			         licmgmtPOM.editlicenseclose(driver).click();
-			         Thread.sleep(3000);
-			         
-			         licmgmtPOM.ClickMyWorkspace(driver).click();
-			         Thread.sleep(5000);
-			         licmgmtPOM.Overviewworkspace(driver).click();
-			         Thread.sleep(3000);
-			         test.log(LogStatus.PASS,"License Overview Details Button Working Successfully " );
-			         Thread.sleep(7000);
+		
 		 }
 	 }
 			   private static XSSFSheet ReadExcel() {

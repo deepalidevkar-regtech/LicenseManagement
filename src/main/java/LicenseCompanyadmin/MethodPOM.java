@@ -522,7 +522,7 @@ public static WebElement clickAllOverview(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeExpired(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[26]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[29]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeExpiredInternal(WebDriver driver)	
@@ -532,7 +532,7 @@ public static WebElement clickByLicnesetypeExpiredInternal(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeExpiring(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeApplied(WebDriver driver)	

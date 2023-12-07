@@ -141,6 +141,7 @@ public class licmgmtMethodPOM {
 		   Js1.executeScript("window.scrollBy(0,1000)");
 		    Thread.sleep(5000);
 		    WebDriverWait wait = new WebDriverWait(driver, 50);
+		    driver.findElement(By.xpath("//*[@class='highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-0']")).click();
 		    wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpired(driver)));
 		    Thread.sleep(5000);
 			String ByLicenseTypeExpired=MethodPOM.clickByLicnesetypeExpired(driver).getText();

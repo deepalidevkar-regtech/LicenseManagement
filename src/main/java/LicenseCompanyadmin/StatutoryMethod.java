@@ -1882,12 +1882,12 @@ public class StatutoryMethod {
 			if(BystatusExpiringgraph == total)
 				{
 					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By status Graph Expiring License Count.");
-					test.log(LogStatus.PASS, "No of Expiring  License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+					test.log(LogStatus.PASS, "No of Application Overdue (Expiring but not applied)License  in the grid = "+total+" | Dashboard By Status Application Overdue (Expiring but not applied) License  Count = "+BystatusExpiringgraph);
 				}
 				else
 				{
 					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Status Graph  Expiring License   Count.");
-					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard By Status Expiring License  Count = "+BystatusExpiringgraph);
+					test.log(LogStatus.FAIL, "No of Application Overdue (Expiring but not applied) License  in the grid = "+total+" | Dashboard By Status Application Overdue (Expiring but not applied) License  Count = "+BystatusExpiringgraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2230,12 +2230,12 @@ public class StatutoryMethod {
 			if(BystatusExpiredappliedbutnotrenewedgraph == total)
 				{
 					//test.log(LogStatus.PASS, "Number of Applied But not Renewed License  grid matches to Dashboard By status Graph Applied But not Renewed License Count.");
-					test.log(LogStatus.PASS, "No of Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+					test.log(LogStatus.PASS, "No of Expired Applied But not Renewed  License  in the grid = "+total+" | Dashboard By Status Expired-Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
 				}
 				else
 				{
 					//test.log(LogStatus.FAIL, "Number of Applied But not Renewed License does not matches to Dashboard By Status Graph  Applied But not Renewed License   Count.");
-					test.log(LogStatus.FAIL, "No of Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
+					test.log(LogStatus.FAIL, "No of Expired Applied But not Renewed License  in the grid = "+total+" | Dashboard By Status Expired -Applied But not Renewed License  Count = "+BystatusExpiredappliedbutnotrenewedgraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2551,6 +2551,8 @@ public class StatutoryMethod {
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
 	    WebDriverWait wait = new WebDriverWait(driver, 40);
+	    driver.findElement(By.xpath("//*[@class='highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-1']")).click();
+	    Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpiredInternal(driver)));	  
 		String ByLicenseTypeExpired=MethodPOM.clickByLicnesetypeExpiredInternal(driver).getText();
 		
@@ -2616,7 +2618,8 @@ public class StatutoryMethod {
 	   JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 	   Js1.executeScript("window.scrollBy(0,1000)");
 	    WebDriverWait wait = new WebDriverWait(driver, 40);
-	    
+	   driver.findElement(By.xpath("//*[@class='highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-1']")).click();
+	   Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpiring(driver)));	  
 		String ByLicenseTypeExpiring=MethodPOM.clickByLicnesetypeExpiring(driver).getText();
 		
@@ -2640,12 +2643,12 @@ public class StatutoryMethod {
 			if(ByLicensetypeExpiringgraph == total)
 				{
 					//test.log(LogStatus.PASS, "Number of Expiring License  grid matches to Dashboard By Licnesetype Graph Expiring License Count.");
-					test.log(LogStatus.PASS, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+					test.log(LogStatus.PASS, "No of Application Overdue (Expiring but not applied) License  in the grid = "+total+" | Dashboard By Licnese type Application Overdue (Expiring but not applied) License  Count = "+ByLicensetypeExpiringgraph);
 				}
 				else
 				{
 					//test.log(LogStatus.FAIL, "Number of Expiring License does not matches to Dashboard By Licnese type Graph Expiring License   Count.");
-					test.log(LogStatus.FAIL, "No of Expiring License  in the grid = "+total+" | Dashboard By Licnese type Expiring License  Count = "+ByLicensetypeExpiringgraph);
+					test.log(LogStatus.FAIL, "No of Application Overdue (Expiring but not applied) License  in the grid = "+total+" | Dashboard By Licnese type Application Overdue (Expiring but not applied) License  Count = "+ByLicensetypeExpiringgraph);
 				}
 				Thread.sleep(3000);
 				
@@ -2778,12 +2781,12 @@ public class StatutoryMethod {
 			if(ByLicensetypeAppliedggraph == total)
 				{
 					//test.log(LogStatus.PASS, "Number of Applied License  grid matches to Dashboard By Licnesetype Graph Applied License Count.");
-					test.log(LogStatus.PASS, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+					test.log(LogStatus.PASS, "No of Expired Applied but not renewed License  in the grid = "+total+" | Dashboard By Licnese type Expired Applied but not renewed License  Count = "+ByLicensetypeAppliedggraph);
 				}
 				else
 				{
 					//test.log(LogStatus.FAIL, "Number of Applied License does not matches to Dashboard By Licnese type Graph Applied License   Count.");
-					test.log(LogStatus.FAIL, "No of Applied License  in the grid = "+total+" | Dashboard By Licnese type Applied License  Count = "+ByLicensetypeAppliedggraph);
+					test.log(LogStatus.FAIL, "No of Expired Applied but not renewed License  in the grid = "+total+" | Dashboard By Licnese type Expired Applied but not renewed License  Count = "+ByLicensetypeAppliedggraph);
 				}
 				Thread.sleep(3000);
 				
@@ -4141,6 +4144,7 @@ public class StatutoryMethod {
    		  	
 		}
 
+	
 
 }
 
