@@ -120,7 +120,7 @@ public static WebElement SelectLicenseTypeperin(WebDriver driver)
 public static WebElement SelectLicenseTypeper(WebDriver driver)
 {
 	WebDriverWait wait= new WebDriverWait(driver,20);
-	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='ddlLicenseType_listbox']/li[4]")));
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='k-item'])[102]")));
 	return license;
 }
 public static WebElement SelectLicenseTyperev(WebDriver driver)
@@ -317,7 +317,7 @@ public static WebElement btnsavenominee(WebDriver driver)
 
 public static WebElement lictype(WebDriver driver)
 {
-	license = driver.findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
+	license = driver.findElement(By.xpath("(//*[@class='k-dropdown-wrap k-state-default'])[1]"));
 	return license;
 }
 
@@ -452,6 +452,28 @@ public static WebElement Documentstatusdrp(WebDriver driver)
 	license = driver.findElement(By.xpath("//*[@class='k-dropdown-wrap k-state-default k-state-focused']"));
 	return license;
 }
+public static WebElement drplocationclick(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='k-input k-readonly'])[1]"));
+	return license;
+}
+public static WebElement Customerexpand(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
+	return license;
+}
+public static WebElement BranchExpand(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='k-icon k-i-collapse'])[3]"));
+	return license;
+}
+
+public static WebElement EntityExpand(WebDriver driver)
+{
+	license = driver.findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[12]"));
+	return license;
+}
+
 
 }		
 

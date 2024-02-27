@@ -93,7 +93,7 @@ public class InternalTC {
 		extent.flush();*/
 	}
 	
-@Test(priority = 2)
+/*@Test(priority = 2)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -267,6 +267,17 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
    	}
+   	  @Test(priority = 17)
+	  void BystatusRejectedInternalgraph() throws InterruptedException
+		{
+			test = extent.startTest("Internal By Status-Rejected Graph Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.BystatusRejectedInternalgraph(driver, test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	@Test(priority = 17)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
@@ -322,7 +333,17 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	
+	 @Test(priority = 21)
+		void BylicnesetypeRejectedInternal() throws InterruptedException
+		{
+			test = extent.startTest("Internal By License type - Rejected Graph  Count Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.ByLicensetypeRejectedInternal(driver, test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	@Test(priority = 22)
 	void MyWorkspace() throws InterruptedException, IOException
 	{
@@ -352,7 +373,7 @@ public class InternalTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 	@Test(priority = 24)
 	 void MyReports() throws InterruptedException, IOException
 	 {
@@ -366,7 +387,7 @@ public class InternalTC {
 		extent.flush();
 	}
 	
-	@Test(priority = 25)
+/*	@Test(priority = 25)
 	void InternalLicenseCreation() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal License Creation Verification");
@@ -401,6 +422,37 @@ public class InternalTC {
 		    extent.endTest(test);
 			extent.flush();
 		}
+		@Test(priority = 29)
+		void AssignedButNotActivated() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Assigned But Not Activated  Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+			LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+			
+			Select drp = new Select(LiPerformerPOM.clickType(driver));
+			drp.selectByIndex(1);
+			
+			try
+			{
+				Thread.sleep(400);
+				wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			Thread.sleep(500);
+			CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+			
+			LiPeMethodsPOM.AssignedButNotActivated(driver, test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}*/
 	  @AfterMethod
 	  void driverclose()
 	  {

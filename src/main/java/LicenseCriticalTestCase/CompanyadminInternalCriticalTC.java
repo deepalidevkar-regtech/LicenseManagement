@@ -61,7 +61,7 @@ public class CompanyadminInternalCriticalTC {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -149,7 +149,8 @@ public class CompanyadminInternalCriticalTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 7)
+
+ @Test(priority = 7)
 		void PendingForReviewInternalLicense() throws InterruptedException
 		{
 			test = extent.startTest("Pending For Review License Count Verification");
@@ -182,9 +183,7 @@ public class CompanyadminInternalCriticalTC {
 		extent.endTest(test);
 		extent.flush();
 	}
-
-	
-	  @Test(priority = 12)
+	 @Test(priority = 12)
 	  void BystatusActiveInternalgraph() throws InterruptedException
 		{
 			test = extent.startTest("Internal By Status-Active Graph Count Verification");
@@ -239,7 +238,18 @@ public class CompanyadminInternalCriticalTC {
 			extent.endTest(test);
 			extent.flush();
    	}
-	@Test(priority = 17)
+ @Test(priority = 17)
+	void ByLicensetypeExpiringInternal() throws InterruptedException
+	{
+		test = extent.startTest("Internal By License Type -Application Overdue(Expiring but not applied)Graph Count Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		StatutoryMethod.ByLicensetypeExpiringInternal(driver, test, "Internal");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 18)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License Type - Expired Graph Count Verification");
@@ -250,17 +260,7 @@ public class CompanyadminInternalCriticalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 18)
-		void ByLicensetypeExpiringInternal() throws InterruptedException
-		{
-			test = extent.startTest("Internal By License Type -Application Overdue(Expiring but not applied)Graph Count Verification");
-			//test.log(LogStatus.INFO, "Test Initiated");
-			
-			StatutoryMethod.ByLicensetypeExpiringInternal(driver, test, "Internal");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
+
 	 @Test(priority = 19)
 		void ByLicensetypeAppliedInternal() throws InterruptedException
 		{
@@ -283,7 +283,7 @@ public class CompanyadminInternalCriticalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 21)
+	@Test(priority = 21)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License type - Terminate Graph  Count Working Verification");
@@ -306,7 +306,7 @@ public class CompanyadminInternalCriticalTC {
 	   //	drp.selectByIndex(1);
 		test = extent.startTest("My Workspace Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
-		 PerformerInternalCritical.MyworkspaceaddLicense1(driver, test, "Internal");
+		 PerformerInternalCritical.Myworkspaceaddadmin(driver, test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -344,6 +344,37 @@ public class CompanyadminInternalCriticalTC {
 		test = extent.startTest("Internal License Creation Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		StatutoryMethod.InternalLicenseCreation(driver, test, "Internal");
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 26)
+	void AssignedButNotActivated() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Assigned But Not Activated  Count Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		
+		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		drp.selectByIndex(1);
+		
+		try
+		{
+			Thread.sleep(400);
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		Thread.sleep(500);
+		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		
+		LiPeMethodsPOM.AssignedButNotActivated(driver, test, "Internal");
+		
 		extent.endTest(test);
 		extent.flush();
 	}

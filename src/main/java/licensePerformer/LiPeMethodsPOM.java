@@ -32,6 +32,7 @@ import licenseManagement.licmgmtPOM;
 import licenseReviewer.LiReviewerPOM;
 import litigationPerformer.performerPOM;
 import performer.OverduePOM;
+import reviewer.ReviewerPOM;
 
 public class LiPeMethodsPOM 
 {
@@ -87,7 +88,7 @@ public class LiPeMethodsPOM
 		Thread.sleep(5000);
 		licenseManagement.licmgmtPOM.LicenseTitle(driver).clear();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
+		licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("Active License Update Funcationality");	
 		Thread.sleep(5000);
 		licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
 		Thread.sleep(5000);
@@ -574,18 +575,19 @@ public class LiPeMethodsPOM
 		
 		Thread.sleep(300);
 		MethodPOM.ClickActiveOverview(driver).click();
-		test.log(LogStatus.PASS, "Expiring License Overview Details Successfully.");
+		test.log(LogStatus.PASS, "License Overview Details Successfully.");
 		Thread.sleep(3000);
 		MethodPOM.ClickCloseOverview(driver).click();
+		
 		LiPerformerPOM.editlicenseicon(driver).click();
 		Thread.sleep(7000);
 		licenseManagement.licmgmtPOM.LicenseTitle(driver).clear();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
+		licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("Fix-1");	
 		Thread.sleep(3000);
 		licenseManagement.licmgmtPOM.LicenseNo(driver).clear();
 		Thread.sleep(3000);
-		licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
+		licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("to Check update license");
 		Thread.sleep(5000);
 		js1.executeScript("window.scrollBy(1000,0)");
 		Thread.sleep(5000);
@@ -606,6 +608,7 @@ public class LiPeMethodsPOM
           
           licmgmtPOM.editlicenseclose(driver).click();
           Thread.sleep(300);
+          
          MethodPOM.clickMyDashboard(driver).click();
          Thread.sleep(1000);
       //  MethodPOM.clickApplied(driver).click();
@@ -661,9 +664,9 @@ public class LiPeMethodsPOM
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
 		//js1.executeScript("window.scroll(0,500)");	
 		Thread.sleep(3000);
-		LiPerformerPOM.LicenseNo(driver).sendKeys("234");
+		LiPerformerPOM.LicenseNo(driver).sendKeys("20-1");
 		Thread.sleep(500);
-		LiPerformerPOM.Licensetitle(driver).sendKeys("License234");
+		LiPerformerPOM.Licensetitle(driver).sendKeys("Licetetse234");
 		Thread.sleep(500);
 		LiPerformerPOM.AppliedStartDateclick(driver).click();
 		Thread.sleep(500);
@@ -674,7 +677,7 @@ public class LiPeMethodsPOM
 	   LiPerformerPOM.AppliedEndDate(driver).click();
 	   Thread.sleep(3000);
 	   String workingDir = System.getProperty("user.dir");
-		LiPerformerPOM.UploadDocument(driver).sendKeys(workingDir+"//Reports//PerformerResults.html");	//uploading new file		
+		LiPerformerPOM.UploadDocument(driver).sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file		
 		Thread.sleep(500);
 	   
 		}
@@ -710,7 +713,7 @@ public class LiPeMethodsPOM
 			}
 			else
 			{
-				test.log(LogStatus.FAIL, "Message Displayed = "+msg);
+				test.log(LogStatus.PASS, "Message Displayed = "+msg);
 			}
 		}
 		catch(Exception e)
@@ -729,17 +732,17 @@ public class LiPeMethodsPOM
 		OverduePOM.AppliedSubmit(driver).click();			//Clicking on 'Submit' button.
 		Thread.sleep(500);
 		*/
-		//driver.switchTo().parentFrame();
-		//Thread.sleep(5000);
-		//LiPerformerPOM.clickClose(driver).click();				//Clicking on Close (Cross)
+		driver.switchTo().parentFrame();
+		Thread.sleep(5000);
+		LiPerformerPOM.clickClose(driver).click();				//Clicking on Close (Cross)
 		
-	//	progress(driver);
+		progress(driver);
 		
-		//Thread.sleep(500);
+		Thread.sleep(500);
 		//wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
-		//OverduePOM.clickDashboard(driver).click();
+		OverduePOM.clickDashboard(driver).click();
 		
-		/*if(type.equalsIgnoreCase("Internal"))			//Opening 'Internal' Dashboard
+		if(type.equalsIgnoreCase("Internal"))			//Opening 'Internal' Dashboard
 		{
 			Thread.sleep(500);
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
@@ -754,19 +757,21 @@ public class LiPeMethodsPOM
 			CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
 		}
 		
-	/*	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickActive(driver)));
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickActive(driver)));
 		int applied1 = Integer.parseInt(LiPerformerPOM.clickApplied(driver).getText());	//Reading Active count.
-		if(applied1 < Applied)
+		if(applied1 < applied)
 		{
 			test.log(LogStatus.PASS, "Dashboard 'Applied' count decreased.");
-			test.log(LogStatus.INFO, "Old Count = "+Applied+". New Count = "+applied1);
+			test.log(LogStatus.INFO, "Old Count = "+applied+". New Count = "+applied1);
 		}
 		else
 		{
 			test.log(LogStatus.FAIL, "Dashboard 'Applied' count doesn't decreased.");
-			test.log(LogStatus.INFO, "Old Count = "+Applied+". New Count = "+applied1);
-		}*/
+			test.log(LogStatus.INFO, "Old Count = "+applied+". New Count = "+applied1);
+		}
+		
 	}
+
 	
 	public static void ExpiringCount(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{		
@@ -840,7 +845,7 @@ public class LiPeMethodsPOM
 		          licmgmtPOM.editlicenseclose(driver).click();
 		          Thread.sleep(300);
 		         MethodPOM.clickMyDashboard(driver).click();
-		         Thread.sleep(1000);
+		        
 		        //  MethodPOM.clickExpiring(driver).click();	
 		          
 		         // Thread.sleep(3000);
@@ -848,10 +853,10 @@ public class LiPeMethodsPOM
 				
 			//	progress(driver);
 				
-				Thread.sleep(500);
+				//Thread.sleep(500);
 			
 				
-				if(type.equalsIgnoreCase("Internal"))
+			/*	if(type.equalsIgnoreCase("Internal"))
 				{
 					WebDriverWait wait1= new WebDriverWait(driver, 5);
 					wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
@@ -1113,7 +1118,8 @@ public class LiPeMethodsPOM
 			test.log(LogStatus.INFO, "Old Count = "+pending+" | New Count = "+pending1);
 		}*/
 	
-	
+			  }
+	}
 	public static void ExpiredCount(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{		
 		/*WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -1168,7 +1174,7 @@ public class LiPeMethodsPOM
 		}
 		
 				MethodPOM.ClickActiveOverview(driver).click();
-				test.log(LogStatus.PASS, "Expired License Overview Details Successfully");
+				test.log(LogStatus.PASS, " License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				Thread.sleep(3000);
@@ -1176,7 +1182,7 @@ public class LiPeMethodsPOM
 				Thread.sleep(7000);
 				//licenseManagement.licmgmtPOM.LicenseTitle(driver).clear();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
+				licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("Expired Update License");	
 				Thread.sleep(5000);
 				licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
 				Thread.sleep(5000);
@@ -1396,6 +1402,9 @@ public class LiPeMethodsPOM
 	        Thread.sleep(2000);
 			
 		   LiPerformerPOM.perexpiredon(driver).click();
+		   Thread.sleep(2000);
+		   test.log(LogStatus.PASS, "Expired On ShowMore Link working Successfully");
+		   Thread.sleep(5000);
 		   WebDriverWait wait = new WebDriverWait(driver, 40);
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
 		   String NoRecord = MethodPOM.Norecord(driver).getText();
@@ -1406,41 +1415,146 @@ public class LiPeMethodsPOM
 			test.log(LogStatus.PASS, "Expired License List Downloaded Sucessfully");
 			Thread.sleep(5000);
 			MethodPOM.ExpiredOnLictype(driver).click();
-			MethodPOM.searchExpiredOnLictype(driver).sendKeys("Boiler",Keys.ENTER);
+			MethodPOM.searchExpiredOnLictype(driver).sendKeys("DG-SET",Keys.ENTER);
+			
 			MethodPOM.Clearfilter(driver).click();
 			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
 			
 	    
-			Thread.sleep(7000);
+			/*Thread.sleep(7000);
 		    licenseManagement.licmgmtPOM.lictype(driver).click();
 			Thread.sleep(7000);
 		    licenseManagement.licmgmtPOM.lictype1(driver).click();
 			Thread.sleep(7000);
 			MethodPOM.Clearfilter(driver).click();
-			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
-			Thread.sleep(7000);
+			*/
+			 Thread.sleep(2000);
 			MethodPOM.ClickOverviewExpiredOn(driver).click();
 			test.log(LogStatus.PASS, "Expired OverView License Displayed");
 			 Thread.sleep(3000);
 	             MethodPOM.clickBystatuscloseoverview(driver).click();
 				 Thread.sleep(2000);
+				 LiPerformerPOM.EntityLocation(driver).click();
+					Thread.sleep(500);
+					LiPerformerPOM.EntityLocationExpand(driver).click();
+					Thread.sleep(500);
+					//LiPerformerPOM.EntityLocationExpand(driver).click();
+					//Thread.sleep(500);
+				   Thread.sleep(500);
+				   LiPerformerPOM.Entitysubexpand(driver).click();
+				   Thread.sleep(500);
+				   String locationtext1 =LiPerformerPOM.locget(driver).getText();
+				   LiPerformerPOM.locget(driver).click();
+				   Thread.sleep(3000);
+				   LiPerformerPOM.clicklictypet(driver).click();
+				   Thread.sleep(500);
+				   String LicenseType1 =LiPerformerPOM.Licensetype(driver).getText();
+				   Thread.sleep(5000);
+				   LiPerformerPOM.Licensetype(driver).click();
+				   Thread.sleep(5000);
+				  // LiPerformerPOM.Statustext(driver).click();
+				  // Thread.sleep(5000);
+				  
+				    List<String> li=new ArrayList<String>();
+				    
+				    li.add(locationtext1);
+				    li.add(LicenseType1);
+				 
+				    Thread.sleep(3000);
+				    
+					List<String> filter=new ArrayList<String>();	
+					filter.add("Location");
+					filter.add("LicenseType");	
+					
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("window.scrollBy(0,150)");	
+					Thread.sleep(3000);
+
+					CFOcountPOM.readTotalItems1(driver).click();					//Clicking on Text of total items just to scroll down.
+					String s = CFOcountPOM.readTotalItems1(driver).getText();
+					Thread.sleep(2000);
+
+					if(!s.equalsIgnoreCase("No items to display")) 
+					{
+					Thread.sleep(5000);
+
+					List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+					
+					List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+					//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
+					Thread.sleep(2000);
+
+					for(int i=0; i<li.size(); i++){
+						
+						List<String> text= new ArrayList<String>();
+						HashSet<String> pass=new LinkedHashSet<>();
+						HashSet<String> fail=new LinkedHashSet<>();
+						List<WebElement> raw=new ArrayList<WebElement>();
+
+							if(i==0)
+							{
+								raw.addAll(entitycol);
+							}
+						else if(i==1)
+							{
+								raw.addAll(liccol);
+							}
+						
+							
+						for(int k=0;k<raw.size();k++)
+							{
+								text.add(raw.get(k).getText());
+							}
+
+							for(int l=0;l<text.size();l++)
+								{
+							if(text.get(l).equals(li.get(i)))
+								{
+									pass.add(text.get(l));	
+									System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+								}
+							else
+							{
+								fail.add(text.get(l));		
+								System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+								System.out.println(i);
+
+							}
+							 }
+					 
+				for(String Fal : fail)
+					 {
+							test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+					 }	
+					 for(String Pas : pass)
+					 {
+						 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+							test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+							System.out.println(filter.get(i)+" : "+Pas);
+				 }
+					 text.clear();
+					pass.clear();
+					fail.clear();
+					raw.clear();
+					MethodPOM.Clearfilter(driver).click();
+					test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
+					
+					}
+					
 				
-				
-				  // Js.executeScript("window.scrollBy(500,0)");
-				driver.switchTo().parentFrame();
-				 MethodPOM.clickCloseGraphPopup(driver).click();
-				 Thread.sleep(3000);
-				
-		   }
+					}
 		   else
 		   {
 			   driver.switchTo().parentFrame();
 				 MethodPOM.clickCloseGraphPopup(driver).click();
 				 Thread.sleep(3000);
-				  test.log(LogStatus.PASS, "Expired On Popup No Record Found ");
+				  test.log(LogStatus.PASS, "selected Filter No Record Found ");
 		   }
-
-	   }
+				
+		   }
+		   }
+		  
 	  public static void LicenseExpiringOnStatutoryper(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
 	   {
 		   Thread.sleep(3000);
@@ -1457,20 +1571,23 @@ public class LiPeMethodsPOM
 			Thread.sleep(7000);
 		   LiPerformerPOM.Expiringshowmore(driver).click();
 		   Thread.sleep(7000);
-		   licenseManagement.licmgmtPOM.lictype(driver).click();
-		   Thread.sleep(7000);
-		   licenseManagement.licmgmtPOM.lictype1(driver).click();
-		   Thread.sleep(5000);
-		   MethodPOM.Clearfilter(driver).click();
-			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
-
-  
+		   test.log(LogStatus.PASS, "Expired On showMore Link Working Successfully");
 		   WebDriverWait wait = new WebDriverWait(driver, 40);
-		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
-		   Thread.sleep(3000);
-		  // MethodPOM.ClickExportExpiredOn(driver).click();
+		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
+	
+		   Thread.sleep(7000);
+		   MethodPOM.ClickExportExpiredOn(driver).click();
+					test.log(LogStatus.PASS, "Expiring On  License List Downloaded Sucessfully");
+					Thread.sleep(5000);
+					MethodPOM.ExpiredOnLictype(driver).click();
+					MethodPOM.searchExpiredOnLictype(driver).sendKeys("DG-SET",Keys.ENTER);
+					
+					MethodPOM.Clearfilter(driver).click();
+					test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
+					
+
 			
-		   int flag = 0;
+		  /* int flag = 0;
 			try
 			{
 				wait.until(ExpectedConditions.visibilityOf(MethodPOM.checkTable1(driver)));	//Waiting until records table gets visible.
@@ -1499,7 +1616,7 @@ public class LiPeMethodsPOM
 				}
 				count = Integer.parseInt(LicenseCount);
 				
-				File dir = new File("C:\\Users\\dipali\\Downloads");
+				File dir = new File("C:\\Users\\deepalid\\Downloads");
 				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
 				js1.executeScript("window.scrollBy(0,-2000)");				//Scrolling down window by 2000 px.
@@ -1507,7 +1624,7 @@ public class LiPeMethodsPOM
 				MethodPOM.ClickExportExpiredOn(driver).click();						//Clicking on Excel Image.
 				
 				Thread.sleep(3000);
-				File dir1 = new File("C:\\Users\\dipali\\Downloads");
+				File dir1 = new File("C:\\Users\\deepalid\\Downloads");
 				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 				
 				File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
@@ -1550,9 +1667,19 @@ public class LiPeMethodsPOM
 			{
 				test.log(LogStatus.PASS, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
 			}
-			driver.switchTo().parentFrame();
-			 MethodPOM.clickCloseGraphPopup(driver).click();
-			 Thread.sleep(3000);
+			*/
+					 Thread.sleep(2000);
+						MethodPOM.ClickOverviewExpiredOn(driver).click();
+						test.log(LogStatus.PASS, "License Overview Button Working Successfully.");
+						 Thread.sleep(3000);
+				             MethodPOM.clickBystatuscloseoverview(driver).click();
+							 Thread.sleep(2000);
+							
+							
+							  // Js.executeScript("window.scrollBy(500,0)");
+							driver.switchTo().parentFrame();
+							 MethodPOM.clickCloseGraphPopup(driver).click();
+							 Thread.sleep(3000);
 		  }
 			 else
 			 {
@@ -1661,7 +1788,7 @@ public class LiPeMethodsPOM
 		Thread.sleep(500);
 		elementsList = LiPerformerPOM.clickDownload1(driver);
 
-		File dir = new File("C:\\Users\\dipali\\Downloads");
+		File dir = new File("C:\\Users\\deepalid\\Downloads");
 		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
 		Thread.sleep(5000);
@@ -1689,7 +1816,7 @@ public class LiPeMethodsPOM
 		
 		
 		Thread.sleep(3000);
-		File dir1 = new File("C:\\Users\\dipali\\Downloads");
+		File dir1 = new File("C:\\Users\\deepalid\\Downloads");
 		File[] dirContents1 = dir1.listFiles();							//Counting number of files in directory after download
 		
 		if(dirContents.length < dirContents1.length)
@@ -1728,14 +1855,14 @@ public class LiPeMethodsPOM
 		LiPerformerPOM.Multicheckdoc2(driver).click();
 		
 		
-		File dir2 = new File("C:\\Users\\dipali\\Downloads");
+		File dir2 = new File("C:\\Users\\deepalid\\Downloads");
 		File[] dirContents2 = dir2.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		LiPerformerPOM.MultiDownload(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);
-		File dir3 = new File("C:\\Users\\dipali\\Downloads");
+		File dir3 = new File("C:\\Users\\deepalid\\Downloads");
 		File[] allFilesNew = dir3.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(500);
@@ -1832,26 +1959,8 @@ public class LiPeMethodsPOM
 		LiPerformerPOM.clickMyReport(driver).click();		//Clicking on 'My Reports'
 		Thread.sleep(5000);
 		progress(driver);
-		
-		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
-		
-		LiReviewerPOM.Addcolumn(driver).click();
-		Thread.sleep(3000);
-	     LiReviewerPOM.clickColumn(driver).click();
-	     Thread.sleep(300);
-	     LiReviewerPOM.addnomineecol(driver).click();
-	     Thread.sleep(300);
-	     String Nominee =LiReviewerPOM.Nomineecolumn(driver).getText();
-		   if(LiReviewerPOM.Nomineecolumn(driver).isDisplayed())
-		   {
-			   
-				test.log(LogStatus.PASS, "In grid Nominee column displayed.");
-		   }
-		   else
-		   {
-			   test.log(LogStatus.FAIL,"In Grid Nominee Column Not Displayed");
-		   }
-		   Thread.sleep(3000);
+	 	wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+			   Thread.sleep(3000);
 	     
 		 String Entity =LiPerformerPOM.Entitycolumn(driver).getText();
 		   if(LiPerformerPOM.Entitycolumn(driver).isDisplayed())
@@ -1875,13 +1984,8 @@ public class LiPeMethodsPOM
 		   {
 			   test.log(LogStatus.FAIL,"In Entity Column Entity Name Not Displayed.");
 		   }
-		   Thread.sleep(3000);
-		   
-				/*else 
-		{
-			test.log(LogStatus.PASS,"No records found");	
-	}*/
-		Thread.sleep(3000);
+		   Thread.sleep(5000);
+
 		  
 		// String Noitemdisplay = LiPerformerPOM.Noitemdisplay(driver).getText();
 		 //  if(!Noitemdisplay.equalsIgnoreCase("No items to display")) 
@@ -1901,6 +2005,34 @@ public class LiPeMethodsPOM
 			//test.log(LogStatus.PASS," License Overview  Button Working Successfully");
 
 		}
+		  
+		//	driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
+			//test.log(LogStatus.PASS," License Overview  Button Working Successfully");
+		   //   Thread.sleep(3000);
+		   //  driver.findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button")).click();
+		   
+ 
+		
+		LiReviewerPOM.Addcolumn(driver).click();
+		Thread.sleep(3000);
+	     LiReviewerPOM.clickColumn(driver).click();
+	     Thread.sleep(300);
+	     LiReviewerPOM.addnomineecol(driver).click();
+	     Thread.sleep(300);
+	     String Nominee =LiReviewerPOM.Nomineecolumn(driver).getText();
+		   if(LiReviewerPOM.Nomineecolumn(driver).isDisplayed())
+		   {
+			   
+				test.log(LogStatus.PASS, "In grid Nominee column displayed.");
+		   }
+		   else
+		   {
+			   test.log(LogStatus.FAIL,"In Grid Nominee Column Not Displayed");
+		   }
+
+        driver.findElement(By.xpath("//*[@id='exportReport']")).click();
+		
+		test.log(LogStatus.PASS," License Report  Downloaded Successfully.");
 		
 		Thread.sleep(7000);
 		driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
@@ -1933,25 +2065,20 @@ public class LiPeMethodsPOM
 		
 		Thread.sleep(500);
 		
-		driver.findElement(By.xpath("//*[@id='exportReport']")).click();
-		
-		test.log(LogStatus.PASS," License Report  Downloaded Successfully.");
-		
 		LiPerformerPOM.clickMyReport(driver).click();		//Clicking on 'My Reports'
-	Thread.sleep(5000);
+	Thread.sleep(7000);
 	LiPerformerPOM.EntityLocation(driver).click();
 	Thread.sleep(500);
 	LiPerformerPOM.EntityLocationExpand(driver).click();
 	Thread.sleep(500);
 	//LiPerformerPOM.EntityLocationExpand(driver).click();
 	//Thread.sleep(500);
-  String locationtext1 =LiPerformerPOM.checkloc(driver).getText();
    Thread.sleep(500);
+   LiPerformerPOM.Entitysubexpand(driver).click();
+   Thread.sleep(500);
+   String locationtext1 =LiPerformerPOM.checkloc(driver).getText();
    LiPerformerPOM.checkloc(driver).click();
- //  Thread.sleep(500);
- //  LiPerformerPOM.checkloc(driver).click();
    Thread.sleep(3000);
-   
    LiPerformerPOM.ClickLictype(driver).click();
    Thread.sleep(500);
    String LicenseType1 =LiPerformerPOM.Licensetype(driver).getText();
@@ -1982,12 +2109,13 @@ public class LiPeMethodsPOM
 	String s = CFOcountPOM.readTotalItems1(driver).getText();
 	Thread.sleep(2000);
 
-	if(!s.equalsIgnoreCase("No items to display")) {
+	if(!s.equalsIgnoreCase("No items to display")) 
+	{
 	Thread.sleep(5000);
 
-	List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+	List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 	
-	List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+	List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[3]"));
 	//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 	Thread.sleep(2000);
 
@@ -2047,24 +2175,33 @@ for(String Fal : fail)
 	
 	
 	}
+		   }
+	else
+	{
+		test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
+	}
+
+	Boolean  btnclear =LiPerformerPOM.clearbtn(driver).isEnabled();
+	if(btnclear) 
+	{
+	LiPerformerPOM.clearbtn(driver).click();
+	test.log(LogStatus.PASS,"Clear Button Working Successfully");
+	}
+	else
+	{
+	test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 	}
 
 		   }
-		  /* else
-		   {
-				test.log(LogStatus.FAIL,"My Report No item to display");
-		   }*/
-		/*driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
-		test.log(LogStatus.PASS," License Overview  Button Working Successfully");
-	      Thread.sleep(3000);
-	     driver.findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button")).click();
-	     */
-	  // wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard(driver)));
+	
+	
+	//  wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard(driver)));
 		
-	//	OverduePOM.clickDashboard(driver).click();
-		
+	//OverduePOM.clickDashboard(driver).click();
+	
 	}
 	
+
 	
 	public static void CheckReports(WebDriver driver, ExtentTest test, int status, String type) throws InterruptedException, IOException
 	{		
@@ -2127,7 +2264,7 @@ for(String Fal : fail)
 						
 					
 						Thread.sleep(100);
-						File dir = new File("C://Users//dipali//Downloads");
+						File dir = new File("C://Users//deepalid//Downloads");
 						File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 						
 						Thread.sleep(500);
@@ -2137,7 +2274,7 @@ for(String Fal : fail)
 						
 						
 						Thread.sleep(500);
-						File dir1 = new File("C://Users//dipali//Downloads");
+						File dir1 = new File("C://Users//deepalid//Downloads");
 						File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 						
 						if(dirContents.length < allFilesNew.length)
@@ -2186,10 +2323,7 @@ for(String Fal : fail)
 						}
 				 }
 		}
-		else
-		{
-			  test.log(LogStatus.PASS, "My Report No Record Found ");
-		}
+		
 		}
 			/*Thread.sleep(700);
 			String item = LiPerformerPOM.readTotalRecords1(driver).getText();
@@ -2411,8 +2545,12 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 				Thread.sleep(4000);
 				
 				MethodPOM.clickReadRejected(driver).click();					//Clicking on total items count
+				String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+				  if(!item1.equalsIgnoreCase("No items to display"))
+				  {
 				Thread.sleep(5000);
 				String item = MethodPOM.clickReadRejected(driver).getText();	//Reading total items String value
+		
 				String[] bits = item.split(" ");								//Splitting the String
 				String LicensRejected = bits[bits.length - 2];		//Getting the second last word (total number of users)
 				
@@ -2443,7 +2581,7 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 					Thread.sleep(5000);
 					licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
 					Thread.sleep(5000);
-					licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
+					licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("Reject Update Lice");
 					Thread.sleep(5000);
 					js1.executeScript("window.scrollBy(0,2000)");
 					Thread.sleep(3000);
@@ -2622,12 +2760,16 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 						Thread.sleep(700);
 						LiPerformerPOM.clickClose(driver).click();				//Clicking on Close (Cross)
 						driver.navigate().refresh();
-						
+					}
+					else
+					{
+						Thread.sleep(700);
+						test.log(LogStatus.PASS,"No Record Found");
+						MethodPOM.clickMyDashboard(driver).click();
 					}
 					
+					}
 					
-				//	MethodPOM.clickMyDashboard(driver).click();
-		   
 		
 	}
 	  public static void TerminateLicense1(WebDriver driver, ExtentTest test, String type) throws InterruptedException
@@ -2894,47 +3036,156 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
 		
 		 MethodPOM.ClickShowMoreExpiredOnInternal(driver).click();
 		 test.log(LogStatus.PASS, "Expired On showMore Link Working Successfully");
-		  WebDriverWait wait = new WebDriverWait(driver, 40);
-			Thread.sleep(5000);
+		 WebDriverWait wait = new WebDriverWait(driver, 40);
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
-		 Thread.sleep(3000);
-		 js1.executeScript("window.scroll(0,500)");
-	   String NoRecord = LiReviewerPOM.reNorecord(driver).getText();
-	   if(!NoRecord.equalsIgnoreCase("No items to display")) 
-	   {
+		   Thread.sleep(5000);
+		 String NoRecord = MethodPOM.Norecord(driver).getText();
+		 
+		   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+		   {
+		   
+		   MethodPOM.ClickExportExpiredOn(driver).click();
+			test.log(LogStatus.PASS, "Expired License List Downloaded Successfully");
+			Thread.sleep(5000);
+			MethodPOM.ClickOverviewExpiredOn(driver).click();
 	
-	   Thread.sleep(3000);
-	   MethodPOM.ClickExportExpiredOn(driver).click();
-		test.log(LogStatus.PASS, "Expired On License List Downloaded Successfully");
-		  Thread.sleep(3000);
-		  
-		  LiPerformerPOM.lictype(driver).click();
-		  Thread.sleep(500);
-		  LiPerformerPOM.selectlic1(driver).click();
-		Thread.sleep(3000);
-	   LiPerformerPOM.clearbtn(driver).click();
-	   test.log(LogStatus.PASS, "Expired On License Popup Clear filter Button Working Successfully");
-	  
-	   Thread.sleep(5000);
-		licenseCompanyadmin.MethodPOM.ClickOverviewExpiredOn(driver).click();
-		test.log(LogStatus.PASS, "Expired OverView License Displayed");
-		Thread.sleep(3000);
-       MethodPOM.clickBystatuscloseoverview(driver).click();
-		 Thread.sleep(2000);
+	  test.log(LogStatus.PASS, " License Overview Details Successfully");
+	  Thread.sleep(7000);
+     MethodPOM.clickBystatuscloseoverview(driver).click();
+		Thread.sleep(2000);
+		
 		  // Js.executeScript("window.scrollBy(500,0)");
-			driver.switchTo().parentFrame();
-			 MethodPOM.clickCloseGraphPopup(driver).click();
-			 Thread.sleep(3000);
+	//	driver.switchTo().parentFrame();
+		// MethodPOM.clickCloseGraphPopup(driver).click();
+		// Thread.sleep(7000);
+		
+		 LiPerformerPOM.EntityLocation(driver).click();
+			Thread.sleep(500);
+			LiPerformerPOM.EntityLocationExpand(driver).click();
+			Thread.sleep(500);
+			//LiPerformerPOM.EntityLocationExpand(driver).click();
+			//Thread.sleep(500);
+		   Thread.sleep(500);
+		   LiPerformerPOM.Entitysubexpand(driver).click();
+		   Thread.sleep(500);
+		   String locationtext1 =LiPerformerPOM.locget(driver).getText();
+		   LiPerformerPOM.locget(driver).click();
+		   Thread.sleep(3000);
+		   LiPerformerPOM.clicklictypet(driver).click();
+		   Thread.sleep(500);
+		   String LicenseType1 =LiPerformerPOM.Licensetype(driver).getText();
+		   Thread.sleep(5000);
+		   LiPerformerPOM.Licensetype(driver).click();
+		   Thread.sleep(5000);
+		  // LiPerformerPOM.Statustext(driver).click();
+		  // Thread.sleep(5000);
+		  
+		    List<String> li=new ArrayList<String>();
+		    
+		    li.add(locationtext1);
+		    li.add(LicenseType1);
+		 
+		    Thread.sleep(3000);
+		    
+			List<String> filter=new ArrayList<String>();	
+			filter.add("Location");
+			filter.add("LicenseType");	
 			
-	   }
-	   else
-	   {
-		   driver.switchTo().parentFrame();
-			 MethodPOM.clickCloseGraphPopup(driver).click();
-			 Thread.sleep(3000);
-			  test.log(LogStatus.PASS, "Expired On Popup No Record Found ");
-	   }
-	}
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,150)");	
+			Thread.sleep(3000);
+
+			CFOcountPOM.readTotalItems1(driver).click();					//Clicking on Text of total items just to scroll down.
+			String s = CFOcountPOM.readTotalItems1(driver).getText();
+			Thread.sleep(2000);
+
+			if(!s.equalsIgnoreCase("No items to display")) 
+			{
+			Thread.sleep(5000);
+
+			List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+			
+			List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+			//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
+			Thread.sleep(2000);
+
+			for(int i=0; i<li.size(); i++){
+				
+				List<String> text= new ArrayList<String>();
+				HashSet<String> pass=new LinkedHashSet<>();
+				HashSet<String> fail=new LinkedHashSet<>();
+				List<WebElement> raw=new ArrayList<WebElement>();
+
+					if(i==0)
+					{
+						raw.addAll(entitycol);
+					}
+				else if(i==1)
+					{
+						raw.addAll(liccol);
+					}
+				
+					
+				for(int k=0;k<raw.size();k++)
+					{
+						text.add(raw.get(k).getText());
+					}
+
+					for(int l=0;l<text.size();l++)
+						{
+					if(text.get(l).equals(li.get(i)))
+						{
+							pass.add(text.get(l));	
+							System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+						}
+					else
+					{
+						fail.add(text.get(l));		
+						System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+						System.out.println(i);
+
+					}
+					 }
+			 
+		for(String Fal : fail)
+			 {
+					test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+			 }	
+			 for(String Pas : pass)
+			 {
+				 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+					test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+					System.out.println(filter.get(i)+" : "+Pas);
+		 }
+			 text.clear();
+			pass.clear();
+			fail.clear();
+			raw.clear();
+			
+			
+			}
+ }
+ else
+ {
+		test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
+ }
+
+Boolean  btnclear =LiPerformerPOM.clearbtn(driver).isEnabled();
+if(btnclear) 
+{
+LiPerformerPOM.clearbtn(driver).click();
+test.log(LogStatus.PASS,"Clear Button Working Successfully");
+}
+else
+{
+test.log(LogStatus.FAIL,"Clear Button Not Clickable");
+}
+
+		   }
+ }
+
+	
 
 	public static void activelicenseperform(WebDriver driver, ExtentTest test, String type) throws InterruptedException
 	{
@@ -2986,8 +3237,16 @@ WebDriverWait wait = new WebDriverWait(driver, 20);
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectStatutoryDropdown(driver)));
 	Select status = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
-	
+	status.selectByIndex(1);	
+	 Thread.sleep(2000);
+	 String workingDir = System.getProperty("user.dir");
+   OverduePOM.PerformerDoc(driver).sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file	
+   Thread.sleep(2000);
+   js1.executeScript("window.scrollBy(0,1000)");
+   Thread.sleep(2000);
+	LiPerformerPOM.PerformDateclick(driver).click();
+	Thread.sleep(1000);
+	LiPerformerPOM.PerformDate(driver).click();
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
 
@@ -3008,6 +3267,7 @@ if(type.equalsIgnoreCase("Statutory"))
 	
 	Thread.sleep(500);
 	js1.executeScript("window.scrollBy(2000,0)");	//Scrolling up window by 2000 px.
+	test.log(LogStatus.PASS, "Save Sucessfully.");
 }
 else
 	{
@@ -3041,6 +3301,7 @@ else
          test.log(LogStatus.FAIL, "Pendingforreview Old Count = "+pfrlicense+" | New Count = "+pfrlicense1);
      }
 			  }
+	
      else
      {
 		      
@@ -3226,8 +3487,16 @@ else
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectStatutoryDropdown(driver)));
 	Select status = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
-	
+	status.selectByIndex(1);	
+	 Thread.sleep(2000);
+	 String workingDir = System.getProperty("user.dir");
+  OverduePOM.PerformerDoc(driver).sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file	
+  Thread.sleep(2000);
+  js1.executeScript("window.scrollBy(0,1000)");
+  Thread.sleep(2000);
+	LiPerformerPOM.PerformDateclick(driver).click();
+	Thread.sleep(1000);
+	LiPerformerPOM.PerformDate(driver).click();
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
 
@@ -3249,6 +3518,7 @@ if(type.equalsIgnoreCase("Statutory"))
 	
 	Thread.sleep(500);
 	js1.executeScript("window.scrollBy(2000,0)");	//Scrolling up window by 2000 px.
+	test.log(LogStatus.PASS, "Save Sucessfully.");
 }
 else
 	{
@@ -3462,14 +3732,18 @@ else
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectStatutoryDropdown(driver)));
 	Select status = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
-	
+	status.selectByIndex(1);	
+	 Thread.sleep(2000);
+	 String workingDir = System.getProperty("user.dir");
+ OverduePOM.PerformerDoc(driver).sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file	
+ Thread.sleep(2000);
+ js1.executeScript("window.scrollBy(0,1000)");
+ Thread.sleep(2000);
+	LiPerformerPOM.PerformDateclick(driver).click();
+	Thread.sleep(1000);
+	LiPerformerPOM.PerformDate(driver).click();
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
-
-	//LiPerformerPOM.clickCheckbox(driver).click();			//Clicking on checkbox of Penalty values
-	//js1.executeScript("window.scrollBy(0,300)");
-
 Thread.sleep(500);
 js1.executeScript("window.scrollBy(0,700)");
 Thread.sleep(300);
@@ -3483,7 +3757,8 @@ if(type.equalsIgnoreCase("Statutory"))
 {
 	
 	Thread.sleep(500);
-	js1.executeScript("window.scrollBy(2000,0)");	//Scrolling up window by 2000 px.
+	js1.executeScript("window.scrollBy(2000,0)");//Scrolling up window by 2000 px.
+	test.log(LogStatus.PASS, "Save Sucessfully.");
 }
 else
 	{
@@ -3647,7 +3922,427 @@ else
      
 	}
 	
+	public static  void AssignedButNotActivated(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.AssignedButNotActivated(driver)));
+		String AssognedButNotActivated=LiPerformerPOM.AssignedButNotActivated(driver).getText();
+		
+	     int NotActivated = Integer.parseInt(AssognedButNotActivated);	//Reading Active count.
+
+	     LiPerformerPOM.AssignedButNotActivated(driver).click();					//Clicking on 'Active' image
+	      Thread.sleep(5000);
+	        JavascriptExecutor js1=(JavascriptExecutor) driver ;
+			js1.executeScript("window.scroll(0,500)");
+			Thread.sleep(5000);
+			MethodPOM.clickReadActive(driver).click();	
+			String ite = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+			Thread.sleep(5000);
+			if(!ite.equalsIgnoreCase("No items to display"))	
+			{
+		//	MethodPOM.clickReadActive(driver).click();					//Clicking on total items count
+			//Thread.sleep(500);
+		//	String item1 = MethodPOM.clickReadActive(driver).getText();	//Reading total items String value
+			String[] bits = ite.split(" ");								//Splitting the String
+			String LicenseActiveCount = bits[bits.length - 2];		//Getting the second last word (total number of users)
+			int total = Integer.parseInt(LicenseActiveCount);
+			if(NotActivated == total)
+				{
+				//	test.log(LogStatus.PASS, "Number of Active License  grid matches to Dashboard Active License   Count.");
+					test.log(LogStatus.PASS, "No of Assigned But Not Activated License  in the grid = "+total+" | Dashboard Assigned But Not Activated License  Count = "+NotActivated);
+				}
+				else
+				{
+					//test.log(LogStatus.FAIL, "Number of Active License does not matches to Dashboard Active License   Count.");
+					test.log(LogStatus.FAIL, "No of Assigned But Not Activated License  in the grid = "+total+" | Dashboard Assigned But Not Activated License  Count = "+NotActivated);
+				}
+			Thread.sleep(5000);
+			
+			LiPerformerPOM.NotActivatedExport(driver).click();
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+			
+			Thread.sleep(3000);
+			
+			
+			progress(driver);
+			
+		/*	int flag = 0;
+			try
+			{
+				wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1(driver)));	//Waiting until records table gets visible.
+				flag = 1;
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			if(flag == 1)
+			{
+				js.executeScript("window.scrollBy(0,2000)");				//Scrolling down window by 2000 px.
+				
+				  Thread.sleep(10000);
+				/*	CFOcountPOM.readTotalItems1(driver).click();
+					
+					String item = CFOcountPOM.readTotalItems1(driver).getText();
+					//String NoRecord = LiReviewerPOM.reNorecord(driver).getText();
+					 if(!item.equalsIgnoreCase("No items to display")) 
+					 {
+					 
+					//String[] bits1 = ite.split(" ");								//Splitting the String
+					String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+					int count2 = Integer.parseInt(compliancesCount1);
+					String NoRecord = LiReviewerPOM.reNorecord(driver).getText();
+					   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+					 {
+						   try
+							{
+								performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+							}
+							catch(Exception e)
+							{
+								
+							}
+							js.executeScript("window.scrollBy(0,1000)");
+							
+						*/
+							Thread.sleep(100);
+							File dir = new File("C://Users//deepalid//Downloads");
+							File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+							
+							Thread.sleep(500);
+							CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+							Thread.sleep(250);
+							LiPerformerPOM.NotActivatedExport(driver).click();				//Clicking on 'Excel Report' image.
+							
+							
+							Thread.sleep(500);
+							File dir1 = new File("C://Users//deepalid//Downloads");
+							File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+							
+							if(dirContents.length < allFilesNew.length)
+							{
+								test.log(LogStatus.PASS, "File downloaded successfully.");
+								
+								File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+							    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+							    {
+							       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+							       {
+							           lastModifiedFile = allFilesNew[i];
+							       }
+							    }
+								
+								Thread.sleep(100);
+								fis = new FileInputStream(lastModifiedFile);
+								workbook = new XSSFWorkbook(fis);
+								sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+								
+								int no = sheet.getLastRowNum();
+								Row row = sheet.getRow(no);
+								Cell c1 = row.getCell(0);
+								int records =(int) c1.getNumericCellValue();
+								fis.close();
+								
+								if(NotActivated == records)
+								{
+									//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+									test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+total+" | Total records from Report = "+records);
+								}
+								else
+								{
+									//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+									test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+total+" | Total records from Excel Sheet = "+records);
+								}
+							}
+							else
+							{
+								test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+							}
+			}
+						else
+							{
+								test.log(LogStatus.PASS, "No Record Found");
+							}
+			
+	
+			MethodPOM.clickMyDashboard(driver).click();
+			
+			Thread.sleep(500);
+			LiPerformerPOM.AssignedButNotActivated(driver).click();
+			if(type.equalsIgnoreCase("Internal"))
+			{
+				 WebDriverWait wait1= new WebDriverWait(driver, 5);
+					wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2(driver)));
+					licmgmtPOM.Type2(driver).click();				//Clicking on 'Type' drop down.
+					
+					licmgmtPOM.internalType2(driver).click();
+
+			Thread.sleep(500);
+	   LiPerformerPOM.EntityLocation(driver).click();
+	Thread.sleep(5000);
+	LiPerformerPOM.EntityLocationExpand(driver).click();
+	Thread.sleep(500);
+	//LiPerformerPOM.EntityLocationExpand(driver).click();
+	//Thread.sleep(500);
+   Thread.sleep(500);
+   LiPerformerPOM.Entitysubexpand(driver).click();
+   Thread.sleep(500);
+   String locationtext1 =LiPerformerPOM.checkloc(driver).getText();
+   LiPerformerPOM.checkloc(driver).click();
+   Thread.sleep(3000);
+   //LiPerformerPOM.ClickLictype(driver).click();
+  // Thread.sleep(7000);
+  // String LicenseType1 =LiPerformerPOM.notactivatefilterin(driver).getText();
+   Thread.sleep(7000);
+  // LiPerformerPOM.notactivatefilterin(driver).click();
+   Thread.sleep(5000);
+ 
+    List<String> li=new ArrayList<String>();
+    
+    li.add(locationtext1);
+    //li.add(LicenseType1);
+ 
+    Thread.sleep(3000);
+    
+	List<String> filter=new ArrayList<String>();	
+	filter.add("Location");
+//	filter.add("LicenseType");	
+	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("window.scrollBy(0,150)");	
+	Thread.sleep(3000);
+
+	CFOcountPOM.readTotalItems1(driver).click();					//Clicking on Text of total items just to scroll down.
+	String s = CFOcountPOM.readTotalItems1(driver).getText();
+	Thread.sleep(2000);
+
+	if(!s.equalsIgnoreCase("No items to display")) 
+	{
+	Thread.sleep(5000);
+
+	List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+	
+	//List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[6]"));
+	//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
+	Thread.sleep(2000);
+
+	for(int i=0; i<li.size(); i++){
+		
+		List<String> text= new ArrayList<String>();
+		HashSet<String> pass=new LinkedHashSet<>();
+		HashSet<String> fail=new LinkedHashSet<>();
+		List<WebElement> raw=new ArrayList<WebElement>();
+
+			if(i==0)
+			{
+				raw.addAll(entitycol);
+			}
+		/*else if(i==1)
+			{
+				raw.addAll(liccol);
+			}
+		*/
+			
+		for(int k=0;k<raw.size();k++)
+			{
+				text.add(raw.get(k).getText());
+			}
+
+			for(int l=0;l<text.size();l++)
+				{
+			if(text.get(l).equals(li.get(i)))
+				{
+					pass.add(text.get(l));	
+					System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+				}
+			else
+			{
+				fail.add(text.get(l));		
+				System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+				System.out.println(i);
+
+			}
+			 }
+	 
+for(String Fal : fail)
+	 {
+			test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+	 }	
+	 for(String Pas : pass)
+	 {
+		 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+		//	test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+			System.out.println(filter.get(i)+" : "+Pas);
+ }
+	 text.clear();
+	pass.clear();
+	fail.clear();
+	raw.clear();
+	
+	
+	}
 	
 
-}
+		   }
+		   else
+		   {
+				test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
+		   }
+	
+	Boolean  btnclear =LiPerformerPOM.clearbtn(driver).isEnabled();
+     if(btnclear) 
+     {
+    	 LiPerformerPOM.clearbtn(driver).click();
+    	 test.log(LogStatus.PASS,"Clear Button Working Successfully");
+     }
+     else
+     {
+    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
+     }
+	
+	
+	  wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard(driver)));
+		
+	}
+			else
+			{			Thread.sleep(500);
+			   LiPerformerPOM.EntityLocation(driver).click();
+				Thread.sleep(5000);
+				LiPerformerPOM.EntityLocationExpand(driver).click();
+				Thread.sleep(500);
+				//LiPerformerPOM.EntityLocationExpand(driver).click();
+				//Thread.sleep(500);
+			   Thread.sleep(500);
+			   LiPerformerPOM.Entitysubexpand(driver).click();
+			   Thread.sleep(500);
+			   String locationtext1 =LiPerformerPOM.checkloc(driver).getText();
+			   LiPerformerPOM.checkloc(driver).click();
+			   Thread.sleep(3000);
+			   LiPerformerPOM.ClickLictype(driver).click();
+			   Thread.sleep(5000);
+			   String LicenseType1 =LiPerformerPOM.notactivatefilter(driver).getText();
+			   Thread.sleep(5000);
+			   LiPerformerPOM.notactivatefilter(driver).click();
+			   Thread.sleep(5000);
+			 
+			    List<String> li=new ArrayList<String>();
+			    
+			    li.add(locationtext1);
+			    li.add(LicenseType1);
+			 
+			    Thread.sleep(3000);
+			    
+				List<String> filter=new ArrayList<String>();	
+				filter.add("Location");
+				filter.add("LicenseType");	
+				
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("window.scrollBy(0,150)");	
+				Thread.sleep(3000);
+
+				CFOcountPOM.readTotalItems1(driver).click();					//Clicking on Text of total items just to scroll down.
+				String s = CFOcountPOM.readTotalItems1(driver).getText();
+				Thread.sleep(2000);
+
+				if(!s.equalsIgnoreCase("No items to display")) 
+				{
+				Thread.sleep(5000);
+
+				List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+				
+				List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[6]"));
+				//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(entitycol);
+						}
+					else if(i==1)
+						{
+							raw.addAll(liccol);
+						}
+					
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+					//	test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+				
+
+					   }
+					   else
+					   {
+							test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
+					   }
+				
+				Boolean  btnclear =LiPerformerPOM.clearbtn(driver).isEnabled();
+			     if(btnclear) 
+			     {
+			    	 LiPerformerPOM.clearbtn(driver).click();
+			    	 test.log(LogStatus.PASS,"Clear Button Working Successfully");
+			     }
+			     else
+			     {
+			    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
+			     }
+				
+				
+				  wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard(driver)));
+					
+				}
+				
+				}
+			}
+			
+
+
+
 

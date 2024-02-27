@@ -153,7 +153,7 @@ public class LicenseReviewerstatutoryTC
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 7)
+@Test(priority = 7)
 	void Rejected() throws InterruptedException
 	{
 		test = extent.startTest("Rejected License Count Verification");
@@ -164,7 +164,7 @@ public class LicenseReviewerstatutoryTC
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 8)
+	@Test(priority = 8)
 		void Terminate() throws InterruptedException
 		{
 			test = extent.startTest("Terminate License Count Verification");
@@ -187,7 +187,7 @@ public class LicenseReviewerstatutoryTC
 			extent.endTest(test);
 			extent.flush();
 		}
-     @Test(priority = 10)
+   @Test(priority = 10)
 			void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			{
 				test = extent.startTest("License ExpiringOn Working Verification");
@@ -212,7 +212,7 @@ public class LicenseReviewerstatutoryTC
 	}
 		
 
-    @Test(priority = 12)
+   @Test(priority = 12)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -231,7 +231,7 @@ public class LicenseReviewerstatutoryTC
 				extent.endTest(test);
 				extent.flush();
 			}*/
-  @Test(priority =14)
+ @Test(priority =14)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Download Verification");
@@ -242,28 +242,17 @@ public class LicenseReviewerstatutoryTC
 		extent.endTest(test);
 		extent.flush();
 	}
-/* @Test(priority =15)
-	void NomineeDetails() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Nominee Details");
-		//test.log(LogStatus.INFO, "Test Initiated");
-		
-		LiReMethodsPOM.nomineeDetails(driver, test, "Statutory");
-		
-		extent.endTest(test);
-		extent.flush();
-	}*/
-  @Test(priority = 28)
-	void NomineeDetails() throws InterruptedException, IOException
+ 
+	/*@Test(priority = 15)
+	void AssignedButNotActivated() throws InterruptedException, IOException
 	
 	{
-		test = extent.startTest("Nominee Details");
-		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
-		licmgmtMethodPOM.NomineeDetails(driver,test,"");
+		test = extent.startTest("Assigned But Not Activated License Verification");
+		licensePerformer.LiPeMethodsPOM.AssignedButNotActivated(driver,test,"");
 
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
   @AfterMethod
   void driverclose()
   {

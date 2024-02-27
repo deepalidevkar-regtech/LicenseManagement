@@ -1093,7 +1093,7 @@ else
 						
 					
 						Thread.sleep(100);
-						File dir = new File("C://Users//dipali//Downloads");
+						File dir = new File("C://Users//deepalid//Downloads");
 						File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 						
 						Thread.sleep(500);
@@ -1103,7 +1103,7 @@ else
 						
 						
 						Thread.sleep(500);
-						File dir1 = new File("C://Users//dipali//Downloads");
+						File dir1 = new File("C://Users//deepalid//Downloads");
 						File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 						
 						if(dirContents.length < allFilesNew.length)
@@ -1186,7 +1186,7 @@ else
 		Thread.sleep(500);
 		elementsList = LiPerformerPOM.clickDownload1(driver);
 
-		File dir = new File("C:\\Users\\dipali\\Downloads");
+		File dir = new File("C://Users//deepalid//Downloads");
 		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
 		Thread.sleep(5000);
@@ -1214,7 +1214,7 @@ else
 		
 		
 		Thread.sleep(3000);
-		File dir1 = new File("C:\\Users\\dipali\\Downloads");
+		File dir1 = new File("C://Users//deepalid//Downloads");
 		File[] dirContents1 = dir1.listFiles();							//Counting number of files in directory after download
 		
 		if(dirContents.length < dirContents1.length)
@@ -1242,28 +1242,27 @@ else
 		LiPerformerPOM.Multicheckdoc2(driver).click();
 		
 		
-		File dir2 = new File("C:\\Users\\dipali\\Downloads");
+		File dir2 = new File("C://Users//deepalid//Downloads");
 		File[] dirContents2 = dir2.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		LiPerformerPOM.MultiDownload(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);
-		File dir3 = new File("C:\\Users\\dipali\\Downloads");
+		File dir3 = new File("C://Users//deepalid//Downloads");
 		File[] allFilesNew = dir3.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(500);
        if(dirContents2.length < allFilesNew.length)
 		{
 			test.log(LogStatus.PASS, " Multipal  File downloaded successfully.");	
-		}	else
+		}	
+       else
 		{
-			test.log(LogStatus.FAIL, " File does not downloaded.");
+			test.log(LogStatus.FAIL, " Multipal File does not downloaded.");
 		}
 		Thread.sleep(3000);
 		
-  
-        Thread.sleep(3000);
         
         MethodPOM.clickMyDashboard(driver).click();
 	}

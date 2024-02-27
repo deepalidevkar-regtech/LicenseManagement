@@ -20,6 +20,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import licenseCompanyadmin.StatutoryMethod;
+import licensePerformer.LiPeMethodsPOM;
 
 public class CompanyadminstatutoryCriticalTC 
 {
@@ -334,11 +335,20 @@ public class CompanyadminstatutoryCriticalTC
 		{
 			test = extent.startTest("License Creation Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-			StatutoryMethod.LicenseCreation(driver, test, "Statutory");
+			StatutoryMethod.LicenseCreation(driver, test,workbook);
 			extent.endTest(test);
 			extent.flush();
 		}
+	@Test(priority = 24)
+	void AssignedButNotActivated() throws InterruptedException, IOException
+	
+	{
+		test = extent.startTest("Assigned But Not Activated License Verification");
+		LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
 
+		extent.endTest(test);
+		extent.flush();
+	}
 	  @AfterMethod
 	  void driverclose()
 	  {

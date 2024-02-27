@@ -770,8 +770,17 @@ public class OverduePOM
 
 	public static WebElement clickPeopleCheckBox(WebDriver driver)		//Clicking on Checkbox in front of name
 	{
-		performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[143]/a/label/input"));
+		//performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[143]/a/label/input"));
+		performer = driver.findElement(By.xpath("(//*[@class='checkbox'])[58]"));
 		return performer;
+	
+	}
+	public static WebElement clickfileCheckBox(WebDriver driver)		//Clicking on Checkbox in front of name
+	{
+		//performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[143]/a/label/input"));
+		performer = driver.findElement(By.xpath("(//*[@class='checkbox'])[4]"));
+		return performer;
+	
 	}
 	
 	public static WebElement clickLabel(WebDriver driver)				//Searching label to click on it.
@@ -809,7 +818,11 @@ public class OverduePOM
 		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ContractFileUpload']"));
 		return performer;
 	}
-	
+	public static WebElement PerformerDoc(WebDriver driver)			//Searching upload New File button
+	{
+		performer = driver.findElement(By.xpath("//*[@id='fuSampleFile']"));
+		return performer;
+	}
 	public static WebElement clickUploadDocument(WebDriver driver)		//Searching upload document button
 	{
 		performer = driver.findElement(By.xpath("//input[@id='ContentPlaceHolder1_btnUploadDoc']"));

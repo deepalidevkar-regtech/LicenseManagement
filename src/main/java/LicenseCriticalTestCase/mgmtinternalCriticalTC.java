@@ -25,6 +25,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import cfo.CFOcountPOM;
 import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
+import licensePerformer.LiPeMethodsPOM;
 import licensePerformer.LiPerformerPOM;
 
 public class mgmtinternalCriticalTC {
@@ -338,6 +339,37 @@ public class mgmtinternalCriticalTC {
 			test = extent.startTest("License Creation Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			StatutoryMethod.InternalLicenseCreation(driver, test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 25)
+		void AssignedButNotActivated() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Assigned But Not Activated  Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+			LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+			
+			Select drp = new Select(LiPerformerPOM.clickType(driver));
+			drp.selectByIndex(1);
+			
+			try
+			{
+				Thread.sleep(400);
+				wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			Thread.sleep(500);
+			CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+			
+			LiPeMethodsPOM.AssignedButNotActivated(driver, test, "Internal");
+			
 			extent.endTest(test);
 			extent.flush();
 		}

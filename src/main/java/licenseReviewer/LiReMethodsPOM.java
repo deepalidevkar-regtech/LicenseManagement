@@ -64,12 +64,12 @@ public class LiReMethodsPOM
 				if(Activelicense == total)
 		{
 			//test.log(LogStatus.PASS, "Dashboard 'Expired' count matches to the total records displayed in grid.");
-			test.log(LogStatus.PASS, "Dashboard 'Active' count = "+Activelicense+" | Total records in grid = "+total);
+			test.log(LogStatus.PASS, " Dashboard 'Active' License Count  = "+Activelicense+" | No of Active License in the grid = "+total);
 		}
 		else
 		{
 			//test.log(LogStatus.FAIL, "Dashboard 'Expired' count doesn't matches to the total records displayed in grid.");
-			test.log(LogStatus.FAIL, "Dashboard 'Active' count = "+Activelicense+" | Total records in grid = "+total);
+			test.log(LogStatus.FAIL, " Dashboard 'Active' License Count  = "+Activelicense+" | No of Active License in the grid = "+total);
 		}
 		Thread.sleep(5000);	
 		MethodPOM.ClickActiveOverview(driver).click();
@@ -81,7 +81,7 @@ public class LiReMethodsPOM
 		Thread.sleep(5000);
 		licenseManagement.licmgmtPOM.LicenseTitle(driver).clear();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
+		licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("A licesne update");	
 		Thread.sleep(5000);
 		licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
 		Thread.sleep(5000);
@@ -298,7 +298,7 @@ public class LiReMethodsPOM
 				//Thread.sleep(3000);
 				
 				MethodPOM.ClickActiveOverview(driver).click();
-				test.log(LogStatus.PASS, "Expiring License Overview Details Successfully");
+				test.log(LogStatus.PASS, "License Overview Details Successfully");
 				Thread.sleep(3000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				LiPerformerPOM.editlicenseicon(driver).click();
@@ -307,7 +307,7 @@ public class LiReMethodsPOM
 				Thread.sleep(5000);
 				licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
+				licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("Test Update Funcationality");
 				Thread.sleep(5000);
 				js1.executeScript("window.scrollBy(1000,0)");
 				Thread.sleep(5000);
@@ -328,7 +328,7 @@ public class LiReMethodsPOM
 		          
 		          licmgmtPOM.editlicenseclose(driver).click();
 		          Thread.sleep(300);
-		         MethodPOM.clickMyDashboard(driver).click();
+		       //  MethodPOM.clickMyDashboard(driver).click();
 		      //   Thread.sleep(1000);
 		        //  MethodPOM.clickExpiring(driver).click();	
 		          
@@ -682,7 +682,7 @@ public class LiReMethodsPOM
 		try
 		{
 			String workingDir = System.getProperty("user.dir");
-			OverduePOM.fileUploadStatutory(driver).sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Statutory)
+			OverduePOM.fileUploadStatutory(driver).sendKeys(workingDir+"//Reports//new//LicensePerformerResults(Statutory).html");	//Uploading file by sending file to Upload Button. (Statutory)
 			Thread.sleep(1000);
 		}
 		catch(Exception e)
@@ -693,7 +693,7 @@ public class LiReMethodsPOM
 		try
 		{
 			String workingDir = System.getProperty("user.dir");
-			OverduePOM.fileUploadInternal(driver).sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Internal)
+			OverduePOM.fileUploadInternal(driver).sendKeys(workingDir+"//Reports//new//LicensePerformerResults(Statutory).html");	//Uploading file by sending file to Upload Button. (Internal)
 			Thread.sleep(1000);
 		}
 		catch(Exception e)
@@ -847,6 +847,7 @@ public class LiReMethodsPOM
 		String item = MethodPOM.clickReadExpiring(driver).getText();	//Reading total items String value
 		String[] bits = item.split(" ");								//Splitting the String
 		String LicenseExpiringCount = bits[bits.length - 2];		//Getting the second last word (tot
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable(driver)));
 		//LiReviewerPOM.clickReviewer(driver).click();
 		
@@ -888,13 +889,14 @@ public class LiReMethodsPOM
 		Thread.sleep(5000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
 			JavascriptExecutor js1 = (JavascriptExecutor) driver;    
-			js.executeScript("window.scrollBy(0,800)");
-			Thread.sleep(500);
-              Actions act =new Actions(driver);
+			js.executeScript("window.scrollBy(0,700)");
+			Thread.sleep(5000);
+			LiReviewerPOM.clickdownload(driver).click();
+             Actions act =new Actions(driver);
                 act.sendKeys(Keys.PAGE_DOWN).build().perform();
-                Thread.sleep(3000);
+                Thread.sleep(7000);
+                js.executeScript("window.scrollBy(0,500)");
                 
-                LiReviewerPOM.clickdownload(driver).click();
 				
 		/*	if(ReviewerPOM.clickView1(driver).isDisplayed())
 			{
@@ -916,7 +918,7 @@ public class LiReMethodsPOM
 				
 				perform(driver, test);
 				*/
-                act.sendKeys(Keys.PAGE_DOWN).build().perform();
+               // act.sendKeys(Keys.PAGE_DOWN).build().perform();
 				Thread.sleep(5000);
 				if(ReviewerPOM.clickApprove(driver).isEnabled())
 				{
@@ -950,7 +952,7 @@ public class LiReMethodsPOM
 				
 					wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
 				   
-					js.executeScript("window.scrollBy(0,800)");
+					js.executeScript("window.scrollBy(0,1000)");
 					Thread.sleep(500);
 		              Actions act1 =new Actions(driver);
 		                act1.sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -1111,12 +1113,12 @@ public class LiReMethodsPOM
 		if(pending == applied)
 		{
 			//test.log(LogStatus.PASS, "Dashboard 'Pending Review' count matches to total records displayed.");
-			test.log(LogStatus.PASS, "Dashboard 'Pending Review' count = "+pending+" | Total records in grid = "+applied);
+			test.log(LogStatus.PASS, "Dashboard 'Pending For Review' count = "+pending+" | Total Pending For Review records in grid = "+applied);
 		}
 		else
 		{
 			//test.log(LogStatus.FAIL, "Dashboard 'Pending Review' count doesn't matches to total records displayed.");
-			test.log(LogStatus.PASS, "Dashboard 'Pending Review' count = "+pending+" | Total records in grid = "+applied);
+			test.log(LogStatus.PASS, "Dashboard 'Pending For Review' count = "+pending+" | Total Pending For Review records in grid = "+applied);
 		}
 		
 		
@@ -1136,7 +1138,7 @@ public class LiReMethodsPOM
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
 		
 		Thread.sleep(500);
-		js.executeScript("window.scrollBy(0,700)");
+		js.executeScript("window.scrollBy(0,500)");
 		
 		Thread.sleep(500);
 		
@@ -1151,7 +1153,7 @@ public class LiReMethodsPOM
 		Thread.sleep(500);
 		js.executeScript("window.scrollBy(0,-3000)");					//Scrolling down window by 500 px.
 		
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		String msg = LiPerformerPOM.readMessage(driver).getText();		//Reading message after Appove.
 		
 		if(msg.equalsIgnoreCase("Approved Successfully."))
@@ -1185,16 +1187,17 @@ public class LiReMethodsPOM
                  ReviewerPOM.clickDownload2(driver).click();
                
                 LiReviewerPOM.intremark(driver).sendKeys("NA");
-                Thread.sleep(500);
+                Thread.sleep(5000);
 				if(LiReviewerPOM.inrejectbtn(driver).isEnabled())
 				{
 					LiReviewerPOM.inrejectbtn(driver).click();					//Clicking on Approve
 				}
+			
+			
+				Thread.sleep(5000);
+				js.executeScript("window.scrollBy(0,-4000)");					//Scrolling down window by 500 px.
 				
-				Thread.sleep(500);
-				js.executeScript("window.scrollBy(0,-3000)");					//Scrolling down window by 500 px.
-				
-				Thread.sleep(500);
+				Thread.sleep(5000);
 				String msg1 = LiPerformerPOM.readMessage(driver).getText();		//Reading message after Appove.
 				
 				if(msg1.equalsIgnoreCase("Rejected Successfully."))
@@ -1206,16 +1209,17 @@ public class LiReMethodsPOM
 					test.log(LogStatus.FAIL, "Message displayed = "+msg1);
 				}
 		
-		Thread.sleep(3000);
+		  }
+		/*Thread.sleep(3000);
 		
-		/*perform(driver, test);
+		perform(driver, test);
 		
 		Thread.sleep(500);
 		ReviewerPOM.clickApprove(driver).click();					//Clicking on Approve
 		
 		Thread.sleep(1000);
 		js.executeScript("window.scrollBy(0,700)");
-		*/
+	
 /*	Thread.sleep(500);
 		int total1 = Integer.parseInt(OverduePOM.readReminder(driver).getText());	//Reading total records count
 		if(total1 < applied)
@@ -1268,7 +1272,7 @@ public class LiReMethodsPOM
 			test.log(LogStatus.FAIL, "'Applied' license count doesn't increased.");
 			test.log(LogStatus.INFO, "Old count = "+applied+" | New Count = "+applied1);
 		}*/
-	}
+	
 	public static void ReviewerExpiredCount(WebDriver driver, ExtentTest test, String type) throws InterruptedException 
 	{
 		  WebDriverWait wait = new WebDriverWait(driver, 40);
@@ -1295,24 +1299,24 @@ public class LiReMethodsPOM
 				if(Expiredlicense == total)
 		{
 			//test.log(LogStatus.PASS, "Dashboard 'Expired' count matches to the total records displayed in grid.");
-			test.log(LogStatus.PASS, "Dashboard 'Expired' count = "+Expiredlicense+" | Total records in grid = "+total);
+			test.log(LogStatus.PASS, "Dashboard 'Expired' count = "+Expiredlicense+" | Total Expired records in grid = "+total);
 		}
 		else
 		{
 			//test.log(LogStatus.FAIL, "Dashboard 'Expired' count doesn't matches to the total records displayed in grid.");
-			test.log(LogStatus.FAIL, "Dashboard 'Expired' count = "+Expiredlicense+" | Total records in grid = "+total);
+			test.log(LogStatus.FAIL, "Dashboard 'Expired' count = "+Expiredlicense+" | Total  Expired records in grid = "+total);
 		}
 		
 				MethodPOM.ClickActiveOverview(driver).click();
-				test.log(LogStatus.PASS, "Expired License Overview Details Successfully");
-				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "License Overview Details Successfully");
+				Thread.sleep(5000);
 				MethodPOM.ClickCloseOverview(driver).click();
 				Thread.sleep(3000);
 				LiPerformerPOM.editlicenseicon(driver).click();
 				Thread.sleep(7000);
 				licenseManagement.licmgmtPOM.LicenseTitle(driver).clear();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("update License");	
+				licenseManagement.licmgmtPOM.LicenseTitle(driver).sendKeys("Ed License Update");	
 				Thread.sleep(5000);
 				licenseManagement.licmgmtPOM.LicenseNo(driver).sendKeys("update00");
 				Thread.sleep(5000);
@@ -1535,17 +1539,17 @@ public class LiReMethodsPOM
 				if(applied == total)
 		{
 			//test.log(LogStatus.PASS, "Dashboard 'Applied' count matches to the total records displayed.");
-			test.log(LogStatus.PASS, "Dashboard 'Applied' count = "+applied+" | Total records = "+total);
+			test.log(LogStatus.PASS, "Dashboard 'Applied' count = "+applied+" | Total Applied records = "+total);
 		}
 		else
 		{
 			//test.log(LogStatus.FAIL, "Dashboard 'Applied' count matches doesn't to the total records displayed.");
-			test.log(LogStatus.FAIL, "Dashboard 'Applied' count = "+applied+" | Total records = "+total);
+			test.log(LogStatus.FAIL, "Dashboard 'Applied' count = "+applied+" | Total Applied records = "+total);
 		}
 		
 		Thread.sleep(300);
 		MethodPOM.ClickActiveOverview(driver).click();
-		test.log(LogStatus.PASS, "Expiring License Overview Details Successfully");
+		test.log(LogStatus.PASS, "License Overview Details Successfully");
 		Thread.sleep(3000);
 		MethodPOM.ClickCloseOverview(driver).click();
 		LiPerformerPOM.editlicenseicon(driver).click();
@@ -1575,9 +1579,9 @@ public class LiReMethodsPOM
         
           Thread.sleep(5000);
           
-          licmgmtPOM.editlicenseclose(driver).click();
-          Thread.sleep(300);
-         MethodPOM.clickMyDashboard(driver).click();
+        //  licmgmtPOM.editlicenseclose(driver).click();
+         // Thread.sleep(300);
+        // MethodPOM.clickMyDashboard(driver).click();
          Thread.sleep(1000);
       //  MethodPOM.clickApplied(driver).click();
        // Thread.sleep(5000);
@@ -1753,8 +1757,9 @@ public class LiReMethodsPOM
 			MethodPOM.DashExpiringOnExport(driver).click();
 			test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
 			
-		/*  LiReviewerPOM.revexpiringOn(driver).click();
+		  LiReviewerPOM.revexpiringOn(driver).click();
 		   Thread.sleep(7000);
+		   test.log(LogStatus.PASS, "Expiring On ShowMore Link Working Successfully");
 		   WebDriverWait wait = new WebDriverWait(driver, 40);
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
 		   String NoRecord = MethodPOM.Norecord(driver).getText();
@@ -1762,22 +1767,14 @@ public class LiReMethodsPOM
 		   {
 		   
 		   MethodPOM.ClickExportExpiredOn(driver).click();
-			test.log(LogStatus.PASS, "Expiring License List Downloaded Sucessfully");
+			test.log(LogStatus.PASS, "Expiring License List Downloaded Successfully");
 			Thread.sleep(5000);
 			MethodPOM.ExpiredOnLictype(driver).click();
+			Thread.sleep(5000);
 			MethodPOM.searchExpiredOnLictype(driver).sendKeys("Boiler",Keys.ENTER);
 			MethodPOM.Clearfilter(driver).click();
 			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
-			
-	    
-			Thread.sleep(7000);
-		    licenseManagement.licmgmtPOM.lictype(driver).click();
-			Thread.sleep(7000);
-		    licenseManagement.licmgmtPOM.lictype1(driver).click();
-			Thread.sleep(7000);
-			MethodPOM.Clearfilter(driver).click();
-			test.log(LogStatus.PASS, "Clear Filter Button Working  Successfully");
-			Thread.sleep(7000);
+          	Thread.sleep(7000);
 			MethodPOM.ClickOverviewExpiredOn(driver).click();
 			test.log(LogStatus.PASS, "Expiring OverView License Displayed");
 			 Thread.sleep(3000);
@@ -1797,7 +1794,7 @@ public class LiReMethodsPOM
 				 MethodPOM.clickCloseGraphPopup(driver).click();
 				 Thread.sleep(3000);
 				  test.log(LogStatus.PASS, "Expiring On Popup No Record Found ");
-		   }*/
+		   }
 }
 	 public static void ReviewerRejectedCount(WebDriver driver, ExtentTest test, String type) throws InterruptedException 
 		{
@@ -1814,7 +1811,9 @@ public class LiReMethodsPOM
 			        JavascriptExecutor js1=(JavascriptExecutor) driver ;
 					js1.executeScript("window.scroll(0,500)");
 					Thread.sleep(4000);
-					
+					String item1 = MethodPOM.clickReadExpired(driver).getText();	//Reading total items String value
+					  if(!item1.equalsIgnoreCase("No items to display"))
+					  {
 					MethodPOM.clickReadRejected(driver).click();					//Clicking on total items count
 					Thread.sleep(500);
 					String item = MethodPOM.clickReadRejected(driver).getText();	//Reading total items String value
@@ -1917,8 +1916,15 @@ public class LiReMethodsPOM
 				          Thread.sleep(5000);
 				          
 				          licmgmtPOM.editlicenseclose(driver).click();
-				          Thread.sleep(300);
-				          MethodPOM.clickMyDashboard(driver).click();
+					  }
+				          else
+						  {
+							   		      
+							test.log(LogStatus.PASS,"No Record Found");
+							MethodPOM.clickMyDashboard(driver).click();
+								      
+						  }
+				         // MethodPOM.clickMyDashboard(driver).click();
 				          Thread.sleep(1000);
 				         // MethodPOM.clickActive(driver).click();	
 				          
@@ -2308,7 +2314,7 @@ public static void LicenseExpiringOnInternalrew(WebDriver driver, ExtentTest tes
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
-	//   LiPerformerPOM.Expiringshowmore(driver).click();
+	   LiPerformerPOM.Expiringshowmore(driver).click();
 	   Thread.sleep(7000);
 	   test.log(LogStatus.PASS, "Expiring On show More Link Working Successfully");
 	   WebDriverWait wait = new WebDriverWait(driver, 40);

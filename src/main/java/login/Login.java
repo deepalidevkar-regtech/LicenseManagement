@@ -22,11 +22,11 @@ public class Login
 	
 	public static void BrowserSetup(String URL)
 	{
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.gecko.driver","C:\\Users\\dipali\\Downloads\\geckodriver-v0.20.1-win64\\geckodriver.exe");
 		//WebDriver driver= new FirefoxDriver();
 	
-		//System.setProperty("webdriver.chrome.driver","C://Already Automate//chromedriver_win32 (1)//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C://Already Automate//Update//chromedriver-win64//chromedriver.exe");
 		//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver"); //Set the Chrome driver variable
 		driver = new ChromeDriver();					//Created new Chrome driver instance. 
 		//WebDriver driver = new FirefoxDriver();

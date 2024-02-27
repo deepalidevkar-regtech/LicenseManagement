@@ -57,7 +57,7 @@ public class LicensePerformerStatutory
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "Performer Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -101,11 +101,11 @@ public class LicensePerformerStatutory
 		extent.endTest(test);
 		extent.flush();
 		
-	}*/
+	}
 @Test(priority = 3)
 void ActivePerform() throws InterruptedException
 {
-	test = extent.startTest("Active License Count Verification");
+	test = extent.startTest("Active Performer License Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	LiPeMethodsPOM.activelicenseperform(driver, test, "Statutory");
@@ -115,7 +115,7 @@ void ActivePerform() throws InterruptedException
 	
 }
 	
-/*@Test(priority = 4)
+@Test(priority = 4)
 	void Expiring() throws InterruptedException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -261,7 +261,7 @@ void Expiringperform() throws InterruptedException
 				
 				extent.endTest(test);
 				extent.flush();
-			}
+			}*/
 	
 @Test(priority = 17)
 	void MyReports() throws InterruptedException, IOException
@@ -274,7 +274,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 18)
+/* @Test(priority = 18)
 		void MyWorkspace() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Workspace Working Verification");
@@ -284,13 +284,23 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
- @Test(priority = 28)
+ @Test(priority = 19)
 	void NomineeDetails() throws InterruptedException, IOException
 	
 	{
 		test = extent.startTest("Nominee Details");
 		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
 		licmgmtMethodPOM.NomineeDetails(driver,test,"");
+
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 29)
+	void AssignedButNotActivated() throws InterruptedException, IOException
+	
+	{
+		test = extent.startTest("Assigned But Not Activated License Verification");
+		LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
 
 		extent.endTest(test);
 		extent.flush();

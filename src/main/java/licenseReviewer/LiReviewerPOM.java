@@ -13,7 +13,7 @@ public class LiReviewerPOM
 	
 	public static WebElement checkTable(WebDriver driver)
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[2]"));
 		
 		return license;
 	}

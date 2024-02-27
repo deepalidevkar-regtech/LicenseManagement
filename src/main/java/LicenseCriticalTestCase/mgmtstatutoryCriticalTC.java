@@ -21,6 +21,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
+import licensePerformer.LiPeMethodsPOM;
 
 public class mgmtstatutoryCriticalTC {
 	public static WebDriver driver = null;		//WebDriver instance created
@@ -324,6 +325,16 @@ public class mgmtstatutoryCriticalTC {
 		//test.log(LogStatus.PASS, "User Created Successfully");
 		licenseCompanyadmin.StatutoryMethod.user(driver, test,"");
 	 
+		extent.endTest(test);
+		extent.flush();
+	}
+  @Test(priority = 23)
+	void AssignedButNotActivated() throws InterruptedException, IOException
+	
+	{
+		test = extent.startTest("Assigned But Not Activated License Verification");
+		LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
+
 		extent.endTest(test);
 		extent.flush();
 	}

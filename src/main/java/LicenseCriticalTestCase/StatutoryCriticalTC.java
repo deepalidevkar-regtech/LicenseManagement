@@ -57,7 +57,7 @@ public class StatutoryCriticalTC {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "Performer Login Successfully");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -96,7 +96,7 @@ public class StatutoryCriticalTC {
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.ActiveLicense(driver, test, "Statutory");
+		PerformerCritical.ActiveLicense(driver, test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -229,6 +229,16 @@ void MyReports() throws InterruptedException, IOException
 	
 	LicenseCriticalTestCase.PerformerCritical.Reports(driver, test, "Statutory");
 	
+	extent.endTest(test);
+	extent.flush();
+}
+@Test(priority = 15)
+void AssignedButNotActivated() throws InterruptedException, IOException
+
+{
+	test = extent.startTest("Assigned But Not Activated License Verification");
+	LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
+
 	extent.endTest(test);
 	extent.flush();
 }

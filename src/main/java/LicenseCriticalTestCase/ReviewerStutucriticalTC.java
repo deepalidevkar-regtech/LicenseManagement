@@ -20,6 +20,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import licenseManagement.licmgmtMethodPOM;
+import licensePerformer.LiPeMethodsPOM;
 import licenseReviewer.LiReMethodsPOM;
 
 public class ReviewerStutucriticalTC
@@ -197,6 +198,16 @@ public class ReviewerStutucriticalTC
 		
 		LicenseCriticalTestCase.PerformerCritical.Reports(driver, test, "Statutory");
 		
+		extent.endTest(test);
+		extent.flush();
+	}
+  @Test(priority = 12)
+	void AssignedButNotActivated() throws InterruptedException, IOException
+	
+	{
+		test = extent.startTest("Assigned But Not Activated License Verification");
+		LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
+
 		extent.endTest(test);
 		extent.flush();
 	}
