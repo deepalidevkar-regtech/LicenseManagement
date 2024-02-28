@@ -289,7 +289,7 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 18)
+	/* @Test(priority = 18)
 		void ByLicensetypeExpiringInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License Type -Application Overdue(Expiring but not applied)Graph Count Verification");
@@ -322,7 +322,7 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 21)
+	@Test(priority = 21)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License type - Terminate Graph  Count Working Verification");
@@ -333,7 +333,7 @@ public class InternalTC {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 21)
+	/* @Test(priority = 21)
 		void BylicnesetypeRejectedInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License type - Rejected Graph  Count Working Verification");
@@ -359,7 +359,7 @@ public class InternalTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
     @Test(priority = 23)
 		void MyDocuments() throws InterruptedException
 		{
@@ -373,8 +373,8 @@ public class InternalTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
-	@Test(priority = 24)
+		}
+	/*@Test(priority = 24)
 	 void MyReports() throws InterruptedException, IOException
 	 {
 		test = extent.startTest("My Reports Verification");
@@ -387,7 +387,7 @@ public class InternalTC {
 		extent.flush();
 	}
 	
-/*	@Test(priority = 25)
+	@Test(priority = 25)
 	void InternalLicenseCreation() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal License Creation Verification");

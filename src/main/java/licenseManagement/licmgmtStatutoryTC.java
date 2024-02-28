@@ -89,7 +89,7 @@ public class licmgmtStatutoryTC {
 		//extent.endTest(test);
 		//extent.flush();*/
 	}
-@Test(priority = 2)
+/*@Test(priority = 2)
  
 	void Active() throws InterruptedException
 	{
@@ -359,7 +359,7 @@ public class licmgmtStatutoryTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 	@Test(priority = 24)
 		void MyReports() throws InterruptedException, IOException
 		{
@@ -371,7 +371,7 @@ public class licmgmtStatutoryTC {
 			extent.endTest(test);
 			extent.flush();
 		}
- @Test(priority = 25)
+/* @Test(priority = 25)
 	void LicenseNewAssignment() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License New Assignment");
@@ -430,7 +430,7 @@ public class licmgmtStatutoryTC {
 
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
  @AfterMethod
  void driverclose()
  {

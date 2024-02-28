@@ -3,21 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licenseCompanyadmin.StatutoryTC">
+      <class name="licenseCompanyadmin.InternalTC">
         <methods>
-          <include name="Login"/>
           <include name="driverclose"/>
           <include name="setBrowser"/>
-          <include name="LicenseExpiredOnStatutory"/>
-          <include name="BystausRejectedLicense"/>
-          <include name="CriticalDocuments"/>
-          <include name="MyWorkspace"/>
-          <include name="Masters"/>
-          <include name="BylicnesetypeRejected"/>
-          <include name="LicenseExpiringOnStatutory"/>
-          <include name="LicenseNewAssignment"/>
+          <include name="Login"/>
+          <include name="MyDocuments"/>
         </methods>
-      </class> <!-- licenseCompanyadmin.StatutoryTC -->
+      </class> <!-- licenseCompanyadmin.InternalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

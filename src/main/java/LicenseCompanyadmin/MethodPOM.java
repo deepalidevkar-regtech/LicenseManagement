@@ -555,7 +555,7 @@ public static WebElement clickByLicnesetypeExpired(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeExpiredInternal(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[12]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeExpiring(WebDriver driver)	
@@ -570,7 +570,7 @@ public static WebElement clickByLicnesetypeApplied(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeAppliedInternal(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[23]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeActive(WebDriver driver)	
@@ -580,7 +580,7 @@ public static WebElement clickByLicnesetypeActive(WebDriver driver)
 }
 public static WebElement clickByLicnesetypeActiveInternal(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[19]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[34]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeTerminate(WebDriver driver)	
@@ -596,7 +596,7 @@ public static WebElement clickByLicnesetypeRejected(WebDriver driver)
 
 public static WebElement clickByLicnesetypeTerminateInternal(WebDriver driver)	
 {
-	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[25]"));
+	license = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[45]"));
 			
 	return license;
 }

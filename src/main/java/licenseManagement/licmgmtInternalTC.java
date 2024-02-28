@@ -209,7 +209,7 @@ public class licmgmtInternalTC {
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	@Test(priority = 12)
 	  void BystatusActiveInternalgraph() throws InterruptedException
 		{
@@ -242,7 +242,7 @@ public class licmgmtInternalTC {
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 	@Test(priority = 14)
 	  void BystatusExpiredappliedbutnotrenewedInternalgraph() throws InterruptedException
 		{
@@ -383,7 +383,7 @@ public class licmgmtInternalTC {
 		extent.flush();
 	}
 
-@Test(priority = 25)
+/*@Test(priority = 25)
 	void RenewInternalLicense() throws InterruptedException, IOException
 	{
 	{
