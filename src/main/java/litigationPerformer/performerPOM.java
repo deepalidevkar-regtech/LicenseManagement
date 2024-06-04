@@ -6,968 +6,970 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class performerPOM 
+import login.webpage;
+
+public class performerPOM extends webpage
 {
 	private static WebElement litigation = null;		
 	private static List<WebElement> elementsList = null;	//WebElement list created for selecting Status-Asc/Desc (Status shows multiple elements back side)
 	
-	public static WebElement clickNoticeOpen(WebDriver driver)			//Searching 'Open' Notice link
+	public static WebElement clickNoticeOpen()			//Searching 'Open' Notice link
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenNoticeCount']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenNoticeCount']"));
 		return litigation;
 	}
 	
-	public static WebElement clickNew(WebDriver driver)					//Searching 'New'
+	public static WebElement clickNew()					//Searching 'New'
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_AddNewCaseNotice']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_AddNewCaseNotice']"));
 		return litigation;
 	}
 	
-	public static WebElement clickDated(WebDriver driver)				//Searching 'Dated' input box
+	public static WebElement clickDated()				//Searching 'Dated' input box
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtNoticeDate']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtNoticeDate']"));
 		return litigation;
 	}
 	
-	public static WebElement clickFinancialYear(WebDriver driver)		//Searching 'Financial Year' drop down
+	public static WebElement clickFinancialYear()		//Searching 'Financial Year' drop down
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[1]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[1]"));
 		return litigation;
 	}
 	
-	public static List<WebElement> chooseDropDownOption(WebDriver driver)	//Searching drop down in 'Financial Year'
+	public static List<WebElement> chooseDropDownOption()	//Searching drop down in 'Financial Year'
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='pnlNotice']/div[1]/div[2]/div[2]/div[2]/span[1]/div/ul/li/a/label"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='pnlNotice']/div[1]/div[2]/div[2]/div[2]/span[1]/div/ul/li/a/label"));
 		return elementsList;
 	}
 	
-	public static WebElement clickAct(WebDriver driver)
+	public static WebElement clickAct()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[2]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[2]"));
 		return litigation;
 	}
 	
-	public static List<WebElement> chooseAct(WebDriver driver)
+	public static List<WebElement> chooseAct()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='pnlNotice']/div[3]/div[1]/div[1]/span[1]/div/ul/li/a/label/input"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='pnlNotice']/div[3]/div[1]/div[1]/span[1]/div/ul/li/a/label/input"));
 		return elementsList;
 	}
 	
-	public static List<WebElement> chooseAct1(WebDriver driver)
+	public static List<WebElement> chooseAct1()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='pnlCase']/div[4]/div[1]/div[1]/span[1]/div/ul/li/a/label"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='pnlCase']/div[4]/div[1]/div[1]/span[1]/div/ul/li/a/label"));
 		return elementsList;
 	}
 	
-	public static WebElement clickRefNo(WebDriver driver)
+	public static WebElement clickRefNo()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxRefNo']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxRefNo']"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeType(WebDriver driver)
+	public static WebElement clickNoticeType()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeCategory_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeCategory_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickUnderSection(WebDriver driver)
+	public static WebElement clickUnderSection()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxSection']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxSection']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch(WebDriver driver)
+	public static WebElement clickSearch()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeCategory_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeCategory_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickOpponent(WebDriver driver)
+	public static WebElement clickOpponent()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[3]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[3]"));
 		return litigation;
 	}
 	
-	public static WebElement clickOppLawyer(WebDriver driver)
+	public static WebElement clickOppLawyer()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[4]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[4]"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch1(WebDriver driver)
+	public static WebElement clickSearch1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[1]/div[1]/span[1]/div/ul/li[1]/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[1]/div[1]/span[1]/div/ul/li[1]/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch2(WebDriver driver)
+	public static WebElement clickSearch2()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[2]/span/div/ul/li[1]/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[2]/span/div/ul/li[1]/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickSelectAll(WebDriver driver)
+	public static WebElement clickSelectAll()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[1]/div[1]/span[1]/div/ul/li[2]/a/label"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[1]/div[1]/span[1]/div/ul/li[2]/a/label"));
 		return litigation;
 	}
 	
-	public static WebElement clickSelectAll1(WebDriver driver)
+	public static WebElement clickSelectAll1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[2]/span/div/ul/li[2]/a/label"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='pnlNotice']/div[4]/div[2]/span/div/ul/li[2]/a/label"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeTitle(WebDriver driver)
+	public static WebElement clickNoticeTitle()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxTitle']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxTitle']"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeDescription(WebDriver driver)
+	public static WebElement clickNoticeDescription()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxDescription']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxDescription']"));
 		return litigation;
 	}
 	
-	public static WebElement clickLocation(WebDriver driver)
+	public static WebElement clickLocation()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxBranch']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxBranch']"));
 		return litigation;
 	}
 	
-	public static WebElement clickPlus(WebDriver driver)
+	public static WebElement clickPlus()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tvBranchesn1']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tvBranchesn1']"));
 		return litigation;
 	}
 	
-	public static List<WebElement> selectLocation(WebDriver driver)
+	public static List<WebElement> selectLocation()
 	{
-		elementsList = driver.findElements(By.xpath("//*[contains(@id,'tvBranchest')]"));
+		elementsList =getDriver().findElements(By.xpath("//*[contains(@id,'tvBranchest')]"));
 		return elementsList;
 	}
 	
-	public static WebElement clickJurisdiction(WebDriver driver)
+	public static WebElement clickJurisdiction()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlJurisdiction_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlJurisdiction_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch3(WebDriver driver)
+	public static WebElement clickSearch3()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlJurisdiction_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlJurisdiction_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickDepartment(WebDriver driver)
+	public static WebElement clickDepartment()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlDepartment_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlDepartment_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch4(WebDriver driver)
+	public static WebElement clickSearch4()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlDepartment_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlDepartment_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickContactDept(WebDriver driver)
+	public static WebElement clickContactDept()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCPDepartment_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCPDepartment_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch5(WebDriver driver)
+	public static WebElement clickSearch5()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCPDepartment_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCPDepartment_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeTerm(WebDriver driver)
+	public static WebElement clickNoticeTerm()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxNoticeTerm']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxNoticeTerm']"));
 		return litigation;
 	}
 	
-	public static WebElement clickOwner(WebDriver driver)
+	public static WebElement clickOwner()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlOwner_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlOwner_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearch6(WebDriver driver)
+	public static WebElement clickSearch6()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlOwner_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlOwner_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickWinningProspect(WebDriver driver)
+	public static WebElement clickWinningProspect()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeRisk_chosen']/a"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeRisk_chosen']/a"));
 		return litigation;
 	}
 	
-	public static WebElement clickWinningProspect1(WebDriver driver)
+	public static WebElement clickWinningProspect1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseRisk_chosen']/a"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseRisk_chosen']/a"));
 		return litigation;
 	}
 	
-	public static WebElement selectRisk(WebDriver driver)
+	public static WebElement selectRisk()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeRisk_chosen']/div/ul/li[2]"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeRisk_chosen']/div/ul/li[2]"));
 		return litigation;
 	}
 	
-	public static WebElement selectRisk1(WebDriver driver)
+	public static WebElement selectRisk1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseRisk_chosen']/div/ul/li[2]"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseRisk_chosen']/div/ul/li[2]"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeBudget(WebDriver driver)
+	public static WebElement clickNoticeBudget()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxNoticeBudget']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxNoticeBudget']"));
 		return litigation;
 	}
 	
-	public static WebElement clickClaimedAmount(WebDriver driver)
+	public static WebElement clickClaimedAmount()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxClaimedAmt']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxClaimedAmt']"));
 		return litigation;
 	}
 	
-	public static WebElement clickState(WebDriver driver)
+	public static WebElement clickState()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlState_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlState_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchState(WebDriver driver)
+	public static WebElement clickSearchState()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlState_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlState_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickProbableAmount(WebDriver driver)
+	public static WebElement clickProbableAmount()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxProbableAmt']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxProbableAmt']"));
 		return litigation;
 	}
 	
-	public static WebElement clickProvisionalAmount(WebDriver driver)
+	public static WebElement clickProvisionalAmount()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtprovisionalamt']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtprovisionalamt']"));
 		return litigation;
 	}
 	
-	public static WebElement clickProtestMoney(WebDriver driver)
+	public static WebElement clickProtestMoney()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtprotestmoney']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtprotestmoney']"));
 		return litigation;
 	}
 	
-	public static WebElement clickRisk(WebDriver driver)
+	public static WebElement clickRisk()
 	{
-		litigation = driver.findElement(By.xpath("//div[@id='ddlRisk_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//div[@id='ddlRisk_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement selectRisk2(WebDriver driver)
+	public static WebElement selectRisk2()
 	{
-		litigation = driver.findElement(By.xpath("//div[@id='ddlRisk_chosen']/div/ul/li[2]"));
+		litigation =getDriver().findElement(By.xpath("//div[@id='ddlRisk_chosen']/div/ul/li[2]"));
 		return litigation;
 	}
 	
-	public static WebElement clickPotentialImpactRadio(WebDriver driver)
+	public static WebElement clickPotentialImpactRadio()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='rblPotentialImpact_0']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='rblPotentialImpact_0']"));
 		return litigation;
 	}
 	
-	public static WebElement clickMonetary(WebDriver driver)
+	public static WebElement clickMonetary()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxMonetory']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxMonetory']"));
 		return litigation;
 	}
 	
-	public static WebElement clickLawFirm(WebDriver driver)
+	public static WebElement clickLawFirm()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlLawFirm_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlLawFirm_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement chooseLawFirm(WebDriver driver)
+	public static WebElement chooseLawFirm()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlLawFirm_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlLawFirm_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickInternalUser(WebDriver driver)
+	public static WebElement clickInternalUser()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[5]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[5]"));
 		return litigation;
 	}
 	
-	public static List<WebElement> chooseInternalUser(WebDriver driver)
+	public static List<WebElement> chooseInternalUser()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='pnlNoticeAssignment']/div[1]/div/span[1]/div/ul/li/a/label/input"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='pnlNoticeAssignment']/div[1]/div/span[1]/div/ul/li/a/label/input"));
 		return elementsList;
 	}
 	
-	public static List<WebElement> chooseInternalUser1(WebDriver driver)
+	public static List<WebElement> chooseInternalUser1()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='pnlCaseAssignment']/div[1]/div/span[1]/div/ul/li/a/label"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='pnlCaseAssignment']/div[1]/div/span[1]/div/ul/li/a/label"));
 		return elementsList;
 	}
 	
-	public static WebElement clickLawyer(WebDriver driver)
+	public static WebElement clickLawyer()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[6]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='multiselect dropdown-toggle btn btn-default'])[6]"));
 		return litigation;
 	}
 	
-	public static List<WebElement> chooseLawyer(WebDriver driver)
+	public static List<WebElement> chooseLawyer()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='UpdatePanel6']/div/span/div/ul/li/a/label"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='UpdatePanel6']/div/span/div/ul/li/a/label"));
 		return 		elementsList;
 	}
 	
-	public static WebElement readTotal(WebDriver driver)
+	public static WebElement readTotal()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='grid']/div[3]/span"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='grid']/div[3]/span"));
 		return litigation;
 	}
 	
-	public static WebElement readMessage(WebDriver driver)
+	public static WebElement readMessage()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='VSNoticePopup']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='VSNoticePopup']"));
 		return litigation;
 	}
 	
-	public static WebElement readMessage1(WebDriver driver)
+	public static WebElement readMessage1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='VSCasePopup']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='VSCasePopup']"));
 		return litigation;
 	}
 	
-	public static WebElement clickClose(WebDriver driver)
+	public static WebElement clickClose()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='btnAddEditcase']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='btnAddEditcase']"));
 		return litigation;
 	}
 	
-	public static WebElement clickLinkNotice(WebDriver driver)
+	public static WebElement clickLinkNotice()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='lnkLinkNotice']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='lnkLinkNotice']"));
 		return litigation;
 	}
 	
-	public static WebElement clickLinkCase(WebDriver driver)
+	public static WebElement clickLinkCase()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='lnkLinkCase']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='lnkLinkCase']"));
 		return litigation;
 	}
 	
-	public static WebElement clickViewDoc(WebDriver driver)
+	public static WebElement clickViewDoc()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='lnkActDetails']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='lnkActDetails']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSendMail(WebDriver driver)
+	public static WebElement clickSendMail()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='btnSendMailPopup']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='btnSendMailPopup']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSendMail1(WebDriver driver)
+	public static WebElement clickSendMail1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='lnkSendMailWithDoc']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='lnkSendMailWithDoc']"));
 		return litigation;
 	}
 	
-	public static WebElement clickEditNotice(WebDriver driver)
+	public static WebElement clickEditNotice()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='btnEditNoticeDetail']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='btnEditNoticeDetail']"));
 		return litigation;
 	}
 	
-	public static WebElement clickEditCase(WebDriver driver)
+	public static WebElement clickEditCase()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='btnEditCaseDetail']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='btnEditCaseDetail']"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeClosed(WebDriver driver)
+	public static WebElement clickNoticeClosed()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedNoticeCount']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedNoticeCount']"));
 		return litigation;
 	}
 	
-	public static WebElement clickExcelReport(WebDriver driver)
+	public static WebElement clickExcelReport()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='exportReport']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='exportReport']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseOpen(WebDriver driver)
+	public static WebElement clickCaseOpen()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCount']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenCaseCount']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseDate(WebDriver driver)
+	public static WebElement clickCaseDate()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtCaseDate']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtCaseDate']"));
 		return litigation;
 	}
 	
-	public static List<WebElement> clickFinanceSearchCheckbox(WebDriver driver)
+	public static List<WebElement> clickFinanceSearchCheckbox()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='pnlCase']/div[1]/div[2]/div[2]/div[2]/span[1]/div/ul/li/a/label"));
+		elementsList =getDriver().findElements(By.xpath("//*[@id='pnlCase']/div[1]/div[2]/div[2]/div[2]/span[1]/div/ul/li/a/label"));
 		return elementsList;
 	}
 	
-	public static WebElement clickInternalCaseNo(WebDriver driver)
+	public static WebElement clickInternalCaseNo()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxInternalCaseNo']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxInternalCaseNo']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseType(WebDriver driver)
+	public static WebElement clickCaseType()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseCategory_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseCategory_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchCaseType(WebDriver driver)
+	public static WebElement clickSearchCaseType()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseCategory_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseCategory_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseBudget(WebDriver driver)
+	public static WebElement clickCaseBudget()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxCaseBudget']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxCaseBudget']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchBox(WebDriver driver)
+	public static WebElement clickSearchBox()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@placeholder='Search'])[3]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@placeholder='Search'])[3]"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchBox1(WebDriver driver)
+	public static WebElement clickSearchBox1()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@placeholder='Search'])[4]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@placeholder='Search'])[4]"));
 		return litigation;
 	}
 	
-	public static WebElement clickSelectAll2(WebDriver driver)
+	public static WebElement clickSelectAll2()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='pnlCase']/div[6]/div[1]/div[1]/span[1]/div/ul/li[2]/a/label"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='pnlCase']/div[6]/div[1]/div[1]/span[1]/div/ul/li[2]/a/label"));
 		return litigation;
 	}
 	
-	public static WebElement clickSelectAll3(WebDriver driver)
+	public static WebElement clickSelectAll3()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@value='multiselect-all'])[4]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@value='multiselect-all'])[4]"));
 		return litigation;
 	}
 	
-	public static WebElement clickCourt(WebDriver driver)
+	public static WebElement clickCourt()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCourt_chosen']/a"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCourt_chosen']/a"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchCourt(WebDriver driver)
+	public static WebElement clickSearchCourt()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCourt_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCourt_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickJudge(WebDriver driver)
+	public static WebElement clickJudge()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxJudge']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxJudge']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseClosed(WebDriver driver)
+	public static WebElement clickCaseClosed()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedCaseCount']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedCaseCount']"));
 		return litigation;
 	}
 	
-	public static WebElement clickTaskOpen(WebDriver driver)
+	public static WebElement clickTaskOpen()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenTaskCount']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divOpenTaskCount']"));
 		return litigation;
 	}
 	
-	public static WebElement clickAddNewTask(WebDriver driver)
+	public static WebElement clickAddNewTask()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkAdd']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkAdd']"));
 		return litigation;
 	}
 	
-	public static WebElement clickTaskTitle(WebDriver driver)
+	public static WebElement clickTaskTitle()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxTaskTitle']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxTaskTitle']"));
 		return litigation;
 	}
 	
-	public static WebElement clickTaskDesc(WebDriver driver)
+	public static WebElement clickTaskDesc()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxTaskDesc']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxTaskDesc']"));
 		return litigation;
 	}
 	
-	public static WebElement clickDueDate(WebDriver driver)
+	public static WebElement clickDueDate()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxTaskDueDate']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxTaskDueDate']"));
 		return litigation;
 	}
 	
-	public static WebElement clickPriority(WebDriver driver)
+	public static WebElement clickPriority()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTaskPriorityADD_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTaskPriorityADD_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickExpOutcome(WebDriver driver)
+	public static WebElement clickExpOutcome()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxExpOutcome']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxExpOutcome']"));
 		return litigation;
 	}
 	
-	public static WebElement clickInternalUser1(WebDriver driver)
+	public static WebElement clickInternalUser1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTaskLawyerListInternal_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTaskLawyerListInternal_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchInternalUser1(WebDriver driver)
+	public static WebElement clickSearchInternalUser1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTaskLawyerListInternal_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTaskLawyerListInternal_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickExternalUser(WebDriver driver)
+	public static WebElement clickExternalUser()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTaskUserExternal_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTaskUserExternal_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSearchExternalUser(WebDriver driver)
+	public static WebElement clickSearchExternalUser()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTaskUserExternal_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTaskUserExternal_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickRemark(WebDriver driver)
+	public static WebElement clickRemark()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxTaskRemark']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxTaskRemark']"));
 		return litigation;
 	}
 	
-	public static WebElement clickUpload(WebDriver driver)
+	public static WebElement clickUpload()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='fuTaskDocUpload']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='fuTaskDocUpload']"));
 		return litigation;
 	}
 	
-	public static WebElement clickMessage(WebDriver driver)
+	public static WebElement clickMessage()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='VsAddTasValidateSuccess']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='VsAddTasValidateSuccess']"));
 		return litigation;
 	}
 	
-	public static WebElement clickClose1(WebDriver driver)
+	public static WebElement clickClose1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@onclick='javascript:reloadTaskList();']"));
+		litigation =getDriver().findElement(By.xpath("//*[@onclick='javascript:reloadTaskList();']"));
 		return litigation;
 	}
 	
-	public static WebElement clickTaskClosed(WebDriver driver)
+	public static WebElement clickTaskClosed()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedTaskCount']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedTaskCount']"));
 		return litigation;
 	}
 	
-	public static WebElement clickStatusDropDown(WebDriver driver)
+	public static WebElement clickStatusDropDown()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='k-multiselect-wrap k-floatwrap'])[3]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='k-multiselect-wrap k-floatwrap'])[3]"));
 		return litigation;
 	}
 	
-	public static WebElement selectStatusDropDown(WebDriver driver)
+	public static WebElement selectStatusDropDown()
 	{
-		litigation = driver.findElement(By.xpath("(//*[@class='k-group k-treeview-lines']/li[1])[2]"));
+		litigation =getDriver().findElement(By.xpath("(//*[@class='k-group k-treeview-lines']/li[1])[2]"));
 		return litigation;
 	}
 	
-	public static WebElement GridLoad(WebDriver driver)
+	public static WebElement GridLoad()
 	{
-		litigation = driver.findElement(By.xpath("//div[@class='k-grid-content k-auto-scrollable']"));
+		litigation =getDriver().findElement(By.xpath("//div[@class='k-grid-content k-auto-scrollable']"));
 		return litigation;
 	}
 	
-	public static WebElement clickGridElement(WebDriver driver)
+	public static WebElement clickGridElement()
 	{
-		litigation = driver.findElement(By.xpath("//div[@class='k-grid-content k-auto-scrollable']/table/tbody/tr[2]/td[1]"));
+		litigation =getDriver().findElement(By.xpath("//div[@class='k-grid-content k-auto-scrollable']/table/tbody/tr[2]/td[1]"));
 		return litigation;
 	}
 	
-	public static List<WebElement> clickAction(WebDriver driver)
+	public static List<WebElement> clickAction()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
+		elementsList =getDriver().findElements(By.xpath("//*[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
 		return elementsList;
 	}
 	
-	public static WebElement clickCheckBox(WebDriver driver)
+	public static WebElement clickCheckBox()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='grdNoticeList_LinkNotice_chkRowLinkCases_0']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='grdNoticeList_LinkNotice_chkRowLinkCases_0']"));
 		return litigation;
 	}
 	
-	public static WebElement clickApply(WebDriver driver)
+	public static WebElement clickApply()
 	{
-		litigation = driver.findElement(By.xpath("//a[@id='lnkLinkCaseFilter']"));
+		litigation =getDriver().findElement(By.xpath("//a[@id='lnkLinkCaseFilter']"));
 		return litigation;
 	}
 	
-	public static WebElement clickApply1(WebDriver driver)
+	public static WebElement clickApply1()
 	{
-		litigation = driver.findElement(By.xpath("//a[@id='lnkLinkNoticeFilter']"));
+		litigation =getDriver().findElement(By.xpath("//a[@id='lnkLinkNoticeFilter']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSave(WebDriver driver)
+	public static WebElement clickSave()
 	{
-		litigation = driver.findElement(By.xpath("//*[@value='Save']"));
+		litigation =getDriver().findElement(By.xpath("//*[@value='Save']"));
 		return litigation;
 	}
 	
-	public static WebElement readMsg(WebDriver driver)
+	public static WebElement readMsg()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='vsLinkCase']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='vsLinkCase']"));
 		return litigation;
 	}
 	
-	public static WebElement clickClosePopup(WebDriver driver)
+	public static WebElement clickClosePopup()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='divLinkNoticePopup']/div/div/div[1]/button"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='divLinkNoticePopup']/div/div/div[1]/button"));
 		return litigation;
 	}
 	
-	public static WebElement readRef(WebDriver driver)
+	public static WebElement readRef()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='grdNoticeList_LinkNotice']/tbody/tr[2]/td[3]/div/span"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='grdNoticeList_LinkNotice']/tbody/tr[2]/td[3]/div/span"));
 		return litigation;
 	}
 	
-	public static List<WebElement> readRef1(WebDriver driver)
+	public static List<WebElement> readRef1()
 	{
-		elementsList = driver.findElements(By.xpath("//*[contains(@id,'grdLinkedNotices_lblCaseNo')]"));
+		elementsList =getDriver().findElements(By.xpath("//*[contains(@id,'grdLinkedNotices_lblCaseNo')]"));
 		return elementsList;
 	}
 	
-	public static WebElement clickMyWorkspace(WebDriver driver)
+	public static WebElement clickMyWorkspace()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='leftworkspacemenu']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='leftworkspacemenu']"));
 		return litigation;
 	}
 	
-	public static WebElement clickStatus(WebDriver driver)
+	public static WebElement clickStatus()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='childrow']/div/div[3]/div/span"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='childrow']/div/div[3]/div/span"));
 		return litigation;
 	}
 	
-	public static WebElement clickStatusPayments(WebDriver driver)
+	public static WebElement clickStatusPayments()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='lnkNoticeStatusPayment']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='lnkNoticeStatusPayment']"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeStatus(WebDriver driver)
+	public static WebElement clickNoticeStatus()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeStatus_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeStatus_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickClosedStatus(WebDriver driver)
+	public static WebElement clickClosedStatus()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeStatus_chosen']/div/ul/li[2]"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeStatus_chosen']/div/ul/li[2]"));
 		return litigation;
 	}
 	
-	public static WebElement clickCloseDate(WebDriver driver)
+	public static WebElement clickCloseDate()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxNoticeCloseDate']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxNoticeCloseDate']"));
 		return litigation;
 	}
 	
-	public static WebElement clickNoticeResult(WebDriver driver)
+	public static WebElement clickNoticeResult()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeResult_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeResult_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSelectResult(WebDriver driver)
+	public static WebElement clickSelectResult()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlNoticeResult_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlNoticeResult_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickRemark1(WebDriver driver)
+	public static WebElement clickRemark1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxCloseRemark']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxCloseRemark']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSave1(WebDriver driver)
+	public static WebElement clickSave1()
 	{
-		litigation = driver.findElement(By.xpath("//input[@id='btnSaveStatus']"));
+		litigation =getDriver().findElement(By.xpath("//input[@id='btnSaveStatus']"));
 		return litigation;
 	}
 	
-	public static WebElement readMessage2(WebDriver driver)
+	public static WebElement readMessage2()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ValidationSummary3']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ValidationSummary3']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCourtCaseNo(WebDriver driver)
+	public static WebElement clickCourtCaseNo()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxAppealCaseNo']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxAppealCaseNo']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSaveConvertCase(WebDriver driver)
+	public static WebElement clickSaveConvertCase()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='btnSaveConvertCase']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='btnSaveConvertCase']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseStatusPayments(WebDriver driver)
+	public static WebElement clickCaseStatusPayments()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='lnkCaseStatus']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='lnkCaseStatus']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseStatus(WebDriver driver)
+	public static WebElement clickCaseStatus()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseStatus_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseStatus_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseStatusClose(WebDriver driver)
+	public static WebElement clickCaseStatusClose()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseStatus_chosen']/div/ul/li[3]"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseStatus_chosen']/div/ul/li[3]"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseCloseDate(WebDriver driver)
+	public static WebElement clickCaseCloseDate()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxCaseCloseDate']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxCaseCloseDate']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseResult(WebDriver driver)
+	public static WebElement clickCaseResult()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseResult_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseResult_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickSelectCaseResult(WebDriver driver)
+	public static WebElement clickSelectCaseResult()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseResult_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseResult_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseStage(WebDriver driver)
+	public static WebElement clickCaseStage()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseStage_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseStage_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement selectCaseStage(WebDriver driver)
+	public static WebElement selectCaseStage()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlCaseStage_chosen']/div/div/input"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlCaseStage_chosen']/div/div/input"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseCheckBox(WebDriver driver)
+	public static WebElement clickCaseCheckBox()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='grdCaseList_LinkCase_chkRowLinkCases_0']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='grdCaseList_LinkCase_chkRowLinkCases_0']"));
 		return litigation;
 	}
 	
-	public static WebElement readCaseRef(WebDriver driver)
+	public static WebElement readCaseRef()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='grdCaseList_LinkCase']/tbody/tr[2]/td[3]/div/span"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='grdCaseList_LinkCase']/tbody/tr[2]/td[3]/div/span"));
 		return litigation;
 	}
 	
-	public static List<WebElement> readCaseRef1(WebDriver driver)
+	public static List<WebElement> readCaseRef1()
 	{
-		elementsList = driver.findElements(By.xpath("//*[contains(@id,'grdLinkedCases_lblCaseNo')]"));
+		elementsList =getDriver().findElements(By.xpath("//*[contains(@id,'grdLinkedCases_lblCaseNo')]"));
 		return elementsList;
 	}
 	
-	public static WebElement clickClosePopupCase(WebDriver driver)
+	public static WebElement clickClosePopupCase()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='divLinkCasePopup']/div/div/div[1]/button"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='divLinkCasePopup']/div/div/div[1]/button"));
 		return litigation;
 	}
 	
-	public static WebElement clickMyReports(WebDriver driver)
+	public static WebElement clickMyReports()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='leftreportsmenu']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='leftreportsmenu']"));
 		return litigation;
 	}
 	
-	public static WebElement CheckRecordsTable(WebDriver driver)
+	public static WebElement CheckRecordsTable()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='grid']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='grid']"));
 		return litigation;
 	}
 	
-	public static WebElement clickTypeDropdown(WebDriver driver)
+	public static WebElement clickTypeDropdown()
 	{
-		litigation = driver.findElement(By.xpath("//*[@aria-owns='dropdownType_listbox']"));
+		litigation =getDriver().findElement(By.xpath("//*[@aria-owns='dropdownType_listbox']"));
 		return litigation;
 	}
 	
-	public static WebElement selectTypeCase(WebDriver driver)
+	public static WebElement selectTypeCase()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='dropdownType_listbox']/li[2]"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='dropdownType_listbox']/li[2]"));
 		return litigation;
 	}
 	
-	public static WebElement selectTypeTask(WebDriver driver)
+	public static WebElement selectTypeTask()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='dropdownType_listbox']/li[3]"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='dropdownType_listbox']/li[3]"));
 		return litigation;
 	}
 	
-	public static WebElement clickMyReminder(WebDriver driver)
+	public static WebElement clickMyReminder()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='leftremindersmenu'][@class='leftdummy']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='leftremindersmenu'][@class='leftdummy']"));
 		return litigation;
 	}
 	
-	public static WebElement clickAddNew1(WebDriver driver)
+	public static WebElement clickAddNew1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='Addnew']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='Addnew']"));
 		return litigation;
 	}
 	
-	public static WebElement clickType(WebDriver driver)
+	public static WebElement clickType()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTypePopup_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTypePopup_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickTitle(WebDriver driver)
+	public static WebElement clickTitle()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ddlTitlePopup_chosen']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ddlTitlePopup_chosen']"));
 		return litigation;
 	}
 	
-	public static WebElement clickReminderText(WebDriver driver)
+	public static WebElement clickReminderText()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtReminderTitle']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtReminderTitle']"));
 		return litigation;
 	}
 	
-	public static WebElement clickDescription(WebDriver driver)
+	public static WebElement clickDescription()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtReminderDesc']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtReminderDesc']"));
 		return litigation;
 	}
 	
-	public static WebElement clickRemark2(WebDriver driver)
+	public static WebElement clickRemark2()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtRemark']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtRemark']"));
 		return litigation;
 	}
 	
-	public static WebElement clickDate(WebDriver driver)
+	public static WebElement clickDate()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='txtRemindOn']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='txtRemindOn']"));
 		return litigation;
 	}
 	
-	public static WebElement readMsg1(WebDriver driver)
+	public static WebElement readMsg1()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='vsReminder']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='vsReminder']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCloseReminder(WebDriver driver)
+	public static WebElement clickCloseReminder()
 	{
-		litigation = driver.findElement(By.xpath("//*[@onclick='CloseMyReminderPopup();']"));
+		litigation =getDriver().findElement(By.xpath("//*[@onclick='CloseMyReminderPopup();']"));
 		return litigation;
 	}
 	
-	public static WebElement clickMasters(WebDriver driver)
+	public static WebElement clickMasters()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='leftmastermenu']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='leftmastermenu']"));
 		return litigation;
 	}
 	
-	public static WebElement clickMastersMenu(WebDriver driver)
+	public static WebElement clickMastersMenu()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='leftmastermenu']/ul"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='leftmastermenu']/ul"));
 		return litigation;
 	}
 	
-	public static WebElement clickAddNew2(WebDriver driver)
+	public static WebElement clickAddNew2()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnAddPromotor']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnAddPromotor']"));
 		return litigation;
 	}
 	
-	public static WebElement clickCaseNoticeType(WebDriver driver)
+	public static WebElement clickCaseNoticeType()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='tbxCaseType']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='tbxCaseType']"));
 		return litigation;
 	}
 	
-	public static WebElement readMesg(WebDriver driver)
+	public static WebElement readMesg()
 	{
-		litigation = driver.findElement(By.xpath("//*[@id='ValidationSummary1']"));
+		litigation =getDriver().findElement(By.xpath("//*[@id='ValidationSummary1']"));
 		return litigation;
 	}
 	
-	public static WebElement clickClose2(WebDriver driver)
+	public static WebElement clickClose2()
 	{
-		litigation = driver.findElement(By.xpath("//*[@onclick='RefreshParent()']"));
+		litigation =getDriver().findElement(By.xpath("//*[@onclick='RefreshParent()']"));
 		return litigation;
 	}
 	
-	public static WebElement clickDtei(WebDriver driver)
+	public static WebElement clickDtei()
 	{
-		litigation = driver.findElement(By.xpath(""));
+		litigation =getDriver().findElement(By.xpath(""));
 		return litigation;
 	}
 	
-	public static WebElement clickDtevrt(WebDriver driver)
+	public static WebElement clickDtevrt()
 	{
-		litigation = driver.findElement(By.xpath(""));
+		litigation =getDriver().findElement(By.xpath(""));
 		return litigation;
 	}
 	
-	public static WebElement clickDteir(WebDriver driver)
+	public static WebElement clickDteir()
 	{
-		litigation = driver.findElement(By.xpath(""));
+		litigation =getDriver().findElement(By.xpath(""));
 		return litigation;
 	}
 }

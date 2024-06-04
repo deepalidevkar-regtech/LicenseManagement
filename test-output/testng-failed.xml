@@ -3,14 +3,26 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licenseCompanyadmin.InternalTC">
+      <class name="LicenseCriticalTestCase.PerformerInternalCriticalTC">
         <methods>
+          <include name="TerminateInternalInternalLicense"/>
+          <include name="MyDocuments"/>
+          <include name="Expired"/>
+          <include name="Expiring"/>
+          <include name="PendingForReviewInternalLicense"/>
+          <include name="ActivePerform"/>
+          <include name="RejectedInternalLicense"/>
+          <include name="AssignedButNotActivated"/>
+          <include name="MyReports"/>
+          <include name="Login"/>
+          <include name="ExpiringPerform"/>
+          <include name="Applied"/>
+          <include name="Myworkspace"/>
+          <include name="ExpiredPerform"/>
           <include name="driverclose"/>
           <include name="setBrowser"/>
-          <include name="Login"/>
-          <include name="MyDocuments"/>
         </methods>
-      </class> <!-- licenseCompanyadmin.InternalTC -->
+      </class> <!-- LicenseCriticalTestCase.PerformerInternalCriticalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

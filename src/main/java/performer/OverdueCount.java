@@ -104,9 +104,9 @@ public class OverdueCount
 		try
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
-			if(OverduePOM.closeMessage(driver).isDisplayed())	//If Compliance Updation message popped up,
+			if(OverduePOM.closeMessage().isDisplayed())	//If Compliance Updation message popped up,
 			{
-				OverduePOM.closeMessage(driver).click();		//then close the message.
+				OverduePOM.closeMessage().click();		//then close the message.
 			}
 		}
 		catch(Exception e)
@@ -125,14 +125,14 @@ public class OverdueCount
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
 		test.log(LogStatus.INFO, "***********Statutory Overdue************ ");
-		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickStatutoryOverdue(driver)));
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickStatutoryOverdue()));
 		
-		String string_overdueStatutory = OverduePOM.clickStatutoryOverdue(driver).getText();		//Storing old value of Statutory overdue.
+		String string_overdueStatutory = OverduePOM.clickStatutoryOverdue().getText();		//Storing old value of Statutory overdue.
 		overdueStatutory = Integer.parseInt(string_overdueStatutory);
-		String string_reviewStatutory = OverduePOM.readPendingReviewStatutory(driver).getText();	//Storing old value of Pending Review.
+		String string_reviewStatutory = OverduePOM.readPendingReviewStatutory().getText();	//Storing old value of Pending Review.
 		reviewStatutory = Integer.parseInt(string_reviewStatutory);
 		
-		OverduePOM.clickStatutoryOverdue(driver).click();				//Clicking on Statutory overdue.
+		OverduePOM.clickStatutoryOverdue().click();				//Clicking on Statutory overdue.
 		
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
@@ -142,21 +142,21 @@ public class OverdueCount
 		Thread.sleep(1000);		
 		js.executeScript("window.scrollBy(0,2000)");
 		
-		CFOcountPOM.readTotalItems1(driver).click();					//Clicking on total items count
+		CFOcountPOM.readTotalItems1().click();					//Clicking on total items count
 		Thread.sleep(500);
-		String item = CFOcountPOM.readTotalItems1(driver).getText();	//Reading total items String value
+		String item = CFOcountPOM.readTotalItems1().getText();	//Reading total items String value
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count = Integer.parseInt(compliancesCount);
 		
 		Thread.sleep(1000);
-		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link. 
+		OverduePOM.clickDashboard().click();						//Clicking on Dashboard link. 
 		
-		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickStatutoryOverdue(driver)));
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickStatutoryOverdue()));
 		
-		String string_overdueStatutoryNew = OverduePOM.clickStatutoryOverdue(driver).getText();		//Storing old value of Statutory overdue.
+		String string_overdueStatutoryNew = OverduePOM.clickStatutoryOverdue().getText();		//Storing old value of Statutory overdue.
 		newOverdueStatutory = Integer.parseInt(string_overdueStatutoryNew);
-		String string_reviewStatutoryNew = OverduePOM.readPendingReviewStatutory(driver).getText();	//Storing old value of Pending Review.
+		String string_reviewStatutoryNew = OverduePOM.readPendingReviewStatutory().getText();	//Storing old value of Pending Review.
 		newReviewStatutory = Integer.parseInt(string_reviewStatutoryNew);
 		
 		if(overdueStatutory > newOverdueStatutory && reviewStatutory < newReviewStatutory)
@@ -231,19 +231,19 @@ public class OverdueCount
 		Thread.sleep(1000);		
 		js.executeScript("window.scrollBy(0,2000)");
 		
-		CFOcountPOM.readTotalItems1(driver).click();
+		CFOcountPOM.readTotalItems1().click();
 		Thread.sleep(500);
-		String item1 = CFOcountPOM.readTotalItems1(driver).getText();
+		String item1 = CFOcountPOM.readTotalItems1().getText();
 		String[] bits1 = item1.split(" ");								//Splitting the String
 		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
 		int count1 = Integer.parseInt(compliancesCount1);
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link. 
+		OverduePOM.clickDashboard().click();						//Clicking on Dashboard link. 
 		
-		String string_newInternalOverdue = OverduePOM.clickInternalOverdue(driver).getText();		//Storing old value of Statutory overdue.
+		String string_newInternalOverdue = OverduePOM.clickInternalOverdue().getText();		//Storing old value of Statutory overdue.
 		newOverdueInternal = Integer.parseInt(string_newInternalOverdue);
-		String string_newInternalReview = OverduePOM.readPendingReviewInternal(driver).getText();	//Storing old value of Pending Review.
+		String string_newInternalReview = OverduePOM.readPendingReviewInternal().getText();	//Storing old value of Pending Review.
 		newReviewInternal = Integer.parseInt(string_newInternalReview);
 		
 		if(newOverdueInternal < overdueInternal && newReviewInternal > reviewInternal)
@@ -405,7 +405,7 @@ public class OverdueCount
 		driver.switchTo().alert().accept();
 		
 		Thread.sleep(1000);
-		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard
+		OverduePOM.clickDashboard().click();						//Clicking on Dashboard
 		Thread.sleep(2000);
 		int newActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents(driver).getText());	//Storing new Activated Events value
 		
@@ -513,7 +513,7 @@ public class OverdueCount
 		driver.switchTo().alert().accept();
 		
 		Thread.sleep(1000);
-		OverduePOM.clickDashboard(driver).click();								//Clicking on Dashboard.
+		OverduePOM.clickDashboard().click();								//Clicking on Dashboard.
 		Thread.sleep(2000);
 		int newActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents(driver).getText());	//Storing new Activated Events value
 		
@@ -595,7 +595,7 @@ public class OverdueCount
 		test = extent.startTest("Assignment Report count verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		CFOcountPOM.AssignmentReport(test, driver);
+		CFOcountPOM.AssignmentReport(test);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -607,7 +607,7 @@ public class OverdueCount
 		test = extent.startTest("Critical Document Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		OverduePOM.CriticalDocuments(driver, test);
+		OverduePOM.CriticalDocuments( test);
 		
 		extent.endTest(test);
 		extent.flush();

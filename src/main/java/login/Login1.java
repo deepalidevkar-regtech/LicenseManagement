@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import performer.OverduePOM;
 
-public class Login1 {
+public class Login1 extends webpage {
 	
 	
 		public static WebDriver driver = null;				//WebDriver instance created
@@ -35,26 +35,25 @@ public class Login1 {
 		
 		public static WebDriver UserLogin(String username, String password, String method) throws InterruptedException
 		{		
-			WebDriverWait wait = new WebDriverWait(driver, 40);
-			WebDriverWait wait1 = new WebDriverWait(driver, 60);
+			WebDriverWait wait = new WebDriverWait(getDriver(), (30));
 			
-			LoginPOM.setUname(driver).sendKeys(username);		//Sent username to input box 
+			LoginPOM.setUname().sendKeys(username);		//Sent username to input box 
 			Thread.sleep(500);
-			LoginPOM.setPassword(driver).sendKeys(password);	//Sent password to input box
-			LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
+			LoginPOM.setPassword().sendKeys(password);	//Sent password to input box
+			LoginPOM.clickSubmit().click();				//Clicked on Sign-in button
 			
 		if(!username.equalsIgnoreCase("performer@avantis.info"))
 			{
 				try
 				{
 					Thread.sleep(500);
-					wait1.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink(driver)));
-					wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickQALink(driver)));
-					LoginPOM.clickQALink(driver).click();				//Clicking on QA Link instead of OTP.
+					wait.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink()));
+					wait.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickQALink()));
+					LoginPOM.clickQALink().click();				//Clicking on QA Link instead of OTP.
 					
 					//----------------------------------------------------------
 					
-					wait1.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink(driver)));
+					wait.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink()));
 			/*	}
 				catch(Exception e)
 				{
@@ -62,9 +61,9 @@ public class Login1 {
 				}
 				*/
 				Thread.sleep(500);
-				wait1.until(ExpectedConditions.visibilityOf(LoginPOM.Question1(driver)));
-				wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.Question1(driver)));
-				String que1 = LoginPOM.Question1(driver).getText();	//Storing the question in que variable.
+				wait.until(ExpectedConditions.visibilityOf(LoginPOM.Question1()));
+				wait.until(ExpectedConditions.elementToBeClickable(LoginPOM.Question1()));
+				String que1 = LoginPOM.Question1().getText();	//Storing the question in que variable.
 				String ans1 = null;
 			//	LoginPOM.Answer1(driver).sendKeys("dog");
 			//	LoginPOM.Answer2(driver).sendKeys("red");
@@ -131,14 +130,14 @@ public class Login1 {
 				}
 				
 				if(ans1.equalsIgnoreCase("birthplace"))
-					LoginPOM.Answer1(driver).sendKeys("place");		//Sending answer to the input box.//place
+					LoginPOM.Answer1().sendKeys("place");		//Sending answer to the input box.//place
 				else
-					LoginPOM.Answer1(driver).sendKeys(ans1);		//Sending answer to the input box.
+					LoginPOM.Answer1().sendKeys(ans1);		//Sending answer to the input box.
 				Thread.sleep(1000);
 				
 				//----------------------------------------------------------
 				
-				String que2 = LoginPOM.Question2(driver).getText();	//Storing the question in que variable.
+				String que2 = LoginPOM.Question2().getText();	//Storing the question in que variable.
 				String ans2 = null;
 				if(method.equalsIgnoreCase("cfo"))
 				{
@@ -202,12 +201,12 @@ public class Login1 {
 				}
 				
 				if(ans2.equalsIgnoreCase("birthplace"))
-					LoginPOM.Answer2(driver).sendKeys("place");		//Sending answer to the input box.//place
+					LoginPOM.Answer2().sendKeys("place");		//Sending answer to the input box.//place
 				else
-					LoginPOM.Answer2(driver).sendKeys(ans2);		//Sending answer to the input box.
+					LoginPOM.Answer2().sendKeys(ans2);		//Sending answer to the input box.
 				Thread.sleep(100);
 			
-				LoginPOM.SubmitAnswer(driver).click();			//Clicking on Submit button.
+				LoginPOM.SubmitAnswer().click();			//Clicking on Submit button.
 				//return driver;
 				}
 				catch(Exception e)
@@ -221,29 +220,29 @@ public class Login1 {
 			//	wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickComplicane(driver)));
 			if(method.equalsIgnoreCase("License"))
 				{
-					LoginPOM.clickLicense(driver).click();				//Clicking on Litigation Image.
+					LoginPOM.clickLicense().click();				//Clicking on Litigation Image.
 				}
 				else if(method.equalsIgnoreCase("Litigation"))
 				{
-					LoginPOM.ClickLitigation(driver).click();			//Clicking on Litigation Image.
+					LoginPOM.ClickLitigation().click();			//Clicking on Litigation Image.
 				}
 				else if(method.equalsIgnoreCase("Contract"))
 				{
-					LoginPOM.ClickContract(driver).click();			//Clicking on Litigation Image.
+					LoginPOM.ClickContract().click();			//Clicking on Litigation Image.
 				}
 				else
 				{
-					LoginPOM.clickComplicane(driver).click();			//Clicking on Compliance Image.
+					LoginPOM.clickComplicane().click();			//Clicking on Compliance Image.
 					Thread.sleep(6000);
 				}
 				
 				try
 				{
 					Thread.sleep(2000);
-					if(OverduePOM.closeMessage(driver).isDisplayed())	//If Compliance Updation message popped up,
+					if(OverduePOM.closeMessage().isDisplayed())	//If Compliance Updation message popped up,
 					{
-						wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
-						OverduePOM.closeMessage(driver).click();		//then close the message.
+						wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage()));
+						OverduePOM.closeMessage().click();		//then close the message.
 					}
 				}
 				catch(Exception e)
@@ -399,12 +398,12 @@ public class Login1 {
 		
 		public static WebDriver UserLogin1(String username, String password, String method) throws InterruptedException
 		{		
-			WebDriverWait wait = new WebDriverWait(driver, 40);
+			WebDriverWait wait = new WebDriverWait(getDriver(), (30));
 			//WebDriverWait wait1 = new WebDriverWait(driver, 40);
 			
-			LoginPOM.setUname(driver).sendKeys(username);		//Sent username to input box 
+			LoginPOM.setUname().sendKeys(username);		//Sent username to input box 
 			Thread.sleep(500);
-			LoginPOM.setPassword(driver).sendKeys(password);	//Sent password to input box
+			LoginPOM.setPassword().sendKeys(password);	//Sent password to input box
 			//LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
 			
 			//JavascriptExecutor js = (JavascriptExecutor) driver;

@@ -26,8 +26,9 @@ import cfo.CFOcountPOM;
 import licenseCompanyadmin.StatutoryMethod;
 import licensePerformer.LiPeMethodsPOM;
 import licensePerformer.LiPerformerPOM;
+import login.webpage;
 
-public class licmgmtInternalTC {
+public class licmgmtInternalTC  extends webpage{
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
 	public static ExtentReports extent;			//Instance created for report file
@@ -68,7 +69,7 @@ public class licmgmtInternalTC {
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		//test = extent.startTest("Logging In - Performer (Statutory)");
+		/*test = extent.startTest("Logging In - Performer (Statutory)");
 	  //	test.log(LogStatus.PASS, "Logging into system");
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
@@ -91,6 +92,7 @@ public class licmgmtInternalTC {
 		/*test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();*/
+		initialization("License",2);
 	}
 /*@Test(priority = 2)
 	void AllFilter() throws InterruptedException
@@ -98,7 +100,7 @@ public class licmgmtInternalTC {
 		test = extent.startTest("All Filter Working Verification");
 		//test.log(LogStatus.PASS, "All Filter Working Verification");
 		
-		licenseCompanyadmin.StatutoryMethod.Allfilter(driver, test, "Internal");
+		licenseCompanyadmin.StatutoryMethod.Allfilter( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -109,7 +111,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("Active License Count Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
-			licmgmtMethodPOM.ActiveInternalLicense(driver, test, "Internal");
+			licmgmtMethodPOM.ActiveInternalLicense( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -120,7 +122,7 @@ public class licmgmtInternalTC {
 				test = extent.startTest("Expiring License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-			    licmgmtMethodPOM.ExpiringInternalLicense(driver, test, "Internal");
+			    licmgmtMethodPOM.ExpiringInternalLicense( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -131,7 +133,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("Expired License Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-		   licmgmtMethodPOM.ExpiredInternalLicense(driver, test, "Internal");
+		   licmgmtMethodPOM.ExpiredInternalLicense( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -142,7 +144,7 @@ public class licmgmtInternalTC {
 				test = extent.startTest("Applied Internal License Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.AppliedInternalLicense(driver, test, "Internal");
+				licenseCompanyadmin.StatutoryMethod.AppliedInternalLicense( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -153,7 +155,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("Pending For Review Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.pendingforreviewInternalLicense(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.pendingforreviewInternalLicense( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -164,7 +166,7 @@ public class licmgmtInternalTC {
 				test = extent.startTest("Rejected License Count  Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.RejectedInternalLicense(driver, test, "Internal");
+				licenseCompanyadmin.StatutoryMethod.RejectedInternalLicense( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -175,7 +177,7 @@ public class licmgmtInternalTC {
 				test = extent.startTest("Terminate License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.TerminateInternalLicense(driver, test, "Internal");
+				licenseCompanyadmin.StatutoryMethod.TerminateInternalLicense( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -186,7 +188,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("License Expired On Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.LicenseExpiredOnInternal(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.LicenseExpiredOnInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -194,18 +196,18 @@ public class licmgmtInternalTC {
 	@Test(priority = 11)
 	void LicenseExpiringOnInternal() throws InterruptedException, IOException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		Select drp = new Select(LiPerformerPOM.clickType());
 		drp.selectByIndex(1);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
 		test = extent.startTest("License ExpiringOn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licmgmtMethodPOM.LicenseExpiringOnStatutory(driver, test, "Internal");
+		licmgmtMethodPOM.LicenseExpiringOnStatutory( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -216,18 +218,18 @@ public class licmgmtInternalTC {
 			test = extent.startTest("By Status-Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusActiveInternalgraph(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.BystatusActiveInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 /*@Test(priority = 13)
+	/*@Test(priority = 13)
 	  void BystatusTerminateInternalgraph() throws InterruptedException
 		{
 			test = extent.startTest("By Status -Terminate License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusTerminateInternalgraph(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -238,7 +240,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("Internal By Status-Rejected Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusRejectedInternalgraph(driver, test, "Internal");
+			StatutoryMethod.BystatusRejectedInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -248,29 +250,29 @@ public class licmgmtInternalTC {
 		{
 			test = extent.startTest("By Status-Expired applied but not Renewed License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-			licenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedInternalgraph(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	/* @Test(priority = 15)
+	 @Test(priority = 15)
 	  void BystatusExpiredInternal() throws InterruptedException
 		{
 			test = extent.startTest("By Status- Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpiredInternal(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.BystatusExpiredInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*  @Test(priority = 16)
+	 @Test(priority = 16)
 	  void BystatusExpringInternalgraph() throws InterruptedException
 		{
 			test = extent.startTest("By Status-Application Overdue (Expiring but not applied)License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpringInternalgraph(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.BystatusExpringInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -281,7 +283,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("By License Type- Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-	        licmgmtMethodPOM.ByLicensetypeExpiredInternal(driver, test, "Internal");
+	        licmgmtMethodPOM.ByLicensetypeExpiredInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -292,7 +294,7 @@ public class licmgmtInternalTC {
 			test = extent.startTest("By License Type-Application Overdue (Expiring but not applied) License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiringInternal(driver, test, "Internal");
+			licenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -303,48 +305,48 @@ public class licmgmtInternalTC {
 				test = extent.startTest("By License Type Graph Expired Applied But not Renewed License On Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-			   licmgmtMethodPOM.ByLicensetypeAppliedInternal(driver, test, "Internal");
+			   licmgmtMethodPOM.ByLicensetypeAppliedInternal( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
 			}
-	@Test(priority = 20)
+@Test(priority = 20)
 	void BylicnesetypeActiveInternal() throws InterruptedException
 	{
 		test = extent.startTest("By License Type Graph Active License On Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licmgmtMethodPOM.ByLicensetypeActiveInternal(driver, test, "Internal");
+		licmgmtMethodPOM.ByLicensetypeActiveInternal( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 21)
+	@Test(priority = 21)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
 			test = extent.startTest("By License Type Graph Terminate License On Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
-             licmgmtMethodPOM.ByLicensetypeTerminateInternal(driver, test, "Internal");
+             licmgmtMethodPOM.ByLicensetypeTerminateInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 21)
+	@Test(priority = 21)
 		void BylicnesetypeRejectedInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License type - Rejected Graph  Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licmgmtMethodPOM.ByLicensetypeRejectedmgmtInternal(driver, test, "Internal");
+			licmgmtMethodPOM.ByLicensetypeRejectedmgmtInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 22)
+	/*	@Test(priority = 22)
 	void MyWorkspace() throws InterruptedException, IOException
 	{
-   	  WebDriverWait wait = new WebDriverWait(driver, 5);
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
 		//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
 		
@@ -352,7 +354,7 @@ public class licmgmtInternalTC {
 	   //	drp.selectByIndex(1);
 		test = extent.startTest("My Workspace  Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
-      licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Internal");
+      licmgmtMethodPOM.MyworkspaceaddLicense( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -366,30 +368,30 @@ public class licmgmtInternalTC {
 			//test = extent.startTest("My Document Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licmgmtMethodPOM.MyDocuments(driver, test, "Internal");
+			StatutoryMethod.MyDocuments( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 24)
+@Test(priority = 24)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
 		
-		licensePerformer.LiPeMethodsPOM.Reports(driver, test, "Internal");
+		licensePerformer.LiPeMethodsPOM.Reports( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 
-/*@Test(priority = 25)
+@Test(priority = 25)
 	void RenewInternalLicense() throws InterruptedException, IOException
 	{
 	{
 		test = extent.startTest("Internal Renew License");
 		//test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
-		StatutoryMethod.RenewInternalLicense(driver, test, "Internal");
+		StatutoryMethod.RenewInternalLicense( test, "Internal");
 
 		extent.endTest(test);
 		extent.flush();
@@ -401,7 +403,7 @@ public class licmgmtInternalTC {
 		{
 			test = extent.startTest("License New Assignment");
 			//test.log(LogStatus.INFO, "Test Initiated");
-			StatutoryMethod.LicenseActivation_InternalNewAssignment(driver, test, "Internal");
+			StatutoryMethod.LicenseActivation_InternalNewAssignment( test, "Internal");
 			extent.endTest(test);
 			extent.flush();
 		}
@@ -410,7 +412,7 @@ public class licmgmtInternalTC {
 		{
 			test = extent.startTest("License Creation Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-			StatutoryMethod.InternalLicenseCreation(driver, test, "Internal");
+			StatutoryMethod.InternalLicenseCreation( test, "Internal");
 			extent.endTest(test);
 			extent.flush();
 		}
@@ -421,7 +423,7 @@ public class licmgmtInternalTC {
 	
 	test = extent.startTest("Nominee Details");
 	//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
-	licmgmtMethodPOM.NomineeDetails(driver,test,"Internal");
+	licmgmtMethodPOM.NomineeDetails(test,"Internal");
 
 	extent.endTest(test);
 	extent.flush();
@@ -432,17 +434,17 @@ public class licmgmtInternalTC {
 		test = extent.startTest("Assigned But Not Activated  Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		Select drp = new Select(LiPerformerPOM.clickType());
 		drp.selectByIndex(1);
 		
 		try
 		{
 			Thread.sleep(400);
-			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 		}
 		catch(Exception e)
 		{
@@ -450,9 +452,9 @@ public class licmgmtInternalTC {
 		}
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		LiPeMethodsPOM.AssignedButNotActivated(driver, test, "Internal");
+		LiPeMethodsPOM.AssignedButNotActivated( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -461,7 +463,8 @@ public class licmgmtInternalTC {
 	@AfterMethod
 	 void driverclose()
 	 {
-		  driver.close();
+		 closeBrowser();
+		  //driver.close();
 	 }
 
 }

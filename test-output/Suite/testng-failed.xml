@@ -1,52 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="performer(failed)">
+<suite thread-count="2" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="performer.OverdueCount">
+      <class name="licenseReviewer.LicenseReviewerInternalTC">
         <methods>
-          <include name="AssignmentReport"/>
-          <include name="AssignedEventsMultiple"/>
-          <include name="StatutoryChecklist"/>
-          <include name="InternalCheckList"/>
-          <include name="Closing"/>
-          <include name="WorkspaceOverdue"/>
+          <include name="setBrowser"/>
+          <include name="AssignedButNotActivated"/>
+          <include name="MyReports"/>
+          <include name="driverclose"/>
+          <include name="NomineeDetails"/>
+          <include name="Login"/>
+          <include name="ExpiringInternalLicense"/>
+          <include name="LicenseExpiringOnInternal"/>
+          <include name="MyDocuments"/>
+          <include name="MyWorkspace"/>
+          <include name="LicenseExpiredOnInternal"/>
+        </methods>
+      </class> <!-- licenseReviewer.LicenseReviewerInternalTC -->
+      <class name="licenseReviewer.LicenseReviewerstatutoryTC">
+        <methods>
+          <include name="MyDocuments"/>
+          <include name="AssignedButNotActivated"/>
+          <include name="driverclose"/>
+          <include name="LicenseExpiringOnStatutory"/>
+          <include name="Login"/>
+          <include name="LicenseExpiredOnStatutory"/>
+          <include name="PendingForReview"/>
+          <include name="MyReports"/>
+          <include name="setBrowser"/>
           <include name="CriticalDocuments"/>
-          <include name="DashboardOverdue"/>
-          <include name="AssignedEventsSingle"/>
-          <include name="CalenderCheckList"/>
-          <include name="DetailedReport"/>
-          <include name="ReviseCompliance"/>
-          <include name="setBrowser"/>
-          <include name="MyReminder"/>
+          <include name="Myworkspace"/>
         </methods>
-      </class> <!-- performer.OverdueCount -->
+      </class> <!-- licenseReviewer.LicenseReviewerstatutoryTC -->
     </classes>
-  </test> <!-- performer(failed) -->
-  <test thread-count="5" name="cfo1(failed)">
-    <classes>
-      <class name="cfo.CFOcountInternal">
-        <methods>
-          <include name="PieChartInTime_Internal"/>
-          <include name="RiskSummaryMediumInternal"/>
-          <include name="clickPenaltyInternal"/>
-          <include name="Closing"/>
-          <include name="RiskSummaryHighInternal"/>
-          <include name="DepartmentSummaryMediumInternal"/>
-          <include name="BargraphLabourHighInternal"/>
-          <include name="RiskSummaryLowInternal"/>
-          <include name="clickUsersInternal"/>
-          <include name="PieChartAfterDueDate_Internal"/>
-          <include name="DepartmentSummaryLowInternal"/>
-          <include name="ClickCompliancesInternal"/>
-          <include name="BargraphLabourLowInternal"/>
-          <include name="setBrowser"/>
-          <include name="clickCategoriesInternal"/>
-          <include name="PieChartNotCompleted_Internal"/>
-          <include name="BargraphLabourMediumInternal"/>
-          <include name="DepartmentSummaryHighInternal"/>
-        </methods>
-      </class> <!-- cfo.CFOcountInternal -->
-    </classes>
-  </test> <!-- cfo1(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

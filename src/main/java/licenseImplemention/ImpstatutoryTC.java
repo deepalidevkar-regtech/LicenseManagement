@@ -20,7 +20,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ImpstatutoryTC {
+import login.webpage;
+
+public class ImpstatutoryTC extends webpage {
 
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
@@ -101,7 +103,7 @@ public class ImpstatutoryTC {
 	
 	public static void progress1(WebDriver driver)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 180);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		try
 		{
 			Thread.sleep(500);
@@ -118,7 +120,7 @@ public class ImpstatutoryTC {
 	{
 		test = extent.startTest("statutory License Compliance Mapping Export Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
-		 ImpMethodPOM.compliancemappingExport(driver, test, "Statutory");
+		 ImpMethodPOM.compliancemappingExport(test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -127,7 +129,7 @@ public class ImpstatutoryTC {
 	{
 		test = extent.startTest("statutory License Creation Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
-		 ImpMethodPOM.statutorylicnesecreation(driver, test, "Statutory");
+		 ImpMethodPOM.statutorylicnesecreation(test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -135,7 +137,7 @@ public class ImpstatutoryTC {
 	void StatutoryAddNewAssignment()throws InterruptedException, IOException
 	{
 		test = extent.startTest("statutory Add Assignment Verification");
-		 ImpMethodPOM.AddAssignment(driver, test, "Statutory");
+		 ImpMethodPOM.AddAssignment(test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -143,7 +145,7 @@ public class ImpstatutoryTC {
 	void Licenselist()throws InterruptedException, IOException
 	{
 		test = extent.startTest("On License List Page Update License Working Verification");
-		 ImpMethodPOM.licenselist(driver, test, "Statutory");
+		 ImpMethodPOM.licenselist(test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -151,7 +153,7 @@ public class ImpstatutoryTC {
 	void Entitesassignment()throws InterruptedException, IOException
 	{
 		test = extent.startTest("License Entites Assignment Verification");
-		 ImpMethodPOM.Entitesassignment(driver, test, "Statutory");
+		 ImpMethodPOM.Entitesassignment(test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -159,7 +161,7 @@ public class ImpstatutoryTC {
 	void Appliedlicensecreation()throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied License Creation Vertification");
-		 ImpMethodPOM.appliedlicensecreation(driver, test, "Statutory");
+		 ImpMethodPOM.appliedlicensecreation(test, "Statutory");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -168,7 +170,7 @@ public class ImpstatutoryTC {
 		{
 			test = extent.startTest(" IsPermanent License working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-             ImpMethodPOM.IsPermenenetLic(driver, test, "Statutory");
+             ImpMethodPOM.IsPermenenetLic(test, "Statutory");
 			extent.endTest(test);
 			extent.flush();
 		}

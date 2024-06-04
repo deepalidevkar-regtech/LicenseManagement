@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ReviewerPOM 
+import login.webpage;
+
+public class ReviewerPOM extends webpage
 {
 	private static WebElement statutoryReview = null;		//WebElement variable created for clicking on value of Statutory 'Pending for Review'
 	private static WebElement statutoryAction = null;		//WebElement variable created for clicking on Action button.
@@ -31,304 +33,304 @@ public class ReviewerPOM
 	private static WebElement internalRejectValue = null;	//WebElement variable created for reading Internal Reject value.
 	private static List<WebElement> elementsList = null;	//WebElement list created for selecting Status-Asc/Desc (Status shows multiple elements back side)
 	
-	public static WebElement ComplainceInternalReviewer(WebDriver driver)
+	public static WebElement ComplainceInternalReviewer()
 	{
-		statutoryReview = driver.findElement(By.xpath("//*[@id='ComplainceInternalReviewer']/div/div/div[1]/button"));
+		statutoryReview = getDriver().findElement(By.xpath("//*[@id='ComplainceInternalReviewer']/div/div/div[1]/button"));
 		return statutoryReview;
 	}
 	
-	public static WebElement clickStatutoryReview(WebDriver driver)		//Method for searching Statutory Review value element.
+	public static WebElement clickStatutoryReview()		//Method for searching Statutory Review value element.
 	{
-		statutoryReview = driver.findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerPendingforReviewePREOcount']"));
+		statutoryReview = getDriver().findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerPendingforReviewePREOcount']"));
 		return statutoryReview;
 	}
 	
-	public static WebElement clickAction(WebDriver driver)			//Method for searching action button
+	public static WebElement clickAction()			//Method for searching action button
 	{
-		statutoryAction = driver.findElement(By.xpath("//div[@id='grid']/div[4]/table/tbody/tr[1]/td[17]/a"));	//XPath for clicking third action button  
+		statutoryAction = getDriver().findElement(By.xpath("//div[@id='grid']/div[4]/table/tbody/tr[1]/td[17]/a"));	//XPath for clicking third action button  
 		return statutoryAction;
 	}
 	
-	public static WebElement clickAction1(WebDriver driver)			//Method for searching action button
+	public static WebElement clickAction1()			//Method for searching action button
 	{
-		statutoryAction = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit2'])[1]"));	//XPath for clicking first action button  
+		statutoryAction = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit2'])[1]"));	//XPath for clicking first action button  
 		return statutoryAction;
 	}
 	
-	public static List<WebElement> clickActions(WebDriver driver)
+	public static List<WebElement> clickActions()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-edit2']"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-edit2']"));
 		return elementsList;
 	}
 	
-	public static WebElement clickDownload(WebDriver driver)		//Method searching Download link
+	public static WebElement clickDownload()		//Method searching Download link
 	{
-		download = driver.findElement(By.linkText("Download"));
+		download = getDriver().findElement(By.linkText("Download"));
 		return download;
 	}
 	
-	public static WebElement clickDownload1(WebDriver driver)		//Method searching Download link
+	public static WebElement clickDownload1()		//Method searching Download link
 	{
-		download = driver.findElement(By.xpath("//*[@id = 'rptComplianceVersion_lblpathDownload_0']"));
+		download = getDriver().findElement(By.xpath("//*[@id = 'rptComplianceVersion_lblpathDownload_0']"));
 		return download;
 	}
 	
-	public static WebElement clickDownload1Document(WebDriver driver)		//Method searching Download link
+	public static WebElement clickDownload1Document()		//Method searching Download link
 	{
-		download = driver.findElement(By.xpath("//a[@id='rptComplianceDocumnets_lblCompDocpathDownload_0']"));
+		download = getDriver().findElement(By.xpath("//a[@id='rptComplianceDocumnets_lblCompDocpathDownload_0']"));
 		return download;
 	}
 	
-	public static WebElement clickDownload2(WebDriver driver)				//Method searching Download link
+	public static WebElement clickDownload2()				//Method searching Download link
 	{
-		download = driver.findElement(By.xpath("//*[@id='rptComplianceVersion3_btnComplinceVersionDoc1_0']"));
+		download = getDriver().findElement(By.xpath("//*[@id='rptComplianceVersion3_btnComplinceVersionDoc1_0']"));
 		
 		return download;
 	}
 	
-	public static WebElement clickDownloadInternal1(WebDriver driver)		//Method searching Download link
+	public static WebElement clickDownloadInternal1()		//Method searching Download link
 	{
-		download = driver.findElement(By.xpath("//*[@id = 'rptComplianceVersion3_lblInternalpathDownload_0']"));
+		download = getDriver().findElement(By.xpath("//*[@id = 'rptComplianceVersion3_lblInternalpathDownload_0']"));
 		return download;
 	}
 	
-	public static WebElement clickView(WebDriver driver)			//Method for searching View link
+	public static WebElement clickView()			//Method for searching View link
 	{
-		view = driver.findElement(By.linkText("View"));
+		view = getDriver().findElement(By.linkText("View"));
 		return view;
 	}
 	
-	public static WebElement clickView1(WebDriver driver)			//Method for searching View link
+	public static WebElement clickView1()			//Method for searching View link
 	{
-		view = driver.findElement(By.xpath("//a[@id='rptComplianceVersion_lnkViewDoc_0']"));
+		view = getDriver().findElement(By.xpath("//a[@id='rptComplianceVersion_lnkViewDoc_0']"));
 		return view;
 	}
 	
-	public static WebElement clickCloseView(WebDriver driver)		//Method for searching Close View cross
+	public static WebElement clickCloseView()		//Method for searching Close View cross
 	{
-		closeView = driver.findElement(By.xpath("//div[@id='DocumentReviewPopUp1']/div/div/div[1]/button"));
+		closeView = getDriver().findElement(By.xpath("//div[@id='DocumentReviewPopUp1']/div/div/div[1]/button"));
 		return closeView;
 	}
 	
-	public static WebElement clickCloseView1(WebDriver driver)		//Method for searching Close View cross
+	public static WebElement clickCloseView1()		//Method for searching Close View cross
 	{
-		closeView = driver.findElement(By.xpath("//div[@id='DocumentPopUpSampleForm']/div/div/div[1]/button"));
+		closeView = getDriver().findElement(By.xpath("//div[@id='DocumentPopUpSampleForm']/div/div/div[1]/button"));
 		return closeView;
 	}
 	
-	public static WebElement clickCloseViewInternal(WebDriver driver)	//Method for searching Internal Close View cross 
+	public static WebElement clickCloseViewInternal()	//Method for searching Internal Close View cross 
 	{
-		closeViewInternal = driver.findElement(By.xpath("//div[@id='DocumentReviewPopUp']/div/div/div[1]/button"));
+		closeViewInternal = getDriver().findElement(By.xpath("//div[@id='DocumentReviewPopUp']/div/div/div[1]/button"));
 		return closeViewInternal;
 	}
 	
-	public static WebElement clickCloseViewInternal1(WebDriver driver)	//Method for searching Internal Close View cross 
+	public static WebElement clickCloseViewInternal1()	//Method for searching Internal Close View cross 
 	{
-		closeViewInternal = driver.findElement(By.xpath("//*[@id='modalDocumentReviewerViewerInternal']/div/div/div[1]/button"));
+		closeViewInternal = getDriver().findElement(By.xpath("//*[@id='modalDocumentReviewerViewerInternal']/div/div/div[1]/button"));
 		return closeViewInternal;
 	}
 	
-	public static WebElement clickClosedDelayed(WebDriver driver)		//Method searching Closed-Delayed radio button
+	public static WebElement clickClosedDelayed()		//Method searching Closed-Delayed radio button
 	{
-		closedDelay = driver.findElement(By.xpath("//*[@id = 'rdbtnStatus1_0']"));
+		closedDelay = getDriver().findElement(By.xpath("//*[@id = 'rdbtnStatus1_0']"));
 		return closedDelay;
 	}
 	
-	public static WebElement clickClosedTimely(WebDriver driver)		//Method for searching Closed-Timely radio button
+	public static WebElement clickClosedTimely()		//Method for searching Closed-Timely radio button
 	{
-		closedTimely = driver.findElement(By.xpath("//*[@id='rdbtnStatus1']/tbody/tr/td[2]/label"));
+		closedTimely = getDriver().findElement(By.xpath("//*[@id='rdbtnStatus1']/tbody/tr/td[2]/label"));
 		return closedTimely;
 	}
 	
-	public static WebElement clickClosedTimelyInternal(WebDriver driver)	//Method for closing View opened in Internal View
+	public static WebElement clickClosedTimelyInternal()	//Method for closing View opened in Internal View
 	{
-		closedTimelyInternal = driver.findElement(By.xpath("//*[@id='rdbtnStatus3_1']"));
+		closedTimelyInternal = getDriver().findElement(By.xpath("//*[@id='rdbtnStatus3_1']"));
 		return closedTimelyInternal;
 	}
 	
-	public static WebElement clickCheckBox(WebDriver driver)			//Method for searching check box
+	public static WebElement clickCheckBox()			//Method for searching check box
 	{
-		checkBox = driver.findElement(By.xpath("//*[@id='chkPenaltySaveReview']"));
+		checkBox = getDriver().findElement(By.xpath("//*[@id='chkPenaltySaveReview']"));
 		return checkBox;
 	}
 	
-	public static WebElement insertLiability1(WebDriver driver)			//Method for searching Liability for System text box
+	public static WebElement insertLiability1()			//Method for searching Liability for System text box
 	{
-		liability1 = driver.findElement(By.xpath("//input[@id='txtValueAsPerSystem']"));
+		liability1 = getDriver().findElement(By.xpath("//input[@id='txtValueAsPerSystem']"));
 		return liability1;
 	}
 	
-	public static WebElement insertLiability2(WebDriver driver)			//Method for searching Liability for return text box
+	public static WebElement insertLiability2()			//Method for searching Liability for return text box
 	{
-		liability2 = driver.findElement(By.xpath("//input[@id='txtValueAsPerReturn']"));
+		liability2 = getDriver().findElement(By.xpath("//input[@id='txtValueAsPerReturn']"));
 		return liability2;
 	}
 	
-	public static WebElement insertLiability3(WebDriver driver)			//Method for searching Liability Paid text box
+	public static WebElement insertLiability3()			//Method for searching Liability Paid text box
 	{
-		liability3 = driver.findElement(By.xpath("//input[@id='txtLiabilityPaid']"));
+		liability3 = getDriver().findElement(By.xpath("//input[@id='txtLiabilityPaid']"));
 		return liability3;
 	}
 	
-	public static WebElement insertTextArea(WebDriver driver)			//Method for searching text area
+	public static WebElement insertTextArea()			//Method for searching text area
 	{
-		textArea = driver.findElement(By.xpath("//*[@id='tbxRemarks1']"));
+		textArea = getDriver().findElement(By.xpath("//*[@id='tbxRemarks1']"));
 		return textArea;
 	}
 	
-	public static WebElement insertTextAreaInternal(WebDriver driver)	//Method for searching Internal text area
+	public static WebElement insertTextAreaInternal()	//Method for searching Internal text area
 	{
-		textAreaInternal = driver.findElement(By.xpath("//textarea[@id='tbxRemarks3']"));
+		textAreaInternal = getDriver().findElement(By.xpath("//textarea[@id='tbxRemarks3']"));
 		return textAreaInternal;
 	}
 	
-	public static WebElement clickApprove(WebDriver driver)				//Method for searching Approve button
+	public static WebElement clickApprove()				//Method for searching Approve button
 	{
-		approve = driver.findElement(By.xpath("//input[@value='Approve']"));
+		approve = getDriver().findElement(By.xpath("//input[@value='Approve']"));
 		return approve;
 	}
 	
-	public static WebElement clickReject(WebDriver driver)				//Method searching Reject button
+	public static WebElement clickReject()				//Method searching Reject button
 	{
-		reject = driver.findElement(By.xpath("//input[@value='Reject']"));
+		reject = getDriver().findElement(By.xpath("//input[@value='Reject']"));
 		return reject;
 	}
 	
-	public static WebElement readStatutoryReject(WebDriver driver)		//Method for searching Statutory Reject button to read statutory value  
+	public static WebElement readStatutoryReject()		//Method for searching Statutory Reject button to read statutory value  
 	{
-		statutoryRejectValue = driver.findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerRejectedPREOcount']"));
+		statutoryRejectValue = getDriver().findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerRejectedPREOcount']"));
 		return statutoryRejectValue;
 	}
 	
-	public static WebElement clickDashboard(WebDriver driver)			//Method for searching 'My Dashboard' link
+	public static WebElement clickDashboard()			//Method for searching 'My Dashboard' link
 	{
-		dashboard = driver.findElement(By.linkText("My Dashboard "));
+		dashboard = getDriver().findElement(By.linkText("My Dashboard "));
 		return dashboard;
 	}
 	
-	public static WebElement clickInternalReview(WebDriver driver)		//Method for searching Internal Review value element.
+	public static WebElement clickInternalReview()		//Method for searching Internal Review value element.
 	{
-		internalReview = driver.findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerPendingforRevieweInternalPREOcount']"));
+		internalReview = getDriver().findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerPendingforRevieweInternalPREOcount']"));
 		return internalReview;
 	}
 	
-	public static WebElement readInternalReject(WebDriver driver)
+	public static WebElement readInternalReject()
 	{
-		internalRejectValue = driver.findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerRejectedInternalPREOcount']"));
+		internalRejectValue = getDriver().findElement(By.xpath("//div[@id='ContentPlaceHolder1_divReviewerRejectedInternalPREOcount']"));
 		return internalRejectValue;
 	}
 	
-	public static List<WebElement> clickStatus(WebDriver driver) 		//Method to get list of action buttons on web page
+	public static List<WebElement> clickStatus() 		//Method to get list of action buttons on web page
 	{
-		elementsList = driver.findElements(By.xpath("//*[contains(text(),'Status')][@class='k-link']"));
+		elementsList = getDriver().findElements(By.xpath("//*[contains(text(),'Status')][@class='k-link']"));
 		return elementsList;
 	}
 	
-	public static WebElement clickLastPage(WebDriver driver)			//Searching Last Page arrow button
+	public static WebElement clickLastPage()			//Searching Last Page arrow button
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@title='Go to the last page']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@title='Go to the last page']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement InterimApproveRadio(WebDriver driver)		//Searching radio button for Interim Approve
+	public static WebElement InterimApproveRadio()		//Searching radio button for Interim Approve
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='rdbtnStatus1_0']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='rdbtnStatus1_0']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement clickMyEscalation(WebDriver driver)		//Searching 'My Escalation' link
+	public static WebElement clickMyEscalation()		//Searching 'My Escalation' link
 	{
-		statutoryAction = driver.findElement(By.linkText("My Escalation"));
+		statutoryAction = getDriver().findElement(By.linkText("My Escalation"));
 		return statutoryAction;
 	}
 	
-	public static WebElement clickShowDropdown(WebDriver driver)		//Clicking on Show dropdown
+	public static WebElement clickShowDropdown()		//Clicking on Show dropdown
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlPageSize']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlPageSize']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement checkEscalationTable(WebDriver driver)		//Searching records table to check visibility
+	public static WebElement checkEscalationTable()		//Searching records table to check visibility
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdReviewerComplianceDocument']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdReviewerComplianceDocument']"));
 		return statutoryAction;
 	}
 	
-	public static List<WebElement> clickWorkFileText(WebDriver driver)	//Searching all 'Work File Timeline' text boxes
+	public static List<WebElement> clickWorkFileText()	//Searching all 'Work File Timeline' text boxes
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr/td[9]/input"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr/td[9]/input"));
 		return elementsList;
 	}
 	
-	public static List<WebElement> clickEscalationText(WebDriver driver)	//Searching all 'Escalation' text boxes
+	public static List<WebElement> clickEscalationText()	//Searching all 'Escalation' text boxes
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr/td[10]/input"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class='k-grid-content k-auto-scrollable']/table/tbody/tr/td[10]/input"));
 		return elementsList;
 	}
 	
-	public static WebElement loadNextPage(WebDriver driver)				//Searching Next Page load button.
+	public static WebElement loadNextPage()				//Searching Next Page load button.
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lBNext']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lBNext']"));
 		return statutoryAction;
 	}
 	
-	public static List<WebElement> getAllButtons(WebDriver driver)		//Searching all 'Action' buttons
+	public static List<WebElement> getAllButtons()		//Searching all 'Action' buttons
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
 		return elementsList;
 	}
 	
-	public static WebElement clickFirstAction(WebDriver driver)		//Searching all 'Action' buttons
+	public static WebElement clickFirstAction()		//Searching all 'Action' buttons
 	{
-		statutoryAction = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit' and not(@disabled)])[1]"));
+		statutoryAction = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit' and not(@disabled)])[1]"));
 		return statutoryAction;
 	}
 	
-	public static WebElement clickUpdate(WebDriver driver)
+	public static WebElement clickUpdate()
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@class='k-button k-button-icontext k-primary k-grid-update']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@class='k-button k-button-icontext k-primary k-grid-update']"));
 		return statutoryAction;
 	}
 	
-	public static List<WebElement> clickCheckboxes(WebDriver driver)
+	public static List<WebElement> clickCheckboxes()
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class = 'k-checkbox-label k-no-text']"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class = 'k-checkbox-label k-no-text']"));
 		return elementsList;
 	}
 	
-	public static WebElement clickSaveButton(WebDriver driver)			//Searching drop down of User to Assign
+	public static WebElement clickSaveButton()			//Searching drop down of User to Assign
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id = 'btnsave']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id = 'btnsave']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement selectUserAssign(WebDriver driver)			//Searching drop down of User to Assign
+	public static WebElement selectUserAssign()			//Searching drop down of User to Assign
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewUsers']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewUsers']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement readAssignedUser(WebDriver driver)			//Searching name of user assigned in first row.
+	public static WebElement readAssignedUser()			//Searching name of user assigned in first row.
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdComplianceInstances_lbluser_0']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdComplianceInstances_lbluser_0']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement clickFirstCheckbox(WebDriver driver)		//Searching first checkbox
+	public static WebElement clickFirstCheckbox()		//Searching first checkbox
 	{
-		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdComplianceInstances_chkCompliances_0']"));
+		statutoryAction = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdComplianceInstances_chkCompliances_0']"));
 		return statutoryAction;
 	}
 	
-	public static WebElement sledtre(WebDriver driver)					//
+	public static WebElement sledtre()					//
 	{
-		statutoryAction = driver.findElement(By.xpath(""));
+		statutoryAction = getDriver().findElement(By.xpath(""));
 		return statutoryAction;
 	}
 	
-	public static WebElement seletldere(WebDriver driver)				//
+	public static WebElement seletldere()				//
 	{
-		statutoryAction = driver.findElement(By.xpath(""));
+		statutoryAction = getDriver().findElement(By.xpath(""));
 		return statutoryAction;
 	}
 }

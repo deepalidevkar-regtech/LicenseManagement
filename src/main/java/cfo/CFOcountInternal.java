@@ -23,9 +23,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import login.webpage;
 import performer.OverduePOM;
 
-public class CFOcountInternal 
+public class CFOcountInternal extends webpage
 {
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
@@ -97,11 +98,11 @@ public class CFOcountInternal
 		driver = login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
 		
 		Thread.sleep(700);
-		Select drp = new Select(CFOcountPOM.selectInternal(driver));
+		Select drp = new Select(CFOcountPOM.selectInternal());
 		drp.selectByIndex(1);
 		
 		Thread.sleep(1000);
-		CFOcountPOM.clickApply(driver).click();
+		CFOcountPOM.clickApply().click();
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -129,21 +130,22 @@ public class CFOcountInternal
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		int valueCompliances = Integer.parseInt(CFOcountPOM.readCompliancesInternal(driver).getText());	//Storing old value of 'Compliances'.
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		int valueCompliances = Integer.parseInt(CFOcountPOM.readCompliancesInternal().getText());	//Storing old value of 'Compliances'.
 		
-		CFOcountPOM.clickCategories(driver).click();					//Clicking on 'Categories'.
+		CFOcountPOM.clickCategories().click();					//Clicking on 'Categories'.
 		
 		Thread.sleep(500);
-		litigationPerformer.MethodsPOM.progress(driver);
+		litigationPerformer.MethodsPOM.progress();
 		
-		WebDriverWait wait = new WebDriverWait(driver, 90);
+
+WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class = 'k-grid-content k-auto-scrollable']"))); //Wait until first row's Compliance Count to be visible
 		
-		CFOcountPOM.readTotalItems1(driver).click();
-		String s1 = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String s1 = CFOcountPOM.readTotalItems1().getText();
 		String[] bits1 = s1.split(" ");									//Splitting the String
 		String itomsCount = bits1[bits1.length - 2];						//Getting the second last word (total number of items)
 		int count2 = 0;
@@ -153,7 +155,7 @@ public class CFOcountInternal
 			for(int i = 0; i < 4; i++)
 			{
 				Thread.sleep(2000);
-				s1 = CFOcountPOM.readTotalItems1(driver).getText();
+				s1 = CFOcountPOM.readTotalItems1().getText();
 				bits1 = s1.split(" ");									//Splitting the String
 				itomsCount = bits1[bits1.length - 2];
 				if(!itomsCount.equalsIgnoreCase("to"))					//If not items found
@@ -165,14 +167,14 @@ public class CFOcountInternal
 		count2 = Integer.parseInt(itomsCount);
 		loop = count2 / 10;									//Dividing by 10, as total number of items in a list is 10
 		
-		elementsList = CFOcountPOM.readCompliancesList(driver);			//Searching all values of Compliance 
+		elementsList = CFOcountPOM.readCompliancesList();			//Searching all values of Compliance 
 		int n = elementsList.size();
 		int value = 0;
 		int count1 = 0;
 		int CategoriesCount = 0;
 		for(int i = 0; i < n; i++)
 		{
-			elementsList = CFOcountPOM.readCompliancesList(driver);
+			elementsList = CFOcountPOM.readCompliancesList();
 			value = Integer.parseInt(elementsList.get(i).getText());	//Reading each Compliance value.
 			count = count + value;										//Calculating the read Compliance values.
 			
@@ -180,18 +182,18 @@ public class CFOcountInternal
 			{
 				Thread.sleep(500);
 				CategoriesCount = CategoriesCount + 1;
-				elementsList1 = CFOcountPOM.readCompliancesList(driver);
+				elementsList1 = CFOcountPOM.readCompliancesList();
 				elementsList1.get(i).click();
 				
 				Thread.sleep(500);
-				litigationPerformer.MethodsPOM.progress(driver);
+				litigationPerformer.MethodsPOM.progress();
 				
 				Thread.sleep(500);
 				try
 				{
-					wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.waitProgress(driver)));
+					wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.waitProgress()));
 					Thread.sleep(300);
-					wait.until(ExpectedConditions.invisibilityOf(CFOcountPOM.waitProgress(driver)));
+					wait.until(ExpectedConditions.invisibilityOf(CFOcountPOM.waitProgress()));
 				}
 				catch(Exception e)
 				{
@@ -203,24 +205,24 @@ public class CFOcountInternal
 				
 				js.executeScript("window.scrollBy(0,500)");				//Scrolling down window by 2000 px.
 				
-				CFOcountPOM.readTotalItems1(driver).click();
+				CFOcountPOM.readTotalItems1().click();
 				
 				Thread.sleep(1000);
-				String item = CFOcountPOM.readTotalItems1(driver).getText();
+				String item = CFOcountPOM.readTotalItems1().getText();
 				String[] bits = item.split(" ");								//Splitting the String
 				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 				
 				if(compliancesCount.equalsIgnoreCase("to"))
 				{
 					Thread.sleep(2500);
-					item = CFOcountPOM.readTotalItems1(driver).getText();
+					item = CFOcountPOM.readTotalItems1().getText();
 					bits = item.split(" ");								//Splitting the String
 					compliancesCount = bits[bits.length - 2];
 				}
 				if(compliancesCount.equalsIgnoreCase("to"))
 				{
 					Thread.sleep(2500);
-					item = CFOcountPOM.readTotalItems1(driver).getText();
+					item = CFOcountPOM.readTotalItems1().getText();
 					bits = item.split(" ");								//Splitting the String
 					compliancesCount = bits[bits.length - 2];
 				}
@@ -237,19 +239,19 @@ public class CFOcountInternal
 				
 				driver.switchTo().parentFrame();								//Switching back to parent frame.
 				Thread.sleep(100);
-				CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
+				CFOcountPOM.closeCategories_Compliances().click();		//Closing the 'Compliances' pup up.
 			}
 			
 			if(i == n-1)
 			{
-				if(CFOcountPOM.clickNextPage1(driver).isEnabled())
+				if(CFOcountPOM.clickNextPage1().isEnabled())
 				{
 					if(loop <= 0)						//Loop calculated from total number of elements.
 					{
 						break;							//If loop is 0 then break.
 					}
 					
-					elementsList1 = CFOcountPOM.checkTotalIndexes(driver);	//Checking the total indexes available to click.
+					elementsList1 = CFOcountPOM.checkTotalIndexes();	//Checking the total indexes available to click.
 					if(elementsList1.size() <= 2)							//First element is label so the count two represents 1 index.
 					{
 						break;							//If we have only one page index then break.
@@ -257,9 +259,9 @@ public class CFOcountInternal
 					
 					loop --;
 					Thread.sleep(500);
-					CFOcountPOM.clickNextPage1(driver).click();
+					CFOcountPOM.clickNextPage1().click();
 					Thread.sleep(250);
-					elementsList = CFOcountPOM.readCompliancesList(driver);
+					elementsList = CFOcountPOM.readCompliancesList();
 					n = elementsList.size();
 					i = -1;
 				}
@@ -270,7 +272,7 @@ public class CFOcountInternal
 		js.executeScript("window.scrollBy(500,0)");						//Scrolling UP window by 2000 px.
 		driver.switchTo().parentFrame();								//Switching back to parent frame.
 		Thread.sleep(500);
-		CFOcountPOM.closeCategories(driver).click();					//Closing the 'Categories' pup up.
+		CFOcountPOM.closeCategories().click();					//Closing the 'Categories' pup up.
 		
 		if(count == valueCompliances)
 		{
@@ -294,8 +296,8 @@ public class CFOcountInternal
 		
 		Thread.sleep(1500);
 		WebDriverWait wait1 = new WebDriverWait(driver, 30);
-		wait1.until(ExpectedConditions.visibilityOf(CFOcountPOM.readCompliancesInternal(driver)));
-		int valueCompliances = Integer.parseInt(CFOcountPOM.readCompliancesInternal(driver).getText());	//Storing value of 'Compliances' as a String to compare.
+		wait1.until(ExpectedConditions.visibilityOf(CFOcountPOM.readCompliancesInternal()));
+		int valueCompliances = Integer.parseInt(CFOcountPOM.readCompliancesInternal().getText());	//Storing value of 'Compliances' as a String to compare.
 		
 		driver.findElement(By.xpath("(//*[@class = 'titleMD'])[4]")).click();
 		//CFOcountPOM.readCompliancesInternal(driver).click();					//Clicking on 'Compliances'.
@@ -313,15 +315,15 @@ public class CFOcountInternal
 		js.executeScript("window.scrollBy(0,500)");				//Scrolling down window by 2000 px.
 		
 		Thread.sleep(1000);
-		CFOcountPOM.readTotalItems1(driver).click();				//Clicking on Total items count to scroll down.
-		String getCount = CFOcountPOM.readTotalItems1(driver).getText();	//Storing 'Compliances' count as string.
+		CFOcountPOM.readTotalItems1().click();				//Clicking on Total items count to scroll down.
+		String getCount = CFOcountPOM.readTotalItems1().getText();	//Storing 'Compliances' count as string.
 		String[] bits = getCount.split(" ");							//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			getCount = CFOcountPOM.readCompliancesItems(driver).getText();
+			getCount = CFOcountPOM.readCompliancesItems().getText();
 			bits = getCount.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -330,7 +332,7 @@ public class CFOcountInternal
 		
 		driver.switchTo().parentFrame();								//Switching back to parent frame. 
 		Thread.sleep(500);
-		CFOcountPOM.closeCategories(driver).click();					//Closing the 'Compliance' window.
+		CFOcountPOM.closeCategories().click();					//Closing the 'Compliance' window.
 		
 		if(valueCompliances == count)									//Comparing dashboard Compliance value with inside Compliance value
 		{
@@ -351,32 +353,32 @@ public class CFOcountInternal
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		Thread.sleep(500);
-		if(OverduePOM.closeMessage(driver).isDisplayed())				//If Compliance Updation message popped up,
+		if(OverduePOM.closeMessage().isDisplayed())				//If Compliance Updation message popped up,
 		{
-			OverduePOM.closeMessage(driver).click();					//then close the message.
+			OverduePOM.closeMessage().click();					//then close the message.
 		}
 		
 		Thread.sleep(1500);
-		int valueUsers = Integer.parseInt(CFOcountPOM.clickUsersCount(driver).getText());	//Storing value of 'Users' as a String to compare.
+		int valueUsers = Integer.parseInt(CFOcountPOM.clickUsersCount().getText());	//Storing value of 'Users' as a String to compare.
 		
-		CFOcountPOM.clickUsersCount(driver).click();					//Clicking on 'Users'. 
+		CFOcountPOM.clickUsersCount().click();					//Clicking on 'Users'. 
 		
 		WebDriverWait wait = new WebDriverWait(driver, 15);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor)getDriver();
 		js.executeScript("window.scrollBy(0,1000)");					//Scrolling down window by 1000 px.
 		
 		Thread.sleep(3000);
-		CFOcountPOM.readUsersCount2(driver).click();
+		CFOcountPOM.readUsersCount2().click();
 		
-		String getCount = CFOcountPOM.readUsersCount2(driver).getText();	//Storing no of Items 'Users' count as string.
+		String getCount = CFOcountPOM.readUsersCount2().getText();	//Storing no of Items 'Users' count as string.
 		String[] bits = getCount.split(" ");							//Splitting the String
 		String usersCount = bits[bits.length - 2];						//Getting the second last word (total number of users)
 		if(usersCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2500);
-			getCount = CFOcountPOM.readUsersCount2(driver).getText();
+			getCount = CFOcountPOM.readUsersCount2().getText();
 			bits = getCount.split(" ");								//Splitting the String
 			usersCount = bits[bits.length - 2];
 		}
@@ -384,7 +386,7 @@ public class CFOcountInternal
 		
 		driver.switchTo().parentFrame();								//Switching back to parent frame. 
 		Thread.sleep(1000);
-		CFOcountPOM.closeCategories(driver).click();					//Closing the 'Compliance' window.
+		CFOcountPOM.closeCategories().click();					//Closing the 'Compliance' window.
 		
 		if(valueUsers == count)								//Checking if String getCount contains the Value (in string format) 
 		{
@@ -411,14 +413,14 @@ public class CFOcountInternal
 		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
 		
 		Thread.sleep(500);
-		int NotCompletedValue = Integer.parseInt(CFOcountPOM.clickNotCompletedInternal(driver).getText());	//Reading value of 'Not Completed'
-		CFOcountPOM.clickNotCompletedInternal(driver).click();									//CLicking on 'Not Completed' count
+		int NotCompletedValue = Integer.parseInt(CFOcountPOM.clickNotCompletedInternal().getText());	//Reading value of 'Not Completed'
+		CFOcountPOM.clickNotCompletedInternal().click();									//CLicking on 'Not Completed' count
 		
 		Thread.sleep(500);
-		int critical = Integer.parseInt(CFOcountPOM.readCritical(driver).getText());	//Reading Critical risk count.
-		int high = Integer.parseInt(CFOcountPOM.readHigh(driver).getText());			//Reading High risk count.
-		int medium = Integer.parseInt(CFOcountPOM.readMedium(driver).getText());		//Reading Medium risk count.
-		int low = Integer.parseInt(CFOcountPOM.readLow(driver).getText());				//Reading Low risk count.
+		int critical = Integer.parseInt(CFOcountPOM.readCritical().getText());	//Reading Critical risk count.
+		int high = Integer.parseInt(CFOcountPOM.readHigh().getText());			//Reading High risk count.
+		int medium = Integer.parseInt(CFOcountPOM.readMedium().getText());		//Reading Medium risk count.
+		int low = Integer.parseInt(CFOcountPOM.readLow().getText());				//Reading Low risk count.
 		
 		int total = critical + high + medium + low;
 		
@@ -472,14 +474,14 @@ public class CFOcountInternal
 			}
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	 //Clicking on Back button
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	 //Clicking on Back button
 		}
 		else
 		{
 			test.log(LogStatus.SKIP, "'Not Completed' Compliance Count = "+NotCompletedValue);
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	//Clicking on Dashboard
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	//Clicking on Dashboard
 		}
 		extent.endTest(test);
 		extent.flush();
@@ -497,15 +499,15 @@ public class CFOcountInternal
 		//js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
 		
 		Thread.sleep(1500);
-		int ClosedDelayedValue = Integer.parseInt(CFOcountPOM.clickClosedDelayedInternal(driver).getText());	//Reading value of 'After Due Date'
+		int ClosedDelayedValue = Integer.parseInt(CFOcountPOM.clickClosedDelayedInternal().getText());	//Reading value of 'After Due Date'
 		
-		CFOcountPOM.clickClosedDelayedInternal(driver).click();								//CLicking on 'Not Completed' count
+		CFOcountPOM.clickClosedDelayedInternal().click();								//CLicking on 'Not Completed' count
 		
 		Thread.sleep(500);
-		int critical = Integer.parseInt(CFOcountPOM.readCritical(driver).getText());	//Reading Critical risk count.
-		int high = Integer.parseInt(CFOcountPOM.readHigh(driver).getText());		//reading High risk count.
-		int medium = Integer.parseInt(CFOcountPOM.readMedium(driver).getText());	//reading Medium risk count.
-		int low = Integer.parseInt(CFOcountPOM.readLow(driver).getText());			//reading Low risk count.
+		int critical = Integer.parseInt(CFOcountPOM.readCritical().getText());	//Reading Critical risk count.
+		int high = Integer.parseInt(CFOcountPOM.readHigh().getText());		//reading High risk count.
+		int medium = Integer.parseInt(CFOcountPOM.readMedium().getText());	//reading Medium risk count.
+		int low = Integer.parseInt(CFOcountPOM.readLow().getText());			//reading Low risk count.
 		
 		int total = critical + high + medium + low;
 		
@@ -559,14 +561,14 @@ public class CFOcountInternal
 			}
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	 //Clicking on Back button
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	 //Clicking on Back button
 		}
 		else
 		{
 			test.log(LogStatus.SKIP, "'Closed Delayed' Compliance Count = "+ClosedDelayedValue);
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	//Clicking on Dashboard
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	//Clicking on Dashboard
 		}
 		extent.endTest(test);
 		extent.flush();
@@ -584,14 +586,14 @@ public class CFOcountInternal
 		//js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
 		
 		Thread.sleep(1500);
-		int ClosedTimelyValue = Integer.parseInt(CFOcountPOM.clickClosedTimelyInternal(driver).getText());	//Reading value of 'After Due Date'
-		CFOcountPOM.clickClosedTimelyInternal(driver).click();								//CLicking on 'Not Completed' count
+		int ClosedTimelyValue = Integer.parseInt(CFOcountPOM.clickClosedTimelyInternal().getText());	//Reading value of 'After Due Date'
+		CFOcountPOM.clickClosedTimelyInternal().click();								//CLicking on 'Not Completed' count
 		
 		Thread.sleep(500);
-		int critical = Integer.parseInt(CFOcountPOM.readCritical(driver).getText());	//Reading Critical risk count.
-		int high = Integer.parseInt(CFOcountPOM.readHigh(driver).getText());		//reading High risk count.
-		int medium = Integer.parseInt(CFOcountPOM.readMedium(driver).getText());	//reading Medium risk count.
-		int low = Integer.parseInt(CFOcountPOM.readLow(driver).getText());			//reading Low risk count.
+		int critical = Integer.parseInt(CFOcountPOM.readCritical().getText());	//Reading Critical risk count.
+		int high = Integer.parseInt(CFOcountPOM.readHigh().getText());		//reading High risk count.
+		int medium = Integer.parseInt(CFOcountPOM.readMedium().getText());	//reading Medium risk count.
+		int low = Integer.parseInt(CFOcountPOM.readLow().getText());			//reading Low risk count.
 		
 		int total = critical + high + medium + low;
 		
@@ -645,14 +647,14 @@ public class CFOcountInternal
 			}
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	 //Clicking on Back button
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	 //Clicking on Back button
 		}
 		else
 		{
 			test.log(LogStatus.SKIP, "'Closed Timely' Compliance Count = "+ClosedTimelyValue);
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	//Clicking on Dashboard
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	//Clicking on Dashboard
 		}
 		extent.endTest(test);
 		extent.flush();
@@ -668,17 +670,17 @@ public class CFOcountInternal
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.clickNotApplicableInternal(driver)));
+		wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.clickNotApplicableInternal()));
 		
 		Thread.sleep(1000);
-		int NotApplicableValue = Integer.parseInt(CFOcountPOM.clickNotApplicableInternal(driver).getText());	//Reading value of 'After Due Date'
-		CFOcountPOM.clickNotApplicableInternal(driver).click();								//CLicking on 'Not Completed' count
+		int NotApplicableValue = Integer.parseInt(CFOcountPOM.clickNotApplicableInternal().getText());	//Reading value of 'After Due Date'
+		CFOcountPOM.clickNotApplicableInternal().click();								//CLicking on 'Not Completed' count
 		
 		Thread.sleep(500);
-		int critical = Integer.parseInt(CFOcountPOM.readCritical(driver).getText());	//Reading Critical risk count.
-		int high = Integer.parseInt(CFOcountPOM.readHigh(driver).getText());		//reading High risk count.
-		int medium = Integer.parseInt(CFOcountPOM.readMedium(driver).getText());	//reading Medium risk count.
-		int low = Integer.parseInt(CFOcountPOM.readLow(driver).getText());			//reading Low risk count.
+		int critical = Integer.parseInt(CFOcountPOM.readCritical().getText());	//Reading Critical risk count.
+		int high = Integer.parseInt(CFOcountPOM.readHigh().getText());		//reading High risk count.
+		int medium = Integer.parseInt(CFOcountPOM.readMedium().getText());	//reading Medium risk count.
+		int low = Integer.parseInt(CFOcountPOM.readLow().getText());			//reading Low risk count.
 		
 		int total = critical + high + medium + low;
 		
@@ -732,7 +734,7 @@ public class CFOcountInternal
 			}
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	 //Clicking on Back button
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	 //Clicking on Back button
 			
 			Thread.sleep(500);
 			js.executeScript("window.scrollBy(0,-500)");				//Going to Dashboard
@@ -742,7 +744,7 @@ public class CFOcountInternal
 			test.log(LogStatus.SKIP, "'Not Applicable' Compliance Count = "+NotApplicableValue);
 			
 			Thread.sleep(500);
-			action.moveToElement(CFOcountPOM.clickBack1(driver)).click().build().perform();	//Clicking on Dashboard
+			action.moveToElement(CFOcountPOM.clickBack1()).click().build().perform();	//Clicking on Dashboard
 			
 			Thread.sleep(500);
 			js.executeScript("window.scrollBy(0,-500)");				//Going to Dashboard
@@ -755,7 +757,7 @@ public class CFOcountInternal
 	void RiskSummaryCriticalInternal() throws InterruptedException
 	{
 		Thread.sleep(500);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,1050)");					//Scrolling down window by 1000 px.
 		
 		test = extent.startTest("Risk Summary - 'Critical' Count Verification");
@@ -765,7 +767,7 @@ public class CFOcountInternal
 		//------------------------------------------------------------------
 		
 		Thread.sleep(500);
-		String NotCompleted = CFOcountPOM.clickRiskCriticalNotCompleted(driver).getText();
+		String NotCompleted = CFOcountPOM.clickRiskCriticalNotCompleted().getText();
 		int RiskCritical_NotCompleted = 0;
 		if(NotCompleted.equals("") || NotCompleted.equals(null))
 		{
@@ -777,7 +779,7 @@ public class CFOcountInternal
 		}
 		if(RiskCritical_NotCompleted > 0)
 		{
-			CFOcountPOM.clickRiskCriticalNotCompleted(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskCriticalNotCompleted().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Critical - Not Completed", RiskCritical_NotCompleted, "Internal");
 		}
@@ -789,7 +791,7 @@ public class CFOcountInternal
 		//-----------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedDelayed = CFOcountPOM.clickRiskCriticalClosedDelayed(driver).getText();
+		String ClosedDelayed = CFOcountPOM.clickRiskCriticalClosedDelayed().getText();
 		int RiskCritical_ClosedDelayed = 0;
 		if(ClosedDelayed.equals("") || ClosedDelayed.equals(null))
 		{
@@ -801,7 +803,7 @@ public class CFOcountInternal
 		}
 		if(RiskCritical_ClosedDelayed > 0)
 		{
-			CFOcountPOM.clickRiskCriticalClosedDelayed(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskCriticalClosedDelayed().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Critical - Closed Delayed", RiskCritical_ClosedDelayed, "Internal");
 		}
@@ -813,7 +815,7 @@ public class CFOcountInternal
 		//----------------------------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedTimely = CFOcountPOM.clickRiskCriticalClosedTimely(driver).getText();
+		String ClosedTimely = CFOcountPOM.clickRiskCriticalClosedTimely().getText();
 		int RiskCritical_ClosedTimely = 0;
 		if(ClosedTimely.equals("") || ClosedTimely.equals(null))
 		{
@@ -825,7 +827,7 @@ public class CFOcountInternal
 		}
 		if(RiskCritical_ClosedTimely > 0)
 		{
-			CFOcountPOM.clickRiskCriticalClosedTimely(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskCriticalClosedTimely().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Critical - Closed Timely", RiskCritical_ClosedTimely, "Internal");
 		}
@@ -847,7 +849,7 @@ public class CFOcountInternal
 		//------------------------------------------------------------
 		
 		Thread.sleep(500);
-		String NotCompleted = CFOcountPOM.clickRiskHighNotCompleted(driver).getText();
+		String NotCompleted = CFOcountPOM.clickRiskHighNotCompleted().getText();
 		int RiskHigh_NotCompleted = 0;
 		if(NotCompleted.equals("") || NotCompleted.equals(null))
 		{
@@ -859,7 +861,7 @@ public class CFOcountInternal
 		}
 		if(RiskHigh_NotCompleted > 0)
 		{
-			CFOcountPOM.clickRiskHighNotCompleted(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskHighNotCompleted().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "High - Not Completed", RiskHigh_NotCompleted, "Internal");
 		}
@@ -871,7 +873,7 @@ public class CFOcountInternal
 		//-------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedDelayed = CFOcountPOM.clickRiskHighClosedDelayed(driver).getText();
+		String ClosedDelayed = CFOcountPOM.clickRiskHighClosedDelayed().getText();
 		int RiskHigh_ClosedDelayed = 0;
 		if(ClosedDelayed.equals("") || ClosedDelayed.equals(null))
 		{
@@ -883,7 +885,7 @@ public class CFOcountInternal
 		}
 		if(RiskHigh_ClosedDelayed > 0)
 		{
-			CFOcountPOM.clickRiskHighClosedDelayed(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskHighClosedDelayed().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "High - Closed Delayed", RiskHigh_ClosedDelayed, "Internal");
 		}
@@ -895,7 +897,7 @@ public class CFOcountInternal
 		//-------------------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedTimely = CFOcountPOM.clickRiskHighClosedTimely(driver).getText();
+		String ClosedTimely = CFOcountPOM.clickRiskHighClosedTimely().getText();
 		int RiskHigh_ClosedTimely = 0;
 		if(ClosedTimely.equals("") || ClosedTimely.equals(null))
 		{
@@ -907,7 +909,7 @@ public class CFOcountInternal
 		}
 		if(RiskHigh_ClosedTimely > 0)
 		{
-			CFOcountPOM.clickRiskHighClosedTimely(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskHighClosedTimely().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "High - Closed Timely", RiskHigh_ClosedTimely, "Internal");
 		}
@@ -929,7 +931,7 @@ public class CFOcountInternal
 		//------------------------------------------------------------
 		
 		Thread.sleep(500);
-		String NotCompleted = CFOcountPOM.clickRiskMediumNotCompleted(driver).getText();
+		String NotCompleted = CFOcountPOM.clickRiskMediumNotCompleted().getText();
 		int RiskMedium_NotCompleted = 0;
 		if(NotCompleted.equals("") || NotCompleted.equals(null))
 		{
@@ -941,7 +943,7 @@ public class CFOcountInternal
 		}
 		if(RiskMedium_NotCompleted > 0)
 		{
-			CFOcountPOM.clickRiskMediumNotCompleted(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskMediumNotCompleted().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Medium - Not Completed", RiskMedium_NotCompleted, "Internal");
 		}
@@ -953,7 +955,7 @@ public class CFOcountInternal
 		//-------------------------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedDelayed = CFOcountPOM.clickRiskMediumClosedDelayed(driver).getText();
+		String ClosedDelayed = CFOcountPOM.clickRiskMediumClosedDelayed().getText();
 		int RiskMedium_ClosedDelayed = 0;
 		if(ClosedDelayed.equals("") || ClosedDelayed.equals(null))
 		{
@@ -965,7 +967,7 @@ public class CFOcountInternal
 		}		
 		if(RiskMedium_ClosedDelayed > 0)
 		{
-			CFOcountPOM.clickRiskMediumClosedDelayed(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskMediumClosedDelayed().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Medium - Closed Delayed", RiskMedium_ClosedDelayed, "Internal");
 		}
@@ -977,7 +979,7 @@ public class CFOcountInternal
 		//-----------------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedTimely = CFOcountPOM.clickRiskMediumClosedTimely(driver).getText();
+		String ClosedTimely = CFOcountPOM.clickRiskMediumClosedTimely().getText();
 		int RiskMedium_ClosedTimely = 0;
 		if(ClosedTimely.equals("") || ClosedTimely.equals(null))
 		{
@@ -989,7 +991,7 @@ public class CFOcountInternal
 		}
 		if(RiskMedium_ClosedTimely > 0)
 		{
-			CFOcountPOM.clickRiskMediumClosedTimely(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskMediumClosedTimely().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Medium - Closed Timely", RiskMedium_ClosedTimely, "Internal");
 		}
@@ -1011,7 +1013,7 @@ public class CFOcountInternal
 		//------------------------------------------------
 		
 		Thread.sleep(500);
-		String NotCompleted = CFOcountPOM.clickRiskLowNotCompleted(driver).getText();
+		String NotCompleted = CFOcountPOM.clickRiskLowNotCompleted().getText();
 		int RiskLow_NotCompleted = 0;
 		if(NotCompleted.equals("") || NotCompleted.equals(null))
 		{
@@ -1023,7 +1025,7 @@ public class CFOcountInternal
 		}
 		if(RiskLow_NotCompleted > 0)
 		{
-			CFOcountPOM.clickRiskLowNotCompleted(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskLowNotCompleted().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Low - Not Completed", RiskLow_NotCompleted, "Internal");
 		}
@@ -1035,7 +1037,7 @@ public class CFOcountInternal
 		//-------------------------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedDelayed = CFOcountPOM.clickRiskLowClosedDelayed(driver).getText();
+		String ClosedDelayed = CFOcountPOM.clickRiskLowClosedDelayed().getText();
 		int RiskLow_ClosedDelayed = 0;
 		if(ClosedDelayed.equals("") || ClosedDelayed.equals(null))
 		{
@@ -1047,7 +1049,7 @@ public class CFOcountInternal
 		}
 		if(RiskLow_ClosedDelayed > 0)
 		{
-			CFOcountPOM.clickRiskLowClosedDelayed(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskLowClosedDelayed().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Low - Closed Delayed", RiskLow_ClosedDelayed, "Internal");
 		}
@@ -1059,7 +1061,7 @@ public class CFOcountInternal
 		//-------------------------------------------------------
 		
 		Thread.sleep(500);
-		String ClosedTimely = CFOcountPOM.clickRiskLowClosedTimely(driver).getText();
+		String ClosedTimely = CFOcountPOM.clickRiskLowClosedTimely().getText();
 		int RiskLow_ClosedTimely = 0;
 		if(ClosedTimely.equals("") || ClosedTimely.equals(null))
 		{
@@ -1071,7 +1073,7 @@ public class CFOcountInternal
 		}
 		if(RiskLow_ClosedTimely > 0)
 		{
-			CFOcountPOM.clickRiskLowClosedTimely(driver).click();			//Clicking on Not Completed compliances bar of High risk.  
+			CFOcountPOM.clickRiskLowClosedTimely().click();			//Clicking on Not Completed compliances bar of High risk.  
 			
 			CFOcountPOM.RiskGraphCount(driver, test, "Low - Closed Timely", RiskLow_ClosedTimely, "Internal");
 		}
@@ -1081,7 +1083,7 @@ public class CFOcountInternal
 		}
 		
 		Thread.sleep(500);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,-1050)");			//Clicking on Dashboard
 		
 		extent.endTest(test);
@@ -1100,12 +1102,12 @@ public class CFOcountInternal
 		test.log(LogStatus.INFO, "---After selecting all location from 'Entity/Sub-Entity/Location' drop down.");
 		
 		Thread.sleep(500);
-		String AdminNotCompl = CFOcountPOM.clickAdminNotComplInternal(driver).getText();	//Reading the Closed Delayed value of Human Resource
+		String AdminNotCompl = CFOcountPOM.clickAdminNotComplInternal().getText();	//Reading the Closed Delayed value of Human Resource
 		AdminNotCompl = AdminNotCompl.replaceAll(" ","");								//Removing all white spaces from string. 
 		int Admin_NotCompl = Integer.parseInt(AdminNotCompl);						
 		if(Admin_NotCompl > 0)
 		{
-			CFOcountPOM.clickHumanClosedDelayed(driver).click();
+			CFOcountPOM.clickHumanClosedDelayed().click();
 			CFOcountPOM.RiskGraphCount(driver, test, "Admin - Not Completed", Admin_NotCompl, "Internal");
 		}
 		else
@@ -1116,12 +1118,12 @@ public class CFOcountInternal
 		//------------------------------------------------------
 		
 		Thread.sleep(500);
-		String BTRNotCompl = CFOcountPOM.clickBTRNotComplInternal(driver).getText();		//Reading the Closed Timely value of Human Resource
+		String BTRNotCompl = CFOcountPOM.clickBTRNotComplInternal().getText();		//Reading the Closed Timely value of Human Resource
 		BTRNotCompl = BTRNotCompl.replaceAll(" ","");									//Removing all white spaces from string. 
 		int BTR_NotCompl = Integer.parseInt(BTRNotCompl);						
 		if(BTR_NotCompl > 0)
 		{
-			CFOcountPOM.clickBTRNotComplInternal(driver).click();
+			CFOcountPOM.clickBTRNotComplInternal().click();
 			CFOcountPOM.RiskGraphCount(driver, test, "BTR - Not Completed", BTR_NotCompl, "Internal");
 		}
 		else
@@ -1132,12 +1134,12 @@ public class CFOcountInternal
 		//-----------------------------------------------------
 		
 		Thread.sleep(500);
-		String DSSNotCompl = CFOcountPOM.clickDSSNotComplInternal(driver).getText();			//Reading the Overdue value of Human Resource
+		String DSSNotCompl = CFOcountPOM.clickDSSNotComplInternal().getText();			//Reading the Overdue value of Human Resource
 		DSSNotCompl = DSSNotCompl.replaceAll(" ","");									//Removing all white spaces from string. 
 		int DSS_NotCompl = Integer.parseInt(DSSNotCompl);						
 		if(DSS_NotCompl > 0)
 		{
-			CFOcountPOM.clickDSSNotComplInternal(driver).click();
+			CFOcountPOM.clickDSSNotComplInternal().click();
 			CFOcountPOM.RiskGraphCount(driver, test, "DSS - Not Completed", DSS_NotCompl, "Internal");
 		}
 		else
@@ -1159,11 +1161,11 @@ public class CFOcountInternal
 		test = extent.startTest("'Grading Report' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,2150)");					//Scrolling down window by 2600 px.
 		
 		Thread.sleep(500);
-		elementsList = CFOcountPOM.clickExpandGrading(driver);
+		elementsList = CFOcountPOM.clickExpandGrading();
 		for(int i = 0; i < elementsList.size(); i++)
 		{
 			Thread.sleep(250);
@@ -1175,8 +1177,8 @@ public class CFOcountInternal
 		try
 		{
 			Thread.sleep(500);
-			CFOcountPOM.clickRedGrading(driver).click();					//Clicking on first row, Second Red box of grading button
-			CFOcountPOM.CountGrading(driver, test, "High Risk (Red)");
+			CFOcountPOM.clickRedGrading().click();					//Clicking on first row, Second Red box of grading button
+			CFOcountPOM.CountGrading(test, "High Risk (Red)");
 		}
 		catch(Exception e)
 		{
@@ -1189,8 +1191,8 @@ public class CFOcountInternal
 		{
 			Thread.sleep(500);
 			js.executeScript("window.scrollBy(0,50)");
-			CFOcountPOM.clickYellowGrading(driver).click();					//Clicking on first Yellow box of grading button
-			CFOcountPOM.CountGrading(driver, test, "Medium Risk (Yellow)");
+			CFOcountPOM.clickYellowGrading().click();					//Clicking on first Yellow box of grading button
+			CFOcountPOM.CountGrading( test, "Medium Risk (Yellow)");
 		}
 		catch(Exception e)
 		{
@@ -1203,8 +1205,8 @@ public class CFOcountInternal
 		{
 			Thread.sleep(500);
 			js.executeScript("window.scrollBy(0,50)");
-			CFOcountPOM.clickGreenGrading(driver).click();					//Clicking on first Blue box of grading button
-			CFOcountPOM.CountGrading(driver, test, "Low Risk (Green)");
+			CFOcountPOM.clickGreenGrading().click();					//Clicking on first Blue box of grading button
+			CFOcountPOM.CountGrading( test, "Low Risk (Green)");
 		}
 		catch(Exception e)
 		{

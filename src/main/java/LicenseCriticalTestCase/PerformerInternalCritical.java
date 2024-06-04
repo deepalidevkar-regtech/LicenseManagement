@@ -22,8 +22,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import licenseManagement.licmgmtPOM;
 import licensePerformer.LiPerformerPOM;
+import login.webpage;
 
-public class PerformerInternalCritical 
+public class PerformerInternalCritical extends webpage
 {
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
@@ -45,52 +46,52 @@ public class PerformerInternalCritical
 	}
 	 
 	
-	public static void MyworkspaceaddLicense1(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException 
+	public static void MyworkspaceaddLicense1( ExtentTest test, String type) throws InterruptedException, IOException 
 	{
-		 licenseManagement.licmgmtPOM.ClickMyWorkspace(driver).click();
-		 WebDriverWait wait = new WebDriverWait(driver, 50);
+		 licenseManagement.licmgmtPOM.ClickMyWorkspace().click();
+		 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		 Thread.sleep(3000);
-			  WebDriverWait wait1= new WebDriverWait(driver, 5);
-				wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2(driver)));
-				licmgmtPOM.Type2(driver).click();				//Clicking on 'Type' drop down.
+		 WebDriverWait wait1 = new WebDriverWait( getDriver(), (30));
+				wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2()));
+				licmgmtPOM.Type2().click();				//Clicking on 'Type' drop down.
 				
-				licmgmtPOM.internalType2(driver).click();
+				licmgmtPOM.internalType2().click();
 				
-		 licmgmtPOM.WorkspaceExport(driver).click();
+		 licmgmtPOM.WorkspaceExport().click();
 		 test.log(LogStatus.PASS,"License Details Export" );
 		 Thread.sleep(3000);	
 		 
-		licmgmtPOM.ClickAddLicense(driver).click();
+		licmgmtPOM.ClickAddLicense().click();
 		 
 		Thread.sleep(3000);	
-		 licmgmtPOM.ClickLicenseTypeDropdown(driver).click();
+		 licmgmtPOM.ClickLicenseTypeDropdown().click();
 		 
 			Thread.sleep(3000);	
-		 licmgmtPOM.SelectLicenseTypeperin(driver).click();
+		 licmgmtPOM.SelectLicenseTypeperin().click();
 		 
 		 Thread.sleep(3000);
-		licmgmtPOM.ClickLocation(driver).click();
+		licmgmtPOM.ClickLocation().click();
 		Thread.sleep(3000);
-	     licmgmtPOM.LocationMaximizeper(driver).click();
+	     licmgmtPOM.LocationMaximizeper().click();
 		
 		 Thread.sleep(5000);
-		 licmgmtPOM.SelectLocation(driver).click();
+		 licmgmtPOM.SelectLocation().click();
 		 
 		 Thread.sleep(3000);
-		 licmgmtPOM.ClickCompliance(driver).click();
+		 licmgmtPOM.ClickCompliance().click();
 		 Thread.sleep(5000);
-		 licmgmtPOM.SelectLicenseCompliance(driver).get(1).click();
+		 licmgmtPOM.SelectLicenseCompliance().get(1).click();
 		 
 		 Thread.sleep(5000);
-		 licmgmtPOM.ClickPerformer(driver).click();
+		 licmgmtPOM.ClickPerformer().click();
 		 Thread.sleep(6000);
-		 licmgmtPOM.SelectPerformer(driver).get(3).click();
+		 licmgmtPOM.SelectPerformer().get(3).click();
 		// licmgmtPOM.SelectPerformer(driver).click();
 		
 		 Thread.sleep(3000);
-		 licmgmtPOM.ClickReviewer(driver).click();
+		 licmgmtPOM.ClickReviewer().click();
 		 Thread.sleep(6000);
-		 licmgmtPOM.SelectReviewer(driver).get(111).click(); 
+		 licmgmtPOM.SelectReviewer().get(111).click(); 
 		 
 		 XSSFSheet Sheet= ReadExcel();
 		 Thread.sleep(3000);
@@ -98,13 +99,13 @@ public class PerformerInternalCritical
 		 Row row6= sheet.getRow(6);
 		  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
 		 String LicenseTitle= c1.getStringCellValue();
-		 licmgmtPOM.LicenseTitle(driver).sendKeys(LicenseTitle);
+		 licmgmtPOM.LicenseTitle().sendKeys(LicenseTitle);
 		 
 		 Thread.sleep(3000);
 		 Row row7=sheet.getRow(7);
 			org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
 		 String LicenseNo=c2.getStringCellValue();
-		 licmgmtPOM.LicenseNo(driver).sendKeys(LicenseNo);
+		 licmgmtPOM.LicenseNo().sendKeys(LicenseNo);
 		 
 		Thread.sleep(3000);
 		/* Row row8=sheet.getRow(8);
@@ -118,13 +119,13 @@ public class PerformerInternalCritical
 		 String LicenseCost=c4.getStringCellValue();
 		 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost);
 		 */
-		licmgmtPOM.ClickCal(driver).click();
+		licmgmtPOM.ClickCal().click();
 		 Thread.sleep(7000);
-		 licmgmtPOM.NewDate(driver).click();
+		 licmgmtPOM.NewDate().click();
 		 Thread.sleep(5000);
-		licmgmtPOM.ClickCal1(driver).click();
+		licmgmtPOM.ClickCal1().click();
 		 Thread.sleep(7000);
-		licmgmtPOM.NewEndDate(driver).click();
+		licmgmtPOM.NewEndDate().click();
 		
 		 
 		Thread.sleep(300);
@@ -137,7 +138,7 @@ public class PerformerInternalCritical
 			js1.executeScript("window.scroll(0,2000)");
 	
 		
-		 licmgmtPOM.Nomineesubmit(driver).click();
+		 licmgmtPOM.Nomineesubmit().click();
 		 Thread.sleep(5000);
 		    // Switching to Alert       
 		        Alert alert = driver.switchTo().alert();
@@ -158,12 +159,12 @@ public class PerformerInternalCritical
 		        test.log(LogStatus.PASS,"License Details Added Successfully" );
 		     
 		     
-		         licmgmtPOM.editlicenseclose(driver).click();
+		         licmgmtPOM.editlicenseclose().click();
 		         Thread.sleep(5000);
 		         
-		         licmgmtPOM.ClickMyWorkspace(driver).click();
+		         licmgmtPOM.ClickMyWorkspace().click();
 		         Thread.sleep(5000);
-		         licmgmtPOM.Overviewworkspace(driver).click();
+		         licmgmtPOM.Overviewworkspace().click();
 		         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));
 		       
 		         test.log(LogStatus.PASS,"License Overview Details Button Working Successfully " );
@@ -171,18 +172,17 @@ public class PerformerInternalCritical
 					  
 		 }
 		
-	public static void Myworkspaceaddadmin(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException 
+	public static void Myworkspaceaddadmin( ExtentTest test, String type) throws InterruptedException, IOException 
 	{
-		 licenseManagement.licmgmtPOM.ClickMyWorkspace(driver).click();
-		 WebDriverWait wait = new WebDriverWait(driver, 50);
+		 licenseManagement.licmgmtPOM.ClickMyWorkspace().click();
+		 WebDriverWait wait = new WebDriverWait(getDriver(), (30));
 		 Thread.sleep(3000);
-			  WebDriverWait wait1= new WebDriverWait(driver, 5);
-				wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2(driver)));
-				licmgmtPOM.Type2(driver).click();				//Clicking on 'Type' drop down.
+				wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2()));
+				licmgmtPOM.Type2().click();				//Clicking on 'Type' drop down.
 				
-				licmgmtPOM.internalType2(driver).click();
+				licmgmtPOM.internalType2().click();
 				
-		 licmgmtPOM.WorkspaceExport(driver).click();
+		 licmgmtPOM.WorkspaceExport().click();
 		 test.log(LogStatus.PASS,"License Details Export" );
 		 Thread.sleep(3000);	
 		 
@@ -290,7 +290,7 @@ public class PerformerInternalCritical
 		         licmgmtPOM.ClickMyWorkspace(driver).click();
 		         Thread.sleep(5000);
 		         */
-		         licmgmtPOM.Overviewworkspace(driver).click();
+		         licmgmtPOM.Overviewworkspace().click();
 		         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));
 		       
 		         test.log(LogStatus.PASS,"License Overview Details Button Working Successfully " );

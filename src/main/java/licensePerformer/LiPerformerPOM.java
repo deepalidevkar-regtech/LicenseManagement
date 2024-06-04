@@ -4,710 +4,734 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.relevantcodes.extentreports.ExtentTest;
 
-public class LiPerformerPOM 
-{
+import login.webpage;
+
+public class LiPerformerPOM extends webpage{
 	private static WebElement license = null;		
 	private static List<WebElement> elementsList = null;	//WebElement list created for selecting Status-Asc/Desc (Status shows multiple elements back side)
 	
-	public static WebElement clickActive(WebDriver driver)			//Searching 'My Admins' link
+	public static WebElement clickActive()			//Searching 'My Admins' link
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divActiveCount']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divActiveCount']"));
 		return license;
 	}
 	
-	public static WebElement Progress(WebDriver driver)
+	public static WebElement Progress()
 	{
-		license = driver.findElement(By.xpath("//*[@id='imgUpdateProgress']"));
+		license = getDriver().findElement(By.xpath("//*[@id='imgUpdateProgress']"));
 		return license;
 	}
 	
-	public static WebElement clickAction(WebDriver driver)
+	public static WebElement clickAction()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
-	public static WebElement ExpiredAction(WebDriver driver)
+	public static WebElement ExpiredAction()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
-	public static WebElement AppliedActionin(WebDriver driver)
+	public static WebElement AppliedActionin()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
-	public static WebElement rejectAction(WebDriver driver)
+	public static WebElement rejectAction()
 	{
-		license = driver.findElement(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-overview']"));
+		license = getDriver().findElement(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-overview']"));
 		return license;
 	}
-	public static WebElement terAction(WebDriver driver)
+	public static WebElement terAction()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
-	public static WebElement AppliedAction(WebDriver driver)
+	public static WebElement AppliedAction()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
 
-	public static WebElement clickComplDoc(WebDriver driver)
+	public static WebElement clickComplDoc()
 	{
-		license = driver.findElement(By.xpath("//input[@id='TxtUploadocumentlnkLIc']"));
+		license = getDriver().findElement(By.xpath("//input[@id='TxtUploadocumentlnkLIc']"));
 		return license;
 	}
 	
-	public static WebElement clickComplDocInternal(WebDriver driver)
+	public static WebElement clickComplDocInternal()
 	{
-		license = driver.findElement(By.xpath("//input[@id='TxtCompliancedocumentlnk']"));
+		license = getDriver().findElement(By.xpath("//input[@id='TxtCompliancedocumentlnk']"));
 		return license;
 	}
 	
-	public static WebElement clickComplDocAddButton(WebDriver driver)
+	public static WebElement clickComplDocAddButton()
 	{
-		license = driver.findElement(By.xpath("//input[@id='UploadlinkCompliancefile']"));
+		license = getDriver().findElement(By.xpath("//input[@id='UploadlinkCompliancefile']"));
 		return license;
 	}
 	
-	public static WebElement readMessage(WebDriver driver)
+	public static WebElement readMessage()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ValidationSummary1']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ValidationSummary1']"));
 		return license;
 	}
 	
-	public static WebElement clickClose(WebDriver driver)
+	public static WebElement clickClose()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='close'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='close'])[1]"));
 		
 		return license;
 	}
 	
-	public static WebElement clickPendingForReview(WebDriver driver)		//Searching 'Pending For Review' image link
+	public static WebElement clickPendingForReview()		//Searching 'Pending For Review' image link
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divPendingForReview']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divPendingForReview']"));
 		return license;
 	}
 	
-	public static WebElement clickApplied(WebDriver driver)					//Searching 'Applied' image link
+	public static WebElement clickApplied()					//Searching 'Applied' image link
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divAppliedcount']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divAppliedcount']"));
 		return license;
 	}
 	
-	public static WebElement readMsg(WebDriver driver)						//Searching 'Message' after submit
+	public static WebElement readMsg()						//Searching 'Message' after submit
 	{
-		license = driver.findElement(By.xpath("//*[@id='VSLicensePopup']"));
+		license = getDriver().findElement(By.xpath("//*[@id='VSLicensePopup']"));
 		return license;
 	}
 	
-	public static WebElement clickExpiring(WebDriver driver)				//Searching 'Expiring' image to click
+	public static WebElement clickExpiring()				//Searching 'Expiring' image to click
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divExpiringcount']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divExpiringcount']"));
 		return license;
 	}
 	
-	public static WebElement clickCheckbox(WebDriver driver)				//Searching 'Checkbox' to click
+	public static WebElement clickCheckbox()				//Searching 'Checkbox' to click
 	{
-		license = driver.findElement(By.xpath("//*[@id='chkPenaltySave']"));
+		license = getDriver().findElement(By.xpath("//*[@id='chkPenaltySave']"));
 		return license;
 	}
 	
-	public static WebElement clickExpired(WebDriver driver)					//Searching 'Expired' image link to click
+	public static WebElement clickExpired()					//Searching 'Expired' image link to click
 	{
-		license = driver.findElement(By.id("ContentPlaceHolder1_divExpiredCount"));
+		license = getDriver().findElement(By.id("ContentPlaceHolder1_divExpiredCount"));
 		return license;
 	}
 	
-	public static WebElement clickType(WebDriver driver)
+	public static WebElement clickType()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlComplianceType']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlComplianceType']"));
 		return license;
 	}
 	
-	public static List<WebElement> clickDownload(WebDriver driver)		//Searching 'Download' button to click.
+	public static List<WebElement> clickDownload()		//Searching 'Download' button to click.
 	{
-		elementsList = driver.findElements(By.xpath("//*[contains(@id,'ContentPlaceHolder1_grdLicenseList_lblDownLoadfile')]"));
+		elementsList = getDriver().findElements(By.xpath("//*[contains(@id,'ContentPlaceHolder1_grdLicenseList_lblDownLoadfile')]"));
 		return elementsList;
 	}
 	
-	public static List<WebElement> clickDownload1(WebDriver driver)		//Searching 'Download' button to click.
+	public static List<WebElement> clickDownload1()		//Searching 'Download' button to click.
 	{
-		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-download1 k-grid-edit4']"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class='k-button k-button-icontext ob-download1 k-grid-edit4']"));
 		return elementsList;
 	}
 	
-	public static List<WebElement> clickviewLiceDocument(WebDriver driver)	
+	public static List<WebElement> clickviewLiceDocument()	
 	{
 		
-		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
+		elementsList = getDriver().findElements(By.xpath("//*[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
 		return elementsList;
 	}
-	public static WebElement Clickviewclose(WebDriver driver)	
+	public static WebElement Clickviewclose()	
 	{
 		
-		elementsList = driver.findElements(By.xpath("//*[@id='divOverView']/div/div/div[1]/button"));
+		elementsList = getDriver().findElements(By.xpath("//*[@id='divOverView']/div/div/div[1]/button"));
 		return license;
 	}
 	
 	
-	public static WebElement clickMyDocuments(WebDriver driver)			//Searching 'My Documents' link
+	public static WebElement clickMyDocuments()			//Searching 'My Documents' link
 	{
-		license = driver.findElement(By.xpath("//*[@id='leftdocumentsmenu']"));
+		license = getDriver().findElement(By.xpath("//*[@id='leftdocumentsmenu']"));
 		return license;
 	}
 	
-	public static WebElement clickMyDocumentsMenu(WebDriver driver)			//Searching 'My Documents' link
+	public static WebElement clickMyDocumentsMenu()			//Searching 'My Documents' link
 	{
-		license = driver.findElement(By.xpath("//li[@id='leftdocumentsmenu']/ul/li[1]"));
+		license = getDriver().findElement(By.xpath("//li[@id='leftdocumentsmenu']/ul/li[1]"));
 		return license;
 	}
 	
-	public static WebElement clickMyReport(WebDriver driver)
+	public static WebElement clickMyReport()
 	{
-		license = driver.findElement(By.xpath("//*[@id='leftreportsmenu']"));
+		license = getDriver().findElement(By.xpath("//*[@id='leftreportsmenu']"));
 		return license;
 	}
 	
-	public static WebElement clickStatus(WebDriver driver)
+	public static WebElement clickStatus()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseStatus_chosen']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseStatus_chosen']"));
 		return license;
 	}
 	
-	public static WebElement clickStatus1(WebDriver driver)
+	public static WebElement clickStatus1()
 	{
-		license = driver.findElement(By.xpath("//*[@aria-owns='dropdownlistStatus_listbox']"));
+		license = getDriver().findElement(By.xpath("//*[@aria-owns='dropdownlistStatus_listbox']"));
 		return license;
 	}
 	
-	public static List<WebElement> selectStatus1(WebDriver driver)
+	public static List<WebElement> selectStatus1()
 	{
-		elementsList = driver.findElements(By.xpath("//div[@id='dropdownlistStatus-list']/div[3]/ul/li"));
-		return elementsList;
-	}
-	
-	public static List<WebElement> selectStatus(WebDriver driver)
-	{
-		elementsList = driver.findElements(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseStatus_chosen']/div/ul/li"));
+		elementsList = getDriver().findElements(By.xpath("(//*[@class='k-item'])[51]"));
 		return elementsList;
 	}
 	
-	public static WebElement clickApply(WebDriver driver)
+	public static List<WebElement> selectStatus()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkBtnApplyFilter']"));
+		elementsList = getDriver().findElements(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseStatus_chosen']/div/ul/li"));
+		return elementsList;
+	}
+	
+	public static WebElement clickApply()
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkBtnApplyFilter']"));
 		return license;
 	}
 	
-	public static WebElement clickExcel(WebDriver driver)
+	public static WebElement clickExcel()
 	{
-		license = driver.findElement(By.xpath("//*[@id='exportReport']"));
+		license = getDriver().findElement(By.xpath("//*[@id='exportReport']"));
 		return license;
 	}
 	
-	public static WebElement clickView(WebDriver driver)
+	public static WebElement clickView()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_lnkEditLicense_0']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseList_lnkEditLicense_0']"));
 		return license;
 	}
 	
-	public static WebElement clickType1(WebDriver driver)
+	public static WebElement clickType1()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlComplianceType']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlComplianceType']"));
 		return license;
 	}
 	
-	public static WebElement clickType2(WebDriver driver)
+	public static WebElement clickType2()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-widget k-dropdown k-header'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-widget k-dropdown k-header'])[1]"));
 		
 		return license;
 	}
 		
-	public static WebElement selectInternal(WebDriver driver)
+	public static WebElement selectInternal()
 	{
-		license = driver.findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
 		return license;
 	}
 	
-	public static WebElement checkTable(WebDriver driver)
+	public static WebElement checkTable()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-edit'])[1]"));
 		return license;
 	}
 	
-	public static WebElement readTotalRecords(WebDriver driver)
+	public static WebElement readTotalRecords()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lblTotalRecord']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lblTotalRecord']"));
 		return license;
 	}
 	
-	public static WebElement readTotalRecords1(WebDriver driver)
+	public static WebElement readTotalRecords1()
 	{
-		license = driver.findElement(By.xpath("//span[@class='k-pager-info k-label']"));
+		license = getDriver().findElement(By.xpath("//span[@class='k-pager-info k-label']"));
 		return license;
 	}
 	
-	public static WebElement clickAon(WebDriver driver)
+	public static WebElement clickAon()
 	{
-		license = driver.findElement(By.xpath(""));
+		license = getDriver().findElement(By.xpath(""));
 		return license;
 	}
 	
-	public static WebElement clickAyn(WebDriver driver)
+	public static WebElement clickAyn()
 	{
-		license = driver.findElement(By.xpath(""));
+		license = getDriver().findElement(By.xpath(""));
 		return license;
 	}
 	
-	public static WebElement clickAyen(WebDriver driver)
+	public static WebElement clickAyen()
 	{
-		license = driver.findElement(By.xpath(""));
+		license = getDriver().findElement(By.xpath(""));
 		return license;
 	}
 	
-	public static WebElement clickAeons(WebDriver driver)
+	public static WebElement clickAeons()
 	{
-		license = driver.findElement(By.xpath(""));
+		license = getDriver().findElement(By.xpath(""));
 		return license;
 	}
-	public static WebElement ShowFream(WebDriver driver)
+	public static WebElement ShowFream()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_showReminderDetail']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_showReminderDetail']"));
 		return license;
 	}
-	public static WebElement TerminateAction(WebDriver driver)
+	public static WebElement TerminateAction()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
 		return license;
 	}
 
-	public static WebElement editlicenseicon(WebDriver driver)
+	public static WebElement editlicenseicon()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]"));
 		return license;
 	}
-	public static WebElement licenseOK(WebDriver driver)
+	public static WebElement licenseOK()
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button k-primary'])[2]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-primary'])[2]"));
 		return license;
 	}
-	public static WebElement perexpiredon(WebDriver driver)
+	public static WebElement perexpiredon()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkLicExpiredshowMore']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkLicExpiredshowMore']"));
 		return license;
 	}
 	
 
-	public static WebElement Expiringmaxmize(WebDriver driver) 
+	public static WebElement Expiringmaxmize() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='fa fa-chevron-up'])[3]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='fa fa-chevron-up'])[3]"));
 		return license;
 	}
-	public static WebElement Expiringshowmore(WebDriver driver) 
+	public static WebElement Expiringshowmore() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']"));
 		
 		return license;
 	}
-	public static WebElement Reportapply(WebDriver driver) 
+	public static WebElement Reportapply() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='Applybtn']"));
+		license = getDriver().findElement(By.xpath("//*[@id='Applybtn']"));
 		return license;
 	}
-	public static WebElement Freamshow(WebDriver driver) 
+	public static WebElement Freamshow() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='docViewerStatutory']"));
+		license = getDriver().findElement(By.xpath("//*[@id='docViewerStatutory']"));
 		return license;
 	}
-	public static WebElement terminatedPerformer(WebDriver driver)
+	public static WebElement terminatedPerformer()
 	{
-		license = driver.findElement(By.id("ContentPlaceHolder1_divterminated"));
+		license = getDriver().findElement(By.id("ContentPlaceHolder1_divterminated"));
 	
 		return license;
 	}
-	public static WebElement SubmitTerminate(WebDriver driver)
+	public static WebElement SubmitTerminate()
 	{
-		license = driver.findElement(By.xpath("	//*[@id='btnSaveDOCNotCompulsory']"));
+		license = getDriver().findElement(By.xpath("	//*[@id='btnSaveDOCNotCompulsory']"));
 		return license;
 	}
-	public static WebElement Multicheckdoc1(WebDriver driver)
+	public static WebElement Multicheckdoc1()
 	{
-		license = driver.findElement(By.xpath("(//*[@id='sel_chkbxMain'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@id='sel_chkbxMain'])[1]"));
 		return license;
 	}
-	public static WebElement Multicheckdoc2(WebDriver driver)
+	public static WebElement Multicheckdoc2()
 	{
-		license = driver.findElement(By.xpath("(//*[@id='sel_chkbxMain'])[2]"));
+		license = getDriver().findElement(By.xpath("(//*[@id='sel_chkbxMain'])[2]"));
 		return license;
 	}
-	public static WebElement MultiDownload(WebDriver driver)
+	public static WebElement MultiDownload()
 	{
-		license = driver.findElement(By.xpath("//*[@id='dvbtndownloadDocumentMain1']"));
+		license = getDriver().findElement(By.xpath("//*[@id='dvbtndownloadDocumentMain1']"));
 		return license;
 	}
-	public static WebElement Clicklictypedropdown(WebDriver driver)
+	public static WebElement Clicklictypedropdown()
 	{
-		license = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/span[3]/span/span[1]"));
+		license = getDriver().findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/span[3]/span/span[1]"));
 		return license;
 	}
-	public static WebElement selectlic(WebDriver driver)
+	public static WebElement selectlic()
 	{
-		license = driver.findElement(By.xpath("//*[@id='556a120f-800d-44d4-91ae-2d756841c7cc']"));
+		license = getDriver().findElement(By.xpath("//*[@id='556a120f-800d-44d4-91ae-2d756841c7cc']"));
 		return license;
 	}
-	public static WebElement clearbtn(WebDriver driver)
+	public static WebElement clearbtn()
 	{
-		license = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ClearfilterMain']"));
 		return license;
 	}
-	public static WebElement searchlic1(WebDriver driver)
+	public static WebElement searchlic1()
 	{
-		license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
 		return license;
 	}
-	public static WebElement searchlic1in(WebDriver driver)
+	public static WebElement searchlic1in()
 	{
-		license = driver.findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[2])[1]"));
-		return license;
-	}
-
-	public static WebElement ActiveOverview(WebDriver driver)
-	{
-		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[13]/a[2]"));
-		return license;
-	}
-	public static WebElement CloseExpiredOn(WebDriver driver)
-	{
-		license = driver.findElement(By.xpath("//*[@id='divLicenseDetails']/div/div/div[1]/button"));
+		license = getDriver().findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[2])[1]"));
 		return license;
 	}
 
-	public static void ExpiringLicense(WebDriver driver, ExtentTest test, String string) {
+	public static WebElement ActiveOverview()
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[13]/a[2]"));
+		return license;
+	}
+	public static WebElement CloseExpiredOn()
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='divLicenseDetails']/div/div/div[1]/button"));
+		return license;
+	}
+
+	public static void ExpiringLicense(ExtentTest test, String string) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public static void ExpiringCount(WebDriver driver, ExtentTest test, String string) {
+	public static void ExpiringCount( ExtentTest test, String string) {
 		// TODO Auto-generated method stub
 		
 	}
-	public static WebElement Sharebutton(WebDriver driver) 
+	public static WebElement Sharebutton() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[10]/a[3]"));
+		license = getDriver().findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[10]/a[3]"));
 		return license;
 		
 	}
-	public static WebElement shareemail(WebDriver driver) 
+	public static WebElement shareemail() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='txtEmail']"));
+		license = getDriver().findElement(By.xpath("//*[@id='txtEmail']"));
 		return license;
 		
 	}
-	public static WebElement ShareContactNo(WebDriver driver) 
+	public static WebElement ShareContactNo() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='txtcontactNum']"));
+		license = getDriver().findElement(By.xpath("//*[@id='txtcontactNum']"));
 		return license;
 		
 	}
-	public static WebElement Sharesave(WebDriver driver) 
+	public static WebElement Sharesave() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='btnUpdateDocInfo']"));
+		license = getDriver().findElement(By.xpath("//*[@id='btnUpdateDocInfo']"));
 		return license;
 		
 	}
-	public static WebElement Sharevaliedmsg(WebDriver driver) 
+	public static WebElement Sharevaliedmsg() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='vsDocInfo']"));
+		license = getDriver().findElement(By.xpath("//*[@id='vsDocInfo']"));
 		return license;
 		
 	}
-	public static WebElement clickUnshare(WebDriver driver) 
+	public static WebElement clickUnshare() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='grdContractDocuments_lnkBtnDeleteContractDoc_0']/img"));
+		license = getDriver().findElement(By.xpath("//*[@id='grdContractDocuments_lnkBtnDeleteContractDoc_0']/img"));
 		return license;
 		
 	}
-	public static WebElement ShareClose(WebDriver driver) 
+	public static WebElement ShareClose() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='btnCancel']"));
+		license = getDriver().findElement(By.xpath("//*[@id='btnCancel']"));
 		return license;
 	}
-	public static WebElement ClickBackDashboard(WebDriver driver) 
+	public static WebElement ClickBackDashboard() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='leftdashboardmenu']"));
+		license = getDriver().findElement(By.xpath("//*[@id='leftdashboardmenu']"));
 		return license;
 	}
-	public static WebElement click11(WebDriver driver) 
+	public static WebElement click11() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton1']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton1']"));
 		return license;
 	}
-	public static WebElement lictype(WebDriver driver) 
+	public static WebElement lictype() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
+		license = getDriver().findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
 		return license;
 	}
-	public static WebElement selectlic1(WebDriver driver) 
+	public static WebElement selectlic1() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
 		return license;
 	}
-	public static WebElement LicenseNo(WebDriver driver) 
+	public static WebElement LicenseNo() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='txtLicenseNo']"));
+		license = getDriver().findElement(By.xpath("//*[@id='txtLicenseNo']"));
 		return license;
 	}
-	public static WebElement Licensetitle(WebDriver driver) 
+	public static WebElement Licensetitle() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='txtLicenseTitle']"));
+		license = getDriver().findElement(By.xpath("//*[@id='txtLicenseTitle']"));
 		return license;
 	}
-	public static WebElement AppliedLicSave(WebDriver driver) 
+	public static WebElement AppliedLicSave() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='btnSave']"));
+		license = getDriver().findElement(By.xpath("//*[@id='btnSave']"));
 		return license;
 	}
-	public static WebElement AppliedStartDateclick(WebDriver driver) 
+	public static WebElement AppliedStartDateclick() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='txtStartDate']"));
+		license = getDriver().findElement(By.xpath("//*[@id='txtStartDate']"));
 		return license;
 	}
-	public static WebElement AppliedStartDate(WebDriver driver) 
+	public static WebElement AppliedStartDate() 
 	{
-		license = driver.findElement(By.linkText("26"));
+		license = getDriver().findElement(By.linkText("26"));
 		return license;
 	}
-	public static WebElement AppliedEndDateclick(WebDriver driver) 
+	public static WebElement AppliedEndDateclick() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='txtEndDate']"));
+		license = getDriver().findElement(By.xpath("//*[@id='txtEndDate']"));
 		return license;
 	}
-	public static WebElement AppliedEndDate(WebDriver driver) 
+	public static WebElement AppliedEndDate() 
 	{
-		license = driver.findElement(By.linkText("30"));
+		license = getDriver().findElement(By.linkText("29"));
 		return license;
 	}
-	public static WebElement editnomineebtn(WebDriver driver) 
+	public static WebElement editnomineebtn() 
 	{
-		license = driver.findElement(By.linkText("(//*[@class='k-icon k-i-edit'])[2]"));
+		license = getDriver().findElement(By.linkText("(//*[@class='k-icon k-i-edit'])[2]"));
 		return license;
 	}
-	public static WebElement UploadDocument(WebDriver driver) 
+	public static WebElement UploadDocument() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='fuSampleFile']"));
+		license = getDriver().findElement(By.xpath("//*[@id='fuSampleFile']"));
 		return license;
 	}
-	public static WebElement PFRCount(WebDriver driver) 
+	public static WebElement PFRCount() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divPendingForReview']"));
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divPendingForReview']"));
 		return license;
 	}
 	
-	public static WebElement indate(WebDriver driver) 
+	public static WebElement indate() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='tbxDate2']"));
+		license = getDriver().findElement(By.xpath("//*[@id='tbxDate2']"));
 		return license;
 	}
-	public static WebElement justclick(WebDriver driver) 
+	public static WebElement justclick() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='collapseUpdateComplianceStatus']/fieldset/div[5]"));
+		license = getDriver().findElement(By.xpath("//*[@id='collapseUpdateComplianceStatus']/fieldset/div[5]"));
 		return license;
 	}
-	public static WebElement reportapplybtn(WebDriver driver) 
+	public static WebElement reportapplybtn() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='Applybtn']"));
+		license = getDriver().findElement(By.xpath("//*[@id='Applybtn']"));
 		return license;
 	}
-	public static WebElement ReviewerColumn(WebDriver driver) 
+	public static WebElement ReviewerColumn() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-link'])[7]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-link'])[7]"));
 		return license;
 	}
-	public static WebElement PerformerColumn(WebDriver driver) 
+	public static WebElement PerformerColumn() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-link'])[6]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-link'])[6]"));
 		return license;
 	}
-	public static WebElement PerformerColumn1(WebDriver driver) 
+	public static WebElement PerformerColumn1() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-link'])[5]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-link'])[5]"));
 		return license;
 	}
-	public static WebElement Entitycolumn(WebDriver driver) 
+	public static WebElement Entitycolumn() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-link'])[1]"));
-		return license;
-	}
-	
-	public static WebElement Noitemdisplay(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("//*[@id='grid']/div[3]/span[2]"));
-		return license;
-	}
-	public static WebElement EntityLocation(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-input k-readonly'])[1]"));
-		return license;
-	}
-	public static WebElement EntityLocationExpand(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
-		return license;
-	}
-	public static WebElement locationtext(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-in'])[3]"));
-		return license;
-	}
-	public static WebElement ClickLictype(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-input'])[3]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-link'])[1]"));
 		return license;
 	}
 	
-	public static WebElement Licensetype(WebDriver driver) 
+	public static WebElement Noitemdisplay() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
+		license = getDriver().findElement(By.xpath("//*[@id='grid']/div[3]/span[2]"));
 		return license;
 	}
-	public static WebElement selectlictype(WebDriver driver) 
+	public static WebElement EntityLocation() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input k-readonly'])[1]"));
 		return license;
 	}
-	public static WebElement notactivatefilter(WebDriver driver) 
+	public static WebElement EntityLocation1() 
 	{
-		license = driver.findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[3])[2]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input k-readonly'])[1]"));
 		return license;
 	}
-	public static WebElement worklicedrop(WebDriver driver) 
+	public static WebElement EntityLocationExpand() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-input'])[4]"));
-		return license;
-	}
-	public static WebElement selectworkdroplic(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-item'])[70]"));
-		return license;
-	}
-	
-	public static WebElement notactivatefilterin(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[4])[2]"));
-		return license;
-	}
-	
-	public static WebElement checkloc(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-in'])[4]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
 		
 		return license;
 	}
-	public static WebElement checkloc1(WebDriver driver) 
+	public static WebElement aa() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[23]"));
-		
+		license = getDriver().findElement(By.xpath("//*[@class='k-item k-first k-last']"));
+		return license;
+	}
+	public static WebElement aa1() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-item k-last'])[2]"));
 		return license;
 	}
 	
 	
-	public static WebElement Entityname(WebDriver driver) 
+	public static WebElement locationtext() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[3]"));
 		return license;
 	}
-	public static WebElement NoRecord(WebDriver driver) 
+	public static WebElement ClickLictype() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseExpiring']/tbody/tr[2]"));
-		return license;
-	}
-	public static WebElement AssignedButNotActivated(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divNotActivated']"));
-		return license;
-	}
-	public static WebElement NotActivatedExport(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-button'])[2]"));
-		return license;
-	}
-	public static WebElement NotLocation(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("//*[@class='k-input k-readonly']"));
-		return license;
-	}
-	public static WebElement LocationExpand(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
-		return license;
-	}
-	public static WebElement Checklocation(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[15]"));
-		return license;
-	}
-	public static WebElement clicklictype(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("//*[@id='MainContentCW']/div[1]/span[3]/span/span[1]"));
-		
-		return license;
-	}
-	public static WebElement clicklictypet(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
-		return license;
-	}
-	public static WebElement lictypwworkspace(WebDriver driver) 
-	{
-		license = driver.findElement(By.xpath("(//*[@class='k-dropdown-wrap k-state-default'])[4]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[3]"));
 		return license;
 	}
 	
-	public static WebElement locget(WebDriver driver) 
+	public static WebElement Licensetype() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-in'])[23]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
 		return license;
 	}
-	public static WebElement locgetworkspace(WebDriver driver) 
+	public static WebElement selectlictype() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-in'])[5]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
 		return license;
 	}
-	public static WebElement workspacestatus(WebDriver driver) 
+	public static WebElement notactivatefilter() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='MainContentCW']/div[1]/span[3]/span/span[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[3])[2]"));
 		return license;
 	}
-	public static WebElement selectstatus1(WebDriver driver) 
+	public static WebElement worklicedrop() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-item'])[44]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[4]"));
+		return license;
+	}
+	public static WebElement selectworkdroplic() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[70]"));
+		return license;
+	}
+	
+	public static WebElement notactivatefilterin() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox']/li[4])[2]"));
+		return license;
+	}
+	
+	public static WebElement checkloc() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[4]"));
+		
+		return license;
+	}
+	public static WebElement checkloc1() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[23]"));
+		
+		return license;
+	}
+	
+	
+	public static WebElement Entityname() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		return license;
+	}
+	public static WebElement NoRecord() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLicenseExpiring']/tbody/tr[2]"));
+		return license;
+	}
+	public static WebElement AssignedButNotActivated() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divNotActivated']"));
+		return license;
+	}
+	public static WebElement NotActivatedExport() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-button'])[2]"));
+		return license;
+	}
+	public static WebElement NotLocation() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@class='k-input k-readonly']"));
+		return license;
+	}
+	public static WebElement LocationExpand() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
+		return license;
+	}
+	public static WebElement Checklocation() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[15]"));
+		return license;
+	}
+	public static WebElement clicklictype() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='MainContentCW']/div[1]/span[3]/span/span[1]"));
+		
+		return license;
+	}
+	public static WebElement clicklictypet() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
+		return license;
+	}
+	public static WebElement lictypwworkspace() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-dropdown-wrap k-state-default'])[4]"));
+		return license;
+	}
+	
+	public static WebElement locget() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[23]"));
+		return license;
+	}
+	
+	public static WebElement locgetworkspace() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[5]"));
+		return license;
+	}
+	public static WebElement workspacestatus() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='MainContentCW']/div[1]/span[3]/span/span[1]"));
+		return license;
+	}
+	public static WebElement selectstatus1() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[51]"));
 		return license;
 	}
 
-	public static WebElement searchtype(WebDriver driver) 
+	public static WebElement searchtype() 
 	{
-		license = driver.findElement(By.xpath("(//*[@class='k-textbox'])[4]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-textbox'])[4]"));
 		return license;
 	}
-	public static WebElement PerformDateclick(WebDriver driver) 
+	public static WebElement PerformDateclick() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='tbxDate']"));
+		license = getDriver().findElement(By.xpath("//*[@id='tbxDate']"));
 		return license;
 	}
-	public static WebElement PerformDate(WebDriver driver) 
+	public static WebElement PerformDate() 
 	{
-		license = driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[2]/td[4]/a"));
+		license = getDriver().findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[2]/td[4]/a"));
 		return license;
 	}
-	public static WebElement Entitysubexpand(WebDriver driver) 
+	public static WebElement Entitysubexpand() 
 	{
-		license = driver.findElement(By.xpath("//*[@class='k-icon k-i-expand']"));
+		license = getDriver().findElement(By.xpath("//*[@class='k-icon k-i-expand']"));
+		return license;
+	}
+	public static WebElement maxilocation() 
+	{
+		license = getDriver().findElement(By.xpath("div[class='k-top k-bot'] span[class='k-icon k-i-expand']"));
 		return license;
 	}
 	

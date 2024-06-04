@@ -20,8 +20,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import login.webpage;
 
-public class ImpInternalTC
+
+public class ImpInternalTC extends webpage
 {
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
@@ -140,7 +142,7 @@ public class ImpInternalTC
 	void InternalAddNewAssignment()throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal Add Assignment Verification");
-		 ImpMethodPOM.AddAssignment(driver, test, "Internal");
+		 ImpMethodPOM.AddAssignment( test, "Internal");
 		extent.endTest(test);
 		extent.flush();
 	}

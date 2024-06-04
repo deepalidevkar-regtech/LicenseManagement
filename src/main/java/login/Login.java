@@ -2,60 +2,55 @@ package login;
 
 import java.io.File;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import performer.OverduePOM;
 
-public class Login 
+public class Login extends webpage
 {
-	public static WebDriver driver = null;				//WebDriver instance created
-	public static WebElement upload = null;				//WebElement to get upload button
+			//Web instance created
+	//public static WebElement upload = null;				//WebElement to get upload button
 	
-	public static void BrowserSetup(String URL)
+	/*public static void BrowserSetup(String URL)
 	{
-		//WebDriverManager.chromedriver().setup();
-		//System.setProperty("webdriver.gecko.driver","C:\\Users\\dipali\\Downloads\\geckodriver-v0.20.1-win64\\geckodriver.exe");
-		//WebDriver driver= new FirefoxDriver();
+		//WebManager.chrome().setup();
+		//System.setProperty("web.gecko.","C:\\Users\\dipali\\Downloads\\gecko-v0.20.1-win64\\gecko.exe");
+		//Web = new Firefox();
 	
-		System.setProperty("webdriver.chrome.driver","C://Already Automate//Update//chromedriver-win64//chromedriver.exe");
-		//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver"); //Set the Chrome driver variable
-		driver = new ChromeDriver();					//Created new Chrome driver instance. 
-		//WebDriver driver = new FirefoxDriver();
-		driver.manage().window().maximize();			//Set window size to maximum.
-		driver.get(URL);								//Set the URL of WebApplication.
+		System.setProperty("web.chrome.","D:\\chrome-win64\\chrome.exe");
+		//System.setProperty("web.chrome.","/usr/bin/chrome"); //Set the Chrome  variable
+		 = new Chrome();					//Created new Chrome  instance. 
+		//Web  = new Firefox();
+		.manage().window().maximize();			//Set window size to maximum.
+		.get(URL);								//Set the URL of WebApplication.
 	}
-	
-	public static WebDriver UserLogin(String username, String password, String method) throws InterruptedException
+	*/
+	public static  void UserLogin(String username, String password, String method) throws InterruptedException
 	{		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebDriverWait wait1 = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
-		LoginPOM.setUname(driver).sendKeys(username);		//Sent username to input box 
+		LoginPOM.setUname().sendKeys(username);		//Sent username to input box 
 		Thread.sleep(500);
-		LoginPOM.setPassword(driver).sendKeys(password);	//Sent password to input box
-		LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
+		LoginPOM.setPassword().sendKeys(password);	//Sent password to input box
+		LoginPOM.clickSubmit().click();				//Clicked on Sign-in button
 		
 		if(!username.equalsIgnoreCase("performer@avantis.info"))
 		{
 			try
 			{
 				Thread.sleep(500);
-				wait1.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink(driver)));
-				wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickQALink(driver)));
-				LoginPOM.clickQALink(driver).click();				//Clicking on QA Link instead of OTP.
+				wait.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink()));
+				wait.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickQALink()));
+				LoginPOM.clickQALink().click();				//Clicking on QA Link instead of OTP.
 				
 				//----------------------------------------------------------
 				
-				wait1.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink(driver)));
+				wait.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink()));
 			/*}
 			catch(Exception e)
 			{
@@ -63,9 +58,9 @@ public class Login
 			}*/
 			
 			Thread.sleep(500);
-			wait1.until(ExpectedConditions.visibilityOf(LoginPOM.Question1(driver)));
-			wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.Question1(driver)));
-			String que1 = LoginPOM.Question1(driver).getText();	//Storing the question in que variable.
+			wait.until(ExpectedConditions.visibilityOf(LoginPOM.Question1()));
+			wait.until(ExpectedConditions.elementToBeClickable(LoginPOM.Question1()));
+			String que1 = LoginPOM.Question1().getText();	//Storing the question in que variable.
 			String ans1 = null;
 			if(method.equalsIgnoreCase("cfo"))
 			{
@@ -85,14 +80,14 @@ public class Login
 			}
 			
 			if(ans1.equalsIgnoreCase("birthplace"))
-				LoginPOM.Answer1(driver).sendKeys("123");		//Sending answer to the input box.
+				LoginPOM.Answer1().sendKeys("123");		//Sending answer to the input box.
 			else
-				LoginPOM.Answer1(driver).sendKeys("123");		//Sending answer to the input box.
+				LoginPOM.Answer1().sendKeys("123");		//Sending answer to the input box.
 			Thread.sleep(1000);
 			
 			//----------------------------------------------------------
 			
-			String que2 = LoginPOM.Question2(driver).getText();	//Storing the question in que variable.
+			String que2 = LoginPOM.Question2().getText();	//Storing the question in que variable.
 			String ans2 = null;
 			if(method.equalsIgnoreCase("cfo"))
 			{
@@ -113,13 +108,13 @@ public class Login
 			}
 			
 			if(ans2.equalsIgnoreCase("birthplace"))
-				LoginPOM.Answer2(driver).sendKeys("123");		//Sending answer to the input box.
+				LoginPOM.Answer2().sendKeys("123");		//Sending answer to the input box.
 			else
-				LoginPOM.Answer2(driver).sendKeys("123");		//Sending answer to the input box.
+				LoginPOM.Answer2().sendKeys("123");		//Sending answer to the input box.
 			Thread.sleep(100);
 			
 			
-		LoginPOM.SubmitAnswer(driver).click();				//Clicking on Submit button.
+		LoginPOM.SubmitAnswer().click();				//Clicking on Submit button.
 		}
 		catch(Exception e)
 		{
@@ -128,31 +123,31 @@ public class Login
 		}		
 		if(!method.equalsIgnoreCase("Implementation"))
 		{
-			wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickComplicane(driver)));
+			wait.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickComplicane()));
 			if(method.equalsIgnoreCase("License"))
 			{
-				LoginPOM.clickLicense(driver).click();				//Clicking on Litigation Image.
+				LoginPOM.clickLicense().click();				//Clicking on Litigation Image.
 			}
 			else if(method.equalsIgnoreCase("Litigation"))
 			{
-				LoginPOM.ClickLitigation(driver).click();			//Clicking on Litigation Image.
+				LoginPOM.ClickLitigation().click();			//Clicking on Litigation Image.
 			}
 			else if(method.equalsIgnoreCase("Contract"))
 			{
-				LoginPOM.ClickContract(driver).click();			//Clicking on Litigation Image.
+				LoginPOM.ClickContract().click();			//Clicking on Litigation Image.
 			}
 			else
 			{
-				LoginPOM.clickComplicane(driver).click();			//Clicking on Compliance Image.
+				LoginPOM.clickComplicane().click();			//Clicking on Compliance Image.
 			}
 			
 			try
 			{
 				Thread.sleep(500);
-				if(OverduePOM.closeMessage(driver).isDisplayed())	//If Compliance Updation message popped up,
+				if(OverduePOM.closeMessage().isDisplayed())	//If Compliance Updation message popped up,
 				{
-					wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
-					OverduePOM.closeMessage(driver).click();		//then close the message.
+					wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage()));
+					OverduePOM.closeMessage().click();		//then close the message.
 				}
 			}
 			catch(Exception e)
@@ -160,7 +155,7 @@ public class Login
 				
 			}
 		}		
-		return driver;
+		return ;
 	}
 	
 	public static String getAnswer(String que)				//Method created to extract last word from question

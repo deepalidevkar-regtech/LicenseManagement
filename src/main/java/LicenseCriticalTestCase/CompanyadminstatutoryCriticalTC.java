@@ -21,8 +21,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import licenseCompanyadmin.StatutoryMethod;
 import licensePerformer.LiPeMethodsPOM;
+import login.webpage;
 
-public class CompanyadminstatutoryCriticalTC 
+public class CompanyadminstatutoryCriticalTC extends webpage
 {
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
@@ -64,7 +65,7 @@ public class CompanyadminstatutoryCriticalTC
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		//test = extent.startTest("Logging In - Companyadmin (Statutory)");
+		/*test = extent.startTest("Logging In - Companyadmin (Statutory)");
 	     //test.log(LogStatus.PASS, "Logging In - Companyadmin (Statutory");
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
@@ -87,6 +88,7 @@ public class CompanyadminstatutoryCriticalTC
 		/*test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();*/
+		initialization("License",0);
 	}
  
 
@@ -96,7 +98,7 @@ public class CompanyadminstatutoryCriticalTC
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.ActiveLicense(driver, test, "Statutory");
+		StatutoryMethod.ActiveLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -108,7 +110,7 @@ public class CompanyadminstatutoryCriticalTC
 		test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.ExpiringLicense(driver, test, "Statutory");
+		StatutoryMethod.ExpiringLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -119,7 +121,7 @@ public class CompanyadminstatutoryCriticalTC
 		test = extent.startTest("Expired License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.ExpiredLicense(driver, test, "Statutory");
+		StatutoryMethod.ExpiredLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -130,7 +132,7 @@ public class CompanyadminstatutoryCriticalTC
 		test = extent.startTest("Applied License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.AppliedLicense(driver, test, "Statutory");
+		StatutoryMethod.AppliedLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -141,7 +143,7 @@ public class CompanyadminstatutoryCriticalTC
 	    test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.pendingforreviewLicense(driver, test, "Statutory");
+		StatutoryMethod.pendingforreviewLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -152,7 +154,7 @@ public class CompanyadminstatutoryCriticalTC
 		test = extent.startTest("Rejected License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.RejectedLicense(driver, test, "Statutory");
+		StatutoryMethod.RejectedLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -163,7 +165,7 @@ public class CompanyadminstatutoryCriticalTC
 		test = extent.startTest("Terminate License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		StatutoryMethod.TerminateLicense(driver, test, "Statutory");
+		StatutoryMethod.TerminateLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -175,18 +177,18 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By status -Application Overdue(Expiring But not applied) Graph Count  Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusExpringgraph(driver, test, "Statutory");
+			StatutoryMethod.BystatusExpringgraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 10)
+	@Test(priority = 10)
 		void BystausTerminatelicense() throws InterruptedException
 		{
 			test = extent.startTest("By status-Terminate Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusTerminategraph(driver, test, "Statutory");
+			StatutoryMethod.BystatusTerminategraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -197,7 +199,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By status-Active Graph Count  Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusActivegraph(driver, test, "Statutory");
+			StatutoryMethod.BystatusActivegraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -208,7 +210,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By status-Expired applied but not renewed Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusExpiredappliedbutnotrenewedgraph(driver, test, "Statutory");
+			StatutoryMethod.BystatusExpiredappliedbutnotrenewedgraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -220,7 +222,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By status- Expired Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusExpired(driver, test, "Statutory");
+			StatutoryMethod.BystatusExpired( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -231,7 +233,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By License Type- Expired Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.ByLicensetypeExpired(driver, test, "Statutory");
+			StatutoryMethod.ByLicensetypeExpired( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -242,7 +244,7 @@ public class CompanyadminstatutoryCriticalTC
 				test = extent.startTest("By License Type- Application Overdue(Expiring but not applied) Graph Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				StatutoryMethod.ByLicensetypeExpiring(driver, test, "Statutory");
+				StatutoryMethod.ByLicensetypeExpiring( test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -253,7 +255,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By License Type -Expired applied but not renewed Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.ByLicensetypeApplied(driver, test, "Statutory");
+			StatutoryMethod.ByLicensetypeApplied( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -264,7 +266,7 @@ public class CompanyadminstatutoryCriticalTC
 				test = extent.startTest("By License Type- Active Graph count vWorking Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				StatutoryMethod.ByLicensetypeActive(driver, test, "Statutory");
+				StatutoryMethod.ByLicensetypeActive( test, "Statutory");
 				
 				extent.endTest(test);
 			extent.flush();
@@ -275,7 +277,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("By License Type -Terminate Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.ByLicensetypeTerminate(driver, test, "Statutory");
+			StatutoryMethod.ByLicensetypeTerminate( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -287,7 +289,7 @@ public class CompanyadminstatutoryCriticalTC
 			{
 				test = extent.startTest("My Workspace Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
-				LicenseCriticalTestCase.PerformerCritical.MyworkspaceaddLicense(driver, test, "Statutory");
+				LicenseCriticalTestCase.PerformerCritical.MyworkspaceaddLicense( test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -302,7 +304,7 @@ public class CompanyadminstatutoryCriticalTC
 		//test = extent.startTest("My Document View Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LicenseCriticalTestCase.PerformerCritical.Documents(driver, test, "Statutory");
+		LicenseCriticalTestCase.PerformerCritical.Documents( test, "Statutory");
 		
 		
 		extent.endTest(test);
@@ -315,7 +317,7 @@ public class CompanyadminstatutoryCriticalTC
 			test = extent.startTest("My Reports Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			LicenseCriticalTestCase.PerformerCritical.Reports(driver, test, "Statutory");
+			LicenseCriticalTestCase.PerformerCritical.Reports( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -325,7 +327,7 @@ public class CompanyadminstatutoryCriticalTC
 		void Masters() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Masters - User Master Working  verification");	
-		   StatutoryMethod.user(driver, test, "Statutory");		
+		   StatutoryMethod.user( test, "Statutory");		
 			extent.endTest(test);
 			extent.flush();
 		}
@@ -335,7 +337,7 @@ public class CompanyadminstatutoryCriticalTC
 		{
 			test = extent.startTest("License Creation Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-			StatutoryMethod.LicenseCreation(driver, test,workbook);
+			StatutoryMethod.LicenseCreation( test,workbook);
 			extent.endTest(test);
 			extent.flush();
 		}
@@ -344,7 +346,7 @@ public class CompanyadminstatutoryCriticalTC
 	
 	{
 		test = extent.startTest("Assigned But Not Activated License Verification");
-		LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
+		LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
 
 		extent.endTest(test);
 		extent.flush();
@@ -352,7 +354,8 @@ public class CompanyadminstatutoryCriticalTC
 	  @AfterMethod
 	  void driverclose()
 	  {
-		  driver.close();
+		  closeBrowser();
+		//  driver.close();
 	  }
 
 }

@@ -26,42 +26,43 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import licenseCompanyadmin.MethodPOM;
 import licensePerformer.LiPerformerPOM;
+import login.webpage;
 
-public class ImpMethodPOM {
+public class ImpMethodPOM extends webpage {
 	public static WebDriver driver = null;	
 	public static XSSFWorkbook workbook = null;	//Excel sheet workbook variable
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
 	public static FileInputStream fis = null;	
-	public static void compliancemappingExport(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+	public static void compliancemappingExport( ExtentTest test, String type) throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
-		ImpPOM.clickmanageschedule(driver).click();
+		ImpPOM.clickmanageschedule().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicesne(driver).click();
+		ImpPOM.ClickLicesne().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicesneStatutory(driver).click();
+		ImpPOM.ClickLicesneStatutory().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickComplianceMapping(driver).click();
+		ImpPOM.ClickComplianceMapping().click();
 		Thread.sleep(3000);
-		ImpPOM.mappingexport(driver).click();
+		ImpPOM.mappingexport().click();
 		
 		
 	}
-	public static void statutorylicnesecreation(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
+	public static void statutorylicnesecreation(ExtentTest test, String type) throws InterruptedException, IOException
 	{
 		
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
-		ImpPOM.clickmanageschedule(driver).click();
+		ImpPOM.clickmanageschedule().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicesne(driver).click();
+		ImpPOM.ClickLicesne().click();
 		if(type.equalsIgnoreCase("Internal"))
 		{
-			ImpPOM.selecttypein(driver).click();
+			ImpPOM.selecttypein().click();
 			Thread.sleep(3000);
-			ImpPOM.LicenseCreatinin(driver).click();
+			ImpPOM.LicenseCreatinin().click();
 			Thread.sleep(1000);
 			Set w = driver.getWindowHandles();    // window handles
 			Thread.sleep(3000);
@@ -70,34 +71,34 @@ public class ImpMethodPOM {
 		      String ch = (String) t.next();
 		      
 		      driver.switchTo().window(ch);
-			ImpPOM.selectCustomerin(driver).click();
+			ImpPOM.selectCustomerin().click();
 			Thread.sleep(5000);
-			ImpPOM.SelectCustomer1(driver).click();
+			ImpPOM.SelectCustomer1().click();
 			Thread.sleep(5000);
-		    ImpPOM.ClickLicenseType(driver).click();
-		    ImpPOM.ClickLicenseType(driver).click();
+		    ImpPOM.ClickLicenseType().click();
+		    ImpPOM.ClickLicenseType().click();
 		    Thread.sleep(5000);
 		    //ImpPOM.SelectLicesetype(driver).click();
 		    //Thread.sleep(3000);
 		      //	 MethodPOM.ClickLicensetype1(driver).click();
-			    licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Annual Maintenance",Keys.ENTER);
+			    licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Annual Maintenance",Keys.ENTER);
 			    Thread.sleep(3000);
-			    JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+			    JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 				   Js1.executeScript("window.scrollBy(0,1000)");
 				   
 			    
-				String LicenseCount=ImpPOM.LicenseTotalCount(driver).getText();
+				String LicenseCount=ImpPOM.LicenseTotalCount().getText();
 				//int liccount=Integer.parseInt(LicenseCount);
 				String[] bits = LicenseCount.split(" ");								//Splitting the String
 				String Licplusecount = bits[bits.length - 1];		//Getting the second last word (total number of users)
 			    int plusecount= Integer.parseInt(Licplusecount);
 			   Js1.executeScript("window.scrollBy(0,-1000)");
 			   Thread.sleep(3000);
-			    ImpPOM.LicensePluseButton(driver).click();
+			    ImpPOM.LicensePluseButton().click();
 			    Js1.executeScript("window.scrollBy(0,1000)");
 				 Thread.sleep(3000);
 				
-			    String LicenseCount1=ImpPOM.LicenseTotalCount(driver).getText();
+			    String LicenseCount1=ImpPOM.LicenseTotalCount().getText();
 				//int liccount1=Integer.parseInt(LicenseCount1);
 				String[] bits1 = LicenseCount1.split(" ");								//Splitting the String
 				String Licplusecount1 = bits1[bits1.length - 1];		//Getting the second last word (total number of users)
@@ -113,7 +114,7 @@ public class ImpMethodPOM {
 				}
 			   
 		   		Thread.sleep(3000);
-		   		licenseCompanyadmin.MethodPOM.CheckCompliance1(driver).click();
+		   		licenseCompanyadmin.MethodPOM.CheckCompliance1().click();
 		 
 		   	 Thread.sleep(3000);
 		   	 
@@ -121,7 +122,7 @@ public class ImpMethodPOM {
 		   	 Row row7=sheet.getRow(7);
 		   		org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
 		   	 String LicenseNo=c2.getStringCellValue();
-		   	 licenseCompanyadmin.MethodPOM.LicesneNo1(driver).sendKeys(LicenseNo);
+		   	 licenseCompanyadmin.MethodPOM.LicesneNo1().sendKeys(LicenseNo);
 		   	
 		           
 		   
@@ -130,25 +131,25 @@ public class ImpMethodPOM {
 			 Row row6= sheet.getRow(6);
 			  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
 			 String LicenseTitle= c1.getStringCellValue();
-			 licenseCompanyadmin.MethodPOM.LicesneTitle1(driver).sendKeys(LicenseTitle);
+			 licenseCompanyadmin.MethodPOM.LicesneTitle1().sendKeys(LicenseTitle);
 			 
 			 Thread.sleep(3000);
-			 licenseCompanyadmin.MethodPOM.StartDate1(driver).sendKeys("01-03-2023");
+			 licenseCompanyadmin.MethodPOM.StartDate1().sendKeys("01-03-2023");
 			 Thread.sleep(3000);     
-			 licenseCompanyadmin.MethodPOM.EndDate1(driver).sendKeys("30-03-2023");
+			 licenseCompanyadmin.MethodPOM.EndDate1().sendKeys("30-03-2023");
 			 
 			// JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 			   Js1.executeScript("window.scrollBy(0,1000)");
 			   Thread.sleep(3000);
 			   Js1.executeScript("window.scrollBy(1000,0)");
-			   licenseCompanyadmin.MethodPOM.SaveButton(driver).click();
+			   licenseCompanyadmin.MethodPOM.SaveButton().click();
 			   Thread.sleep(3000);
 			   Alert alert1 = driver.switchTo().alert();
 			   String alertMessage1= driver.switchTo().alert().getText();
 			   //test.log(LogStatus.PASS, alertMessage1);
 			   alert1.accept();
 			   Thread.sleep(3000);
-			   String msg =licenseCompanyadmin.MethodPOM.Message(driver).getText();		//Reading Message appeared after save button
+			   String msg =licenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
 				
 				if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
 
@@ -164,9 +165,9 @@ public class ImpMethodPOM {
 		else
 		{
 		Thread.sleep(3000);
-		ImpPOM.ClickLicesneStatutory(driver).click();
+		ImpPOM.ClickLicesneStatutory().click();
 		Thread.sleep(3000);
-		ImpPOM.LicenseCreation(driver).click();
+		ImpPOM.LicenseCreation().click();
 		Thread.sleep(3000);
 		Set w = driver.getWindowHandles();    // window handles
 		Thread.sleep(3000);
@@ -175,35 +176,35 @@ public class ImpMethodPOM {
 	      String ch = (String) t.next();
 	      
 	      driver.switchTo().window(ch);
-		ImpPOM.ClickCustomer(driver).click();
+		ImpPOM.ClickCustomer().click();
 		Thread.sleep(7000);
 		//ImpPOM.SearchCustomer(driver).sendKeys("ABCD Pvt Ltd",Keys.ENTER);
 		//Thread.sleep(5000);
-		ImpPOM.SelectCustomer1(driver).click();
+		ImpPOM.SelectCustomer1().click();
 		Thread.sleep(5000);
-	    ImpPOM.ClickLicenseType(driver).click();
+	    ImpPOM.ClickLicenseType().click();
 	    Thread.sleep(5000);
 	    //ImpPOM.SelectLicesetype(driver).click();
 	    //Thread.sleep(3000);
 	      //	 MethodPOM.ClickLicensetype1(driver).click();
-		    licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
+		    licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
 		    Thread.sleep(3000);
-		    JavascriptExecutor Js1 = (JavascriptExecutor) driver;
+		    JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");
 			   
 		    
-			String LicenseCount=ImpPOM.LicenseTotalCount(driver).getText();
+			String LicenseCount=ImpPOM.LicenseTotalCount().getText();
 			//int liccount=Integer.parseInt(LicenseCount);
 			String[] bits = LicenseCount.split(" ");								//Splitting the String
 			String Licplusecount = bits[bits.length - 1];		//Getting the second last word (total number of users)
 		    int plusecount= Integer.parseInt(Licplusecount);
 		   Js1.executeScript("window.scrollBy(0,-1000)");
 		   Thread.sleep(3000);
-		    ImpPOM.LicensePluseButton(driver).click();
+		    ImpPOM.LicensePluseButton().click();
 		    Js1.executeScript("window.scrollBy(0,1000)");
 			 Thread.sleep(3000);
 			
-		    String LicenseCount1=ImpPOM.LicenseTotalCount(driver).getText();
+		    String LicenseCount1=ImpPOM.LicenseTotalCount().getText();
 			//int liccount1=Integer.parseInt(LicenseCount1);
 			String[] bits1 = LicenseCount1.split(" ");								//Splitting the String
 			String Licplusecount1 = bits1[bits1.length - 1];		//Getting the second last word (total number of users)
@@ -219,7 +220,7 @@ public class ImpMethodPOM {
 			}
 		   
 	   		Thread.sleep(3000);
-	   		licenseCompanyadmin.MethodPOM.CheckCompliance1(driver).click();
+	   		licenseCompanyadmin.MethodPOM.CheckCompliance1().click();
 	 
 	   	 Thread.sleep(3000);
 	   	 
@@ -227,7 +228,7 @@ public class ImpMethodPOM {
 	   	 Row row7=sheet.getRow(7);
 	   		org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
 	   	 String LicenseNo=c2.getStringCellValue();
-	   	 licenseCompanyadmin.MethodPOM.LicesneNo1(driver).sendKeys(LicenseNo);
+	   	 licenseCompanyadmin.MethodPOM.LicesneNo1().sendKeys(LicenseNo);
 	   	
 	           
 	   
@@ -236,25 +237,25 @@ public class ImpMethodPOM {
 		 Row row6= sheet.getRow(6);
 		  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
 		 String LicenseTitle= c1.getStringCellValue();
-		 licenseCompanyadmin.MethodPOM.LicesneTitle1(driver).sendKeys(LicenseTitle);
+		 licenseCompanyadmin.MethodPOM.LicesneTitle1().sendKeys(LicenseTitle);
 		 
 		 Thread.sleep(3000);
-		 licenseCompanyadmin.MethodPOM.StartDate1(driver).sendKeys("01-03-2023");
+		 licenseCompanyadmin.MethodPOM.StartDate1().sendKeys("01-03-2023");
 		 Thread.sleep(3000);     
-		 licenseCompanyadmin.MethodPOM.EndDate1(driver).sendKeys("30-03-2023");
+		 licenseCompanyadmin.MethodPOM.EndDate1().sendKeys("30-03-2023");
 		 
 		// JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 		   Js1.executeScript("window.scrollBy(0,1000)");
 		   Thread.sleep(3000);
 		   Js1.executeScript("window.scrollBy(1000,0)");
-		   licenseCompanyadmin.MethodPOM.SaveButton(driver).click();
+		   licenseCompanyadmin.MethodPOM.SaveButton().click();
 		   Thread.sleep(3000);
 		   Alert alert1 = driver.switchTo().alert();
 		   String alertMessage1= driver.switchTo().alert().getText();
 		   //test.log(LogStatus.PASS, alertMessage1);
 		   alert1.accept();
 		   Thread.sleep(3000);
-		   String msg =licenseCompanyadmin.MethodPOM.Message(driver).getText();		//Reading Message appeared after save button
+		   String msg =licenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
 			
 			if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
 			{
@@ -275,61 +276,61 @@ public class ImpMethodPOM {
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
-	public static void AddAssignment(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+	public static void AddAssignment( ExtentTest test, String type) throws InterruptedException
 	{
-		 WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			
-			ImpPOM.clickmanageschedule(driver).click();
+			ImpPOM.clickmanageschedule().click();
 			Thread.sleep(3000);
-			ImpPOM.ClickLicesne(driver).click();
+			ImpPOM.ClickLicesne().click();
 			Thread.sleep(3000);
 			if(type.equalsIgnoreCase("Internal"))
 			{
-				ImpPOM.selecttypein(driver).click();
+				ImpPOM.selecttypein().click();
 				Thread.sleep(3000);
-				ImpPOM.LicenseCreatinin(driver).click();
+				ImpPOM.LicenseCreatinin().click();
 				Thread.sleep(1000);
-				Set w = driver.getWindowHandles();    // window handles
+				Set w = getDriver().getWindowHandles();    // window handles
 				Thread.sleep(3000);
 			      Iterator t = w.iterator();  // window handles iterate
 			      String pw = (String) t.next();
 			      String ch = (String) t.next();
 			      
-			      driver.switchTo().window(ch);
-			      ImpPOM.NewAssinmenttab(driver).click();
+			      getDriver().switchTo().window(ch);
+			      ImpPOM.NewAssinmenttab().click();
 			       Thread.sleep(7000);
-				ImpPOM.ClickCustomer2(driver).click();
+				ImpPOM.ClickCustomer2().click();
 				Thread.sleep(7000);
-				ImpPOM.SelectCustomer2(driver).click();
+				ImpPOM.SelectCustomer2().click();
 				Thread.sleep(5000);
-			     ImpPOM.clicklicensetype1(driver).click();
+			     ImpPOM.clicklicensetype1().click();
 			    Thread.sleep(7000);
 				 //   licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
-			     ImpPOM.searchlice1(driver).sendKeys("Annual Maintenance",Keys.ENTER);
+			     ImpPOM.searchlice1().sendKeys("Annual Maintenance",Keys.ENTER);
 				    Thread.sleep(3000);
-				    ImpPOM.LocationCheck(driver).click();
+				    ImpPOM.LocationCheck().click();
 				    Thread.sleep(3000);
-				    ImpPOM.SelectButton1(driver).click();
+				    ImpPOM.SelectButton1().click();
 			  		
-				    ImpPOM.CheckCompliancein(driver).click();
+				    ImpPOM.CheckCompliancein().click();
 				    Thread.sleep(3000);
-				    ImpPOM.clicklocation(driver).click();
+				    ImpPOM.clicklocation().click();
 				    Thread.sleep(3000);
-				    ImpPOM.ClickPerformer(driver).click();
+				    ImpPOM.ClickPerformer().click();
 				    Thread.sleep(3000);
-				    ImpPOM.selectperformer(driver).click();
+				    ImpPOM.selectperformer().click();
 				    Thread.sleep(1000);
-				    ImpPOM.ClickReviewer(driver).click();
+				    ImpPOM.ClickReviewer().click();
 				    Thread.sleep(1000);
-				    ImpPOM.Selectreviewer(driver).click();
+				    ImpPOM.Selectreviewer().click();
 				    Thread.sleep(1000);
 				    
-				    JavascriptExecutor js1=(JavascriptExecutor) driver ;
+				    JavascriptExecutor js1=(JavascriptExecutor) getDriver() ;
 					js1.executeScript("window.scroll(0,500)");
 					
-					ImpPOM.impaddassignment(driver).click();
+					ImpPOM.impaddassignment().click();
 					
-					String successmsg = ImpPOM.successmsg(driver).getText();
+					String successmsg = ImpPOM.successmsg().getText();
 					if(successmsg.equalsIgnoreCase("Assignment saved successfully"))
 					{
 						test.log(LogStatus.PASS, "Message Displayed = "+successmsg);
@@ -343,50 +344,50 @@ public class ImpMethodPOM {
 			}
 			else
 			{
-			ImpPOM.ClickLicesneStatutory(driver).click();
+			ImpPOM.ClickLicesneStatutory().click();
 			Thread.sleep(3000);
-			ImpPOM.LicenseCreation(driver).click();
+			ImpPOM.LicenseCreation().click();
 			Thread.sleep(3000);
-			Set w = driver.getWindowHandles();    // window handles
+			Set w = getDriver().getWindowHandles();    // window handles
 			Thread.sleep(3000);
 		      Iterator t = w.iterator();  // window handles iterate
 		      String pw = (String) t.next();
 		      String ch = (String) t.next();
 		       driver.switchTo().window(ch);
-		       ImpPOM.NewAssinmenttab(driver).click();
+		       ImpPOM.NewAssinmenttab().click();
 		       Thread.sleep(7000);
-			ImpPOM.ClickCustomer2(driver).click();
+			ImpPOM.ClickCustomer2().click();
 			Thread.sleep(7000);
-			ImpPOM.SelectCustomer2(driver).click();
+			ImpPOM.SelectCustomer2().click();
 			Thread.sleep(5000);
-		     ImpPOM.clicklicensetype1(driver).click();
+		     ImpPOM.clicklicensetype1().click();
 		    Thread.sleep(7000);
 			 //   licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
-		     ImpPOM.searchlice1(driver).sendKeys("Boiler",Keys.ENTER);
+		     ImpPOM.searchlice1().sendKeys("Boiler",Keys.ENTER);
 			    Thread.sleep(3000);
-			    ImpPOM.LocationCheck(driver).click();
+			    ImpPOM.LocationCheck().click();
 			    Thread.sleep(3000);
-			    ImpPOM.SelectButton1(driver).click();
+			    ImpPOM.SelectButton1().click();
 		  		
-			    ImpPOM.CheckCompliance(driver).click();
+			    ImpPOM.CheckCompliance().click();
 			    Thread.sleep(3000);
-			    ImpPOM.clicklocation(driver).click();
+			    ImpPOM.clicklocation().click();
 			    Thread.sleep(3000);
-			    ImpPOM.ClickPerformer(driver).click();
+			    ImpPOM.ClickPerformer().click();
 			    Thread.sleep(3000);
-			    ImpPOM.selectperformer(driver).click();
+			    ImpPOM.selectperformer().click();
 			    Thread.sleep(1000);
-			    ImpPOM.ClickReviewer(driver).click();
+			    ImpPOM.ClickReviewer().click();
 			    Thread.sleep(1000);
-			    ImpPOM.Selectreviewer(driver).click();
+			    ImpPOM.Selectreviewer().click();
 			    Thread.sleep(1000);
 			    
-			    JavascriptExecutor js1=(JavascriptExecutor) driver ;
+			    JavascriptExecutor js1=(JavascriptExecutor) getDriver() ;
 				js1.executeScript("window.scroll(0,500)");
 				
-				ImpPOM.impaddassignment(driver).click();
+				ImpPOM.impaddassignment().click();
 				
-				String successmsg = ImpPOM.successmsg(driver).getText();
+				String successmsg = ImpPOM.successmsg().getText();
 				if(successmsg.equalsIgnoreCase("Assignment saved successfully"))
 				{
 					test.log(LogStatus.PASS, "Message Displayed = "+successmsg);
@@ -402,84 +403,85 @@ public class ImpMethodPOM {
 			}		
 			
 	}
-	public static void compliancemappingInternalExport(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+	public static void compliancemappingInternalExport( ExtentTest test, String string) throws InterruptedException
 	{
-       WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
-		ImpPOM.clickmanageschedule(driver).click();
+		ImpPOM.clickmanageschedule().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicenseInternal(driver).click();
+		ImpPOM.ClickLicenseInternal().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickIntenalMapping(driver).click();
+		ImpPOM.ClickIntenalMapping().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicenseInternallink(driver).click();
+		ImpPOM.ClickLicenseInternallink().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickCustomerin(driver).click();
+		ImpPOM.ClickCustomerin().click();
 		Thread.sleep(1000);
 	   
 		
 
 		
 	}
-	public static void licenselist(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+	public static void licenselist( ExtentTest test, String type) throws InterruptedException
 	{
-		 WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+
 			
-			ImpPOM.clickmanageschedule(driver).click();
+			ImpPOM.clickmanageschedule().click();
 			Thread.sleep(3000);
-			ImpPOM.ClickLicesne(driver).click();
+			ImpPOM.ClickLicesne().click();
 	    	if(type.equalsIgnoreCase("Internal"))
 	    	{
 	    		
-	    	   ImpPOM.selecttypein(driver).click();
+	    	   ImpPOM.selecttypein().click();
 	    	   Thread.sleep(1000);
-	    	   ImpPOM.Licenselistin(driver).click();
+	    	   ImpPOM.Licenselistin().click();
 	    	   Thread.sleep(1000);
-	    	   ImpPOM.custdrop(driver).click();
+	    	   ImpPOM.custdrop().click();
 	    	   Thread.sleep(1000);
-	    	   ImpPOM.selectcustomerlist(driver).click();
+	    	   ImpPOM.selectcustomerlist().click();
 	    	   Thread.sleep(1000);
-		        ImpPOM.editlicense(driver).click();
+		        ImpPOM.editlicense().click();
 		        Thread.sleep(3000);       
-		        ImpPOM.updatelicenseNo(driver).clear();
+		        ImpPOM.updatelicenseNo().clear();
 		        Thread.sleep(3000);         
-		        ImpPOM.updatelicenseNo(driver).sendKeys("imn-23");
+		        ImpPOM.updatelicenseNo().sendKeys("imn-23");
 		        Thread.sleep(3000);        
-		        ImpPOM.updatelicensetitle(driver).clear();
+		        ImpPOM.updatelicensetitle().clear();
 		        Thread.sleep(1000);   
-		        ImpPOM.updatelicensetitle(driver).sendKeys("updateimn-23");
+		        ImpPOM.updatelicensetitle().sendKeys("updateimn-23");
 		        Thread.sleep(1000);   
-		        ImpPOM.licenselistsave(driver).click();
+		        ImpPOM.licenselistsave().click();
 		        test.log(LogStatus.PASS,"License Details Updated Successfully" );
 	    	
 	    	}
 	    	else
 	    	{
-	    		ImpPOM.ClickLicesneStatutory(driver).click();
+	    		ImpPOM.ClickLicesneStatutory().click();
 				Thread.sleep(1000);
-		        ImpPOM.licenselist(driver).click();
+		        ImpPOM.licenselist().click();
 		        Thread.sleep(1000);
-		        ImpPOM.custdrop(driver).click();
+		        ImpPOM.custdrop().click();
 		      
 		        Thread.sleep(1000);
-		        ImpPOM.selectcustomerlist(driver).click();
+		        ImpPOM.selectcustomerlist().click();
 	        Thread.sleep(8000);       
-	        ImpPOM.editlicense(driver).click();
+	        ImpPOM.editlicense().click();
 	        Thread.sleep(3000);       
-	        ImpPOM.updatelicenseNo(driver).clear();
+	        ImpPOM.updatelicenseNo().clear();
 	        Thread.sleep(1000);         
-	        ImpPOM.updatelicenseNo(driver).sendKeys("imn-23");
+	        ImpPOM.updatelicenseNo().sendKeys("imn-23");
 	        Thread.sleep(1000);        
-	        ImpPOM.updatelicensetitle(driver).clear();
+	        ImpPOM.updatelicensetitle().clear();
 	        Thread.sleep(1000);   
-	        ImpPOM.updatelicensetitle(driver).sendKeys("updateimn-23");
+	        ImpPOM.updatelicensetitle().sendKeys("updateimn-23");
 	        Thread.sleep(1000);   
-	        ImpPOM.licenselistsave(driver).click();
+	        ImpPOM.licenselistsave().click();
 	        test.log(LogStatus.PASS,"License Details Updated Successfully");
 	    	}
 	        }
 	
-	public static void Entitesassignment(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+	public static void Entitesassignment( ExtentTest test, String string) throws InterruptedException
 	{
 		/* WebDriverWait wait = new WebDriverWait(driver, 40);
 		 
@@ -503,18 +505,18 @@ public class ImpMethodPOM {
 		  Thread.sleep(5000);
 		  ImpPOM.pluseimg(driver).click();
 		  */
-		Actions action = new Actions(driver);
-		action.moveToElement( ImpPOM.manageusertab(driver)).click().build().perform();
+		Actions action = new Actions(getDriver());
+		action.moveToElement( ImpPOM.manageusertab()).click().build().perform();
 
 		Thread.sleep(6000);
-		ImpPOM.usermastertab(driver).click();
+		ImpPOM.usermastertab().click();
 		Thread.sleep(5000);
-		ImpPOM.SelectCustomerUser(driver).clear();
+		ImpPOM.SelectCustomerUser().clear();
 		Thread.sleep(2000);
-		ImpPOM.SelectCustomerUser(driver).sendKeys("ABCD Pvt Ltd");
-		ImpPOM.customer123Users(driver).click();
+		ImpPOM.SelectCustomerUser().sendKeys("ABCD Pvt Ltd");
+		ImpPOM.customer123Users().click();
 		Thread.sleep(4000);
-		ImpPOM.ModifyEntity(driver).click();
+		ImpPOM.ModifyEntity().click();
 		Thread.sleep(4000);
 		/*ImpPOM.LocationEA(driver).click();
 		Thread.sleep(1000);
@@ -531,16 +533,16 @@ public class ImpMethodPOM {
 		
 		ImplementPOM.SaveS(driver)
 		*/ 
-		 ImpPOM.stutrediolicbtn(driver).click();
+		 ImpPOM.stutrediolicbtn().click();
 		  Thread.sleep(1000);
-		  ImpPOM.assignrediobtn(driver).click();
+		  ImpPOM.assignrediobtn().click();
 		  Thread.sleep(1000);
 		 // ImpPOM.clicklocationimp(driver).click();
 		//  Thread.sleep(5000);
-		  ImpPOM.LocationEA(driver).click();
+		  ImpPOM.LocationEA().click();
 			Thread.sleep(7000);
 			By locator = By.xpath("//*[@id='BodyContent_tvBranchesn0']/img");
-			WebDriverWait wait = new WebDriverWait(driver, (100));
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
 			
@@ -551,17 +553,17 @@ public class ImpMethodPOM {
 			Thread.sleep(4000);
 
 			Thread.sleep(7000);
-			ImpPOM.EAAWSGFJBitaLimited(driver).click();
+			ImpPOM.EAAWSGFJBitaLimited().click();
 			Thread.sleep(7000);
-			ImpPOM.LocationEA(driver).click();
+			ImpPOM.LocationEA().click();
 			Thread.sleep(3000);
-			ImpPOM.clickcategorylic(driver).click();
+			ImpPOM.clickcategorylic().click();
 			Thread.sleep(3000);
-			ImpPOM.lictype(driver).click();
+			ImpPOM.lictype().click();
 			Thread.sleep(3000);
-			ImpPOM.clicksaves(driver).click();
+			ImpPOM.clicksaves().click();
 			
-			String valiemessage = ImpPOM.validtabel(driver).getText();
+			String valiemessage = ImpPOM.validtabel().getText();
 			if(valiemessage.equalsIgnoreCase("Entity already assigned to location for the category."))
 			{
 				test.log(LogStatus.FAIL, "Message Displayed = "+valiemessage);
@@ -571,23 +573,23 @@ public class ImpMethodPOM {
 				test.log(LogStatus.PASS, "Message Displayed = "+valiemessage);
 			}
 			
-			ImpPOM.Modifyclose(driver).click();
+			ImpPOM.Modifyclose().click();
 			Thread.sleep(7000);
 			
-			ImpPOM.ModifyEntity(driver).click();
+			ImpPOM.ModifyEntity().click();
 			Thread.sleep(3000);
-			 ImpPOM.stutrediolicbtn(driver).click();
+			 ImpPOM.stutrediolicbtn().click();
 			  Thread.sleep(3000);
-			  ImpPOM.assignrediobtn(driver).click();
+			  ImpPOM.assignrediobtn().click();
 			  Thread.sleep(1000);
-			  ImpPOM.Checkallloc(driver).click();
+			  ImpPOM.Checkallloc().click();
 			  Thread.sleep(5000);
 			//  ImpPOM.clickcategorylic(driver).click();
 			//	Thread.sleep(5000);
 				//ImpPOM.lictype(driver).click();
 
-				ImpPOM.clicksaves(driver).click();
-				String valiemessage2 = ImpPOM.validtabel(driver).getText();
+				ImpPOM.clicksaves().click();
+				String valiemessage2 = ImpPOM.validtabel().getText();
 				if(valiemessage.equalsIgnoreCase("Entity already assigned to location for the category."))
 				{
 					test.log(LogStatus.FAIL, "Message Displayed = "+valiemessage);
@@ -597,16 +599,16 @@ public class ImpMethodPOM {
 					test.log(LogStatus.PASS, "Message Displayed = "+valiemessage);
 				}
 				 Thread.sleep(5000);
-				ImpPOM.Modifyclose(driver).click();
+				ImpPOM.Modifyclose().click();
 				Thread.sleep(7000);
 				
-				ImpPOM.ModifyEntity(driver).click();
+				ImpPOM.ModifyEntity().click();
 				Thread.sleep(7000);
-				 ImpPOM.stutrediolicbtn(driver).click();
+				 ImpPOM.stutrediolicbtn().click();
 				  Thread.sleep(1000);
-				 ImpPOM.deleteentity(driver).click();
+				 ImpPOM.deleteentity().click();
 				 Thread.sleep(1000);
-				  ImpPOM.LocationEA(driver).click();
+				  ImpPOM.LocationEA().click();
 					Thread.sleep(7000);
 					By locator1 = By.xpath("//*[@id='BodyContent_tvBranchesn0']/img");
 					WebDriverWait wait1 = new WebDriverWait(driver, (100));
@@ -620,16 +622,16 @@ public class ImpMethodPOM {
 					Thread.sleep(4000);
 
 					Thread.sleep(7000);
-					ImpPOM.EAAWSGFJBitaLimited(driver).click();
+					ImpPOM.EAAWSGFJBitaLimited().click();
 					Thread.sleep(7000);
-					ImpPOM.LocationEA(driver).click();
+					ImpPOM.LocationEA().click();
 					Thread.sleep(3000);
-					ImpPOM.clickcategorylic(driver).click();
+					ImpPOM.clickcategorylic().click();
 					Thread.sleep(3000);
-					ImpPOM.lictype(driver).click();
+					ImpPOM.lictype().click();
 					Thread.sleep(3000);
-					ImpPOM.clicksaves(driver).click();
-					   Alert alert = driver.switchTo().alert();
+					ImpPOM.clicksaves().click();
+					   Alert alert = getDriver().switchTo().alert();
 				       
 				        // Capturing alert message.   
 				        String alertMessage= driver.switchTo().alert().getText();
@@ -640,15 +642,15 @@ public class ImpMethodPOM {
 				        alert.accept();
 				
 	}
-	public static void appliedlicensecreation(WebDriver driver, ExtentTest test, String string) throws InterruptedException
+	public static void appliedlicensecreation( ExtentTest test, String string) throws InterruptedException
 	{
-		ImpPOM.clickmanageschedule(driver).click();
+		ImpPOM.clickmanageschedule().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicesne(driver).click();
+		ImpPOM.ClickLicesne().click();
 		Thread.sleep(3000);
-		ImpPOM.ClickLicesneStatutory(driver).click();
+		ImpPOM.ClickLicesneStatutory().click();
 		Thread.sleep(3000);
-		if(ImpPOM.Appliedliccreation(driver).isDisplayed())
+		if(ImpPOM.Appliedliccreation().isDisplayed())
 		{
 			test.log(LogStatus.PASS,"Applied license Creation tab displayed");
 		}
@@ -656,7 +658,7 @@ public class ImpMethodPOM {
 		{
 			test.log(LogStatus.PASS,"Applied license Creation tab can't displayed");
 		}
-		ImpPOM.Appliedliccreation(driver).click();
+		ImpPOM.Appliedliccreation().click();
 		Thread.sleep(3000);
 		Set w = driver.getWindowHandles();    // window handles
 		Thread.sleep(3000);
@@ -664,28 +666,28 @@ public class ImpMethodPOM {
 	      String pw = (String) t.next();
 	      String ch = (String) t.next();
 	       driver.switchTo().window(ch);
-	   	ImpPOM.ClickCustomer(driver).click();
+	   	ImpPOM.ClickCustomer().click();
 		Thread.sleep(7000);
 		//ImpPOM.SearchCustomer(driver).sendKeys("ABCD Pvt Ltd",Keys.ENTER);
 		//Thread.sleep(5000);
-		ImpPOM.SelectCustomer1(driver).click();
+		ImpPOM.SelectCustomer1().click();
 		Thread.sleep(5000);
-	    ImpPOM.ClickLicenseType(driver).click();
+	    ImpPOM.ClickLicenseType().click();
 	    Thread.sleep(5000);
 	    //ImpPOM.SelectLicesetype(driver).click();
 	    //Thread.sleep(3000);
 	      //	 MethodPOM.ClickLicensetype1(driver).click();
-		    licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
+		    licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
 		    Thread.sleep(5000);
-		    ImpPOM.appliedCheckcompliance(driver).click();
+		    ImpPOM.appliedCheckcompliance().click();
 		    Thread.sleep(5000);
-		    ImpPOM.appliedstartdate(driver).sendKeys("01-08-2023");
+		    ImpPOM.appliedstartdate().sendKeys("01-08-2023");
 		    Thread.sleep(1000);
-		    JavascriptExecutor js1=(JavascriptExecutor) driver ;
+		    JavascriptExecutor js1=(JavascriptExecutor) getDriver() ;
 			js1.executeScript("window.scroll(0,500)");
-		    ImpPOM.appliedsavelic(driver).click();
+		    ImpPOM.appliedsavelic().click();
 		    Thread.sleep(1000);
-             String msg =licenseCompanyadmin.MethodPOM.Message(driver).getText();		//Reading Message appeared after save button
+             String msg =licenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
 			
 			if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
 			{
@@ -699,17 +701,17 @@ public class ImpMethodPOM {
 		
                driver.close();
 	}
-	public static void IsPermenenetLic(WebDriver driver, ExtentTest test, String type) throws InterruptedException
+	public static void IsPermenenetLic( ExtentTest test, String type) throws InterruptedException
 	{
-		  WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			
-			ImpPOM.clickmanageschedule(driver).click();
+			ImpPOM.clickmanageschedule().click();
 			Thread.sleep(3000);
-			ImpPOM.ClickLicesne(driver).click();
+			ImpPOM.ClickLicesne().click();
 			Thread.sleep(3000);
-			ImpPOM.ClickLicesneStatutory(driver).click();
+			ImpPOM.ClickLicesneStatutory().click();
 			Thread.sleep(3000);
-			ImpPOM.LicenseCreation1(driver).click();
+			ImpPOM.LicenseCreation1().click();
 			Thread.sleep(3000);
 			Set w = driver.getWindowHandles();    // window handles
 			Thread.sleep(3000);
@@ -718,20 +720,20 @@ public class ImpMethodPOM {
 		      String ch = (String) t.next();
 		      
 		      driver.switchTo().window(ch);
-			ImpPOM.ClickCustomer(driver).click();
+			ImpPOM.ClickCustomer().click();
 			Thread.sleep(7000);
 			//ImpPOM.SearchCustomer(driver).sendKeys("ABCD Pvt Ltd",Keys.ENTER);
 			//Thread.sleep(5000);
-			ImpPOM.SelectCustomer1(driver).click();
+			ImpPOM.SelectCustomer1().click();
 			Thread.sleep(5000);
-		    ImpPOM.ClickLicenseType(driver).click();
+		    ImpPOM.ClickLicenseType().click();
 		    Thread.sleep(5000);
 		    //ImpPOM.SelectLicesetype(driver).click();
 		    //Thread.sleep(3000);
 		      //	 MethodPOM.ClickLicensetype1(driver).click();
-			  licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
+			  licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
 			   Thread.sleep(3000);
-		   if(ImpPOM.ChkIsPerment(driver).isDisplayed())
+		   if(ImpPOM.ChkIsPerment().isDisplayed())
 		   {
 			   test.log(LogStatus.PASS, "IsPermanent CheckBox displayed	"); 
 			  

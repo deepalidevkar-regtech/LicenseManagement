@@ -22,9 +22,10 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
 import licensePerformer.LiPerformerPOM;
+import login.webpage;
 import performer.OverduePOM;
 
-public class MethodsPOM 
+public class MethodsPOM extends webpage
 {
 	private static List<WebElement> elementsList = null;
 	
@@ -33,13 +34,13 @@ public class MethodsPOM
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static XSSFSheet sheet1 = null;		//Sheet variable
 	
-	public static void progress(WebDriver driver) throws InterruptedException
+	public static void progress() throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 180);
+		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		try
 		{
 			Thread.sleep(300);
-			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 		}
 		catch(Exception e)
 		{
@@ -54,229 +55,229 @@ public class MethodsPOM
 		
 		Thread.sleep(500);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.UP);
+		CFOcountPOM.clickNextPage1().sendKeys(Keys.UP);
 		js.executeScript("window.scrollBy(0,-700)");
-		performerPOM.clickNew(driver).click();						//Clicking on 'New' button
+		performerPOM.clickNew().click();						//Clicking on 'New' button
 		
-		progress(driver);
+		progress(getDriver());
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
 		
-		performerPOM.clickDated(driver).click();					//Clicking on 'Dated' button
-		OverduePOM.selectLastMonth(driver).click();					//Clicking last month arrow.
-		OverduePOM.selectDate3(driver).click();						//Clicking particular date.
+		performerPOM.clickDated().click();					//Clicking on 'Dated' button
+		OverduePOM.selectLastMonth().click();					//Clicking last month arrow.
+		OverduePOM.selectDate3().click();						//Clicking particular date.
 		
 		Thread.sleep(300);
-		performerPOM.clickFinancialYear(driver).click();			//Clicking on 'Financial Year' drop down.
-		elementsList = performerPOM.chooseDropDownOption(driver);
+		performerPOM.clickFinancialYear().click();			//Clicking on 'Financial Year' drop down.
+		elementsList = performerPOM.chooseDropDownOption();
 		elementsList.get(2).click();								//Clicking third option
-		performerPOM.clickFinancialYear(driver).click();			//Clicking on 'Financial Year' drop down.
+		performerPOM.clickFinancialYear().click();			//Clicking on 'Financial Year' drop down.
 		
 		Thread.sleep(500);
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String refno = c1.getStringCellValue();
-		performerPOM.clickRefNo(driver).sendKeys(refno);			//Writing 'Reference No'
+		performerPOM.clickRefNo().sendKeys(refno);			//Writing 'Reference No'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(1);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String noticeType = c1.getStringCellValue();
-		performerPOM.clickNoticeType(driver).click();
-		performerPOM.clickSearch(driver).sendKeys(noticeType, Keys.ENTER);	//Writing 'Notice Type'
+		performerPOM.clickNoticeType().click();
+		performerPOM.clickSearch().sendKeys(noticeType, Keys.ENTER);	//Writing 'Notice Type'
 		
 		Thread.sleep(300);
-		progress(driver);
+		progress();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(2);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int actNo = (int) c1.getNumericCellValue();
-		performerPOM.clickAct(driver).click();						//Clicking on 'Act' drop down.
-		elementsList = performerPOM.chooseAct(driver);
+		performerPOM.clickAct().click();						//Clicking on 'Act' drop down.
+		elementsList = performerPOM.chooseAct();
 		elementsList.get(actNo).click();							//Selecting particular act no
-		performerPOM.clickAct(driver).click();						//Clicking on 'Act' drop down.
+		performerPOM.clickAct().click();						//Clicking on 'Act' drop down.
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(3);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String underSection = c1.getStringCellValue();
-		performerPOM.clickUnderSection(driver).sendKeys(underSection);	//Writing 'Under section'
+		performerPOM.clickUnderSection().sendKeys(underSection);	//Writing 'Under section'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(4);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String opponent = c1.getStringCellValue();
-		performerPOM.clickOpponent(driver).click();					//Clicking on 'Opponent'
-		performerPOM.clickSearch1(driver).sendKeys(opponent);		//Writing 'Opponent' name
+		performerPOM.clickOpponent().click();					//Clicking on 'Opponent'
+		performerPOM.clickSearch1().sendKeys(opponent);		//Writing 'Opponent' name
 		Thread.sleep(300);
-		performerPOM.clickSelectAll(driver).click();
-		performerPOM.clickOpponent(driver).click();
+		performerPOM.clickSelectAll().click();
+		performerPOM.clickOpponent().click();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(5);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String oppoLawyer = c1.getStringCellValue();
-		performerPOM.clickOppLawyer(driver).click();				//Clicking on 'Opponent'
-		performerPOM.clickSearch2(driver).sendKeys(oppoLawyer);		//Writing 'Opposition Lawyer' name
+		performerPOM.clickOppLawyer().click();				//Clicking on 'Opponent'
+		performerPOM.clickSearch2().sendKeys(oppoLawyer);		//Writing 'Opposition Lawyer' name
 		Thread.sleep(300);
-		performerPOM.clickSelectAll1(driver).click();
-		performerPOM.clickOppLawyer(driver).click();
+		performerPOM.clickSelectAll1().click();
+		performerPOM.clickOppLawyer().click();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(6);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String title = c1.getStringCellValue();
-		performerPOM.clickNoticeTitle(driver).sendKeys(title);		//Writing 'Notice Title'
+		performerPOM.clickNoticeTitle().sendKeys(title);		//Writing 'Notice Title'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(7);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String desc = c1.getStringCellValue();
-		performerPOM.clickNoticeDescription(driver).sendKeys(desc);	//Writing 'Notice Description'
+		performerPOM.clickNoticeDescription().sendKeys(desc);	//Writing 'Notice Description'
 		
 		Thread.sleep(300);		
-		performerPOM.clickNoticeDescription(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickNoticeDescription().sendKeys(Keys.PAGE_DOWN);
 		
 		Thread.sleep(300);
-		performerPOM.clickLocation(driver).click();					//Clicking on Location drop down
+		performerPOM.clickLocation().click();					//Clicking on Location drop down
 		Thread.sleep(300);
 		//performerPOM.clickPlus(driver).click();
-		elementsList = performerPOM.selectLocation(driver);
+		elementsList = performerPOM.selectLocation();
 		elementsList.get(2).click();								//Selecting third visible location
 		
 		Thread.sleep(300);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickDated(driver)));
-		wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickLocation(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickDated()));
+		wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickLocation()));
 		
-		performerPOM.clickNoticeDescription(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickNoticeDescription().sendKeys(Keys.PAGE_DOWN);
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(8);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String jurisdiction = c1.getStringCellValue();
-		performerPOM.clickJurisdiction(driver).click();					//Clicking on 'Jurisdiction' drop down
+		performerPOM.clickJurisdiction().click();					//Clicking on 'Jurisdiction' drop down
 		Thread.sleep(600);
-		performerPOM.clickSearch3(driver).sendKeys(jurisdiction, Keys.ENTER);	//Writing 'Jurisdiction' name
+		performerPOM.clickSearch3().sendKeys(jurisdiction, Keys.ENTER);	//Writing 'Jurisdiction' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(9);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String dept = c1.getStringCellValue();
-		performerPOM.clickDepartment(driver).click();					//Clicking on 'Department' drop down
-		performerPOM.clickSearch4(driver).sendKeys(dept, Keys.ENTER);	//Writing 'Department' name
+		performerPOM.clickDepartment().click();					//Clicking on 'Department' drop down
+		performerPOM.clickSearch4().sendKeys(dept, Keys.ENTER);	//Writing 'Department' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(10);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String ContactDept = c1.getStringCellValue();
-		performerPOM.clickContactDept(driver).click();					//Clicking on 'Contact Person of Department' drop down
-		performerPOM.clickSearch5(driver).sendKeys(ContactDept, Keys.ENTER);	//Writing 'Contact Person' name
+		performerPOM.clickContactDept().click();					//Clicking on 'Contact Person of Department' drop down
+		performerPOM.clickSearch5().sendKeys(ContactDept, Keys.ENTER);	//Writing 'Contact Person' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(11);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int noticeTerm = (int) c1.getNumericCellValue();
-		performerPOM.clickNoticeTerm(driver).sendKeys(noticeTerm+"");		//Writing 'Notice Term'
+		performerPOM.clickNoticeTerm().sendKeys(noticeTerm+"");		//Writing 'Notice Term'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(12);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String owner = c1.getStringCellValue();
-		performerPOM.clickOwner(driver).click();					//Clicking on 'Owner' drop down
-		performerPOM.clickSearch6(driver).sendKeys(owner, Keys.ENTER);	//Writing 'Owner' name
+		performerPOM.clickOwner().click();					//Clicking on 'Owner' drop down
+		performerPOM.clickSearch6().sendKeys(owner, Keys.ENTER);	//Writing 'Owner' name
 		
 		Thread.sleep(300);
-		performerPOM.clickWinningProspect(driver).click();
+		performerPOM.clickWinningProspect().click();
 		Thread.sleep(100);
-		performerPOM.selectRisk(driver).click();	//Selecting 'Medium' Winning Prospect'
+		performerPOM.selectRisk().click();	//Selecting 'Medium' Winning Prospect'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(13);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int noticeBudget = (int) c1.getNumericCellValue();
-		performerPOM.clickNoticeBudget(driver).sendKeys(noticeBudget+"");	//Writing 'Notice Budget'
+		performerPOM.clickNoticeBudget().sendKeys(noticeBudget+"");	//Writing 'Notice Budget'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(14);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int claimedAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickClaimedAmount(driver).sendKeys(claimedAmount+"");	//Writing 'Claimed Amount'
+		performerPOM.clickClaimedAmount().sendKeys(claimedAmount+"");	//Writing 'Claimed Amount'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(15);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String state = c1.getStringCellValue();
-		performerPOM.clickState(driver).click();					//Clicking on 'Owner' drop down
-		performerPOM.clickSearchState(driver).sendKeys(state, Keys.ENTER);	//Writing 'State' name
+		performerPOM.clickState().click();					//Clicking on 'Owner' drop down
+		performerPOM.clickSearchState().sendKeys(state, Keys.ENTER);	//Writing 'State' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(16);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int probAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickProbableAmount(driver).sendKeys(probAmount+"");	//Writing 'Probable Amount'
+		performerPOM.clickProbableAmount().sendKeys(probAmount+"");	//Writing 'Probable Amount'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(17);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int provAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickProvisionalAmount(driver).sendKeys(provAmount+"");	//Writing 'Provisional Amount'
+		performerPOM.clickProvisionalAmount().sendKeys(provAmount+"");	//Writing 'Provisional Amount'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(18);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int protestAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickProtestMoney(driver).sendKeys(protestAmount+"");	//Writing 'Protest Amount'
+		performerPOM.clickProtestMoney().sendKeys(protestAmount+"");	//Writing 'Protest Amount'
 		
 		Thread.sleep(500);
-		performerPOM.clickProtestMoney(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickProtestMoney().sendKeys(Keys.PAGE_DOWN);
 		
 		Thread.sleep(500);
-		performerPOM.clickRisk(driver).click();							//Clicking on 'Risk' drop down.
+		performerPOM.clickRisk().click();							//Clicking on 'Risk' drop down.
 		Thread.sleep(300);
-		performerPOM.selectRisk2(driver).click();						//Selecting second option 'High' risk.
+		performerPOM.selectRisk2().click();						//Selecting second option 'High' risk.
 		
 		Thread.sleep(500);
-		performerPOM.clickPotentialImpactRadio(driver).click();			//Clicking on 'Monetary' radio button
+		performerPOM.clickPotentialImpactRadio().click();			//Clicking on 'Monetary' radio button
 		
 		Thread.sleep(400);
-		performerPOM.clickMonetary(driver).sendKeys("Automation123");
+		performerPOM.clickMonetary().sendKeys("Automation123");
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(19);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String lawFirm = c1.getStringCellValue();
-		performerPOM.clickLawFirm(driver).click();		//Clicking on 'Law Firm' drop down.
-		performerPOM.chooseLawFirm(driver).sendKeys(lawFirm, Keys.DOWN, Keys.ENTER);	//Writing & selecting 'Law Firm' name
+		performerPOM.clickLawFirm().click();		//Clicking on 'Law Firm' drop down.
+		performerPOM.chooseLawFirm().sendKeys(lawFirm, Keys.DOWN, Keys.ENTER);	//Writing & selecting 'Law Firm' name
 		
 		Thread.sleep(300);
-		progress(driver);
+		progress();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(20);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int internalUserNo = (int) c1.getNumericCellValue();
-		performerPOM.clickInternalUser(driver).click();						//Clicking on 'Internal User' drop down.
-		elementsList = performerPOM.chooseInternalUser(driver);
+		performerPOM.clickInternalUser().click();						//Clicking on 'Internal User' drop down.
+		elementsList = performerPOM.chooseInternalUser();
 		elementsList.get(internalUserNo).click();							//Selecting particular user no
-		performerPOM.clickInternalUser(driver).click();						//Clicking on 'Internal User' drop down.
+		performerPOM.clickInternalUser().click();						//Clicking on 'Internal User' drop down.
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(21);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int lawyerNo = (int) c1.getNumericCellValue();
-		performerPOM.clickLawyer(driver).click();						//Clicking on 'Lawyer' drop down.
-		elementsList = performerPOM.chooseLawyer(driver);
+		performerPOM.clickLawyer().click();						//Clicking on 'Lawyer' drop down.
+		elementsList = performerPOM.chooseLawyer();
 		elementsList.get(lawyerNo).click();								//Selecting particular lawyer no
-		performerPOM.clickLawyer(driver).click();						//Clicking on 'Lawyer' drop down.
+		performerPOM.clickLawyer().click();						//Clicking on 'Lawyer' drop down.
 		
 		Thread.sleep(500);
-		OverduePOM.clickSaveButton(driver).click();						//Clicking on 'Save'button.
+		OverduePOM.clickSaveButton().click();						//Clicking on 'Save'button.
 		
 		Thread.sleep(500);
-		wait1.until(ExpectedConditions.visibilityOf(performerPOM.readMessage(driver)));
+		wait1.until(ExpectedConditions.visibilityOf(performerPOM.readMessage()));
 		
 		Thread.sleep(500);
-		String msg = performerPOM.readMessage(driver).getText();		//Reading Message appeared after save button
+		String msg = performerPOM.readMessage().getText();		//Reading Message appeared after save button
 		int flag = 0;
 		if(msg.equalsIgnoreCase("Notice Created Successfully."))
 		{
@@ -297,10 +298,10 @@ public class MethodsPOM
 		{
 			try
 			{
-				ele1 = performerPOM.clickLinkNotice(driver);
-				ele2 = performerPOM.clickViewDoc(driver);
-				ele3 = performerPOM.clickSendMail(driver);
-				ele4 = performerPOM.clickEditNotice(driver);
+				ele1 = performerPOM.clickLinkNotice();
+				ele2 = performerPOM.clickViewDoc();
+				ele3 = performerPOM.clickSendMail();
+				ele4 = performerPOM.clickEditNotice();
 			}
 			catch(Exception e)
 			{
@@ -318,22 +319,22 @@ public class MethodsPOM
 		}
 		
 		driver.switchTo().parentFrame();
-		performerPOM.clickClose(driver).click();			//Clicking on 'Close'
+		performerPOM.clickClose().click();			//Clicking on 'Close'
 		
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(1000);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count1 = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -351,18 +352,18 @@ public class MethodsPOM
 		}
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
+		OverduePOM.clickDashboard().click();			//Clicking on 'Dashboard'
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
 		int open1 = 0;
 		if(type.equalsIgnoreCase("Notice - Open"))
 		{
-			open1 = Integer.parseInt(performerPOM.clickNoticeOpen(driver).getText());	//Reading Notice Open count.
+			open1 = Integer.parseInt(performerPOM.clickNoticeOpen().getText());	//Reading Notice Open count.
 		}
 		else
 		{
-			open1 = Integer.parseInt(performerPOM.clickNoticeClosed(driver).getText());	//Reading Notice Open count.
+			open1 = Integer.parseInt(performerPOM.clickNoticeClosed().getText());	//Reading Notice Open count.
 		}
 		
 		if(open1 > open)
@@ -382,124 +383,124 @@ public class MethodsPOM
 		
 		Thread.sleep(500);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.UP);
+		CFOcountPOM.clickNextPage1().sendKeys(Keys.UP);
 		js.executeScript("window.scrollBy(0,-700)");
-		performerPOM.clickNew(driver).click();						//Clicking on 'New' button
+		performerPOM.clickNew().click();						//Clicking on 'New' button
 		
 		progress(driver);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
 		
-		performerPOM.clickCaseDate(driver).click();					//Clicking on 'Dated' button
-		OverduePOM.selectLastMonth(driver).click();					//Clicking last month arrow.
-		OverduePOM.selectDate3(driver).click();						//Clicking particular date.
+		performerPOM.clickCaseDate().click();					//Clicking on 'Dated' button
+		OverduePOM.selectLastMonth().click();					//Clicking last month arrow.
+		OverduePOM.selectDate3().click();						//Clicking particular date.
 		
 		Thread.sleep(300);
-		performerPOM.clickFinancialYear(driver).click();			//Clicking on 'Financial Year' drop down.
-		elementsList = performerPOM.clickFinanceSearchCheckbox(driver);
+		performerPOM.clickFinancialYear().click();			//Clicking on 'Financial Year' drop down.
+		elementsList = performerPOM.clickFinanceSearchCheckbox();
 		elementsList.get(2).click();								//Clicking third option
-		performerPOM.clickFinancialYear(driver).click();			//Clicking on 'Financial Year' drop down.
+		performerPOM.clickFinancialYear().click();			//Clicking on 'Financial Year' drop down.
 		
 		Thread.sleep(300);
 		Row row0 = sheet.getRow(0);								//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String refno = c1.getStringCellValue();
-		performerPOM.clickRefNo(driver).sendKeys(refno);			//Writing 'Court Case No'
+		performerPOM.clickRefNo().sendKeys(refno);			//Writing 'Court Case No'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(1);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String caseNo = c1.getStringCellValue();
-		performerPOM.clickInternalCaseNo(driver).sendKeys(caseNo);	//Writing 'Court Case No'
+		performerPOM.clickInternalCaseNo().sendKeys(caseNo);	//Writing 'Court Case No'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(2);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String title = c1.getStringCellValue();
-		performerPOM.clickNoticeTitle(driver).sendKeys(title);		//Writing 'Case Title'
+		performerPOM.clickNoticeTitle().sendKeys(title);		//Writing 'Case Title'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(3);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		int actNo = (int) c1.getNumericCellValue();
-		performerPOM.clickAct(driver).click();						//Clicking on 'Act' drop down.
-		elementsList = performerPOM.chooseAct1(driver);
+		performerPOM.clickAct().click();						//Clicking on 'Act' drop down.
+		elementsList = performerPOM.chooseAct1();
 		elementsList.get(actNo).click();							//Selecting particular act no
-		performerPOM.clickAct(driver).click();						//Clicking on 'Act' drop down.
+		performerPOM.clickAct().click();						//Clicking on 'Act' drop down.
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(4);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String underSection = c1.getStringCellValue();
-		performerPOM.clickUnderSection(driver).sendKeys(underSection);	//Writing 'Under section'
+		performerPOM.clickUnderSection().sendKeys(underSection);	//Writing 'Under section'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(5);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String caseType = c1.getStringCellValue();
-		performerPOM.clickCaseType(driver).click();
-		performerPOM.clickSearchCaseType(driver).sendKeys(caseType, Keys.ENTER);	//Writing 'Case Type'
+		performerPOM.clickCaseType().click();
+		performerPOM.clickSearchCaseType().sendKeys(caseType, Keys.ENTER);	//Writing 'Case Type'
 		
 		Thread.sleep(500);
-		progress(driver);
+		progress();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(6);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		int caseBudget = (int) c1.getNumericCellValue();
-		performerPOM.clickCaseBudget(driver).sendKeys(caseBudget+"");
+		performerPOM.clickCaseBudget().sendKeys(caseBudget+"");
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(7);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String opponent = c1.getStringCellValue();
-		performerPOM.clickOpponent(driver).click();					//Clicking on 'Opponent'
-		performerPOM.clickSearchBox(driver).sendKeys(opponent);		//Writing 'Opponent' name
+		performerPOM.clickOpponent().click();					//Clicking on 'Opponent'
+		performerPOM.clickSearchBox().sendKeys(opponent);		//Writing 'Opponent' name
 		Thread.sleep(300);
-		performerPOM.clickSelectAll2(driver).click();
-		performerPOM.clickOpponent(driver).click();
+		performerPOM.clickSelectAll2().click();
+		performerPOM.clickOpponent().click();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(8);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String oppoLawyer = c1.getStringCellValue();
-		performerPOM.clickOppLawyer(driver).click();				//Clicking on 'Opponent'
-		performerPOM.clickSearchBox1(driver).sendKeys(oppoLawyer);	//Writing 'Opposition Lawyer' name
+		performerPOM.clickOppLawyer().click();				//Clicking on 'Opponent'
+		performerPOM.clickSearchBox1().sendKeys(oppoLawyer);	//Writing 'Opposition Lawyer' name
 		Thread.sleep(300);
-		performerPOM.clickSelectAll3(driver).click();
-		performerPOM.clickOppLawyer(driver).click();
+		performerPOM.clickSelectAll3().click();
+		performerPOM.clickOppLawyer().click();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(9);								//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String court = c1.getStringCellValue();
-		performerPOM.clickCourt(driver).click();
-		performerPOM.clickSearchCourt(driver).sendKeys(court, Keys.ENTER);
+		performerPOM.clickCourt().click();
+		performerPOM.clickSearchCourt().sendKeys(court, Keys.ENTER);
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(10);							//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String judge = c1.getStringCellValue();
-		performerPOM.clickJudge(driver).sendKeys(judge);
+		performerPOM.clickJudge().sendKeys(judge);
 		
 		Thread.sleep(300);		
-		performerPOM.clickCaseBudget(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickCaseBudget().sendKeys(Keys.PAGE_DOWN);
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(11);							//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String caseDesc = c1.getStringCellValue();
-		performerPOM.clickNoticeDescription(driver).sendKeys(caseDesc);
+		performerPOM.clickNoticeDescription().sendKeys(caseDesc);
 		
 		Thread.sleep(300);
-		performerPOM.clickLocation(driver).click();					//Clicking on Location drop down
+		performerPOM.clickLocation().click();					//Clicking on Location drop down
 		//performerPOM.clickPlus(driver).click();
 		Thread.sleep(300);
-		elementsList = performerPOM.selectLocation(driver);
+		elementsList = performerPOM.selectLocation();
 		elementsList.get(2).click();								//Selecting third visible location
 		
 		Thread.sleep(700);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseDate(driver)));
-		wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCaseDate(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseDate()));
+		wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCaseDate()));
 		
 		Thread.sleep(700);
 		js.executeScript("window.scrollBy(0,600)");
@@ -508,117 +509,117 @@ public class MethodsPOM
 		row0 = sheet.getRow(12);							//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String jurisdiction = c1.getStringCellValue();
-		performerPOM.clickJurisdiction(driver).click();					//Clicking on 'Jurisdiction' drop down
+		performerPOM.clickJurisdiction().click();					//Clicking on 'Jurisdiction' drop down
 		Thread.sleep(600);
-		performerPOM.clickSearch3(driver).sendKeys(jurisdiction, Keys.ENTER);	//Writing 'Jurisdiction' name
+		performerPOM.clickSearch3().sendKeys(jurisdiction, Keys.ENTER);	//Writing 'Jurisdiction' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(13);							//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String dept = c1.getStringCellValue();
-		performerPOM.clickDepartment(driver).click();					//Clicking on 'Department' drop down
-		performerPOM.clickSearch4(driver).sendKeys(dept, Keys.ENTER);	//Writing 'Department' name
+		performerPOM.clickDepartment().click();					//Clicking on 'Department' drop down
+		performerPOM.clickSearch4().sendKeys(dept, Keys.ENTER);	//Writing 'Department' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(14);							//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String ContactDept = c1.getStringCellValue();
-		performerPOM.clickContactDept(driver).click();					//Clicking on 'Contact Person of Department' drop down
-		performerPOM.clickSearch5(driver).sendKeys(ContactDept, Keys.ENTER);	//Writing 'Contact Person' name
+		performerPOM.clickContactDept().click();					//Clicking on 'Contact Person of Department' drop down
+		performerPOM.clickSearch5().sendKeys(ContactDept, Keys.ENTER);	//Writing 'Contact Person' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(15);							//Selected 0th index row (First row)
 		c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String owner = c1.getStringCellValue();
-		performerPOM.clickOwner(driver).click();					//Clicking on 'Owner' drop down
-		performerPOM.clickSearch6(driver).sendKeys(owner, Keys.ENTER);	//Writing 'Owner' name
+		performerPOM.clickOwner().click();					//Clicking on 'Owner' drop down
+		performerPOM.clickSearch6().sendKeys(owner, Keys.ENTER);	//Writing 'Owner' name
 		
 		Thread.sleep(300);
-		performerPOM.clickWinningProspect1(driver).click();
+		performerPOM.clickWinningProspect1().click();
 		Thread.sleep(100);
-		performerPOM.selectRisk1(driver).click();			//Selecting 'Medium' Winning Prospect'
+		performerPOM.selectRisk1().click();			//Selecting 'Medium' Winning Prospect'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(16);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int claimedAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickClaimedAmount(driver).sendKeys(claimedAmount+"");	//Writing 'Claimed Amount'
+		performerPOM.clickClaimedAmount().sendKeys(claimedAmount+"");	//Writing 'Claimed Amount'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(17);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int probAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickProbableAmount(driver).sendKeys(probAmount+"");	//Writing 'Probable Amount'
+		performerPOM.clickProbableAmount().sendKeys(probAmount+"");	//Writing 'Probable Amount'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(18);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int provAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickProvisionalAmount(driver).sendKeys(provAmount+"");	//Writing 'Provisional Amount'
+		performerPOM.clickProvisionalAmount().sendKeys(provAmount+"");	//Writing 'Provisional Amount'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(19);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int protestAmount = (int) c1.getNumericCellValue();
-		performerPOM.clickProtestMoney(driver).sendKeys(protestAmount+"");	//Writing 'Protest Amount'
+		performerPOM.clickProtestMoney().sendKeys(protestAmount+"");	//Writing 'Protest Amount'
 		
 		Thread.sleep(500);
-		performerPOM.clickProtestMoney(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickProtestMoney().sendKeys(Keys.PAGE_DOWN);
 		
 		Thread.sleep(500);
-		performerPOM.clickPotentialImpactRadio(driver).click();			//Clicking on 'Monetary' radio button
+		performerPOM.clickPotentialImpactRadio().click();			//Clicking on 'Monetary' radio button
 		
 		Thread.sleep(400);
-		performerPOM.clickMonetary(driver).sendKeys("Automation123");
+		performerPOM.clickMonetary().sendKeys("Automation123");
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(20);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String state = c1.getStringCellValue();
-		performerPOM.clickState(driver).click();					//Clicking on 'Owner' drop down
-		performerPOM.clickSearchState(driver).sendKeys(state, Keys.ENTER);	//Writing 'State' name
+		performerPOM.clickState().click();					//Clicking on 'Owner' drop down
+		performerPOM.clickSearchState().sendKeys(state, Keys.ENTER);	//Writing 'State' name
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(21);					//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String lawFirm = c1.getStringCellValue();
-		performerPOM.clickLawFirm(driver).click();		//Clicking on 'Law Firm' drop down.
-		performerPOM.chooseLawFirm(driver).sendKeys(lawFirm, Keys.DOWN, Keys.ENTER);	//Writing & selecting 'Law Firm' name
+		performerPOM.clickLawFirm().click();		//Clicking on 'Law Firm' drop down.
+		performerPOM.chooseLawFirm().sendKeys(lawFirm, Keys.DOWN, Keys.ENTER);	//Writing & selecting 'Law Firm' name
 		
 		Thread.sleep(300);
-		progress(driver);
+		progress();
 		
 		Thread.sleep(500);
-		performerPOM.clickRisk(driver).click();							//Clicking on 'Risk' drop down.
+		performerPOM.clickRisk().click();							//Clicking on 'Risk' drop down.
 		Thread.sleep(300);
-		performerPOM.selectRisk2(driver).click();						//Selecting second option 'High' risk.
+		performerPOM.selectRisk2().click();						//Selecting second option 'High' risk.
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(22);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int internalUserNo = (int) c1.getNumericCellValue();
-		performerPOM.clickInternalUser(driver).click();						//Clicking on 'Internal User' drop down.
-		elementsList = performerPOM.chooseInternalUser1(driver);
+		performerPOM.clickInternalUser().click();						//Clicking on 'Internal User' drop down.
+		elementsList = performerPOM.chooseInternalUser1();
 		elementsList.get(internalUserNo).click();							//Selecting particular user no
-		performerPOM.clickInternalUser(driver).click();						//Clicking on 'Internal User' drop down.
+		performerPOM.clickInternalUser().click();						//Clicking on 'Internal User' drop down.
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(23);						//Selected 0th index row (First row)
 		c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		int lawyerNo = (int) c1.getNumericCellValue();
-		performerPOM.clickLawyer(driver).click();						//Clicking on 'Lawyer' drop down.
-		elementsList = performerPOM.chooseLawyer(driver);
+		performerPOM.clickLawyer().click();						//Clicking on 'Lawyer' drop down.
+		elementsList = performerPOM.chooseLawyer();
 		elementsList.get(lawyerNo).click();								//Selecting particular lawyer no
-		performerPOM.clickLawyer(driver).click();						//Clicking on 'Lawyer' drop down.
+		performerPOM.clickLawyer().click();						//Clicking on 'Lawyer' drop down.
 		
 		Thread.sleep(500);
-		OverduePOM.clickSaveButton(driver).click();						//Clicking on 'Save'button.
+		OverduePOM.clickSaveButton().click();						//Clicking on 'Save'button.
 		
 		Thread.sleep(1000);
-		wait1.until(ExpectedConditions.visibilityOf(performerPOM.readMessage1(driver)));
+		wait1.until(ExpectedConditions.visibilityOf(performerPOM.readMessage1()));
 		
 		Thread.sleep(500);
-		String msg = performerPOM.readMessage1(driver).getText();		//Reading Message appeared after save button
+		String msg = performerPOM.readMessage1().getText();		//Reading Message appeared after save button
 		int flag = 0;
 		if(msg.equalsIgnoreCase("Case Created Successfully."))
 		{
@@ -640,11 +641,11 @@ public class MethodsPOM
 			try
 			{
 				Thread.sleep(700);
-				wait.until(ExpectedConditions.visibilityOf(performerPOM.clickEditCase(driver)));
-				ele1 = performerPOM.clickLinkCase(driver);
-				ele2 = performerPOM.clickViewDoc(driver);
-				ele3 = performerPOM.clickSendMail1(driver);
-				ele4 = performerPOM.clickEditCase(driver);
+				wait.until(ExpectedConditions.visibilityOf(performerPOM.clickEditCase()));
+				ele1 = performerPOM.clickLinkCase();
+				ele2 = performerPOM.clickViewDoc();
+				ele3 = performerPOM.clickSendMail1();
+				ele4 = performerPOM.clickEditCase();
 			}
 			catch(Exception e)
 			{
@@ -662,22 +663,22 @@ public class MethodsPOM
 		}
 		
 		driver.switchTo().parentFrame();
-		performerPOM.clickClose(driver).click();			//Clicking on 'Close'
+		performerPOM.clickClose().click();			//Clicking on 'Close'
 		
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(1000);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count1 = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -695,11 +696,11 @@ public class MethodsPOM
 		}
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
+		OverduePOM.clickDashboard().click();			//Clicking on 'Dashboard'
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
-		int open1 = Integer.parseInt(performerPOM.clickCaseOpen(driver).getText());	//Reading Notice Open count.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
+		int open1 = Integer.parseInt(performerPOM.clickCaseOpen().getText());	//Reading Notice Open count.
 		
 		if(open1 > open)
 		{
@@ -716,47 +717,47 @@ public class MethodsPOM
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		
 		Thread.sleep(500);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.UP);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		CFOcountPOM.clickNextPage().sendKeys(Keys.UP);
 		js.executeScript("window.scrollBy(0,-700)");
-		performerPOM.clickAddNewTask(driver).click();				//Clicking on 'New' button
+		performerPOM.clickAddNewTask().click();				//Clicking on 'New' button
 		
-		progress(driver);
+		progress();
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeAddTask"));
 		
 		Thread.sleep(500);
 		Row row0 = sheet.getRow(0);								//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);								//Selected cell (0 row,1 column)
 		String title = c1.getStringCellValue();
-		performerPOM.clickTaskTitle(driver).sendKeys(title);	//Writing 'Task Title'
+		performerPOM.clickTaskTitle().sendKeys(title);	//Writing 'Task Title'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(1);									//Selected 0th index row (First row)
 		c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
 		String desc = c1.getStringCellValue();
-		performerPOM.clickTaskDesc(driver).sendKeys(desc);		//Writing 'Task Description'
+		performerPOM.clickTaskDesc().sendKeys(desc);		//Writing 'Task Description'
 		
 		Thread.sleep(300);
-		performerPOM.clickDueDate(driver).click();				//Clicking on 'Due Date' text box
-		OverduePOM.selectNextMonth(driver).click();
-		OverduePOM.selectDate(driver).click();					//Selecting particular date.
+		performerPOM.clickDueDate().click();				//Clicking on 'Due Date' text box
+		OverduePOM.selectNextMonth().click();
+		OverduePOM.selectDate().click();					//Selecting particular date.
 		
 		Thread.sleep(300);
 		Actions action = new Actions(driver);
-		action.moveToElement(performerPOM.clickPriority(driver)).click().sendKeys(Keys.DOWN,Keys.ENTER).perform();
+		action.moveToElement(performerPOM.clickPriority()).click().sendKeys(Keys.DOWN,Keys.ENTER).perform();
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(2);									//Selected 0th index row (First row)
 		c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
 		String outcome = c1.getStringCellValue();
-		performerPOM.clickExpOutcome(driver).sendKeys(outcome);	//Writing 'Expected Outcome'
+		performerPOM.clickExpOutcome().sendKeys(outcome);	//Writing 'Expected Outcome'
 		
 		Thread.sleep(300);
 		row0 = sheet.getRow(3);									//Selected 0th index row (First row)
 		c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
 		String internalUser = c1.getStringCellValue();
-		performerPOM.clickInternalUser1(driver).click();
-		performerPOM.clickSearchInternalUser1(driver).sendKeys(internalUser, Keys.ENTER);	//Selecting 'Internal User'
+		performerPOM.clickInternalUser1().click();
+		performerPOM.clickSearchInternalUser1().sendKeys(internalUser, Keys.ENTER);	//Selecting 'Internal User'
 		
 		Thread.sleep(1000);
 		row0 = sheet.getRow(4);									//Selected 0th index row (First row)
@@ -765,9 +766,9 @@ public class MethodsPOM
 		try
 		{
 			Thread.sleep(300);
-			performerPOM.clickExternalUser(driver).click();
+			performerPOM.clickExternalUser().click();
 			Thread.sleep(500);
-			action.moveToElement(performerPOM.clickSearchExternalUser(driver)).sendKeys(externalUser, Keys.ENTER).perform();
+			action.moveToElement(performerPOM.clickSearchExternalUser()).sendKeys(externalUser, Keys.ENTER).perform();
 		}
 		catch(Exception e)
 		{
@@ -778,20 +779,20 @@ public class MethodsPOM
 		row0 = sheet.getRow(5);									//Selected 0th index row (First row)
 		c1 = row0.getCell(1);									//Selected cell (0 row,1 column)
 		String remark = c1.getStringCellValue();
-		performerPOM.clickRemark(driver).sendKeys(remark);		//Writing 'Remark'
+		performerPOM.clickRemark().sendKeys(remark);		//Writing 'Remark'
 		
 		//Thread.sleep(300);
 		//String workingDir = System.getProperty("user.dir");
 		//performerPOM.clickUpload(driver).sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file
 		
 		Thread.sleep(300);
-		OverduePOM.clickSaveButton(driver).click();				//Clicking on 'Save' button.
+		OverduePOM.clickSaveButton().click();				//Clicking on 'Save' button.
 		
 		Thread.sleep(300);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickMessage(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickMessage()));
 		
 		Thread.sleep(300);
-		String msg = performerPOM.clickMessage(driver).getText();
+		String msg = performerPOM.clickMessage().getText();
 		if(msg.contains("Task Saved Successfully."))
 		{
 			test.log(LogStatus.PASS, "Task Saved Successfully.");
@@ -802,30 +803,30 @@ public class MethodsPOM
 		}
 		
 		driver.switchTo().parentFrame();
-		performerPOM.clickClose1(driver).click();			//Clicking on 'Close'
+		performerPOM.clickClose1().click();			//Clicking on 'Close'
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport()));
 		
 		Thread.sleep(300);
-		performerPOM.clickStatusDropDown(driver).click();		//Clicking on 'Status drop down.
+		performerPOM.clickStatusDropDown().click();		//Clicking on 'Status drop down.
 		Thread.sleep(500);
-		performerPOM.selectStatusDropDown(driver).click();		//Selecting 'Pending/Open' status
+		performerPOM.selectStatusDropDown().click();		//Selecting 'Pending/Open' status
 		
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(1000);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count1 = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -843,11 +844,11 @@ public class MethodsPOM
 		}
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
+		OverduePOM.clickDashboard().click();			//Clicking on 'Dashboard'
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickTaskOpen(driver)));
-		int open1 = Integer.parseInt(performerPOM.clickTaskOpen(driver).getText());	//Reading Notice Open count.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickTaskOpen()));
+		int open1 = Integer.parseInt(performerPOM.clickTaskOpen().getText());	//Reading Notice Open count.
 		
 		if(open1 > open)
 		{
@@ -864,53 +865,53 @@ public class MethodsPOM
 	static int CountExcel(WebDriver driver, ExtentTest test, String type) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 50);
-		progress(driver);
+		progress();
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
 		int open = 0;
 		if(type.equalsIgnoreCase("Notice - Open"))
 		{
-			open = Integer.parseInt(performerPOM.clickNoticeOpen(driver).getText());	//Reading Notice Open count.
-			performerPOM.clickNoticeOpen(driver).click();						//Clicking on 'Open' notice
+			open = Integer.parseInt(performerPOM.clickNoticeOpen().getText());	//Reading Notice Open count.
+			performerPOM.clickNoticeOpen().click();						//Clicking on 'Open' notice
 		}
 		else if(type.equalsIgnoreCase("Notice - Closed"))
 		{
-			open = Integer.parseInt(performerPOM.clickNoticeClosed(driver).getText());	//Reading Notice Closed count.
-			performerPOM.clickNoticeClosed(driver).click();						//Clicking on 'Closed' notice
+			open = Integer.parseInt(performerPOM.clickNoticeClosed().getText());	//Reading Notice Closed count.
+			performerPOM.clickNoticeClosed().click();						//Clicking on 'Closed' notice
 		}
 		else if(type.equalsIgnoreCase("Case - Open"))
 		{
-			open = Integer.parseInt(performerPOM.clickCaseOpen(driver).getText());	//Reading Case Open count.
-			performerPOM.clickCaseOpen(driver).click();						//Clicking on 'Open' Case
+			open = Integer.parseInt(performerPOM.clickCaseOpen().getText());	//Reading Case Open count.
+			performerPOM.clickCaseOpen().click();						//Clicking on 'Open' Case
 		}
 		else if(type.equalsIgnoreCase("Case - Closed"))
 		{
-			open = Integer.parseInt(performerPOM.clickCaseClosed(driver).getText());	//Reading Case Open count.
-			performerPOM.clickCaseClosed(driver).click();						//Clicking on 'Open' Case
+			open = Integer.parseInt(performerPOM.clickCaseClosed().getText());	//Reading Case Open count.
+			performerPOM.clickCaseClosed().click();						//Clicking on 'Open' Case
 		}
 		else if(type.equalsIgnoreCase("Task - Open"))
 		{
-			open = Integer.parseInt(performerPOM.clickTaskOpen(driver).getText());	//Reading Case Open count.
-			performerPOM.clickTaskOpen(driver).click();						//Clicking on 'Open' Case
+			open = Integer.parseInt(performerPOM.clickTaskOpen().getText());	//Reading Case Open count.
+			performerPOM.clickTaskOpen().click();						//Clicking on 'Open' Case
 		}
 		
 		else if(type.equalsIgnoreCase("Task - Closed"))
 		{
-			open = Integer.parseInt(performerPOM.clickTaskClosed(driver).getText());	//Reading Case Open count.
-			performerPOM.clickTaskClosed(driver).click();						//Clicking on 'Open' Case
+			open = Integer.parseInt(performerPOM.clickTaskClosed().getText());	//Reading Case Open count.
+			performerPOM.clickTaskClosed().click();						//Clicking on 'Open' Case
 		}
 		
 		Thread.sleep(500);
-		progress(driver);
+		progress();
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad()));
 		
 		Thread.sleep(1000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		try
 		{
-			performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
 		}
 		catch(Exception e)
 		{
@@ -919,15 +920,15 @@ public class MethodsPOM
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(500);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count1 = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -956,9 +957,9 @@ public class MethodsPOM
 		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+		CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
 		Thread.sleep(250);
-		performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
+		performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
 		
 		Thread.sleep(5500);
 		File dir1 = new File("C://Users//jiya//Downloads//");
@@ -1040,20 +1041,20 @@ public class MethodsPOM
 		int open = CountExcel(driver, test, "Notice - Open");
 		
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(300);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int gridRecords = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -1078,8 +1079,8 @@ public class MethodsPOM
 		CountExcel(driver, test, "Notice - Closed");
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNew(driver)));
-		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNew()));
+		OverduePOM.clickDashboard().click();			//Clicking on 'Dashboard'
 	}
 	
 	public static void CaseOpen(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String login) throws InterruptedException, IOException
@@ -1097,20 +1098,20 @@ public class MethodsPOM
 		int open = CountExcel(driver, test, "Case - Open");
 		
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(300);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int gridRecords = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -1135,8 +1136,8 @@ public class MethodsPOM
 		CountExcel(driver, test, "Case - Closed");
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNew(driver)));
-		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNew()));
+		OverduePOM.clickDashboard().click();			//Clicking on 'Dashboard'
 	}
 	
 	public static void TaskOpen(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String login) throws InterruptedException, IOException
@@ -1154,20 +1155,20 @@ public class MethodsPOM
 		int open = CountExcel(driver, test, "Task - Open");
 		
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,700)");
 		
 		Thread.sleep(300);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int gridRecords = 0;
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2000);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");								//Splitting the String
 			compliancesCount = bits[bits.length - 2];
 		}
@@ -1192,8 +1193,8 @@ public class MethodsPOM
 		CountExcel(driver, test, "Task - Closed");
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickAddNewTask(driver)));
-		OverduePOM.clickDashboard(driver).click();			//Clicking on 'Dashboard'
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickAddNewTask()));
+		OverduePOM.clickDashboard().click();			//Clicking on 'Dashboard'
 	}
 	
 	public static void LinkDocument(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String type) throws InterruptedException, IOException
@@ -1201,31 +1202,31 @@ public class MethodsPOM
 		WebDriverWait wait = new WebDriverWait(driver, 180);
 		progress(driver);
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
 		if(type.equals("Notice"))
 		{
-			performerPOM.clickNoticeOpen(driver).click();							//Clicking on 'Open' notice
+			performerPOM.clickNoticeOpen().click();							//Clicking on 'Open' notice
 		}
 		else if(type.equals("Case"))
 		{
-			performerPOM.clickCaseOpen(driver).click();								//Clicking on 'Open' case
+			performerPOM.clickCaseOpen().click();								//Clicking on 'Open' case
 		}
 		
 		progress(driver);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport()));
 		
 		Thread.sleep(400);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		
 		Thread.sleep(1500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad()));
 		//performerPOM.GridLoad(driver).click();
-		elementsList = performerPOM.clickAction(driver);			//Getting all action buttons.
+		elementsList = performerPOM.clickAction();			//Getting all action buttons.
 		js.executeScript("arguments[0].scrollIntoView();", elementsList.get(0));
 		
 		Thread.sleep(600);
-		elementsList = performerPOM.clickAction(driver);			//Getting all action buttons.
+		elementsList = performerPOM.clickAction();			//Getting all action buttons.
 		elementsList.get(0).click();								//Clicking on first action button.
 		
 		String refNo = null;
@@ -1233,60 +1234,60 @@ public class MethodsPOM
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Waiting and switching to IFrame		
 		if(type.equals("Notice"))
 		{
-			performerPOM.clickLinkNotice(driver).click();			//Clicking on Link Notice icon
+			performerPOM.clickLinkNotice().click();			//Clicking on Link Notice icon
 			
 			Thread.sleep(300);
-			progress(driver);
+			progress();
 			
 			Thread.sleep(300);
-			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCheckBox(driver)));	//Waiting for Checkbox to get visible.
-			refNo = performerPOM.readRef(driver).getText();			//Reading ref no.
+			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCheckBox()));	//Waiting for Checkbox to get visible.
+			refNo = performerPOM.readRef().getText();			//Reading ref no.
 			
 			Thread.sleep(300);
-			performerPOM.clickCheckBox(driver).click();			//CLicking on first checkbox
+			performerPOM.clickCheckBox().click();			//CLicking on first checkbox
 		}
 		else if(type.equals("Case"))
 		{
-			performerPOM.clickLinkCase(driver).click();			//Clicking on Link Notice icon
+			performerPOM.clickLinkCase().click();			//Clicking on Link Notice icon
 			
 			Thread.sleep(300);
-			progress(driver);
+			progress();
 			
 			Thread.sleep(300);
-			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCaseCheckBox(driver)));	//Waiting for Checkbox to get visible.
-			refNo = performerPOM.readCaseRef(driver).getText();			//Reading ref no.
+			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.clickCaseCheckBox()));	//Waiting for Checkbox to get visible.
+			refNo = performerPOM.readCaseRef().getText();			//Reading ref no.
 			
 			Thread.sleep(300);
-			performerPOM.clickCaseCheckBox(driver).click();		//CLicking on first checkbox
+			performerPOM.clickCaseCheckBox().click();		//CLicking on first checkbox
 		}
 		
 		Thread.sleep(300);
 		if(type.equals("Case"))
 		{
-			performerPOM.clickApply(driver).sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickApply().sendKeys(Keys.PAGE_DOWN);
 		}
 		else
 		{
-			performerPOM.clickApply1(driver).sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickApply1().sendKeys(Keys.PAGE_DOWN);
 		}
 		
 		Thread.sleep(300);
-		performerPOM.clickSave(driver).click();				//Clicking on Save button.
+		performerPOM.clickSave().click();				//Clicking on Save button.
 		
 		Thread.sleep(300);
-		progress(driver);
+		progress();
 		
 		Thread.sleep(500);
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.readMsg(driver)));
+			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.readMsg()));
 		}
 		catch(Exception e)
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.readMsg(driver)));
+			wait.until(ExpectedConditions.elementToBeClickable(performerPOM.readMsg()));
 		}
 		Thread.sleep(300);
-		String msg = performerPOM.readMsg(driver).getText();
+		String msg = performerPOM.readMsg().getText();
 		if(msg.contains("Linked Successfully"))
 		{
 			test.log(LogStatus.PASS, "Message displayed = "+msg);
@@ -1300,15 +1301,15 @@ public class MethodsPOM
 		int n = 0;
 		if(type.equals("Notice"))
 		{
-			performerPOM.clickClosePopup(driver).click();
+			performerPOM.clickClosePopup().click();
 			
 			Thread.sleep(300);
-			performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_DOWN);
-			performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_DOWN);
-			performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickLinkNotice().sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickLinkNotice().sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickLinkNotice().sendKeys(Keys.PAGE_DOWN);
 			
 			Thread.sleep(300);
-			elementsList = performerPOM.readRef1(driver);
+			elementsList = performerPOM.readRef1();
 			n = elementsList.size();
 			
 			if(n > 0)
@@ -1326,15 +1327,15 @@ public class MethodsPOM
 		}
 		else if(type.equals("Case"))
 		{
-			performerPOM.clickClosePopupCase(driver).click();
+			performerPOM.clickClosePopupCase().click();
 			
 			Thread.sleep(300);
-			performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_DOWN);
-			performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_DOWN);
-			performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickLinkCase().sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickLinkCase().sendKeys(Keys.PAGE_DOWN);
+			performerPOM.clickLinkCase().sendKeys(Keys.PAGE_DOWN);
 			
 			Thread.sleep(300);
-			elementsList = performerPOM.readCaseRef1(driver);
+			elementsList = performerPOM.readCaseRef1();
 			n = elementsList.size();
 			
 			if(n > 0)
@@ -1362,71 +1363,71 @@ public class MethodsPOM
 		
 		if(type.equals("Notice"))
 		{
-			performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_UP);
-			performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_UP);
-			performerPOM.clickLinkNotice(driver).sendKeys(Keys.PAGE_UP);
+			performerPOM.clickLinkNotice().sendKeys(Keys.PAGE_UP);
+			performerPOM.clickLinkNotice().sendKeys(Keys.PAGE_UP);
+			performerPOM.clickLinkNotice().sendKeys(Keys.PAGE_UP);
 		}
 		else if(type.equals("Case"))
 		{
-			performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_UP);
-			performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_UP);
-			performerPOM.clickLinkCase(driver).sendKeys(Keys.PAGE_UP);
+			performerPOM.clickLinkCase().sendKeys(Keys.PAGE_UP);
+			performerPOM.clickLinkCase().sendKeys(Keys.PAGE_UP);
+			performerPOM.clickLinkCase().sendKeys(Keys.PAGE_UP);
 		}
 		
 		Thread.sleep(300);
 		driver.switchTo().parentFrame();
-		performerPOM.clickClose(driver).click();
+		performerPOM.clickClose().click();
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();
+		OverduePOM.clickDashboard().click();
 	}
 	
 	public static void CloseNoticeCase(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String type) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 180);
-		progress(driver);
+		progress();
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
 		int closed = 0;
 		int open = 0;
 		int caseOpen = 0;
 		if(type.equals("Notice"))
 		{
-			closed = Integer.parseInt(performerPOM.clickNoticeClosed(driver).getText());	//Reading Notice Closed count.
-			open = Integer.parseInt(performerPOM.clickNoticeOpen(driver).getText());		//Reading Notice Open count.
-			caseOpen = Integer.parseInt(performerPOM.clickCaseOpen(driver).getText());
+			closed = Integer.parseInt(performerPOM.clickNoticeClosed().getText());	//Reading Notice Closed count.
+			open = Integer.parseInt(performerPOM.clickNoticeOpen().getText());		//Reading Notice Open count.
+			caseOpen = Integer.parseInt(performerPOM.clickCaseOpen().getText());
 			
-			performerPOM.clickNoticeOpen(driver).click();									//Clicking on 'Open' notice
+			performerPOM.clickNoticeOpen().click();									//Clicking on 'Open' notice
 		}
 		else if(type.equals("Case"))
 		{
-			open = Integer.parseInt(performerPOM.clickCaseOpen(driver).getText());			//Reading Case Open count.
-			closed = Integer.parseInt(performerPOM.clickCaseClosed(driver).getText());		//Reading Case Closed count.
+			open = Integer.parseInt(performerPOM.clickCaseOpen().getText());			//Reading Case Open count.
+			closed = Integer.parseInt(performerPOM.clickCaseClosed().getText());		//Reading Case Closed count.
 			
-			performerPOM.clickCaseOpen(driver).click();										//Clicking on 'Open' case
+			performerPOM.clickCaseOpen().click();										//Clicking on 'Open' case
 		}
 		else if(type.equals("Task"))
 		{
-			open = Integer.parseInt(performerPOM.clickTaskOpen(driver).getText());			//Reading Task Open count.
-			closed = Integer.parseInt(performerPOM.clickTaskClosed(driver).getText());		//Reading Task Closed count.
+			open = Integer.parseInt(performerPOM.clickTaskOpen().getText());			//Reading Task Open count.
+			closed = Integer.parseInt(performerPOM.clickTaskClosed().getText());		//Reading Task Closed count.
 			
-			performerPOM.clickTaskOpen(driver).click();										//Clicking on 'Open' task
+			performerPOM.clickTaskOpen().click();										//Clicking on 'Open' task
 		}
 		
 		Thread.sleep(300);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport(driver)));	//Waiting until visibility of Excel Report button.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport()));	//Waiting until visibility of Excel Report button.
 		
 		Thread.sleep(1000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,500)");
 		
 		Thread.sleep(500);
-		performerPOM.GridLoad(driver).click();
-		elementsList = performerPOM.clickAction(driver);			//Getting all action buttons.
+		performerPOM.GridLoad().click();
+		elementsList = performerPOM.clickAction();			//Getting all action buttons.
 		js.executeScript("arguments[0].scrollIntoView();", elementsList.get(0));
 		
 		Thread.sleep(500);
-		elementsList = performerPOM.clickAction(driver);			//Getting all action buttons.
+		elementsList = performerPOM.clickAction();			//Getting all action buttons.
 		elementsList.get(0).click();								//Clicking on first action button.
 		
 		Thread.sleep(500);
@@ -1437,68 +1438,68 @@ public class MethodsPOM
 		{
 			sheet = workbook.getSheetAt(1);
 			
-			performerPOM.clickStatusPayments(driver).click();			//Clicking on 'Status/Payments'
+			performerPOM.clickStatusPayments().click();			//Clicking on 'Status/Payments'
 			
-			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeStatus(driver)));
-			performerPOM.clickNoticeStatus(driver).click();				//Clicking on 'Notice Status' drop down.
+			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeStatus()));
+			performerPOM.clickNoticeStatus().click();				//Clicking on 'Notice Status' drop down.
 			Thread.sleep(300);
-			performerPOM.clickClosedStatus(driver).click();				//Selecting 'Closed' option from drop down.
-			
-			Thread.sleep(300);
-			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCloseDate(driver)));
-			performerPOM.clickCloseDate(driver).click();				//Clicking on 'Closed Date' date box
-			OverduePOM.selectLastMonth(driver).click();					//Getting last month
-			OverduePOM.selectDate2(driver).click();						//Selecting particular date.
+			performerPOM.clickClosedStatus().click();				//Selecting 'Closed' option from drop down.
 			
 			Thread.sleep(300);
-			performerPOM.clickNoticeResult(driver).click();
-			performerPOM.clickSelectResult(driver).sendKeys("In Progress", Keys.ENTER);
+			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCloseDate()));
+			performerPOM.clickCloseDate().click();				//Clicking on 'Closed Date' date box
+			OverduePOM.selectLastMonth().click();					//Getting last month
+			OverduePOM.selectDate2().click();						//Selecting particular date.
+			
+			Thread.sleep(300);
+			performerPOM.clickNoticeResult().click();
+			performerPOM.clickSelectResult().sendKeys("In Progress", Keys.ENTER);
 			
 			Thread.sleep(300);
 			Row r1 = sheet.getRow(25);
 			Cell c1 = r1.getCell(1);
 			String remark = c1.getStringCellValue();
-			performerPOM.clickRemark1(driver).sendKeys(remark);
+			performerPOM.clickRemark1().sendKeys(remark);
 			
 			Thread.sleep(300);
 			r1 = sheet.getRow(26);
 			c1 = r1.getCell(1);
 			String CaseNo = c1.getStringCellValue();
-			performerPOM.clickCourtCaseNo(driver).sendKeys(CaseNo);
+			performerPOM.clickCourtCaseNo().sendKeys(CaseNo);
 			
 			Thread.sleep(300);
-			performerPOM.clickSaveConvertCase(driver).click();
+			performerPOM.clickSaveConvertCase().click();
 		}
 		else if(type.equals("Case"))
 		{
-			performerPOM.clickCaseStatusPayments(driver).click();		//Clicking on 'Status/Payments'
+			performerPOM.clickCaseStatusPayments().click();		//Clicking on 'Status/Payments'
 			
-			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseStatus(driver)));
+			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseStatus()));
 			
-			performerPOM.clickCaseStage(driver).click();
+			performerPOM.clickCaseStage().click();
 			Thread.sleep(300);
-			performerPOM.selectCaseStage(driver).sendKeys("Hearing", Keys.ENTER);
-			
-			Thread.sleep(300);
-			performerPOM.clickCaseStatus(driver).click();				//Clicking on 'Case Status' drop down.
-			Thread.sleep(300);
-			performerPOM.clickCaseStatusClose(driver).click();			//Selecting 'Closed' option from drop down.
+			performerPOM.selectCaseStage().sendKeys("Hearing", Keys.ENTER);
 			
 			Thread.sleep(300);
-			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseCloseDate(driver)));
-			performerPOM.clickCaseCloseDate(driver).click();				//Clicking on 'Closed Date' date box
-			OverduePOM.selectLastMonth(driver).click();					//Getting last month
-			OverduePOM.selectDate2(driver).click();						//Selecting particular date.
+			performerPOM.clickCaseStatus().click();				//Clicking on 'Case Status' drop down.
+			Thread.sleep(300);
+			performerPOM.clickCaseStatusClose().click();			//Selecting 'Closed' option from drop down.
 			
 			Thread.sleep(300);
-			performerPOM.clickCaseResult(driver).click();
-			performerPOM.clickSelectCaseResult(driver).sendKeys("In Progress", Keys.ENTER);
+			wait.until(ExpectedConditions.visibilityOf(performerPOM.clickCaseCloseDate()));
+			performerPOM.clickCaseCloseDate().click();				//Clicking on 'Closed Date' date box
+			OverduePOM.selectLastMonth().click();					//Getting last month
+			OverduePOM.selectDate2().click();						//Selecting particular date.
 			
 			Thread.sleep(300);
-			performerPOM.clickRemark1(driver).sendKeys("Automation Testing");
+			performerPOM.clickCaseResult().click();
+			performerPOM.clickSelectCaseResult().sendKeys("In Progress", Keys.ENTER);
 			
 			Thread.sleep(300);
-			performerPOM.clickSave1(driver).click();
+			performerPOM.clickRemark1().sendKeys("Automation Testing");
+			
+			Thread.sleep(300);
+			performerPOM.clickSave1().click();
 		}
 		else if(type.equals("Task"))
 		{
@@ -1506,8 +1507,8 @@ public class MethodsPOM
 		}
 		
 		Thread.sleep(300);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.readMessage2(driver)));
-		String msg = performerPOM.readMessage2(driver).getText();
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.readMessage2()));
+		String msg = performerPOM.readMessage2().getText();
 		
 		if(msg.contains("Successfully"))
 		{
@@ -1526,20 +1527,20 @@ public class MethodsPOM
 		driver.switchTo().parentFrame();
 		
 		Thread.sleep(300);
-		performerPOM.clickClose(driver).click();
+		performerPOM.clickClose().click();
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();
+		OverduePOM.clickDashboard().click();
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
 		int closed1 = 0;
 		int open1 = 0;
 		int caseOpen1 = 0;
 		if(type.equals("Notice"))
 		{
-			closed1 = Integer.parseInt(performerPOM.clickNoticeClosed(driver).getText());	//Reading Notice Open count.
-			open1 = Integer.parseInt(performerPOM.clickNoticeOpen(driver).getText());		//Reading Notice Open count.
-			caseOpen1 = Integer.parseInt(performerPOM.clickCaseOpen(driver).getText());
+			closed1 = Integer.parseInt(performerPOM.clickNoticeClosed().getText());	//Reading Notice Open count.
+			open1 = Integer.parseInt(performerPOM.clickNoticeOpen().getText());		//Reading Notice Open count.
+			caseOpen1 = Integer.parseInt(performerPOM.clickCaseOpen().getText());
 			
 			if(open > open1 && closed1 > closed && caseOpen1 > caseOpen)
 			{
@@ -1562,8 +1563,8 @@ public class MethodsPOM
 		}
 		else if(type.equals("Case"))
 		{
-			open1 = Integer.parseInt(performerPOM.clickCaseOpen(driver).getText());			//Reading Case Open count.
-			closed1 = Integer.parseInt(performerPOM.clickCaseClosed(driver).getText());		//Reading Case Closed count.
+			open1 = Integer.parseInt(performerPOM.clickCaseOpen().getText());			//Reading Case Open count.
+			closed1 = Integer.parseInt(performerPOM.clickCaseClosed().getText());		//Reading Case Closed count.
 			
 			if(open > open1 && closed1 > closed)
 			{
@@ -1582,8 +1583,8 @@ public class MethodsPOM
 		}
 		else if(type.equals("Task"))
 		{
-			open1 = Integer.parseInt(performerPOM.clickTaskOpen(driver).getText());			//Reading Task Open count.
-			closed1 = Integer.parseInt(performerPOM.clickTaskClosed(driver).getText());		//Reading Task Closed count.
+			open1 = Integer.parseInt(performerPOM.clickTaskOpen().getText());			//Reading Task Open count.
+			closed1 = Integer.parseInt(performerPOM.clickTaskClosed().getText());		//Reading Task Closed count.
 			
 			if(open > open1 && closed1 > closed)
 			{
@@ -1609,9 +1610,9 @@ public class MethodsPOM
 		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+		CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
 		Thread.sleep(300);
-		performerPOM.clickExcelReport(driver).click();					//Clicking on 'Excel Report' image.
+		performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
 		
 		Thread.sleep(6000);
 		File dir1 = new File("C://Users//jiya//Downloads//");
@@ -1673,10 +1674,10 @@ public class MethodsPOM
 	public static void MyReports(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String login) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		progress(driver);
+		progress();
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
-		performerPOM.clickMyReports(driver).click();					//Clicking on 'My Reports'
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));	//Wait until 'Notice-Open' count get visible
+		performerPOM.clickMyReports().click();					//Clicking on 'My Reports'
 		
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
@@ -1685,19 +1686,19 @@ public class MethodsPOM
 		
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.PAGE_DOWN);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
-		js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.readTotalItems1(driver));
+		performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+		performerPOM.clickExcelReport().sendKeys(Keys.END);
+		js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.readTotalItems1());
 		
 		Thread.sleep(1000);
-		CFOcountPOM.readTotalItems1(driver).click();
-		String item = CFOcountPOM.readTotalItems1(driver).getText();
+		CFOcountPOM.readTotalItems1().click();
+		String item = CFOcountPOM.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		if(bits.length < 2)
 		{
-			performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+			performerPOM.clickExcelReport().sendKeys(Keys.END);
 			Thread.sleep(300);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");									//Splitting the String
 		}
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
@@ -1705,7 +1706,7 @@ public class MethodsPOM
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2500);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");										//Splitting the String
 			compliancesCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
 		}
@@ -1728,25 +1729,25 @@ public class MethodsPOM
 		Thread.sleep(1500);
 		js.executeScript("window.scrollBy(500,0)");
 		
-		performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+		performerPOM.clickTypeDropdown().click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 		Thread.sleep(300);
-		performerPOM.selectTypeCase(driver).click();					//Selecting 'Case' option.
+		performerPOM.selectTypeCase().click();					//Selecting 'Case' option.
 		
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad()));	//Wait until records table gets visible.
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
-		js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.clickNextPage1(driver));
+		performerPOM.clickExcelReport().sendKeys(Keys.END);
+		js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.clickNextPage1());
 		js.executeScript("window.scrollBy(0,500)");
 		
 		Thread.sleep(1000);
-		item = CFOcountPOM.readTotalItems1(driver).getText();
+		item = CFOcountPOM.readTotalItems1().getText();
 		bits = item.split(" ");									//Splitting the String
 		if(bits.length < 2)
 		{
-			performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+			performerPOM.clickExcelReport().sendKeys(Keys.END);
 			Thread.sleep(300);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");									//Splitting the String
 			
 		}
@@ -1755,7 +1756,7 @@ public class MethodsPOM
 		if(compliancesCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2500);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");										//Splitting the String
 			compliancesCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
 		}
@@ -1778,24 +1779,24 @@ public class MethodsPOM
 		Thread.sleep(1500);
 		js.executeScript("window.scrollBy(500,0)");
 		
-		performerPOM.clickTypeDropdown(driver).click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
+		performerPOM.clickTypeDropdown().click();					//Clicking on Type drop down box (i.e. Notice, Case, Task)
 		Thread.sleep(300);
-		performerPOM.selectTypeTask(driver).click();					//Selecting 'Task' option.
+		performerPOM.selectTypeTask().click();					//Selecting 'Task' option.
 		
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad()));	//Wait until records table gets visible.
 		Thread.sleep(500);
-		performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
-		js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.readTotalItems1(driver));
+		performerPOM.clickExcelReport().sendKeys(Keys.END);
+		js.executeScript("arguments[0].scrollIntoView();", CFOcountPOM.readTotalItems1());
 		
 		Thread.sleep(1000);
-		item = CFOcountPOM.readTotalItems1(driver).getText();
+		item = CFOcountPOM.readTotalItems1().getText();
 		bits = item.split(" ");								//Splitting the String
 		if(bits.length < 2)
 		{
-			performerPOM.clickExcelReport(driver).sendKeys(Keys.END);
+			performerPOM.clickExcelReport().sendKeys(Keys.END);
 			Thread.sleep(300);
-			item = CFOcountPOM.readTotalItems1(driver).getText();
+			item = CFOcountPOM.readTotalItems1().getText();
 			bits = item.split(" ");									//Splitting the String
 			
 		}
@@ -1814,7 +1815,7 @@ public class MethodsPOM
 		Report(driver, test, count1, "Task");
 		
 		Thread.sleep(500);
-		OverduePOM.clickDashboard(driver).click();				//Clicking on 'My Dashboard'
+		OverduePOM.clickDashboard().click();				//Clicking on 'My Dashboard'
 	}
 	
 	static void NewReminder(WebDriver driver, ExtentTest test, String type) throws InterruptedException
@@ -1822,54 +1823,54 @@ public class MethodsPOM
 		WebDriverWait wait = new WebDriverWait(driver, 180);
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickAddNew1(driver)));
-		performerPOM.clickAddNew1(driver).click();		//Clicking on 'Add New' button.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickAddNew1()));
+		performerPOM.clickAddNew1().click();		//Clicking on 'Add New' button.
 		
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickType(driver)));
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickType()));
 		Actions action = new Actions(driver);
 		
 		if(type.equalsIgnoreCase("Notice"))
 		{
-			action.moveToElement(performerPOM.clickType(driver)).click().sendKeys(Keys.ARROW_DOWN, Keys.ENTER).perform();
+			action.moveToElement(performerPOM.clickType()).click().sendKeys(Keys.ARROW_DOWN, Keys.ENTER).perform();
 		}
 		else if(type.equalsIgnoreCase("Task"))
 		{
-			action.moveToElement(performerPOM.clickType(driver)).click().sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
+			action.moveToElement(performerPOM.clickType()).click().sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
 		}
 		
 		Thread.sleep(2000);
-		action.moveToElement(performerPOM.clickTitle(driver)).click().sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
+		action.moveToElement(performerPOM.clickTitle()).click().sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
 		
 		Thread.sleep(2000);
-		performerPOM.clickReminderText(driver).sendKeys("Auomation Testing reminder message2.");
+		performerPOM.clickReminderText().sendKeys("Auomation Testing reminder message2.");
 		
 		Thread.sleep(300);
-		performerPOM.clickDescription(driver).sendKeys("Automation reminder description2.");
+		performerPOM.clickDescription().sendKeys("Automation reminder description2.");
 		
 		Thread.sleep(300);
-		performerPOM.clickRemark2(driver).sendKeys("Automation reminder remark2.");
+		performerPOM.clickRemark2().sendKeys("Automation reminder remark2.");
 		
 		Thread.sleep(300);
-		performerPOM.clickDate(driver).click();
+		performerPOM.clickDate().click();
 		Thread.sleep(300);
-		OverduePOM.selectNextMonth(driver).click();
-		OverduePOM.selectDate(driver).click();
+		OverduePOM.selectNextMonth().click();
+		OverduePOM.selectDate().click();
 		
 		Thread.sleep(300);
-		performerPOM.clickSave(driver).click();				//Clicking on Save button.
+		performerPOM.clickSave().click();				//Clicking on Save button.
 		
 		Thread.sleep(500);
 		try
 		{
-			wait.until(ExpectedConditions.visibilityOf(performerPOM.readMsg1(driver)));
+			wait.until(ExpectedConditions.visibilityOf(performerPOM.readMsg1()));
 		}
 		catch(Exception e)
 		{
-			wait.until(ExpectedConditions.visibilityOf(performerPOM.readMsg1(driver)));
+			wait.until(ExpectedConditions.visibilityOf(performerPOM.readMsg1()));
 		}
 		Thread.sleep(300);
-		String msg = performerPOM.readMsg1(driver).getText();
+		String msg = performerPOM.readMsg1().getText();
 		if(msg.contains("Successfully"))
 		{
 			test.log(LogStatus.PASS, type+" Message Displayed - "+msg);
@@ -1887,18 +1888,18 @@ public class MethodsPOM
 		driver.switchTo().parentFrame();
 		
 		Thread.sleep(300);
-		performerPOM.clickCloseReminder(driver).click();
+		performerPOM.clickCloseReminder().click();
 	}
 	
 	public static void MyReminder(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 180);
-		progress(driver);
+		progress();
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
-		performerPOM.clickMyReminder(driver).click();					//Clicking on 'My Reports'
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));	//Wait until 'Notice-Open' count get visible
+		performerPOM.clickMyReminder().click();					//Clicking on 'My Reports'
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.CheckRecordsTable(driver)));	//Wait until records table gets visible.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.CheckRecordsTable()));	//Wait until records table gets visible.
 		
 		NewReminder(driver, test, "Case");
 		
@@ -1907,35 +1908,35 @@ public class MethodsPOM
 		NewReminder(driver, test, "Task");
 		
 		Thread.sleep(300);
-		OverduePOM.clickDashboard(driver).click();
+		OverduePOM.clickDashboard().click();
 	}
 	
 	public static void Masters(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 180);
-		progress(driver);
+		progress();
 		
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen(driver)));	//Wait until 'Notice-Open' count get visible
-		performerPOM.clickMasters(driver).click();
-		
-		Thread.sleep(300);
-		performerPOM.clickMastersMenu(driver).click();
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));	//Wait until 'Notice-Open' count get visible
+		performerPOM.clickMasters().click();
 		
 		Thread.sleep(300);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickAddNew2(driver)));
-		performerPOM.clickAddNew2(driver).click();
+		performerPOM.clickMastersMenu().click();
+		
+		Thread.sleep(300);
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickAddNew2()));
+		performerPOM.clickAddNew2().click();
 		
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_IframeCaseType"));
 		
 		Thread.sleep(300);
-		performerPOM.clickCaseNoticeType(driver).sendKeys("New Admin2");
+		performerPOM.clickCaseNoticeType().sendKeys("New Admin2");
 		
 		Thread.sleep(300);
-		performerPOM.clickSave(driver).click();				//Clicking on Save button.
+		performerPOM.clickSave().click();				//Clicking on Save button.
 		
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.readMesg(driver)));
-		String msg = performerPOM.readMesg(driver).getText();
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.readMesg()));
+		String msg = performerPOM.readMesg().getText();
 		if(msg.contains("Successfully"))
 		{
 			test.log(LogStatus.PASS, " Message Displayed - "+msg);
@@ -1949,9 +1950,9 @@ public class MethodsPOM
 		driver.switchTo().parentFrame();
 		
 		Thread.sleep(300);
-		performerPOM.clickClose2(driver).click();
+		performerPOM.clickClose2().click();
 		
 		Thread.sleep(300);
-		OverduePOM.clickDashboard(driver).click();
+		OverduePOM.clickDashboard().click();
 	}
 }

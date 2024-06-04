@@ -40,7 +40,7 @@ public class CompanyAdmin
 	@BeforeTest
 	void setBrowser() throws InterruptedException, IOException
 	{
-		String workingDir = System.getProperty("user.dir");
+		/*String workingDir = System.getProperty("user.dir");
 		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//ContractCompanyAdmin.html",true);
 		test = extent.startTest("Verify OpenBrowser");
 		test.log(LogStatus.INFO, "Browser test is initiated");
@@ -60,7 +60,7 @@ public class CompanyAdmin
 	@Test(priority = 1)
 	void Login() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contract Logging In - Company Admin");
+	/*	test = extent.startTest("Contract Logging In - Company Admin");
 		test.log(LogStatus.INFO, "Logging into system");
 		
 		XSSFSheet sheet = ReadExcel();
@@ -77,6 +77,7 @@ public class CompanyAdmin
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();
+		*/
 	}
 	
 	//@Test(priority = 2)

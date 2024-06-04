@@ -471,7 +471,7 @@ public class MethodsPOM
 		int pendingApprove = Integer.parseInt(ContractPOM.clickPendingApprove(driver).getText());
 		
 		Thread.sleep(500);
-		performerPOM.clickMyWorkspace(driver).click();
+		performerPOM.clickMyWorkspace().click();
 		
 		Thread.sleep(300);
 		ContractPOM.clickTaskMenu(driver).click();
@@ -843,7 +843,7 @@ public class MethodsPOM
 		MyReportsCounts(driver, test, 7, "Active");
 		
 		Thread.sleep(500);
-		performer.OverduePOM.clickDashboard(driver).click();
+		performer.OverduePOM.clickDashboard().click();
 	}
 	
 	public static void MyReportsCounts(WebDriver driver, ExtentTest test, int no, String type) throws InterruptedException, IOException

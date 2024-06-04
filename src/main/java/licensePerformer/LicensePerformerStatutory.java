@@ -21,9 +21,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
+import login.webpage;
 
-public class LicensePerformerStatutory 
-{
+public class LicensePerformerStatutory extends webpage {
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
 	public static ExtentReports extent;			//Instance created for report file
@@ -65,7 +65,7 @@ public class LicensePerformerStatutory
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		//test = extent.startTest("Logging In - Performer (Statutory)");
+		/*test = extent.startTest("Logging In - Performer (Statutory)");
 	  //	test.log(LogStatus.PASS, "Logging into system");
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
@@ -84,10 +84,11 @@ public class LicensePerformerStatutory
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
 		driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
-		
+		*/
 		/*test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();*/
+		initialization("License",1);
 	}
 	
 /*@Test(priority = 2) 
@@ -96,7 +97,7 @@ public class LicensePerformerStatutory
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.ActiveLicense(driver, test, "Statutory");
+		LiPeMethodsPOM.ActiveLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -108,7 +109,7 @@ void ActivePerform() throws InterruptedException
 	test = extent.startTest("Active Performer License Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
-	LiPeMethodsPOM.activelicenseperform(driver, test, "Statutory");
+	LiPeMethodsPOM.activelicenseperform( test, "Statutory");
 	
 	extent.endTest(test);
 	extent.flush();
@@ -121,7 +122,7 @@ void ActivePerform() throws InterruptedException
 		test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.ExpiringCount(driver, test, "Statutory");
+		LiPeMethodsPOM.ExpiringCount( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -132,7 +133,7 @@ void Expiringperform() throws InterruptedException
 	test = extent.startTest("Expiring License Count Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
-	LiPeMethodsPOM.Expiringlicenseperform(driver, test, "Statutory");
+	LiPeMethodsPOM.Expiringlicenseperform( test, "Statutory");
 	
 	extent.endTest(test);
 	extent.flush();
@@ -145,7 +146,7 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("Expired License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.ExpiredCount(driver, test, "Statutory");
+		LiPeMethodsPOM.ExpiredCount( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -156,7 +157,7 @@ void Expiringperform() throws InterruptedException
 	test = extent.startTest("Expired License Count Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
-	LiPeMethodsPOM.Expiredlicenseperform(driver, test, "Statutory");
+	LiPeMethodsPOM.Expiredlicenseperform( test, "Statutory");
 	
 	extent.endTest(test);
 	extent.flush();
@@ -169,7 +170,7 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("Applied Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.AppliedCount(driver, test, "Statutory");
+		LiPeMethodsPOM.AppliedCount( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -180,7 +181,7 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.pendingforreviewLicense(driver, test, "Statutory");
+		licenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -191,7 +192,7 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("Rejected License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.RejectedCount(driver, test, "Statutory");
+		LiPeMethodsPOM.RejectedCount( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -202,7 +203,7 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("Terminate License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.TerminateLicense1(driver, test, "Statutory");
+		LiPeMethodsPOM.TerminateLicense1( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -213,7 +214,7 @@ void Expiringperform() throws InterruptedException
 			test = extent.startTest("All Filter Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.Allfilter(driver, test, "Statutory");
+			licenseCompanyadmin.StatutoryMethod.Allfilter( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -224,7 +225,7 @@ void Expiringperform() throws InterruptedException
 				test = extent.startTest("License ExpiredOn Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				LiPeMethodsPOM.LicenseExpiredOnStatutory(driver, test, "Statutory");
+				LiPeMethodsPOM.LicenseExpiredOnStatutory( test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -235,7 +236,7 @@ void Expiringperform() throws InterruptedException
 			test = extent.startTest("License ExpiringOn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			LiPeMethodsPOM.LicenseExpiringOnStatutoryper(driver, test, "Statutory");
+			LiPeMethodsPOM.LicenseExpiringOnStatutoryper( test, "Statutory");
 	
 			
 			extent.endTest(test);
@@ -246,22 +247,22 @@ void Expiringperform() throws InterruptedException
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
-		LiPeMethodsPOM.Documents(driver, test, "Statutory");	
+		StatutoryMethod.MyDocuments( test, "Statutory");	
 		extent.endTest(test);
 		extent.flush();
 	}
 	
- @Test(priority = 16)
+@Test(priority = 16)
 		void CriticalDocuments() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Critical Documents Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.CriticalDocuments(driver, test, "Statutory");
+				licenseCompanyadmin.StatutoryMethod.CriticalDocuments( test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();
-			}*/
+			}
 	
 @Test(priority = 17)
 	void MyReports() throws InterruptedException, IOException
@@ -269,45 +270,46 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("My Reports Download Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		LiPeMethodsPOM.Reports(driver, test, "Statutory");
+		LiPeMethodsPOM.Reports( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-/* @Test(priority = 18)
+ @Test(priority = 18)
 		void MyWorkspace() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Workspace Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-            licmgmtMethodPOM.MyworkspaceaddLicense(driver, test, "Statutory");
+            licmgmtMethodPOM.MyworkspaceaddLicense( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
- @Test(priority = 19)
+@Test(priority = 19)
 	void NomineeDetails() throws InterruptedException, IOException
 	
 	{
 		test = extent.startTest("Nominee Details");
 		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
-		licmgmtMethodPOM.NomineeDetails(driver,test,"");
+		licmgmtMethodPOM.NomineeDetails(test,"");
 
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 	@Test(priority = 29)
 	void AssignedButNotActivated() throws InterruptedException, IOException
 	
 	{
 		test = extent.startTest("Assigned But Not Activated License Verification");
-		LiPeMethodsPOM.AssignedButNotActivated(driver,test,"Statutory");
+		LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
 
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	  @AfterMethod
 	  void driverclose()
 	  {
-		  driver.close();
+		  closeBrowser();
+		  //driver.close();
 	  }
 }
