@@ -95,7 +95,7 @@ public class ReviewerStutucriticalTC extends webpage
 	}
 
 @Test(priority =2)
-	void Active() throws InterruptedException
+	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -106,7 +106,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.flush();
 	}
 	@Test(priority = 3)
-	void Expiring() throws InterruptedException
+	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -117,7 +117,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.flush();
 	}
 @Test(priority = 4)
-	void Expired() throws InterruptedException
+	void Expired() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -128,7 +128,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.flush();
 	}
      @Test(priority = 5)
-	void Applied() throws InterruptedException
+	void Applied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");

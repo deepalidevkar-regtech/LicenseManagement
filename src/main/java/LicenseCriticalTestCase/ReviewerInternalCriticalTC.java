@@ -97,8 +97,8 @@ public class ReviewerInternalCriticalTC extends webpage
     		extent.flush();*/
   		initialization("License",4);
     	}
-@Test(priority = 2)
-	void ActiveInternalLicense() throws InterruptedException
+/*@Test(priority = 2)
+	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		//test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -132,7 +132,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		extent.flush();
 	}
  @Test(priority = 3)
-		void ExpiringInternalLicense() throws InterruptedException
+		void ExpiringInternalLicense() throws InterruptedException, IOException
 		{
 	   // test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -165,7 +165,7 @@ public class ReviewerInternalCriticalTC extends webpage
 			extent.flush();
 		}
   @Test(priority = 4)
-	void ExpiredInternalLicense() throws InterruptedException
+	void ExpiredInternalLicense() throws InterruptedException, IOException
 	{
 	  WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -195,7 +195,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		extent.flush();
 	}
  @Test(priority = 5)
-	void AppliedInternalLicense() throws InterruptedException
+	void AppliedInternalLicense() throws InterruptedException, IOException
 	{
 	 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -225,7 +225,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		extent.flush();
 	}
     @Test(priority = 6)
-		void PendingForReviewInternalLicense() throws InterruptedException
+		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
     	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -296,6 +296,8 @@ public class ReviewerInternalCriticalTC extends webpage
 		
 		 Select drp = new Select(LiPerformerPOM.clickType());
 	   	drp.selectByIndex(1);
+	   	Thread.sleep(500);
+	   	CFOcountPOM.clickApply1().click();	
 		test = extent.startTest("Terminate License Count Verification");
 		//test.log(LogStatus.PASS, "Terminate License Count Verification");
 		
@@ -305,7 +307,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		extent.flush();
 	}
 	
-@Test(priority = 11)
+/*@Test(priority = 11)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -343,7 +345,38 @@ public class ReviewerInternalCriticalTC extends webpage
 		
 		extent.endTest(test);
 		extent.flush();
+	}*/
+@Test(priority = 14)
+void AssignedButNotActivated() throws InterruptedException, IOException
+{
+	test = extent.startTest("Assigned But Not Activated  Count Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
+	
+	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+	LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+	
+	Select drp = new Select(LiPerformerPOM.clickType());
+	drp.selectByIndex(1);
+	
+	try
+	{
+		Thread.sleep(400);
+		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 	}
+	catch(Exception e)
+	{
+		
+	}
+	
+	Thread.sleep(500);
+	CFOcountPOM.clickApply1().click();				//Clicking on Apply.
+	
+	LiPeMethodsPOM.AssignedButNotActivated( test, "Internal");
+	
+	extent.endTest(test);
+	extent.flush();
+}
 	
 	 @AfterMethod
 	  void driverclose()

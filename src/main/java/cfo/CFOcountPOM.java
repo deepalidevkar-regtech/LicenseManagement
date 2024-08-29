@@ -1659,7 +1659,7 @@ public class CFOcountPOM extends webpage
 		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
 		
-		Actions action = new Actions();
+		Actions action = new Actions(getDriver());
 		Thread.sleep(500);
 		action.moveToElement(CFOcountPOM.selectMonth()).click().perform();		//Clicking on Months drop down.
 		Thread.sleep(500);
@@ -1946,5 +1946,10 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				test.log(LogStatus.INFO, compliance +" :- File does not downloaded.");
 			}
 		}
+	}
+
+	public static void DetailedReport1(ExtentTest test, String user) {
+		// TODO Auto-generated method stub
+		
 	}
 }

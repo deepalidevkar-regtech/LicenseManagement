@@ -34,7 +34,7 @@ public class MethodsPOM extends webpage
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static XSSFSheet sheet1 = null;		//Sheet variable
 	
-	public static void progress() throws InterruptedException
+	public static void progress(WebDriver webDriver) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		try
@@ -59,7 +59,7 @@ public class MethodsPOM extends webpage
 		js.executeScript("window.scrollBy(0,-700)");
 		performerPOM.clickNew().click();						//Clicking on 'New' button
 		
-		progress(getDriver());
+		progress();
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
 		
 		performerPOM.clickDated().click();					//Clicking on 'Dated' button
@@ -387,7 +387,7 @@ public class MethodsPOM extends webpage
 		js.executeScript("window.scrollBy(0,-700)");
 		performerPOM.clickNew().click();						//Clicking on 'New' button
 		
-		progress(driver);
+		progress();
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));
 		
 		performerPOM.clickCaseDate().click();					//Clicking on 'Dated' button
@@ -1200,7 +1200,7 @@ public class MethodsPOM extends webpage
 	public static void LinkDocument(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String type) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 180);
-		progress(driver);
+		progress();
 		
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickNoticeOpen()));
 		if(type.equals("Notice"))
@@ -1212,7 +1212,7 @@ public class MethodsPOM extends webpage
 			performerPOM.clickCaseOpen().click();								//Clicking on 'Open' case
 		}
 		
-		progress(driver);
+		progress();
 		wait.until(ExpectedConditions.visibilityOf(performerPOM.clickExcelReport()));
 		
 		Thread.sleep(400);
@@ -1382,6 +1382,11 @@ public class MethodsPOM extends webpage
 		OverduePOM.clickDashboard().click();
 	}
 	
+	public static void progress() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public static void CloseNoticeCase(WebDriver driver, ExtentTest test, XSSFWorkbook workbook, String type) throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 180);
@@ -1680,7 +1685,7 @@ public class MethodsPOM extends webpage
 		performerPOM.clickMyReports().click();					//Clicking on 'My Reports'
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad(driver)));	//Wait until records table gets visible.
+		wait.until(ExpectedConditions.visibilityOf(performerPOM.GridLoad()));	//Wait until records table gets visible.
 		
 		//--------------------------------Notice----------------------------------
 		

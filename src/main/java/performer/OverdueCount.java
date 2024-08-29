@@ -24,9 +24,10 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
+import login.webpage;
 import reviewer.ReMethodsPOM;
 
-public class OverdueCount
+public class OverdueCount extends webpage
 {
 	public static WebDriver driver = null;			//WebDriver instance created
 	public static WebElement upload = null;			//WebElement to get upload button
@@ -69,7 +70,7 @@ public class OverdueCount
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
 		
-		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		//login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -91,7 +92,7 @@ public class OverdueCount
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
-		driver = login.Login.UserLogin(uname,password,"Overdue");		//Method of Login class to login user.
+		//driver = login.Login.UserLogin(uname,password,"Overdue");		//Method of Login class to login user.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -103,7 +104,7 @@ public class OverdueCount
 		WebDriverWait wait = new WebDriverWait(driver, 3);
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
+			wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage()));
 			if(OverduePOM.closeMessage().isDisplayed())	//If Compliance Updation message popped up,
 			{
 				OverduePOM.closeMessage().click();		//then close the message.
@@ -210,12 +211,12 @@ public class OverdueCount
 		test.log(LogStatus.INFO, "***********Internal Overdue************ ");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Thread.sleep(1000);
-		String string_internalOverdue = OverduePOM.clickInternalOverdue(driver).getText();		//Storing old value of Statutory overdue.
+		String string_internalOverdue = OverduePOM.clickInternalOverdue().getText();		//Storing old value of Statutory overdue.
 		overdueInternal = Integer.parseInt(string_internalOverdue);
-		String string_internalReview = OverduePOM.readPendingReviewInternal(driver).getText();	//Storing old value of Pending Review.
+		String string_internalReview = OverduePOM.readPendingReviewInternal().getText();	//Storing old value of Pending Review.
 		reviewInternal = Integer.parseInt(string_internalReview);
 		
-		OverduePOM.clickInternalOverdue(driver).click();				//Clicking on Internal Overdue value.
+		OverduePOM.clickInternalOverdue().click();				//Clicking on Internal Overdue value.
 		
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
@@ -367,39 +368,39 @@ public class OverdueCount
 		test.log(LogStatus.INFO, "Test Initiated");
 
 		Thread.sleep(2000);
-		int oldActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents(driver).getText());	//Storing old Activated Events value
+		int oldActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents().getText());	//Storing old Activated Events value
 		
 		Thread.sleep(1000);
-		OverduePOM.clickAssignedEvents(driver).click();					//Clicking on 'Assigned Events' value
+		OverduePOM.clickAssignedEvents().click();					//Clicking on 'Assigned Events' value
 		
 		Thread.sleep(1000);
-		elementsList1 = OverduePOM.viewEvent(driver);
+		elementsList1 = OverduePOM.viewEvent();
 		elementsList1.get(0).click();									//Clicking on View Event button
 		
 		Thread.sleep(2000);
-		OverduePOM.closeViewEvent(driver).click();						//Closing the View Event
+		OverduePOM.closeViewEvent().click();						//Closing the View Event
 		
 		Thread.sleep(1000);
-		elementsList = OverduePOM.clickCheckBoxes(driver);
+		elementsList = OverduePOM.clickCheckBoxes();
 		elementsList.get(1).click();									//Clicking on first check box (Actually second on form)
 		
 		Thread.sleep(500);
-		elementsList1 = OverduePOM.clickTextBoxes(driver);
+		elementsList1 = OverduePOM.clickTextBoxes();
 		elementsList1.get(1).sendKeys("Automation Testing");			//Writing in first text box
 		
 		Thread.sleep(500);
-		elementsList1 = OverduePOM.clickDates(driver);
+		elementsList1 = OverduePOM.clickDates();
 		elementsList1.get(0).sendKeys("07/07/2021");						//Clicking on first date (Actually second on form)
 		
 		//Thread.sleep(500);
 		//OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
 		
 		Thread.sleep(1000);
-		elementsList1 = OverduePOM.clickActivate(driver);
+		elementsList1 = OverduePOM.clickActivate();
 		elementsList1.get(0).click();									//Clicking on first Activate button image
 		
 		Thread.sleep(500);
-		litigationPerformer.MethodsPOM.progress(driver);
+		litigationPerformer.MethodsPOM.progress();
 		
 		Thread.sleep(1000);
 		driver.switchTo().alert().accept();
@@ -407,7 +408,7 @@ public class OverdueCount
 		Thread.sleep(1000);
 		OverduePOM.clickDashboard().click();						//Clicking on Dashboard
 		Thread.sleep(2000);
-		int newActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents(driver).getText());	//Storing new Activated Events value
+		int newActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents().getText());	//Storing new Activated Events value
 		
 		if(newActivatedEventValue > oldActivatedEventValue)
 		{
@@ -428,45 +429,45 @@ public class OverdueCount
 		test.log(LogStatus.INFO, "Test Initiated");
 
 		Thread.sleep(2000);
-		int oldActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents(driver).getText());	//Storing old Activated Events value
+		int oldActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents().getText());	//Storing old Activated Events value
 		
 		Thread.sleep(1000);
-		OverduePOM.clickAssignedEvents(driver).click();					//Clicking on 'Assigned Events' value
+		OverduePOM.clickAssignedEvents().click();					//Clicking on 'Assigned Events' value
 		
 		Thread.sleep(1000);
-		elementsList = OverduePOM.clickCheckBoxes(driver);
+		elementsList = OverduePOM.clickCheckBoxes();
 		elementsList.get(1).click();									//Clicking on first check box (Actually second on form)
 		elementsList.get(2).click();									//Clicking on second check box (Actually third on form)
 		
 		Thread.sleep(500);
-		elementsList1 = OverduePOM.clickTextBoxes(driver);
+		elementsList1 = OverduePOM.clickTextBoxes();
 		elementsList1.get(0).sendKeys("Automation Testing1");			//Writing in first text box
 		elementsList1.get(1).sendKeys("Automation Testing2");			//Writing in second text box
 		
 		Thread.sleep(500);
-		elementsList1 = OverduePOM.clickDates(driver);
+		elementsList1 = OverduePOM.clickDates();
 		elementsList1.get(1).click();									//Clicking on first date (Actually second on form)
 		Thread.sleep(500);
-		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		OverduePOM.selectDate().click(); 							//Selecting date - second row and fifth column date from calendar
 		
 		elementsList1.get(2).click();									//Clicking on second date (Actually second on form)
 		Thread.sleep(500);
-		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		OverduePOM.selectDate().click(); 							//Selecting date - second row and fifth column date from calendar
 		Thread.sleep(500);
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,2000)"," ");
 		
 		Thread.sleep(1000);
-		OverduePOM.clickSave(driver).click();							//Clicking on Save button.
+		OverduePOM.clickSave().click();							//Clicking on Save button.
 		
 		Thread.sleep(2000);
 		WebElement button = null;
 		try
 		{
-			JavascriptExecutor js1 = (JavascriptExecutor) driver;
+			JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 			js1.executeScript("window.scrollBy(0,1500)"," ");
-			button = OverduePOM.clickAssigneCompliance(driver);			//Checking if the 'Assign Compliance' button is present
+			button = OverduePOM.clickAssigneCompliance();			//Checking if the 'Assign Compliance' button is present
 		}
 		catch(Exception e)
 		{
@@ -475,38 +476,38 @@ public class OverdueCount
 		
 		if(button != null)												//If button is present
 		{
-			OverduePOM.clickAssigneCompliance(driver).click();			//CLicking on the 'Assign Compliance' button
+			OverduePOM.clickAssigneCompliance().click();			//CLicking on the 'Assign Compliance' button
 			
 			Thread.sleep(2000);
-			OverduePOM.selectPerformer(driver).click();
-			Select dropdown1 = new Select(OverduePOM.selectPerformer(driver));	//Selecting performer dropdown 
+			OverduePOM.selectPerformer().click();
+			Select dropdown1 = new Select(OverduePOM.selectPerformer());	//Selecting performer dropdown 
 			dropdown1.selectByVisibleText("performer a");						//Selecting performer
 			
 			Thread.sleep(700);
-			Select dropdown2 = new Select(OverduePOM.selectReviewer(driver));	//Selecting reviewer dropdown
+			Select dropdown2 = new Select(OverduePOM.selectReviewer());	//Selecting reviewer dropdown
 			dropdown2.selectByVisibleText("reviewer b");						//Selecting reviewer
 			
 			Thread.sleep(700);
-			Select dropdown3 = new Select(OverduePOM.selectApprover(driver));	//Selecting approver dropdown
+			Select dropdown3 = new Select(OverduePOM.selectApprover());	//Selecting approver dropdown
 			dropdown3.selectByVisibleText("App App");							//Selecting approver
 			
 			Thread.sleep(700);
-			OverduePOM.selectDate1(driver).click();								//Clicking on calendar
+			OverduePOM.selectDate1().click();								//Clicking on calendar
 			Thread.sleep(500);
-			OverduePOM.selectDate(driver).click();								//Selecting date of second row and fifth column
+			OverduePOM.selectDate().click();								//Selecting date of second row and fifth column
 			
 			Thread.sleep(700);
-			Select dropdown4 = new Select(OverduePOM.selectEvent(driver));		//Selecting Event dropdown
+			Select dropdown4 = new Select(OverduePOM.selectEvent());		//Selecting Event dropdown
 			dropdown4.selectByIndex(2);											//Selecting Event
 			
 			Thread.sleep(700);
-			OverduePOM.clickCheckbox(driver).click();							//Clicking on Select all checkbox
+			OverduePOM.clickCheckbox().click();							//Clicking on Select all checkbox
 			
 			Thread.sleep(2000);
-			OverduePOM.clickSave1(driver).click();								//Clicking on 'Save' button of compliance assign prosess
+			OverduePOM.clickSave1().click();								//Clicking on 'Save' button of compliance assign prosess
 			
 			Thread.sleep(2000);
-			OverduePOM.clickSave(driver).click();								//Clicking on Save button of Compliance Activate process.
+			OverduePOM.clickSave().click();								//Clicking on Save button of Compliance Activate process.
 		}
 		
 		Thread.sleep(1500);
@@ -515,7 +516,7 @@ public class OverdueCount
 		Thread.sleep(1000);
 		OverduePOM.clickDashboard().click();								//Clicking on Dashboard.
 		Thread.sleep(2000);
-		int newActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents(driver).getText());	//Storing new Activated Events value
+		int newActivatedEventValue = Integer.parseInt(OverduePOM.readActivatedEvents().getText());	//Storing new Activated Events value
 		
 		if(newActivatedEventValue > oldActivatedEventValue)
 		{
@@ -583,7 +584,7 @@ public class OverdueCount
 		test = extent.startTest("Detailed Report Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		CFOcountPOM.DetailedReport(test, driver, "performer");
+		CFOcountPOM.DetailedReport1(test, "performer");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -619,7 +620,7 @@ public class OverdueCount
 		test = extent.startTest("My Reminder - Statutory Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		OverduePOM.MyReminder(driver, test, "Statutory");
+		OverduePOM.MyReminder( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -631,7 +632,7 @@ public class OverdueCount
 		test = extent.startTest("My Reminder - Internal Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 				
-		OverduePOM.MyReminder(driver, test, "Internal");
+		OverduePOM.MyReminder( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -657,9 +658,9 @@ public class OverdueCount
 		
 		//OverduePOM.ReviseCompliance(driver, test, 2);	//2 for 'Revised Compliance' from 'More Actions' drop down.
 		
-		OverduePOM.ReviseCompliance(driver, test, 1);	//1 for 'Update Penalty' from 'More Actions' drop down.
+		OverduePOM.ReviseCompliance( test, 1);	//1 for 'Update Penalty' from 'More Actions' drop down.
 		
-		OverduePOM.clickDashboard(driver).click();
+		OverduePOM.clickDashboard().click();
 		
 		extent.endTest(test);
 		extent.flush();

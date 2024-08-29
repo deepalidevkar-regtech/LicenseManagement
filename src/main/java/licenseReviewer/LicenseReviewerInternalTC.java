@@ -98,13 +98,13 @@ public class LicenseReviewerInternalTC extends webpage
   		initialization("License",4);
     	}
 @Test(priority = 2)
-	void ActiveInternalLicense() throws InterruptedException
+	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		//test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 
-WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+   WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
@@ -133,7 +133,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		extent.flush();
 	}
  @Test(priority = 3)
-		void ExpiringInternalLicense() throws InterruptedException
+		void ExpiringInternalLicense() throws InterruptedException, IOException
 		{
 	   // test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -166,8 +166,8 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			extent.endTest(test);
 			extent.flush();
 		}
-  @Test(priority = 4)
-	void ExpiredInternalLicense() throws InterruptedException
+ @Test(priority = 4)
+	void ExpiredInternalLicense() throws InterruptedException, IOException
 	{
 
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -198,7 +198,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		extent.flush();
 	}
  @Test(priority = 5)
-	void AppliedInternalLicense() throws InterruptedException
+	void AppliedInternalLicense() throws InterruptedException, IOException
 	{
 
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -228,8 +228,8 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		extent.endTest(test);
 		extent.flush();
 	}
-    @Test(priority = 6)
-		void PendingForReviewInternalLicense() throws InterruptedException
+   @Test(priority = 6)
+		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
 
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));

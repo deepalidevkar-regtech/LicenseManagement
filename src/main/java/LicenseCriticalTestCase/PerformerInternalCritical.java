@@ -72,7 +72,7 @@ public class PerformerInternalCritical extends webpage
 		 Thread.sleep(3000);
 		licmgmtPOM.ClickLocation().click();
 		Thread.sleep(3000);
-	     licmgmtPOM.LocationMaximizeper().click();
+	    /* licmgmtPOM.LocationMaximizeper().click();
 		
 		 Thread.sleep(5000);
 		 licmgmtPOM.SelectLocation().click();
@@ -118,7 +118,7 @@ public class PerformerInternalCritical extends webpage
 			org.apache.poi.ss.usermodel.Cell c4=row9.getCell(1);
 		 String LicenseCost=c4.getStringCellValue();
 		 licmgmtPOM.LicenseCost(driver).sendKeys(LicenseCost);
-		 */
+		 
 		licmgmtPOM.ClickCal().click();
 		 Thread.sleep(7000);
 		 licmgmtPOM.NewDate().click();
@@ -161,7 +161,7 @@ public class PerformerInternalCritical extends webpage
 		     
 		         licmgmtPOM.editlicenseclose().click();
 		         Thread.sleep(5000);
-		         
+		       */  
 		         licmgmtPOM.ClickMyWorkspace().click();
 		         Thread.sleep(5000);
 		         licmgmtPOM.Overviewworkspace().click();

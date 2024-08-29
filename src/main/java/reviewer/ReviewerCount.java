@@ -57,7 +57,7 @@ public class ReviewerCount
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
 		
-		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		//login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -79,7 +79,7 @@ public class ReviewerCount
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
-		driver = login.Login.UserLogin(uname,password,"PendingReview");		//Method of Login class to login user.
+		//driver = login.Login.UserLogin(uname,password,"PendingReview");		//Method of Login class to login user.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -94,17 +94,17 @@ public class ReviewerCount
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview(driver)));	//Wait until Statutory Pending For Review count gets visible.
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview()));	//Wait until Statutory Pending For Review count gets visible.
 		
-		int oldValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview(driver).getText());	//Reading old value of Statutory Pending For Review
-		ReviewerPOM.clickStatutoryReview(driver).click();		//Clicking on Statutory Review value.
+		int oldValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview().getText());	//Reading old value of Statutory Pending For Review
+		ReviewerPOM.clickStatutoryReview().click();		//Clicking on Statutory Review value.
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@role='grid'][@class='k-selectable']")));
-		elementsList = ReviewerPOM.clickStatus(driver);			//CLicking on Status to sort it in ascending order
+		elementsList = ReviewerPOM.clickStatus();			//CLicking on Status to sort it in ascending order
 		elementsList.get(0).click();
 		
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickAction1(driver)));
-		ReviewerPOM.clickAction1(driver).click();				//Clicking on third action button.
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickAction1()));
+		ReviewerPOM.clickAction1().click();				//Clicking on third action button.
 		
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("iReviewerFrame"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -113,7 +113,7 @@ public class ReviewerCount
 		try
 		{
 			Thread.sleep(500);
-			ReviewerPOM.clickDownload1(driver).click();					//Clicking on 'Click Here' label.
+			ReviewerPOM.clickDownload1().click();					//Clicking on 'Click Here' label.
 		}
 		catch(Exception e)
 		{
@@ -122,7 +122,7 @@ public class ReviewerCount
 		try
 		{
 			Thread.sleep(500);
-			ReviewerPOM.clickDownload2(driver).click();					//Clicking on 'Click Here' label.
+			ReviewerPOM.clickDownload2().click();					//Clicking on 'Click Here' label.
 		}
 		catch(Exception e)
 		{
@@ -135,8 +135,8 @@ public class ReviewerCount
 		WebElement el = null;
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimely(driver)));
-			el = ReviewerPOM.clickClosedTimely(driver);			
+			wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimely()));
+			el = ReviewerPOM.clickClosedTimely();			
 		}
 		catch(Exception e)
 		{
@@ -145,14 +145,14 @@ public class ReviewerCount
 		if(el != null)
 		{
 			Thread.sleep(500);
-			ReviewerPOM.clickClosedTimely(driver).click();				//Clicking on first radio button.
+			ReviewerPOM.clickClosedTimely().click();				//Clicking on first radio button.
 		}
 		
 		WebElement checkbox = null;
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickCheckBox(driver)));
-			checkbox = ReviewerPOM.clickCheckBox(driver);				//Clicking on Check box
+			wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickCheckBox()));
+			checkbox = ReviewerPOM.clickCheckBox();				//Clicking on Check box
 		}
 		catch(Exception e)
 		{
@@ -161,7 +161,7 @@ public class ReviewerCount
 		if(checkbox != null)
 		{
 			if(checkbox.isDisplayed() && !checkbox.isSelected())
-				ReviewerPOM.clickCheckBox(driver).click();
+				ReviewerPOM.clickCheckBox().click();
 		}
 		
 		Thread.sleep(500);
@@ -173,9 +173,9 @@ public class ReviewerCount
 		{
 			Thread.sleep(600);
 			//wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.insertLiability1(driver)));
-			ele1 = ReviewerPOM.insertLiability1(driver);			//Loaded element in ele1. So that, if element not found it will do nothing.
-			ele2 = ReviewerPOM.insertLiability2(driver);			//Loaded element in ele2. So that, if element not found it will do nothing.
-			ele3 = ReviewerPOM.insertLiability3(driver);			//Loaded element in ele3. So that, if element not found it will do nothing.
+			ele1 = ReviewerPOM.insertLiability1();			//Loaded element in ele1. So that, if element not found it will do nothing.
+			ele2 = ReviewerPOM.insertLiability2();			//Loaded element in ele2. So that, if element not found it will do nothing.
+			ele3 = ReviewerPOM.insertLiability3();			//Loaded element in ele3. So that, if element not found it will do nothing.
 		}
 		catch(Exception e)
 		{
@@ -187,8 +187,8 @@ public class ReviewerCount
 			Cell c1 = row3.getCell(1);									//Selected cell (3 row,1 column)
 			int liability1 = (int) c1.getNumericCellValue();			//Got the amount stored at position 3,1
 			String l1 = Integer.toString(liability1); 					//Converting int to String
-			ReviewerPOM.insertLiability1(driver).clear();				//Clearing the text box.
-			ReviewerPOM.insertLiability1(driver).sendKeys(l1);			//Inserting amount in text box
+			ReviewerPOM.insertLiability1().clear();				//Clearing the text box.
+			ReviewerPOM.insertLiability1().sendKeys(l1);			//Inserting amount in text box
 			Thread.sleep(400);
 		}
 		
@@ -198,8 +198,8 @@ public class ReviewerCount
 			Cell c2 = row4.getCell(1);											//Selected cell (4 row,1 column)
 			int liability2 = (int) c2.getNumericCellValue();					//Got the amount stored at position 4,1
 			String l2 = Integer.toString(liability2); 							//Converting int to String
-			ReviewerPOM.insertLiability2(driver).clear();				//Clearing the text box.
-			ReviewerPOM.insertLiability2(driver).sendKeys(l2);		//Inserting amount in text box
+			ReviewerPOM.insertLiability2().clear();				//Clearing the text box.
+			ReviewerPOM.insertLiability2().sendKeys(l2);		//Inserting amount in text box
 			Thread.sleep(400);
 		}
 		
@@ -209,32 +209,32 @@ public class ReviewerCount
 			Cell c3 = row5.getCell(1);											//Selected cell (5 row,1 column)
 			int liability3 = (int) c3.getNumericCellValue();					//Got the amount stored at position 5,1
 			String l3 = Integer.toString(liability3); 							//Converting int to String
-			ReviewerPOM.insertLiability3(driver).clear();				//Clearing the text box.
-			ReviewerPOM.insertLiability3(driver).sendKeys(l3);		//Inserting amount in text box
+			ReviewerPOM.insertLiability3().clear();				//Clearing the text box.
+			ReviewerPOM.insertLiability3().sendKeys(l3);		//Inserting amount in text box
 			Thread.sleep(500);
 		}
 		js.executeScript("window.scrollBy(0,400)"," ");
 		
 		Thread.sleep(500);
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.insertTextArea(driver)));
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.insertTextArea()));
 		Row row6 = sheet.getRow(6);											//Selected 6th index row (Seventh row)
 		Cell c4 = row6.getCell(1);											//Selected cell (6 row,1 column)
 		String remark = c4.getStringCellValue();							//Got the URL stored at position 6,1
-		ReviewerPOM.insertTextArea(driver).sendKeys(remark);		//Inserting remark in Text area
+		ReviewerPOM.insertTextArea().sendKeys(remark);		//Inserting remark in Text area
 		
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickApprove(driver)));
-		ReviewerPOM.clickApprove(driver).click();					//Clicking on Approve button.
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickApprove()));
+		ReviewerPOM.clickApprove().click();					//Clicking on Approve button.
 
 		Thread.sleep(1000);
 		driver.switchTo().alert().accept();									//Accepting msg of Successful Submission.
 		driver.switchTo().parentFrame();									//Switching back to parent frame from iFrame
 		
 		Thread.sleep(1000);
-		performer.OverduePOM.clickDashboard(driver).click();
+		performer.OverduePOM.clickDashboard().click();
 		
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickStatutoryReview(driver)));
-		int newValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview(driver).getText());	//Reading new value of Statutory Pending For Review
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickStatutoryReview()));
+		int newValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview().getText());	//Reading new value of Statutory Pending For Review
 		
 		if(newValue < oldValue)
 		{
@@ -258,17 +258,17 @@ public class ReviewerCount
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		
-		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview(driver)));	//Wait until Statutory Pending For Review count gets visible.
-		int oldStatutoryReviewValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview(driver).getText());	//Reading old value of Statutory Pending For Review
-		int oldStatutoryRejectValue = Integer.parseInt(ReviewerPOM.readStatutoryReject(driver).getText());	//Reading old value of Statutory Rejected
-		ReviewerPOM.clickStatutoryReview(driver).click();			//Clicking on Statutory Review value.
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview()));	//Wait until Statutory Pending For Review count gets visible.
+		int oldStatutoryReviewValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview().getText());	//Reading old value of Statutory Pending For Review
+		int oldStatutoryRejectValue = Integer.parseInt(ReviewerPOM.readStatutoryReject().getText());	//Reading old value of Statutory Rejected
+		ReviewerPOM.clickStatutoryReview().click();			//Clicking on Statutory Review value.
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@role='grid'][@class='k-selectable']")));
-		elementsList = ReviewerPOM.clickStatus(driver);				//CLicking on Status to sort it in ascending order
+		elementsList = ReviewerPOM.clickStatus();				//CLicking on Status to sort it in ascending order
 		elementsList.get(0).click();
 		
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickAction1(driver)));
-		ReviewerPOM.clickAction1(driver).click();					//Clicking on third action button.
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickAction1()));
+		ReviewerPOM.clickAction1().click();					//Clicking on third action button.
 		
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("iReviewerFrame"));
 		
@@ -277,7 +277,7 @@ public class ReviewerCount
 		try
 		{
 			Thread.sleep(500);
-			ReviewerPOM.clickDownload1(driver).click();					//Clicking on 'Click Here' label.
+			ReviewerPOM.clickDownload1().click();					//Clicking on 'Click Here' label.
 		}
 		catch(Exception e)
 		{
@@ -286,7 +286,7 @@ public class ReviewerCount
 		try
 		{
 			Thread.sleep(500);
-			ReviewerPOM.clickDownload2(driver).click();
+			ReviewerPOM.clickDownload2().click();
 		}
 		catch(Exception e)
 		{
@@ -297,8 +297,8 @@ public class ReviewerCount
 		js.executeScript("window.scrollBy(0,300)"," ");					//Scrolling down window by 2000 px.
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimely(driver)));
-			ReviewerPOM.clickClosedTimely(driver).click();				//Clicking on Closed-Delay radio button.
+			wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimely()));
+			ReviewerPOM.clickClosedTimely().click();				//Clicking on Closed-Delay radio button.
 		}
 		catch(Exception e)
 		{
@@ -313,9 +313,9 @@ public class ReviewerCount
 		{
 			Thread.sleep(600);
 			//wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.insertLiability1(driver)));
-			ele1 = ReviewerPOM.insertLiability1(driver);			//Loaded element in ele1. So that, if element not found it will do nothing.
-			ele2 = ReviewerPOM.insertLiability2(driver);			//Loaded element in ele2. So that, if element not found it will do nothing.
-			ele3 = ReviewerPOM.insertLiability3(driver);			//Loaded element in ele3. So that, if element not found it will do nothing.
+			ele1 = ReviewerPOM.insertLiability1();			//Loaded element in ele1. So that, if element not found it will do nothing.
+			ele2 = ReviewerPOM.insertLiability2();			//Loaded element in ele2. So that, if element not found it will do nothing.
+			ele3 = ReviewerPOM.insertLiability3();			//Loaded element in ele3. So that, if element not found it will do nothing.
 		}
 		catch(Exception e)
 		{
@@ -328,8 +328,8 @@ public class ReviewerCount
 			Cell c1 = row3.getCell(1);											//Selected cell (3 row,1 column)
 			int liability1 = (int) c1.getNumericCellValue();					//Got the amount stored at position 3,1
 			String l1 = Integer.toString(liability1); 							//Converting int to String
-			ReviewerPOM.insertLiability1(driver).clear();				//Clearing the text box.
-			ReviewerPOM.insertLiability1(driver).sendKeys(l1);		//Inserting amount in text box
+			ReviewerPOM.insertLiability1().clear();				//Clearing the text box.
+			ReviewerPOM.insertLiability1().sendKeys(l1);		//Inserting amount in text box
 			Thread.sleep(500);
 		}
 		
@@ -339,8 +339,8 @@ public class ReviewerCount
 			Cell c2 = row4.getCell(1);										//Selected cell (4 row,1 column)
 			int liability2 = (int) c2.getNumericCellValue();				//Got the amount stored at position 4,1
 			String l2 = Integer.toString(liability2); 						//Converting int to String
-			ReviewerPOM.insertLiability2(driver).clear();					//Clearing the text box.
-			ReviewerPOM.insertLiability2(driver).sendKeys(l2);				//Inserting amount in text box
+			ReviewerPOM.insertLiability2().clear();					//Clearing the text box.
+			ReviewerPOM.insertLiability2().sendKeys(l2);				//Inserting amount in text box
 			Thread.sleep(500);
 		}
 		
@@ -350,20 +350,20 @@ public class ReviewerCount
 			Cell c3 = row5.getCell(1);										//Selected cell (5 row,1 column)
 			int liability3 = (int) c3.getNumericCellValue();				//Got the amount stored at position 5,1
 			String l3 = Integer.toString(liability3); 						//Converting int to String
-			ReviewerPOM.insertLiability3(driver).clear();					//Clearing the text box.
-			ReviewerPOM.insertLiability3(driver).sendKeys(l3);				//Inserting amount in text box
+			ReviewerPOM.insertLiability3().clear();					//Clearing the text box.
+			ReviewerPOM.insertLiability3().sendKeys(l3);				//Inserting amount in text box
 			Thread.sleep(500);
 		}
 		
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.insertTextArea(driver)));
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.insertTextArea()));
 		Row row6 = sheet.getRow(6);											//Selected 6th index row (Seventh row)
 		Cell c4 = row6.getCell(1);											//Selected cell (6 row,1 column)
 		String remark = c4.getStringCellValue();							//Got the URL stored at position 6,1
-		ReviewerPOM.insertTextArea(driver).sendKeys(remark);				//Inserting remark in Text area
+		ReviewerPOM.insertTextArea().sendKeys(remark);				//Inserting remark in Text area
 		
-		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickReject(driver)));
-		Actions action = new Actions(driver);
-		action.moveToElement(ReviewerPOM.clickReject(driver)).click().perform();
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickReject()));
+		Actions action = new Actions(gerDriver());
+		action.moveToElement(ReviewerPOM.clickReject()).click().perform();
 		//ReviewerPOM.clickReject(driver).click();							//Clicking on Reject button.
 		
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//input[@value='Reject']")));
@@ -372,14 +372,14 @@ public class ReviewerCount
 		driver.switchTo().parentFrame();									//Switching back to parent frame from iFrame
 		
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.elementToBeClickable(performer.OverduePOM.clickDashboard(driver)));
-		WebElement element = performer.OverduePOM.clickDashboard(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(performer.OverduePOM.clickDashboard()));
+		WebElement element = performer.OverduePOM.clickDashboard();
 		action.moveToElement(element).click().perform();					//Clicking on dashboard,
 		
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview(driver)));	//Wait until Statutory Pending For Review count gets visible.
-		int newStatutoryReviewValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview(driver).getText());	//Reading new value of Statutory Pending For Review
-		int newStatutoryRejectValue = Integer.parseInt(ReviewerPOM.readStatutoryReject(driver).getText());	//Reading new value of Statutory Rejected
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview()));	//Wait until Statutory Pending For Review count gets visible.
+		int newStatutoryReviewValue = Integer.parseInt(ReviewerPOM.clickStatutoryReview().getText());	//Reading new value of Statutory Pending For Review
+		int newStatutoryRejectValue = Integer.parseInt(ReviewerPOM.readStatutoryReject().getText());	//Reading new value of Statutory Rejected
 		
 		if(newStatutoryReviewValue < oldStatutoryReviewValue && newStatutoryRejectValue > oldStatutoryRejectValue)
 		{
@@ -395,6 +395,11 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
+	private WebDriver gerDriver() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Test(priority = 4)
 	void ReviewCountInternalApprove() throws InterruptedException, IOException
 	{
@@ -425,7 +430,7 @@ public class ReviewerCount
 		test = extent.startTest("My Reminder - Statutory Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		OverduePOM.MyReminder(driver, test, "Statutory");
+		OverduePOM.MyReminder( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -437,7 +442,7 @@ public class ReviewerCount
 		test = extent.startTest("My Reminder - Internal Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		OverduePOM.MyReminder(driver, test, "Internal");
+		OverduePOM.MyReminder( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();

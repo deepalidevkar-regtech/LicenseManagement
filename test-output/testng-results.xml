@@ -1,787 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="14" passed="1" failed="0" skipped="13">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-04T08:17:19 IST" name="Default suite" finished-at="2024-06-04T08:25:12 IST" duration-ms="472899">
+  <suite started-at="2024-08-28T19:23:26 IST" name="Default suite" finished-at="2024-08-28T19:39:33 IST" duration-ms="967151">
     <groups>
     </groups>
-    <test started-at="2024-06-04T08:17:19 IST" name="Default test" finished-at="2024-06-04T08:25:12 IST" duration-ms="472899">
-      <class name="LicenseCriticalTestCase.PerformerInternalCriticalTC">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:17:19 IST" name="setBrowser" finished-at="2024-06-04T08:17:20 IST" duration-ms="796" status="PASS">
+    <test started-at="2024-08-28T19:23:26 IST" name="Default test" finished-at="2024-08-28T19:39:33 IST" duration-ms="967151">
+      <class name="licenseManagement.licmgmtInternalTC">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:23:26 IST" name="setBrowser" finished-at="2024-08-28T19:23:30 IST" duration-ms="3665" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:17:20 IST" name="Login" finished-at="2024-06-04T08:18:03 IST" duration-ms="43136" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:23:30 IST" name="Login" finished-at="2024-08-28T19:24:37 IST" duration-ms="67707" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Active()[pri:2, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:18:03 IST" name="Active" finished-at="2024-06-04T08:25:11 IST" duration-ms="428639" status="PASS">
+        <test-method signature="InternalActiveDashboardFilter()[pri:34, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:24:37 IST" name="InternalActiveDashboardFilter" finished-at="2024-08-28T19:25:33 IST" duration-ms="55737" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Active -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="driverclose" finished-at="2024-06-04T08:25:11 IST" duration-ms="0" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- InternalActiveDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:25:33 IST" name="driverclose" finished-at="2024-08-28T19:25:35 IST" duration-ms="1747" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711899" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:25:35 IST" name="Login" finished-at="2024-08-28T19:26:35 IST" duration-ms="59698" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="ActivePerform()[pri:3, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="ActivePerform" finished-at="2024-06-04T08:25:11 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternalExpiringDashboardFilter()[pri:35, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:26:35 IST" name="InternalExpiringDashboardFilter" finished-at="2024-08-28T19:27:33 IST" duration-ms="58599" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ActivePerform -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711922" status="SKIP">
+        </test-method> <!-- InternalExpiringDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:27:33 IST" name="driverclose" finished-at="2024-08-28T19:27:36 IST" duration-ms="3170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711924" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:27:36 IST" name="Login" finished-at="2024-08-28T19:28:45 IST" duration-ms="68627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Expiring()[pri:4, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Expiring" finished-at="2024-06-04T08:25:11 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternalExpiredDashboardFilter()[pri:36, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:28:45 IST" name="InternalExpiredDashboardFilter" finished-at="2024-08-28T19:29:44 IST" duration-ms="58473" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Expiring -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711940" status="SKIP">
+        </test-method> <!-- InternalExpiredDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:29:44 IST" name="driverclose" finished-at="2024-08-28T19:29:50 IST" duration-ms="6207" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711943" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:29:50 IST" name="Login" finished-at="2024-08-28T19:30:46 IST" duration-ms="56077" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="ExpiringPerform()[pri:5, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="ExpiringPerform" finished-at="2024-06-04T08:25:11 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternlAppliedDashboardFilter()[pri:37, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:30:46 IST" name="InternlAppliedDashboardFilter" finished-at="2024-08-28T19:31:49 IST" duration-ms="62744" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ExpiringPerform -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711967" status="SKIP">
+        </test-method> <!-- InternlAppliedDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:31:49 IST" name="driverclose" finished-at="2024-08-28T19:31:50 IST" duration-ms="1889" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711969" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:31:50 IST" name="Login" finished-at="2024-08-28T19:32:50 IST" duration-ms="59228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Expired()[pri:6, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Expired" finished-at="2024-06-04T08:25:11 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternalAssignedButNotActivatedDashboardFilter()[pri:38, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:32:50 IST" name="InternalAssignedButNotActivatedDashboardFilter" finished-at="2024-08-28T19:33:51 IST" duration-ms="61124" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Expired -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711980" status="SKIP">
+        </test-method> <!-- InternalAssignedButNotActivatedDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:33:51 IST" name="driverclose" finished-at="2024-08-28T19:33:52 IST" duration-ms="1657" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711984" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:33:52 IST" name="Login" finished-at="2024-08-28T19:34:56 IST" duration-ms="63779" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="ExpiredPerform()[pri:7, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="ExpiredPerform" finished-at="2024-06-04T08:25:11 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternalPendingForReviewDashboardFilter()[pri:38, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:34:56 IST" name="InternalPendingForReviewDashboardFilter" finished-at="2024-08-28T19:35:53 IST" duration-ms="56830" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ExpiredPerform -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711996" status="SKIP">
+        </test-method> <!-- InternalPendingForReviewDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:35:53 IST" name="driverclose" finished-at="2024-08-28T19:35:54 IST" duration-ms="1055" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:11 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469711999" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:35:54 IST" name="Login" finished-at="2024-08-28T19:36:51 IST" duration-ms="56555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="Applied()[pri:8, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Applied" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternalRejeectedDashboardFilter()[pri:38, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:36:51 IST" name="InternalRejeectedDashboardFilter" finished-at="2024-08-28T19:37:40 IST" duration-ms="49758" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Applied -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712004" status="SKIP">
+        </test-method> <!-- InternalRejeectedDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:37:40 IST" name="driverclose" finished-at="2024-08-28T19:37:42 IST" duration-ms="1162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712007" status="SKIP">
+        <test-method is-config="true" signature="Login()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:37:42 IST" name="Login" finished-at="2024-08-28T19:38:43 IST" duration-ms="61221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="PendingForReviewInternalLicense()[pri:9, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="PendingForReviewInternalLicense" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="InternalTerminateDashboardFilter()[pri:38, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:38:43 IST" name="InternalTerminateDashboardFilter" finished-at="2024-08-28T19:39:32 IST" duration-ms="49121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PendingForReviewInternalLicense -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712024" status="SKIP">
+        </test-method> <!-- InternalTerminateDashboardFilter -->
+        <test-method is-config="true" signature="driverclose()[pri:0, instance:licenseManagement.licmgmtInternalTC@2d52216b]" started-at="2024-08-28T19:39:32 IST" name="driverclose" finished-at="2024-08-28T19:39:33 IST" duration-ms="1027" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712029" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="RejectedInternalLicense()[pri:10, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="RejectedInternalLicense" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RejectedInternalLicense -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712044" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712050" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="TerminateInternalInternalLicense()[pri:11, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="TerminateInternalInternalLicense" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TerminateInternalInternalLicense -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712063" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712069" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="Myworkspace()[pri:12, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Myworkspace" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Myworkspace -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712077" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712078" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="MyDocuments()[pri:13, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="MyDocuments" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MyDocuments -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712082" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712085" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="MyReports()[pri:14, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="MyReports" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MyReports -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712096" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="Login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712099" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="AssignedButNotActivated()[pri:15, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="AssignedButNotActivated" finished-at="2024-06-04T08:25:12 IST" duration-ms="0" status="SKIP">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "LicenseCriticalTestCase.PerformerInternalCriticalTC.driver" is null
-at LicenseCriticalTestCase.PerformerInternalCriticalTC.driverclose(PerformerInternalCriticalTC.java:431)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
-at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AssignedButNotActivated -->
-        <test-method is-config="true" signature="driverclose()[pri:0, instance:LicenseCriticalTestCase.PerformerInternalCriticalTC@53aac487]" started-at="2024-06-04T08:25:12 IST" name="driverclose" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1717469712105" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverclose -->
-      </class> <!-- LicenseCriticalTestCase.PerformerInternalCriticalTC -->
+      </class> <!-- licenseManagement.licmgmtInternalTC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

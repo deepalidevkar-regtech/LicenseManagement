@@ -96,7 +96,7 @@ public class LicensePerformerInternal extends webpage
    		initialization("License",1);
     	}
 @Test(priority = 2)
-	void Active() throws InterruptedException
+	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -158,7 +158,7 @@ void ActivePerform() throws InterruptedException
 	extent.flush();
 }
 	@Test(priority = 3)
-	void Expiring() throws InterruptedException
+	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -222,7 +222,7 @@ void ExpiringPerform() throws InterruptedException
 }
 	
 	@Test(priority = 5)
-	void Expired() throws InterruptedException
+	void Expired() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
@@ -251,7 +251,7 @@ void ExpiringPerform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 6)
+@Test(priority = 6)
  void ExpiredPerform() throws InterruptedException
 {
 	test = extent.startTest("Expired License Perform Verification");
@@ -285,7 +285,7 @@ void ExpiringPerform() throws InterruptedException
 }
 	
 @Test(priority = 7)
-	void Applied() throws InterruptedException
+	void Applied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -327,7 +327,7 @@ void ExpiringPerform() throws InterruptedException
 			extent.flush();
 		}
 	@Test(priority = 9)
-	void RejectedInternalLicense() throws InterruptedException
+	void RejectedInternalLicense() throws InterruptedException, IOException
 			{
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -344,7 +344,7 @@ void ExpiringPerform() throws InterruptedException
 				extent.flush();
 			}
 	 @Test(priority = 10)
-   void TerminateInternalInternalLicense() throws InterruptedException
+   void TerminateInternalInternalLicense() throws InterruptedException, IOException
 				{
 		    WebDriverWait wait = new WebDriverWait(driver, 5);
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));

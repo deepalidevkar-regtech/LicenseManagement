@@ -99,7 +99,7 @@ public class PerformerInternalCriticalTC  extends webpage{
     	}
  
   	@Test(priority = 2)
-	void Active() throws InterruptedException
+	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -129,7 +129,7 @@ public class PerformerInternalCriticalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-   	@Test(priority = 3)
+   @Test(priority = 3)
    	void ActivePerform() throws InterruptedException
    	{
    		test = extent.startTest("Active License PerformVerification");
@@ -161,7 +161,7 @@ public class PerformerInternalCriticalTC  extends webpage{
    		extent.flush();
    	}
    	@Test(priority = 4)
-	void Expiring() throws InterruptedException
+	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -224,7 +224,7 @@ public class PerformerInternalCriticalTC  extends webpage{
    		extent.flush();
    	}
    	@Test(priority = 6)
-	void Expired() throws InterruptedException
+	void Expired() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
@@ -289,7 +289,7 @@ public class PerformerInternalCriticalTC  extends webpage{
    }
 
    	@Test(priority = 8)
-	void Applied() throws InterruptedException
+	void Applied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -428,7 +428,8 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 	 @AfterMethod
 	  void driverclose()
 	  {
-		  driver.close();
+			closeBrowser(); 
+		 // driver.close();
 	  }
 
 

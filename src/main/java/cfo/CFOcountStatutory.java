@@ -71,7 +71,7 @@ public class CFOcountStatutory
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
 		
-		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		//login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -95,7 +95,7 @@ public class CFOcountStatutory
 		
 		//Write "CFO-diy" for DIYProduction link.
 		//Write "CFO" for login.avantis
-		driver = login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
+		//driver = login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
 		
 		//CFOcountPOM.clickRefresh(driver).click();
 		//Thread.sleep(3000);

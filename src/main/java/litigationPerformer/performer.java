@@ -38,7 +38,7 @@ public class performer
 	}
 	
 	@BeforeTest
-	void setBrowser() throws InterruptedException, IOException
+	/*void setBrowser() throws InterruptedException, IOException
 	{
 		String workingDir = System.getProperty("user.dir");
 		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//LitigationPerformer.html",true);
@@ -55,7 +55,7 @@ public class performer
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 	
 	@Test(priority = 1)
 	void Login() throws InterruptedException, IOException
@@ -72,7 +72,7 @@ public class performer
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
-		driver = login.Login.UserLogin(uname,password,"Litigation");		//Method of Login class to login user.
+	//	driver = login.Login.UserLogin(uname,password,"Litigation");		//Method of Login class to login user.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);

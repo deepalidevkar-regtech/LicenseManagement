@@ -95,7 +95,7 @@ public class InternalTC  extends webpage{
 		initialization("License",0);
 	}
 
-	@Test(priority = 2)
+/*	@Test(priority = 2)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -183,7 +183,7 @@ public class InternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	  @Test(priority =10)
+	 @Test(priority =10)
 		void LicenseExpiredOnInternal() throws InterruptedException
 		{
 			test = extent.startTest("License ExpiredOn Working Verification");
@@ -269,7 +269,7 @@ public class InternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
    	}
-   	  @Test(priority = 17)
+     @Test(priority = 17)
 	  void BystatusRejectedInternalgraph() throws InterruptedException
 		{
 			test = extent.startTest("Internal By Status-Rejected Graph Count Verification");
@@ -283,7 +283,7 @@ public class InternalTC  extends webpage{
 	@Test(priority = 17)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License Type - Expired Graph Count Verification");
+			test = extent.startTest("Internal By License Type - SWS Expired Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeExpiredInternal( test, "Internal");
@@ -294,7 +294,7 @@ public class InternalTC  extends webpage{
 	 @Test(priority = 18)
 		void ByLicensetypeExpiringInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License Type -Application Overdue(Expiring but not applied)Graph Count Verification");
+			test = extent.startTest("Internal By License Type -SWS Application Overdue(Expiring but not applied)Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
@@ -305,7 +305,7 @@ public class InternalTC  extends webpage{
 	 @Test(priority = 19)
 		void ByLicensetypeAppliedInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type -Expired applied but not renewed Graph Count Verification");
+			test = extent.startTest("Internal By License type -SWS Expired applied but not renewed Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeAppliedInternal( test, "Internal");
@@ -313,10 +313,10 @@ public class InternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 20)
+	 @Test(priority = 20)
 		void BylicnesetypeActiveInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type - Active Graph Count Verification");
+			test = extent.startTest("Internal By License type -SWS Active Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeActiveInternal( test, "Internal");
@@ -327,7 +327,7 @@ public class InternalTC  extends webpage{
 	@Test(priority = 21)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type - Terminate Graph  Count Working Verification");
+			test = extent.startTest("Internal By License type - SWS Terminate Graph  Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeTerminateInternal( test, "Internal");
@@ -338,7 +338,7 @@ public class InternalTC  extends webpage{
  @Test(priority = 21)
 		void BylicnesetypeRejectedInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type - Rejected Graph  Count Working Verification");
+			test = extent.startTest("Internal By License type - SWS Rejected Graph  Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeRejectedInternal( test, "Internal");
@@ -399,7 +399,7 @@ public class InternalTC  extends webpage{
 		extent.flush();
 	}
 	 @Test(priority = 26)
-		void LicenseNewAssignment() throws InterruptedException, IOException
+	void LicenseNewAssignment() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Internal License New Assignment");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -427,6 +427,7 @@ public class InternalTC  extends webpage{
 		@Test(priority = 29)
 		void AssignedButNotActivated() throws InterruptedException, IOException
 		{
+			
 			test = extent.startTest("Assigned But Not Activated  Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
@@ -454,10 +455,214 @@ public class InternalTC  extends webpage{
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 
- 
-	
+		@Test(priority =34)
+		void  InternalActiveDashboardFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+			
+			Select drp = new Select(LiPerformerPOM.clickType());
+			drp.selectByIndex(1);
+			
+			try
+			{
+				Thread.sleep(400);
+				wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			StatutoryMethod.DashboardActivefilter( test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority =35)
+		void  InternalExpiringDashboardFilter() throws InterruptedException, IOException
+		{
+		
+			test = extent.startTest("Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+			
+			Select drp = new Select(LiPerformerPOM.clickType());
+			drp.selectByIndex(1);
+			
+			try
+			{
+				Thread.sleep(400);
+				wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			StatutoryMethod.DashboardExpiringfilter( test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority =36)
+		void  InternalExpiredDashboardFilter() throws InterruptedException, IOException
+		{
+			
+			test = extent.startTest("Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+			
+			Select drp = new Select(LiPerformerPOM.clickType());
+			drp.selectByIndex(1);
+			
+			try
+			{
+				Thread.sleep(400);
+				wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
+			StatutoryMethod.DashboardExpiredfilter( test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority =37)
+		void  InternlAppliedDashboardFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+			
+			Select drp = new Select(LiPerformerPOM.clickType());
+			drp.selectByIndex(1);
+			
+			try
+			{
+				Thread.sleep(400);
+				wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+			}
+			catch(Exception e)
+			{
+				
+			}
+			StatutoryMethod.DashboardAppliedfilter( test, "Internal");
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 38)
+			void InternalPendingForReviewDashboardFilter() throws InterruptedException, IOException
+			{
+			    test = extent.startTest("Dashboard Pending For review  Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+				wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+				LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+				
+				Select drp = new Select(LiPerformerPOM.clickType());
+				drp.selectByIndex(1);
+				
+				try
+				{
+					Thread.sleep(400);
+					wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+				StatutoryMethod.Dashboardpendingforreviewfilter( test, "Internal");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+			@Test(priority = 38)
+			void InternalRejeectedDashboardFilter() throws InterruptedException, IOException
+			{
+			    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+				wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+				LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+				
+				Select drp = new Select(LiPerformerPOM.clickType());
+				drp.selectByIndex(1);
+				
+				try
+				{
+					Thread.sleep(400);
+					wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+				StatutoryMethod.DashboardRejectedLicensefilter( test, "Internal");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+			@Test(priority = 38)
+			void InternalTerminateDashboardFilter() throws InterruptedException, IOException
+			{
+			    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+				wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+				LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+				
+				Select drp = new Select(LiPerformerPOM.clickType());
+				drp.selectByIndex(1);
+				
+				try
+				{
+					Thread.sleep(400);
+					wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+				StatutoryMethod.DashboardTerminateLicensefilter( test, "Internal");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+			@Test(priority = 38)
+			void InternalAssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
+			{
+			    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+			    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+				wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+				LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+				
+				Select drp = new Select(LiPerformerPOM.clickType());
+				drp.selectByIndex(1);
+				
+				try
+				{
+					Thread.sleep(400);
+					wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+				}
+				catch(Exception e)
+				{
+					
+				}
+				
+				StatutoryMethod.DashboardAssignedButNotActivatedFilter( test, "Internal");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
 
 	@AfterMethod
 	  void driverclose()

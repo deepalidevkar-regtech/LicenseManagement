@@ -1247,6 +1247,7 @@ getDriver().switchTo().parentFrame();
 	
 	//	wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
 		//wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
+		Thread.sleep(3000);
 		LiPerformerPOM.Multicheckdoc1().click();
 		Thread.sleep(3000);
 		LiPerformerPOM.Multicheckdoc2().click();

@@ -96,8 +96,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		extent.flush();*/
 		initialization("License",0);
 	}
-	
-@Test(priority = 2)
+	@Test(priority = 2)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");

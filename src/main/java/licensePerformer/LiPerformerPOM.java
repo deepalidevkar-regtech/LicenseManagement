@@ -182,7 +182,7 @@ public class LiPerformerPOM extends webpage{
 	
 	public static WebElement clickStatus1()
 	{
-		license = getDriver().findElement(By.xpath("//*[@aria-owns='dropdownlistStatus_listbox']"));
+		license = getDriver().findElement(By.xpath("(//*[@aria-owns='dropdownlistStatus_listbox'])"));
 		return license;
 	}
 	
@@ -279,8 +279,10 @@ public class LiPerformerPOM extends webpage{
 	public static WebElement ShowFream()
 	{
 		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_showReminderDetail']"));
+
 		return license;
 	}
+	
 	public static WebElement TerminateAction()
 	{
 		license = getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-overview k-grid-overview'])[1]"));
@@ -562,7 +564,7 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement EntityLocationExpand() 
 	{
-		license = getDriver().findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-group k-treeview-lines'])[2]"));
 		
 		return license;
 	}
@@ -576,13 +578,25 @@ public class LiPerformerPOM extends webpage{
 		license = getDriver().findElement(By.xpath("(//*[@class='k-item k-last'])[2]"));
 		return license;
 	}
-	
+	public static WebElement demolocation() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[2]"));
+		return license;
+	}
 	
 	public static WebElement locationtext() 
 	{
 		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[3]"));
 		return license;
+		
 	}
+	public static WebElement locationsearch() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-textbox'])[1]"));
+		return license;
+		
+	}
+
 	public static WebElement ClickLictype() 
 	{
 		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[3]"));
@@ -591,9 +605,15 @@ public class LiPerformerPOM extends webpage{
 	
 	public static WebElement Licensetype() 
 	{
-		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[54]"));
 		return license;
 	}
+	public static WebElement Licensetypeinternal() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
+		return license;
+	}
+	
 	public static WebElement selectlictype() 
 	{
 		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
@@ -689,7 +709,7 @@ public class LiPerformerPOM extends webpage{
 	
 	public static WebElement locget() 
 	{
-		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[23]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-in'])[7]"));
 		return license;
 	}
 	
@@ -732,6 +752,16 @@ public class LiPerformerPOM extends webpage{
 	public static WebElement maxilocation() 
 	{
 		license = getDriver().findElement(By.xpath("div[class='k-top k-bot'] span[class='k-icon k-i-expand']"));
+		return license;
+	}
+	public static WebElement isperclosePopup() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='divShowReminderDialog/]/div/div/div[1]/button"));
+		return license;
+	}
+	public static WebElement ispermessage() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='ValidationSummary1']"));
 		return license;
 	}
 	
