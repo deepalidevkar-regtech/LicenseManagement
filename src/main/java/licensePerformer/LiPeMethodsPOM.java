@@ -2541,7 +2541,7 @@ getDriver().findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1
 	Thread.sleep(7000);
 	LiPerformerPOM.EntityLocation().click();
 	Thread.sleep(500);
-	LiPerformerPOM.EntityLocationExpand().click();
+ 
 	Thread.sleep(500);
 	//LiPerformerPOM.EntityLocationExpand.click();
 	//Thread.sleep(500);
@@ -4289,12 +4289,12 @@ else
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectInternalDropdown()));
 	Select status = new Select(OverduePOM.selectInternalDropdown());	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
+	status.selectByIndex(1);	
 	
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//LicensePerformerResults(Internal).html");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -4525,11 +4525,11 @@ getDriver().navigate().refresh();
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectInternalDropdown()));
 	Select status = new Select(OverduePOM.selectInternalDropdown());	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
+	status.selectByIndex(1);	
 	
 	 Thread.sleep(3000);
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//CriticalReport//LicPerformerResult(Internal).html");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);

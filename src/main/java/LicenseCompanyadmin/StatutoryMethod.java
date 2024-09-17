@@ -2434,12 +2434,12 @@ public class StatutoryMethod  extends webpage{
 		   licenseCompanyadmin.MethodPOM.ClickApply().click();
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 20);
 	   Thread.sleep(7000);
-		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate()));
-		String Terminate=MethodPOM.clickTerminate().getText();
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateper()));
+		String Terminate=MethodPOM.clickTerminateper().getText();
 		
 	     int TerminateLicense = Integer.parseInt(Terminate);	//Reading Terminate count.
 	 	Thread.sleep(5000);
-	      MethodPOM.clickTerminate().click();					//Clicking on 'Terminate ' image
+	      MethodPOM.clickTerminateper().click();					//Clicking on 'Terminate ' image
 	      Thread.sleep(7000);
 	      wait.until(ExpectedConditions.visibilityOf(licmgmtPOM.clickTabelGrid()));
 	      Thread.sleep(7000);
@@ -3384,16 +3384,15 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			 test.log(LogStatus.PASS, "By Status  Application Overdue (Expiring but not applied) License  Overview Button Working Successfully");
 			 Thread.sleep(3000);
 			 LiPerformerPOM.EntityLocation().click();
-				Thread.sleep(500);
-				//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-				//LiPerformerPOM.aa().click();
-				//Thread.sleep(500);
+  			Thread.sleep(500);
 				LiPerformerPOM.EntityLocationExpand().click();
-				//Thread.sleep(500);
-			  // LiPerformerPOM.aa1().click();
+				Thread.sleep(500);
+			//   LiPerformerPOM.aa1().click();
+				Thread.sleep(500);
 				LiPerformerPOM.demolocation().click();;
 			   Thread.sleep(500);
 			   String locationtext1 =LiPerformerPOM.locget().getText();
+			   Thread.sleep(500);
 			   LiPerformerPOM.locget().click();
 			   Thread.sleep(3000);
 			   LiPerformerPOM.clicklictypet().click();
@@ -3401,9 +3400,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 			   Thread.sleep(5000);
 			    LiPerformerPOM.Licensetypeinternal().click();
-                  Thread.sleep(5000);
-			  // LiPerformerPOM.Statustext().click();
-			  // Thread.sleep(5000);
+        Thread.sleep(5000);
 			  
 			    List<String> li=new ArrayList<String>();
 			    
@@ -3567,16 +3564,15 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				 test.log(LogStatus.PASS, "License Overview Button Working Successfully");
 				 Thread.sleep(3000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+         			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
+				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
@@ -3584,7 +3580,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
 				    LiPerformerPOM.Licensetypeinternal().click();
-            Thread.sleep(5000);
+               Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -3749,17 +3745,15 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			 test.log(LogStatus.PASS, "License Overview Button Working Successfully");
 			 Thread.sleep(3000);
 			 LiPerformerPOM.EntityLocation().click();
-				Thread.sleep(500);
-				//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-				//LiPerformerPOM.aa().click();
-				//Thread.sleep(500);
+  			Thread.sleep(500);
 				LiPerformerPOM.EntityLocationExpand().click();
-				//Thread.sleep(500);
-			  // LiPerformerPOM.aa1().click();
-				LiPerformerPOM.demolocation().click();
-				
+				Thread.sleep(500);
+			//   LiPerformerPOM.aa1().click();
+				Thread.sleep(500);
+				LiPerformerPOM.demolocation().click();;
 			   Thread.sleep(500);
 			   String locationtext1 =LiPerformerPOM.locget().getText();
+			   Thread.sleep(500);
 			   LiPerformerPOM.locget().click();
 			   Thread.sleep(3000);
 			   LiPerformerPOM.clicklictypet().click();
@@ -3767,7 +3761,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 			   Thread.sleep(5000);
 			    LiPerformerPOM.Licensetypeinternal().click();
-                  Thread.sleep(5000);
+                Thread.sleep(5000);
 			  // LiPerformerPOM.Statustext().click();
 			  // Thread.sleep(5000);
 			  
@@ -3935,25 +3929,23 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			 test.log(LogStatus.PASS, "By Status  Application Overdue (Expiring but not applied) License  Overview Button Working Successfully");
 			 Thread.sleep(3000);
 			 LiPerformerPOM.EntityLocation().click();
-				Thread.sleep(500);
-				//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-				//LiPerformerPOM.aa().click();
-				//Thread.sleep(500);
+  			Thread.sleep(500);
 				LiPerformerPOM.EntityLocationExpand().click();
-				//Thread.sleep(500);
-			  // LiPerformerPOM.aa1().click();
-				LiPerformerPOM.demolocation().click();
-				
+				Thread.sleep(500);
+			//   LiPerformerPOM.aa1().click();
+				Thread.sleep(500);
+				LiPerformerPOM.demolocation().click();;
 			   Thread.sleep(500);
 			   String locationtext1 =LiPerformerPOM.locget().getText();
+			   Thread.sleep(500);
 			   LiPerformerPOM.locget().click();
 			   Thread.sleep(3000);
 			   LiPerformerPOM.clicklictypet().click();
 			   Thread.sleep(500);
 			   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 			   Thread.sleep(5000);
-			   LiPerformerPOM.Licensetypeinternal().click();
-			   Thread.sleep(5000);
+			    LiPerformerPOM.Licensetypeinternal().click();
+                Thread.sleep(5000);
 			  // LiPerformerPOM.Statustext().click();
 			  // Thread.sleep(5000);
 			  
@@ -4156,17 +4148,15 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				 test.log(LogStatus.PASS, "overview Button Working Successfully");
 				 Thread.sleep(3000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
 				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
@@ -4174,7 +4164,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
 				    LiPerformerPOM.Licensetypeinternal().click();
-				   Thread.sleep(5000);
+            Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -4364,16 +4354,15 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				 test.log(LogStatus.PASS, "License Overview Button Working Successfully");
 				 Thread.sleep(3000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
+				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
@@ -4381,6 +4370,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
 				    LiPerformerPOM.Licensetypeinternal().click();
+            Thread.sleep(5000);
                  Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
@@ -4755,25 +4745,23 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				 test.log(LogStatus.PASS, "License Overview Button Working Successfully");
 				 Thread.sleep(3000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
 				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
+            Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -5156,25 +5144,23 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
 				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
+            Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -5530,17 +5516,15 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
 				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
@@ -5548,7 +5532,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
 				    LiPerformerPOM.Licensetypeinternal().click();
-                    Thread.sleep(5000);
+                      Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -5905,25 +5889,23 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
 				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
+            Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -6277,25 +6259,23 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
-					//LiPerformerPOM.aa().click();
-					//Thread.sleep(500);
+      			Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				  // LiPerformerPOM.aa1().click();
-					LiPerformerPOM.demolocation().click();
-					
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
 				   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
+				   Thread.sleep(500);
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
+                 Thread.sleep(5000);
 				  // LiPerformerPOM.Statustext().click();
 				  // Thread.sleep(5000);
 				  
@@ -8022,7 +8002,8 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 			
 			Thread.sleep(100);
 			litigationPerformer.MethodsPOM.progress();
-			
+			Alert alert = getDriver().switchTo().alert();
+			alert.dismiss();
 			Thread.sleep(500);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@align='left'])[1]")));
 			if(OverduePOM.readFolderName().isDisplayed())			//Checking if file got created or not.
@@ -8121,7 +8102,7 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 			test.log(LogStatus.PASS, "Edit Document Details Popup Closed");
 			Thread.sleep(500);
 			 OverduePOM.readFolderName().click();						//Clicking on folder name we had created.
-				Thread.sleep(1000);
+				//Thread.sleep(1000);
 			/*	MethodPOM.LinkFolder().click();
 				Thread.sleep(2000);
 				MethodPOM.Linkdocument1().click();
@@ -8146,9 +8127,9 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 		        MethodPOM.Linkclose().click();
 		        test.log(LogStatus.PASS, "Link Audit Popup Closed");
 		        */
-		        Thread.sleep(3000);	
+		      //  Thread.sleep(3000);	
 		       // MethodPOM.ClickFolder().click();
-		    	OverduePOM.readFolderName().click();				//Clicking on file name we had uploaded.
+		    	//OverduePOM.readFolderName().click();				//Clicking on file name we had uploaded.
 			Thread.sleep(3000);
 		MethodPOM.DeleteFile().click();
 			Thread.sleep(3000);
@@ -8570,15 +8551,15 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 					   test.log(LogStatus.PASS, "By Status Rejected License  Overview Button Working Successfully");
 					   Thread.sleep(3000);
 					   LiPerformerPOM.EntityLocation().click();
+	         			Thread.sleep(500);
+						LiPerformerPOM.EntityLocationExpand().click();
 						Thread.sleep(500);
-						LiPerformerPOM.aa().click();
+					//   LiPerformerPOM.aa1().click();
 						Thread.sleep(500);
-						//LiPerformerPOM.EntityLocationExpand().click();
-						//Thread.sleep(500);
-					   Thread.sleep(500);
-					   LiPerformerPOM.aa1().click();
+						LiPerformerPOM.demolocation().click();;
 					   Thread.sleep(500);
 					   String locationtext1 =LiPerformerPOM.locget().getText();
+					   Thread.sleep(500);
 					   LiPerformerPOM.locget().click();
 					   Thread.sleep(3000);
 					   LiPerformerPOM.clicklictypet().click();
@@ -8586,7 +8567,7 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 					   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 					   Thread.sleep(5000);
 					    LiPerformerPOM.Licensetypeinternal().click();
-					   Thread.sleep(5000);
+	               Thread.sleep(5000);
 					  // LiPerformerPOM.Statustext().click();
 					  // Thread.sleep(5000);
 					  
@@ -8949,24 +8930,24 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 					 Thread.sleep(4000);
 					 test.log(LogStatus.PASS, "By LicenseType Rejected License  Overview Button Working Successfully");
 					 Thread.sleep(3000);
-					  /* LiPerformerPOM.EntityLocation().click();
-						Thread.sleep(500);
+					 LiPerformerPOM.EntityLocation().click();
+	         			Thread.sleep(500);
 						LiPerformerPOM.EntityLocationExpand().click();
 						Thread.sleep(500);
-						//LiPerformerPOM.EntityLocationExpand().click();
-						//Thread.sleep(500);
-					   Thread.sleep(500);
-					   LiPerformerPOM.Entitysubexpand().click();
+					//   LiPerformerPOM.aa1().click();
+						Thread.sleep(500);
+						LiPerformerPOM.demolocation().click();;
 					   Thread.sleep(500);
 					   String locationtext1 =LiPerformerPOM.locget().getText();
+					   Thread.sleep(500);
 					   LiPerformerPOM.locget().click();
 					   Thread.sleep(3000);
 					   LiPerformerPOM.clicklictypet().click();
 					   Thread.sleep(500);
-					   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+					   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 					   Thread.sleep(5000);
-					   LiPerformerPOM.Licensetype().click();
-					   Thread.sleep(5000);
+					    LiPerformerPOM.Licensetypeinternal().click();
+	               Thread.sleep(5000);
 					  // LiPerformerPOM.Statustext().click();
 					  // Thread.sleep(5000);
 					  
@@ -9074,7 +9055,7 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 				     }
 					
 						
-		 */
+		 
 		   
 		   }
 

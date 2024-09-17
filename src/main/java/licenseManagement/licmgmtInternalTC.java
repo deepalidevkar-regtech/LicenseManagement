@@ -94,7 +94,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.flush();*/
 		initialization("License",2);
 	}
-/*@Test(priority = 2)
+@Test(priority = 2)
 	void AllFilter() throws InterruptedException
 	{
 		test = extent.startTest("All Filter Working Verification");
@@ -458,7 +458,7 @@ public class licmgmtInternalTC  extends webpage{
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	@Test(priority =34)
 	void  InternalActiveDashboardFilter() throws InterruptedException, IOException
 	{

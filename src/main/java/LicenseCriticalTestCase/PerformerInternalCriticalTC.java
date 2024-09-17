@@ -98,7 +98,7 @@ public class PerformerInternalCriticalTC  extends webpage{
    		initialization("License",1);
     	}
  
-  	@Test(priority = 2)
+ @Test(priority = 2)
 	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -288,7 +288,7 @@ public class PerformerInternalCriticalTC  extends webpage{
    	extent.flush();
    }
 
-   	@Test(priority = 8)
+  @Test(priority = 8)
 	void Applied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied Count Verification");
@@ -357,8 +357,8 @@ void RejectedInternalLicense() throws InterruptedException
  					
  					extent.endTest(test);
  					extent.flush();
- 				}
-   	@Test(priority = 12)
+ 			}
+ @Test(priority = 12)
    	void Myworkspace() throws InterruptedException, IOException
 	{
    	 // WebDriverWait wait = new WebDriverWait( 5);

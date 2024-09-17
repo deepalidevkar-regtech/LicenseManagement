@@ -95,7 +95,7 @@ public class StatutoryTC extends webpage{
 	}
  
 
-/*@Test(priority = 2)
+@Test(priority = 2)
 
 	void Active() throws InterruptedException, IOException
 	{
@@ -390,7 +390,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 27)
+	@Test(priority = 28)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Working Verification");
@@ -402,7 +402,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.flush();
 		}
 
-	@Test(priority = 28)
+	@Test(priority = 29)
 		void Masters() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Masters - User Master Working  verification");	
@@ -410,7 +410,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 29)
+	@Test(priority =30)
 		void PageAuthor() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Masters -Page Autherization working verification");
@@ -418,7 +418,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 30)
+		@Test(priority = 31)
 		void RenewStautoryLicense() throws InterruptedException, IOException
 
 		{
@@ -429,7 +429,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 31)
+	@Test(priority = 32)
 		void LicenseNewAssignment() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License New Assignment");
@@ -438,7 +438,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority =32)
+	@Test(priority =33)
 		void LicenseCreation() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License Creation Verification");
@@ -447,7 +447,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority =33)
+	@Test(priority =34)
 		void  IsPermanent() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" IsPermanent License working Verification");
@@ -456,7 +456,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority =34)
+@Test(priority =35)
 void  ActiveDashboardFilter() throws InterruptedException, IOException
 {
 	test = extent.startTest(" Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -465,7 +465,7 @@ void  ActiveDashboardFilter() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-/*@Test(priority =35)
+@Test(priority =36)
 void  ExpiringDashboardFilter() throws InterruptedException, IOException
 {
 	test = extent.startTest(" Dashboard Expiring License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -474,7 +474,7 @@ void  ExpiringDashboardFilter() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority =36)
+@Test(priority =37)
 void  ExpiredDashboardFilter() throws InterruptedException, IOException
 {
 	test = extent.startTest(" Dashboard Expired License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -483,7 +483,7 @@ void  ExpiredDashboardFilter() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority =37)
+@Test(priority =38)
 void  AppliedDashboardFilter() throws InterruptedException, IOException
 {
 	test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -492,7 +492,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-	@Test(priority = 38)
+	@Test(priority = 39)
 	void PendingForReviewDashboardFilter() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Dashboard Pending For review  License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -503,7 +503,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 38)
+	@Test(priority = 40)
 	void RejeectedDashboardFilter() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -514,7 +514,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 38)
+	@Test(priority = 41)
 	void TerminateDashboardFilter() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -525,7 +525,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 38)
+	@Test(priority =42)
 	void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -535,7 +535,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	  @AfterMethod
 	  void driverclose()
 	  {

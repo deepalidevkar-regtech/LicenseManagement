@@ -91,7 +91,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		//extent.flush();*/
 		initialization("License",2);
 	}
-/*@Test(priority = 2)
+@Test(priority = 2)
  
 	void Active() throws InterruptedException, IOException
 	{
@@ -337,7 +337,7 @@ public class licmgmtStatutoryTC  extends webpage{
 				extent.flush();
 			}
        
-  @Test(priority = 22)
+ @Test(priority = 22)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -501,7 +501,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 		@Test(priority = 41)
 		void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{

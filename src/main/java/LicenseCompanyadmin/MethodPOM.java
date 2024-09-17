@@ -360,8 +360,6 @@ public static WebElement clickTerminateper()
 public static WebElement clickTerminateperin()	
 {
 	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divterminated']"));
-
-	
 	return license;
 }
 
@@ -427,7 +425,7 @@ public static WebElement ClickExportExpiredOn1cmd()
 {
 	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton3']"));
 	return license;
-	//*[@id="ContentPlaceHolder1_btnExportExcelExpired"]/img
+	
 }
 
 public static WebElement ClickExpiringOn()	
@@ -621,7 +619,7 @@ public static WebElement clickByLicnesetypeRejectedInternal()
 }
 public static WebElement clickByLicnesetypeRejectedmgmtInternal()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[26]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[6]"));
 			
 	return license;
 }
@@ -1166,7 +1164,7 @@ public static WebElement Folferlert()
 }
 public static WebElement clickDashlictype() 
 {
-	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']"));	
+	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType']"));	
 	return license;
 }
 public static WebElement serachlic1() 
@@ -1186,7 +1184,7 @@ public static WebElement Documentstatusclick()
 }
 public static WebElement Documentselectstatus() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[43]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[20]"));	
 	return license;
 }
 public static WebElement Documentlictypeclick() 
@@ -1201,7 +1199,7 @@ public static WebElement Documentlictypeselect()
 }
 public static WebElement Documentlictypeselectin() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[73]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[56]"));	
 	return license;
 }
 public static WebElement lll() 

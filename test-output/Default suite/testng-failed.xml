@@ -3,21 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licensePerformer.LicensePerformerStatutory">
+      <class name="licensePerformer.LicensePerformerInternal">
         <methods>
-          <include name="RejeectedDashboardFilter"/>
-          <include name="ExpiredDashboardFilter"/>
           <include name="driverclose"/>
-          <include name="ActiveDashboardFilter"/>
-          <include name="ExpiringDashboardFilter"/>
-          <include name="TerminateDashboardFilter"/>
           <include name="setBrowser"/>
-          <include name="AppliedDashboardFilter"/>
-          <include name="AssignedButNotActivatedDashboardFilter"/>
+          <include name="InternalActiveDashboardFilter"/>
+          <include name="InternalTerminateDashboardFilter"/>
           <include name="Login"/>
-          <include name="PendingForReviewDashboardFilter"/>
+          <include name="InternalRejeectedDashboardFilter"/>
+          <include name="InternalAssignedButNotActivatedDashboardFilter"/>
+          <include name="InternalPendingForReviewDashboardFilter"/>
+          <include name="InternalExpiredDashboardFilter"/>
+          <include name="InternalExpiringDashboardFilter"/>
+          <include name="InternlAppliedDashboardFilter"/>
         </methods>
-      </class> <!-- licensePerformer.LicensePerformerStatutory -->
+      </class> <!-- licensePerformer.LicensePerformerInternal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

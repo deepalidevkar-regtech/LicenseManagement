@@ -97,7 +97,7 @@ public class ReviewerInternalCriticalTC extends webpage
     		extent.flush();*/
   		initialization("License",4);
     	}
-/*@Test(priority = 2)
+@Test(priority = 2)
 	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		//test = extent.startTest("Active License Count Verification");
@@ -307,7 +307,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		extent.flush();
 	}
 	
-/*@Test(priority = 11)
+@Test(priority = 11)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -345,7 +345,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 @Test(priority = 14)
 void AssignedButNotActivated() throws InterruptedException, IOException
 {

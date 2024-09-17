@@ -91,7 +91,7 @@ public class LicensePerformerStatutory extends webpage {
 		initialization("License",1);
 	}
 	
-/*@Test(priority = 2) 
+@Test(priority = 2) 
 	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -305,7 +305,7 @@ void Expiringperform() throws InterruptedException
 
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	@Test(priority =34)
 	void  ActiveDashboardFilter() throws InterruptedException, IOException
 	{

@@ -31,6 +31,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import cfo.CFOcountPOM;
 import contract.ContractPOM;
 import licenseCompanyadmin.MethodPOM;
+import licenseDepartmentHead.DeptmethodPOM;
 import licensePerformer.LiPerformerPOM;
 import licenseReviewer.LiReviewerPOM;
 import login.webpage;
@@ -403,16 +404,11 @@ public class licmgmtMethodPOM extends webpage{
 					 test.log(LogStatus.PASS, "By Status  Application Overdue (Expiring but not applied) License  Overview Button Working Successfully");
 					 Thread.sleep(3000);
 					 LiPerformerPOM.EntityLocation().click();
-						Thread.sleep(500);
-						MethodPOM.Newlocation().click();
-						//LiPerformerPOM.aa().click();
-						Thread.sleep(500);
-						//LiPerformerPOM.EntityLocationExpand().click();
-						//Thread.sleep(500);
-					   Thread.sleep(500);
-					   MethodPOM.Newlocationsub().click();
-					  // LiPerformerPOM.aa1().click();
-					   Thread.sleep(500);
+					 Thread.sleep(3000);
+					 DeptmethodPOM.SearchLocation().sendKeys("Demo Bharat Gujarat1");
+					 Thread.sleep(3000);
+					 DeptmethodPOM.Checkentity().click();
+					 Thread.sleep(3000);
                        String locationtext1 =LiPerformerPOM.locget().getText();
 					   LiPerformerPOM.locget().click();
 					   Thread.sleep(3000);
@@ -912,6 +908,10 @@ public class licmgmtMethodPOM extends webpage{
 			   Thread.sleep(3000);
 			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   
+			   MethodPOM.clickDashlictype().click();
+			   Thread.sleep(5000);
+			  MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
+			  
 			   licenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
@@ -2053,7 +2053,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("sws",Keys.ENTER);
+			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   licenseCompanyadmin.MethodPOM.ClickApply().click();
 			   licenseCompanyadmin.MethodPOM.ClickApply().click();
@@ -2242,7 +2242,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("sws",Keys.ENTER);
+			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   licenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2415,7 +2415,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			     {
 			    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			     }
-				*/ 
+			*/	
 	   }
 	  public static void ByLicensetypeActiveInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
@@ -2427,7 +2427,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("sws",Keys.ENTER);
+			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   licenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2611,7 +2611,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("sws",Keys.ENTER);
+			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   licenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -3160,10 +3160,9 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   WebDriverWait wait = new WebDriverWait(driver, 40);
 			   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
 			 
-			  
 			   Thread.sleep(3000);
 			   
-			  // MethodPOM.ClickExportExpiredOn().click();
+			  MethodPOM.ClickExportExpiredOn().click();
 				
 			   int flag = 0;
 				try

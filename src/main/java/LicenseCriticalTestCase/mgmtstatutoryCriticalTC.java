@@ -96,7 +96,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 	}
 
 
-/*@Test(priority = 2)
+@Test(priority = 2)
  
 	void Active() throws InterruptedException, IOException
 	{
@@ -295,7 +295,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 				
 				extent.endTest(test);
 				extent.flush();
-			}*/
+			}
        
     @Test(priority = 20)
 	void MyDocuments() throws InterruptedException
@@ -312,7 +312,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		extent.flush();
 	}
 
-	/*@Test(priority = 21)
+	@Test(priority = 21)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Verification");
@@ -343,7 +343,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
  @AfterMethod
  void driverclose()
  {

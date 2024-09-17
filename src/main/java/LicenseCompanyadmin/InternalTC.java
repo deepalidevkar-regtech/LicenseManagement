@@ -95,7 +95,7 @@ public class InternalTC  extends webpage{
 		initialization("License",0);
 	}
 
-/*	@Test(priority = 2)
+@Test(priority = 2)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -455,7 +455,7 @@ public class InternalTC  extends webpage{
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 
 		@Test(priority =34)
 		void  InternalActiveDashboardFilter() throws InterruptedException, IOException
