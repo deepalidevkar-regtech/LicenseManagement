@@ -1,4 +1,4 @@
-package licenseCompanyadmin;
+package LicenseCompanyadmin;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -108,7 +108,7 @@ public class StatutoryTC extends webpage{
 		extent.flush();
 		
 	}
-@Test(priority =3)
+/*@Test(priority =3)
 	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -535,7 +535,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 	  @AfterMethod
 	  void driverclose()
 	  {

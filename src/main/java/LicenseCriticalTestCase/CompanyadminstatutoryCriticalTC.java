@@ -19,7 +19,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import licenseCompanyadmin.StatutoryMethod;
+import LicenseCompanyadmin.StatutoryMethod;
 import licensePerformer.LiPeMethodsPOM;
 import login.webpage;
 

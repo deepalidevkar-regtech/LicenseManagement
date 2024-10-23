@@ -179,7 +179,7 @@ void Expiringperform() throws InterruptedException
 			test = extent.startTest("Pending For Review License Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();

@@ -22,8 +22,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.StatutoryMethod;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import licensePerformer.LiPeMethodsPOM;
 import licensePerformer.LiPerformerPOM;
@@ -101,7 +101,7 @@ public class mgmtinternalCriticalTC extends webpage {
 		test = extent.startTest("All Filter Working Verification");
 		//test.log(LogStatus.PASS, "All Filter Working Verification");
 		
-		licenseCompanyadmin.StatutoryMethod.Allfilter( test, "Internal");
+		LicenseCompanyadmin.StatutoryMethod.Allfilter( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -145,7 +145,7 @@ public class mgmtinternalCriticalTC extends webpage {
 				test = extent.startTest("Applied Internal License Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.AppliedInternalLicense( test, "Internal");
+				LicenseCompanyadmin.StatutoryMethod.AppliedInternalLicense( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -156,7 +156,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			test = extent.startTest("Pending For Review Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.pendingforreviewInternalLicense( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.pendingforreviewInternalLicense( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -167,7 +167,7 @@ public class mgmtinternalCriticalTC extends webpage {
 				test = extent.startTest("Rejected License Count  Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.RejectedInternalLicense(test, "Internal");
+				LicenseCompanyadmin.StatutoryMethod.RejectedInternalLicense(test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -178,7 +178,7 @@ public class mgmtinternalCriticalTC extends webpage {
 				test = extent.startTest("Terminate License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.TerminateInternalLicense( test, "Internal");
+				LicenseCompanyadmin.StatutoryMethod.TerminateInternalLicense( test, "Internal");
 				
 				extent.endTest(test);
 				extent.flush();
@@ -190,7 +190,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			test = extent.startTest("By Status-Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusActiveInternalgraph( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.BystatusActiveInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -201,7 +201,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			test = extent.startTest("By Status -Terminate License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -211,7 +211,7 @@ public class mgmtinternalCriticalTC extends webpage {
 		{
 			test = extent.startTest("By Status-Expired applied but not Renewed License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
-			licenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedInternalgraph( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -222,7 +222,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			test = extent.startTest("By Status- Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpiredInternal( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpiredInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -233,7 +233,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			test = extent.startTest("By Status-Expiring License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpringInternalgraph( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpringInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -255,7 +255,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			test = extent.startTest("By License Type-Expiring License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();

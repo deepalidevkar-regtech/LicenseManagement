@@ -1,4 +1,4 @@
-package licenseCompanyadmin;
+package LicenseCompanyadmin;
 
 import java.io.FileInputStream;
 import java.io.IOException;

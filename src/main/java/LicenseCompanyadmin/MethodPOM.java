@@ -1,4 +1,4 @@
-package licenseCompanyadmin;
+package LicenseCompanyadmin;
 
 import java.util.List;
 
@@ -586,7 +586,7 @@ public static WebElement clickByLicnesetypeAppliedInternal()
 }
 public static WebElement clickByLicnesetypeActive()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[14]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeActiveInternal()	
@@ -1164,7 +1164,7 @@ public static WebElement Folferlert()
 }
 public static WebElement clickDashlictype() 
 {
-	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType']"));	
+	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlLicenseType_chosen']"));	
 	return license;
 }
 public static WebElement serachlic1() 

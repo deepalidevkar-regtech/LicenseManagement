@@ -28,9 +28,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.MethodPOM;
 import cfo.CFOcountPOM;
 import contract.ContractPOM;
-import licenseCompanyadmin.MethodPOM;
 import licenseDepartmentHead.DeptmethodPOM;
 import licensePerformer.LiPerformerPOM;
 import licenseReviewer.LiReviewerPOM;
@@ -147,7 +147,7 @@ public class licmgmtMethodPOM extends webpage{
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -349,9 +349,9 @@ public class licmgmtMethodPOM extends webpage{
 
 		 MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
-		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
+		   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -533,9 +533,9 @@ public class licmgmtMethodPOM extends webpage{
 
 		 MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
-		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
+		   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -722,9 +722,9 @@ public class licmgmtMethodPOM extends webpage{
 
 		 MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
-		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
+		   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -904,15 +904,15 @@ public class licmgmtMethodPOM extends webpage{
 	 public static void ByLicensetypeRejectedmgmtInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
 		   Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
 			  MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			  
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -1094,11 +1094,11 @@ public class licmgmtMethodPOM extends webpage{
 	 public static void ActiveInternalLicense( ExtentTest test, String type) throws InterruptedException
 		{	
 			Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 
 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -1191,21 +1191,21 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	 public static void ExpiringInternalLicense( ExtentTest test, String type) throws InterruptedException
 		{		
 			Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 
 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				
 		Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 			//WebDriverWait wait = new WebDriverWait(driver, 20);
 			
@@ -1311,11 +1311,11 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	 public static void ExpiredInternalLicense( ExtentTest test, String type) throws InterruptedException
 		{	
 		  Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   
 
 
@@ -2048,15 +2048,15 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	 public static void ByLicensetypeExpiredInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
 		  Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
 			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
-				   licenseCompanyadmin.MethodPOM.ClickApply().click();
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -2237,14 +2237,14 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	 public static void ByLicensetypeAppliedInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
 		  Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
 			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
-				   licenseCompanyadmin.MethodPOM.ClickApply().click();
+				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");
@@ -2421,15 +2421,15 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	   {
 	      
 		   Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
 			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
-				   licenseCompanyadmin.MethodPOM.ClickApply().click();
+				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");
@@ -2606,14 +2606,14 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	  public static void ByLicensetypeTerminateInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
 		   Thread.sleep(3000);
-			  licenseCompanyadmin.MethodPOM.AllFilter().click();
+			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 			   Thread.sleep(3000);
-			   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
 			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
-				   licenseCompanyadmin.MethodPOM.ClickApply().click();
+				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");

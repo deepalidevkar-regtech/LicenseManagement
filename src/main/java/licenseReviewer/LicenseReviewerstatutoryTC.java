@@ -22,8 +22,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.StatutoryMethod;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import licensePerformer.LiPeMethodsPOM;
 import licensePerformer.LiPerformerPOM;
@@ -230,7 +230,7 @@ public class LicenseReviewerstatutoryTC extends webpage
 				test = extent.startTest("Critical Document Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.CriticalDocuments(test, "Statutory");
+				LicenseCompanyadmin.StatutoryMethod.CriticalDocuments(test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();

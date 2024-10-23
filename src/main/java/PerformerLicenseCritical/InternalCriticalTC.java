@@ -22,8 +22,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.StatutoryMethod;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import licensePerformer.LiPeMethodsPOM;
 import licensePerformer.LiPerformerPOM;
@@ -77,7 +77,7 @@ public class InternalCriticalTC {
     		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
     		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
     		
-    		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+    		//login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
     		
     		//XSSFSheet sheet = ReadExcel();
     		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
@@ -88,7 +88,7 @@ public class InternalCriticalTC {
     		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
     		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
     		
-    		driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
+    	//	driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
     		
     		/*test.log(LogStatus.PASS, "Test Passed.");
     		extent.endTest(test);
@@ -96,22 +96,22 @@ public class InternalCriticalTC {
     	}
  
   	@Test(priority = 2)
-	void Active() throws InterruptedException
+	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		Select drp = new Select(LiPerformerPOM.clickType());
 		drp.selectByIndex(1);
 		
 		try
 		{
 			Thread.sleep(400);
-			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 		}
 		catch(Exception e)
 		{
@@ -119,9 +119,9 @@ public class InternalCriticalTC {
 		}
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		LiPeMethodsPOM.ActiveLicense(driver, test, "Internal");
+		LiPeMethodsPOM.ActiveLicense( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -133,16 +133,16 @@ public class InternalCriticalTC {
    		//test.log(LogStatus.INFO, "Test Initiated");
    		
    		WebDriverWait wait = new WebDriverWait(driver, 5);
-   		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-   		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+   		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+   		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
    		
-   		Select drp = new Select(LiPerformerPOM.clickType(driver));
+   		Select drp = new Select(LiPerformerPOM.clickType());
    		drp.selectByIndex(1);
    		
    		try
    		{
    			Thread.sleep(400);
-   			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+   			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
    		}
    		catch(Exception e)
    		{
@@ -150,30 +150,30 @@ public class InternalCriticalTC {
    		}
    		
    		Thread.sleep(500);
-   		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+   		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
    		
-   		LiPeMethodsPOM.Internalactivelicenseperform(driver, test, "Internal");
+   		LiPeMethodsPOM.Internalactivelicenseperform( test, "Internal");
    		
    		extent.endTest(test);
    		extent.flush();
    	}
    	@Test(priority = 4)
-	void Expiring() throws InterruptedException
+	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		Select drp = new Select(LiPerformerPOM.clickType());
 		drp.selectByIndex(1);
 		
 		try
 		{
 			Thread.sleep(400);
-			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 		}
 		catch(Exception e)
 		{
@@ -181,9 +181,9 @@ public class InternalCriticalTC {
 		}
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		LiPeMethodsPOM.ExpiringCount(driver, test, "Internal");
+		LiPeMethodsPOM.ExpiringCount( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -195,17 +195,17 @@ public class InternalCriticalTC {
    		//test.log(LogStatus.INFO, "Test Initiated");
    		
    		
-   		WebDriverWait wait = new WebDriverWait(driver, 5);
-   		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-   		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+   		WebDriverWait wait = new WebDriverWait (driver, 20);
+   		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+   		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
    		
-   		Select drp = new Select(LiPerformerPOM.clickType(driver));
+   		Select drp = new Select(LiPerformerPOM.clickType());
    		drp.selectByIndex(1);
    		
    		try
    		{
    			Thread.sleep(400);
-   			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+   			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
    		}
    		catch(Exception e)
    		{
@@ -213,30 +213,30 @@ public class InternalCriticalTC {
    		}
    		
    		Thread.sleep(500);
-   		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+   		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
    		
-   		LiPeMethodsPOM.internalExpiringlicenseperform(driver, test, "Internal");
+   		LiPeMethodsPOM.internalExpiringlicenseperform( test, "Internal");
    		
    		extent.endTest(test);
    		extent.flush();
    	}
    	@Test(priority = 6)
-	void Expired() throws InterruptedException
+	void Expired() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
 		
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		Select drp = new Select(LiPerformerPOM.clickType());
 		drp.selectByIndex(1);
 	
 		try
 		{
 			Thread.sleep(400);
-			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 		}
 		catch(Exception e)
 		{
@@ -244,9 +244,9 @@ public class InternalCriticalTC {
 		}
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		LiPeMethodsPOM.ExpiredCount(driver, test, "Internal");
+		LiPeMethodsPOM.ExpiredCount( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -260,16 +260,16 @@ public class InternalCriticalTC {
    	
    	
    	WebDriverWait wait = new WebDriverWait(driver, 5);
-   	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-   	LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+   	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+   	LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
    	
-   	Select drp = new Select(LiPerformerPOM.clickType(driver));
+   	Select drp = new Select(LiPerformerPOM.clickType());
    	drp.selectByIndex(1);
    	
    	try
    	{
    		Thread.sleep(400);
-   		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+   		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
    	}
    	catch(Exception e)
    	{
@@ -277,31 +277,31 @@ public class InternalCriticalTC {
    	}
    	
    	Thread.sleep(500);
-   	CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+   	CFOcountPOM.clickApply1().click();				//Clicking on Apply.
    	
-   	LiPeMethodsPOM.InternalExpiredlicenseperform(driver, test, "Internal");
+   	LiPeMethodsPOM.InternalExpiredlicenseperform( test, "Internal");
    	
    	extent.endTest(test);
    	extent.flush();
    }
 
    	@Test(priority = 8)
-	void Applied() throws InterruptedException
+	void Applied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
-		Select drp = new Select(LiPerformerPOM.clickType(driver));
+		Select drp = new Select(LiPerformerPOM.clickType());
 		drp.selectByIndex(1);
 		
 		try
 		{
 			Thread.sleep(400);
-			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress(driver)));
+			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
 		}
 		catch(Exception e)
 		{
@@ -309,9 +309,9 @@ public class InternalCriticalTC {
 		}
 		
 		Thread.sleep(500);
-		CFOcountPOM.clickApply1(driver).click();				//Clicking on Apply.
+		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		LiPeMethodsPOM.AppliedCount(driver, test, "Internal");
+		LiPeMethodsPOM.AppliedCount(test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -322,7 +322,7 @@ public class InternalCriticalTC {
 		test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.PASS, "Pending For Review Count Verification");
 		
-		StatutoryMethod.pendingforreviewInternalLicense(driver, test, "Internal");
+		StatutoryMethod.pendingforreviewInternalLicense( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -333,7 +333,7 @@ void RejectedInternalLicense() throws InterruptedException
 	test = extent.startTest("Rejected License Count  Verification");
 	//test.log(LogStatus.PASS, "Rejected License Count  Verification");
 	
-	StatutoryMethod.RejectedInternalLicense(driver, test, "Internal");
+	StatutoryMethod.RejectedInternalLicense( test, "Internal");
 	
 	extent.endTest(test);
 	extent.flush();
@@ -341,16 +341,16 @@ void RejectedInternalLicense() throws InterruptedException
    	@Test(priority = 11)
     void TerminateInternalInternalLicense() throws InterruptedException
  				{
- 		    WebDriverWait wait = new WebDriverWait(driver, 5);
- 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
- 			LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+   		WebDriverWait wait = new WebDriverWait (driver, 20);
+ 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+ 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
  			
- 			 Select drp = new Select(LiPerformerPOM.clickType(driver));
+ 			 Select drp = new Select(LiPerformerPOM.clickType());
  		   	drp.selectByIndex(1);
  					test = extent.startTest("Terminate License Count Verification");
  					//test.log(LogStatus.PASS, "Terminate License Count Verification");
  					
- 					StatutoryMethod.TerminateInternalLicense(driver, test, "Internal");
+ 					StatutoryMethod.TerminateInternalLicense(test, "Internal");
  					
  					extent.endTest(test);
  					extent.flush();
@@ -366,7 +366,7 @@ void RejectedInternalLicense() throws InterruptedException
 	   //	drp.selectByIndex(1);
 		test = extent.startTest("My Workspace Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
-         PerformerInternalCritical.MyworkspaceaddLicense1(driver, test, "Internal");
+         PerformerInternalCritical.MyworkspaceaddLicense1(test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();

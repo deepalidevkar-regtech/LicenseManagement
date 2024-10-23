@@ -19,7 +19,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import licenseCompanyadmin.StatutoryMethod;
+import LicenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import login.webpage;
 
@@ -181,7 +181,7 @@ void Expiringperform() throws InterruptedException
 		test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -214,7 +214,7 @@ void Expiringperform() throws InterruptedException
 			test = extent.startTest("All Filter Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.Allfilter( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.Allfilter( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -258,7 +258,7 @@ void Expiringperform() throws InterruptedException
 				test = extent.startTest("Critical Documents Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.CriticalDocuments( test, "Statutory");
+				LicenseCompanyadmin.StatutoryMethod.CriticalDocuments( test, "Statutory");
 				
 				extent.endTest(test);
 				extent.flush();

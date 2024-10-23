@@ -23,7 +23,6 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import licensePerformer.LiPeMethodsPOM;
 import licensePerformer.LiPerformerPOM;

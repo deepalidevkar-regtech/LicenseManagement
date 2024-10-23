@@ -22,8 +22,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.StatutoryMethod;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import login.webpage;
 

@@ -24,8 +24,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.MethodPOM;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.MethodPOM;
 import licenseManagement.licmgmtPOM;
 import licensePerformer.LiPerformerPOM;
 import licenseReviewer.LiReviewerPOM;
@@ -2296,11 +2296,11 @@ public static void CheckReports( ExtentTest test, int status, String type) throw
 public static void DeptActiveInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {	
 	Thread.sleep(3000);
-	  licenseCompanyadmin.MethodPOM.AllFilter().click();
+	  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 	   Thread.sleep(3000);
-	   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+	   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 	   
-	   licenseCompanyadmin.MethodPOM.ClickApply().click();
+	   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
 //	WebDriverWait wait = new WebDriverWait(driver, 120);
@@ -2442,21 +2442,21 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 public static void DeptExpiringInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {		
 	Thread.sleep(3000);
-	  licenseCompanyadmin.MethodPOM.AllFilter().click();
+	  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 	   Thread.sleep(3000);
-	   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+	   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 	   
-	   licenseCompanyadmin.MethodPOM.ClickApply().click();
+	   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 
 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
 Thread.sleep(3000);
-  licenseCompanyadmin.MethodPOM.AllFilter().click();
+  LicenseCompanyadmin.MethodPOM.AllFilter().click();
    Thread.sleep(3000);
-   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
    
-   licenseCompanyadmin.MethodPOM.ClickApply().click();
+   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 	//WebDriverWait wait = new WebDriverWait(driver, 20);
 	
@@ -2603,11 +2603,11 @@ Thread.sleep(3000);
 public static void DeptExpiredInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {	
   Thread.sleep(3000);
-  licenseCompanyadmin.MethodPOM.AllFilter().click();
+  LicenseCompanyadmin.MethodPOM.AllFilter().click();
    Thread.sleep(3000);
-   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
    
-   licenseCompanyadmin.MethodPOM.ClickApply().click();
+   LicenseCompanyadmin.MethodPOM.ClickApply().click();
   
 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	
@@ -2766,14 +2766,14 @@ public static void DeptAppliedInternalLicense( ExtentTest test, String type) thr
 {
 	
 	 Thread.sleep(3000);
-	  licenseCompanyadmin.MethodPOM.AllFilter().click();
+	  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 	   Thread.sleep(3000);
-	   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+	   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 	   MethodPOM.clickDashlicensetype().click();
 	   Thread.sleep(5000);
 	   
 	 //  MethodPOM.SearchInternalLicenseType().sendKeys("Annual Maintenance",Keys.ENTER);
-	   licenseCompanyadmin.MethodPOM.ClickApply().click();
+	   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   
 
 		WebDriverWait wait = new WebDriverWait( getDriver(), 20);
@@ -2946,11 +2946,11 @@ public static void DeptAppliedInternalLicense( ExtentTest test, String type) thr
 public static void DeptpendingforreviewInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {
 	 Thread.sleep(3000);
-	  licenseCompanyadmin.MethodPOM.AllFilter().click();
+	  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 	   Thread.sleep(3000);
-	   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+	   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 	   
-	   licenseCompanyadmin.MethodPOM.ClickApply().click();
+	   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   
 	   
 	 WebDriverWait wait = new WebDriverWait( getDriver(), 20);
@@ -3125,11 +3125,11 @@ public static void DeptpendingforreviewInternalLicense( ExtentTest test, String 
 public static void DeptRejectedInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 40);
 		
@@ -3293,11 +3293,11 @@ public static void DeptRejectedInternalLicense( ExtentTest test, String type) th
 public static void DeptTerminateInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 20);
 	   Thread.sleep(7000);
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate()));

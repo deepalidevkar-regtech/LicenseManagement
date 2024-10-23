@@ -24,7 +24,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import licenseCompanyadmin.MethodPOM;
 import licensePerformer.LiPerformerPOM;
 import login.webpage;
 
@@ -81,7 +80,7 @@ public class ImpMethodPOM extends webpage {
 		    //ImpPOM.SelectLicesetype(driver).click();
 		    //Thread.sleep(3000);
 		      //	 MethodPOM.ClickLicensetype1(driver).click();
-			    licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Annual Maintenance",Keys.ENTER);
+			    LicenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Annual Maintenance",Keys.ENTER);
 			    Thread.sleep(3000);
 			    JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 				   Js1.executeScript("window.scrollBy(0,1000)");
@@ -114,7 +113,7 @@ public class ImpMethodPOM extends webpage {
 				}
 			   
 		   		Thread.sleep(3000);
-		   		licenseCompanyadmin.MethodPOM.CheckCompliance1().click();
+		   		LicenseCompanyadmin.MethodPOM.CheckCompliance1().click();
 		 
 		   	 Thread.sleep(3000);
 		   	 
@@ -122,7 +121,7 @@ public class ImpMethodPOM extends webpage {
 		   	 Row row7=sheet.getRow(7);
 		   		org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
 		   	 String LicenseNo=c2.getStringCellValue();
-		   	 licenseCompanyadmin.MethodPOM.LicesneNo1().sendKeys(LicenseNo);
+		   	 LicenseCompanyadmin.MethodPOM.LicesneNo1().sendKeys(LicenseNo);
 		   	
 		           
 		   
@@ -131,25 +130,25 @@ public class ImpMethodPOM extends webpage {
 			 Row row6= sheet.getRow(6);
 			  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
 			 String LicenseTitle= c1.getStringCellValue();
-			 licenseCompanyadmin.MethodPOM.LicesneTitle1().sendKeys(LicenseTitle);
+			 LicenseCompanyadmin.MethodPOM.LicesneTitle1().sendKeys(LicenseTitle);
 			 
 			 Thread.sleep(3000);
-			 licenseCompanyadmin.MethodPOM.StartDate1().sendKeys("01-03-2023");
+			 LicenseCompanyadmin.MethodPOM.StartDate1().sendKeys("01-03-2023");
 			 Thread.sleep(3000);     
-			 licenseCompanyadmin.MethodPOM.EndDate1().sendKeys("30-03-2023");
+			 LicenseCompanyadmin.MethodPOM.EndDate1().sendKeys("30-03-2023");
 			 
 			// JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 			   Js1.executeScript("window.scrollBy(0,1000)");
 			   Thread.sleep(3000);
 			   Js1.executeScript("window.scrollBy(1000,0)");
-			   licenseCompanyadmin.MethodPOM.SaveButton().click();
+			   LicenseCompanyadmin.MethodPOM.SaveButton().click();
 			   Thread.sleep(3000);
 			   Alert alert1 = driver.switchTo().alert();
 			   String alertMessage1= driver.switchTo().alert().getText();
 			   //test.log(LogStatus.PASS, alertMessage1);
 			   alert1.accept();
 			   Thread.sleep(3000);
-			   String msg =licenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
+			   String msg =LicenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
 				
 				if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
 
@@ -187,7 +186,7 @@ public class ImpMethodPOM extends webpage {
 	    //ImpPOM.SelectLicesetype(driver).click();
 	    //Thread.sleep(3000);
 	      //	 MethodPOM.ClickLicensetype1(driver).click();
-		    licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
+		    LicenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
 		    Thread.sleep(3000);
 		    JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");
@@ -220,7 +219,7 @@ public class ImpMethodPOM extends webpage {
 			}
 		   
 	   		Thread.sleep(3000);
-	   		licenseCompanyadmin.MethodPOM.CheckCompliance1().click();
+	   		LicenseCompanyadmin.MethodPOM.CheckCompliance1().click();
 	 
 	   	 Thread.sleep(3000);
 	   	 
@@ -228,7 +227,7 @@ public class ImpMethodPOM extends webpage {
 	   	 Row row7=sheet.getRow(7);
 	   		org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
 	   	 String LicenseNo=c2.getStringCellValue();
-	   	 licenseCompanyadmin.MethodPOM.LicesneNo1().sendKeys(LicenseNo);
+	   	 LicenseCompanyadmin.MethodPOM.LicesneNo1().sendKeys(LicenseNo);
 	   	
 	           
 	   
@@ -237,25 +236,25 @@ public class ImpMethodPOM extends webpage {
 		 Row row6= sheet.getRow(6);
 		  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
 		 String LicenseTitle= c1.getStringCellValue();
-		 licenseCompanyadmin.MethodPOM.LicesneTitle1().sendKeys(LicenseTitle);
+		 LicenseCompanyadmin.MethodPOM.LicesneTitle1().sendKeys(LicenseTitle);
 		 
 		 Thread.sleep(3000);
-		 licenseCompanyadmin.MethodPOM.StartDate1().sendKeys("01-03-2023");
+		 LicenseCompanyadmin.MethodPOM.StartDate1().sendKeys("01-03-2023");
 		 Thread.sleep(3000);     
-		 licenseCompanyadmin.MethodPOM.EndDate1().sendKeys("30-03-2023");
+		 LicenseCompanyadmin.MethodPOM.EndDate1().sendKeys("30-03-2023");
 		 
 		// JavascriptExecutor Js1 = (JavascriptExecutor) driver;
 		   Js1.executeScript("window.scrollBy(0,1000)");
 		   Thread.sleep(3000);
 		   Js1.executeScript("window.scrollBy(1000,0)");
-		   licenseCompanyadmin.MethodPOM.SaveButton().click();
+		   LicenseCompanyadmin.MethodPOM.SaveButton().click();
 		   Thread.sleep(3000);
 		   Alert alert1 = driver.switchTo().alert();
 		   String alertMessage1= driver.switchTo().alert().getText();
 		   //test.log(LogStatus.PASS, alertMessage1);
 		   alert1.accept();
 		   Thread.sleep(3000);
-		   String msg =licenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
+		   String msg =LicenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
 			
 			if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
 			{
@@ -305,7 +304,7 @@ public class ImpMethodPOM extends webpage {
 				Thread.sleep(5000);
 			     ImpPOM.clicklicensetype1().click();
 			    Thread.sleep(7000);
-				 //   licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
+				 //   LicenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
 			     ImpPOM.searchlice1().sendKeys("Annual Maintenance",Keys.ENTER);
 				    Thread.sleep(3000);
 				    ImpPOM.LocationCheck().click();
@@ -362,7 +361,7 @@ public class ImpMethodPOM extends webpage {
 			Thread.sleep(5000);
 		     ImpPOM.clicklicensetype1().click();
 		    Thread.sleep(7000);
-			 //   licenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
+			 //   LicenseCompanyadmin.MethodPOM.SearchLicenseType1(driver).sendKeys("Boiler",Keys.ENTER);
 		     ImpPOM.searchlice1().sendKeys("Boiler",Keys.ENTER);
 			    Thread.sleep(3000);
 			    ImpPOM.LocationCheck().click();
@@ -677,7 +676,7 @@ public class ImpMethodPOM extends webpage {
 	    //ImpPOM.SelectLicesetype(driver).click();
 	    //Thread.sleep(3000);
 	      //	 MethodPOM.ClickLicensetype1(driver).click();
-		    licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
+		    LicenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
 		    Thread.sleep(5000);
 		    ImpPOM.appliedCheckcompliance().click();
 		    Thread.sleep(5000);
@@ -687,7 +686,7 @@ public class ImpMethodPOM extends webpage {
 			js1.executeScript("window.scroll(0,500)");
 		    ImpPOM.appliedsavelic().click();
 		    Thread.sleep(1000);
-             String msg =licenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
+             String msg =LicenseCompanyadmin.MethodPOM.Message().getText();		//Reading Message appeared after save button
 			
 			if(msg.equalsIgnoreCase("Compliance Created and Assigned Successfully"))
 			{
@@ -731,7 +730,7 @@ public class ImpMethodPOM extends webpage {
 		    //ImpPOM.SelectLicesetype(driver).click();
 		    //Thread.sleep(3000);
 		      //	 MethodPOM.ClickLicensetype1(driver).click();
-			  licenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
+			  LicenseCompanyadmin.MethodPOM.SearchLicenseType1().sendKeys("Boiler",Keys.ENTER);
 			   Thread.sleep(3000);
 		   if(ImpPOM.ChkIsPerment().isDisplayed())
 		   {

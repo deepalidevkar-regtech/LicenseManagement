@@ -22,8 +22,9 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
 import licensePerformer.LiPerformerPOM;
+import login.webpage;
 
-public class LicenseReviewer 
+public class LicenseReviewer extends webpage
 {
 	public static WebDriver driver = null;		//WebDriver instance created
 	public static WebElement upload = null;		//WebElement to get upload button
@@ -56,7 +57,7 @@ public class LicenseReviewer
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
 		
-		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
+		//login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -78,7 +79,7 @@ public class LicenseReviewer
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
-		driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
+	//	driver = login.Login.UserLogin(uname,password,"License");		//Method of Login class to login user.
 		
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
@@ -124,7 +125,7 @@ public class LicenseReviewer
 				test = extent.startTest("Critical Document Verification");
 				test.log(LogStatus.INFO, "Test Initiated");
 				
-				licenseCompanyadmin.StatutoryMethod.CriticalDocuments(driver, test);
+				LicenseCompanyadmin.StatutoryMethod.CriticalDocuments( test,"Statutory");
 				
 				extent.endTest(test);
 				extent.flush();

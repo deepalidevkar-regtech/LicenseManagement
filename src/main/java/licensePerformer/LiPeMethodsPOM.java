@@ -27,8 +27,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.MethodPOM;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.MethodPOM;
 import licenseManagement.licmgmtPOM;
 import licenseReviewer.LiReviewerPOM;
 import litigationPerformer.performerPOM;
@@ -3354,7 +3354,7 @@ for(String Fal : fail)
 				js1.executeScript("window.scroll(0,500)");
 				Thread.sleep(4000);
 				
-				licenseCompanyadmin.MethodPOM.clickReadTerminate().click();					//Clicking on total items count
+				LicenseCompanyadmin.MethodPOM.clickReadTerminate().click();					//Clicking on total items count
 				Thread.sleep(500);
 				String item = MethodPOM.clickReadTerminate().getText();	//Reading total items String value
 				String[] bits = item.split(" ");								//Splitting the String
@@ -3376,11 +3376,11 @@ for(String Fal : fail)
 					//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
 					//Thread.sleep(3000);
 					
-					licenseCompanyadmin.MethodPOM.ClickActiveOverview().click();
+					LicenseCompanyadmin.MethodPOM.ClickActiveOverview().click();
 					Thread.sleep(3000);
 					test.log(LogStatus.PASS, " License Overview Details Successfully");
 					Thread.sleep(3000);
-					licenseCompanyadmin.MethodPOM.ClickCloseOverview().click();
+					LicenseCompanyadmin.MethodPOM.ClickCloseOverview().click();
           
 					//LiPerformerPOM.clickAction.click();					//Clicking on first action button.
 					LiPerformerPOM.editlicenseicon().click();
@@ -3675,11 +3675,11 @@ for(String Fal : fail)
 	public static void LicenseExpiredOnperInternal( ExtentTest test, String string) throws InterruptedException
 	{
 		 /*Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter.click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter.click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter.click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter.click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply.click();*/
+		   LicenseCompanyadmin.MethodPOM.ClickApply.click();*/
 	   Thread.sleep(3000);
 	   MethodPOM.ClickMaximizeLicenseExpiredOn().click();
 	   test.log(LogStatus.PASS, "Expired Maximize Button Working Successfully");
@@ -5042,7 +5042,7 @@ public static void PerformerDashboardActivefilter (ExtentTest test, String type)
 		   Thread.sleep(5000);
 		   MethodPOM.Performerserachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   
 	WebDriverWait wait1 = new WebDriverWait( getDriver(), 20);
 	
@@ -5089,7 +5089,7 @@ public static void PerformerDashboardExpiringfilter (ExtentTest test, String typ
   		   Thread.sleep(5000);                                                                                                                                  
   		   MethodPOM.Performerserachlic1().sendKeys("Shops & Establishment",Keys.ENTER);                                                                                 
   		   Thread.sleep(5000);                                                                                                                                  
-  			   licenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
+  			   LicenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
   	                                                                                                                                                         
  
     wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpiring()));                                                                              
@@ -5137,7 +5137,7 @@ public static void PerformerDashboardExpiredfilter (ExtentTest test, String type
   		   Thread.sleep(5000);                                                                                                                                  
   		   MethodPOM.Performerserachlic1().sendKeys("Shops & Establishment",Keys.ENTER);                                                                                 
   		   Thread.sleep(5000);                                                                                                                                  
-  			   licenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
+  			   LicenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
   	                                                                                                                                                         
   			 wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpired()));
   			String Expired=MethodPOM.clickExpired().getText();
@@ -5185,7 +5185,7 @@ public static void PerformerDashboardAppliedfilter (ExtentTest test, String type
   		   Thread.sleep(5000);                                                                                                                                  
   		   MethodPOM.Performerserachlic1().sendKeys("Shops & Establishment",Keys.ENTER);                                                                                 
   		   Thread.sleep(5000);                                                                                                                                  
-  			   licenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
+  			   LicenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
   	                                                                                                                                                         
   				wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickApplied()));
   				String Applied=MethodPOM.clickApplied().getText();
@@ -5233,7 +5233,7 @@ public static void PerformerDashboardpendingforreviewfilter( ExtentTest test, St
 		   Thread.sleep(5000);                                                                                                                                  
 		   MethodPOM.Performerserachlic1().sendKeys("Shops & Establishment",Keys.ENTER);                                                                                 
 		   Thread.sleep(5000);                                                                                                                                  
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                                 
 	       
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickpendingforreview()));
 		String PendingForReview=MethodPOM.clickpendingforreview().getText();

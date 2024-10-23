@@ -1,4 +1,4 @@
-package licenseCompanyadmin;
+package LicenseCompanyadmin;
 
 import java.awt.Desktop.Action;
 import java.io.File;
@@ -627,11 +627,11 @@ public class StatutoryMethod  extends webpage{
 	public static void ActiveInternalLicense( ExtentTest test, String type) throws InterruptedException
 	{	
 		Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 			WebDriverWait wait = new WebDriverWait( getDriver(), 20);
 			
@@ -928,11 +928,11 @@ public class StatutoryMethod  extends webpage{
 	public static void ExpiringInternalLicense( ExtentTest test, String type) throws InterruptedException
 	{	
 		Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 			WebDriverWait wait = new WebDriverWait( getDriver(), 20);
 			
@@ -1244,11 +1244,11 @@ public class StatutoryMethod  extends webpage{
 	public static void ExpiredInternalLicense( ExtentTest test, String type) throws InterruptedException
 	{
 		Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 
 			WebDriverWait wait = new WebDriverWait( getDriver(), 20);
 			
@@ -1549,14 +1549,14 @@ public class StatutoryMethod  extends webpage{
 	{
 		
 		 Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   MethodPOM.clickDashlicensetype().click();
 		   Thread.sleep(5000);
 		   
 		   MethodPOM.SearchInternalLicenseType().sendKeys("Annual Maintenance",Keys.ENTER);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   
 
 			WebDriverWait wait = new WebDriverWait( getDriver(), 20);
@@ -1874,11 +1874,11 @@ public class StatutoryMethod  extends webpage{
 	public static void pendingforreviewInternalLicense( ExtentTest test, String type) throws InterruptedException
 	{
 		 Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   
 		   
 		 WebDriverWait wait = new WebDriverWait( getDriver(), 20);
@@ -2152,11 +2152,11 @@ public class StatutoryMethod  extends webpage{
    public static void RejectedInternalLicense( ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 40);
 		
@@ -2427,11 +2427,11 @@ public class StatutoryMethod  extends webpage{
    public static void TerminateInternalLicense( ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 20);
 	   Thread.sleep(7000);
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateper()));
@@ -2524,12 +2524,12 @@ public class StatutoryMethod  extends webpage{
    public static void LicenseExpiredOnInternal( ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
 		   
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   Thread.sleep(3000);
 	   MethodPOM.ClickMaximizeLicenseExpiredOn().click();
 	   test.log(LogStatus.PASS, "ExpiredOn License Maximize Button Working Successfully.");
@@ -3110,11 +3110,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void BystatusExpringInternalgraph( ExtentTest test, String type) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver() .manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver()	 ;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -3876,11 +3876,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    {
 
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver() ;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -4094,11 +4094,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void BystatusTerminateInternalgraph( ExtentTest test, String type ) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver() ;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -4483,11 +4483,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void BystatusExpiredappliedbutnotrenewedInternalgraph( ExtentTest test, String type ) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver() ;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -4874,11 +4874,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    {
 
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -5090,9 +5090,9 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 	   Thread.sleep(3000);
 	   MethodPOM.clickDashlictype().click();
 	   Thread.sleep(5000);
-	   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
+	   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 	   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -5272,16 +5272,16 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void ByLicensetypeExpiredInternal( ExtentTest test, String type ) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
 		   MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -5465,12 +5465,12 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 	  getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   MethodPOM.clickDashlictype().click();
 	   Thread.sleep(5000);
-	   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
+	   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 	   Thread.sleep(5000);
 	  JavascriptExecutor Js = (JavascriptExecutor)getDriver(); ;
 	   Js.executeScript("window.scrollBy(0,2000)");
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 40);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeExpiring()));	  
 		String ByLicenseTypeExpiring=MethodPOM.clickByLicnesetypeExpiring().getText();
 		
@@ -5644,14 +5644,14 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void ByLicensetypeExpiringInternal( ExtentTest test, String type ) throws InterruptedException
    {
 	  Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 		   Js1.executeScript("window.scrollBy(0,1000)");
@@ -5838,7 +5838,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 	   Thread.sleep(5000);
 	   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 	   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
 	   Thread.sleep(4000);
@@ -6018,11 +6018,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void ByLicensetypeAppliedInternal( ExtentTest test, String type ) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
 	   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver() ;
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -6210,7 +6210,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			licenseCompanyadmin.MethodPOM.ClickApply().click();
+			LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   Thread.sleep(3000);
 			   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver() ;
 			   Js1.executeScript("window.scrollBy(0,1000)");
@@ -6389,16 +6389,16 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    {
       
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
 		   MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -6590,7 +6590,7 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickByLicnesetypeTerminate()));	  
@@ -6770,17 +6770,17 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void ByLicensetypeTerminateInternal( ExtentTest test, String type ) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
 
 		   MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -6967,17 +6967,17 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    public static void ByLicensetypeRejectedInternal( ExtentTest test, String type ) throws InterruptedException
    {
 	   Thread.sleep(3000);
-		  licenseCompanyadmin.MethodPOM.AllFilter().click();
+		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 		   Thread.sleep(3000);
-		   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+		   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 		   
 
 		   MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
 		   Thread.sleep(5000);
-			   licenseCompanyadmin.MethodPOM.ClickApply().click();
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 	   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
 	   Js1.executeScript("window.scrollBy(0,1000)");
@@ -8680,11 +8680,11 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 		   {
 
 			   Thread.sleep(3000);
-				  licenseCompanyadmin.MethodPOM.AllFilter().click();
+				  LicenseCompanyadmin.MethodPOM.AllFilter().click();
 				   Thread.sleep(3000);
-				   licenseCompanyadmin.MethodPOM.InternalFilter().click();
+				   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 				   
-				   licenseCompanyadmin.MethodPOM.ClickApply().click();
+				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 					getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver() ;
 				   Js1.executeScript("window.scrollBy(0,1000)");
@@ -8878,9 +8878,9 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 			   Thread.sleep(3000);
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
+			   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 			   Thread.sleep(5000);
-				   licenseCompanyadmin.MethodPOM.ClickApply().click();
+				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 				   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			   JavascriptExecutor Js1 = (JavascriptExecutor)getDriver();
 			   Js1.executeScript("window.scrollBy(0,1000)");
@@ -9091,7 +9091,7 @@ public static void DashboardActivefilter (ExtentTest test, String type) throws I
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 }
 	wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickActive()));
 	String active=MethodPOM.clickActive().getText();
@@ -9159,7 +9159,7 @@ public static void DashboardExpiringfilter (ExtentTest test, String type) throws
     		   Thread.sleep(5000);
     		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
     		   Thread.sleep(5000);
-    		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+    		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
     		   }
    
       wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpiring()));                                                                              
@@ -9229,7 +9229,7 @@ public static void DashboardExpiredfilter (ExtentTest test, String type) throws 
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                        
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();                                                                                        
 		   }                                                                                                                                                   
   			 wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpired()));
   			String Expired=MethodPOM.clickExpired().getText();
@@ -9301,7 +9301,7 @@ public static void DashboardAppliedfilter (ExtentTest test, String type) throws 
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   }
   	                                                                                                                                                         
   				wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickApplied()));
@@ -9372,7 +9372,7 @@ public static void Dashboardpendingforreviewfilter( ExtentTest test, String type
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   }
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickpendingforreview()));
 		String PendingForReview=MethodPOM.clickpendingforreview().getText();
@@ -9441,7 +9441,7 @@ public static void DashboardRejectedLicensefilter( ExtentTest test, String type)
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   }
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickRejected()));
 		String Rejected=MethodPOM.clickRejected().getText();
@@ -9509,7 +9509,7 @@ public static void DashboardTerminateLicensefilter( ExtentTest test, String type
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   }
 		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminate()));
 		String Terminate=MethodPOM.clickTerminate().getText();
@@ -9575,7 +9575,7 @@ public static  void DashboardAssignedButNotActivatedFilter( ExtentTest test, Str
 		   Thread.sleep(5000);
 		   MethodPOM.serachlic1().sendKeys("Shops & Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
-		   licenseCompanyadmin.MethodPOM.ClickApply().click();
+		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   }
 	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.AssignedButNotActivated()));
 	String AssognedButNotActivated=LiPerformerPOM.AssignedButNotActivated().getText();

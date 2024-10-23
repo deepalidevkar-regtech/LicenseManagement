@@ -19,7 +19,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import licenseCompanyadmin.StatutoryMethod;
 import licenseManagement.licmgmtMethodPOM;
 import licensePerformer.LiPeMethodsPOM;
 import login.webpage;
@@ -103,7 +102,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		test = extent.startTest("Active License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.ActiveLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.ActiveLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -115,7 +114,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		//StatutoryMethod.ExpiringLicense( test, "Statutory");
-		licenseCompanyadmin.StatutoryMethod.ExpiringLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.ExpiringLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -126,7 +125,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		test = extent.startTest("Expired License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.ExpiredLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.ExpiredLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -137,7 +136,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		test = extent.startTest("Applied License Count Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.AppliedLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.AppliedLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -148,7 +147,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.pendingforreviewLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -159,7 +158,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		test = extent.startTest("Rejected License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licenseCompanyadmin.StatutoryMethod.RejectedLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.RejectedLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -168,7 +167,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 	void Terminate() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Terminate License Count Verification");
-		licenseCompanyadmin.StatutoryMethod.TerminateLicense( test, "Statutory");
+		LicenseCompanyadmin.StatutoryMethod.TerminateLicense( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -181,7 +180,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			test = extent.startTest("By Status- Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusActivegraph( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.BystatusActivegraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -192,7 +191,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			test = extent.startTest("By Status-Application Overdue (Expiring but not applied) License Graph Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpringgraph( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpringgraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -203,7 +202,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			test = extent.startTest("By Status- Expired License On Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpired( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpired( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -215,7 +214,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			test = extent.startTest("By Status Terminate License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusTerminategraph( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.BystatusTerminategraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -227,7 +226,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			test = extent.startTest("By Status- Expired Applied but not renewed License Graph Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedgraph( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedgraph( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -250,7 +249,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			test = extent.startTest("By License Type- Shops & Establishment Application Overdue(Expiring but not applied) Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			licenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiring( test, "Statutory");
+			LicenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiring( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -329,7 +328,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 	{
 	    test = extent.startTest("Masters - User Creation verification");
 		//test.log(LogStatus.PASS, "User Created Successfully");
-		licenseCompanyadmin.StatutoryMethod.user( test,"");
+		LicenseCompanyadmin.StatutoryMethod.user( test,"");
 	 
 		extent.endTest(test);
 		extent.flush();

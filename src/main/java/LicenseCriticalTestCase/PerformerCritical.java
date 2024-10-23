@@ -27,8 +27,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import LicenseCompanyadmin.MethodPOM;
 import cfo.CFOcountPOM;
-import licenseCompanyadmin.MethodPOM;
 import licenseManagement.licmgmtPOM;
 import licensePerformer.LiPerformerPOM;
 import licenseReviewer.LiReviewerPOM;
@@ -1441,7 +1441,7 @@ public static void TerminateLicense1(ExtentTest test, String type) throws Interr
 			js1.executeScript("window.scroll(0,500)");
 			Thread.sleep(4000);
 			
-			licenseCompanyadmin.MethodPOM.clickReadTerminate().click();					//Clicking on total items count
+			LicenseCompanyadmin.MethodPOM.clickReadTerminate().click();					//Clicking on total items count
 			Thread.sleep(500);
 			String item = MethodPOM.clickReadTerminate().getText();	//Reading total items String value
 			String[] bits = item.split(" ");								//Splitting the String
@@ -1463,11 +1463,11 @@ public static void TerminateLicense1(ExtentTest test, String type) throws Interr
 				//js1.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
 				//Thread.sleep(3000);
 				
-				licenseCompanyadmin.MethodPOM.ClickActiveOverview().click();
+				LicenseCompanyadmin.MethodPOM.ClickActiveOverview().click();
 				Thread.sleep(3000);
 				test.log(LogStatus.PASS, " License Overview Details Successfully");
 				Thread.sleep(3000);
-				licenseCompanyadmin.MethodPOM.ClickCloseOverview().click();
+				LicenseCompanyadmin.MethodPOM.ClickCloseOverview().click();
   
 					MethodPOM.clickMyDashboard().click();
 				
