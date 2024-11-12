@@ -185,6 +185,11 @@ public class LiPerformerPOM extends webpage{
 		license = getDriver().findElement(By.xpath("(//*[@aria-owns='dropdownlistStatus_listbox'])"));
 		return license;
 	}
+	public static WebElement clickStatusdept()
+	{
+		license = getDriver().findElement(By.xpath("(//*[@aria-owns='dropdownlistStatus_listbox'])"));
+		return license;
+	}
 	
 	public static List<WebElement> selectStatus1()
 	{
@@ -568,6 +573,12 @@ public class LiPerformerPOM extends webpage{
 		
 		return license;
 	}
+	public static WebElement EntityLocationExpanddept() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-group k-treeview-lines'])[1]"));
+		
+		return license;
+	}
 	public static WebElement aa() 
 	{
 		license = getDriver().findElement(By.xpath("//*[@class='k-item k-first k-last']"));
@@ -602,6 +613,11 @@ public class LiPerformerPOM extends webpage{
 		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[3]"));
 		return license;
 	}
+	public static WebElement ClickLictypein() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[1]"));
+		return license;
+	}
 	
 	public static WebElement Licensetype() 
 	{
@@ -610,7 +626,7 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement Licensetypeinternal() 
 	{
-		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[3]"));
+		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistLicenseType_listbox']/li[1]"));
 		return license;
 	}
 	

@@ -257,7 +257,7 @@ void BystausActivelicense() throws InterruptedException
 @Test(priority = 18)
 		void BylicnesetypeExpired() throws InterruptedException
 		{
-			test = extent.startTest("By License type-Shops & Establishment Expired License Graph Working Verification");
+			test = extent.startTest("By License type-Shops & Commercial Establishment Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licmgmtMethodPOM.ByLicensetypeExpired( test, "Statutory");
@@ -268,7 +268,7 @@ void BystausActivelicense() throws InterruptedException
 @Test(priority = 19)
 void BylicnesetypeExpiring() throws InterruptedException
 {
-	test = extent.startTest("By License type -Shops & Establishment  Application Overdue (Expiring but not applied) License Graph Working Verification");
+	test = extent.startTest("By License type -Shops & Commercial Establishment  Application Overdue (Expiring but not applied) License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	LicenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiring( test, "Statutory");
@@ -279,7 +279,7 @@ void BylicnesetypeExpiring() throws InterruptedException
 @Test(priority = 20)
 void BylicnesetypeApplied() throws InterruptedException
 {
-	test = extent.startTest("By License type- Shops & Establishment  Expired applied But not renewed License Graph Working Verification");
+	test = extent.startTest("By License type- Shops & Commercial Establishment  Expired applied But not renewed License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
     licmgmtMethodPOM.ByLicensetypeApplied( test, "Statutory");
@@ -290,7 +290,7 @@ void BylicnesetypeApplied() throws InterruptedException
 @Test(priority = 21)
 void BylicnesetypeActive() throws InterruptedException
 {
-	test = extent.startTest("By License type -Shops & Establishment  Active License Graph Working Verification");
+	test = extent.startTest("By License type -Shops & Commercial Establishment  Active License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
     licmgmtMethodPOM.ByLicensetypeActive( test, "Statutory");
 	
@@ -300,7 +300,7 @@ void BylicnesetypeActive() throws InterruptedException
 @Test(priority = 22)
 void BylicnesetypeTerminate() throws InterruptedException
 {
-	test = extent.startTest("By License type -Shops & Establishment Terminate  License Graph Working Verification");
+	test = extent.startTest("By License type -Shops & Commercial Establishment Terminate  License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
      licmgmtMethodPOM.ByLicensetypeTerminate( test, "Statutory");
 	
@@ -310,7 +310,7 @@ void BylicnesetypeTerminate() throws InterruptedException
 @Test(priority = 23)
 void BylicnesetypeRejected() throws InterruptedException
 {
-	test = extent.startTest("By License Type -Shops & Establishment Rejected  Graph Count Working Verification");
+	test = extent.startTest("By License Type -Shops & Commercial Establishment Rejected  Graph Count Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	StatutoryMethod.ByLicensetypeRejected( test, "Statutory");
@@ -319,7 +319,7 @@ void BylicnesetypeRejected() throws InterruptedException
 	extent.flush();
 }
 
-@Test(priority = 21)
+@Test(priority = 24)
 		void MyWorkspace() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Workspace  Working Verification");
@@ -329,7 +329,7 @@ void BylicnesetypeRejected() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 22)
+@Test(priority = 25)
 void MyDocuments() throws InterruptedException
 {
 	test = extent.startTest("My Documents Verification");
@@ -339,7 +339,7 @@ void MyDocuments() throws InterruptedException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority = 23)
+@Test(priority = 26)
 void CriticalDocuments() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Critical Document Verification");
@@ -350,13 +350,13 @@ void CriticalDocuments() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 24)
+@Test(priority = 27)
 void MyReports() throws InterruptedException, IOException
 {
 	test = extent.startTest("My Reports Verification");
 //	test.log(LogStatus.INFO, "Test Initiated");
 	
-	DeptHeadMethod.DeptReports( test, "Statutory");
+	DeptHeadMethod.Reports( test, "Statutory");
 	
 	extent.endTest(test);
 	extent.flush();

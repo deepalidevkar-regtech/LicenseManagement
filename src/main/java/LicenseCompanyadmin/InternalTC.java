@@ -183,11 +183,11 @@ public class InternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority =10)
-		void LicenseExpiredOnInternal() throws InterruptedException
+	@Test(priority =10)
+		void LicenseExpiredInInternal() throws InterruptedException
 		{
-			test = extent.startTest("License ExpiredOn Working Verification");
-		    //  test.log(LogStatus.PASS, "License ExpiredOn Working Verification");
+			test = extent.startTest("License ExpiredIn Working Verification");
+		    //  test.log(LogStatus.PASS, "License ExpiredIn Working Verification");
 			
 			StatutoryMethod.LicenseExpiredOnInternal( test, "Internal");
 			
@@ -195,7 +195,7 @@ public class InternalTC  extends webpage{
 			extent.flush();
 		}
 	@Test(priority = 11)
-	void LicenseExpiringOnInternal() throws InterruptedException, IOException
+	void LicenseExpiringInInternal() throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -205,16 +205,16 @@ public class InternalTC  extends webpage{
 		drp.selectByIndex(1);
 		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		test = extent.startTest("License ExpiringOn Working Verification");
+		test = extent.startTest("License ExpiringIn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licmgmtMethodPOM.LicenseExpiringOnStatutory( test, "Internal");
+		licmgmtMethodPOM.LicenseExpiringInStatutory( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	  @Test(priority = 12)
+	 @Test(priority = 12)
 	  void BystatusActiveInternalgraph() throws InterruptedException
 		{
 			test = extent.startTest("Internal By Status-Active Graph Count Verification");
@@ -283,7 +283,7 @@ public class InternalTC  extends webpage{
 	@Test(priority = 17)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License Type - SWS Expired Graph Count Verification");
+			test = extent.startTest("Internal By License Type - Annual maintenance Expired Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeExpiredInternal( test, "Internal");
@@ -294,7 +294,7 @@ public class InternalTC  extends webpage{
 	 @Test(priority = 18)
 		void ByLicensetypeExpiringInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License Type -SWS Application Overdue(Expiring but not applied)Graph Count Verification");
+			test = extent.startTest("Internal By License Type -Annual maintenance Application Overdue(Expiring but not applied)Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
@@ -305,7 +305,7 @@ public class InternalTC  extends webpage{
 	 @Test(priority = 19)
 		void ByLicensetypeAppliedInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type -SWS Expired applied but not renewed Graph Count Verification");
+			test = extent.startTest("Internal By License type -Annual maintenance Expired applied but not renewed Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeAppliedInternal( test, "Internal");
@@ -313,10 +313,10 @@ public class InternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 20)
+	@Test(priority = 20)
 		void BylicnesetypeActiveInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type -SWS Active Graph Count Verification");
+			test = extent.startTest("Internal By License type -Annual maintenance Active Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeActiveInternal( test, "Internal");
@@ -327,7 +327,7 @@ public class InternalTC  extends webpage{
 	@Test(priority = 21)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type - SWS Terminate Graph  Count Working Verification");
+			test = extent.startTest("Internal By License type - Annual maintenance Terminate Graph  Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeTerminateInternal( test, "Internal");
@@ -338,7 +338,7 @@ public class InternalTC  extends webpage{
  @Test(priority = 21)
 		void BylicnesetypeRejectedInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type - SWS Rejected Graph  Count Working Verification");
+			test = extent.startTest("Internal By License type - Annual maintenance Rejected Graph  Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeRejectedInternal( test, "Internal");
@@ -362,7 +362,7 @@ public class InternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-    @Test(priority = 23)
+   @Test(priority = 23)
 		void MyDocuments() throws InterruptedException
 		{
 			test = extent.startTest("My Documents Download Verification");

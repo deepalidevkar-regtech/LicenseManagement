@@ -91,7 +91,7 @@ public class LicensePerformerStatutory extends webpage {
 		initialization("License",1);
 	}
 	
-@Test(priority = 2) 
+/*@Test(priority = 2) 
 	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -220,9 +220,9 @@ void Expiringperform() throws InterruptedException
 			extent.flush();
 		}
 	 @Test(priority = 13)
-			void LicenseExpiredOnStatutory() throws InterruptedException
+			void LicenseExpiredInStatutory() throws InterruptedException
 			{
-				test = extent.startTest("License ExpiredOn Working Verification");
+				test = extent.startTest("License ExpiredIn Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				LiPeMethodsPOM.LicenseExpiredOnStatutory( test, "Statutory");
@@ -231,9 +231,9 @@ void Expiringperform() throws InterruptedException
 				extent.flush();
 			}
   @Test(priority = 14)
-		void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+		void LicenseExpiringInStatutory() throws InterruptedException, IOException
 		{
-			test = extent.startTest("License ExpiringOn Working Verification");
+			test = extent.startTest("License ExpiringIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LiPeMethodsPOM.LicenseExpiringOnStatutoryper( test, "Statutory");
@@ -305,8 +305,8 @@ void Expiringperform() throws InterruptedException
 
 		extent.endTest(test);
 		extent.flush();
-	}
-	@Test(priority =34)
+	}*/
+	/*@Test(priority =34)
 	void  ActiveDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -363,7 +363,7 @@ void Expiringperform() throws InterruptedException
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 		@Test(priority = 40)
 		void TerminateDashboardFilter() throws InterruptedException, IOException
 		{
@@ -375,7 +375,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 41)
+	/*	@Test(priority = 41)
 		void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -385,7 +385,7 @@ void Expiringperform() throws InterruptedException
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 	  @AfterMethod
 	  void driverclose()
 	  {

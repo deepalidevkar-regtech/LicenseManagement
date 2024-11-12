@@ -320,6 +320,7 @@ public static WebElement clickApplied()
 {
 	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divAppliedcount']"));
 	return license;
+
 }
 public static WebElement clickReadApplied()	
 {
@@ -581,7 +582,7 @@ public static WebElement clickByLicnesetypeApplied()
 }
 public static WebElement clickByLicnesetypeAppliedInternal()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[23]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeActive()	
@@ -1169,6 +1170,11 @@ public static WebElement clickDashlictype()
 }
 public static WebElement serachlic1() 
 {
+	license = getDriver().findElement(By.xpath("(//input[@type='text'])[2]"));	
+	return license;
+}
+public static WebElement serachlicforgrp() 
+{
 	license = getDriver().findElement(By.xpath("(//input[@type='text'])[4]"));	
 	return license;
 }
@@ -1199,7 +1205,7 @@ public static WebElement Documentlictypeselect()
 }
 public static WebElement Documentlictypeselectin() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[56]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[590]"));	
 	return license;
 }
 public static WebElement lll() 

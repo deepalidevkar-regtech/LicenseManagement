@@ -207,7 +207,7 @@ public class licmgmtInternalTC  extends webpage{
 		test = extent.startTest("License ExpiringOn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
-		licmgmtMethodPOM.LicenseExpiringOnStatutory( test, "Internal");
+		licmgmtMethodPOM.LicenseExpiringInStatutory( test, "Internal");
 		
 		extent.endTest(test);
 		extent.flush();

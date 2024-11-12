@@ -349,7 +349,7 @@ public class licmgmtMethodPOM extends webpage{
 
 		 MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
-		   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
+		   MethodPOM.serachlicforgrp().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
 			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -533,7 +533,7 @@ public class licmgmtMethodPOM extends webpage{
 
 		 MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
-		   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
+		   MethodPOM.serachlicforgrp().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
 			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -722,7 +722,7 @@ public class licmgmtMethodPOM extends webpage{
 
 		 MethodPOM.clickDashlictype().click();
 		   Thread.sleep(5000);
-		   MethodPOM.serachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
+		   MethodPOM.serachlicforgrp().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
 		   Thread.sleep(5000);
 			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -910,7 +910,7 @@ public class licmgmtMethodPOM extends webpage{
 			   
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			  MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
+			  MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
 			  
 			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -965,25 +965,21 @@ public class licmgmtMethodPOM extends webpage{
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
 				 LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					LiPerformerPOM.aa().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				   Thread.sleep(500);
-				   LiPerformerPOM.aa1().click();
-				   Thread.sleep(500);
+	      			Thread.sleep(500);
+						LiPerformerPOM.EntityLocationExpand().click();
+						Thread.sleep(500);
+					//   LiPerformerPOM.aa1().click();
+						Thread.sleep(500);
+						LiPerformerPOM.demolocation().click();;
+					   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
-				  // LiPerformerPOM.Statustext().click();
-				  // Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
 				  
 				    List<String> li=new ArrayList<String>();
 				    
@@ -1008,9 +1004,9 @@ public class licmgmtMethodPOM extends webpage{
 					{
 					Thread.sleep(5000);
 
-					List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+					List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
 					
-					List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+					List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 					//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 					Thread.sleep(2000);
 
@@ -1428,7 +1424,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	 {
 	
 		 
-		 licmgmtPOM.ClickMyWorkspace().click();
+		licmgmtPOM.ClickMyWorkspace().click();
 
 WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		 Thread.sleep(3000);
@@ -1753,7 +1749,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		         licmgmtPOM.ClickMyWorkspace().click();
 		         Thread.sleep(5000);
 		         licmgmtPOM.Overviewworkspace().click();
-		         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));
+		         wait1.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));
 		         if(licmgmtPOM.Nomineetab().isDisplayed())
 		         {
 		        	 test.log(LogStatus.PASS,"License Nominee Details Displayed." );
@@ -2053,7 +2049,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
+			   MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
@@ -2107,23 +2103,22 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 					 Thread.sleep(3000);
 					MethodPOM.clickBystatuscloseoverview().click();
 					 Thread.sleep(4000);
-					/* LiPerformerPOM.EntityLocation().click();
-						Thread.sleep(500);
-						LiPerformerPOM.aa().click();
-						Thread.sleep(500);
-						//LiPerformerPOM.EntityLocationExpand().click();
-						//Thread.sleep(500);
-					   LiPerformerPOM.Entitysubexpand().click();
-					   Thread.sleep(500);
+					 LiPerformerPOM.EntityLocation().click();
+		      			Thread.sleep(500);
+							LiPerformerPOM.EntityLocationExpand().click();
+							Thread.sleep(500);
+						//   LiPerformerPOM.aa1().click();
+							Thread.sleep(500);
+							LiPerformerPOM.demolocation().click();;
+						   Thread.sleep(500);
 					   String locationtext1 =LiPerformerPOM.locget().getText();
 					   LiPerformerPOM.locget().click();
-					   Thread.sleep(3000);
+					   Thread.sleep(5000);
 					   LiPerformerPOM.clicklictypet().click();
 					   Thread.sleep(500);
-					   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+					   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 					   Thread.sleep(5000);
-					   LiPerformerPOM.Licensetype().click();
-					   Thread.sleep(5000);
+					    LiPerformerPOM.Licensetypeinternal().click();
 					  // LiPerformerPOM.Statustext().click();
 					  // Thread.sleep(5000);
 					  
@@ -2138,7 +2133,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 						filter.add("Location");
 						filter.add("LicenseType");	
 						
-						JavascriptExecutor js = (JavascriptExecutor) driver;
+						JavascriptExecutor js = (JavascriptExecutor)getDriver() ;
 						js.executeScript("window.scrollBy(0,150)");	
 						Thread.sleep(3000);
 
@@ -2150,9 +2145,9 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 						{
 						Thread.sleep(5000);
 
-						List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+						List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
 						
-						List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+						List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 						//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 						Thread.sleep(2000);
 
@@ -2229,7 +2224,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				     {
 				    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				     }
-				     */
+				     
 				  }	 
 	   
 				 
@@ -2242,7 +2237,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
+			   MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2292,26 +2287,22 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				 Thread.sleep(3000);
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
-				/* LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					LiPerformerPOM.aa().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				   Thread.sleep(500);
-				   LiPerformerPOM.aa1().click();
-				   Thread.sleep(500);
+				 LiPerformerPOM.EntityLocation().click();
+	      			Thread.sleep(500);
+						LiPerformerPOM.EntityLocationExpand().click();
+						Thread.sleep(500);
+					//   LiPerformerPOM.aa1().click();
+						Thread.sleep(500);
+						LiPerformerPOM.demolocation().click();;
+					   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
-				  // LiPerformerPOM.Statustext().click();
-				  // Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
 				  
 				    List<String> li=new ArrayList<String>();
 				    
@@ -2336,9 +2327,9 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 					{
 					Thread.sleep(5000);
 
-					List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+					List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
 					
-					List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+					List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 					//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 					Thread.sleep(2000);
 
@@ -2415,7 +2406,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			     {
 			    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			     }
-			*/	
+			
 	   }
 	  public static void ByLicensetypeActiveInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
@@ -2427,7 +2418,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
+			   MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2477,26 +2468,22 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				 Thread.sleep(3000);
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(3000);
-				/* LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					LiPerformerPOM.EntityLocationExpand().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				   Thread.sleep(500);
-				   LiPerformerPOM.Entitysubexpand().click();
-				   Thread.sleep(500);
+				 LiPerformerPOM.EntityLocation().click();
+	      			Thread.sleep(500);
+						LiPerformerPOM.EntityLocationExpand().click();
+						Thread.sleep(500);
+					//   LiPerformerPOM.aa1().click();
+						Thread.sleep(500);
+						LiPerformerPOM.demolocation().click();;
+					   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
-				  // LiPerformerPOM.Statustext().click();
-				  // Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
 				  
 				    List<String> li=new ArrayList<String>();
 				    
@@ -2521,9 +2508,9 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 					{
 					Thread.sleep(5000);
 
-					List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+					List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
 					
-					List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+					List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 					//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 					Thread.sleep(2000);
 
@@ -2600,7 +2587,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			     {
 			    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			     }
-				*/ 
+				
 				 
 	   }
 	  public static void ByLicensetypeTerminateInternal( ExtentTest test, String type ) throws InterruptedException
@@ -2611,7 +2598,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlic1().sendKeys("Annual maintenance",Keys.ENTER);
+			   MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2661,26 +2648,22 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				 Thread.sleep(3000);
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
-				 /*LiPerformerPOM.EntityLocation().click();
-					Thread.sleep(500);
-					LiPerformerPOM.EntityLocationExpand().click();
-					Thread.sleep(500);
-					//LiPerformerPOM.EntityLocationExpand().click();
-					//Thread.sleep(500);
-				   Thread.sleep(500);
-				   LiPerformerPOM.Entitysubexpand().click();
-				   Thread.sleep(500);
+				 LiPerformerPOM.EntityLocation().click();
+	      			Thread.sleep(500);
+						LiPerformerPOM.EntityLocationExpand().click();
+						Thread.sleep(500);
+					//   LiPerformerPOM.aa1().click();
+						Thread.sleep(500);
+						LiPerformerPOM.demolocation().click();;
+					   Thread.sleep(500);
 				   String locationtext1 =LiPerformerPOM.locget().getText();
 				   LiPerformerPOM.locget().click();
 				   Thread.sleep(3000);
 				   LiPerformerPOM.clicklictypet().click();
 				   Thread.sleep(500);
-				   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+				   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 				   Thread.sleep(5000);
-				   LiPerformerPOM.Licensetype().click();
-				   Thread.sleep(5000);
-				  // LiPerformerPOM.Statustext().click();
-				  // Thread.sleep(5000);
+				    LiPerformerPOM.Licensetypeinternal().click();
 				  
 				    List<String> li=new ArrayList<String>();
 				    
@@ -2705,9 +2688,9 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 					{
 					Thread.sleep(5000);
 
-					List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+					List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
 					
-					List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+					List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 					//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 					Thread.sleep(2000);
 
@@ -2784,7 +2767,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			     {
 			    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			     }
-			*/	 
+			
 				 
 	   }
 
@@ -3142,7 +3125,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			
 			//OverduePOM.clickDashboard().click();
 		}
-		  public static void LicenseExpiringOnStatutory( ExtentTest test, String type) throws InterruptedException, IOException
+		  public static void LicenseExpiringInStatutory( ExtentTest test, String type) throws InterruptedException, IOException
 		   {
 			   Thread.sleep(5000);
 			   MethodPOM.ClickMaximizeLicenseExpiringOn().click();
@@ -3245,26 +3228,21 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 					test.log(LogStatus.PASS, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
 				}
 				LiPerformerPOM.EntityLocation().click();
-				Thread.sleep(500);
-				LiPerformerPOM.EntityLocationExpand().click();
-				Thread.sleep(500);
-				//LiPerformerPOM.EntityLocationExpand().click();
-				//Thread.sleep(500);
-			   Thread.sleep(500);
-			   LiPerformerPOM.Entitysubexpand().click();
-			   Thread.sleep(500);
+      			Thread.sleep(500);
+					LiPerformerPOM.EntityLocationExpand().click();
+					Thread.sleep(500);
+				//   LiPerformerPOM.aa1().click();
+					Thread.sleep(500);
+					LiPerformerPOM.demolocation().click();;
+				   Thread.sleep(500);
 			   String locationtext1 =LiPerformerPOM.locget().getText();
 			   LiPerformerPOM.locget().click();
 			   Thread.sleep(3000);
 			   LiPerformerPOM.clicklictypet().click();
 			   Thread.sleep(500);
-			   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+			   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
 			   Thread.sleep(5000);
-			   LiPerformerPOM.Licensetype().click();
-			   Thread.sleep(5000);
-			  // LiPerformerPOM.Statustext().click();
-			  // Thread.sleep(5000);
-			  
+			    LiPerformerPOM.Licensetypeinternal().click();
 			    List<String> li=new ArrayList<String>();
 			    
 			    li.add(locationtext1);
@@ -3288,9 +3266,9 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				{
 				Thread.sleep(5000);
 
-				List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+				List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
 				
-				List<WebElement> liccol=driver.findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+				List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
 				//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
 				Thread.sleep(2000);
 

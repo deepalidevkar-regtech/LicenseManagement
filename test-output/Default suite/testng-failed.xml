@@ -3,20 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licenseDepartmentHead.DeptHeadInternalTC$licmgmtInternalTC">
+      <class name="licenseAuditor.AuditorInternalTC">
         <methods>
-          <include name="driverclose"/>
-          <include name="setBrowser"/>
-          <include name="BylicnesetypeActiveInternal"/>
+          <include name="TerminateInternalLicense"/>
           <include name="Login"/>
-          <include name="ByLicensetypeExpiredInternal"/>
-          <include name="LicenseExpiringOnInternal"/>
-          <include name="ActiveInternalLicense"/>
-          <include name="LicenseExpiredOnInternal"/>
-          <include name="MyDocumentsInternal"/>
-          <include name="BylicnesetypeRejectedInternal"/>
+          <include name="ByLicensetypeExpiringInternal"/>
+          <include name="LicenseExpiringInInternal"/>
+          <include name="LicenseExpiredInInternal"/>
+          <include name="setBrowser"/>
+          <include name="driverclose"/>
         </methods>
-      </class> <!-- licenseDepartmentHead.DeptHeadInternalTC$licmgmtInternalTC -->
+      </class> <!-- licenseAuditor.AuditorInternalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

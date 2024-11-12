@@ -772,7 +772,7 @@ public class OverduePOM extends webpage
 	public static WebElement clickPeopleCheckBox()		//Clicking on Checkbox in front of name
 	{
 		//performer = getDriver().findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[143]/a/label/input"));
-		performer = getDriver().findElement(By.xpath("(//*[@class='checkbox'])[33]"));
+		performer = getDriver().findElement(By.xpath("(//*[@class='checkbox'])[54]"));
 		return performer;
 	
 	}

@@ -172,8 +172,42 @@ public class ReviewerStutucriticalTC extends webpage
 			extent.endTest(test);
 			extent.flush();
 		}
-			
 	 @Test(priority = 9)
+		void AssignedButNotActivated() throws InterruptedException, IOException
+		
+		{
+			test = extent.startTest("Assigned But Not Activated License Verification");
+			LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
+
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 10)
+		void LicenseExpiredOnStatutory() throws InterruptedException
+		{
+			test = extent.startTest("License ExpiredOn Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			LiPeMethodsPOM.LicenseExpiredOnStatutory( test, "Statutory");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+@Test(priority = 11)
+			void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+			{
+				test = extent.startTest("License ExpiringOn Working Verification");
+				//test.log(LogStatus.INFO, "Test Initiated");
+				
+				LiReMethodsPOM.LicenseExpiringOnStatutory( test, "Statutory");
+		
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+			
+			
+	 @Test(priority = 12)
 		void MyWorkspace() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Workspace Working Verification");
@@ -183,7 +217,7 @@ public class ReviewerStutucriticalTC extends webpage
 			extent.endTest(test);
 			extent.flush();
 		}
-    @Test(priority = 10)
+    @Test(priority = 13)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -192,7 +226,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.flush();
 	}
 
-  @Test(priority =11)
+  @Test(priority =14)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Download Verification");
@@ -203,16 +237,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-  @Test(priority = 12)
-	void AssignedButNotActivated() throws InterruptedException, IOException
-	
-	{
-		test = extent.startTest("Assigned But Not Activated License Verification");
-		LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
-
-		extent.endTest(test);
-		extent.flush();
-	}
+ 
 
   @AfterMethod
   void driverclose()

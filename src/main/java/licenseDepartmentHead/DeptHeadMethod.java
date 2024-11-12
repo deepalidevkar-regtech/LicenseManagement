@@ -2110,189 +2110,7 @@ public static void DeptMyDocuments( ExtentTest test, String type) throws Interru
 		
 		     }
 	}
-public static void DeptReports( ExtentTest test, String type) throws InterruptedException, IOException
-{
-	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
-	
-	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickExpired()));
-	
-	LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
-	Thread.sleep(5000);
-	progress();
-   
-	if(type.equalsIgnoreCase("Internal"))
-	{
-		LiPerformerPOM.clickType2().click();			//Clicking on 'Type' drop down.
-		Thread.sleep(500);
-		LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
-		Thread.sleep(1000);
-		LiPerformerPOM.Reportapply().click();
-		progress();
-		Thread.sleep(5000);
 
-	}
-
-getDriver().findElement(By.xpath("//*[@id='exportReport']")).click();
-	
-	test.log(LogStatus.PASS," License Report  Downloaded Successfully.");
-	
-	Thread.sleep(7000);
-	 getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
-
-	test.log(LogStatus.PASS," License Overview  Button Working Successfully");
-      Thread.sleep(3000);
-getDriver().findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button")).click();
-	
-	CheckReports( test, 1 , "Active");
-	 Thread.sleep(1000);
-	CheckReports(test, 2, "Expired");
-	 Thread.sleep(1000);
-	CheckReports( test, 3, "Expiring");
-	 Thread.sleep(1000);
-	CheckReports( test, 4, "Applied");
-	 Thread.sleep(1000);
-	CheckReports( test, 5, "Applied but Pending for Renewal");
-	 Thread.sleep(1000);
-	CheckReports( test, 6, "Renewed");
-	 Thread.sleep(1000);
-	CheckReports( test, 7, "Rejected");
-	 Thread.sleep(1000);
-	CheckReports( test, 8, "Registered");
-	 Thread.sleep(1000);
-	CheckReports( test, 9, "Registered & Renewal Filed");
-	 Thread.sleep(1000);
-	CheckReports(test, 10, "Validity Expired");
-	 Thread.sleep(1000);
-	CheckReports( test, 11, "Terminate");
-	
-	Thread.sleep(500);
-
-
-}
-public static void CheckReports( ExtentTest test, int status, String type) throws InterruptedException, IOException
-{		
-	
-	
-	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
-	JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	js.executeScript("window.scrollBy(0,-1000)");
-	
-	LiPerformerPOM.clickStatus1().click();			//Clicking on 'Status' drop down.
-	Thread.sleep(5000);
-	//elementsList = LiPerformerPOM.selectStatus1();	//Selecting Status.
-	//Thread.sleep(3000);
-	//elementsList.get(status).click();
-	List<WebElement>roc = getDriver().findElements(By.xpath("(//*[@class='k-item'])"));
-	selectOptionFromDropDown_bs(roc, type);
-	
-	LiPerformerPOM.reportapplybtn().click();
-	
-	Thread.sleep(3000);
-	
-	Thread.sleep(1000);
-	progress();
-	
-	int flag = 0;
-	try
-	{
-		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Waiting until records table gets visible.
-		flag = 1;
-	}
-	catch(Exception e)
-	{
-		
-	}
-	
-	if(flag == 1)
-	{
-		js.executeScript("window.scrollBy(0,2000)");				//Scrolling down window by 2000 px.
-		
-		  Thread.sleep(10000);
-			CFOcountPOM.readTotalItems1().click();
-			
-			String item1 = CFOcountPOM.readTotalItems1().getText();
-			//String NoRecord = LiReviewerPOM.reNorecord.getText();
-			 if(!item1.equalsIgnoreCase("No items to display")) 
-			 {
-			String[] bits1 = item1.split(" ");								//Splitting the String
-			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
-			int count2 = Integer.parseInt(compliancesCount1);
-			String NoRecord = LiReviewerPOM.reNorecord().getText();
-			   if(!NoRecord.equalsIgnoreCase("No items to display")) 
-			 {
-				   try
-					{
-						performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
-					}
-					catch(Exception e)
-					{
-						
-					}
-					js.executeScript("window.scrollBy(0,1000)");
-					
-				
-					Thread.sleep(100);
-					File dir = new File("C://Users//deepalid//Downloads");
-					File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
-					
-					Thread.sleep(500);
-					CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
-					Thread.sleep(250);
-					performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
-					
-					
-					Thread.sleep(500);
-					File dir1 = new File("C://Users//deepalid//Downloads");
-					File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
-					
-					if(dirContents.length < allFilesNew.length)
-					{
-						test.log(LogStatus.PASS, "File downloaded successfully.");
-						
-						File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
-					    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-					    {
-					       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-					       {
-					           lastModifiedFile = allFilesNew[i];
-					       }
-					    }
-						
-						Thread.sleep(100);
-						fis = new FileInputStream(lastModifiedFile);
-						workbook = new XSSFWorkbook(fis);
-						sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
-						
-						int no = sheet.getLastRowNum();
-						Row row = sheet.getRow(no);
-						Cell c1 = row.getCell(0);
-						int records =(int) c1.getNumericCellValue();
-						fis.close();
-						
-						if(count2 == records)
-						{
-							//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
-							test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+records);
-						}
-						else
-						{
-							//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
-							test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+records);
-						}
-					}
-					else
-					{
-						test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
-					}
-			 }
-					else
-					{
-						  test.log(LogStatus.PASS, "Expired On Popup No Record Found ");
-					}
-			 }
-	}
-	
-	}
 public static void DeptActiveInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 {	
 	Thread.sleep(3000);
@@ -3748,149 +3566,512 @@ Boolean  btnclear =LiPerformerPOM.clearbtn().isEnabled();
 	
 }
 
-		/*else
-		{			Thread.sleep(500);
 		
-		
-			 LiPerformerPOM.EntityLocation().click();
-				Thread.sleep(500);
-				LiPerformerPOM.aa().click();
-				Thread.sleep(500);
-		   Thread.sleep(500);
-		   String locationtext1 =LiPerformerPOM.checkloc().getText();
-		   LiPerformerPOM.checkloc().click();
-		   Thread.sleep(3000);
-		   LiPerformerPOM.ClickLictype().click();
-		   Thread.sleep(5000);
-		   String LicenseType1 =LiPerformerPOM.notactivatefilter().getText();
-		   Thread.sleep(5000);
-		   LiPerformerPOM.notactivatefilter().click();
-		   Thread.sleep(5000);
-		 
-		    List<String> li=new ArrayList<String>();
-		    
-		    li.add(locationtext1);
-		    li.add(LicenseType1);
-		 
-		    Thread.sleep(3000);
-		    
-			List<String> filter=new ArrayList<String>();	
-			filter.add("Location");
-			filter.add("LicenseType");	
-			
-			JavascriptExecutor js = (JavascriptExecutor) getDriver();
-			js.executeScript("window.scrollBy(0,150)");	
-			Thread.sleep(3000);
-
-			CFOcountPOM.readTotalItems1().click();					//Clicking on Text of total items just to scroll down.
-			String s = CFOcountPOM.readTotalItems1().getText();
-			Thread.sleep(2000);
-
-			if(!s.equalsIgnoreCase("No items to display")) 
-			{
-			Thread.sleep(5000);
-
-			List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
-			
-			List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[6]"));
-			//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
-			Thread.sleep(2000);
-
-			for(int i=0; i<li.size(); i++){
-				
-				List<String> text= new ArrayList<String>();
-				HashSet<String> pass=new LinkedHashSet<>();
-				HashSet<String> fail=new LinkedHashSet<>();
-				List<WebElement> raw=new ArrayList<WebElement>();
-
-					if(i==0)
-					{
-						raw.addAll(entitycol);
-					}
-				else if(i==1)
-					{
-						raw.addAll(liccol);
-					}
-				
-					
-				for(int k=0;k<raw.size();k++)
-					{
-						text.add(raw.get(k).getText());
-					}
-
-					for(int l=0;l<text.size();l++)
-						{
-					if(text.get(l).equals(li.get(i)))
-						{
-							pass.add(text.get(l));	
-							System.out.println("pass : "+text.get(l)+" : "+li.get(i));
-
-						}
-					else
-					{
-						fail.add(text.get(l));		
-						System.out.println("fail : "+text.get(l)+" : "+li.get(i));
-						System.out.println(i);
-
-					}
-					 }
-			 
-		for(String Fal : fail)
-			 {
-					test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
-			 }	
-			 for(String Pas : pass)
-			 {
-				 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
-				//	test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
-					System.out.println(filter.get(i)+" : "+Pas);
-		 }
-			 text.clear();
-			pass.clear();
-			fail.clear();
-			raw.clear();
-			
-			
-			}
-			
-
-				   }
-				   else
-				   {
-						test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
-				   }
-			
-			Boolean  btnclear =LiPerformerPOM.clearbtn().isEnabled();
-		     if(btnclear) 
-		     {
-		    	 LiPerformerPOM.clearbtn().click();
-		    	 test.log(LogStatus.PASS,"Clear Button Working Successfully");
-		     }
-		     else
-		     {
-		    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
-		     }
-			
-			
-			  wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard()));
-				
-			}
-			*/
-			
-		
-
-
 
 
 private static void progress() {
 	// TODO Auto-generated method stub
 	
 }
-private static void selectOptionFromDropDown_bs(List<WebElement> roc, String type) {
-	// TODO Auto-generated method stub
-	
-}
 
 		
-}
+
+public static void Reports( ExtentTest test, String type) throws InterruptedException, IOException
+{
+	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+	
+	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickExpired()));
+	
+	LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
+	Thread.sleep(5000);
+	progress();
+ 	
+	  
+	// String Noitemdisplay = LiPerformerPOM.Noitemdisplay.getText();
+	 //  if(!Noitemdisplay.equalsIgnoreCase("No items to display")) 
+	{
+		   
+if(type.equalsIgnoreCase("Internal"))
+	{
+		LiPerformerPOM.clickType2().click();			//Clicking on 'Type' drop down.
+		Thread.sleep(500);
+		LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
+		Thread.sleep(1000);
+		LiPerformerPOM.Reportapply().click();
+		progress();
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
+		//Thread.sleep(5000);
+		//test.log(LogStatus.PASS," License Overview  Button Working Successfully");
+
+	}
+	 
+
+
+
+getDriver().findElement(By.xpath("//*[@id='exportReport']")).click();
+	
+	test.log(LogStatus.PASS," License Report  Downloaded Successfully.");
+	
+	Thread.sleep(7000);
+	 getDriver().findElement(By.xpath("(//*[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]")).click();
+
+	test.log(LogStatus.PASS," License Overview  Button Working Successfully");
+      Thread.sleep(3000);
+getDriver().findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1]/button")).click();
+	
+	CheckReports( test, 1 , "Active");
+	 Thread.sleep(1000);
+	CheckReports(test, 2, "Expired");
+	 Thread.sleep(1000);
+	CheckReports( test, 3, "Expiring");
+	 Thread.sleep(1000);
+	CheckReports( test, 4, "Applied");
+	 Thread.sleep(1000);
+	CheckReports( test, 5, "Applied but Pending for Renewal");
+	 Thread.sleep(1000);
+	CheckReports( test, 6, "Renewed");
+	 Thread.sleep(1000);
+	CheckReports( test, 7, "Rejected");
+	 Thread.sleep(1000);
+	CheckReports( test, 8, "Registered");
+	 Thread.sleep(1000);
+	CheckReports( test, 9, "Registered & Renewal Filed");
+	 Thread.sleep(1000);
+	CheckReports(test, 10, "Validity Expired");
+	 Thread.sleep(1000);
+	CheckReports( test, 11, "Terminate");
+	
+//	Thread.sleep(500);
+	/*
+	LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
+Thread.sleep(7000);
+
+		/*LiPerformerPOM.EntityLocation().click();
+		Thread.sleep(500);
+		//LiPerformerPOM.locationsearch().sendKeys("Demo Bharat Gujarat1");
+		//LiPerformerPOM.aa().click();
+		//Thread.sleep(500);
+		LiPerformerPOM.EntityLocationExpanddept();
+		//Thread.sleep(500);
+	  LiPerformerPOM.aa1().click();
+		//LiPerformerPOM.demolocation().click();
 		
+String locationtext1 =LiPerformerPOM.checkloc().getText();
+LiPerformerPOM.checkloc().click();
+Thread.sleep(3000);
+LiPerformerPOM.ClickLictype().click();
+Thread.sleep(500);
+String LicenseType1 =LiPerformerPOM.Licensetype().getText();
+Thread.sleep(5000);
+LiPerformerPOM.Licensetype().click();
+Thread.sleep(5000);
+// LiPerformerPOM.Statustext.click();
+// Thread.sleep(5000);
+LiPerformerPOM.reportapplybtn().click();
+Thread.sleep(5000);
+
+List<String> li=new ArrayList<String>();
+
+li.add(locationtext1);
+li.add(LicenseType1);
+
+Thread.sleep(3000);
+
+List<String> filter=new ArrayList<String>();	
+filter.add("Location");
+filter.add("LicenseType");	
+
+JavascriptExecutor js = (JavascriptExecutor) getDriver();
+js.executeScript("window.scrollBy(0,150)");	
+Thread.sleep(3000);
+
+CFOcountPOM.readTotalItems1().click();					//Clicking on Text of total items just to scroll down.
+String s = CFOcountPOM.readTotalItems1().getText();
+Thread.sleep(2000);
+
+if(!s.equalsIgnoreCase("No items to display")) 
+{
+Thread.sleep(5000);
+
+List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+
+List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[3]"));
+//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
+Thread.sleep(2000);
+
+for(int i=0; i<li.size(); i++){
+	
+	List<String> text= new ArrayList<String>();
+	HashSet<String> pass=new LinkedHashSet<>();
+	HashSet<String> fail=new LinkedHashSet<>();
+	List<WebElement> raw=new ArrayList<WebElement>();
+
+		if(i==0)
+		{
+			raw.addAll(entitycol);
+		}
+	else if(i==1)
+		{
+			raw.addAll(liccol);
+		}
+	
+		
+	for(int k=0;k<raw.size();k++)
+		{
+			text.add(raw.get(k).getText());
+		}
+
+		for(int l=0;l<text.size();l++)
+			{
+		if(text.get(l).equals(li.get(i)))
+			{
+				pass.add(text.get(l));	
+				System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+			}
+		else
+		{
+			fail.add(text.get(l));		
+			System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+			System.out.println(i);
+
+		}
+		 }
+ 
+for(String Fal : fail)
+ {
+		test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+ }	
+ for(String Pas : pass)
+ {
+	 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+		test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+		System.out.println(filter.get(i)+" : "+Pas);
+}
+ text.clear();
+pass.clear();
+fail.clear();
+raw.clear();
+
+
+}
+	   }
+else
+{
+	test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
+}
+
+Boolean  btnclear =LiPerformerPOM.clearbtn().isEnabled();
+if(btnclear) 
+{
+LiPerformerPOM.clearbtn().click();
+test.log(LogStatus.PASS,"Clear Button Working Successfully");
+}
+else
+{
+test.log(LogStatus.FAIL,"Clear Button Not Clickable");
+}
+
+	   }
+
+
+*/
+}
+}
+
+
+public static void CheckReports( ExtentTest test, int status, String type) throws InterruptedException, IOException
+{		
+	
+	
+	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+	JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	js.executeScript("window.scrollBy(0,-1000)");
+	
+	LiPerformerPOM.clickStatus1().click();			//Clicking on 'Status' drop down.
+	Thread.sleep(5000);
+	//elementsList = LiPerformerPOM.selectStatus1();	//Selecting Status.
+	//Thread.sleep(3000);
+	//elementsList.get(status).click();
+	List<WebElement>roc = getDriver().findElements(By.xpath("(//*[@class='k-item'])"));
+	selectOptionFromDropDown_bs(roc, type);
+	
+	LiPerformerPOM.reportapplybtn().click();
+	
+	Thread.sleep(3000);
+	
+	Thread.sleep(1000);
+	progress();
+	
+	int flag = 0;
+	try
+	{
+		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Waiting until records table gets visible.
+		flag = 1;
+	}
+	catch(Exception e)
+	{
+		
+	}
+	
+	if(flag == 1)
+	{
+		js.executeScript("window.scrollBy(0,2000)");				//Scrolling down window by 2000 px.
+		
+		  Thread.sleep(10000);
+			CFOcountPOM.readTotalItems1().click();
+			
+			String item1 = CFOcountPOM.readTotalItems1().getText();
+			//String NoRecord = LiReviewerPOM.reNorecord.getText();
+			 if(!item1.equalsIgnoreCase("No items to display")) 
+			 {
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count2 = Integer.parseInt(compliancesCount1);
+			String NoRecord = LiReviewerPOM.reNorecord().getText();
+			   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+			 {
+				   try
+					{
+						performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+					}
+					catch(Exception e)
+					{
+						
+					}
+					js.executeScript("window.scrollBy(0,1000)");
+					
+				
+					Thread.sleep(100);
+					File dir = new File("C://Users//deepalid//Downloads");
+					File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+					
+					Thread.sleep(500);
+					CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+					Thread.sleep(250);
+					performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+					
+					
+					Thread.sleep(500);
+					File dir1 = new File("C://Users//deepalid//Downloads");
+					File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+					
+					if(dirContents.length < allFilesNew.length)
+					{
+						test.log(LogStatus.PASS, "File downloaded successfully.");
+						
+						File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+					    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+					    {
+					       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+					       {
+					           lastModifiedFile = allFilesNew[i];
+					       }
+					    }
+						
+						Thread.sleep(100);
+						fis = new FileInputStream(lastModifiedFile);
+						workbook = new XSSFWorkbook(fis);
+						sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+						
+						int no = sheet.getLastRowNum();
+						Row row = sheet.getRow(no);
+						Cell c1 = row.getCell(0);
+						int records =(int) c1.getNumericCellValue();
+						fis.close();
+						
+						if(count2 == records)
+						{
+							//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+							test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+records);
+						}
+						else
+						{
+							//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+							test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+records);
+						}
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+					}
+			 }
+					else
+					{
+						  test.log(LogStatus.PASS, "Expired On Popup No Record Found ");
+					}
+			 }
+	
+	
+	
+		/*Thread.sleep(700);
+		String item = LiPerformerPOM.readTotalRecords1.getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count = 0;
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(2500);
+			item = CFOcountPOM.readTotalItems1.getText();
+			bits = item.split(" ");										//Splitting the String
+			compliancesCount = bits[bits.length - 2];					//Getting the second last word (total number of users)
+		}
+		count = Integer.parseInt(compliancesCount);
+		
+		File dir = new File("C://Users//dipali//Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		js.executeScript("window.scrollBy(0,-2000)");				//Scrolling down window by 2000 px.
+		Thread.sleep(500);
+		LiPerformerPOM.clickExcel.click();						//Clicking on Excel Image.
+		
+		Thread.sleep(5000);
+		File dir1 = new File("C://Users//dipali//Downloads");
+		File[] allFilesNew = dir1.listFiles();	
+		if(dirContents.length < allFilesNew.length)
+		{
+			test.log(LogStatus.PASS, "File downloaded successfully.");
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified());	//If allFilesNew[i] file is having large/latest time time of update then latest
+                                                                                         //Counting number of files in directory after download
+		
+		       Thread.sleep(100);
+				fis = new FileInputStream(lastModifiedFile);
+				workbook = new XSSFWorkbook(fis);
+				sheet = workbook.getSheetAt(0);		
+			
+				int no = sheet.getLastRowNum();
+				Row row = sheet.getRow(no);
+				Cell c1 = row.getCell(0);
+				int records =(int) c1.getNumericCellValue();
+				
+				fis.close();
+				
+				if(count == records)
+				{
+					//test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
+					test.log(LogStatus.PASS, "Total records from grid = "+count+" | Total records in Excel Sheet = "+records);
+				}
+				else
+				{
+					//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+					test.log(LogStatus.FAIL, "Total records from grid = "+count+" | Total records in Excel Sheet = "+records);
+				}
+		    }
+		}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+			}
+		}
+		
+/*		File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	    {
+	       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	       {
+	           lastModifiedFile = allFilesNew[i];
+	       }
+	    }
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			test.log(LogStatus.PASS, type+" :- File Downloaded Successfully.");
+			
+		fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			int no = sheet.getLastRowNum();
+			int SheetRecords = no - 0;						//Sheet have extra 5 lines of information at top (But row count started from 0, so -4)
+			fis.close();
+			
+			if(count == SheetRecords)
+			{
+				test.log(LogStatus.PASS, "Count of records displayed from grid matches to number records in Excel Sheet.");
+				test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
+				test.log(LogStatus.INFO, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, type+" :- File doesn't Downloaded Successfully.");
+		}
+	}
+	else
+	{
+		test.log(LogStatus.SKIP, type+" :- Records not displayed (available). Excel sheet didn't downloaded");
+	}
+	*/
+	}}
+public  static void MyworkspaceaddLicense(ExtentTest test, String type) throws InterruptedException, IOException
+{
+
+	 
+	licmgmtPOM.ClickMyWorkspace().click();
+
+WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+	 Thread.sleep(3000);
+	
+	 
+	 if(type.equalsIgnoreCase("Internal"))
+	 {
+
+           WebDriverWait wait1 = new WebDriverWait( getDriver(), (30));
+			wait1.until(ExpectedConditions.visibilityOf(licmgmtPOM.Type2()));
+			licmgmtPOM.Type2().click();				//Clicking on 'Type' drop down.
+			
+			licmgmtPOM.internalType2().click();
+			// Select drp = new Select(licmgmtPOM.Type2);
+		   //	drp.selectByIndex(1);
+	
+	 licmgmtPOM.WorkspaceExport().click();
+	 test.log(LogStatus.PASS,"License Details Export" );
+	 Thread.sleep(3000);	
+	 
+
+		        Thread.sleep(7000);
+	         test.log(LogStatus.PASS,"License Overview Details Button Working Successfully " );
+	     //    Thread.sleep(7000);
+	        
+	     //    licmgmtPOM.ClickMyWorkspace().click();
+	         //Thread.sleep(5000);
+	       
+	
+	 }
+
+	 else
+	 {
+		
+		 licmgmtPOM.WorkspaceExport().click();
+		 test.log(LogStatus.PASS,"License Details Export" );
+		 Thread.sleep(3000);	
+		
+		         licmgmtPOM.ClickMyWorkspace().click();
+		         Thread.sleep(5000);
+		         licmgmtPOM.Overviewworkspace().click();
+		         Thread.sleep(3000);
+		         test.log(LogStatus.PASS,"License Overview Details Button Working Successfully " );
+		         Thread.sleep(7000);
+		     
+		 
+	 }
+}
+	public static void selectOptionFromDropDown_bs(List<WebElement> options, String value) 
+	{
+		
+		for(WebElement option:options) {
+			if(option.getText().equals(value)) {
+				option.click();
+				break;
+			}
+		}
+	}}
