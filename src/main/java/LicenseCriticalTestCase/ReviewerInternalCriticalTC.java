@@ -64,7 +64,10 @@ public class ReviewerInternalCriticalTC extends webpage
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
 		//test = extent.startTest("Logging In - Reviewer (Internal)");
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "UserID-reviewerregtrack56@gmail.com");
+		test.log(LogStatus.PASS, "Password-admin@123");
+		test.log(LogStatus.PASS, "Reviewer Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 	}

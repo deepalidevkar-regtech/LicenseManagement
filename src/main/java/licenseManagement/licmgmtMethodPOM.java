@@ -1432,7 +1432,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		/* WebElement select_dropdownlist = driver.findElement(By.xpath("//*[@id='MainContentCW']/div[2]/span/span/span[1]"));
 		   licmgmtPOM.drplocationclick().click();
 			Thread.sleep(500);
-			*/
+			
 			//licmgmtPOM.Customerexpand().click();
 			//Thread.sleep(6000);
 		// LiPerformerPOM.EntityLocation().click();
@@ -1474,7 +1474,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   Thread.sleep(3000);
 			   String selectlictype=LiPerformerPOM.selectworkdroplic.getText();
 			   LiPerformerPOM.selectworkdroplic().click();
-			   */
+			   
 			    List<String> li=new ArrayList<String>();
 			    
 			    li.add(locationtext1);
@@ -1581,7 +1581,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 	}
 
-
+*/
 		 WebElement Documentstatus = getDriver().findElement(By.xpath("//*[@id='MainContentCW']/div[2]/span/span/span[1]"));
 		  boolean Documentststusdrp = Documentstatus.isDisplayed();
 		   
@@ -1623,7 +1623,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		 test.log(LogStatus.PASS,"License Details Export" );
 		 Thread.sleep(3000);	
 		 
-		licmgmtPOM.ClickAddLicense().click();
+	/*	licmgmtPOM.ClickAddLicense().click();
 		 
 		Thread.sleep(3000);	
 		 licmgmtPOM.ClickLicenseTypeDropdown().click();
@@ -1788,7 +1788,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			 licmgmtPOM.WorkspaceExport().click();
 			 test.log(LogStatus.PASS,"License Details Export" );
 			 Thread.sleep(3000);	
-			 licmgmtPOM.ClickAddLicense().click();
+			/* licmgmtPOM.ClickAddLicense().click();
 			 
 			Thread.sleep(5000);	
 			 licmgmtPOM.ClickLicenseTypeDropdown().click();

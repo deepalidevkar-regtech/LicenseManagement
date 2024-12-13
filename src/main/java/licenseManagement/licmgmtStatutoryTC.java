@@ -168,10 +168,20 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-  @Test(priority = 9)
-	void LicenseExpiredOnStatutory() throws InterruptedException
+   @Test(priority = 9)
+	void AssignedButNotActivated() throws InterruptedException, IOException
+	
 	{
-		test = extent.startTest("License Expired On Working Verification");
+		test = extent.startTest("Assigned But Not Activated License Verification");
+		LiPeMethodsPOM.AssignedButNotActivated(test,"");
+
+		extent.endTest(test);
+		extent.flush();
+	}
+  @Test(priority = 10)
+	void LicenseExpiredInStatutory() throws InterruptedException
+	{
+		test = extent.startTest("License Expired In Working Verification");
 	
 		//licmgmtMethodPOM.LicenseExpiredOnStatutory( test, "Statutory");
 		StatutoryMethod.LicenseExpiredOnStatutory( test, "Statutory");
@@ -179,11 +189,11 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 10)
+@Test(priority = 11)
 
-	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+	void LicenseExpiringInStatutory() throws InterruptedException, IOException
 	{
-		test = extent.startTest("License Expiring On Working Verification");
+		test = extent.startTest("License Expiring In Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LicenseCompanyadmin.StatutoryMethod.LicenseExpiringOnStatutory( test, "Statutory");
@@ -191,7 +201,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 13)
+	 @Test(priority = 12)
 		void BystausActivelicense() throws InterruptedException
 		{
 			test = extent.startTest("By Status- Active License Graph Working Verification");
@@ -202,7 +212,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 11)
+@Test(priority = 13)
 		void BystausExpiringlicense() throws InterruptedException
 		{
 			test = extent.startTest("By Status- Application Overdue (Expiring but not applied) License Graph Working Verification");
@@ -213,7 +223,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 15)
+		@Test(priority = 14)
 		void BystausExpiredlicense() throws InterruptedException
 		{
 			test = extent.startTest("By Status-License Expired  On Working Verification");
@@ -225,7 +235,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 		
-	@Test(priority = 12)
+	@Test(priority = 15)
 		void BystausTerminatelicense() throws InterruptedException
 		{
 			test = extent.startTest("By Status Terminate License Graph Working Verification");
@@ -237,7 +247,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 	
- @Test(priority = 14)
+ @Test(priority = 16)
 		void BystausAppliedButnotRenewedlicense() throws InterruptedException
 		{
 			test = extent.startTest("By Status  Expired Applied But not Renewed  License Graph Working Verification");
@@ -260,10 +270,10 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 
-	@Test(priority = 16)
+	@Test(priority = 18)
 		void BylicnesetypeExpired() throws InterruptedException
 		{
-			test = extent.startTest("By License type-Shops & Establishment Expired License Graph Working Verification");
+			test = extent.startTest("By License type-Shops & Commercial Establishment Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licmgmtMethodPOM.ByLicensetypeExpired( test, "Statutory");
@@ -271,10 +281,10 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 17)
+	@Test(priority = 19)
 		void BylicnesetypeExpiring() throws InterruptedException
 		{
-			test = extent.startTest("By License type -Shops & Establishment  Application Overdue (Expiring but not applied) License Graph Working Verification");
+			test = extent.startTest("By License type -Shops & Commercial Establishment  Application Overdue (Expiring but not applied) License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiring( test, "Statutory");
@@ -282,10 +292,10 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 18)
+	 @Test(priority = 20)
 		void BylicnesetypeApplied() throws InterruptedException
 		{
-			test = extent.startTest("By License type- Shops & Establishment  Expired applied But not renewed License Graph Working Verification");
+			test = extent.startTest("By License type- Shops & Commercial Establishment Expired applied But not renewed License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 		    licmgmtMethodPOM.ByLicensetypeApplied( test, "Statutory");
@@ -293,30 +303,30 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
- @Test(priority = 19)
+ @Test(priority = 21)
 		void BylicnesetypeActive() throws InterruptedException
 		{
-			test = extent.startTest("By License type -Shops & Establishment  Active License Graph Working Verification");
+			test = extent.startTest("By License type -Shops & Commercial Establishment  Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
             licmgmtMethodPOM.ByLicensetypeActive( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 20)
+	@Test(priority = 22)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
-			test = extent.startTest("By License type -Shops & Establishment Terminate  License Graph Working Verification");
+			test = extent.startTest("By License type -Shops & Commercial Establishment Terminate  License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
              licmgmtMethodPOM.ByLicensetypeTerminate( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 22)
+	 @Test(priority = 23)
 		void BylicnesetypeRejected() throws InterruptedException
 		{
-			test = extent.startTest("By License Type -Shops & Establishment Rejected  Graph Count Working Verification");
+			test = extent.startTest("By License Type -Shops & Commercial Establishment Rejected  Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeRejected( test, "Statutory");
@@ -326,7 +336,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		}
 	
 	
-    @Test(priority = 21)
+    @Test(priority = 24)
 			void MyWorkspace() throws InterruptedException, IOException
 			{
 				test = extent.startTest("My Workspace  Working Verification");
@@ -337,7 +347,7 @@ public class licmgmtStatutoryTC  extends webpage{
 				extent.flush();
 			}
        
- @Test(priority = 22)
+ @Test(priority = 25)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -351,7 +361,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 23)
+@Test(priority = 26)
 	void CriticalDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Critical Document Verification");
@@ -362,7 +372,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 24)
+	@Test(priority = 27)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Verification");
@@ -373,7 +383,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 25)
+@Test(priority = 28)
 	void LicenseNewAssignment() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License New Assignment");
@@ -382,7 +392,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-  @Test(priority = 26)
+  @Test(priority = 29)
 	void LicenseCreation() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License Creation Verification");
@@ -391,7 +401,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 27)
+ @Test(priority = 30)
 	void Masters() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Masters - User Creation verification");
@@ -401,7 +411,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 28)
+@Test(priority = 31)
 	void RenewStautoryLicense() throws InterruptedException, IOException
 	
 	{
@@ -412,7 +422,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 28)
+ @Test(priority = 32)
 	void NomineeDetails() throws InterruptedException, IOException
 	
 	{
@@ -423,17 +433,8 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 29)
-	void AssignedButNotActivated() throws InterruptedException, IOException
 	
-	{
-		test = extent.startTest("Assigned But Not Activated License Verification");
-		LiPeMethodsPOM.AssignedButNotActivated(test,"");
-
-		extent.endTest(test);
-		extent.flush();
-	}
-	@Test(priority =34)
+	@Test(priority =33)
 	void  ActiveDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -442,7 +443,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =35)
+	@Test(priority =34)
 	void  ExpiringDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Expiring License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -451,7 +452,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =36)
+	@Test(priority =35)
 	void  ExpiredDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Expired License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -460,7 +461,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =37)
+	@Test(priority =36)
 	void  AppliedDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -469,7 +470,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-		@Test(priority = 38)
+		@Test(priority = 37)
 		void PendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Pending For review  License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -480,7 +481,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 39)
+		@Test(priority = 38)
 		void RejeectedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -491,7 +492,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 40)
+		@Test(priority = 39)
 		void TerminateDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
@@ -502,7 +503,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 41)
+		@Test(priority = 40)
 		void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");

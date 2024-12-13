@@ -107,7 +107,7 @@ public class InternalTC  extends webpage{
 			extent.flush();
 		}
  @Test(priority = 3)
-	void ActiveInternalLicense() throws InterruptedException
+	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -118,7 +118,7 @@ public class InternalTC  extends webpage{
 		extent.flush();
 	}
  @Test(priority = 4)
-		void ExpiringInternalLicense() throws InterruptedException
+		void ExpiringInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Expiring License Count Verification");
 			//test.log(LogStatus.PASS, "Expiring License Count Verification");
@@ -128,8 +128,8 @@ public class InternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
- @Test(priority = 5)
-	void ExpiredInternalLicense() throws InterruptedException
+@Test(priority = 5)
+	void ExpiredInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
 		//test.log(LogStatus.PASS, "Expired License Count Verification");
@@ -140,7 +140,7 @@ public class InternalTC  extends webpage{
 		extent.flush();
 	}
  @Test(priority = 6)
-	void AppliedInternalLicense() throws InterruptedException
+	void AppliedInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied License Count  Verification");
 		//test.log(LogStatus.PASS, "Applied Internal License Verification");
@@ -151,7 +151,7 @@ public class InternalTC  extends webpage{
 		extent.flush();
 	}
 @Test(priority = 7)
-		void PendingForReviewInternalLicense() throws InterruptedException
+		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pending For Review License Count Verification");
 			//test.log(LogStatus.PASS, "Pending For Review Count Verification");
@@ -162,7 +162,7 @@ public class InternalTC  extends webpage{
 			extent.flush();
 		}
 @Test(priority = 8)
-	void RejectedInternalLicense() throws InterruptedException
+	void RejectedInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Rejected License Count  Verification");
 		//test.log(LogStatus.PASS, "Rejected License Count  Verification");
@@ -173,7 +173,7 @@ public class InternalTC  extends webpage{
 		extent.flush();
 	}
 @Test(priority = 9)
-	void TerminateInternalLicense() throws InterruptedException
+	void TerminateInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Terminate License Count Verification");
 		//test.log(LogStatus.PASS, "Terminate License Count Verification");
@@ -183,7 +183,7 @@ public class InternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =10)
+@Test(priority =10)
 		void LicenseExpiredInInternal() throws InterruptedException
 		{
 			test = extent.startTest("License ExpiredIn Working Verification");

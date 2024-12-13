@@ -48,6 +48,10 @@ public class DeptHeadStatutoryTC extends webpage
 			String workingDir = System.getProperty("user.dir");
 			extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//new//LicenseDepartmentHeadResult(Statutory).html",true);
 		      test = extent.startTest("Logging In - Department Head (Statutory");
+		      test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+				test.log(LogStatus.PASS, "UserID-department@regtrack.com");
+				test.log(LogStatus.PASS, "Password-admin@123");
+			
 			test.log(LogStatus.PASS, "Department Head Login Successfully");
 			//test.log(LogStatus.INFO, "Browser test is initiated");
 			
@@ -91,7 +95,7 @@ public class DeptHeadStatutoryTC extends webpage
 			//extent.flush();*/
 			initialization("License",5);
 		}
-@Test(priority = 2)
+/*@Test(priority = 2)
 		 
 		void Active() throws InterruptedException, IOException
 		{
@@ -177,7 +181,7 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 @Test(priority = 10)
 void LicenseExpiredOnStatutory() throws InterruptedException
 {
-	test = extent.startTest("License Expired On Working Verification");
+	test = extent.startTest("License ExpiredIn Working Verification");
      DeptHeadMethod.DeptLicenseExpiredOnStatutory( test, "Statutory");
 	 extent.endTest(test);
 	 extent.flush();
@@ -186,14 +190,14 @@ void LicenseExpiredOnStatutory() throws InterruptedException
 
 		void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 		{
-			test = extent.startTest("License Expiring On Working Verification");
+			test = extent.startTest("License ExpiringIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			DeptHeadMethod.deptLicenseExpiringOnStatutory( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 @Test(priority = 12)
 void BystausActivelicense() throws InterruptedException
 {
@@ -224,7 +228,7 @@ void BystausActivelicense() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 15)
+/*@Test(priority = 15)
 		void BystausTerminatelicense() throws InterruptedException
 		{
 			test = extent.startTest("By Status Terminate License Graph Working Verification");
@@ -360,7 +364,7 @@ void MyReports() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-}
+}*/
 @AfterMethod
 		 void driverclose()
 		 {

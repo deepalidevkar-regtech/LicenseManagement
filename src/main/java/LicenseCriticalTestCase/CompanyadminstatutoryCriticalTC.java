@@ -57,7 +57,10 @@ public class CompanyadminstatutoryCriticalTC extends webpage
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "UserID-companyadmin@regtrack.com");
+		test.log(LogStatus.PASS, "Password-admin@123");
+		test.log(LogStatus.PASS, "Company admin Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -183,7 +186,7 @@ public class CompanyadminstatutoryCriticalTC extends webpage
    @Test(priority = 10)
 	void LicenseExpiredOnStatutory() throws InterruptedException
 	{
-		test = extent.startTest("License ExpiredOn Working Verification");
+		test = extent.startTest("License ExpiredIn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.LicenseExpiredOnStatutory( test, "Statutory");
@@ -194,7 +197,7 @@ public class CompanyadminstatutoryCriticalTC extends webpage
 @Test(priority = 11)
 void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 {
-	test = extent.startTest("License ExpiringOn Working Verification");
+	test = extent.startTest("License ExpiringIn Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	StatutoryMethod.LicenseExpiringOnStatutory( test, "Statutory");
@@ -260,7 +263,18 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 17)
+      @Test(priority = 17)
+		void BystausRejectedLicense() throws InterruptedException
+		{
+			test = extent.startTest("By status- Rejected Graph Count Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.BystatusRejectedgraph( test, "Statutory");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	 @Test(priority = 18)
 		void BylicnesetypeExpired() throws InterruptedException
 		{
 		     test = extent.startTest("By License Type- Shops & Commercial Establishment Expired Graph Count Working Verification");
@@ -271,7 +285,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 18)
+	@Test(priority = 19)
 			void BylicnesetypeExpiring() throws InterruptedException
 			{
 	        	test = extent.startTest("By License Type- Shops & Commercial Establishment Application Overdue(Expiring but not applied) Graph Working Verification");
@@ -282,7 +296,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 				extent.endTest(test);
 				extent.flush();
 			}
-	@Test(priority = 19)
+	@Test(priority = 20)
 		void BylicnesetypeApplied() throws InterruptedException
 		{
 		     test = extent.startTest("By License Type -Shops & Commercial Establishment Expired applied but not renewed Graph count Working Verification");
@@ -293,7 +307,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 20)
+	 @Test(priority = 21)
 			void BylicnesetypeActive() throws InterruptedException
 			{
 	        	 test = extent.startTest("By License Type- Shops & Commercial Establishment Active Graph count vWorking Verification");
@@ -304,7 +318,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 				extent.endTest(test);
 			extent.flush();
 			}
-	 @Test(priority = 21)
+	 @Test(priority = 22)
 		void BylicnesetypeTerminate() throws InterruptedException
 		{
 		    test = extent.startTest("By License Type -Shops & Commercial Establishment Terminate Graph Count Working Verification");
@@ -316,7 +330,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			extent.flush();
 		}
 	
-	@Test(priority =22)
+	@Test(priority =23)
 	
 			void MyWorkspace() throws InterruptedException, IOException
 			{
@@ -328,7 +342,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 				extent.flush();
 			}
 	 
-@Test(priority = 23)
+@Test(priority = 24)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Download Verification");
@@ -344,7 +358,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 		extent.flush();
 	
 	}
-	@Test(priority = 24)
+	@Test(priority = 25)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Working Verification");
@@ -356,7 +370,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			extent.flush();
 		}
 	
-	 @Test(priority = 25)
+	 @Test(priority = 26)
 		void Masters() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Masters - User Master Working  verification");	
@@ -365,7 +379,7 @@ void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			extent.flush();
 		}
 		
-	@Test(priority =26)
+	@Test(priority =27)
 		void LicenseCreation() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License Creation Verification");

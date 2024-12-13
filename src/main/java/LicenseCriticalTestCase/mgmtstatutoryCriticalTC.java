@@ -59,7 +59,10 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "UserID-snehal10.patil@tlregtech.in");
+		test.log(LogStatus.PASS, "Password-admin@123");
+		test.log(LogStatus.PASS, "Management Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 		

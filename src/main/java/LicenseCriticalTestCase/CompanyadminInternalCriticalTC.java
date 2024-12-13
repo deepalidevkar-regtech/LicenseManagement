@@ -63,7 +63,10 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Login Successfully.");
+		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "UserID-companyadmin@regtrack.com");
+		test.log(LogStatus.PASS, "Password-admin@123");
+		test.log(LogStatus.PASS, "Company admin Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -108,7 +111,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 			extent.flush();
 		}
  @Test(priority = 3)
-	void ActiveInternalLicense() throws InterruptedException
+	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -119,7 +122,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		extent.flush();
 	}
 @Test(priority = 4)
-		void ExpiringInternalLicense() throws InterruptedException
+		void ExpiringInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Expiring License Count Verification");
 			//test.log(LogStatus.PASS, "Expiring License Count Verification");
@@ -130,7 +133,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 			extent.flush();
 		}
  @Test(priority = 5)
-	void ExpiredInternalLicense() throws InterruptedException
+	void ExpiredInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
 		//test.log(LogStatus.PASS, "Expired License Count Verification");
@@ -141,7 +144,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		extent.flush();
 	}
  @Test(priority = 6)
-	void AppliedInternalLicense() throws InterruptedException
+	void AppliedInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied License Count  Verification");
 		//test.log(LogStatus.PASS, "Applied Internal License Verification");
@@ -153,7 +156,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 	}
 
  @Test(priority = 7)
-		void PendingForReviewInternalLicense() throws InterruptedException
+		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pending For Review License Count Verification");
 			//test.log(LogStatus.PASS, "Pending For Review Count Verification");
@@ -164,7 +167,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 			extent.flush();
 		}
 @Test(priority = 8)
-	void RejectedInternalLicense() throws InterruptedException
+	void RejectedInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Rejected License Count  Verification");
 		//test.log(LogStatus.PASS, "Rejected License Count  Verification");
@@ -175,7 +178,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		extent.flush();
 	}
 @Test(priority = 9)
-	void TerminateInternalLicense() throws InterruptedException
+	void TerminateInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Terminate License Count Verification");
 		//test.log(LogStatus.PASS, "Terminate License Count Verification");
@@ -218,9 +221,9 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 }
 
 @Test(priority =11)
-void LicenseExpiredOnInternal() throws InterruptedException
+void LicenseExpiredInInternal() throws InterruptedException
 {
-	test = extent.startTest("License ExpiredOn Working Verification");
+	test = extent.startTest("License ExpiredIn Working Verification");
     //  test.log(LogStatus.PASS, "License ExpiredOn Working Verification");
 	
 	StatutoryMethod.LicenseExpiredOnInternal( test, "Internal");
@@ -239,7 +242,7 @@ Select drp = new Select(LiPerformerPOM.clickType());
 drp.selectByIndex(1);
 CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 
-test = extent.startTest("License ExpiringOn Working Verification");
+test = extent.startTest("License ExpiringIn Working Verification");
 //test.log(LogStatus.INFO, "Test Initiated");
 
 licmgmtMethodPOM.LicenseExpiringInStatutory( test, "Internal");

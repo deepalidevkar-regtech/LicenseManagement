@@ -139,7 +139,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.flush();
 		}
 	  @Test(priority = 6)
-			void AppliedInternalLicense() throws InterruptedException
+			void AppliedInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Applied Internal License Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -150,7 +150,7 @@ public class licmgmtInternalTC  extends webpage{
 				extent.flush();
 			}
 	  @Test(priority = 7)
-		void PendingForReviewInternalLicense() throws InterruptedException
+		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pending For Review Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -161,7 +161,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.flush();
 		}
 	  @Test(priority = 8)
-			void RejectedInternalLicense() throws InterruptedException
+			void RejectedInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Rejected License Count  Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -172,7 +172,7 @@ public class licmgmtInternalTC  extends webpage{
 				extent.flush();
 			}
 	  @Test(priority = 9)
-			void TerminateInternalLicense() throws InterruptedException
+			void TerminateInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Terminate License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");

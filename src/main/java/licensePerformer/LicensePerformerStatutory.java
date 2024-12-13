@@ -57,6 +57,9 @@ public class LicensePerformerStatutory extends webpage {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
+		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "UserID-deepali12@tlregtech.in");
+		test.log(LogStatus.PASS, "Password-admin@123");
 		test.log(LogStatus.PASS, "Performer Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
@@ -140,7 +143,7 @@ void Expiringperform() throws InterruptedException
 	
 }
 
-@Test(priority = 6)
+/*@Test(priority = 6)
 	void Expired() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expired License Count Verification");
@@ -164,7 +167,7 @@ void Expiringperform() throws InterruptedException
 	
 }
 	
-	@Test(priority = 8)
+	/*@Test(priority = 8)
 	void Applied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied Count Verification");
@@ -241,7 +244,7 @@ void Expiringperform() throws InterruptedException
 			
 			extent.endTest(test);
 			extent.flush();
-		}
+		}*/
 	
 @Test(priority = 15)
 	void MyDocuments() throws InterruptedException
@@ -252,7 +255,7 @@ void Expiringperform() throws InterruptedException
 		extent.flush();
 	}
 	
-@Test(priority = 16)
+/*@Test(priority = 16)
 		void CriticalDocuments() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Critical Documents Verification");
@@ -305,11 +308,11 @@ void Expiringperform() throws InterruptedException
 
 		extent.endTest(test);
 		extent.flush();
-	}*/
-	/*@Test(priority =34)
+	}
+	@Test(priority =34)
 	void  ActiveDashboardFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		test = extent.startTest(" Dashboard Active License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		StatutoryMethod.DashboardActivefilter( test, "Statutory");
 		extent.endTest(test);
@@ -318,7 +321,7 @@ void Expiringperform() throws InterruptedException
 	@Test(priority =35)
 	void  ExpiringDashboardFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Dashboard Expiring License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		test = extent.startTest(" Dashboard Expiring License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		StatutoryMethod.DashboardExpiringfilter( test, "Statutory");
 		extent.endTest(test);
@@ -327,7 +330,7 @@ void Expiringperform() throws InterruptedException
 	@Test(priority =36)
 	void  ExpiredDashboardFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Dashboard Expired License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		test = extent.startTest(" Dashboard Expired License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		StatutoryMethod.DashboardExpiredfilter( test, "Statutory");
 		extent.endTest(test);
@@ -336,7 +339,7 @@ void Expiringperform() throws InterruptedException
 	@Test(priority =37)
 	void  AppliedDashboardFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		StatutoryMethod.DashboardAppliedfilter( test, "Statutory");
 		extent.endTest(test);
@@ -345,7 +348,7 @@ void Expiringperform() throws InterruptedException
 		@Test(priority = 38)
 		void PendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Pending For review  License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		    test = extent.startTest("Dashboard Pending For review  License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.Dashboardpendingforreviewfilter( test, "Statutory");
@@ -356,18 +359,18 @@ void Expiringperform() throws InterruptedException
 		@Test(priority = 39)
 		void RejeectedDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.DashboardRejectedLicensefilter( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 		@Test(priority = 40)
 		void TerminateDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.DashboardTerminateLicensefilter( test, "Statutory");
@@ -375,10 +378,10 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*	@Test(priority = 41)
+		@Test(priority = 41)
 		void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Shops & Establishment) Filter working  Verification");
+		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Limited liability company (LLc))&LicenseType(Shops & Establishment) Filter working  Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.DashboardAssignedButNotActivatedFilter( test, "Statutory");

@@ -185,7 +185,7 @@ public class ReviewerStutucriticalTC extends webpage
 	 @Test(priority = 10)
 		void LicenseExpiredOnStatutory() throws InterruptedException
 		{
-			test = extent.startTest("License ExpiredOn Working Verification");
+			test = extent.startTest("License ExpiredIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LiPeMethodsPOM.LicenseExpiredOnStatutory( test, "Statutory");
@@ -196,7 +196,7 @@ public class ReviewerStutucriticalTC extends webpage
 @Test(priority = 11)
 			void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 			{
-				test = extent.startTest("License ExpiringOn Working Verification");
+				test = extent.startTest("License ExpiringIn Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				LiReMethodsPOM.LicenseExpiringOnStatutory( test, "Statutory");

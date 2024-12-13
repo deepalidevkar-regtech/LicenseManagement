@@ -317,7 +317,7 @@ public class InternalCriticalTC {
 		extent.flush();
 	}
 @Test(priority =9)
-	void PendingForReviewInternalLicense() throws InterruptedException
+	void PendingForReviewInternalLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.PASS, "Pending For Review Count Verification");
@@ -328,7 +328,7 @@ public class InternalCriticalTC {
 		extent.flush();
 	}
 @Test(priority = 10)
-void RejectedInternalLicense() throws InterruptedException
+void RejectedInternalLicense() throws InterruptedException, IOException
 {
 	test = extent.startTest("Rejected License Count  Verification");
 	//test.log(LogStatus.PASS, "Rejected License Count  Verification");
@@ -339,7 +339,7 @@ void RejectedInternalLicense() throws InterruptedException
 	extent.flush();
 }
    	@Test(priority = 11)
-    void TerminateInternalInternalLicense() throws InterruptedException
+    void TerminateInternalInternalLicense() throws InterruptedException, IOException
  				{
    		WebDriverWait wait = new WebDriverWait (driver, 20);
  			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));

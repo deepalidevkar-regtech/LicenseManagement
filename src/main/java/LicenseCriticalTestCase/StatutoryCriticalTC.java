@@ -217,9 +217,9 @@ void Expiringperform() throws InterruptedException
 			extent.flush();
 		}
 		@Test(priority = 13)
-		void LicenseExpiredOnStatutory() throws InterruptedException
+		void LicenseExpiredInStatutory() throws InterruptedException
 		{
-			test = extent.startTest("License ExpiredOn Working Verification");
+			test = extent.startTest("License ExpiredIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LiPeMethodsPOM.LicenseExpiredOnStatutory( test, "Statutory");
@@ -228,9 +228,9 @@ void Expiringperform() throws InterruptedException
 			extent.flush();
 		}
 @Test(priority = 14)
-	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+	void LicenseExpiringInStatutory() throws InterruptedException, IOException
 	{
-		test = extent.startTest("License ExpiringOn Working Verification");
+		test = extent.startTest("License ExpiringIn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LiPeMethodsPOM.LicenseExpiringOnStatutoryper( test, "Statutory");

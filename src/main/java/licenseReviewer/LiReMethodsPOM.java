@@ -1381,6 +1381,14 @@ public class LiReMethodsPOM extends webpage
 				}
 				 js.executeScript("window.scrollBy(0,2000)");				//Scrolling down window by 2000 px.
 					
+					Thread.sleep(500);
+					getDriver().switchTo().parentFrame();
+					
+					Thread.sleep(500);
+					LiPerformerPOM.clickClose().click();	
+					
+					getDriver().navigate().refresh();
+
 				  Thread.sleep(10000);
 					CFOcountPOM.readTotalItems1().click();
 					
@@ -1462,34 +1470,41 @@ public class LiReMethodsPOM extends webpage
 					 }
 					 }
 		
-		  }
-		/*Thread.sleep(3000);
+		 
+		Thread.sleep(3000);
 		
-		perform(, test);
-		
-		Thread.sleep(500);
-		ReviewerPOM.clickApprove().click();					//Clicking on Approve
-		
+	//	perform(test);
+	//	
+		//Thread.sleep(500);
+	//	ReviewerPOM.clickApprove().click();					//Clicking on Approve
+		/*MethodPOM.clickMyDashboard().click();
+
 		Thread.sleep(1000);
 		js.executeScript("window.scrollBy(0,700)");
 	
-/*	Thread.sleep(500);
-		int total1 = Integer.parseInt(OverduePOM.readReminder().getText());	//Reading total records count
-		if(total1 < applied)
+     Thread.sleep(5000);
+ 	wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickApplied()));
+ 	String Applied1=MethodPOM.clickApplied().getText();
+ 	 int Appliedlicense = Integer.parseInt(Applied1);	//Reading Active count.
+
+ 	
+		//int total1 = Integer.parseInt(OverduePOM.readReminder().getText());	//Reading total records count
+		if(applied < Appliedlicense)
 		{
 			//test.log(LogStatus.PASS, "Total records count from grid decreased.");
-			test.log(LogStatus.PASS, "Old Count = "+applied+" | New Count = "+total1);
+			test.log(LogStatus.PASS, "Old Count = "+applied+" | New Count = "+Appliedlicense);
 		}
 		else
 		{
 			//test.log(LogStatus.FAIL, "Total records count from grid doesn't decreased.");
-			test.log(LogStatus.FAIL, "Old Count = "+applied+" | New Count = "+total1);
+			test.log(LogStatus.FAIL, "Old Count = "+applied+" | New Count = "+Appliedlicense);
 		}
-		
-		Thread.sleep(100);
-		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
-		OverduePOM.clickDashboard().click();							//CLicking on Dashboard.
-		
+		*/
+		Thread.sleep(5000);
+		//wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
+		//OverduePOM.clickDashboard().click();							//CLicking on Dashboard.
+		MethodPOM.clickMyDashboard().click();
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
@@ -1524,7 +1539,8 @@ public class LiReMethodsPOM extends webpage
 		{
 			test.log(LogStatus.FAIL, "'Applied' license count doesn't increased.");
 			test.log(LogStatus.INFO, "Old count = "+applied+" | New Count = "+applied1);
-		}*/
+		}
+}
 	
 	public static void ReviewerExpiredCount(ExtentTest test, String type) throws InterruptedException, IOException 
 	{

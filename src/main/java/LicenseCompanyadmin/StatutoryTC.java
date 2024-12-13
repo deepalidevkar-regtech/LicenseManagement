@@ -196,9 +196,9 @@ public class StatutoryTC extends webpage{
 			extent.flush();
 		}
 	@Test(priority = 11)
-	void LicenseExpiringOnStatutory() throws InterruptedException, IOException
+	void LicenseExpiringInStatutory() throws InterruptedException, IOException
 	{
-		test = extent.startTest("License ExpiringOn Working Verification");
+		test = extent.startTest("License ExpiringIn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.LicenseExpiringOnStatutory( test, "Statutory");

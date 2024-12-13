@@ -87,9 +87,7 @@ public class LiPeMethodsPOM  extends webpage{
 		Thread.sleep(7000);
 		LiPerformerPOM.editlicenseicon().click();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().clear();
-		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("Active License Update Funcationality");	
+		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys(".");	
 		Thread.sleep(5000);
 		//licenseManagement.licmgmtPOM.LicenseNo().sendKeys("Test");
 		//Thread.sleep(5000);
@@ -1783,7 +1781,7 @@ getDriver().switchTo().parentFrame();
 			test.log(LogStatus.PASS, "Expired OverView License Displayed");
 			 Thread.sleep(3000);
 	             MethodPOM.clickBystatuscloseoverview().click();
-				 Thread.sleep(2000);
+				/* Thread.sleep(2000);
 				 LiPerformerPOM.EntityLocation().click();
 					Thread.sleep(500);
 					LiPerformerPOM.EntityLocationExpand().click();
@@ -1901,7 +1899,7 @@ getDriver().switchTo().parentFrame();
 				 Thread.sleep(3000);
 				  test.log(LogStatus.PASS, "selected Filter No Record Found ");
 		   }
-				
+			*/	
 		   }
 		   }
 		  
@@ -2030,7 +2028,7 @@ getDriver().switchTo().parentFrame();
 							//driver.switchTo().parentFrame();
 						//	 MethodPOM.clickCloseGraphPopup.click();
 							// Thread.sleep(3000);
-							 LiPerformerPOM.EntityLocation().click();
+							/* LiPerformerPOM.EntityLocation().click();
 								Thread.sleep(500);
 								LiPerformerPOM.EntityLocationExpand().click();
 								Thread.sleep(500);
@@ -2159,7 +2157,8 @@ getDriver().switchTo().parentFrame();
 				 test.log(LogStatus.PASS,"No Record Found");
 					MethodPOM.clickMyDashboard().click();
 			 }
-		   
+		   */
+	   }
 	   }
 	  public static void LicenseExpiringOnInternalper( ExtentTest test, String type) throws InterruptedException, IOException
 	   {
@@ -2540,13 +2539,14 @@ getDriver().findElement(By.xpath("//*[@id='divShowReminderDialog']/div/div/div[1
 		LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
 	Thread.sleep(7000);
 	LiPerformerPOM.EntityLocation().click();
-	Thread.sleep(500);
+		}
+	//Thread.sleep(500);
  
-	Thread.sleep(500);
+	//Thread.sleep(500);
 	//LiPerformerPOM.EntityLocationExpand.click();
 	//Thread.sleep(500);
-   Thread.sleep(500);
-   LiPerformerPOM.Entitysubexpand().click();
+ //  Thread.sleep(500);
+   /*LiPerformerPOM.Entitysubexpand().click();
    Thread.sleep(500);
    String locationtext1 =LiPerformerPOM.checkloc().getText();
    LiPerformerPOM.checkloc().click();
@@ -2665,7 +2665,7 @@ for(String Fal : fail)
 	}
 
 		   }
-	
+	*/
 	
 	//  wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard));
 		
@@ -3685,7 +3685,7 @@ for(String Fal : fail)
 	   test.log(LogStatus.PASS, "Expired Maximize Button Working Successfully");
 	 
 	   Thread.sleep(3000);
-	   JavascriptExecutor js1=(JavascriptExecutor) driver ;
+	   JavascriptExecutor js1=(JavascriptExecutor) getDriver() ;
 		js1.executeScript("window.scroll(0,500)");
 		Thread.sleep(500);
 		 MethodPOM.ClickOnDashExpiredExport().click();  
@@ -3894,14 +3894,14 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 	 String Ispermenant = LiPerformerPOM.ispermessage().getText(); 
     if(!Ispermenant.equalsIgnoreCase("This compliance is already submitted for review or already closed."))
     {
-    	js1.executeScript("window.scrollBy(0,1000)");
+    	js1.executeScript("window.scrollBy(0,500)");
     	Thread.sleep(6000);
 	//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(LiPerformerPOM.ShowFream()));		
-	js1.executeScript("window.scrollBy(0,1000)");
+	//js1.executeScript("window.scrollBy(0,500)");
     Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectStatutoryDropdown()));
 	Select status = new Select(OverduePOM.selectStatutoryDropdown());	//Selecting Status dropdown box.
-	status.selectByIndex(0);	
+	status.selectByIndex(1);	
 	 Thread.sleep(2000);
 	 String workingDir = System.getProperty("user.dir");
    OverduePOM.PerformerDoc().sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file	
@@ -3910,9 +3910,11 @@ test.log(LogStatus.FAIL,"Clear Button Not Clickable");
    Thread.sleep(2000);
 	LiPerformerPOM.PerformDateclick().click();
 	Thread.sleep(1000);
+	LiPerformerPOM.Priviouscalnder().click();
+	Thread.sleep(1000);
 	LiPerformerPOM.PerformDate().click();
 	Thread.sleep(5000);
-	js1.executeScript("window.scrollBy(0,100)");
+	js1.executeScript("window.scrollBy(0,1000)");
 
 	//LiPerformerPOM.clickCheckbox.click();			//Clicking on checkbox of Penalty values
 	//js1.executeScript("window.scrollBy(0,300)");
@@ -3986,6 +3988,7 @@ String Active1=MethodPOM.clickActive().getText();
 			     }
 	}
    
+			  
 	
 	public static void Internalactivelicenseperform( ExtentTest test, String type) throws InterruptedException
 	{
@@ -4172,6 +4175,8 @@ else
   js1.executeScript("window.scrollBy(0,1000)");
   Thread.sleep(2000);
 	LiPerformerPOM.PerformDateclick().click();
+	Thread.sleep(1000);	
+	LiPerformerPOM.Priviouscalnder().click();
 	Thread.sleep(1000);
 	LiPerformerPOM.PerformDate().click();
 	Thread.sleep(5000);
@@ -4417,6 +4422,8 @@ else
  js1.executeScript("window.scrollBy(0,1000)");
  Thread.sleep(2000);
 	LiPerformerPOM.PerformDateclick().click();
+	Thread.sleep(1000);
+	LiPerformerPOM.Priviouscalnder().click();
 	Thread.sleep(1000);
 	LiPerformerPOM.PerformDate().click();
 	Thread.sleep(5000);

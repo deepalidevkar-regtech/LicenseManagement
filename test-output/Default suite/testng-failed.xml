@@ -5,13 +5,17 @@
     <classes>
       <class name="licenseAuditor.AuditorInternalTC">
         <methods>
-          <include name="TerminateInternalLicense"/>
+          <include name="BystatusExpiredappliedbutnotrenewedInternalgraph"/>
           <include name="Login"/>
           <include name="ByLicensetypeExpiringInternal"/>
           <include name="LicenseExpiringInInternal"/>
+          <include name="BylicnesetypeRejectedInternal"/>
           <include name="LicenseExpiredInInternal"/>
+          <include name="ActiveInternalLicense"/>
+          <include name="BylicnesetypeActiveInternal"/>
           <include name="setBrowser"/>
           <include name="driverclose"/>
+          <include name="ByLicensetypeAppliedInternal"/>
         </methods>
       </class> <!-- licenseAuditor.AuditorInternalTC -->
     </classes>

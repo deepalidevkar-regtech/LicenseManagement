@@ -408,7 +408,7 @@ public static WebElement ClickShowMoreExpiredOnStatutory()
 }
 public static WebElement ClickShowMoreExpiringOnStatutory()	
 {
-	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton2']"));
+	license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton5']"));
 	return license;
 }
 public static WebElement ClickExportExpiredOn()	
@@ -587,7 +587,7 @@ public static WebElement clickByLicnesetypeAppliedInternal()
 }
 public static WebElement clickByLicnesetypeActive()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[14]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeActiveInternal()	
@@ -1190,7 +1190,7 @@ public static WebElement Documentstatusclick()
 }
 public static WebElement Documentselectstatus() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[20]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[34]"));	
 	return license;
 }
 public static WebElement Documentlictypeclick() 
@@ -1200,12 +1200,12 @@ public static WebElement Documentlictypeclick()
 }
 public static WebElement Documentlictypeselect() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[56]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[45]"));	
 	return license;
 }
 public static WebElement Documentlictypeselectin() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[590]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[599]"));	
 	return license;
 }
 public static WebElement lll() 
@@ -1237,7 +1237,7 @@ public static WebElement Entitypluseclick()
 }
 public static WebElement Dashselectloc() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='ContentPlaceHolder1_tvFilterLocation_0 ContentPlaceHolder1_tvFilterLocation_1'])[5]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='ContentPlaceHolder1_tvFilterLocation_0 ContentPlaceHolder1_tvFilterLocation_1'])[6]"));	
 	return license;
 }
 }

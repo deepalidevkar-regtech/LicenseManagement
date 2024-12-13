@@ -13,6 +13,7 @@ import login.webpage;
 public class LiPerformerPOM extends webpage{
 	private static WebElement license = null;		
 	private static List<WebElement> elementsList = null;	//WebElement list created for selecting Status-Asc/Desc (Status shows multiple elements back side)
+	public static Object worklicedrop;
 	
 	public static WebElement clickActive()			//Searching 'My Admins' link
 	{
@@ -455,6 +456,11 @@ public class LiPerformerPOM extends webpage{
 		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton1']"));
 		return license;
 	}
+	public static WebElement Showmorecmd() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_LinkButton3']"));
+		return license;
+	}
 	public static WebElement lictype() 
 	{
 		license = getDriver().findElement(By.xpath("//*[@id='Details']/div[1]/span[2]/span/span[1]"));
@@ -760,6 +766,12 @@ public class LiPerformerPOM extends webpage{
 		license = getDriver().findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[2]/td[4]/a"));
 		return license;
 	}
+	public static WebElement Priviouscalnder() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@class='ui-icon ui-icon-circle-triangle-w']"));
+		return license;
+	}
+	//*[@class="ui-icon ui-icon-circle-triangle-w"]
 	public static WebElement Entitysubexpand() 
 	{
 		license = getDriver().findElement(By.xpath("//*[@class='k-icon k-i-expand']"));

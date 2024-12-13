@@ -63,7 +63,11 @@ public class DeptHeadInternalTC extends webpage
 			
 			login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 			*/
-			test.log(LogStatus.PASS, "Test Passed.");
+			      test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+					test.log(LogStatus.PASS, "UserID-department@regtrack.com");
+					test.log(LogStatus.PASS, "Password-admin@123");
+					
+					test.log(LogStatus.PASS, "Department Head Login Successfully");
 			extent.endTest(test);
 			extent.flush();
 		}
@@ -344,7 +348,7 @@ void PendingForReviewInternalLicense() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 22)
+	@Test(priority = 22)
 			void BylicnesetypeTerminateInternal() throws InterruptedException
 			{
 				test = extent.startTest("By License Type -Annual maintenance Graph Terminate License On Working Verification");
@@ -366,7 +370,23 @@ void PendingForReviewInternalLicense() throws InterruptedException, IOException
 				extent.endTest(test);
 				extent.flush();
 			}
-	@Test(priority = 24)
+			@Test(priority = 22)
+	void MyWorkspace() throws InterruptedException, IOException
+	{
+			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+		//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+		
+		// Select drp = new Select(LiPerformerPOM.clickType(driver));
+	   //	drp.selectByIndex(1);
+		test = extent.startTest("My Workspace  Working Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+      DeptHeadMethod.MyworkspaceaddLicense( test, "Internal");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+@Test(priority = 24)
 		void MyDocumentsInternal() throws InterruptedException
 			{
 				test = extent.startTest("My Documents Download Verification");
@@ -377,7 +397,7 @@ void PendingForReviewInternalLicense() throws InterruptedException, IOException
 				extent.endTest(test);
 				extent.flush();
 			}
-		@Test(priority = 25)
+	@Test(priority = 25)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Verification");

@@ -62,7 +62,10 @@ public class mgmtinternalCriticalTC extends webpage {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "UserID-snehal10.patil@tlregtech.in");
+		test.log(LogStatus.PASS, "Password-admin@123");
+		test.log(LogStatus.PASS, "Management Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -140,7 +143,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.flush();
 		}
 	  @Test(priority = 6)
-			void AppliedInternalLicense() throws InterruptedException
+			void AppliedInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Applied Internal License Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -151,7 +154,7 @@ public class mgmtinternalCriticalTC extends webpage {
 				extent.flush();
 			}
 	  @Test(priority = 7)
-		void PendingForReviewInternalLicense() throws InterruptedException
+		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pending For Review Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -162,7 +165,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.flush();
 		}
 	  @Test(priority = 8)
-			void RejectedInternalLicense() throws InterruptedException
+			void RejectedInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Rejected License Count  Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -173,7 +176,7 @@ public class mgmtinternalCriticalTC extends webpage {
 				extent.flush();
 			}
 	  @Test(priority = 9)
-			void TerminateInternalLicense() throws InterruptedException
+			void TerminateInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Terminate License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -218,7 +221,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	  @Test(priority = 11)
 		void LicenseExpiredOnInternal() throws InterruptedException
 		{
-			test = extent.startTest("License Expired On Working Verification");
+			test = extent.startTest("License ExpiredIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCompanyadmin.StatutoryMethod.LicenseExpiredOnInternal( test, "Internal");
@@ -237,7 +240,7 @@ public class mgmtinternalCriticalTC extends webpage {
 		drp.selectByIndex(1);
 		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
 		
-		test = extent.startTest("License ExpiringOn Working Verification");
+		test = extent.startTest("License ExpiringIn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		licmgmtMethodPOM.LicenseExpiringInStatutory( test, "Internal");
