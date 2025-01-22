@@ -447,7 +447,7 @@ public static WebElement ClickOverviewExpiringOn()
 }
 public static WebElement clickExpringbutnotApplied()	
 {
-	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 ']"));
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 ']"));
 	return license;
 }
 public static WebElement clickByStatsExpiringReadcount()	
@@ -485,7 +485,7 @@ public static WebElement clickBystatuscloseoverview()
 }
 public static WebElement clickBystatusTerminate()	
 {
-	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-4 ']"));
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-6 ']"));
 	return license;
 }
 public static WebElement clickBystatusTerminateReadCount()	
@@ -500,7 +500,7 @@ public static WebElement clickBystatusTerminateOverview()
 }
 public static WebElement clickBystatusActive()	
 {
-	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-3 ']"));
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 ']"));
 	
 	return license;
 }
@@ -517,7 +517,17 @@ public static WebElement clickBystatusActiveOverview()
 }
 public static WebElement clickBystatusExpiredappliedbutnotrenewed()	
 {
-	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-2 ']"));
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-3 ']"));
+	return license;
+}
+public static WebElement clickBystatusPendingForReviewInternal()	
+{
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-4 ']"));
+	return license;
+}
+public static WebElement clickBylicensetypePendingForReviewInternal()	
+{
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
 	return license;
 }
 public static WebElement clickBystatusRejected()	
@@ -526,6 +536,11 @@ public static WebElement clickBystatusRejected()
 	return license;
 }
 
+public static WebElement clickBystatusPendingForReview()	
+{
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-4 ']"));
+	return license;
+}
 
 
 public static WebElement clickBystatusExpiredappliedbutnotrenewedReadCount()	
@@ -546,7 +561,7 @@ public static WebElement clickBystatusRejectedverview()
 
 public static WebElement clickBystatusExpired()	
 {
-	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 ']"));
+	license = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-2 ']"));
 	return license;
 }
 public static WebElement clickAllReadcount()	
@@ -562,42 +577,52 @@ public static WebElement clickAllOverview()
 }
 public static WebElement clickByLicnesetypeExpired()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeExpiredInternal()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeExpiring()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeApplied()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
+	return license;
+}
+public static WebElement clickByLicnesetypePendingForReview()	
+{
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeAppliedInternal()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
+	return license;
+}
+public static WebElement clickByLicnesetypePendingForReviewInternal()	
+{
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeActive()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeActiveInternal()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeTerminate()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeRejected()	
@@ -608,7 +633,7 @@ public static WebElement clickByLicnesetypeRejected()
 
 public static WebElement clickByLicnesetypeTerminateInternal()	
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"));
 			
 	return license;
 }
@@ -1170,7 +1195,7 @@ public static WebElement clickDashlictype()
 }
 public static WebElement serachlic1() 
 {
-	license = getDriver().findElement(By.xpath("(//input[@type='text'])[2]"));	
+	license = getDriver().findElement(By.xpath("(//input[@type='text'])[4]"));	
 	return license;
 }
 public static WebElement serachlicforgrp() 
@@ -1205,7 +1230,7 @@ public static WebElement Documentlictypeselect()
 }
 public static WebElement Documentlictypeselectin() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[599]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[55]"));	
 	return license;
 }
 public static WebElement lll() 
@@ -1237,7 +1262,28 @@ public static WebElement Entitypluseclick()
 }
 public static WebElement Dashselectloc() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='ContentPlaceHolder1_tvFilterLocation_0 ContentPlaceHolder1_tvFilterLocation_1'])[6]"));	
+	license = getDriver().findElement(By.xpath("(//*[@class='ContentPlaceHolder1_tvFilterLocation_0 ContentPlaceHolder1_tvFilterLocation_1'])[4]"));	
 	return license;
 }
+public static WebElement clicknextpage() 
+{
+	license = getDriver().findElement(By.xpath("//*[@class='ui-icon ui-icon-circle-triangle-e']"));	
+	return license;
+}
+public static WebElement Clicklocationsearch() 
+{
+	license = getDriver().findElement(By.xpath("(//*[@class='k-textbox'])[1]"));	
+	return license;
+}
+public static WebElement Checkedlocation() 
+{
+	license = getDriver().findElement(By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[4]"));	
+	return license;
+}
+public static WebElement licsearch() 
+{
+	license = getDriver().findElement(By.xpath("(//*[@class='k-textbox'])[2]"));	
+	return license;
+}
+
 }

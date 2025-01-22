@@ -189,9 +189,9 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		extent.flush();
 	}
 @Test(priority = 10)
-void AssignedButNotActivated() throws InterruptedException, IOException
+void NotActivated() throws InterruptedException, IOException
 {
-	test = extent.startTest("Assigned But Not Activated  Count Verification");
+	test = extent.startTest("Not Activated  Count Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -251,7 +251,7 @@ extent.endTest(test);
 extent.flush();
 }
 	 @Test(priority = 13)
-	  void BystatusActiveInternalgraph() throws InterruptedException
+	  void BystatusActiveInternalgraph() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Internal By Status-Active Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -261,30 +261,19 @@ extent.flush();
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 14)
-	  void BystatusTerminateInternalgraph() throws InterruptedException
+ @Test(priority = 12)
+	  void BystatusExpringInternalgraph() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Internal By Status -Terminate Graph Count Verification");
-			//test.log(LogStatus.PASS, "License Terminate On Working Verification");
-			
-			StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
- @Test(priority = 15)
-	  void BystatusExpiredappliedbutnotrenewedInternalgraph() throws InterruptedException
-		{
-			test = extent.startTest("Internal By status-Expired applied but not renewed Graph Count Verification");
+			test = extent.startTest(" Internal By Status -Expiring Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusExpiredappliedbutnotrenewedInternalgraph( test, "Internal");
+			StatutoryMethod.BystatusExpringInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
-		}
- @Test(priority = 16)
-	  void BystatusExpiredInternal() throws InterruptedException
+  	}
+	@Test(priority = 13)
+	  void BystatusExpiredInternal() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Internal By Status -Expired Graph Count Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
@@ -294,21 +283,67 @@ extent.flush();
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 17)
-	  void BystatusExpringInternalgraph() throws InterruptedException
+	@Test(priority = 14)
+	  void Bystatusappliedgraph() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Internal By Status -Application Overdue(Expiring but not applied)Graph Count Verification");
+			test = extent.startTest("Internal By status-applied Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.BystatusExpringInternalgraph( test, "Internal");
+			StatutoryMethod.BystatusappliedInternalgraph( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
-   	}
- @Test(priority = 18)
-	void ByLicensetypeExpiringInternal() throws InterruptedException
+		}
+@Test(priority = 15)
+	void BystatusPendingForReviewgraph() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Internal By status-Pending For Review Graph Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.BystatusPendingForReviewInternalgraph( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+@Test(priority = 16)
+	  void BystatusRejectedInternalgraph() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Internal By Status-Rejected Graph Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.BystatusRejectedInternalgraph( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	@Test(priority = 17)
+	  void BystatusTerminateInternalgraph() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Internal By Status -Terminated Graph Count Verification");
+			//test.log(LogStatus.PASS, "License Terminate On Working Verification");
+			
+			StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+ 
+@Test(priority = 18)
+		void BylicnesetypeActiveInternal() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Internal By License type - Annual maintenance Active Graph Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.ByLicensetypeActiveInternal( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+ @Test(priority = 19)
+	void ByLicensetypeExpiringInternal() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Internal By License Type -Annual maintenance Application Overdue(Expiring but not applied)Graph Count Verification");
+		test = extent.startTest("Internal By License Type -Annual maintenance Expiring Graph Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
@@ -316,8 +351,8 @@ extent.flush();
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 19)
-		void  ByLicensetypeExpiredInternal() throws InterruptedException
+	@Test(priority = 20)
+		void  ByLicensetypeExpiredInternal() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Internal By License Type - Annual maintenance Expired Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -328,10 +363,10 @@ extent.flush();
 			extent.flush();
 		}
 
-	 @Test(priority = 20)
-		void ByLicensetypeAppliedInternal() throws InterruptedException
+	 @Test(priority = 21)
+		void ByLicensetypeAppliedInternal() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Internal By License type -Annual maintenance Expired applied but not renewed Graph Count Verification");
+			test = extent.startTest("Internal By License type -Annual maintenance applied Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeAppliedInternal( test, "Internal");
@@ -339,21 +374,34 @@ extent.flush();
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 21)
-		void BylicnesetypeActiveInternal() throws InterruptedException
+		
+	 @Test(priority = 22)
+		void ByLicensetypePendingForReviewInternal() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Internal By License type - Annual maintenance Active Graph Count Verification");
+			test = extent.startTest("Internal By License type -Annual maintenance Pending For Review Graph Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.ByLicensetypeActiveInternal( test, "Internal");
+			StatutoryMethod.ByLicensetypePendingForReviewInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 22)
+		
+	  @Test(priority = 23)
+		void BylicnesetypeRejectedInternal() throws InterruptedException
+		{
+			test = extent.startTest("Internal By License type - Annual maintenance Rejected Graph  Count Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.ByLicensetypeRejectedInternal( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	@Test(priority = 24)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
-			test = extent.startTest("Internal By License type - Annual maintenance Terminate Graph  Count Working Verification");
+			test = extent.startTest("Internal By License type - Annual maintenance Terminated Graph  Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.ByLicensetypeTerminateInternal( test, "Internal");
@@ -362,7 +410,7 @@ extent.flush();
 			extent.flush();
 		}
 	
-	@Test(priority = 23)
+@Test(priority = 23)
 	void MyWorkspace() throws InterruptedException, IOException
 	{
    	 // WebDriverWait wait = new WebDriverWait( 5);

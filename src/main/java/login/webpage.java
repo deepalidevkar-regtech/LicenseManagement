@@ -18,6 +18,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 	import org.openqa.selenium.chrome.ChromeOptions;
@@ -32,6 +34,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import cfo.CFOcountPOM;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import performer.OverduePOM;
 
 	
@@ -41,7 +44,7 @@ import performer.OverduePOM;
 		public Properties prop;
 		protected static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 		String URL;
-		public String browser= "chrome";	
+		public String browser= "Firefox";	
 		public String website;
 		public static ExtentReports extent;			//Instance created for report file
 		public static ExtentTest test;
@@ -53,14 +56,14 @@ import performer.OverduePOM;
 	    protected   String password;
 	    protected String url;
 	    
-	    String filePath ="F:\\Deepali\\LicenseManagement-main\\TestData\\ComplianceSheet.xlsx";
+	    String filePath ="E:\\Deepali\\LicenseManagement-main\\TestData\\ComplianceSheet.xlsx";
 	    
 	
 
 		public static XSSFSheet ReadExcel(int no) throws IOException
 		{
 			//String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
-			fis = new FileInputStream("F:\\Deepali\\LicenseManagement-main\\TestData\\ComplianceSheet.xlsx");
+			fis = new FileInputStream("E:\\Deepali\\LicenseManagement-main\\TestData\\ComplianceSheet.xlsx");
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(no);					//Retrieving third sheet of Workbook
 			return sheet;
@@ -159,20 +162,32 @@ import performer.OverduePOM;
 	}
 	
 	private void openBrower(int no) throws IOException {
+		
 
-		if (browser.contains("chrome")) {
-					System.setProperty("webdriver.chrome.driver", "F:\\Deepali\\chromedriver-win64\\chromedriver.exe");
-					//WebDriverManager.chromedriver().setup();
+		if (browser.contains("Firefox")) {
+			 //create firefox instance
+			
+			//driver = new FirefoxDriver();
+			
+					//System.setProperty("webdriver.chrome.driver", "E:\\Deepali\\chromedriver-win64\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "E:\\Deepali\\chromedriver-win64\\chromedriver.exe");
+		//	System.setProperty("webdriver.gecko.driver", "E:\\Deepali\\geckodriver-v0.35.0-win32\\geckodriver.exe");
+		
+					WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");
 					driver.set(new ChromeDriver(options));		
+				//	driver.set(new FirefoxDriver(options));		
+					
 	}
+		
 				
 				else {
 					System.out.println("please select valid browser");
 				}
 		
 			getDriver().manage().window().maximize();
+			
 			getDriver().manage().deleteAllCookies();
 			getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			//getDriver().get(url);

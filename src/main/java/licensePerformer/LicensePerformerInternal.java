@@ -129,7 +129,7 @@ public class LicensePerformerInternal extends webpage
 @Test(priority = 2)
 void ActivePerform() throws InterruptedException
 {
-	test = extent.startTest("Active License PerformVerification");
+	test = extent.startTest("Active License Perform Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -287,7 +287,7 @@ void ExpiringPerform() throws InterruptedException
 @Test(priority = 7)
 	void Applied() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Applied Count Verification");
+		test = extent.startTest("Applied License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -318,7 +318,7 @@ void ExpiringPerform() throws InterruptedException
 	 @Test(priority = 8)
 		void PendingForReviewInternalInternalLicense() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Pending For Review Count Verification");
+			test = extent.startTest("Pending For Review License  Count Verification");
 			//test.log(LogStatus.PASS, "Pending For Review Count Verification");
 			
 			LicenseCompanyadmin.StatutoryMethod.pendingforreviewInternalLicense( test, "Internal");
@@ -329,7 +329,7 @@ void ExpiringPerform() throws InterruptedException
 	@Test(priority = 9)
 	void RejectedInternalLicense() throws InterruptedException, IOException
 			{
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(getDriver(), 5);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
@@ -346,13 +346,13 @@ void ExpiringPerform() throws InterruptedException
 	 @Test(priority = 10)
    void TerminateInternalInternalLicense() throws InterruptedException, IOException
 				{
-		    WebDriverWait wait = new WebDriverWait(driver, 5);
+		    WebDriverWait wait = new WebDriverWait(getDriver(), 5);
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 			
 			 Select drp = new Select(LiPerformerPOM.clickType());
 		   	drp.selectByIndex(1);
-					test = extent.startTest("Terminate License Count Verification");
+					test = extent.startTest("Terminated License Count Verification");
 					//test.log(LogStatus.PASS, "Terminate License Count Verification");
 					
 					LiPeMethodsPOM.TerminateLicense1( test, "Internal");
@@ -360,8 +360,39 @@ void ExpiringPerform() throws InterruptedException
 					extent.endTest(test);
 					extent.flush();
 				}
-	@Test(priority =11)
-			void LicenseExpiredOnInternal() throws InterruptedException
+	 @Test(priority = 11)
+	 void AssignedButNotActivated() throws InterruptedException, IOException
+	 {
+	 	test = extent.startTest("Not Activated License Count Verification");
+	 	//test.log(LogStatus.INFO, "Test Initiated");
+	 	
+	 	WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+	 	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+	 	LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+	 	
+	 	Select drp = new Select(LiPerformerPOM.clickType());
+	 	drp.selectByIndex(1);
+	 	
+	 	try
+	 	{
+	 		Thread.sleep(400);
+	 		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+	 	}
+	 	catch(Exception e)
+	 	{
+	 		
+	 	}
+	 	
+	 	Thread.sleep(500);
+	 	CFOcountPOM.clickApply1().click();				//Clicking on Apply.
+	 	
+	 	LiPeMethodsPOM.AssignedButNotActivated( test, "Internal");
+	 	
+	 	extent.endTest(test);
+	 	extent.flush();
+	 }
+	@Test(priority =12)
+			void LicenseExpiredInInternal() throws InterruptedException
 			{
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 				wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -369,7 +400,7 @@ void ExpiringPerform() throws InterruptedException
 				
 				 Select drp = new Select(LiPerformerPOM.clickType());
 			   	drp.selectByIndex(1);
-				test = extent.startTest("License ExpiredOn Working Verification");
+				test = extent.startTest(" ExpiredIn License  Working Verification");
 			    // test.log(LogStatus.PASS, "License ExpiredOn Working Verification");
 				
 			  LiPeMethodsPOM.LicenseExpiredOnperInternal( test, "Internal");
@@ -378,10 +409,10 @@ void ExpiringPerform() throws InterruptedException
 				extent.flush();
 			}
 	
-	 @Test(priority = 12)
+	 @Test(priority = 13)
 				void LicenseExpiringOnInternal() throws InterruptedException, IOException
 				{
-					test = extent.startTest("License ExpiringOn Working Verification");
+					test = extent.startTest("ExpiringIn License Working Verification");
 					//test.log(LogStatus.INFO, "Test Initiated");
 					
 					LiPeMethodsPOM.LicenseExpiringOnInternalper( test, "Internal");
@@ -390,11 +421,26 @@ void ExpiringPerform() throws InterruptedException
 					extent.endTest(test);
 					extent.flush();
 				}
-	
-	@Test(priority = 13)
+ @Test(priority = 14)
+		void Myworkspace() throws InterruptedException, IOException
+		{
+	   	 // WebDriverWait wait = new WebDriverWait(driver, 5);
+			//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+			//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+			
+			// Select drp = new Select(LiPerformerPOM.clickType(driver));
+		   //	drp.selectByIndex(1);
+			test = extent.startTest("My Workspace Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+	        licmgmtMethodPOM.MyworkspaceaddLicense( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+@Test(priority = 15)
 	void MyDocuments() throws InterruptedException
 	{
-		test = extent.startTest("My Documents Verification");
+		test = extent.startTest("My Documents working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.MyDocuments( test, "Internal");
@@ -403,11 +449,10 @@ void ExpiringPerform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-@Test(priority = 14)
+@Test(priority = 16)
 	void MyReports() throws InterruptedException, IOException
 	{
-		test = extent.startTest("My Reports verification");
+		test = extent.startTest("My Reports working  verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LiPeMethodsPOM.Reports( test, "Internal");
@@ -415,23 +460,8 @@ void ExpiringPerform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 15)
-	void Myworkspace() throws InterruptedException, IOException
-	{
-   	 // WebDriverWait wait = new WebDriverWait(driver, 5);
-		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
-		
-		// Select drp = new Select(LiPerformerPOM.clickType(driver));
-	   //	drp.selectByIndex(1);
-		test = extent.startTest("My Workspace Working Verification");
-		//test.log(LogStatus.INFO, "Test Initiated");
-        licmgmtMethodPOM.MyworkspaceaddLicense( test, "Internal");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-@Test(priority = 28)
+
+@Test(priority = 17)	
 void NomineeDetails() throws InterruptedException, IOException
 
  {
@@ -443,41 +473,11 @@ void NomineeDetails() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
  }
-@Test(priority = 29)
-void AssignedButNotActivated() throws InterruptedException, IOException
-{
-	test = extent.startTest("Assigned But Not Activated  Count Verification");
-	//test.log(LogStatus.INFO, "Test Initiated");
-	
-	WebDriverWait wait = new WebDriverWait(driver, 5);
-	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
-	LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
-	
-	Select drp = new Select(LiPerformerPOM.clickType());
-	drp.selectByIndex(1);
-	
-	try
-	{
-		Thread.sleep(400);
-		wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
-	}
-	catch(Exception e)
-	{
-		
-	}
-	
-	Thread.sleep(500);
-	CFOcountPOM.clickApply1().click();				//Clicking on Apply.
-	
-	LiPeMethodsPOM.AssignedButNotActivated( test, "Internal");
-	
-	extent.endTest(test);
-	extent.flush();
-}
-	@Test(priority =34)
+
+@Test(priority =18)
 	void  InternalActiveDashboardFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		test = extent.startTest("Dashboard Active License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -499,11 +499,11 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =35)
+	@Test(priority =19)
 	void  InternalExpiringDashboardFilter() throws InterruptedException, IOException
 	{
 	
-		test = extent.startTest("Dashboard Expiring  License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		test = extent.startTest("Dashboard Expiring  License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -525,11 +525,11 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =36)
+	@Test(priority =20)
 	void  InternalExpiredDashboardFilter() throws InterruptedException, IOException
 	{
 		
-		test = extent.startTest("Dashboard Expired License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		test = extent.startTest("Dashboard Expired License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -551,10 +551,10 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =37)
+	@Test(priority =21)
 	void  InternlAppliedDashboardFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		test = extent.startTest("Dashboard Applied License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -576,10 +576,10 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 38)
+	@Test(priority = 22)
 		void InternalPendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Pending For review  Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		    test = extent.startTest("Dashboard Pending For review  Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -602,10 +602,10 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 39)
+		@Test(priority = 23)
 		void InternalRejeectedDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -628,10 +628,10 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 40)
+		@Test(priority = 24)
 		void InternalTerminateDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		    test = extent.startTest("Dashboard Terminated License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -654,10 +654,10 @@ void AssignedButNotActivated() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 41)
+		@Test(priority = 25)
 		void InternalAssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
+		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.

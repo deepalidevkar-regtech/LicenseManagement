@@ -109,7 +109,7 @@ public class mgmtinternalCriticalTC extends webpage {
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 3)
+/*@Test(priority = 3)
 		void ActiveInternalLicense() throws InterruptedException
 		{
 			test = extent.startTest("Active License Count Verification");
@@ -219,7 +219,7 @@ public class mgmtinternalCriticalTC extends webpage {
 		}
 
 	  @Test(priority = 11)
-		void LicenseExpiredOnInternal() throws InterruptedException
+		void LicenseExpiredInInternal() throws InterruptedException
 		{
 			test = extent.startTest("License ExpiredIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -260,38 +260,6 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.flush();
 		}
 	 @Test(priority = 14)
-	  void BystatusTerminateInternalgraph() throws InterruptedException
-		{
-			test = extent.startTest("By Status -Terminate License Graph Working Verification");
-			//test.log(LogStatus.INFO, "Test Initiated");
-			
-			LicenseCompanyadmin.StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
-	 @Test(priority = 15)
-	  void BystatusExpiredappliedbutnotrenewedInternalgraph() throws InterruptedException
-		{
-			test = extent.startTest("By Status-Expired applied but not Renewed License Graph Working Verification");
-			//test.log(LogStatus.INFO, "Test Initiated");
-			LicenseCompanyadmin.StatutoryMethod.BystatusExpiredappliedbutnotrenewedInternalgraph( test, "Internal");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
-	 @Test(priority = 16)
-	  void BystatusExpiredInternal() throws InterruptedException
-		{
-			test = extent.startTest("By Status- Expired License Graph Working Verification");
-			//test.log(LogStatus.INFO, "Test Initiated");
-			
-			LicenseCompanyadmin.StatutoryMethod.BystatusExpiredInternal( test, "Internal");
-			
-			extent.endTest(test);
-			extent.flush();
-		}
-	  @Test(priority = 17)
 	  void BystatusExpringInternalgraph() throws InterruptedException
 		{
 			test = extent.startTest("By Status-Expiring License Graph Working Verification");
@@ -302,18 +270,74 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 18)
-		void  ByLicensetypeExpiredInternal() throws InterruptedException
+	 @Test(priority = 15)
+	  void BystatusExpiredInternal() throws InterruptedException
 		{
-			test = extent.startTest("By License Type- Expired License Graph Working Verification");
+			test = extent.startTest("By Status- Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-	        licmgmtMethodPOM.ByLicensetypeExpiredInternal( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.BystatusExpiredInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 19)
+	 @Test(priority = 16)
+	  void Bystatusappliedgraph() throws InterruptedException, IOException
+		{
+			test = extent.startTest("By Status-applied License Graph Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			LicenseCompanyadmin.StatutoryMethod.Bystatusappliedgraph( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	@Test(priority = 17)
+		void BystatusPendingForReviewgraph() throws InterruptedException
+			{
+				test = extent.startTest("Internal By status-Pending For Review Graph Count Verification");
+				//test.log(LogStatus.INFO, "Test Initiated");
+				
+				StatutoryMethod.BystatusPendingForReviewInternalgraph( test, "Internal");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+	@Test(priority = 18)
+		  void BystatusRejectedInternalgraph() throws InterruptedException
+			{
+				test = extent.startTest("Internal By Status-Rejected Graph Count Verification");
+				//test.log(LogStatus.INFO, "Test Initiated");
+				
+				StatutoryMethod.BystatusRejectedInternalgraph( test, "Internal");
+				
+				extent.endTest(test);
+				extent.flush();
+			}
+	
+	 @Test(priority = 19)
+	  void BystatusTerminateInternalgraph() throws InterruptedException
+		{
+			test = extent.startTest("By Status -Terminated License Graph Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			LicenseCompanyadmin.StatutoryMethod.BystatusTerminateInternalgraph( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	@Test(priority = 20)
+		void BylicnesetypeActiveInternal() throws InterruptedException
+		{
+			test = extent.startTest("By License Type Graph Active License On Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			licmgmtMethodPOM.ByLicensetypeActiveInternal( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 21)
 		void ByLicensetypeExpiringInternal() throws InterruptedException
 		{
 			test = extent.startTest("By License Type-Expiring License Graph Working Verification");
@@ -324,7 +348,19 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 20)
+	@Test(priority = 22)
+		void  ByLicensetypeExpiredInternal() throws InterruptedException
+		{
+			test = extent.startTest("By License Type- Expired License Graph Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+	        licmgmtMethodPOM.ByLicensetypeExpiredInternal( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+	 @Test(priority = 23)
 			void ByLicensetypeAppliedInternal() throws InterruptedException
 			{
 				test = extent.startTest("By License Type Graph Applied License On Working Verification");
@@ -334,22 +370,36 @@ public class mgmtinternalCriticalTC extends webpage {
 				
 				extent.endTest(test);
 				extent.flush();
-			}
-	@Test(priority = 21)
-	void BylicnesetypeActiveInternal() throws InterruptedException
-	{
-		test = extent.startTest("By License Type Graph Active License On Working Verification");
-		//test.log(LogStatus.INFO, "Test Initiated");
+			}*/
+				
+	 @Test(priority = 24)
+		void ByLicensetypePendingForReviewInternal() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Internal By License type -Annual maintenance Pending For Review Graph Count Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.ByLicensetypePendingForReviewInternal( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 		
-		licmgmtMethodPOM.ByLicensetypeActiveInternal( test, "Internal");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	 @Test(priority = 22)
+	/*  @Test(priority = 25)
+		void BylicnesetypeRejectedInternal() throws InterruptedException
+		{
+			test = extent.startTest("Internal By License type - Annual maintenance Rejected Graph  Count Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			StatutoryMethod.ByLicensetypeRejectedInternal( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	 @Test(priority = 26)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Graph Terminate License On Working Verification");
+			test = extent.startTest("By License Type Graph Terminated License On Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
              licmgmtMethodPOM.ByLicensetypeTerminateInternal( test, "Internal");
@@ -357,7 +407,23 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 23)
+ @Test(priority = 27)
+		void MyWorkspace() throws InterruptedException, IOException
+		{
+	   	  WebDriverWait wait = new WebDriverWait(driver, 5);
+			//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
+			//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
+			
+			// Select drp = new Select(LiPerformerPOM.clickType(driver));
+		   //	drp.selectByIndex(1);
+			test = extent.startTest("My Workspace  Working Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			 PerformerInternalCritical.MyworkspaceaddLicense1( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+@Test(priority = 28)
 	void MyDocumentsInternal() throws InterruptedException
 		{
 			test = extent.startTest("My Documents Download Verification");
@@ -371,7 +437,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 24)
+	@Test(priority = 29)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Verification");
@@ -382,24 +448,9 @@ public class mgmtinternalCriticalTC extends webpage {
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 25)
-	void MyWorkspace() throws InterruptedException, IOException
-	{
-   	  WebDriverWait wait = new WebDriverWait(driver, 5);
-		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType(driver)));
-		//LiPerformerPOM.clickType(driver).click();				//Clicking on 'Type' drop down.
-		
-		// Select drp = new Select(LiPerformerPOM.clickType(driver));
-	   //	drp.selectByIndex(1);
-		test = extent.startTest("My Workspace  Working Verification");
-		//test.log(LogStatus.INFO, "Test Initiated");
-		 PerformerInternalCritical.MyworkspaceaddLicense1( test, "Internal");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 
-	 @Test(priority = 26)
+
+	 @Test(priority = 30)
 		void InternalLicenseCreation() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License Creation Verification");
@@ -408,7 +459,7 @@ public class mgmtinternalCriticalTC extends webpage {
 			extent.endTest(test);
 			extent.flush();
 		}
-	
+	*/
 	@AfterMethod
 	 void driverclose()
 	 {

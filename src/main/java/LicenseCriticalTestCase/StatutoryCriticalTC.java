@@ -117,8 +117,8 @@ void ActivePerform() throws InterruptedException
 	
 }
 @Test(priority = 4)
-void Expiring() throws InterruptedException, IOException
-{
+      void Expiring() throws InterruptedException, IOException
+    {
 	test = extent.startTest("Expiring License Count Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
@@ -126,7 +126,7 @@ void Expiring() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-}
+     }
 @Test(priority = 5)
 void Expiringperform() throws InterruptedException
 {
@@ -150,19 +150,19 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-		@Test(priority = 7)
-   void Expiredgperform() throws InterruptedException
-{
-	test = extent.startTest("Expired License Count Verification");
-	//test.log(LogStatus.INFO, "Test Initiated");
+@Test(priority = 7)
+         void Expiredgperform() throws InterruptedException
+     {
+    	test = extent.startTest("Expired License Count Verification");
+	    //test.log(LogStatus.INFO, "Test Initiated");
 	
-	licensePerformer.LiPeMethodsPOM.Expiredlicenseperform( test, "Statutory");
+	   licensePerformer.LiPeMethodsPOM.Expiredlicenseperform( test, "Statutory");
 	
-	extent.endTest(test);
-	extent.flush();
+	    extent.endTest(test);
+	    extent.flush();
 	
 }
-		@Test(priority = 8)
+@Test(priority = 8)
 		void Applied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Applied Count Verification");
@@ -173,7 +173,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 9)
+@Test(priority = 9)
 		void PendingForReview() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pending For Review License Count Verification");
@@ -184,7 +184,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 10)
+@Test(priority = 10)
 		void RejectedCount() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Rejected License Count Verification");
@@ -195,7 +195,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 11) 
+@Test(priority = 11) 
 		void TerminateCount() throws InterruptedException
 		{
 			test = extent.startTest("Terminate License Count Verification");
@@ -206,7 +206,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 12)
+@Test(priority = 12)
 		void AssignedButNotActivated() throws InterruptedException, IOException
 
 		{
@@ -216,7 +216,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 13)
+@Test(priority = 13)
 		void LicenseExpiredInStatutory() throws InterruptedException
 		{
 			test = extent.startTest("License ExpiredIn Working Verification");
@@ -239,7 +239,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 15)
+@Test(priority = 15)
 		void MyWorkspace() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Workspace Working Verification");
@@ -249,7 +249,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 16)
+@Test(priority = 16)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");

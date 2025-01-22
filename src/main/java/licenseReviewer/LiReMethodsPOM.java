@@ -3,6 +3,9 @@ package licenseReviewer;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -84,9 +87,9 @@ public class LiReMethodsPOM extends webpage
 		Thread.sleep(7000);
 		LiPerformerPOM.editlicenseicon().click();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().clear();
+		//licenseManagement.licmgmtPOM.LicenseTitle().clear();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("A licesne update");	
+		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys(".");	
 		Thread.sleep(5000);
 		licenseManagement.licmgmtPOM.LicenseNo().sendKeys(".");
 		Thread.sleep(5000);
@@ -2736,16 +2739,7 @@ public static void LicenseExpiringOnInternalrew( ExtentTest test, String type) t
 		MethodPOM.DashExpiringOnExport().click();
 		  Thread.sleep(3000);
 		test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
-		By locator = By.xpath("//*[@id='ContentPlaceHolder1_lnkShowDetailLicense']");
-
-		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-		Thread.sleep(4000);
-		
-		WebElement ViewButton = getDriver().findElement(locator);	
 		Thread.sleep(3000);
-	JavascriptExecutor jse=(JavascriptExecutor)getDriver();
-	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
 	   LiPerformerPOM.Expiringshowmore().click();
 	   Thread.sleep(7000);
 	   test.log(LogStatus.PASS, "Expiring On show More Link Working Successfully");
@@ -2758,35 +2752,134 @@ public static void LicenseExpiringOnInternalrew( ExtentTest test, String type) t
 	   if(!NoRecord.equalsIgnoreCase("No items to display")) 
 	   {
 	   MethodPOM.ClickExportExpiredOn().click();
-		test.log(LogStatus.PASS, "Expiring On License List Downloaded Successfully");
+		test.log(LogStatus.PASS, "Expiringin License List Downloaded Successfully");
 		  Thread.sleep(3000);
-		  
-		  LiPerformerPOM.lictype().click();
-		  Thread.sleep(500);
-		  LiPerformerPOM.selectlic1().click();
-		Thread.sleep(3000);
-	   LiPerformerPOM.clearbtn().click();
-	   test.log(LogStatus.PASS, "Expiring On License Popup Clear filter Button Working Successfully");
-	   
-	   Thread.sleep(3000);
 		MethodPOM.ClickOverviewExpiredOn().click();
 		test.log(LogStatus.PASS, "Expiring OverView License Displayed");
 		Thread.sleep(3000);
     MethodPOM.clickBystatuscloseoverview().click();
-		 Thread.sleep(2000);
-		  // Js.executeScript("window.scrollBy(500,0)");
-		getDriver().switchTo().parentFrame();
-		 LiPerformerPOM.CloseExpiredOn().click();
-		 Thread.sleep(3000);
+    Thread.sleep(3000);
+		 LiPerformerPOM.EntityLocation().click();
+			Thread.sleep(500);
+				LiPerformerPOM.EntityLocationExpand().click();
+				Thread.sleep(500);
+			//   LiPerformerPOM.aa1().click();
+				Thread.sleep(500);
+				LiPerformerPOM.demolocation().click();;
+			   Thread.sleep(500);
+		   String locationtext1 =LiPerformerPOM.locget().getText();
+		   LiPerformerPOM.locget().click();
+		   Thread.sleep(3000);
+		   LiPerformerPOM.clicklictypet().click();
+		   Thread.sleep(500);
+		   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
+		   Thread.sleep(5000);
+		    LiPerformerPOM.Licensetypeinternal().click();
+		    List<String> li=new ArrayList<String>();
+		    
+		    li.add(locationtext1);
+		    li.add(LicenseType1);
+		 
+		    Thread.sleep(3000);
+		    
+			List<String> filter=new ArrayList<String>();	
+			filter.add("Location");
+			filter.add("LicenseType");	
+			
+			JavascriptExecutor js = (JavascriptExecutor) getDriver();
+			js.executeScript("window.scrollBy(0,150)");	
+			Thread.sleep(3000);
 
-	   }else
-	   {
-		   getDriver().switchTo().parentFrame();
-			 LiPerformerPOM.CloseExpiredOn().click();
-			 Thread.sleep(3000);
-			  test.log(LogStatus.PASS, "Expiring On Popup No Record Found ");
+			CFOcountPOM.readTotalItems1().click();					//Clicking on Text of total items just to scroll down.
+			String s = CFOcountPOM.readTotalItems1().getText();
+			Thread.sleep(2000);
+
+			if(!s.equalsIgnoreCase("No items to display")) 
+			{
+			Thread.sleep(5000);
+
+			List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[1]"));
+			
+			List<WebElement> liccol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr/td[2]"));
+			//List<WebElement> Actcol=driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[2]"));
+			Thread.sleep(2000);
+
+			for(int i=0; i<li.size(); i++){
+				
+				List<String> text= new ArrayList<String>();
+				HashSet<String> pass=new LinkedHashSet<>();
+				HashSet<String> fail=new LinkedHashSet<>();
+				List<WebElement> raw=new ArrayList<WebElement>();
+
+					if(i==0)
+					{
+						raw.addAll(entitycol);
+					}
+				else if(i==1)
+					{
+						raw.addAll(liccol);
+					}
+				
+					
+				for(int k=0;k<raw.size();k++)
+					{
+						text.add(raw.get(k).getText());
+					}
+
+					for(int l=0;l<text.size();l++)
+						{
+					if(text.get(l).equals(li.get(i)))
+						{
+							pass.add(text.get(l));	
+							System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+						}
+					else
+					{
+						fail.add(text.get(l));		
+						System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+						System.out.println(i);
+
+					}
+					 }
+			 
+		for(String Fal : fail)
+			 {
+					test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+			 }	
+			 for(String Pas : pass)
+			 {
+				 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+					test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+					System.out.println(filter.get(i)+" : "+Pas);
+		 }
+			 text.clear();
+			pass.clear();
+			fail.clear();
+			raw.clear();
+
+			}
+			
+
+			   }
+			   else
+			   {
+					test.log(LogStatus.PASS,"Selected Location and License Type No Record Found");
+			   }
+		
+		Boolean  btnclear =LiPerformerPOM.clearbtn().isEnabled();
+	     if(btnclear) 
+	     {
+	    	 LiPerformerPOM.clearbtn().click();
+	    	 test.log(LogStatus.PASS,"Clear Button Working Successfully");
+	     }
+	     else
+	     {
+	    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
+	     }
+		
+
 	   }
-	   
 }
 public static void TerminateLicense1rew( ExtentTest test, String type) throws InterruptedException
 {

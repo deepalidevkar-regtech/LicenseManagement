@@ -70,22 +70,22 @@ public static WebElement DownloadDocument()
 }
 public static WebElement clickByLicnesetypeExpiredInternal	()
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeAppliedInternal1	()
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[6]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
 	return license;
 }
-public static WebElement clickByLicnesetypeActiveInternal1	()
+public static WebElement clickByLicnesetypeActiveInternal1()
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[4]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
 	return license;
 }
 public static WebElement clickByLicnesetypeTerminateInternal1	()
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"));
 	return license;
 }
 public static WebElement ClickMyWorkspace	()
@@ -114,7 +114,7 @@ public static WebElement SelectLicenseType()
 public static WebElement SelectLicenseTypeperin()
 {
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
-	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='k-item'])[100]")));
+	license =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@id='ddlLicenseType_listbox'])/li[1]")));
 	return license;
 }
 public static WebElement SelectLicenseTypeper()
@@ -460,7 +460,7 @@ public static WebElement drplocationclick()
 }
 public static WebElement Customerexpand()
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-icon k-i-expand'])[1]"));
+	license = getDriver().findElement(By.xpath("(//*[@class='k-group k-treeview-lines'])[1]"));
 	return license;
 }
 public static WebElement BranchExpand()

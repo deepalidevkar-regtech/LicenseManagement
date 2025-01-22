@@ -97,7 +97,7 @@ public class LicenseReviewerInternalTC extends webpage
     		extent.flush();*/
   		initialization("License",4);
     	}
-/*@Test(priority = 2)
+@Test(priority = 2)
 	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		//test = extent.startTest("Active License Count Verification");
@@ -227,7 +227,7 @@ public class LicenseReviewerInternalTC extends webpage
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
    @Test(priority = 6)
 		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
@@ -261,7 +261,7 @@ public class LicenseReviewerInternalTC extends webpage
 			extent.flush();
 		}
     
-/*@Test(priority = 7)
+@Test(priority = 7)
 	void RejectedInternalLicense() throws InterruptedException
 	{
 
@@ -346,7 +346,7 @@ public class LicenseReviewerInternalTC extends webpage
 			
 			Thread.sleep(500);
 			CFOcountPOM.clickApply1().click();				//Clicking on Apply.
-			test = extent.startTest("License ExpiringOn Working Verification");
+			test = extent.startTest("License ExpiringIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LiReMethodsPOM.LicenseExpiringOnInternalrew( test, "Internal");
@@ -665,7 +665,7 @@ public class LicenseReviewerInternalTC extends webpage
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
 
 	 @AfterMethod
 	  void driverclose()

@@ -3,6 +3,7 @@ package login;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,8 +21,11 @@ public class Login1 extends webpage {
 			///System.setProperty("webdriver.chrome.driver","C:\\Users\\Mayuri Gaikwad\\Desktop\\PerformerPom\\Chrome\\chromedriver.exe");
 			//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver"); //Set the Chrome driver variable
 		
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();	
+		//	WebDriverManager.chromedriver().setup();
+		//	driver = new ChromeDriver();	
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			
 			
 			//	WebDriverManager.edgedriver().setup();
 		//	driver = new EdgeDriver();					//Created new Chrome driver instance. 
