@@ -185,7 +185,7 @@
 	 extent.endTest(test);
 	 extent.flush();
 	}
-	@Test(priority = 11)
+@Test(priority = 11)
 	
 		void LicenseExpiringInStatutory() throws InterruptedException, IOException
 		{
@@ -266,7 +266,7 @@
 			extent.flush();
 		}
 	@Test(priority = 19)
-	void BylicnesetypeActive() throws InterruptedException
+	void BylicnesetypeActive() throws InterruptedException, IOException
 	{
 	test = extent.startTest("By License type -Shops & Commercial Establishment  Active License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
@@ -299,7 +299,7 @@
 		}
 	
 	@Test(priority = 22)
-	void BylicnesetypeApplied() throws InterruptedException
+	void BylicnesetypeApplied() throws InterruptedException, IOException
 	{
 	test = extent.startTest("By License type- Shops & Commercial Establishment Applied License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
@@ -335,7 +335,7 @@
 	
 	
 	@Test(priority = 25)
-	void BylicnesetypeTerminate() throws InterruptedException
+	void BylicnesetypeTerminate() throws InterruptedException, IOException
 	{
 	test = extent.startTest("By License type -Shops & Commercial Establishment Terminated  License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
@@ -387,6 +387,17 @@
 	extent.endTest(test);
 	extent.flush();
 	}
+		@Test(priority = 30)
+		void DashboardandReportCountMatch() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Dashboard and Report  Count Match  Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			LiPeMethodsPOM.Dashallreportallcount( test, "Statutory");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	@AfterMethod
 		 void driverclose()
 		 {

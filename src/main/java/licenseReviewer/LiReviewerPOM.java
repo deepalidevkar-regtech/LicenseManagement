@@ -200,5 +200,15 @@ public class LiReviewerPOM extends webpage
 		license = getDriver().findElement(By.xpath("(//*[@class='k-link'])[17]"));
 		return license;
 	}
+	public static WebElement RejectRemark() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='tbxRemarks1']"));
+		return license;
+	}
+	public static WebElement clicksorting() 
+	{
+		license = getDriver().findElement(By.xpath("(//a[@class='k-link'])[4]"));
+		return license;
+	}
 	
 }

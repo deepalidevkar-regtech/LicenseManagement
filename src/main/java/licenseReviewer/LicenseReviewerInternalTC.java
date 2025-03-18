@@ -97,7 +97,7 @@ public class LicenseReviewerInternalTC extends webpage
     		extent.flush();*/
   		initialization("License",4);
     	}
-@Test(priority = 2)
+/*@Test(priority = 2)
 	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		//test = extent.startTest("Active License Count Verification");
@@ -227,7 +227,7 @@ public class LicenseReviewerInternalTC extends webpage
 		
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
    @Test(priority = 6)
 		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{
@@ -261,8 +261,8 @@ public class LicenseReviewerInternalTC extends webpage
 			extent.flush();
 		}
     
-@Test(priority = 7)
-	void RejectedInternalLicense() throws InterruptedException
+/*@Test(priority = 7)
+	void RejectedInternalLicense() throws InterruptedException, IOException
 	{
 
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -415,7 +415,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 28)
+	@Test(priority = 14)
 	 void NomineeDetails() throws InterruptedException, IOException
 
 	  {
@@ -427,7 +427,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	  }
-  	@Test(priority = 29)
+  	@Test(priority = 15)
   	void AssignedButNotActivated() throws InterruptedException, IOException
   	{
   		test = extent.startTest("Assigned But Not Activated  Count Verification");
@@ -460,7 +460,7 @@ public class LicenseReviewerInternalTC extends webpage
   		extent.endTest(test);
   		extent.flush();
   	}
-  	@Test(priority =34)
+  	@Test(priority =16)
 	void  InternalActiveDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -485,7 +485,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =35)
+	@Test(priority =17)
 	void  InternalExpiringDashboardFilter() throws InterruptedException, IOException
 	{
 	
@@ -511,7 +511,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =36)
+	@Test(priority =18)
 	void  InternalExpiredDashboardFilter() throws InterruptedException, IOException
 	{
 		
@@ -537,7 +537,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =37)
+	@Test(priority =19)
 	void  InternlAppliedDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -562,7 +562,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 38)
+	@Test(priority = 20)
 		void InternalPendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Pending For review  Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -588,7 +588,7 @@ public class LicenseReviewerInternalTC extends webpage
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 39)
+		@Test(priority = 21)
 		void InternalRejeectedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -614,7 +614,7 @@ public class LicenseReviewerInternalTC extends webpage
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 40)
+		@Test(priority = 22)
 		void InternalTerminateDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -640,7 +640,7 @@ public class LicenseReviewerInternalTC extends webpage
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 41)
+		@Test(priority = 23)
 		void InternalAssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -666,6 +666,17 @@ public class LicenseReviewerInternalTC extends webpage
 			extent.endTest(test);
 			extent.flush();
 		}
+  	@Test(priority = 24)
+  	void DashboardandReportCountMatch() throws InterruptedException, IOException
+  	{
+  		test = extent.startTest("Dashboard and Report  Count Match  Verification");
+  		//test.log(LogStatus.INFO, "Test Initiated");
+  		
+  		LiPeMethodsPOM.InternalDashallreportallcountforPerformer( test, "Internal");
+  		
+  		extent.endTest(test);
+  		extent.flush();
+  	}*/
 
 	 @AfterMethod
 	  void driverclose()

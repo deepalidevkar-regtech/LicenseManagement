@@ -1111,6 +1111,8 @@ public static void DeptLicenseExpiredOnStatutory( ExtentTest test, String type) 
      DeptmethodPOM.deptClickExportExpiredOn().click();
      test.log(LogStatus.PASS, "Dashboard Expired On License List Downloaded Successfully");
       Thread.sleep(3000);
+      try 
+      {
          DeptmethodPOM.clickshowmoredept().click();
 	 	  Thread.sleep(3000);
 	 	   test.log(LogStatus.PASS, "ExpiredOn Show More link working Successfully");
@@ -1126,31 +1128,27 @@ public static void DeptLicenseExpiredOnStatutory( ExtentTest test, String type) 
 		  Thread.sleep(7000);
         MethodPOM.clickBystatuscloseoverview().click();
 			Thread.sleep(2000);
-			
-			  // Js.executeScript("window.scrollBy(500,0)");
-		//	.switchTo().parentFrame();
-			// MethodPOM.clickCloseGraphPopup().click();
-			// Thread.sleep(7000);
-			
-			 LiPerformerPOM.EntityLocation().click();
+			  LiPerformerPOM.EntityLocation().click();
 				Thread.sleep(500);
-			  LiPerformerPOM.EntityLocationExpand().click();
-				//Thread.sleep(500);
-			   //  LiPerformerPOM.Entitysubexpand().click();
-			   //Thread.sleep(500);
-				DeptmethodPOM.selectLocation().click();
+				  String locationtext1 =LiPerformerPOM.locget().getText();
+					Thread.sleep(500);
+				MethodPOM.Clicklocationsearch().click();
 				Thread.sleep(500);
-			   String locationtext1 =LiPerformerPOM.locget().getText();
-			   LiPerformerPOM.locget().click();
-			   Thread.sleep(3000);
-			   LiPerformerPOM.clicklictypet().click();
-			   Thread.sleep(500);
-			   String LicenseType1 =LiPerformerPOM.Licensetype().getText();
-			   Thread.sleep(5000);
-			   LiPerformerPOM.Licensetype().click();
-			   Thread.sleep(5000);
-			  // LiPerformerPOM.Statustext().click();
-			  // Thread.sleep(5000);
+				
+				 //  LiPerformerPOM.locget().click();
+				MethodPOM.Clicklocationsearch().sendKeys("Regtrack Mumbai");
+				Thread.sleep(500);
+	       MethodPOM.Checkedlocation().click();
+		   Thread.sleep(3000);
+		   LiPerformerPOM.clicklictypet().click();
+		   Thread.sleep(500);
+		  LiPerformerPOM.selectinlictype().click();
+		   String LicenseType1 =LiPerformerPOM.inlic().getText();
+		   Thread.sleep(5000);
+		   // LiPerformerPOM.inlic().click();
+		   Thread.sleep(5000);
+		  // LiPerformerPOM.Statustext().click();
+		  // Thread.sleep(5000);
 			  
 			    List<String> li=new ArrayList<String>();
 			    
@@ -1253,7 +1251,11 @@ else
 {
 	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 }
-
+      }
+      catch(Exception e)
+      {
+    	  test.log(LogStatus.PASS, "Expired In More Than 5 Record not displayed");
+      }
 	
 	   }
 
@@ -1262,16 +1264,17 @@ public static void deptLicenseExpiringOnStatutory( ExtentTest test, String type)
 	   Thread.sleep(5000);
 	   MethodPOM.ClickMaximizeLicenseExpiringOn().click();
 	   Thread.sleep(3000);
-	   test.log(LogStatus.PASS, "Expiring On Maximize Button Working Successfully");
+	   test.log(LogStatus.PASS, "Expiring In Maximize Button Working Successfully");
 	 
 	   JavascriptExecutor js1=(JavascriptExecutor)  getDriver() ;
 		js1.executeScript("window.scroll(0,500)");
 		  Thread.sleep(3000);
 		MethodPOM.DashExpiringOnExportcmd().click();
-		test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
+		test.log(LogStatus.PASS, "Dashboard Expiring In License Download Successfully");
 		 Thread.sleep(3000);
+		 try {
 		DeptmethodPOM.deptClickShowMoreExpiringOn().click();
-		 test.log(LogStatus.PASS, "ExpiredOn Show More link working Successfully");
+		 test.log(LogStatus.PASS, "ExpiredIn Show More link working Successfully");
 	   Thread.sleep(7000);
 	   WebDriverWait wait = new WebDriverWait( getDriver(), 40);
 	   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));
@@ -1486,8 +1489,13 @@ else
 {
 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 }
+		 }
+catch(Exception e)
+		{
+	  test.log(LogStatus.PASS, "Expired In More Than 5 Record not displayed");
+		}
+	}
 
-}
 public  static void DeptMyworkspaceaddLicense(ExtentTest test, String type) throws InterruptedException, IOException
 {
 

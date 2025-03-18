@@ -291,7 +291,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		}
 	
 @Test(priority = 19)
-	void BylicnesetypeActive() throws InterruptedException
+	void BylicnesetypeActive() throws InterruptedException, IOException
 	{
 		test = extent.startTest("By License Type- Shops & Commercial Establishment Active Graph count vWorking Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -312,7 +312,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 			extent.flush();
 		}
 	 @Test(priority = 21)
-		void BylicnesetypeExpired() throws InterruptedException
+		void BylicnesetypeExpired() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type- Shops & Commercial Establishment Expired Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -324,7 +324,7 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		}
 	
 	@Test(priority = 22)
-		void BylicnesetypeApplied() throws InterruptedException
+		void BylicnesetypeApplied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type -Shops & Commercial Establishment Applied Graph count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -358,7 +358,7 @@ void BylicnesetypeRejected() throws InterruptedException, IOException
 	extent.flush();
 }
 @Test(priority = 25)
-		void BylicnesetypeTerminate() throws InterruptedException
+		void BylicnesetypeTerminate() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type -Shops & Commercial Establishment Terminated Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");

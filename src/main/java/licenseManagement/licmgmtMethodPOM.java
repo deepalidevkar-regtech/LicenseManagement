@@ -34,6 +34,7 @@ import contract.ContractPOM;
 import licenseDepartmentHead.DeptmethodPOM;
 import licensePerformer.LiPerformerPOM;
 import licenseReviewer.LiReviewerPOM;
+import litigationPerformer.performerPOM;
 import login.webpage;
 import performer.OverduePOM;
 
@@ -140,7 +141,7 @@ public class licmgmtMethodPOM extends webpage{
 				MethodPOM.ClickCloseOverview().click();
 				MethodPOM.clickMyDashboard().click();
 	}
-	public static void ByLicensetypeExpired( ExtentTest test, String type ) throws InterruptedException
+	public static void ByLicensetypeExpired( ExtentTest test, String type ) throws InterruptedException, IOException
 	   {
 
 		MethodPOM.clickDashlictype().click();
@@ -186,8 +187,102 @@ public class licmgmtMethodPOM extends webpage{
 					Thread.sleep(3000);
 					 MethodPOM.clickExportGraph().click();
 					 Thread.sleep(3000);
-					 test.log(LogStatus.PASS, "License Details Dwonloaded Successfully");
-					 
+				//	 test.log(LogStatus.PASS, "License Details Dwonloaded Successfully");
+					 CFOcountPOM.readTotalItems1().click();
+						
+						String item2 = CFOcountPOM.readTotalItems1().getText();
+						//String NoRecord = LiReviewerPOM.reNorecord.getText();
+						 if(!item2.equalsIgnoreCase("No items to display")) 
+						 {
+						String[] bits1 = item2.split(" ");								//Splitting the String
+						String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+						int count2 = Integer.parseInt(compliancesCount1);
+					//	String NoRecord = LiReviewerPOM.reNorecord().getText();
+						//   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+						// {
+							   try
+								{
+									performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+								}
+								catch(Exception e)
+								{
+									
+								}
+								//js1.executeScript("window.scrollBy(0,1000)");
+								
+							
+								Thread.sleep(100);
+								File dir = new File("C://Users//deepalid//Downloads");
+								File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+								Thread.sleep(500);
+								CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+								Thread.sleep(250);
+								 MethodPOM.clickExportGraph().click();
+								//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+								
+								
+								Thread.sleep(500);
+								File dir1 = new File("C://Users//deepalid//Downloads");
+								File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+								
+								if(dirContents.length < allFilesNew.length)
+								{
+									test.log(LogStatus.PASS, "File downloaded successfully.");
+									
+									File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+								    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+								    {
+								       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+								       {
+								           lastModifiedFile = allFilesNew[i];
+								       }
+								    }
+									
+								    FileInputStream fis = new FileInputStream(lastModifiedFile);
+								    workbook = new XSSFWorkbook(fis);
+								    sheet = workbook.getSheetAt(0);		
+								    /*
+									int no = sheet.getLastRowNum();
+									Row row = sheet.getRow(no);
+									org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+									int records =(int) c1.getNumericCellValue();
+								    */
+								    sheet = workbook.getSheetAt(0);
+									int columnNumber = 3;
+									int rowCount = 0;
+									int actualRow=0;
+									
+									for(Row row : sheet)
+									{
+										
+										org.apache.poi.ss.usermodel.Cell cell =row.getCell(columnNumber);
+										if(cell != null) {
+											
+											rowCount++;
+											actualRow = rowCount-1;
+										}
+										
+									}
+									fis.close();
+					
+									
+									if(count2 == actualRow)
+									{
+										//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+										test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+									}
+									else
+									{
+										//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+										test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+									}
+								}
+								else
+								{
+									test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+								}
+					
 					 MethodPOM.clickAllOverview().click();
 					 Thread.sleep(3000);
 					//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -195,7 +290,7 @@ public class licmgmtMethodPOM extends webpage{
 					 Thread.sleep(3000);
 					MethodPOM.clickBystatuscloseoverview().click();
 					 Thread.sleep(4000);
-					 test.log(LogStatus.PASS, "By Status  Application Overdue (Expiring but not applied) License  Overview Button Working Successfully");
+					 test.log(LogStatus.PASS, "By Status  Expired License  Overview Button Working Successfully");
 					 Thread.sleep(3000);
 					/* LiPerformerPOM.EntityLocation().click();
 						Thread.sleep(500);
@@ -342,9 +437,9 @@ public class licmgmtMethodPOM extends webpage{
 				driver.switchTo().parentFrame();
 				 MethodPOM.clickCloseGraphPopup().click();
 				 Thread.sleep(3000);
-			*/	 
+			*/	 }
 	   }
-	 public static void ByLicensetypeApplied( ExtentTest test, String type ) throws InterruptedException
+	 public static void ByLicensetypeApplied( ExtentTest test, String type ) throws InterruptedException, IOException
 	   {
 
 		 MethodPOM.clickDashlictype().click();
@@ -392,8 +487,102 @@ public class licmgmtMethodPOM extends webpage{
 					
 					 MethodPOM.clickExportGraph().click();
 					 Thread.sleep(3000);
-					 test.log(LogStatus.PASS, "License Details Downloaded Successfully");
-					 
+					// test.log(LogStatus.PASS, "License Details Downloaded Successfully");
+					 CFOcountPOM.readTotalItems1().click();
+						
+						String item2 = CFOcountPOM.readTotalItems1().getText();
+						//String NoRecord = LiReviewerPOM.reNorecord.getText();
+						 if(!item2.equalsIgnoreCase("No items to display")) 
+						 {
+						String[] bits1 = item2.split(" ");								//Splitting the String
+						String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+						int count2 = Integer.parseInt(compliancesCount1);
+					//	String NoRecord = LiReviewerPOM.reNorecord().getText();
+						//   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+						// {
+							   try
+								{
+									performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+								}
+								catch(Exception e)
+								{
+									
+								}
+								//js1.executeScript("window.scrollBy(0,1000)");
+								
+							
+								Thread.sleep(100);
+								File dir = new File("C://Users//deepalid//Downloads");
+								File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+								Thread.sleep(500);
+								CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+								Thread.sleep(250);
+								 MethodPOM.clickExportGraph().click();
+								//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+								
+								
+								Thread.sleep(500);
+								File dir1 = new File("C://Users//deepalid//Downloads");
+								File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+								
+								if(dirContents.length < allFilesNew.length)
+								{
+									test.log(LogStatus.PASS, "File downloaded successfully.");
+									
+									File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+								    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+								    {
+								       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+								       {
+								           lastModifiedFile = allFilesNew[i];
+								       }
+								    }
+									
+								    FileInputStream fis = new FileInputStream(lastModifiedFile);
+								    workbook = new XSSFWorkbook(fis);
+								    sheet = workbook.getSheetAt(0);		
+								    /*
+									int no = sheet.getLastRowNum();
+									Row row = sheet.getRow(no);
+									org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+									int records =(int) c1.getNumericCellValue();
+								    */
+								    sheet = workbook.getSheetAt(0);
+									int columnNumber = 3;
+									int rowCount = 0;
+									int actualRow=0;
+									
+									for(Row row : sheet)
+									{
+										
+										org.apache.poi.ss.usermodel.Cell cell =row.getCell(columnNumber);
+										if(cell != null) {
+											
+											rowCount++;
+											actualRow = rowCount-1;
+										}
+										
+									}
+									fis.close();
+					
+									
+									if(count2 == actualRow)
+									{
+										//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+										test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+									}
+									else
+									{
+										//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+										test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+									}
+								}
+								else
+								{
+									test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+								}
+					
 					 MethodPOM.clickAllOverview().click();
 					 Thread.sleep(3000);
 					//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -526,9 +715,9 @@ public class licmgmtMethodPOM extends webpage{
 					
 					*/	
 		 
-
+						 }
 	   }
-	 public static void ByLicensetypeActive( ExtentTest test, String type ) throws InterruptedException
+	 public static void ByLicensetypeActive( ExtentTest test, String type ) throws InterruptedException, IOException
 	   {
 
 		 MethodPOM.clickDashlictype().click();
@@ -575,8 +764,103 @@ public class licmgmtMethodPOM extends webpage{
 					Thread.sleep(3000);
 					 MethodPOM.clickExportGraph().click();
 					 Thread.sleep(3000);
-					 test.log(LogStatus.PASS, "License Details Dwonloaded Successfully");
-					 
+					 //test.log(LogStatus.PASS, "License Details Dwonloaded Successfully");
+					 CFOcountPOM.readTotalItems1().click();
+						
+						String item2 = CFOcountPOM.readTotalItems1().getText();
+						//String NoRecord = LiReviewerPOM.reNorecord.getText();
+						 if(!item2.equalsIgnoreCase("No items to display")) 
+						 {
+						String[] bits1 = item2.split(" ");								//Splitting the String
+						String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+						int count2 = Integer.parseInt(compliancesCount1);
+						String NoRecord = LiReviewerPOM.reNorecord().getText();
+						   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+						 {
+							   try
+								{
+									performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+								}
+								catch(Exception e)
+								{
+									
+								}
+								//js1.executeScript("window.scrollBy(0,1000)");
+								
+							
+								Thread.sleep(100);
+								File dir = new File("C://Users//deepalid//Downloads");
+								File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+								
+								Thread.sleep(500);
+								CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+								Thread.sleep(250);
+								 MethodPOM.clickExportGraph().click();
+								//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+								
+								
+								Thread.sleep(500);
+								File dir1 = new File("C://Users//deepalid//Downloads");
+								File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+								
+								if(dirContents.length < allFilesNew.length)
+								{
+									test.log(LogStatus.PASS, "File downloaded successfully.");
+									
+									File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+								    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+								    {
+								       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+								       {
+								           lastModifiedFile = allFilesNew[i];
+								       }
+								    }
+									
+								    FileInputStream fis = new FileInputStream(lastModifiedFile);
+								    workbook = new XSSFWorkbook(fis);
+								    sheet = workbook.getSheetAt(0);		
+								    /*
+									int no = sheet.getLastRowNum();
+									Row row = sheet.getRow(no);
+									org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+									int records =(int) c1.getNumericCellValue();
+								    */
+								    sheet = workbook.getSheetAt(0);
+									int columnNumber = 3;
+									int rowCount = 0;
+									int actualRow=0;
+									
+									for(Row row : sheet)
+									{
+										
+										org.apache.poi.ss.usermodel.Cell cell =row.getCell(columnNumber);
+										if(cell != null) {
+											
+											rowCount++;
+											actualRow = rowCount-1;
+										}
+										
+									}
+									fis.close();
+					
+									
+									if(count2 == actualRow)
+									{
+										//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+										test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+									}
+									else
+									{
+										//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+										test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+									}
+								}
+								else
+								{
+									test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+								}
+						 }
+			          
 					 MethodPOM.clickAllOverview().click();
 					 Thread.sleep(3000);
 					//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -586,29 +870,26 @@ public class licmgmtMethodPOM extends webpage{
 					 Thread.sleep(4000);
 					 test.log(LogStatus.PASS, "License Overview Button Working Successfully");
 					 Thread.sleep(3000);
-					/* LiPerformerPOM.EntityLocation().click();
-						Thread.sleep(500);
-						MethodPOM.Newlocation().click();
-						//LiPerformerPOM.aa().click();
-						Thread.sleep(500);
-						//LiPerformerPOM.EntityLocationExpand().click();
-						//Thread.sleep(500);
-					   Thread.sleep(500);
-					   MethodPOM.Newlocationsub().click();
-					  // LiPerformerPOM.aa1().click();
-					   Thread.sleep(500);
-
-
-					 //  Thread.sleep(500);
-					   String locationtext1 =LiPerformerPOM.locget().getText();
-					   LiPerformerPOM.locget().click();
+						 } 
+						 /*  LiPerformerPOM.EntityLocation().click();
+							Thread.sleep(500);
+							  String locationtext1 =LiPerformerPOM.locget().getText();
+								Thread.sleep(500);
+							MethodPOM.Clicklocationsearch().click();
+							Thread.sleep(500);
+							
+							 //  LiPerformerPOM.locget().click();
+							MethodPOM.Clicklocationsearch().sendKeys("Regtrack Mumbai");
+							Thread.sleep(500);
+				       MethodPOM.Checkedlocation().click();
 					   Thread.sleep(3000);
 					   LiPerformerPOM.clicklictypet().click();
 					   Thread.sleep(500);
-					   String LicenseType1 =LiPerformerPOM.Licensetypeinternal().getText();
+					  LiPerformerPOM.selectinlictype().click();
+					   String LicenseType1 =LiPerformerPOM.inlic().getText();
 					   Thread.sleep(5000);
-					    LiPerformerPOM.Licensetypeinternal().click();
-               		   Thread.sleep(5000);
+					   // LiPerformerPOM.inlic().click();
+					   Thread.sleep(5000);
 					  // LiPerformerPOM.Statustext().click();
 					  // Thread.sleep(5000);
 					  
@@ -714,10 +995,10 @@ public class licmgmtMethodPOM extends webpage{
 				     {
 				    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 				     }
-					
-	*/
+				*/	
+	
 	   }
-	 public static void ByLicensetypeTerminate( ExtentTest test, String type ) throws InterruptedException
+	 public static void ByLicensetypeTerminate( ExtentTest test, String type ) throws InterruptedException, IOException
 	   {
 
 		 MethodPOM.clickDashlictype().click();
@@ -761,11 +1042,107 @@ public class licmgmtMethodPOM extends webpage{
 						//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard By Licnese type Graph Terminate License   Count.");
 						test.log(LogStatus.FAIL, "No of Terminate License  in the grid = "+total+" | Dashboard By Licnese type Terminate License  Count = "+ByLicensetypeTerminateggraph);
 					}
+				
 				Thread.sleep(3000);
 				 MethodPOM.clickExportGraph().click();
 				 Thread.sleep(3000);
-				 test.log(LogStatus.PASS, "License Details Dwonloaded Successfully");
-				 
+				// test.log(LogStatus.PASS, "License Details Dwonloaded Successfully");
+				 CFOcountPOM.readTotalItems1().click();
+					
+					String item2 = CFOcountPOM.readTotalItems1().getText();
+					//String NoRecord = LiReviewerPOM.reNorecord.getText();
+					 if(!item2.equalsIgnoreCase("No items to display")) 
+					 {
+					String[] bits1 = item2.split(" ");								//Splitting the String
+					String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+					int count2 = Integer.parseInt(compliancesCount1);
+					String NoRecord = LiReviewerPOM.reNorecord().getText();
+					   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+					 {
+						   try
+							{
+								performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+							}
+							catch(Exception e)
+							{
+								
+							}
+							//js1.executeScript("window.scrollBy(0,1000)");
+							
+						
+							Thread.sleep(100);
+							File dir = new File("C://Users//deepalid//Downloads");
+							File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+							
+							Thread.sleep(500);
+							CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+							Thread.sleep(250);
+							 MethodPOM.clickExportGraph().click();
+							//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+							
+							
+							Thread.sleep(500);
+							File dir1 = new File("C://Users//deepalid//Downloads");
+							File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+							
+							if(dirContents.length < allFilesNew.length)
+							{
+								test.log(LogStatus.PASS, "File downloaded successfully.");
+								
+								File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+							    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+							    {
+							       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+							       {
+							           lastModifiedFile = allFilesNew[i];
+							       }
+							    }
+								
+							    FileInputStream fis = new FileInputStream(lastModifiedFile);
+							    workbook = new XSSFWorkbook(fis);
+							    sheet = workbook.getSheetAt(0);		
+							    /*
+								int no = sheet.getLastRowNum();
+								Row row = sheet.getRow(no);
+								org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+								int records =(int) c1.getNumericCellValue();
+							    */
+							    sheet = workbook.getSheetAt(0);
+								int columnNumber = 3;
+								int rowCount = 0;
+								int actualRow=0;
+								
+								for(Row row : sheet)
+								{
+									
+									org.apache.poi.ss.usermodel.Cell cell =row.getCell(columnNumber);
+									if(cell != null) {
+										
+										rowCount++;
+										actualRow = rowCount-1;
+									}
+									
+								}
+								fis.close();
+				
+								
+								if(count2 == actualRow)
+								{
+									//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+									test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+								}
+								else
+								{
+									//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+									test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+								}
+							}
+							else
+							{
+								test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+							}
+					 
+
 				 MethodPOM.clickAllOverview().click();
 				 Thread.sleep(3000);
 				//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));
@@ -774,7 +1151,8 @@ public class licmgmtMethodPOM extends webpage{
 				MethodPOM.clickBystatuscloseoverview().click();
 				 Thread.sleep(4000);
 				 test.log(LogStatus.PASS, "License  Overview Button Working Successfully");
-				 Thread.sleep(3000);
+			 Thread.sleep(3000);
+					 
 				/* LiPerformerPOM.EntityLocation().click();
 					Thread.sleep(500);
 					MethodPOM.Newlocation().click();
@@ -900,6 +1278,7 @@ public class licmgmtMethodPOM extends webpage{
 			     {
 			    	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
 			     }*/
+					 }}		 
 	   }
 	 public static void ByLicensetypeRejectedmgmtInternal( ExtentTest test, String type ) throws InterruptedException
 	   {
@@ -1087,7 +1466,7 @@ public class licmgmtMethodPOM extends webpage{
 	}
 
 		
-	 public static void ActiveInternalLicense( ExtentTest test, String type) throws InterruptedException
+	 public static void ActiveInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 		{	
 			Thread.sleep(3000);
 			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
@@ -1181,10 +1560,103 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 					        // Accepting alert
 					        alert.accept();
 					        test.log(LogStatus.PASS,"License Details Updated Successfully" );
-		
-					//MethodPOM.clickMyDashboard().click();
+					        Thread.sleep(5000);
+					        licmgmtPOM.editlicenseclose().click();
+					          Thread.sleep(300);
+					    	js1.executeScript("window.scrollBy(0,1000)");
+	                            CFOcountPOM.readTotalItems1().click();
+							
+							String item2 = CFOcountPOM.readTotalItems1().getText();
+							//String NoRecord = LiReviewerPOM.reNorecord.getText();
+							 if(!item2.equalsIgnoreCase("No items to display")) 
+							 {
+							String[] bits1 = item2.split(" ");								//Splitting the String
+							String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+							int count2 = Integer.parseInt(compliancesCount1);
+							String NoRecord = LiReviewerPOM.reNorecord().getText();
+							   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+							 {
+								   try
+									{
+										performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+									}
+									catch(Exception e)
+									{
+										
+									}
+									js1.executeScript("window.scrollBy(0,1000)");
+									
+								
+									Thread.sleep(100);
+									File dir = new File("C://Users//deepalid//Downloads");
+									File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+									
+									Thread.sleep(500);
+									CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+									Thread.sleep(250);
+									licenseManagement.licmgmtPOM.WorkspaceExport().click();
+									//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+									
+									
+									Thread.sleep(500);
+									File dir1 = new File("C://Users//deepalid//Downloads");
+									File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+									
+									if(dirContents.length < allFilesNew.length)
+									{
+										test.log(LogStatus.PASS, "File downloaded successfully.");
+										
+										File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+									    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+									    {
+									       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+									       {
+									           lastModifiedFile = allFilesNew[i];
+									       }
+									    }
+										
+										Thread.sleep(100);
+										fis = new FileInputStream(lastModifiedFile);
+										workbook = new XSSFWorkbook(fis);
+										sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+										
+										int no = sheet.getLastRowNum();
+										Row row = sheet.getRow(no);
+										org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+										int records =(int) c1.getNumericCellValue();
+										fis.close();
+										
+										if(count2 == records)
+										{
+											//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+											test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+records);
+										}
+										else
+										{
+											//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+											test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+records);
+										}
+									}
+									else
+									{
+										test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+									}
+							 
+							 }
+							  else
+							  {
+								   		      
+								test.log(LogStatus.PASS,"No Record Found");
+								MethodPOM.clickMyDashboard().click();
+									      
+							  }
+				          MethodPOM.clickMyDashboard().click();
+				          Thread.sleep(1000);
+							 
+				  }	
+					
 		}
-	 public static void ExpiringInternalLicense( ExtentTest test, String type) throws InterruptedException
+	 public static void ExpiringInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 		{		
 			Thread.sleep(3000);
 			  LicenseCompanyadmin.MethodPOM.AllFilter().click();
@@ -1253,13 +1725,13 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 						Thread.sleep(3000);
 						LiPerformerPOM.editlicenseicon().click();
 						Thread.sleep(5000);
-						licenseManagement.licmgmtPOM.LicenseTitle().clear();
+						//licenseManagement.licmgmtPOM.LicenseTitle().clear();
 						Thread.sleep(5000);
-						licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("update License");	
+						licenseManagement.licmgmtPOM.LicenseTitle().sendKeys(".");	
 						Thread.sleep(5000);
-						licenseManagement.licmgmtPOM.LicenseNo().clear();
+					//	licenseManagement.licmgmtPOM.LicenseNo().clear();
 						Thread.sleep(5000);
-						licenseManagement.licmgmtPOM.LicenseNo().sendKeys("update00");
+						licenseManagement.licmgmtPOM.LicenseNo().sendKeys(".");
 						Thread.sleep(5000);
 						js1.executeScript("window.scrollBy(0,3000)");
 						Thread.sleep(7000);
@@ -1291,20 +1763,104 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 						        // Accepting alert
 						        alert.accept();
 						        test.log(LogStatus.PASS,"License Details Updated Successfully" );
-			
-						//MethodPOM.clickMyDashboard().click();
-		      }
-		      else
-		      {
-			
-					test.log(LogStatus.PASS,"No Record Found");
-					MethodPOM.clickMyDashboard().click();
-					
-		      }
-		      
+						        Thread.sleep(5000);
+						        licmgmtPOM.editlicenseclose().click();
+						          Thread.sleep(300);
+						    	js1.executeScript("window.scrollBy(0,1000)");
+		                            CFOcountPOM.readTotalItems1().click();
+								
+								String item2 = CFOcountPOM.readTotalItems1().getText();
+								//String NoRecord = LiReviewerPOM.reNorecord.getText();
+								 if(!item2.equalsIgnoreCase("No items to display")) 
+								 {
+								String[] bits1 = item2.split(" ");								//Splitting the String
+								String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+								int count2 = Integer.parseInt(compliancesCount1);
+								String NoRecord = LiReviewerPOM.reNorecord().getText();
+								   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+								 {
+									   try
+										{
+											performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+										}
+										catch(Exception e)
+										{
+											
+										}
+										js1.executeScript("window.scrollBy(0,1000)");
+										
+									
+										Thread.sleep(100);
+										File dir = new File("C://Users//deepalid//Downloads");
+										File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+										
+										Thread.sleep(500);
+										CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+										Thread.sleep(250);
+										licenseManagement.licmgmtPOM.WorkspaceExport().click();
+										//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+										
+										
+										Thread.sleep(500);
+										File dir1 = new File("C://Users//deepalid//Downloads");
+										File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+										
+										if(dirContents.length < allFilesNew.length)
+										{
+											test.log(LogStatus.PASS, "File downloaded successfully.");
+											
+											File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+										    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+										    {
+										       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+										       {
+										           lastModifiedFile = allFilesNew[i];
+										       }
+										    }
+											
+											Thread.sleep(100);
+											fis = new FileInputStream(lastModifiedFile);
+											workbook = new XSSFWorkbook(fis);
+											sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+											
+											int no = sheet.getLastRowNum();
+											Row row = sheet.getRow(no);
+											org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+											int records =(int) c1.getNumericCellValue();
+											fis.close();
+											
+											if(count2 == records)
+											{
+												//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+												test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+records);
+											}
+											else
+											{
+												//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+												test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+records);
+											}
+										}
+										else
+										{
+											test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+										}
+								 
+								 }
+								  else
+								  {
+									   		      
+									test.log(LogStatus.PASS,"No Record Found");
+									MethodPOM.clickMyDashboard().click();
+										      
+								  }
+					          MethodPOM.clickMyDashboard().click();
+					          Thread.sleep(1000);
+								 
+					  }	
+		      }		
 		     
 		}
-	 public static void ExpiredInternalLicense( ExtentTest test, String type) throws InterruptedException
+	 public static void ExpiredInternalLicense( ExtentTest test, String type) throws InterruptedException, IOException
 		{	
 		  Thread.sleep(3000);
 		  LicenseCompanyadmin.MethodPOM.AllFilter().click();
@@ -1408,16 +1964,101 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 						        alert.accept();
 						        test.log(LogStatus.PASS,"License Details Updated Successfully" );
 			
-						//MethodPOM.clickMyDashboard().click();
-						
-						
-		      }
-		      else
-		      {
-					test.log(LogStatus.PASS,"No record Found" );
-					MethodPOM.clickMyDashboard().click();
-					
-		      }
+						        Thread.sleep(300);
+						        licmgmtPOM.editlicenseclose().click();
+						          Thread.sleep(300);
+						    	js1.executeScript("window.scrollBy(0,1000)");
+		                            CFOcountPOM.readTotalItems1().click();
+								
+								String item2 = CFOcountPOM.readTotalItems1().getText();
+								//String NoRecord = LiReviewerPOM.reNorecord.getText();
+								 if(!item2.equalsIgnoreCase("No items to display")) 
+								 {
+								String[] bits1 = item2.split(" ");								//Splitting the String
+								String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+								int count2 = Integer.parseInt(compliancesCount1);
+								String NoRecord = LiReviewerPOM.reNorecord().getText();
+								   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+								 {
+									   try
+										{
+											performerPOM.clickExcelReport().sendKeys(Keys.PAGE_DOWN);
+										}
+										catch(Exception e)
+										{
+											
+										}
+										js1.executeScript("window.scrollBy(0,1000)");
+										
+									
+										Thread.sleep(100);
+										File dir = new File("C://Users//deepalid//Downloads");
+										File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+										
+										Thread.sleep(500);
+										CFOcountPOM.clickNextPage1().sendKeys(Keys.PAGE_UP);
+										Thread.sleep(250);
+										licenseManagement.licmgmtPOM.WorkspaceExport().click();
+										//performerPOM.clickExcelReport().click();					//Clicking on 'Excel Report' image.
+										
+										
+										Thread.sleep(500);
+										File dir1 = new File("C://Users//deepalid//Downloads");
+										File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+										
+										if(dirContents.length < allFilesNew.length)
+										{
+											test.log(LogStatus.PASS, "File downloaded successfully.");
+											
+											File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
+										    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+										    {
+										       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+										       {
+										           lastModifiedFile = allFilesNew[i];
+										       }
+										    }
+											
+											Thread.sleep(100);
+											fis = new FileInputStream(lastModifiedFile);
+											workbook = new XSSFWorkbook(fis);
+											sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+											
+											int no = sheet.getLastRowNum();
+											Row row = sheet.getRow(no);
+											org.apache.poi.ss.usermodel.Cell c1 = row.getCell(0);
+											int records =(int) c1.getNumericCellValue();
+											fis.close();
+											
+											if(count2 == records)
+											{
+												//test.log(LogStatus.PASS, "Notice=No of records from grid matches to no of records in Excel Sheet.");
+												test.log(LogStatus.PASS, "For "+type+" status total records from Grid = "+count2+" | Total records from Report = "+records);
+											}
+											else
+											{
+												//test.log(LogStatus.FAIL, "Notice=No of records from grid doesn't matches to no of records in Excel Sheet.");
+												test.log(LogStatus.FAIL, "For "+type+" status total records from Grid = "+count2+" | Total records from Excel Sheet = "+records);
+											}
+										}
+										else
+										{
+											test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+										}
+								 
+								 }
+								  else
+								  {
+									   		      
+									test.log(LogStatus.PASS,"No Record Found");
+									MethodPOM.clickMyDashboard().click();
+										      
+								  }
+					          MethodPOM.clickMyDashboard().click();
+					          Thread.sleep(1000);
+								 
+					  }	
+		      }		 
 		      
 		}
 	 public  static void MyworkspaceaddLicense(ExtentTest test, String type) throws InterruptedException, IOException

@@ -129,7 +129,7 @@ public class LicensePerformerInternal extends webpage
 @Test(priority = 2)
 void ActivePerform() throws InterruptedException
 {
-	test = extent.startTest("Active License Perform Verification");
+	test = extent.startTest(" Perform Active License Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -191,7 +191,7 @@ void ActivePerform() throws InterruptedException
 	@Test(priority = 4)
 void ExpiringPerform() throws InterruptedException
 {
-	test = extent.startTest("Expiring License Perform Verification");
+	test = extent.startTest("Perform Expiring License  Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	
@@ -254,7 +254,7 @@ void ExpiringPerform() throws InterruptedException
 @Test(priority = 6)
  void ExpiredPerform() throws InterruptedException
 {
-	test = extent.startTest("Expired License Perform Verification");
+	test = extent.startTest("Perform Expired License Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	
@@ -657,7 +657,7 @@ void NomineeDetails() throws InterruptedException, IOException
 		@Test(priority = 25)
 		void InternalAssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
+		    test = extent.startTest("Dashboard Not Activated License Entity/Branch Location(A Pvt Ltd)&LicenseType(Annual Maintance) Filter working  Verification");
 		    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 			LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
@@ -676,6 +676,17 @@ void NomineeDetails() throws InterruptedException, IOException
 			}
 			
 			StatutoryMethod.DashboardAssignedButNotActivatedFilter( test, "Internal");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 26)
+		void DashboardandReportCountMatch() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Dashboard and Report  Count Match  Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			LiPeMethodsPOM.InternalDashallreportallcount( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();

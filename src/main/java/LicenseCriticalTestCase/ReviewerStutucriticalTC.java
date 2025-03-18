@@ -140,7 +140,7 @@ public class ReviewerStutucriticalTC extends webpage
 	}
 	
 	@Test(priority = 6)
-	void PendingForReview() throws InterruptedException
+	void PendingForReview() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Pending For Review License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -151,7 +151,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.flush();
 	}
  @Test(priority = 7)
-	void Rejected() throws InterruptedException
+	void Rejected() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Rejected License Count Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
@@ -162,7 +162,7 @@ public class ReviewerStutucriticalTC extends webpage
 		extent.flush();
 	}
 	 @Test(priority = 8)
-		void Terminate() throws InterruptedException
+		void Terminate() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Terminate License Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -176,7 +176,7 @@ public class ReviewerStutucriticalTC extends webpage
 		void AssignedButNotActivated() throws InterruptedException, IOException
 		
 		{
-			test = extent.startTest("Assigned But Not Activated License Verification");
+			test = extent.startTest("Not Activated License Verification");
 			LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
 
 			extent.endTest(test);

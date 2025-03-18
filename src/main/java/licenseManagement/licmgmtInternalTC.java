@@ -94,7 +94,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.flush();*/
 		initialization("License",2);
 	}
-/*@Test(priority = 2)
+@Test(priority = 2)
 	void AllFilter() throws InterruptedException
 	{
 		test = extent.startTest("All Filter Working Verification");
@@ -106,7 +106,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.flush();
 	}
 @Test(priority = 3)
-		void ActiveInternalLicense() throws InterruptedException
+		void ActiveInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Active License Count Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
@@ -117,7 +117,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.flush();
 		}
 	 @Test(priority = 4)
-			void ExpiringInternalLicense() throws InterruptedException
+			void ExpiringInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Expiring License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
@@ -127,8 +127,8 @@ public class licmgmtInternalTC  extends webpage{
 				extent.endTest(test);
 				extent.flush();
 			}
-	  @Test(priority = 5)
-		void ExpiredInternalLicense() throws InterruptedException
+	@Test(priority = 5)
+		void ExpiredInternalLicense() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Expired License Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -138,7 +138,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 6)
+	 @Test(priority = 6)
 			void AppliedInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Applied Internal License Verification");
@@ -220,7 +220,7 @@ public class licmgmtInternalTC  extends webpage{
 			test = extent.startTest("License ExpiredIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			LicenseCompanyadmin.StatutoryMethod.LicenseExpiredOnInternal( test, "Internal");
+			LicenseCompanyadmin.StatutoryMethod.LicenseExpiredInInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -243,7 +243,7 @@ public class licmgmtInternalTC  extends webpage{
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	@Test(priority = 13)
 	  void BystatusActiveInternalgraph() throws InterruptedException, IOException
 		{
@@ -255,7 +255,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*@Test(priority = 14)
+	@Test(priority = 14)
 	  void BystatusExpringInternalgraph() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By Status-Expiring License Graph Working Verification");
@@ -320,7 +320,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	/*@Test(priority = 17)
+	@Test(priority = 17)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
 			test = extent.startTest("By License Type- Expired License Graph Working Verification");
@@ -332,7 +332,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.flush();
 		}
 	@Test(priority = 18)
-		void ByLicensetypeExpiringInternal() throws InterruptedException
+		void ByLicensetypeExpiringInternal() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type-Application Overdue (Expiring but not applied) License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -677,7 +677,18 @@ public class licmgmtInternalTC  extends webpage{
 			
 			extent.endTest(test);
 			extent.flush();
-		}*/
+		}
+	@Test(priority = 39)
+	void DashboardandReportCountMatch() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Dashboard and Report  Count Match  Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		LiPeMethodsPOM.InternalDashallreportallcount( test, "Internal");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 
 	@AfterMethod
 	 void driverclose()

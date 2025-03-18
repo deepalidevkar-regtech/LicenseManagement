@@ -1,5 +1,8 @@
 package licensePerformer;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,16 +16,19 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xwpf.usermodel.Document;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -839,6 +845,8 @@ getDriver().switchTo().parentFrame();
 		Thread.sleep(500);
 		LiPerformerPOM.AppliedStartDateclick().click();
 		Thread.sleep(500);
+		LiPerformerPOM.NextDateClick().click();
+		Thread.sleep(500);
 		LiPerformerPOM.AppliedStartDate().click();
 		Thread.sleep(3000);
 	   LiPerformerPOM.AppliedEndDateclick().click();
@@ -848,7 +856,7 @@ getDriver().switchTo().parentFrame();
 	   LiPerformerPOM.AppliedEndDate().click();
 	   Thread.sleep(3000);
 	   String workingDir = System.getProperty("user.dir");
-		LiPerformerPOM.UploadDocument().sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file		
+		LiPerformerPOM.UploadDocument().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//uploading new file		
 		Thread.sleep(500);
 	   
 		}
@@ -915,7 +923,7 @@ getDriver().switchTo().parentFrame();
 		//wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard));
 		//OverduePOM.clickDashboard().click();
 		
-		
+	/*	
 		if(type.equalsIgnoreCase("Internal"))			//Opening 'Internal' Dashboard
 		{
 			Thread.sleep(500);
@@ -943,8 +951,9 @@ getDriver().switchTo().parentFrame();
 			test.log(LogStatus.FAIL, "Dashboard 'Applied' count doesn't decreased.");
 			test.log(LogStatus.INFO, "Old Count = "+applied+". New Count = "+applied1);
 		}
-		
-			 }}
+		*/
+			 }
+			 }
 	}
 	
 	public static void ExpiringCount( ExtentTest test, String type) throws InterruptedException, IOException
@@ -2184,7 +2193,7 @@ getDriver().switchTo().parentFrame();
 			MethodPOM.DashExpiringOnExport().click();
 			  Thread.sleep(3000);
 			test.log(LogStatus.PASS, "Dashboard Expiring License Download Successfully");
-			  licmgmtPOM.showmoremgmt().click();
+			  /*licmgmtPOM.showmoremgmt().click();
 			   Thread.sleep(7000);
 				WebDriverWait wait1 = new WebDriverWait( getDriver(), (30));	
 			   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
@@ -2262,7 +2271,7 @@ getDriver().switchTo().parentFrame();
 						{
 							//test.log(LogStatus.FAIL, "Count of records displayed from grid doesn't matches to number records in Excel Sheet.");
 							test.log(LogStatus.FAIL, "Total records from grid = "+count+" | Total records in Excel Sheet = "+SheetRecords);
-						}*/
+						}
 					}
 					else
 					{
@@ -3826,7 +3835,7 @@ for(String Fal : fail)
 									      
 							  }
 								  }
-						MethodPOM.clickMyDashboard().click();
+					
 					
 		   
 	   }
@@ -3853,7 +3862,7 @@ for(String Fal : fail)
 		 MethodPOM.ClickOnDashExpiredExport().click();  
 		 test.log(LogStatus.PASS, "Dashboard Expired On License List Downloaded Successfully");
 		
-		 MethodPOM.ClickShowMoreExpiredOnInternal().click();
+		/* MethodPOM.ClickShowMoreExpiredOnInternal().click();
 		 test.log(LogStatus.PASS, "Expired On showMore Link Working Successfully");
 		 WebDriverWait wait = new WebDriverWait(getDriver(), (30));
 		   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showLicenseDetails"));
@@ -4211,7 +4220,7 @@ String Active1=MethodPOM.clickActive().getText();
 	status.selectByIndex(1);	
 	 Thread.sleep(3000);
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//CriticalReport//LicCompanyadminResult(Internal).html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -4246,7 +4255,7 @@ else
 	
 	Thread.sleep(700);
 	LiPerformerPOM.clickClose().click();				//Clicking on Close (Cross)
-	getDriver().navigate().refresh();
+//	getDriver().navigate().refresh();
 	MethodPOM.clickMyDashboard().click();
 	
 	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -4461,7 +4470,7 @@ else
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//LicensePerformerResults(Internal).html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -4478,19 +4487,19 @@ Thread.sleep(300);
 OverduePOM.clickComplianceSubmit().click();			//Clicking on 'Submit' button.
 
 Thread.sleep(1000);
-js1.executeScript("window.scrollBy(1000,0)");				//Scrolling down window by 2000 px.
+js1.executeScript("window.scrollBy(0,-3000)");				//Scrolling down window by 2000 px.
+Thread.sleep(3000);
 
-Thread.sleep(300);
-if(type.equalsIgnoreCase("Statutory"))
+String msg = LiPerformerPOM.inlablemsg().getText();	
+if(msg.equalsIgnoreCase("Saved Successfully."))
 {
+	test.log(LogStatus.PASS, "Message displayed = "+msg);
 	
-	Thread.sleep(500);
-	js1.executeScript("window.scrollBy(2000,0)");	//Scrolling up window by 2000 px.
 }
-else
+	else
 	{
-	test.log(LogStatus.PASS, "Save Sucessfully.");
-	 }
+		test.log(LogStatus.FAIL, "Message displayed = "+msg);
+	}
 	getDriver().switchTo().parentFrame();
 	
 	Thread.sleep(700);
@@ -4530,7 +4539,7 @@ else
      
 	}
 	
-	public static void Expiredlicenseperform( ExtentTest test, String type) throws InterruptedException
+	public static void Expiredlicenseperform( ExtentTest test, String type) throws InterruptedException, AWTException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		
@@ -4579,7 +4588,7 @@ else
 	status.selectByIndex(1);	
 	 Thread.sleep(2000);
 	 String workingDir = System.getProperty("user.dir");
- OverduePOM.PerformerDoc().sendKeys(workingDir+"//Reports//LicenseCompanyadmin(Statutory).html");	//uploading new file	
+ OverduePOM.PerformerDoc().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//uploading new file	
  Thread.sleep(2000);
  js1.executeScript("window.scrollBy(0,1000)");
  Thread.sleep(2000);
@@ -4589,27 +4598,36 @@ else
 	Thread.sleep(1000);
 	LiPerformerPOM.PerformDate().click();
 	Thread.sleep(5000);
-	js1.executeScript("window.scrollBy(0,100)");
+	js1.executeScript("window.scrollBy(0,1000)");
 Thread.sleep(500);
 js1.executeScript("window.scrollBy(0,700)");
 Thread.sleep(300);
 OverduePOM.clickComplianceSubmit().click();			//Clicking on 'Submit' button.
 
-Thread.sleep(1000);
-js1.executeScript("window.scrollBy(1000,0)");				//Scrolling down window by 2000 px.
-
-Thread.sleep(300);
-if(type.equalsIgnoreCase("Statutory"))
+Thread.sleep(5000);
+js1.executeScript("document.body.scrollTop += 500;");
+Thread.sleep(3000);
+String msg = LiPerformerPOM.lablemsg().getText();	
+if(msg.equalsIgnoreCase("Saved Sucessfully."))
+{
+	test.log(LogStatus.PASS, "Message displayed = "+msg);
+	
+}
+	else
+	{
+		test.log(LogStatus.PASS, "Message displayed = "+msg);
+	}
+/*if(type.equalsIgnoreCase("Statutory"))
 {
 	
 	Thread.sleep(500);
 	js1.executeScript("window.scrollBy(2000,0)");//Scrolling up window by 2000 px.
-	test.log(LogStatus.PASS, "Save Sucessfully.");
+	test.log(LogStatus.PASS, "Save Successfully.");
 }
 else
 	{
-	test.log(LogStatus.PASS, "Save Sucessfully.");
-	 }
+	test.log(LogStatus.FAIL, "Save Successfully.");
+	 }*/
 getDriver().switchTo().parentFrame();
 	
 	Thread.sleep(700);
@@ -4698,7 +4716,7 @@ getDriver().navigate().refresh();
 	
 	 Thread.sleep(3000);
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//CriticalReport//LicPerformerResult(Internal).html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -4716,10 +4734,20 @@ Thread.sleep(300);
 OverduePOM.clickComplianceSubmit().click();			//Clicking on 'Submit' button.
 
 Thread.sleep(1000);
-js1.executeScript("window.scrollBy(1000,0)");				//Scrolling down window by 2000 px.
+js1.executeScript("window.scrollBy(0,-3000)");				//Scrolling down window by 2000 px.
 
 Thread.sleep(300);
-if(type.equalsIgnoreCase("Statutory"))
+String msg = LiPerformerPOM.inlablemsg().getText();	
+if(msg.equalsIgnoreCase("Saved Successfully."))
+{
+	test.log(LogStatus.PASS, "Message displayed = "+msg);
+	
+}
+	else
+	{
+		test.log(LogStatus.FAIL, "Message displayed = "+msg);
+	}
+/*if(type.equalsIgnoreCase("Statutory"))
 {
 	
 	Thread.sleep(500);
@@ -4729,6 +4757,7 @@ else
 	{
 	test.log(LogStatus.PASS, "Save Sucessfully.");
 	 }
+	 */
 getDriver().switchTo().parentFrame();
 	
 	Thread.sleep(700);
@@ -5460,8 +5489,352 @@ for(String Fal : fail)
 		 Thread.sleep(3000);	
 	   
    }
-   
-}
+   public static void Dashallreportallcount( ExtentTest test, String type) throws InterruptedException
+   {
+	    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		Thread.sleep(3000);
+		 int ActiveCount=Integer.parseInt(MethodPOM.clickActive().getText());
+		 int ExpiringCount=Integer.parseInt(MethodPOM.clickExpiring().getText());
+		 int ExpiredCount=Integer.parseInt(MethodPOM.clickExpired().getText());
+		 int AppliedCount=Integer.parseInt(MethodPOM.clickApplied().getText());
+		 int PendingForReviewCount=Integer.parseInt(MethodPOM.clickpendingforreview().getText());
+		 int RejectedCount=Integer.parseInt(MethodPOM.clickRejected().getText());
+		 int TerminateCount=Integer.parseInt(LiPerformerPOM.terminated().getText());
+		 
+		 int total = ActiveCount + ExpiringCount + ExpiredCount + AppliedCount+PendingForReviewCount+RejectedCount+TerminateCount;  
+		 
+		 LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
+			Thread.sleep(3000);
+		 CFOcountPOM.readTotalItems1().click();
+			Thread.sleep(3000);
+			String item1 = CFOcountPOM.readTotalItems1().getText();
+			//String NoRecord = LiReviewerPOM.reNorecord.getText();
+			 if(!item1.equalsIgnoreCase("No items to display")) 
+			 {
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count2 = Integer.parseInt(compliancesCount1);
+			String NoRecord = LiReviewerPOM.reNorecord().getText();
+			   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+			   {
+				   if(count2 == total)
+					{
+						
+						test.log(LogStatus.PASS, "Total of Report  Count="+count2+" | Sum of Dashboard Total License  Count="+total);
+					}
+					else
+					{
+						
+						test.log(LogStatus.FAIL, "Total of Report Count="+count2+" | Sum of Dashboard License  Count="+total);
+					}
+					}
+			   else {
+					test.log(LogStatus.PASS, "No records found.");
+				}
+			   }
 
+			
+				
+		}
+   public static void InternalDashallreportallcount( ExtentTest test, String type) throws InterruptedException
+   {
+	    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+		
+		
+		Select drp = new Select(LiPerformerPOM.clickType());
+		drp.selectByIndex(1);
+		CFOcountPOM.clickApply1().click();	
+		  Thread.sleep(3000);
+		 int ActiveCount=Integer.parseInt(MethodPOM.clickActive().getText());
+		 int ExpiringCount=Integer.parseInt(MethodPOM.clickExpiring().getText());
+		 int ExpiredCount=Integer.parseInt(MethodPOM.clickExpired().getText());
+		 int AppliedCount=Integer.parseInt(MethodPOM.clickApplied().getText());
+		 int PendingForReviewCount=Integer.parseInt(MethodPOM.clickpendingforreview().getText());
+		 int RejectedCount=Integer.parseInt(MethodPOM.clickRejected().getText());
+		 int TerminateCount=Integer.parseInt(LiPerformerPOM.terminated().getText());
+		 
+		 int total = ActiveCount + ExpiringCount + ExpiredCount + AppliedCount+PendingForReviewCount+RejectedCount+TerminateCount;  
+		 
+		 LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
+		  Thread.sleep(3000);
+			LiPerformerPOM.clickType22().click();			//Clicking on 'Type' drop down.
+			Thread.sleep(500);
+			LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
+			Thread.sleep(1000);
+			LiPerformerPOM.Reportapply().click();
+			progress();
+			Thread.sleep(5000);
+			  JavascriptExecutor js1=(JavascriptExecutor)  getDriver() ;
+				js1.executeScript("window.scroll(0,500)");
+		 CFOcountPOM.readTotalItems1().click();
+			
+			String item1 = CFOcountPOM.readTotalItems1().getText();
+			//String NoRecord = LiReviewerPOM.reNorecord.getText();
+			 if(!item1.equalsIgnoreCase("No items to display")) 
+			 {
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count2 = Integer.parseInt(compliancesCount1);
+			String NoRecord = LiReviewerPOM.reNorecord().getText();
+			   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+			   {
+				   if(count2 == total)
+					{
+						
+						test.log(LogStatus.PASS, "Total of Report  Count="+count2+" | Sum of Total License  Count="+total);
+					}
+					else
+					{
+						
+						test.log(LogStatus.FAIL, "Total of Report Count="+count2+" | Sum of License  Count="+total);
+					}
+					}
+			   else {
+					test.log(LogStatus.PASS, "No records found.");
+				}
+			   }
+
+			
+				
+		}
+   public static void InternalDashallreportallcountforPerformer( ExtentTest test, String type) throws InterruptedException
+   {
+	    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+		
+		
+		Select drp = new Select(LiPerformerPOM.clickType());
+		drp.selectByIndex(1);
+		CFOcountPOM.clickApply1().click();	
+		  Thread.sleep(3000);
+		 int ActiveCount=Integer.parseInt(MethodPOM.clickActive().getText());
+		 int ExpiringCount=Integer.parseInt(MethodPOM.clickExpiring().getText());
+		 int ExpiredCount=Integer.parseInt(MethodPOM.clickExpired().getText());
+		 int AppliedCount=Integer.parseInt(MethodPOM.clickApplied().getText());
+		 int PendingForReviewCount=Integer.parseInt(MethodPOM.clickpendingforreview().getText());
+		 int RejectedCount=Integer.parseInt(MethodPOM.clickRejected().getText());
+		 int TerminateCount=Integer.parseInt(LiPerformerPOM.terminatedPerformer().getText());
+		 
+		 int total = ActiveCount + ExpiringCount + ExpiredCount + AppliedCount+PendingForReviewCount+RejectedCount+TerminateCount;  
+		 
+		 LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
+		  Thread.sleep(3000);
+			LiPerformerPOM.clickType22().click();			//Clicking on 'Type' drop down.
+			Thread.sleep(500);
+			LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
+			Thread.sleep(1000);
+			LiPerformerPOM.Reportapply().click();
+			progress();
+			Thread.sleep(5000);
+			  JavascriptExecutor js1=(JavascriptExecutor)  getDriver() ;
+				js1.executeScript("window.scroll(0,500)");
+		 CFOcountPOM.readTotalItems1().click();
+			
+			String item1 = CFOcountPOM.readTotalItems1().getText();
+			//String NoRecord = LiReviewerPOM.reNorecord.getText();
+			 if(!item1.equalsIgnoreCase("No items to display")) 
+			 {
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count2 = Integer.parseInt(compliancesCount1);
+			String NoRecord = LiReviewerPOM.reNorecord().getText();
+			   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+			   {
+				   if(count2 == total)
+					{
+						
+						test.log(LogStatus.PASS, "Total of Report  Count="+count2+" | Sum of Total License  Count="+total);
+					}
+					else
+					{
+						
+						test.log(LogStatus.FAIL, "Total of Report Count="+count2+" | Sum of License  Count="+total);
+					}
+					}
+			   else {
+					test.log(LogStatus.PASS, "No records found.");
+				}
+			   }
+
+			
+				
+		}
+   public static void DashallreportallcountPerformer( ExtentTest test, String type) throws InterruptedException
+   {
+	    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		Thread.sleep(3000);
+		 int ActiveCount=Integer.parseInt(MethodPOM.clickActive().getText());
+		 int ExpiringCount=Integer.parseInt(MethodPOM.clickExpiring().getText());
+		 int ExpiredCount=Integer.parseInt(MethodPOM.clickExpired().getText());
+		 int AppliedCount=Integer.parseInt(MethodPOM.clickApplied().getText());
+		 int PendingForReviewCount=Integer.parseInt(MethodPOM.clickpendingforreview().getText());
+		 int RejectedCount=Integer.parseInt(MethodPOM.clickRejected().getText());
+		 int TerminateCount=Integer.parseInt(LiPerformerPOM.terminatedPerformer().getText());
+		 
+		 int total = ActiveCount + ExpiringCount + ExpiredCount + AppliedCount+PendingForReviewCount+RejectedCount+TerminateCount;  
+		 
+		 LiPerformerPOM.clickMyReport().click();		//Clicking on 'My Reports'
+			Thread.sleep(3000);
+		 CFOcountPOM.readTotalItems1().click();
+			Thread.sleep(3000);
+			String item1 = CFOcountPOM.readTotalItems1().getText();
+			//String NoRecord = LiReviewerPOM.reNorecord.getText();
+			 if(!item1.equalsIgnoreCase("No items to display")) 
+			 {
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count2 = Integer.parseInt(compliancesCount1);
+			String NoRecord = LiReviewerPOM.reNorecord().getText();
+			   if(!NoRecord.equalsIgnoreCase("No items to display")) 
+			   {
+				   if(count2 == total)
+					{
+						
+						test.log(LogStatus.PASS, "Total of Report  Count="+count2+" | Sum of Dashboard Total License  Count="+total);
+					}
+					else
+					{
+						
+						test.log(LogStatus.FAIL, "Total of Report Count="+count2+" | Sum of Dashboard License  Count="+total);
+					}
+					}
+			   else {
+					test.log(LogStatus.PASS, "No records found.");
+				}
+			   }
+
+			
+   }	
+   public static void ViewComplianceSampleform( ExtentTest test, String type) throws InterruptedException
+   {
+	    WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		Thread.sleep(3000);
+		  getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
+		   Js1.executeScript("window.scrollBy(0,1000)");
+			wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickBystatusActive()));	  
+			String BystatusActive=MethodPOM.clickBystatusActive().getText();
+			
+		     int BystatusActiveggraph = Integer.parseInt(BystatusActive);	//Reading Active graph count.
+		     Thread.sleep(4000);
+		      MethodPOM.clickBystatusActive().click();					//Clicking on 'Active' image
+		      Thread.sleep(5000);
+		      wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showChartDetails"));	//Switching to iFrame.
+		      MethodPOM.clickAllOverview().click();
+			  Thread.sleep(3000);
+			 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("OverViews"));	//Switching to iFrame.
+			  //wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("downloadfile"));	
+			  getDriver().findElement(By.xpath("//*[@id='lbDownloadSample']")).click(); // Modify as per actual website locator
+
+		        // Wait for the file to download
+		        boolean isDownloaded = waitForFileDownload("C://Users//deepalid//Downloads", 30);
+		        
+		        // Assert that file is downloaded
+		        if (isDownloaded) 
+		        {
+		        Assert.assertTrue(isDownloaded, "File download failed!");
+		        test.log(LogStatus.PASS, "File downloaded successfully.");
+		        }
+		        else
+		        {
+		        	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		        }
+		        
+			
+		        getDriver().findElement(By.xpath("//*[@id='lnkViewSampleForm']")).click();
+
+		        // Check if popup is displayed
+		        WebElement popup = getDriver().findElement(By.xpath("//*[@id='DocumentShowPopUp']")); // Change ID as per your application
+
+		        if (popup.isDisplayed()) 
+		        {
+		        	 test.log(LogStatus.PASS, "File View  successfully.");
+		        } else 
+		        {
+		        	test.log(LogStatus.FAIL, "File Not  Viewed ");
+		        }
+			  
+				
+   }
+
+
+
+   public static void PerformerDashboardTerminateLicensefilter( ExtentTest test, String type) throws InterruptedException, IOException
+   {
+   	WebDriverWait wait = new WebDriverWait( getDriver(), 20);                                                                                                
+   	   MethodPOM.DashboardEntityclick().click();                                                                                                             
+   	   Thread.sleep(5000);                                                                                                                                   
+   	   MethodPOM.Entitypluseclick().click();                                                                                                                 
+   	   Thread.sleep(5000);                                                                                                                                   
+   	   MethodPOM.Dashselectloc().click();                                                                                                                    
+   		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);                                                                                   
+   		   Thread.sleep(3000);                                                                                                                                  
+   		   if(type.equalsIgnoreCase("Internal"))
+   		   {
+   			   MethodPOM.clickDashlictype().click();
+   			   Thread.sleep(5000);
+   			   MethodPOM.serachlic1().sendKeys("Annual Maintance",Keys.ENTER);
+   			   Thread.sleep(5000);
+   			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+   			   
+   		   }
+   		   else
+   		   {
+   		   MethodPOM.clickDashlictype().click();
+   		   Thread.sleep(5000);
+   		   MethodPOM.Performerserachlic1().sendKeys("Shops & Commercial Establishment",Keys.ENTER);
+   		   Thread.sleep(5000);
+   		   LicenseCompanyadmin.MethodPOM.ClickApply().click();
+   		   }
+   		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickTerminateper()));
+   		String Terminate=MethodPOM.clickTerminateper().getText();
+   		
+   	     int TerminateLicense = Integer.parseInt(Terminate);	//Reading Terminate count.
+
+   	      MethodPOM.clickTerminateper().click();					//Clicking on 'Terminate ' image
+   	      Thread.sleep(4000);
+   	        JavascriptExecutor js1=(JavascriptExecutor)  getDriver() ;
+   			js1.executeScript("window.scroll(0,500)");
+   			Thread.sleep(4000);
+   			String item2 = CFOcountPOM.readTotalItems1().getText();
+   			//String NoRecord = LiReviewerPOM.reNorecord.getText();
+   			 if(!item2.equalsIgnoreCase("No items to display")) 
+   			 {
+   			MethodPOM.clickReadTerminate().click();					//Clicking on total items count
+   			Thread.sleep(500);
+   			String item = MethodPOM.clickReadTerminate().getText();	//Reading total items String value
+   			String[] bits = item.split(" ");								//Splitting the String
+   			String LicensTerminate= bits[bits.length - 2];		//Getting the second last word (total number of users)
+   			
+   			//int total = Integer.parseInt(MethodPOM.clickReadActive().getText());
+   			int total = Integer.parseInt(LicensTerminate);
+   			if(TerminateLicense == total)
+   				{
+   					//test.log(LogStatus.PASS, "Number of Terminate License  grid matches to Dashboard Terminate  License   Count.");
+   					test.log(LogStatus.PASS, "No of Terminated  License  in the grid = "+total+" | Dashboard Terminated License  Count = "+TerminateLicense);
+   				}
+   				else
+   				{
+   					//test.log(LogStatus.FAIL, "Number of Terminate License does not matches to Dashboard Terminate License   Count.");
+   					test.log(LogStatus.FAIL, "No of Terminated License  in the grid = "+total+" | Dashboard Terminated License  Count = "+TerminateLicense);
+   				}
+   			 }
+   			 else
+   			  {
+   				   		      
+   				test.log(LogStatus.PASS,"No Record Found");
+   				MethodPOM.clickMyDashboard().click();
+   					      
+   			  }
+   }
+
+private static boolean waitForFileDownload(String string, int i) {
+	// TODO Auto-generated method stub
+	return false;
+}
+}
 
 

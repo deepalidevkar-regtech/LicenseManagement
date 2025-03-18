@@ -387,7 +387,7 @@ void BylicnesetypeExpiring() throws InterruptedException, IOException
 				extent.endTest(test);
 				extent.flush();
 			}
-/*@Test(priority =28)
+@Test(priority =28)
 void MyWorkspaceAll() throws InterruptedException, IOException
 {
 	test = extent.startTest("My Workspace Working Verification");
@@ -396,7 +396,7 @@ void MyWorkspaceAll() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-} */
+} 
 @Test(priority = 28)
 	void MyDocuments() throws InterruptedException
 	{
@@ -566,6 +566,28 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.DashboardAssignedButNotActivatedFilter( test, "Statutory");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 45)
+	void DashboardandReportCountMatch() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Dashboard and Report  Count Match  Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		LiPeMethodsPOM.Dashallreportallcount( test, "Statutory");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 46)
+	void ComplianceSampleForm() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Sample Form Working Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		LiPeMethodsPOM.ViewComplianceSampleform( test, "Statutory");
 		
 		extent.endTest(test);
 		extent.flush();

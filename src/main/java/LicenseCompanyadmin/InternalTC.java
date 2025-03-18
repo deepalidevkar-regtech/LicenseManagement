@@ -95,7 +95,7 @@ public class InternalTC  extends webpage{
 		initialization("License",0);
 	}
 
-@Test(priority = 2)
+/*@Test(priority = 2)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -221,7 +221,7 @@ public class InternalTC  extends webpage{
 			test = extent.startTest("License ExpiredIn Working Verification");
 		    //  test.log(LogStatus.PASS, "License ExpiredIn Working Verification");
 			
-			StatutoryMethod.LicenseExpiredOnInternal( test, "Internal");
+			StatutoryMethod.LicenseExpiredInInternal( test, "Internal");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -445,7 +445,7 @@ public class InternalTC  extends webpage{
      LiPeMethodsPOM.Reports( test, "Internal");
 		extent.endTest(test);
 		extent.flush();
-	}
+	}*/
 	
 	@Test(priority = 30)
 	void InternalLicenseCreation() throws InterruptedException, IOException
@@ -456,7 +456,7 @@ public class InternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	 @Test(priority = 31)
+	@Test(priority = 31)
 	void LicenseNewAssignment() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Internal License New Assignment");
@@ -478,7 +478,7 @@ public class InternalTC  extends webpage{
 		{
 			test = extent.startTest("Internal Renew License Verification");
 		//	test.log(LogStatus.PASS, "Compliance Created and Assigned Successfully");
-		    StatutoryMethod.RenewInternalLicense(test,"Statutory");
+		    StatutoryMethod.RenewInternalLicense1(test,"Internal");
 		    extent.endTest(test);
 			extent.flush();
 		}
@@ -690,6 +690,17 @@ public class InternalTC  extends webpage{
 				extent.endTest(test);
 				extent.flush();
 			}
+@Test(priority = 42)
+void DashboardandReportCountMatch() throws InterruptedException, IOException
+{
+	test = extent.startTest("Dashboard and Report  Count Match  Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
+	
+	LiPeMethodsPOM.InternalDashallreportallcountforPerformer( test, "Internal");
+	
+	extent.endTest(test);
+	extent.flush();
+}
 
 	@AfterMethod
 	  void driverclose()

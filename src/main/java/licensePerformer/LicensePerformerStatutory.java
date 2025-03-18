@@ -1,5 +1,6 @@
 package licensePerformer;
 
+import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -58,7 +59,7 @@ public class LicensePerformerStatutory extends webpage {
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
 		test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogin.aspx");
-		test.log(LogStatus.PASS, "UserID-deepali12@tlregtech.in");
+		test.log(LogStatus.PASS, "UserID-deepali@tlregtech.in");
 		test.log(LogStatus.PASS, "Password-admin@123");
 		test.log(LogStatus.PASS, "Performer Login Successfully.");
 		extent.endTest(test);
@@ -155,7 +156,7 @@ void Expiringperform() throws InterruptedException
 		extent.flush();
 	}
 @Test(priority = 7)
-   void Expiredgperform() throws InterruptedException
+   void Expiredgperform() throws InterruptedException, AWTException
 {
 	test = extent.startTest("Expired License Perform Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
@@ -211,7 +212,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 22)
+@Test(priority = 12)
 	void AssignedButNotActivated() throws InterruptedException, IOException
 	
 	{
@@ -310,7 +311,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority =34)
+@Test(priority =21)
 	void  ActiveDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -319,7 +320,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority =35)
+@Test(priority =22)
 	void  ExpiringDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Expiring License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -328,7 +329,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority =36)
+@Test(priority =23)
 	void  ExpiredDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Expired License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -337,7 +338,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority =37)
+@Test(priority =24)
 	void  AppliedDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Applied License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -346,7 +347,7 @@ void Expiringperform() throws InterruptedException
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 38)
+@Test(priority = 25)
 		void PendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Pending For review  License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -357,7 +358,7 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 39)
+@Test(priority = 26)
 		void RejeectedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Rejected License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -368,18 +369,18 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 40)
+@Test(priority = 27)
 		void TerminateDashboardFilter() throws InterruptedException, IOException
 		{
-		    test = extent.startTest("Terminate License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
+		    test = extent.startTest("Terminated License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
-			StatutoryMethod.DashboardTerminateLicensefilter( test, "Statutory");
+			LiPeMethodsPOM.PerformerDashboardTerminateLicensefilter( test, "Statutory");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 41)
+@Test(priority = 28)
 		void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Not Activated License Entity/Branch Location(Branch Mumbai))&LicenseType(Shops & Commercial Establishment) wise Count Verification");
@@ -390,6 +391,18 @@ void Expiringperform() throws InterruptedException
 			extent.endTest(test);
 			extent.flush();
 		}
+@Test(priority = 29)
+void DashboardandReportCountMatch() throws InterruptedException, IOException
+{
+	test = extent.startTest("Dashboard and Report  Count Match  Verification");
+	//test.log(LogStatus.INFO, "Test Initiated");
+	
+	LiPeMethodsPOM.DashallreportallcountPerformer( test, "Statutory");
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
 @AfterMethod
 	  void driverclose()
 	  {

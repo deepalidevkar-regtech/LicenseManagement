@@ -350,7 +350,7 @@ void RejectedInternalLicense() throws InterruptedException, IOException
  			
  			 Select drp = new Select(LiPerformerPOM.clickType());
  		   	drp.selectByIndex(1);
- 					test = extent.startTest("Terminate License Count Verification");
+ 					test = extent.startTest("Terminated License Count Verification");
  					//test.log(LogStatus.PASS, "Terminate License Count Verification");
  					
  					StatutoryMethod.TerminateInternalLicense( test, "Internal");
@@ -361,7 +361,7 @@ void RejectedInternalLicense() throws InterruptedException, IOException
    	@Test(priority = 12)
    	void AssignedButNotActivated() throws InterruptedException, IOException
    	{
-   		test = extent.startTest("Assigned But Not Activated  Count Verification");
+   		test = extent.startTest(" Not Activated  Count Verification");
    		//test.log(LogStatus.INFO, "Test Initiated");
    		
    		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -436,7 +436,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		extent.endTest(test);
 		extent.flush();
 	}
-   	@Test(priority = 16)
+  	@Test(priority = 16)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -455,6 +455,36 @@ void MyReports() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
+   	@Test(priority = 18)
+   	void DashboardandReportCountMatch() throws InterruptedException, IOException
+   	{
+   	
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+   		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
+   		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
+   		
+   		Select drp = new Select(LiPerformerPOM.clickType());
+   		drp.selectByIndex(1);
+   		
+   		try
+   		{
+   			Thread.sleep(400);
+   			wait.until(ExpectedConditions.invisibilityOf(LiPerformerPOM.Progress()));
+   		}
+   		catch(Exception e)
+   		{
+   			
+   		}
+   		
+   		Thread.sleep(500);
+   		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
+   		
+   		LiPeMethodsPOM.InternalDashallreportallcount( test, "Internal");
+   		test = extent.startTest("Dashboard and Report  Count Match  Verification");
+   		//test.log(LogStatus.INFO, "Test Initiated");
+   		extent.endTest(test);
+   		extent.flush();
+   	}
 
 
 	 @AfterMethod

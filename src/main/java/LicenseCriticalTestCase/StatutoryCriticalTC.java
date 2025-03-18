@@ -1,5 +1,6 @@
 package LicenseCriticalTestCase;
 
+import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -151,7 +152,7 @@ void Expiringperform() throws InterruptedException
 		extent.flush();
 	}
 @Test(priority = 7)
-         void Expiredgperform() throws InterruptedException
+         void Expiredgperform() throws InterruptedException, AWTException
      {
     	test = extent.startTest("Expired License Count Verification");
 	    //test.log(LogStatus.INFO, "Test Initiated");

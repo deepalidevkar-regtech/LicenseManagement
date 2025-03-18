@@ -230,7 +230,7 @@ public class LiPerformerPOM extends webpage{
 	
 	public static WebElement clickType2()
 	{
-		license = getDriver().findElement(By.xpath("(//*[@class='k-widget k-dropdown k-header'])[2]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[1]"));
 		
 		return license;
 	}
@@ -242,7 +242,7 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement selectInternal()
 	{
-		license = getDriver().findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
+		license = getDriver().findElement(By.xpath("//li[normalize-space()='Internal']"));
 		return license;
 	}
 	
@@ -342,6 +342,12 @@ public class LiPerformerPOM extends webpage{
 	public static WebElement terminatedPerformer()
 	{
 		license = getDriver().findElement(By.id("ContentPlaceHolder1_divterminated"));
+	
+		return license;
+	}
+	public static WebElement terminated()
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_divTerminate']"));
 	
 		return license;
 	}
@@ -499,9 +505,11 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement AppliedStartDate() 
 	{
-		license = getDriver().findElement(By.linkText("30"));
+		license = getDriver().findElement(By.xpath("20-03-2025"));
 		return license;
 	}
+	//*[@id="txtStartDate"]
+	
 	public static WebElement AppliedEndDateclick() 
 	{
 		license = getDriver().findElement(By.xpath("//*[@id='txtEndDate']"));
@@ -509,7 +517,7 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement AppliedEndDate() 
 	{
-		license = getDriver().findElement(By.linkText("29"));
+		license = getDriver().findElement(By.linkText("30-03-2025"));
 		return license;
 	}
 	public static WebElement editnomineebtn() 
@@ -649,6 +657,21 @@ public class LiPerformerPOM extends webpage{
 	public static WebElement selectinlictype() 
 	{
 		license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[26]"));
+		return license;
+	}
+	public static WebElement selectInternalinlictype() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[7]"));
+		return license;
+	}
+	public static WebElement internalsearclic() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-textbox'])[2]"));
+		return license;
+	}
+	public static WebElement select() 
+	{
+		license = getDriver().findElement(By.xpath("(//*[@class='k-item k-state-hover'])[1]"));
 		return license;
 	}
 	
@@ -811,6 +834,32 @@ public class LiPerformerPOM extends webpage{
 	public static WebElement NextDateClick() 
 	{
 		license = getDriver().findElement(By.xpath("//*[@class='ui-icon ui-icon-circle-triangle-e']"));
+		return license;
+	}
+	public static WebElement SampleformDownload() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='lbDownloadSample']"));
+		return license;
+	}
+	public static WebElement DocumentViewer() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='DocumentShowPopUp']"));
+		return license;
+	}
+	
+	public static WebElement SampleformView() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='lnkViewSampleForm']"));
+		return license;
+	}
+	public static WebElement lablemsg() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='Labelmsg']"));
+		return license;
+	}
+	public static WebElement inlablemsg() 
+	{
+		license = getDriver().findElement(By.xpath("//*[@id='InternalVD']"));
 		return license;
 	}
 

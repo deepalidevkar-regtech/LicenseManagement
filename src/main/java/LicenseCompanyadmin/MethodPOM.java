@@ -1198,6 +1198,11 @@ public static WebElement serachlic1()
 	license = getDriver().findElement(By.xpath("(//input[@type='text'])[4]"));	
 	return license;
 }
+public static WebElement performerserachlic1() 
+{
+	license = getDriver().findElement(By.xpath("(//input[@type='text'])[2]"));	
+	return license;
+}
 public static WebElement serachlicforgrp() 
 {
 	license = getDriver().findElement(By.xpath("(//input[@type='text'])[4]"));	
@@ -1215,17 +1220,17 @@ public static WebElement Documentstatusclick()
 }
 public static WebElement Documentselectstatus() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[34]"));	
+	license = getDriver().findElement(By.xpath("(//*[@id='dropdownlistStatus_listbox'])/li[2]"));	
 	return license;
 }
 public static WebElement Documentlictypeclick() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[3]"));	
+	license = getDriver().findElement(By.xpath("(//*[@ id='dropdownlistLicenseType_listbox'])[2]"));	
 	return license;
 }
 public static WebElement Documentlictypeselect() 
 {
-	license = getDriver().findElement(By.xpath("(//*[@class='k-item'])[45]"));	
+	license = getDriver().findElement(By.xpath("(//*[@id='dropdownlistLicenseType_listbox'])/li[4]"));	
 	return license;
 }
 public static WebElement Documentlictypeselectin() 

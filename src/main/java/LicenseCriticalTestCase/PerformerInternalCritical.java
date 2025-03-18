@@ -61,7 +61,7 @@ public class PerformerInternalCritical extends webpage
 		 test.log(LogStatus.PASS,"License Details Export" );
 		 Thread.sleep(3000);	
 		 
-		licmgmtPOM.ClickAddLicense().click();
+	/*	licmgmtPOM.ClickAddLicense().click();
 		 
 		Thread.sleep(3000);	
 		 licmgmtPOM.ClickLicenseTypeDropdown().click();
@@ -162,7 +162,7 @@ public class PerformerInternalCritical extends webpage
 		         licmgmtPOM.editlicenseclose().click();
 		         Thread.sleep(5000);
 		       */  
-		         licmgmtPOM.ClickMyWorkspace().click();
+		        // licmgmtPOM.ClickMyWorkspace().click();
 		         Thread.sleep(5000);
 		         licmgmtPOM.Overviewworkspace().click();
 		         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));

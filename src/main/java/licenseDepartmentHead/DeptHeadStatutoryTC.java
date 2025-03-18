@@ -49,7 +49,7 @@ public class DeptHeadStatutoryTC extends webpage
 			extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//new//LicenseDepartmentHeadResult(Statutory).html",true);
 		      test = extent.startTest("Logging In - Department Head (Statutory");
 		      test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogin.aspx");
-				test.log(LogStatus.PASS, "UserID-Bhegyesh@tlregtech.com");
+				test.log(LogStatus.PASS, "UserID-bhagyesh345@tlregtech.com");
 				test.log(LogStatus.PASS, "Password-admin@123");
 			
 			test.log(LogStatus.PASS, "Department Head Login Successfully");
@@ -162,7 +162,7 @@ void Expiring() throws InterruptedException, IOException
 @Test(priority = 8)
 	void Terminate() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Terminate License Count Verification");
+		test = extent.startTest("Terminated License Count Verification");
 		DeptHeadMethod.DeptTerminateLicense( test, "Statutory");
 		
 		extent.endTest(test);
@@ -181,7 +181,7 @@ void NotActivated() throws InterruptedException, IOException
 @Test(priority = 10)
 void LicenseExpiredOnStatutory() throws InterruptedException
 {
-	test = extent.startTest("License ExpiredIn Working Verification");
+	test = extent.startTest(" ExpiredIn License Working Verification");
      DeptHeadMethod.DeptLicenseExpiredOnStatutory( test, "Statutory");
 	 extent.endTest(test);
 	 extent.flush();
@@ -212,7 +212,7 @@ void BystausActivelicense() throws InterruptedException, IOException
 @Test(priority = 13)
 		void BystausExpiringlicense() throws InterruptedException, IOException
 		{
-			test = extent.startTest("By Status- Application Overdue (Expiring but not applied) License Graph Working Verification");
+			test = extent.startTest("By Status- Expiring License Graph Working Verification");
 			LicenseCompanyadmin.StatutoryMethod.BystatusExpringgraph( test, "Statutory");	
 			extent.endTest(test);
 			extent.flush();
@@ -272,7 +272,7 @@ void BystausActivelicense() throws InterruptedException, IOException
 		}
 
 		@Test(priority = 19)
-		void BylicnesetypeActive() throws InterruptedException
+		void BylicnesetypeActive() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type -Shops & Commercial Establishment  Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -293,7 +293,7 @@ void BystausActivelicense() throws InterruptedException, IOException
 			extent.flush();
 		}
     @Test(priority = 21)
-		void BylicnesetypeExpired() throws InterruptedException
+		void BylicnesetypeExpired() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type-Shops & Commercial Establishment Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -305,7 +305,7 @@ void BystausActivelicense() throws InterruptedException, IOException
 		}
 
 @Test(priority = 22)
-void BylicnesetypeApplied() throws InterruptedException
+void BylicnesetypeApplied() throws InterruptedException, IOException
 {
 	test = extent.startTest("By License type- Shops & Commercial Establishment applied License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
@@ -338,7 +338,7 @@ void BylicnesetypeRejected() throws InterruptedException, IOException
 	extent.flush();
 }
 @Test(priority = 25)
-void BylicnesetypeTerminate() throws InterruptedException
+void BylicnesetypeTerminate() throws InterruptedException, IOException
 {
 	test = extent.startTest("By License type -Shops & Commercial Establishment Terminate  License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
@@ -390,6 +390,17 @@ void MyReports() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
+	@Test(priority = 28)
+		void DashboardandReportCountMatch() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Dashboard and Report  Count Match  Verification");
+			//test.log(LogStatus.INFO, "Test Initiated");
+			
+			LiPeMethodsPOM.Dashallreportallcount( test, "Statutory");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 @AfterMethod
 		 void driverclose()
 		 {

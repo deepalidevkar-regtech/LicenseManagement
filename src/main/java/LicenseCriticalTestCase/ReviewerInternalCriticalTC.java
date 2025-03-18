@@ -260,7 +260,7 @@ public class ReviewerInternalCriticalTC extends webpage
 		}
     
 @Test(priority = 7)
-	void RejectedInternalLicense() throws InterruptedException
+	void RejectedInternalLicense() throws InterruptedException, IOException
 	{
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
@@ -312,7 +312,7 @@ public class ReviewerInternalCriticalTC extends webpage
 @Test(priority = 9)
 void AssignedButNotActivated() throws InterruptedException, IOException
 {
-	test = extent.startTest("Assigned But Not Activated  Count Verification");
+	test = extent.startTest("Not Activated  Count Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
 	
 	WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -363,7 +363,7 @@ void LicenseExpiredOnInternal() throws InterruptedException
 	
 	Thread.sleep(500);
 	CFOcountPOM.clickApply1().click();				//Clicking on Apply.
-	test = extent.startTest("License Expired On Working Verification");
+	test = extent.startTest("License ExpiredIn Working Verification");
     // test.log(LogStatus.PASS, "License ExpiredOn Working Verification");
 	
   LiPeMethodsPOM.LicenseExpiredOnperInternal( test, "Internal");
@@ -394,7 +394,7 @@ void LicenseExpiredOnInternal() throws InterruptedException
 		
 		Thread.sleep(500);
 		CFOcountPOM.clickApply1().click();				//Clicking on Apply.
-		test = extent.startTest("License ExpiringOn Working Verification");
+		test = extent.startTest("License ExpiringIn Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LiReMethodsPOM.LicenseExpiringOnInternalrew( test, "Internal");

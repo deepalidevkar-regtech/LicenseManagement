@@ -279,7 +279,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 	 @Test(priority = 19)
-		void BylicnesetypeActive() throws InterruptedException
+		void BylicnesetypeActive() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type -Shops & Commercial Establishment  Active License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -288,7 +288,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 20)
+	@Test(priority = 20)
 		void BylicnesetypeExpiring() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type -Shops & Commercial Establishment Expiring License Graph Working Verification");
@@ -301,7 +301,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		}
 	
 	@Test(priority = 21)
-		void BylicnesetypeExpired() throws InterruptedException
+		void BylicnesetypeExpired() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type-Shops & Commercial Establishment Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -312,8 +312,8 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 	
-	 @Test(priority = 20)
-		void BylicnesetypeApplied() throws InterruptedException
+	@Test(priority = 20)
+		void BylicnesetypeApplied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type- Shops & Commercial Establishment applied  License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -323,7 +323,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 21)
+	@Test(priority = 21)
 		void BylicnesetypePendingForReview() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type -Shops & Commercial Establishment Pending For Review Graph count Working Verification");
@@ -334,7 +334,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 22)
+	@Test(priority = 22)
 		void BylicnesetypeRejected() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type -Shops & Commercial Establishment Rejected  Graph Count Working Verification");
@@ -347,7 +347,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		}
 	 
 	@Test(priority = 23)
-		void BylicnesetypeTerminate() throws InterruptedException
+		void BylicnesetypeTerminated() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type -Shops & Commercial Establishment Terminated  License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
@@ -534,6 +534,17 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
+	@Test(priority = 41)
+	void DashboardandReportCountMatch() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Dashboard and Report  Count Match  Verification");
+		//test.log(LogStatus.INFO, "Test Initiated");
+		
+		LiPeMethodsPOM.Dashallreportallcount( test, "Statutory");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
  @AfterMethod
  void driverclose()
  {

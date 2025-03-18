@@ -102,11 +102,11 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 		Thread.sleep(7000);
 		LiPerformerPOM.editlicenseicon().click();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().clear();
+		//licenseManagement.licmgmtPOM.LicenseTitle().clear();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("update License");	
+		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys(".");	
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseNo().sendKeys("update00");
+		licenseManagement.licmgmtPOM.LicenseNo().sendKeys(".");
 		Thread.sleep(5000);
 		js1.executeScript("window.scrollBy(0,3000)");
 		Thread.sleep(3000);
@@ -337,7 +337,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectStatutoryDropdown()));
 	Select status = new Select(OverduePOM.selectStatutoryDropdown());	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
+	status.selectByIndex(1);	
 	
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
@@ -457,7 +457,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	status.selectByIndex(2);	
 	 Thread.sleep(3000);
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -699,7 +699,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -814,7 +814,7 @@ getDriver().switchTo().parentFrame();
    Thread.sleep(2000);
 	wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectStatutoryDropdown()));
 	Select status = new Select(OverduePOM.selectStatutoryDropdown());	//Selecting Status dropdown box.
-	status.selectByIndex(2);	
+	status.selectByIndex(1);	
 	
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,100)");
@@ -929,7 +929,7 @@ else
 	
 	 Thread.sleep(3000);
 	 String workingDir = System.getProperty("user.dir");
-		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//Reports//PerformerResults.html");	//Uploading file by sending file to Upload Button. (Internal)
+		OverduePOM.fileUploadInternal().sendKeys(workingDir+"//TestData//ComplianceSheet.xlsx");	//Uploading file by sending file to Upload Button. (Internal)
 		Thread.sleep(1000);
 		js1.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(500);
@@ -1180,15 +1180,18 @@ getDriver().switchTo().parentFrame();
 		Thread.sleep(3000);
 		LiPerformerPOM.clickMyDocumentsMenu().click();	//Clicking on 'My Documents'
 		
-		Progress();
+	//	Progress();
 		
-		wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Waiting until records table gets visible.
+	//	wait.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Waiting until records table gets visible.
 		
 		if(type.equalsIgnoreCase("Internal"))
 		{
 			LiPerformerPOM.clickType2().click();			//Clicking on 'Type' drop down.
 			Thread.sleep(5000);
-			LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
+			Actions action = new Actions(getDriver());
+
+			action.moveToElement(LiPerformerPOM.selectInternal()).click().perform();
+			//LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
 			Thread.sleep(1000);
 			Progress();
 		}
@@ -1244,7 +1247,7 @@ getDriver().switchTo().parentFrame();
 			Thread.sleep(3000);
 			LiPerformerPOM.searchlic1in().click();
 		}
-	
+
 	//	wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
 		//wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
 		Thread.sleep(3000);
