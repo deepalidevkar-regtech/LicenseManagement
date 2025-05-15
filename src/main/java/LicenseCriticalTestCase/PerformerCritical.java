@@ -1188,10 +1188,10 @@ getDriver().switchTo().parentFrame();
 		{
 			LiPerformerPOM.clickType2().click();			//Clicking on 'Type' drop down.
 			Thread.sleep(5000);
-			Actions action = new Actions(getDriver());
+			//Actions action = new Actions(getDriver());
 
-			action.moveToElement(LiPerformerPOM.selectInternal()).click().perform();
-			//LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
+			//action.moveToElement(LiPerformerPOM.selectInternal()).click().perform();
+			LiPerformerPOM.selectInternal().click();//Selecting 'Internal' option.
 			Thread.sleep(1000);
 			Progress();
 		}

@@ -230,13 +230,13 @@ public class LiPerformerPOM extends webpage{
 	
 	public static WebElement clickType2()
 	{
-		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-input'])[2]"));
 		
 		return license;
 	}
 	public static WebElement clickType22()
 	{
-		license = getDriver().findElement(By.xpath("(//*[@class='k-widget k-dropdown k-header'])[1]"));
+		license = getDriver().findElement(By.xpath("(//*[@class='k-widget k-dropdown k-header'])[2]"));
 		
 		return license;
 	}
@@ -505,7 +505,7 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement AppliedStartDate() 
 	{
-		license = getDriver().findElement(By.xpath("20-03-2025"));
+		license = getDriver().findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[2]/td[4]"));
 		return license;
 	}
 	//*[@id="txtStartDate"]
@@ -517,7 +517,7 @@ public class LiPerformerPOM extends webpage{
 	}
 	public static WebElement AppliedEndDate() 
 	{
-		license = getDriver().findElement(By.linkText("30-03-2025"));
+		license = getDriver().findElement(By.xpath("//*[@id='ui-datepicker-div']/table/tbody/tr[2]/td[7]"));
 		return license;
 	}
 	public static WebElement editnomineebtn() 

@@ -320,7 +320,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 17)
+	@Test(priority = 20)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
 			test = extent.startTest("By License Type- Expired License Graph Working Verification");
@@ -331,7 +331,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 18)
+	@Test(priority = 21)
 		void ByLicensetypeExpiringInternal() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type-Application Overdue (Expiring but not applied) License Graph Working Verification");
@@ -342,7 +342,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	  @Test(priority = 19)
+	  @Test(priority =22)
 			void ByLicensetypeAppliedInternal() throws InterruptedException
 			{
 				test = extent.startTest("By License Type Graph Expired Applied But not Renewed License On Working Verification");
@@ -353,7 +353,7 @@ public class licmgmtInternalTC  extends webpage{
 				extent.endTest(test);
 				extent.flush();
 			}
-@Test(priority = 20)
+@Test(priority = 23)
 	void BylicnesetypeActiveInternal() throws InterruptedException
 	{
 		test = extent.startTest("By License Type Graph Active License On Working Verification");
@@ -364,7 +364,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 21)
+	@Test(priority = 24)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
 			test = extent.startTest("By License Type Graph Terminate License On Working Verification");
@@ -375,7 +375,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 21)
+	@Test(priority = 25)
 		void BylicnesetypeRejectedInternal() throws InterruptedException
 		{
 			test = extent.startTest("Internal By License type - Rejected Graph  Count Working Verification");
@@ -386,7 +386,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 22)
+		@Test(priority = 26)
 	void MyWorkspace() throws InterruptedException, IOException
 	{
 			WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -402,7 +402,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 23)
+	@Test(priority = 27)
 	void MyDocumentsInternal() throws InterruptedException
 		{
 			test = extent.startTest("My Documents Download Verification");
@@ -416,7 +416,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 24)
+@Test(priority = 28)
 	void MyReports() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports Verification");
@@ -428,7 +428,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.flush();
 	}
 
-@Test(priority = 25)
+@Test(priority = 29)
 	void RenewInternalLicense() throws InterruptedException, IOException
 	{
 	{
@@ -441,7 +441,7 @@ public class licmgmtInternalTC  extends webpage{
 	}
 	}
 	
-	 @Test(priority = 26)
+	 @Test(priority = 30)
 		void LicenseNewAssignment() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License New Assignment");
@@ -450,7 +450,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	 @Test(priority = 27)
+	 @Test(priority = 31)
 		void InternalLicenseCreation() throws InterruptedException, IOException
 		{
 			test = extent.startTest("License Creation Verification");
@@ -459,7 +459,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
- @Test(priority = 28)
+ @Test(priority = 32)
  void NomineeDetails() throws InterruptedException, IOException
 
   {
@@ -472,7 +472,7 @@ public class licmgmtInternalTC  extends webpage{
 	extent.flush();
   }
 	
-	@Test(priority =34)
+	@Test(priority =33)
 	void  InternalActiveDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Active License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -497,7 +497,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =35)
+	@Test(priority =34)
 	void  InternalExpiringDashboardFilter() throws InterruptedException, IOException
 	{
 	
@@ -523,7 +523,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =36)
+	@Test(priority =35)
 	void  InternalExpiredDashboardFilter() throws InterruptedException, IOException
 	{
 		
@@ -549,7 +549,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =37)
+	@Test(priority =36)
 	void  InternlAppliedDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -574,7 +574,7 @@ public class licmgmtInternalTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 38)
+	@Test(priority = 37)
 		void InternalPendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Pending For review  Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -626,7 +626,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 38)
+		@Test(priority = 39)
 		void InternalTerminateDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Terminate License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -652,7 +652,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 38)
+		@Test(priority = 40)
 		void InternalAssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Assigned But Not Activated License Entity/Branch Location(Demo Bharat Gujarat1)&LicenseType(Annual maintenance) Filter working  Verification");
@@ -678,7 +678,7 @@ public class licmgmtInternalTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 39)
+	@Test(priority = 41)
 	void DashboardandReportCountMatch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard and Report  Count Match  Verification");

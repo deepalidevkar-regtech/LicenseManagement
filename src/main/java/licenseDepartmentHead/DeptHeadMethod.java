@@ -3516,11 +3516,6 @@ public static  void DeptAssignedButNotActivated( ExtentTest test, String type) t
 						{
 							test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 						}
-		}
-					else
-						{
-							test.log(LogStatus.PASS, "No Record Found");
-						}
 		
 
 		MethodPOM.clickMyDashboard().click();
@@ -3658,14 +3653,13 @@ Boolean  btnclear =LiPerformerPOM.clearbtn().isEnabled();
  {
 	 test.log(LogStatus.FAIL,"Clear Button Not Clickable");
  }
-
-
-  wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard()));
-	
-}
-
-		
-
+		}
+		else
+		{
+			test.log(LogStatus.PASS,"No record Found" );
+			MethodPOM.clickMyDashboard().click();
+		}
+		}
 
 private static void progress() {
 	// TODO Auto-generated method stub

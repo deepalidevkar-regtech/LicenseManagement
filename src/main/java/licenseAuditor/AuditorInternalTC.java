@@ -62,7 +62,7 @@ import licensePerformer.LiPerformerPOM;
 			
 			login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 			*/
-			//test.log(LogStatus.PASS, "Test Passed.");
+			test.log(LogStatus.PASS, "Test Passed.");
 			extent.endTest(test);
 			extent.flush();
 		}
@@ -161,8 +161,8 @@ import licensePerformer.LiPerformerPOM;
 				
 				extent.endTest(test);
 				extent.flush();
-			}	
-	@Test(priority = 8)
+			}
+@Test(priority = 8)
 			void TerminateInternalLicense() throws InterruptedException, IOException
 			{
 				test = extent.startTest("Terminated License Count Verification");
@@ -280,7 +280,7 @@ import licensePerformer.LiPerformerPOM;
 			@Test(priority = 16)
 			void BystatusPendingForReviewgraph() throws InterruptedException, IOException
 				{
-					test = extent.startTest("Internal By status-Pending For Review Graph Count Verification");
+					test = extent.startTest(" By status-Pending For Review Graph Count Verification");
 					//test.log(LogStatus.INFO, "Test Initiated");
 					
 					StatutoryMethod.BystatusPendingForReviewInternalgraph( test, "Internal");
@@ -315,7 +315,7 @@ import licensePerformer.LiPerformerPOM;
  @Test(priority = 19)
 		void BylicnesetypeActiveInternal() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Graph Active License  Working Verification");
+			test = extent.startTest("By License Type-Annual maintenance Active License  Graph  Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licmgmtMethodPOM.ByLicensetypeActiveInternal( test, "Internal");
@@ -326,7 +326,7 @@ import licensePerformer.LiPerformerPOM;
 		@Test(priority = 20)
 		void ByLicensetypeExpiringInternal() throws InterruptedException, IOException
 		{
-			test = extent.startTest("By License Type-Expiring License Graph Working Verification");
+			test = extent.startTest("By License Type-Annual maintenance Expiring License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
@@ -338,7 +338,7 @@ import licensePerformer.LiPerformerPOM;
 		 @Test(priority = 21)
 			void  ByLicensetypeExpiredInternal() throws InterruptedException
 			{
-				test = extent.startTest("By License Type- Expired License Graph Working Verification");
+				test = extent.startTest("By License Type- Annual maintenance Expired License Graph Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 		        licmgmtMethodPOM.ByLicensetypeExpiredInternal( test, "Internal");
@@ -350,7 +350,7 @@ import licensePerformer.LiPerformerPOM;
 @Test(priority = 22)
 			void ByLicensetypeAppliedInternal() throws InterruptedException
 			{
-				test = extent.startTest("By License Type Graph-Applied License On Working Verification");
+				test = extent.startTest("By License Type-Annual maintenance Applied License Graph Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 			   licmgmtMethodPOM.ByLicensetypeAppliedInternal( test, "Internal");
@@ -372,7 +372,7 @@ import licensePerformer.LiPerformerPOM;
 		@Test(priority = 24)
 			void BylicnesetypeRejectedInternal() throws InterruptedException
 			{
-				test = extent.startTest("Internal By License type - Rejected Graph  Count Working Verification");
+				test = extent.startTest("Internal By License type -Annual maintenance Rejected Graph  Count Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				licmgmtMethodPOM.ByLicensetypeRejectedmgmtInternal( test, "Internal");
@@ -383,7 +383,7 @@ import licensePerformer.LiPerformerPOM;
 		@Test(priority = 25)
 			void BylicnesetypeTerminateInternal() throws InterruptedException
 			{
-				test = extent.startTest("By License Type Graph Terminated License On Working Verification");
+				test = extent.startTest("By License Type-Terminated License Graph On Working Verification");
 			//	test.log(LogStatus.INFO, "Test Initiated");
 				
 	             licmgmtMethodPOM.ByLicensetypeTerminateInternal( test, "Internal");

@@ -95,7 +95,7 @@ public class InternalTC  extends webpage{
 		initialization("License",0);
 	}
 
-/*@Test(priority = 2)
+@Test(priority = 2)
 		void AllFilter() throws InterruptedException
 		{
 			test = extent.startTest("All Filter Working Verification");
@@ -445,7 +445,7 @@ public class InternalTC  extends webpage{
      LiPeMethodsPOM.Reports( test, "Internal");
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	
 	@Test(priority = 30)
 	void InternalLicenseCreation() throws InterruptedException, IOException

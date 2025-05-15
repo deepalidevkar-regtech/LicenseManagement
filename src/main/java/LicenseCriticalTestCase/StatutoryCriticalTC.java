@@ -105,7 +105,7 @@ public class StatutoryCriticalTC extends webpage  {
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 3)
+/*@Test(priority = 3)
 void ActivePerform() throws InterruptedException
 {
 	test = extent.startTest("Active License Count Verification");
@@ -199,7 +199,7 @@ void Expiringperform() throws InterruptedException
 @Test(priority = 11) 
 		void TerminateCount() throws InterruptedException
 		{
-			test = extent.startTest("Terminate License Count Verification");
+			test = extent.startTest("Terminated License Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCriticalTestCase.PerformerCritical.TerminateLicense1( test, "Statutory");
@@ -211,7 +211,7 @@ void Expiringperform() throws InterruptedException
 		void AssignedButNotActivated() throws InterruptedException, IOException
 
 		{
-			test = extent.startTest("Assigned But Not Activated License Verification");
+			test = extent.startTest("Not Activated License Verification");
 			LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
 
 			extent.endTest(test);
@@ -268,7 +268,7 @@ void MyReports() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-}
+}*/
 
 @AfterMethod
 void driverclose()

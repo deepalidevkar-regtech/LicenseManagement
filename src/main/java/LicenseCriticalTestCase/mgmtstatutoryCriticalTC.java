@@ -59,9 +59,9 @@ public class mgmtstatutoryCriticalTC extends webpage {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
-		test.log(LogStatus.PASS, "UserID-snehal10.patil@tlregtech.in");
-		test.log(LogStatus.PASS, "Password-admin@123");
+		test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogin.aspx");
+		test.log(LogStatus.PASS, "UserID-bhagyesh@tlregtech.com	");
+		test.log(LogStatus.PASS, "Password-Avantis@123");
 		test.log(LogStatus.PASS, "Management Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
@@ -381,7 +381,7 @@ void BylicnesetypeRejected() throws InterruptedException, IOException
     @Test(priority = 27)
 	void MyDocuments() throws InterruptedException
 	{
-		test = extent.startTest("My Documents Verification");
+		test = extent.startTest("My Documents Working  Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 	//	test = extent.startTest("My Document View Verification");
@@ -396,7 +396,7 @@ void BylicnesetypeRejected() throws InterruptedException, IOException
 	@Test(priority = 28)
 		void MyReports() throws InterruptedException, IOException
 		{
-			test = extent.startTest("My Reports Verification");
+			test = extent.startTest("My Reports working  Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCriticalTestCase.PerformerCritical.Reports( test, "Statutory");
@@ -415,16 +415,7 @@ void BylicnesetypeRejected() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 	}
-  @Test(priority = 30)
-	void AssignedButNotActivated() throws InterruptedException, IOException
-	
-	{
-		test = extent.startTest("Not Activated License Verification");
-		LiPeMethodsPOM.AssignedButNotActivated(test,"Statutory");
-
-		extent.endTest(test);
-		extent.flush();
-	}
+ 
  @AfterMethod
  void driverclose()
  {

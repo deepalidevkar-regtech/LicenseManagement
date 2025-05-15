@@ -1289,8 +1289,7 @@ public class licmgmtMethodPOM extends webpage{
 			   
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			  MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
-			  
+			  MethodPOM.serachlicforgrp().sendKeys("Annual Maintance",Keys.ENTER);
 			   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 		   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		   JavascriptExecutor Js1 = (JavascriptExecutor) getDriver();
@@ -2845,7 +2844,7 @@ WebDriverWait wait = new WebDriverWait( getDriver(), (30));
 			   LicenseCompanyadmin.MethodPOM.InternalFilter().click();
 			   MethodPOM.clickDashlictype().click();
 			   Thread.sleep(5000);
-			   MethodPOM.serachlicforgrp().sendKeys("Annual maintenance",Keys.ENTER);
+			   MethodPOM.serachlicforgrp().sendKeys("Annual Maintance",Keys.ENTER);
 			   Thread.sleep(5000);
 				   LicenseCompanyadmin.MethodPOM.ClickApply().click();
 			   getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

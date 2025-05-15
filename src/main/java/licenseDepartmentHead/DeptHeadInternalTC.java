@@ -386,7 +386,7 @@ void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		extent.flush();
 	}
 	
-	@Test(priority = 25)
+@Test(priority = 25)
 			void BylicnesetypeTerminateInternal() throws InterruptedException
 			{
 				test = extent.startTest("By License Type -Annual maintenance Graph Terminated License On Working Verification");
@@ -420,7 +420,7 @@ void PendingForReviewInternalLicense() throws InterruptedException, IOException
 				extent.endTest(test);
 				extent.flush();
 			}
-	@Test(priority = 28)
+@Test(priority = 28)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Verification");
@@ -431,7 +431,7 @@ void PendingForReviewInternalLicense() throws InterruptedException, IOException
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 29)
+	@Test(priority = 29)
 		void DashboardandReportCountMatch() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Dashboard and Report  Count Match  Verification");

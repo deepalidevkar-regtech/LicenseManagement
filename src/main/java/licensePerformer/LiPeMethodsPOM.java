@@ -624,16 +624,28 @@ getDriver().switchTo().parentFrame();
 
 	public static void AppliedCount( ExtentTest test, String type) throws InterruptedException, IOException
 	{		
-		/*WebDriverWait wait = new WebDriverWait(driver, 20);
-		progress;
-		
-		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickApplied));
-		int applied = Integer.parseInt(LiPerformerPOM.clickApplied.getText());	//Reading Applied count.
-		
-		LiPerformerPOM.clickApplied.click();	*/					//Clicking on 'Applied'
-		
 		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		//wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickApplied));
+	//	int applied = Integer.parseInt(LiPerformerPOM.clickApplied.getText());	//Reading Applied count.
+		
+		//LiPerformerPOM.clickApplied.click();	*/		//Clicking on 'Applied'
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickActive()));
+		String Active=MethodPOM.clickActive().getText();
+		
+	     int Activelicense = Integer.parseInt(Active);	//Reading Active count.
+
+	 	wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpiring()));
+		String Expiring=MethodPOM.clickExpiring().getText();
+		
+	     int Expiringlicense = Integer.parseInt(Expiring);	//Reading Expiring count.
+	     
+	     wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpired()));
+			String Expired=MethodPOM.clickExpired().getText();
 			
+		     int Expiredlicense = Integer.parseInt(Expired);	//Reading Expired count.
+		//WebDriverWait wait = new WebDriverWait( getDriver(), (30));
+		    
+
 			wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickApplied()));
 			int applied = Integer.parseInt(LiPerformerPOM.clickApplied().getText());	//Reading Applied count.
 			
@@ -674,13 +686,13 @@ getDriver().switchTo().parentFrame();
 		
 		LiPerformerPOM.editlicenseicon().click();
 		Thread.sleep(7000);
-		licenseManagement.licmgmtPOM.LicenseTitle().clear();
+		//licenseManagement.licmgmtPOM.LicenseTitle().clear();
 		Thread.sleep(5000);
-		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("Fix-1");	
+		licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("1");	
 		Thread.sleep(3000);
-		licenseManagement.licmgmtPOM.LicenseNo().clear();
+		//licenseManagement.licmgmtPOM.LicenseNo().clear();
 		Thread.sleep(3000);
-		licenseManagement.licmgmtPOM.LicenseNo().sendKeys("to Check update license");
+		licenseManagement.licmgmtPOM.LicenseNo().sendKeys("1");
 		Thread.sleep(5000);
 		js1.executeScript("window.scrollBy(1000,0)");
 		Thread.sleep(5000);
@@ -783,8 +795,8 @@ getDriver().switchTo().parentFrame();
 					}
 			 
 			   Thread.sleep(5000);
-         MethodPOM.clickMyDashboard().click();
-         Thread.sleep(1000);
+        MethodPOM.clickMyDashboard().click();
+        Thread.sleep(1000);
            MethodPOM.clickApplied().click();
        // Thread.sleep(5000);
 		//LiPerformerPOM.clickAction.click();					//Clicking on first action button.
@@ -831,9 +843,9 @@ getDriver().switchTo().parentFrame();
 		}
 		else
 		{
-			  MethodPOM.clickMyDashboard().click();
-			 MethodPOM.clickApplied().click();
-				//Thread.sleep(5000);
+			//  MethodPOM.clickMyDashboard().click();
+			// MethodPOM.clickApplied().click();
+				Thread.sleep(5000);
 			LiPerformerPOM.AppliedAction().click();					//Clicking on first action button.
 			Thread.sleep(3000);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
@@ -841,16 +853,16 @@ getDriver().switchTo().parentFrame();
 		Thread.sleep(3000);
 		LiPerformerPOM.LicenseNo().sendKeys("20-1");
 		Thread.sleep(500);
-		LiPerformerPOM.Licensetitle().sendKeys("Licetetse234");
+		LiPerformerPOM.Licensetitle().sendKeys("Licetse2");
 		Thread.sleep(500);
 		LiPerformerPOM.AppliedStartDateclick().click();
 		Thread.sleep(500);
 		LiPerformerPOM.NextDateClick().click();
-		Thread.sleep(500);
+		Thread.sleep(5000);
 		LiPerformerPOM.AppliedStartDate().click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	   LiPerformerPOM.AppliedEndDateclick().click();
-	   Thread.sleep(3000);
+	   Thread.sleep(5000);
 		LiPerformerPOM.NextDateClick().click();
 		  Thread.sleep(3000);
 	   LiPerformerPOM.AppliedEndDate().click();
@@ -892,7 +904,7 @@ getDriver().switchTo().parentFrame();
 			}
 			else
 			{
-				test.log(LogStatus.PASS, "Message Displayed = "+msg);
+				test.log(LogStatus.FAIL, "Message Displayed = "+msg);
 			}
 		}
 		catch(Exception e)
@@ -912,7 +924,7 @@ getDriver().switchTo().parentFrame();
 		Thread.sleep(500);
 		
 		//OverduePOM.clickDashboard().click();
-		 js1.executeScript("window.scrollBy(0,1000)");
+		// js1.executeScript("window.scrollBy(0,1000)");
 		getDriver().switchTo().parentFrame();
 		Thread.sleep(5000);
 		LiPerformerPOM.clickClose().click();				//Clicking on Close (Cross)
@@ -920,10 +932,10 @@ getDriver().switchTo().parentFrame();
 		progress();
 		
 		Thread.sleep(500);
-		//wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard));
-		//OverduePOM.clickDashboard().click();
+	wait.until(ExpectedConditions.elementToBeClickable(MethodPOM.clickMyDashboard()));
+	MethodPOM.clickMyDashboard().click();
 		
-	/*	
+
 		if(type.equalsIgnoreCase("Internal"))			//Opening 'Internal' Dashboard
 		{
 			Thread.sleep(500);
@@ -944,15 +956,43 @@ getDriver().switchTo().parentFrame();
 		if(applied1 < applied)
 		{
 			test.log(LogStatus.PASS, "Dashboard 'Applied' count decreased.");
-			test.log(LogStatus.INFO, "Old Count = "+applied+". New Count = "+applied1);
+			test.log(LogStatus.PASS, "Old Count = "+applied+". New Count = "+applied1);
 		}
 		else
 		{
 			test.log(LogStatus.FAIL, "Dashboard 'Applied' count doesn't decreased.");
-			test.log(LogStatus.INFO, "Old Count = "+applied+". New Count = "+applied1);
+			test.log(LogStatus.FAIL, "Old Count = "+applied+"| New Count = "+applied1);
 		}
-		*/
+		wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickActive()));
+		String ActiveOne=MethodPOM.clickActive().getText();
+		
+	     int ActivelicenseOne = Integer.parseInt(Active);	//Reading Active count.
+
+	 	wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpiring()));
+		String ExpiringOne=MethodPOM.clickExpiring().getText();
+		
+	     int ExpiringlicenseOne = Integer.parseInt(Expiring);	//Reading Expiring count.
+	     
+	     wait.until(ExpectedConditions.visibilityOf(MethodPOM.clickExpired()));
+			String ExpiredOne=MethodPOM.clickExpired().getText();
+			
+		     int ExpiredlicenseOne = Integer.parseInt(Expired);	//Reading Expired count.
+		WebDriverWait wait1 = new WebDriverWait( getDriver(), (30));
+			
+		     if(Activelicense>ActivelicenseOne&&Expiredlicense>ExpiredlicenseOne&&Expiringlicense>ExpiringlicenseOne)
+		     {
+		    	 test.log(LogStatus.PASS, "Active Old Count = "+Activelicense+" | New Count = "+ActivelicenseOne);
+		         test.log(LogStatus.PASS, "Expired Old Count = "+Expiredlicense+" | New Count = "+ExpiredlicenseOne);
+		         test.log(LogStatus.PASS, "Expiring Old Count = "+Expiringlicense+" | New Count = "+ExpiringlicenseOne);
+		     }
+		     else
+		     {
+		    	 test.log(LogStatus.PASS, "Active Old Count = "+Activelicense+" | New Count = "+ActivelicenseOne);
+		         test.log(LogStatus.PASS, "Expired Old Count = "+Expiredlicense+" | New Count = "+ExpiredlicenseOne);
+		         test.log(LogStatus.PASS, "Expiring Old Count = "+Expiringlicense+" | New Count = "+ExpiringlicenseOne);		     }
+		
 			 }
+			   
 			 }
 	}
 	
@@ -4599,14 +4639,11 @@ if(msg.equalsIgnoreCase("Saved Successfully."))
 	LiPerformerPOM.PerformDate().click();
 	Thread.sleep(5000);
 	js1.executeScript("window.scrollBy(0,1000)");
-Thread.sleep(500);
-js1.executeScript("window.scrollBy(0,700)");
-Thread.sleep(300);
+Thread.sleep(3000);
 OverduePOM.clickComplianceSubmit().click();			//Clicking on 'Submit' button.
 
-Thread.sleep(5000);
-js1.executeScript("document.body.scrollTop += 500;");
 Thread.sleep(3000);
+js1.executeScript("window.scrollBy(0,-5000)");
 String msg = LiPerformerPOM.lablemsg().getText();	
 if(msg.equalsIgnoreCase("Saved Sucessfully."))
 {

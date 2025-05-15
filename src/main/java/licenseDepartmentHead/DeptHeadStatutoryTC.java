@@ -181,7 +181,7 @@ void NotActivated() throws InterruptedException, IOException
 @Test(priority = 10)
 void LicenseExpiredOnStatutory() throws InterruptedException
 {
-	test = extent.startTest(" ExpiredIn License Working Verification");
+	test = extent.startTest("ExpiredIn License Working Verification");
      DeptHeadMethod.DeptLicenseExpiredOnStatutory( test, "Statutory");
 	 extent.endTest(test);
 	 extent.flush();
@@ -190,7 +190,7 @@ void LicenseExpiredOnStatutory() throws InterruptedException
 
 		void LicenseExpiringOnStatutory() throws InterruptedException, IOException
 		{
-			test = extent.startTest("License ExpiringIn Working Verification");
+			test = extent.startTest("ExpiringIn Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			DeptHeadMethod.deptLicenseExpiringOnStatutory( test, "Statutory");
@@ -262,7 +262,7 @@ void BystausActivelicense() throws InterruptedException, IOException
 @Test(priority = 18)
 		void BystausTerminatelicense() throws InterruptedException, IOException
 		{
-			test = extent.startTest("By Status Terminate License Graph Working Verification");
+			test = extent.startTest("By Status Terminated License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCompanyadmin.StatutoryMethod.BystatusTerminategraph( test, "Statutory");
@@ -340,7 +340,7 @@ void BylicnesetypeRejected() throws InterruptedException, IOException
 @Test(priority = 25)
 void BylicnesetypeTerminate() throws InterruptedException, IOException
 {
-	test = extent.startTest("By License type -Shops & Commercial Establishment Terminate  License Graph Working Verification");
+	test = extent.startTest("By License type -Shops & Commercial Establishment Terminated  License Graph Working Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
      licmgmtMethodPOM.ByLicensetypeTerminate( test, "Statutory");
 	

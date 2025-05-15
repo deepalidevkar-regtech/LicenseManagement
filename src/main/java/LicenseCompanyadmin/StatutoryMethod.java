@@ -623,7 +623,7 @@ public class StatutoryMethod  extends webpage{
 									
 									if(dirContents.length < allFilesNew.length)
 									{
-										test.log(LogStatus.PASS, "File downloaded successfully.");
+										test.log(LogStatus.PASS, "File Downloaded Successfully.");
 										
 										File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
 									    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
@@ -742,13 +742,13 @@ public class StatutoryMethod  extends webpage{
 				Thread.sleep(5000);
 				LiPerformerPOM.editlicenseicon().click();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseTitle().clear();
+				//licenseManagement.licmgmtPOM.LicenseTitle().clear();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("update License");	
+				licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("a");	
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseNo().clear();
+				//licenseManagement.licmgmtPOM.LicenseNo().clear();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseNo().sendKeys("update00");
+				licenseManagement.licmgmtPOM.LicenseNo().sendKeys("a");
 				Thread.sleep(5000);
 				js1.executeScript("window.scrollBy(0,3000)");
 				Thread.sleep(7000);
@@ -825,7 +825,7 @@ public class StatutoryMethod  extends webpage{
 									
 									if(dirContents.length < allFilesNew.length)
 									{
-										test.log(LogStatus.PASS, "File downloaded successfully.");
+										test.log(LogStatus.PASS, "File Downloaded Successfully.");
 										
 										File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
 									    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
@@ -860,7 +860,7 @@ public class StatutoryMethod  extends webpage{
 									}
 									else
 									{
-										test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+										test.log(LogStatus.FAIL, "File doesn't Downloaded Successfully.");
 									}
 							 }
 				          
@@ -935,11 +935,11 @@ public class StatutoryMethod  extends webpage{
 				Thread.sleep(5000);
 				//licenseManagement.licmgmtPOM.LicenseTitle().clear();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseTitle().sendKeys(".");	
+				licenseManagement.licmgmtPOM.LicenseTitle().sendKeys("1");	
 				Thread.sleep(5000);
 				//licenseManagement.licmgmtPOM.LicenseNo().clear();
 				Thread.sleep(5000);
-				licenseManagement.licmgmtPOM.LicenseNo().sendKeys(".");
+				licenseManagement.licmgmtPOM.LicenseNo().sendKeys("1");
 				Thread.sleep(5000);
 				js1.executeScript("window.scrollBy(0,3000)");
 				Thread.sleep(7000);
@@ -1017,7 +1017,7 @@ public class StatutoryMethod  extends webpage{
 									
 									if(dirContents.length < allFilesNew.length)
 									{
-										test.log(LogStatus.PASS, "File downloaded successfully.");
+										test.log(LogStatus.PASS, "File Downloaded Successfully.");
 										
 										File lastModifiedFile = allFilesNew[1];			//Storing any 0th index file in 'lastModifiedFile' file name.
 									    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
@@ -11964,18 +11964,19 @@ wait1.until(ExpectedConditions.visibilityOf(LiReviewerPOM.checkTable1()));	//Wai
 	   	      	MethodPOM.ClickInternalLicenseType().click();
 	   		 Thread.sleep(5000);
 	   		   MethodPOM.SearchInternalLicenseType().sendKeys("Annual Maintance",Keys.ENTER);
+	   		   
 	   		MethodPOM.CheckCompliance1().click();
 	      	 Thread.sleep(3000);
-	      	 
 	   	 XSSFSheet Sheet= ReadExcel();
-	      	 Row row7=sheet.getRow(7);
-	      		org.apache.poi.ss.usermodel.Cell c2=row7.getCell(1);
+	   	sheet = workbook.getSheetAt(2);
+	      	 Row row5=sheet.getRow(5);
+	      		org.apache.poi.ss.usermodel.Cell c2=row5.getCell(1);
 	      	 String LicenseNo=c2.getStringCellValue();
 	      	 MethodPOM.LicesneNo1().sendKeys(LicenseNo);
 	              
 	      
 	   	 Thread.sleep(3000);
-	   	 sheet = workbook.getSheetAt(2);
+	   	// sheet = workbook.getSheetAt(2);
 	   	 Row row6= sheet.getRow(6);
 	   	  org.apache.poi.ss.usermodel.Cell c1 = row6.getCell(1);	
 	   	 String LicenseTitle= c1.getStringCellValue();

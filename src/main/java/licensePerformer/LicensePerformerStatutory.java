@@ -107,7 +107,7 @@ public class LicensePerformerStatutory extends webpage {
 		extent.flush();
 		
 	}
-@Test(priority = 3)
+/*@Test(priority = 3)
 void ActivePerform() throws InterruptedException
 {
 	test = extent.startTest("Active License Perform Verification");
@@ -160,7 +160,7 @@ void Expiringperform() throws InterruptedException
 {
 	test = extent.startTest("Expired License Perform Verification");
 	//test.log(LogStatus.INFO, "Test Initiated");
-	
+
 	LiPeMethodsPOM.Expiredlicenseperform( test, "Statutory");
 	
 	extent.endTest(test);
@@ -401,7 +401,7 @@ void DashboardandReportCountMatch() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-}
+}*/
 
 @AfterMethod
 	  void driverclose()

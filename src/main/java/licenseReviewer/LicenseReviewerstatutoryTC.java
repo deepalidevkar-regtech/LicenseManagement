@@ -100,7 +100,7 @@ public class LicenseReviewerstatutoryTC extends webpage
 		initialization("License",4);
 	}
 
-/*@Test(priority =2)
+@Test(priority =2)
 	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -111,7 +111,7 @@ public class LicenseReviewerstatutoryTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 3)
+	/*@Test(priority = 3)
 	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -143,7 +143,7 @@ public class LicenseReviewerstatutoryTC extends webpage
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
 	
 	@Test(priority = 6)
 	void PendingForReview() throws InterruptedException, IOException
@@ -156,7 +156,7 @@ public class LicenseReviewerstatutoryTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-/*@Test(priority = 7)
+@Test(priority = 7)
 	void Rejected() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Rejected License Count Verification");

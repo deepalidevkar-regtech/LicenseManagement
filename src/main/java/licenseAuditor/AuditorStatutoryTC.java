@@ -48,7 +48,7 @@
 			String workingDir = System.getProperty("user.dir");
 			extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//new//LicenseAuditorResult(Statutory).html",true);
 		      test = extent.startTest("Logging In - Auditor (Statutory");
-		      test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		      test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogin.aspx");
 				test.log(LogStatus.PASS, "UserID-auditor@regtrack.com");
 				test.log(LogStatus.PASS, "Password-admin@123");
 			
@@ -161,7 +161,7 @@
 	@Test(priority = 8)
 	void Terminate() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Terminate License Count Verification");
+		test = extent.startTest("Terminated License Count Verification");
 		DeptHeadMethod.DeptTerminateLicense( test, "Statutory");
 		
 		extent.endTest(test);

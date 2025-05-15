@@ -97,7 +97,7 @@ public class LicenseReviewerInternalTC extends webpage
     		extent.flush();*/
   		initialization("License",4);
     	}
-/*@Test(priority = 2)
+@Test(priority = 2)
 	void ActiveInternalLicense() throws InterruptedException, IOException
 	{
 		//test = extent.startTest("Active License Count Verification");
@@ -132,7 +132,7 @@ public class LicenseReviewerInternalTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 3)
+ /*@Test(priority = 3)
 		void ExpiringInternalLicense() throws InterruptedException, IOException
 		{
 	   // test = extent.startTest("Expiring License Count Verification");
@@ -227,7 +227,7 @@ public class LicenseReviewerInternalTC extends webpage
 		
 		extent.endTest(test);
 		extent.flush();
-	}*/
+	}
    @Test(priority = 6)
 		void PendingForReviewInternalLicense() throws InterruptedException, IOException
 		{

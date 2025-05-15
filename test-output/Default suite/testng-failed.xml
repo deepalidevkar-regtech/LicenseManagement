@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licenseReviewer.LicenseReviewerInternalTC">
+      <class name="LicenseCriticalTestCase.CompanyadminstatutoryCriticalTC">
         <methods>
-          <include name="setBrowser"/>
+          <include name="Active"/>
           <include name="driverclose"/>
+          <include name="setBrowser"/>
           <include name="Login"/>
-          <include name="PendingForReviewInternalLicense"/>
         </methods>
-      </class> <!-- licenseReviewer.LicenseReviewerInternalTC -->
+      </class> <!-- LicenseCriticalTestCase.CompanyadminstatutoryCriticalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

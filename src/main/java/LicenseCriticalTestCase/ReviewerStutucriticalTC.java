@@ -164,7 +164,7 @@ public class ReviewerStutucriticalTC extends webpage
 	 @Test(priority = 8)
 		void Terminate() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Terminate License Count Verification");
+			test = extent.startTest("Terminated License Count Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
             LiReMethodsPOM.ReviewerTerminateLicense1( test, "Statutory");

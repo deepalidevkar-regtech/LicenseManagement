@@ -63,7 +63,7 @@ public class CompanyadminInternalCriticalTC extends webpage{
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogin.aspx");
 		test.log(LogStatus.PASS, "UserID-companyadmin@regtrack.com");
 		test.log(LogStatus.PASS, "Password-admin@123");
 		test.log(LogStatus.PASS, "Company admin Login Successfully.");

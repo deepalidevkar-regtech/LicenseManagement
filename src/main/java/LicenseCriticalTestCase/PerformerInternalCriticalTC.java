@@ -132,7 +132,7 @@ public class PerformerInternalCriticalTC  extends webpage{
    @Test(priority = 3)
    	void ActivePerform() throws InterruptedException
    	{
-   		test = extent.startTest("Active License PerformVerification");
+   		test = extent.startTest("Active License Perform Verification");
    		//test.log(LogStatus.INFO, "Test Initiated");
    		
    		WebDriverWait wait = new WebDriverWait( getDriver(), (30));
@@ -455,7 +455,7 @@ void MyReports() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-   	@Test(priority = 18)
+   @Test(priority = 18)
    	void DashboardandReportCountMatch() throws InterruptedException, IOException
    	{
    	

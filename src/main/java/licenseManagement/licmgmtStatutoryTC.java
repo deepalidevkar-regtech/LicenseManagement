@@ -92,7 +92,6 @@ public class licmgmtStatutoryTC  extends webpage{
 		initialization("License",2);
 	}
 @Test(priority = 2)
- 
 	void Active() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Active License Count Verification");
@@ -312,7 +311,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 	
-	@Test(priority = 20)
+	@Test(priority = 22)
 		void BylicnesetypeApplied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type- Shops & Commercial Establishment applied  License Graph Working Verification");
@@ -323,7 +322,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 21)
+	@Test(priority = 23)
 		void BylicnesetypePendingForReview() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type -Shops & Commercial Establishment Pending For Review Graph count Working Verification");
@@ -334,7 +333,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 22)
+	@Test(priority = 24)
 		void BylicnesetypeRejected() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License Type -Shops & Commercial Establishment Rejected  Graph Count Working Verification");
@@ -346,7 +345,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.flush();
 		}
 	 
-	@Test(priority = 23)
+	@Test(priority = 25)
 		void BylicnesetypeTerminated() throws InterruptedException, IOException
 		{
 			test = extent.startTest("By License type -Shops & Commercial Establishment Terminated  License Graph Working Verification");
@@ -356,7 +355,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-    @Test(priority = 24)
+    @Test(priority = 26)
 			void MyWorkspace() throws InterruptedException, IOException
 			{
 				test = extent.startTest("My Workspace  Working Verification");
@@ -367,7 +366,7 @@ public class licmgmtStatutoryTC  extends webpage{
 				extent.flush();
 			}
        
- @Test(priority = 25)
+ @Test(priority = 27)
 	void MyDocuments() throws InterruptedException
 	{
 		test = extent.startTest("My Documents Verification");
@@ -381,7 +380,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 26)
+@Test(priority = 28)
 	void CriticalDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Critical Document Verification");
@@ -392,7 +391,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 27)
+	@Test(priority = 29)
 		void MyReports() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reports Verification");
@@ -403,7 +402,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-@Test(priority = 28)
+@Test(priority = 30)
 	void LicenseNewAssignment() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License New Assignment");
@@ -412,7 +411,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-  @Test(priority = 29)
+  @Test(priority = 31)
 	void LicenseCreation() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License Creation Verification");
@@ -421,7 +420,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 30)
+ @Test(priority = 32)
 	void Masters() throws InterruptedException, IOException
 	{
 	    test = extent.startTest("Masters - User Creation verification");
@@ -431,7 +430,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 31)
+@Test(priority = 33)
 	void RenewStautoryLicense() throws InterruptedException, IOException
 	
 	{
@@ -442,11 +441,11 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
- @Test(priority = 32)
+ @Test(priority = 34)
 	void NomineeDetails() throws InterruptedException, IOException
 	
 	{
-		test = extent.startTest("Nominee Details");
+		test = extent.startTest("Nominee Details Verification");
 		//test.log(LogStatus.PASS, "Noimnee Details Added Sucessfully");
 		licmgmtMethodPOM.NomineeDetails(test,"");
 
@@ -454,7 +453,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.flush();
 	}
 	
-	@Test(priority =33)
+	@Test(priority =35)
 	void  ActiveDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Active License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -463,7 +462,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =34)
+	@Test(priority =36)
 	void  ExpiringDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Expiring License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -472,7 +471,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =35)
+	@Test(priority =37)
 	void  ExpiredDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Dashboard Expired License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -481,7 +480,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority =36)
+	@Test(priority =38)
 	void  AppliedDashboardFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Applied License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -490,7 +489,7 @@ public class licmgmtStatutoryTC  extends webpage{
 		extent.endTest(test);
 		extent.flush();
 	}
-		@Test(priority = 37)
+		@Test(priority = 39)
 		void PendingForReviewDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Pending For review  License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -501,7 +500,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 38)
+		@Test(priority = 40)
 		void RejeectedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Rejected License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -512,7 +511,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 39)
+		@Test(priority = 41)
 		void TerminateDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Dashboard Terminated License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -523,7 +522,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority = 40)
+		@Test(priority = 42)
 		void AssignedButNotActivatedDashboardFilter() throws InterruptedException, IOException
 		{
 		    test = extent.startTest("Not Activated License Entity/Branch Location(Branch Mumbai)&LicenseType(Shops & Commercial Establishment) Filter working  Verification");
@@ -534,7 +533,7 @@ public class licmgmtStatutoryTC  extends webpage{
 			extent.endTest(test);
 			extent.flush();
 		}
-	@Test(priority = 41)
+	@Test(priority = 43)
 	void DashboardandReportCountMatch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard and Report  Count Match  Verification");

@@ -62,9 +62,9 @@ public class mgmtinternalCriticalTC extends webpage {
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
+		test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogin.aspx");
 		test.log(LogStatus.PASS, "UserID-bhagyesh@tlregtech.com");
-		test.log(LogStatus.PASS, "Password-Avantis@111");
+		test.log(LogStatus.PASS, "Password-admin@123");
 		test.log(LogStatus.PASS, "Management Login Successfully.");
 		extent.endTest(test);
 		extent.flush();
@@ -178,7 +178,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	  @Test(priority = 9)
 			void TerminateInternalLicense() throws InterruptedException, IOException
 			{
-				test = extent.startTest("Terminate License Count Verification");
+				test = extent.startTest("Terminated License Count Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 				LicenseCompanyadmin.StatutoryMethod.TerminateInternalLicense( test, "Internal");
@@ -284,7 +284,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	@Test(priority = 16)
 	  void Bystatusappliedgraph() throws InterruptedException, IOException
 		{
-			test = extent.startTest("By Status-applied License Graph Working Verification");
+			test = extent.startTest("By Status-Applied License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			LicenseCompanyadmin.StatutoryMethod.Bystatusappliedgraph( test, "Internal");
 			
@@ -329,7 +329,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	@Test(priority = 20)
 		void BylicnesetypeActiveInternal() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Graph Active License On Working Verification");
+			test = extent.startTest("By License Type Graph-Annual maintenance Active License On Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			licmgmtMethodPOM.ByLicensetypeActiveInternal( test, "Internal");
@@ -340,7 +340,7 @@ public class mgmtinternalCriticalTC extends webpage {
 		@Test(priority = 21)
 		void ByLicensetypeExpiringInternal() throws InterruptedException, IOException
 		{
-			test = extent.startTest("By License Type-Expiring License Graph Working Verification");
+			test = extent.startTest("By License Type-Annual maintenance Expiring License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			LicenseCompanyadmin.StatutoryMethod.ByLicensetypeExpiringInternal( test, "Internal");
@@ -351,7 +351,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	@Test(priority = 22)
 		void  ByLicensetypeExpiredInternal() throws InterruptedException
 		{
-			test = extent.startTest("By License Type- Expired License Graph Working Verification");
+			test = extent.startTest("By License Type-Annual maintenance Expired License Graph Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 	        licmgmtMethodPOM.ByLicensetypeExpiredInternal( test, "Internal");
@@ -363,7 +363,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	@Test(priority = 23)
 			void ByLicensetypeAppliedInternal() throws InterruptedException
 			{
-				test = extent.startTest("By License Type- Applied License On Working Verification");
+				test = extent.startTest("By License Type-Annual maintenance Applied License On Working Verification");
 				//test.log(LogStatus.INFO, "Test Initiated");
 				
 			   licmgmtMethodPOM.ByLicensetypeAppliedInternal( test, "Internal");
@@ -399,7 +399,7 @@ public class mgmtinternalCriticalTC extends webpage {
 	 @Test(priority = 26)
 		void BylicnesetypeTerminateInternal() throws InterruptedException
 		{
-			test = extent.startTest("By License Type Graph Terminated License On Working Verification");
+			test = extent.startTest("By License Type--Annual maintenance Terminated Graph  Working Verification");
 		//	test.log(LogStatus.INFO, "Test Initiated");
 			
              licmgmtMethodPOM.ByLicensetypeTerminateInternal( test, "Internal");

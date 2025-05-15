@@ -64,8 +64,8 @@ public class ReviewerInternalCriticalTC extends webpage
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
 		//test = extent.startTest("Logging In - Reviewer (Internal)");
-		test.log(LogStatus.PASS, "URL-https://applicationtesting.teamleaseregtech.com/Login.aspx?ReturnUrl=%2fLogoutSuccessfully.aspx");
-		test.log(LogStatus.PASS, "UserID-reviewerregtrack56@gmail.com");
+		test.log(LogStatus.PASS, "URL-https://login.teamleaseregtech.com/Login.aspx?ReturnUrl=%2f&AspxAutoDetectCookieSupport=1");
+		test.log(LogStatus.PASS, "UserID-snehal.patil@tlregtech.in");
 		test.log(LogStatus.PASS, "Password-admin@123");
 		test.log(LogStatus.PASS, "Reviewer Login Successfully.");
 		extent.endTest(test);
@@ -170,7 +170,7 @@ public class ReviewerInternalCriticalTC extends webpage
   @Test(priority = 4)
 	void ExpiredInternalLicense() throws InterruptedException, IOException
 	{
-	  WebDriverWait wait = new WebDriverWait(driver, 5);
+	  WebDriverWait wait = new WebDriverWait(getDriver(), 50);
 		wait.until(ExpectedConditions.visibilityOf(LiPerformerPOM.clickType()));
 		LiPerformerPOM.clickType().click();				//Clicking on 'Type' drop down.
 		
@@ -301,7 +301,7 @@ public class ReviewerInternalCriticalTC extends webpage
 	   	drp.selectByIndex(1);
 	   	Thread.sleep(500);
 	   	CFOcountPOM.clickApply1().click();	
-		test = extent.startTest("Terminate License Count Verification");
+		test = extent.startTest("Terminated License Count Verification");
 		//test.log(LogStatus.PASS, "Terminate License Count Verification");
 		
 		LiReMethodsPOM.TerminateLicense1rew( test, "Internal");
