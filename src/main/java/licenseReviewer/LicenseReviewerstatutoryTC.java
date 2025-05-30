@@ -111,7 +111,7 @@ public class LicenseReviewerstatutoryTC extends webpage
 		extent.endTest(test);
 		extent.flush();
 	}
-	/*@Test(priority = 3)
+	@Test(priority = 3)
 	void Expiring() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Expiring License Count Verification");
@@ -347,7 +347,7 @@ void DashboardandReportCountMatch() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-}*/
+}
   @AfterMethod
   void driverclose()
   {
