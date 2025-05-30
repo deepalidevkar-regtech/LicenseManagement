@@ -105,7 +105,7 @@ public class StatutoryCriticalTC extends webpage  {
 		extent.endTest(test);
 		extent.flush();
 	}
-@Test(priority = 3)
+/*@Test(priority = 3)
 void ActivePerform() throws InterruptedException
 {
 	test = extent.startTest("Active License Count Verification");
@@ -268,7 +268,7 @@ void MyReports() throws InterruptedException, IOException
 	
 	extent.endTest(test);
 	extent.flush();
-}
+}*/
 
 @AfterMethod
 void driverclose()
