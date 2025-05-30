@@ -6,20 +6,36 @@
       <class name="licenseAuditor.AuditorStatutoryTC">
         <methods>
           <include name="Login"/>
+          <include name="NotActivated"/>
+          <include name="BystausRejectedLicense"/>
+          <include name="BystausActivelicense"/>
+          <include name="PendingForReview"/>
           <include name="DashboardandReportCountMatch"/>
           <include name="MyReports"/>
-          <include name="BylicnesetypeRejected"/>
           <include name="MyWorkspace"/>
+          <include name="LicenseExpiredInStatutory"/>
+          <include name="BylicnesetypeRejected"/>
+          <include name="LicenseExpiringInStatutory"/>
           <include name="MyDocuments"/>
-          <include name="BylicnesetypeApplied"/>
-          <include name="setBrowser"/>
+          <include name="Applied"/>
+          <include name="BystausExpiredlicense"/>
           <include name="BylicnesetypeExpired"/>
           <include name="driverclose"/>
+          <include name="BystausAppliedButnotRenewedlicense"/>
+          <include name="BylicnesetypeExpiring"/>
+          <include name="BystausExpiringlicense"/>
+          <include name="Active"/>
+          <include name="Rejected"/>
+          <include name="Terminate"/>
+          <include name="BystausTerminatelicense"/>
+          <include name="Expiring"/>
+          <include name="BylicnesetypeApplied"/>
+          <include name="setBrowser"/>
           <include name="BylicnesetypePendingForReview"/>
           <include name="CriticalDocuments"/>
-          <include name="BylicnesetypeExpiring"/>
+          <include name="Expired"/>
           <include name="BylicnesetypeActive"/>
-          <include name="Active"/>
+          <include name="BystausPendingForReviewlicense"/>
           <include name="BylicnesetypeTerminate"/>
         </methods>
       </class> <!-- licenseAuditor.AuditorStatutoryTC -->

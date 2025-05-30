@@ -5,17 +5,7 @@
     <classes>
 		<class name="LicenseCriticalTestCase.CompanyadminInternalCriticalTC"/>
 		<class name="LicenseCriticalTestCase.CompanyadminstatutoryCriticalTC"/>
-		//<class name="LicenseCriticalTestCase.mgmtinternalCriticalTC"/>
-		//<class name="LicenseCriticalTestCase.mgmtstatutoryCriticalTC"/>
-		//<class name="LicenseCriticalTestCase.PerformerInternalCriticalTC"/>
-		//<class name="LicenseCriticalTestCase.ReviewerInternalCriticalTC"/>
-		//<class name="LicenseCriticalTestCase.ReviewerStutucriticalTC"/>
-		//<class name="LicenseCriticalTestCase.StatutoryCriticalTC"/>	
-		//<class name="licenseAuditor.AuditorStatutoryTC"/>
-		//<class name="licenseAuditor.AuditorInternalTC"/>
-		//<class name="licenseDepartmentHead.DeptHeadStatutoryTC"/>
-		//<class name="licenseDepartmentHead.DeptHeadInternalTC"/>
-		
+				
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
