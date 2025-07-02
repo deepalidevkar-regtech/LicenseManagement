@@ -60,7 +60,7 @@ public class StatutoryTC extends webpage{
 		
 		login.Login.BrowserSetup(URL);					//Method of Login class to set browser.
 		*/
-		test.log(LogStatus.PASS, "Test Passed.");
+		//test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -187,7 +187,7 @@ public class StatutoryTC extends webpage{
  @Test(priority = 10)
 		void LicenseExpiredInStatutory() throws InterruptedException
 		{
-			test = extent.startTest("License ExpiredIn Working Verification");
+			test = extent.startTest("Expired In License Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.LicenseExpiredOnStatutory( test, "Statutory");
@@ -198,7 +198,7 @@ public class StatutoryTC extends webpage{
 	@Test(priority = 11)
 	void LicenseExpiringInStatutory() throws InterruptedException, IOException
 	{
-		test = extent.startTest("License ExpiringIn Working Verification");
+		test = extent.startTest("Expiring In License Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.LicenseExpiringOnStatutory( test, "Statutory");
@@ -220,7 +220,7 @@ public class StatutoryTC extends webpage{
 	@Test(priority = 13)
 	void BystausActivelicense() throws InterruptedException, IOException
 	{
-		test = extent.startTest("By status-Active Graph Count  Working Verification");
+		test = extent.startTest("By status-Active Graph Count Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		StatutoryMethod.BystatusActivegraph( test, "Statutory");
@@ -232,7 +232,7 @@ public class StatutoryTC extends webpage{
 @Test(priority = 14) 
 		void BystausExpiringlicense() throws InterruptedException, IOException
 		{
-			test = extent.startTest("By status -Expiring Graph Count  Working Verification");
+			test = extent.startTest("By status -Expiring Graph Count Working Verification");
 			//test.log(LogStatus.INFO, "Test Initiated");
 			
 			StatutoryMethod.BystatusExpringgraph( test, "Statutory");
@@ -400,7 +400,7 @@ void MyWorkspaceAll() throws InterruptedException, IOException
 @Test(priority = 29)
 	void MyDocuments() throws InterruptedException
 	{
-		test = extent.startTest("My Documents Download Working Verification");
+		test = extent.startTest("My Documents Working Verification");
 	//	test.log(LogStatus.INFO, "Test Initiated");
 		
 		//test = extent.startTest("My Document View Verification");
@@ -439,7 +439,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 	@Test(priority = 32)
 		void Masters() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Masters - User Master Working  verification");	
+			test = extent.startTest("User Master Working  verification");	
 		   StatutoryMethod.user( test, "Statutory");		
 			extent.endTest(test);
 			extent.flush();
@@ -447,7 +447,7 @@ void CriticalDocuments() throws InterruptedException, IOException
 	@Test(priority =33)
 		void PageAuthor() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Masters -Page Autherization working verification");
+			test = extent.startTest("Page Autherization working verification");
 			StatutoryMethod.PageAuthorization(test, "Statutory");		
 			extent.endTest(test);
 			extent.flush();
@@ -573,7 +573,7 @@ void  AppliedDashboardFilter() throws InterruptedException, IOException
 	@Test(priority = 46)
 	void DashboardandReportCountMatch() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Dashboard and Report  Count Match  Verification");
+		test = extent.startTest("Dashboard and Report Count Match Working Verification");
 		//test.log(LogStatus.INFO, "Test Initiated");
 		
 		LiPeMethodsPOM.Dashallreportallcount( test, "Statutory");

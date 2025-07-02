@@ -3,42 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="licenseAuditor.AuditorStatutoryTC">
+      <class name="licenseAuditor.AuditorInternalTC">
         <methods>
           <include name="Login"/>
-          <include name="NotActivated"/>
-          <include name="BystausRejectedLicense"/>
-          <include name="BystausActivelicense"/>
-          <include name="PendingForReview"/>
-          <include name="DashboardandReportCountMatch"/>
-          <include name="MyReports"/>
+          <include name="LicenseExpiringInInternal"/>
+          <include name="ActiveInternalLicense"/>
+          <include name="BylicnesetypeActiveInternal"/>
           <include name="MyWorkspace"/>
-          <include name="LicenseExpiredInStatutory"/>
-          <include name="BylicnesetypeRejected"/>
-          <include name="LicenseExpiringInStatutory"/>
-          <include name="MyDocuments"/>
-          <include name="Applied"/>
-          <include name="BystausExpiredlicense"/>
-          <include name="BylicnesetypeExpired"/>
-          <include name="driverclose"/>
-          <include name="BystausAppliedButnotRenewedlicense"/>
-          <include name="BylicnesetypeExpiring"/>
-          <include name="BystausExpiringlicense"/>
-          <include name="Active"/>
-          <include name="Rejected"/>
-          <include name="Terminate"/>
-          <include name="BystausTerminatelicense"/>
-          <include name="Expiring"/>
-          <include name="BylicnesetypeApplied"/>
+          <include name="NotActivated"/>
+          <include name="MyDocumentsInternal"/>
           <include name="setBrowser"/>
-          <include name="BylicnesetypePendingForReview"/>
-          <include name="CriticalDocuments"/>
-          <include name="Expired"/>
-          <include name="BylicnesetypeActive"/>
-          <include name="BystausPendingForReviewlicense"/>
-          <include name="BylicnesetypeTerminate"/>
+          <include name="Bystatusappliedgraph"/>
+          <include name="driverclose"/>
         </methods>
-      </class> <!-- licenseAuditor.AuditorStatutoryTC -->
+      </class> <!-- licenseAuditor.AuditorInternalTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

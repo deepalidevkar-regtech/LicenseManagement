@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="LicenseCompanyadmin.StatutoryMethod"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+    <fullyQualifiedTypeName name="LicenseCompanyadmin.MethodPOM"/>
+    <fullyQualifiedTypeName name="licensePerformer.LiPerformerPOM"/>
+    <fullyQualifiedTypeName name="licenseManagement.licmgmtMethodPOM"/>
+</qualifiedTypeNameHistroy>
